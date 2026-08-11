@@ -27,6 +27,8 @@ permissions:
 jobs:
   construir:
     runs-on: ubuntu-latest
+    outputs:
+      habilitado: ${{ steps.configurar.outcome == 'success' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -46,14 +48,28 @@ jobs:
           PUBLIC_SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: npm run build
 
-      - uses: actions/configure-pages@v5
+      # Este paso falla si GitHub Pages no está habilitado en el repositorio, que es el
+      # estado de cualquier fork y del repo antes de configurarlo. Lo dejamos avisar en
+      # vez de fallar: una X roja permanente en un espejo opcional enseña a ignorar el
+      # rojo, y entonces el rojo deja de servir para lo que importa.
+      - id: configurar
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+
+      - name: Aviso si Pages no está habilitado
+        if: ${{ steps.configurar.outcome != 'success' }}
+        run: |
+          echo "::notice::El sitio se compiló pero el espejo no se publicó."
+          echo "::notice::Habilítalo en Settings → Pages → Source: GitHub Actions."
 
       - uses: actions/upload-pages-artifact@v3
+        if: ${{ steps.configurar.outcome == 'success' }}
         with:
           path: apps/web/dist
 
   publicar:
     needs: construir
+    if: ${{ needs.construir.outputs.habilitado == 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
