@@ -3,6 +3,14 @@
 # procedencia (ADR-004)— aparece como «cambió todo el archivo» en cada corrida.
 * text=auto eol=lf
 
+# Los CSV de exportación se escriben con CRLF a propósito (RFC 4180, y es lo que espera
+# Excel en Windows). `-text` le dice a Git que no los normalice.
+#
+# Sin esto el pipeline escribe CRLF, Git guarda LF, y el árbol de trabajo queda distinto
+# del índice en CADA corrida: el cron vería un cambio cada 15 minutos y haría commit de
+# archivos idénticos, que es justo el ruido que ADR-004 quiere evitar.
+*.csv -text
+
 # Binarios: que Git no los toque.
 *.png binary
 *.jpg binary
