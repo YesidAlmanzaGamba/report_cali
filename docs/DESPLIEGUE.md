@@ -127,13 +127,18 @@ cuestan cero y dan permanencia:
 
 Sin caché correcta, cada visita golpea R2 y el CDN no ayuda.
 
+Las aplica `scripts/upload-r2.sh` al subir cada archivo.
+
 | Archivo | Cabecera | Por qué |
 |---|---|---|
-| `boundaries/*.topojson` | `max-age=31536000, immutable` + hash en el nombre | Los límites municipales no cambian. Se descargan una vez en la vida del navegador. |
-| `event/mmi-by-municipality.json` | `max-age=300, stale-while-revalidate=3600` | Cambia solo cuando el USGS revisa el ShakeMap. |
-| `event/event.json` | `max-age=300, stale-while-revalidate=3600` | Igual. |
-| `observations/*.json` | `max-age=120, stale-while-revalidate=600` | Lo más volátil; aun así 2 minutos de caché quitan casi toda la carga. |
-| HTML | `max-age=60` | Para que un despliegue se vea rápido. |
+| `boundaries/*` | `max-age=86400, stale-while-revalidate=604800` | La geometría municipal prácticamente no cambia. |
+| `event/*`, `observations/*` | `max-age=300, stale-while-revalidate=3600` | Cambian cuando el USGS revisa el ShakeMap o entra un boletín. |
+
+**Por qué los límites no van marcados `immutable`,** aunque en la práctica nunca cambien:
+el nombre del archivo no lleva hash de contenido. Un `immutable` de un año dejaría a
+quien ya visitó el sitio con la geometría vieja hasta 2027, sin forma de corregirlo. Si
+algún día se le agrega hash al nombre —`municipios.a1b2c3.topojson`— ahí sí conviene
+`immutable`, y sería una mejora real.
 
 `stale-while-revalidate` es la clave: el usuario recibe el dato viejo al instante y el CDN
 lo refresca por detrás. Nadie espera, y R2 recibe una fracción de las peticiones.
@@ -167,6 +172,8 @@ que lo cambiarían:
    **Read and write**. Sin esto el cron trae los datos pero no puede hacer commit.
 5. **Apuntar el sitio a R2**: variable `PUBLIC_DATA_URL` con la URL del bucket.
    Mientras no exista, el sitio sigue leyendo de `/data` y todo funciona igual.
-6. *(Opcional)* **Espejo en GitHub Pages** publicando el mismo `dist/`.
+6. **Espejo en GitHub Pages**: *Settings → Pages → Source: **GitHub Actions***.
+   Sin secretos. El flujo `pages.yml` ya compila con `PUBLIC_BASE=/report_cali/`, porque
+   GitHub Pages sirve en una subruta y no en la raíz del dominio.
 7. *(Opcional)* **Dominio propio.** Un `.org` cuesta ~USD 12 al año y es lo único que
    costaría plata. Un dominio memorable importa cuando la gente lo comparte por WhatsApp.

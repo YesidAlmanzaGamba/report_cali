@@ -1,0 +1,63 @@
+name: Espejo en GitHub Pages
+
+# Origen de respaldo, gratuito y con dueño distinto al principal (Cloudflare).
+# En una respuesta a desastre, tener dos orígenes independientes es prudencia básica:
+# si una cuenta se pierde o el proveedor tiene un incidente, queda a dónde apuntar.
+#
+# GitHub Pages tiene un límite BLANDO de 100 GB/mes. Por eso es espejo y no principal:
+# con ~600 KB por sesión, son ~170.000 sesiones al mes y en emergencia nacional eso se
+# alcanza en días. Ver docs/DESPLIEGUE.md.
+#
+# ── Configuración necesaria una sola vez ────────────────────────────────────
+# Settings → Pages → Source: **GitHub Actions**. No hace falta ningún secreto.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Compilar para subruta
+        # GitHub Pages sirve en https://<usuario>.github.io/<repo>/, no en la raíz.
+        # Sin `PUBLIC_BASE` el HTML carga pero ningún dato: las rutas absolutas
+        # apuntarían a la raíz del dominio, donde no hay nada.
+        env:
+          PUBLIC_BASE: /${{ github.event.repository.name }}/
+          PUBLIC_SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

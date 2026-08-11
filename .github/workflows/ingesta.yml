@@ -32,6 +32,16 @@ jobs:
       - name: Consultar fuentes
         run: npm run ingest
 
+      # Sube los datos al origen que sirve al sitio. Va ANTES del commit a propósito:
+      # lo que le importa a quien está consultando el mapa es tener el dato fresco; el
+      # commit es el archivo histórico y puede esperar unos segundos.
+      # Sin credenciales configuradas, el script no hace nada y sale en cero.
+      - name: Subir a R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bash scripts/upload-r2.sh
+
       - name: Publicar si hubo cambios
         run: |
           if [ -z "$(git status --porcelain data/)" ]; then

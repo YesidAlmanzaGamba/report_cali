@@ -1,7 +1,20 @@
 import { defineConfig } from 'astro/config';
 
+/**
+ * El sitio se publica en dos orígenes con forma distinta:
+ *
+ *   Cloudflare Pages  →  raíz del dominio        →  base '/'
+ *   GitHub Pages      →  /report_cali/ (espejo)  →  base '/report_cali/'
+ *
+ * Sin `base` correcto, el espejo carga el HTML pero ningún dato: las rutas absolutas
+ * apuntarían a la raíz del dominio de GitHub, donde no hay nada.
+ */
+const base = process.env['PUBLIC_BASE'] ?? '/';
+const site = process.env['PUBLIC_SITE'] ?? 'https://report-cali.pages.dev';
+
 export default defineConfig({
-  site: 'https://report-cali.pages.dev',
+  site,
+  base,
   // Sitio 100 % estático: se sirve desde CDN sin base de datos en la ruta de
   // lectura (ADR-004). Un sitio de desastre recibe su pico de tráfico justo
   // cuando más importa.

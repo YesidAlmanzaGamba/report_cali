@@ -199,6 +199,44 @@ impone Astro, no nosotros.
 
 ---
 
+## ADR-012 — Los reportes ciudadanos de daño se agregan a 100 m
+
+**Estado:** aceptada · 2026-08-11
+
+**Contexto.** La fase 4 muestra puntos de daño por edificación. Hay dos orígenes posibles
+y no merecen el mismo trato.
+
+**Decisión.**
+
+- **Productos oficiales de Copernicus EMS (EMSR916): se publican en su ubicación exacta.**
+  Ya son públicos y oficiales; republicarlos no agrega exposición.
+- **Reportes ciudadanos sin verificar: se agregan a una rejilla de ~100 m.** La ubicación
+  exacta solo se muestra después de que una persona verifique el caso.
+
+**Por qué.** Un mapa público que señala con precisión qué edificaciones quedaron
+colapsadas o desocupadas es, visto de otra forma, una lista de objetivos para saqueo. Es
+un daño documentado en respuesta a desastres, y recae sobre familias que ya lo perdieron
+casi todo.
+
+**El contraargumento, y por qué no lo seguimos.** Es cierto que buena parte de esas
+ubicaciones ya circulan por redes sociales, y que la comunidad local las conoce. Pero
+«ya está en internet» justifica muchas cosas que terminan mal: una cosa es que la
+información esté dispersa en publicaciones sueltas y otra es publicarla **consolidada,
+geoindexada y descargable**, que es precisamente lo que hace útil a este proyecto — y
+también lo que lo haría útil para alguien que busque qué casa está vacía. Agregar a 100 m
+conserva todo el valor operativo (a un equipo de socorro le sirve igual saber la manzana)
+y elimina casi toda la exposición. El costo de equivocarse en un sentido es un mapa un
+poco menos preciso; en el otro, es un robo a una familia damnificada.
+
+**Consecuencias.** La rejilla de 100 m se aplica en el pipeline, no en la interfaz: el
+dato preciso sin verificar **nunca sale del servidor**. Un error de front-end no puede
+filtrarlo.
+
+**Extiende ADR-001** del ámbito de las personas al de sus viviendas: un punto de daño
+nunca lleva asociada información de sus ocupantes.
+
+---
+
 ## ADR-008 — La fase 1 es solo lectura; escritura y moderación después
 
 **Estado:** aceptada · 2026-08-11

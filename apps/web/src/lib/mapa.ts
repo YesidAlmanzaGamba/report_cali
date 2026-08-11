@@ -45,7 +45,11 @@ interface MunicipioMmi {
  * detienen. Sirviendo los datos aparte, solo el código dispara compilaciones.
  * Ver docs/DESPLIEGUE.md.
  */
-const DATA = (import.meta.env['PUBLIC_DATA_URL'] as string | undefined)?.replace(/\/$/, '') ?? '/data';
+const DATA =
+  (import.meta.env['PUBLIC_DATA_URL'] as string | undefined)?.replace(/\/$/, '') ??
+  // `BASE_URL` ya trae la barra final. En el espejo de GitHub Pages vale
+  // '/report_cali/', así que la ruta queda '/report_cali/data'.
+  `${import.meta.env.BASE_URL}data`.replace(/\/{2,}/g, '/');
 
 async function getJson<T>(path: string): Promise<T> {
   const response = await fetch(`${DATA}/${path}`);
