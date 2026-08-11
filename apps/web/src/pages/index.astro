@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 
 import { MMI_LEVELS, levelFor, levelsPresent } from '../lib/mmi';
 import BuscasAlguien from '../components/BuscasAlguien.astro';
+import Cifras from '../components/Cifras.astro';
 import Fuente from '../components/Fuente.astro';
 
 const DATA = resolve(process.cwd(), '../../data');
@@ -22,6 +23,14 @@ interface Municipio {
 const evento = await readJson('event/event.json');
 const mmiData = await readJson('event/mmi-by-municipality.json');
 const municipios: Municipio[] = mmiData.municipalities;
+
+// Las cifras son opcionales: si todavía no hay ninguna, la página funciona igual y la
+// sección simplemente no aparece.
+const afectacion = await readJson('observations/afectacion.json').catch(() => ({
+  observations: [],
+}));
+const nombresPorPcode = new Map(municipios.map((m) => [m.pcode, `${m.name}, ${m.admin1_name}`]));
+const ahora = new Date();
 
 // Renderizamos la tabla y el resumen en tiempo de compilación a propósito: la página
 // sirve aunque el JavaScript no cargue nunca, que es exactamente lo que pasa con un
@@ -93,6 +102,8 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
     <BuscasAlguien />
 
     <main class="contenido">
+      <Cifras observaciones={afectacion.observations} municipios={nombresPorPcode} ahora={ahora} />
+
       <section aria-labelledby="t-mapa">
         <h2 id="t-mapa">Intensidad por municipio</h2>
         <p class="intro">

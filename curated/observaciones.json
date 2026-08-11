@@ -1,0 +1,62 @@
+{
+  "_lee_esto_antes_de_editar": [
+    "Cifras registradas a mano desde boletines oficiales y prensa.",
+    "",
+    "Existe porque los datos abiertos de la UNGRD llegan hasta 2024: publican con más de",
+    "un año de rezago, así que durante la emergencia no hay forma automática de tener las",
+    "cifras por municipio. Esta es la vía para que entren igual, con procedencia completa",
+    "y revisadas por otra persona en un pull request.",
+    "",
+    "REGLAS:",
+    "1. Toda cifra lleva `source.url` donde se pueda comprobar. Sin enlace no entra.",
+    "2. `observed_at` es cuándo la FUENTE dice que el dato era cierto (el corte del",
+    "   boletín), no cuándo lo copiaste. Con zona horaria: -05:00 para hora de Colombia.",
+    "3. `type`: 'official' solo para entidades del Estado u organismos de socorro.",
+    "   Prensa es 'press', aunque sea un medio serio.",
+    "4. NUNCA datos personales de personas desaparecidas o fallecidas (ADR-001).",
+    "   Solo conteos agregados.",
+    "5. `pcode`: 'CO' para el país, 'CO76' para departamento, 'CO76001' para municipio.",
+    "",
+    "¿Ves una cifra equivocada? Abre un issue con la plantilla «Dato incorrecto».",
+    "Se atiende antes que cualquier función nueva."
+  ],
+
+  "observaciones": [
+    {
+      "metric": "deaths_confirmed",
+      "value": 234,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae (cifra de Asocapitales)",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "notes": "Balance nacional preliminar. Las cifras variaron entre 169, 224 y 234 según fuente y hora."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 16,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "notes": "Estructuras colapsadas reportadas en Cali."
+    },
+    {
+      "metric": "health_facilities_affected",
+      "value": 7,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "notes": "Clínicas afectadas en Cali."
+    }
+  ]
+}

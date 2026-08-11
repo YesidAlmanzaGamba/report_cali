@@ -81,14 +81,21 @@ Es la fuente autorizada a nivel nacional.
 
 ## ReliefWeb (OCHA)
 
-**Estado:** ⚠️ **por verificar antes de depender de esta fuente**
+**Estado:** 🚧 **bloqueado — requiere un trámite humano**
 
 Desastre: [`eq-2026-000146-col`](https://reliefweb.int/disaster/eq-2026-000146-col)
-· API: `https://api.reliefweb.int/v1/`
 
-Durante la planeación, una petición genérica devolvió **HTTP 403**. La API exige un
-parámetro `appname` y probablemente un `User-Agent` propio. **Hay que confirmar la llamada
-exacta antes de construir el adaptador sobre ella** — no asumir que funciona.
+Verificado el 2026-08-11:
+
+| Llamada | Respuesta |
+|---|---|
+| `api.reliefweb.int/v1/...` | **410 Gone** — «The API version 'v1' has been decommissioned. Please use version 'v2'» |
+| `api.reliefweb.int/v2/...?appname=report-cali` | **403** — «You are not using an approved appname» |
+| `api.reliefweb.int/` sin parámetros | **400** — «Missing appname parameter» |
+
+La v2 **no acepta un `appname` cualquiera**: hay que solicitarlo a ReliefWeb en
+<https://apidoc.reliefweb.int/parameters#appname>. Hasta que aprueben uno, no se puede
+construir el adaptador. No es un problema de código.
 
 **Licencia.** Contenido de ReliefWeb bajo sus términos de uso; los informes individuales
 conservan la licencia de la organización que los publica.
@@ -122,9 +129,36 @@ propias. Confirmar antes de publicar los polígonos en `data/`.
 Fuente oficial de conteos de afectación y del **RUNDA** (Registro Único Nacional de
 Damnificados), abierto tras la declaratoria de desastre nacional.
 
-**⚠️ Los IDs de dataset hay que resolverlos consultando el catálogo de Socrata, no
-adivinarlos.** Durante la planeación un ID supuesto devolvió 404. El adaptador debe buscar
-por nombre en el catálogo y registrar el ID que encontró.
+**IDs resueltos** consultando el catálogo (no adivinados; un ID supuesto devolvió 404):
+
+| Dataset | Cobertura | Campo DIVIPOLA |
+|---|---|---|
+| [`rgre-6ak4`](https://www.datos.gov.co/d/rgre-6ak4) | 2023-01-01 → 2024-12-31 · 16.036 filas | `codificaci_n_segun_divipola` |
+| [`4t8v-ywmw`](https://www.datos.gov.co/d/4t8v-ywmw) | 2020 | `divipola` |
+| [`4fd8-ptcr`](https://www.datos.gov.co/d/4fd8-ptcr) | 2019 | `divipola` |
+
+Búsqueda del catálogo:
+`https://api.us.socrata.com/api/catalog/v1?search_context=www.datos.gov.co&q=UNGRD`
+
+> ### ⚠️ Los datos abiertos de la UNGRD llegan hasta 2024
+>
+> Verificado el 2026-08-11: el dataset más reciente termina el **31 de diciembre de
+> 2024**. Los metadatos dicen «actualizado en mayo de 2026», pero eso es la fecha del
+> registro, no de los datos: **publican con más de un año de rezago.**
+>
+> Es decir, **no habrá cifras oficiales de este terremoto por esta vía durante meses.**
+> El adaptador queda construido y consultando, para que el día que publiquen 2026 el mapa
+> se llene solo. Mientras tanto las cifras entran por
+> [`curated/observaciones.json`](../curated/observaciones.json).
+
+**Columnas que usamos.** `fallecidos`, `heridos`, `desaparecidos`, `personas`,
+`viviendas_destruidas`, `viviendas_averiadas`, `centros_de_salud`, `vias_averiadas`.
+Se omiten a propósito las decenas de columnas de ayuda entregada (kits, colchonetas,
+valores): el mapa responde «qué pasó y dónde», no «cuánto se gastó».
+
+**Cuidado con el DIVIPOLA.** Aparece con y sin cero inicial —`5656` y `05656` son el
+mismo municipio— así que hay que rellenar a cinco dígitos. Sin eso, los departamentos
+cuyo código empieza por cero no cruzan con la geometría.
 
 **Licencia.** Datos abiertos del Estado colombiano (Ley 1712 de 2014).
 

@@ -1,0 +1,175 @@
+---
+/**
+ * Cifras reportadas, cada una con su procedencia (ADR-003).
+ *
+ * Es el componente donde el envelope `Observation` se vuelve visible: valor, fuente con
+ * enlace, tipo de fuente y antigüedad. Sin eso sería una tarjeta de números como la de
+ * cualquier otro sitio, y no habría forma de comprobar nada.
+ */
+import { freshnessOf, relativeAgeEs } from '@report-cali/ingest';
+import type { Observation } from '@report-cali/ingest/schema';
+
+import { ETIQUETAS, TIPOS_FUENTE, nombreDeLugar, ordenar } from '../lib/metricas';
+
+interface Props {
+  observaciones: Observation[];
+  municipios: Map<string, string>;
+  ahora: Date;
+}
+
+const { observaciones, municipios, ahora } = Astro.props;
+const ordenadas = ordenar(observaciones);
+
+const formatearNumero = (n: number) => n.toLocaleString('es-CO');
+---
+
+{
+  ordenadas.length > 0 && (
+    <section aria-labelledby="t-cifras">
+      <h2 id="t-cifras">Cifras reportadas</h2>
+      <p class="intro">
+        Cada cifra con su fuente, su hora de corte y su antigüedad. En las primeras 24 horas
+        los balances variaron entre 169, 224 y 234 fallecidos según quién publicara y a qué
+        hora — por eso ninguna cifra aparece aquí sin decir de dónde salió.
+      </p>
+
+      <ul class="cifras">
+        {ordenadas.map((o) => {
+          const frescura = freshnessOf(o, ahora);
+          return (
+            <li class={`cifra cifra--${frescura}`}>
+              <div class="valor">{formatearNumero(o.value)}</div>
+              <div class="cuerpo">
+                <p class="que">
+                  {ETIQUETAS[o.metric]}
+                  <span class="lugar">{nombreDeLugar(o.pcode, municipios)}</span>
+                </p>
+                <p class="procedencia">
+                  <span class={`tipo tipo--${o.source.type}`}>{TIPOS_FUENTE[o.source.type]}</span>
+                  <a href={o.source.url} rel="noopener">
+                    {o.source.name}
+                  </a>
+                  <span class="edad" title={o.observed_at}>
+                    · {relativeAgeEs(o, ahora)}
+                    {frescura === 'stale' && <strong> · puede estar desactualizada</strong>}
+                  </span>
+                </p>
+                {o.notes && <p class="nota">{o.notes}</p>}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+
+      <p class="faltan">
+        <strong>Faltan cifras por municipio.</strong> Los datos abiertos de la UNGRD llegan
+        hasta 2024 —publican con más de un año de rezago—, así que durante la emergencia no
+        hay forma automática de tenerlas. Se registran a mano desde boletines oficiales, con
+        fuente y revisión. Si tienes un boletín con cifras, puedes aportarlo:{' '}
+        <a href="https://github.com/YesidAlmanzaGamba/report_cali/blob/main/curated/observaciones.json">
+          curated/observaciones.json
+        </a>
+        .
+      </p>
+    </section>
+  )
+}
+
+<style>
+  .cifras {
+    list-style: none;
+    margin: 1.25rem 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .cifra {
+    display: grid;
+    grid-template-columns: minmax(5rem, auto) 1fr;
+    align-items: start;
+    gap: 0 1.25rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--fondo-2);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--tinta-3);
+    border-radius: var(--radio);
+  }
+
+  /* La antigüedad se codifica también en el borde, no solo en el texto: quien recorre
+     la lista con la vista ve de una cuáles cifras ya no son de fiar. */
+  .cifra--fresh { border-left-color: #1f8a4c; }
+  .cifra--aging { border-left-color: #b8860b; }
+  .cifra--stale { border-left-color: #a52020; }
+
+  .valor {
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .que {
+    margin: 0.15rem 0 0.3rem;
+    font-weight: 600;
+  }
+
+  .lugar {
+    display: block;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: var(--tinta-3);
+  }
+
+  .procedencia {
+    margin: 0;
+    font-size: 0.83rem;
+    color: var(--tinta-2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .tipo {
+    display: inline-block;
+    padding: 0.05em 0.5em;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    border: 1px solid currentColor;
+  }
+  .tipo--official { color: #1f8a4c; }
+  .tipo--humanitarian { color: #1b4d8f; }
+  .tipo--press { color: #96580a; }
+  .tipo--unverified { color: #a52020; }
+
+  .edad { color: var(--tinta-3); }
+
+  .nota {
+    margin: 0.45rem 0 0;
+    font-size: 0.82rem;
+    color: var(--tinta-3);
+    max-width: 60ch;
+  }
+
+  .faltan {
+    font-size: 0.88rem;
+    color: var(--tinta-2);
+    max-width: 68ch;
+    padding: 0.85rem 1rem;
+    background: var(--fondo-3);
+    border-radius: var(--radio);
+  }
+
+  @media (max-width: 520px) {
+    .cifra {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    .valor { text-align: left; }
+  }
+</style>

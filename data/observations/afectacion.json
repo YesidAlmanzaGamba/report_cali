@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "dataset": "observations/afectacion",
+    "generated_at": "2026-08-11T23:03:31.921Z",
+    "event_id": "us6000tjl2",
+    "record_count": 3,
+    "sources": [
+      {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      }
+    ]
+  },
+  "content_hash": "9d7629379e8062cf8e05318a3749dea857c21781e4a99075e4ccc979176c9077",
+  "observations": [
+    {
+      "metric": "deaths_confirmed",
+      "value": 234,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae (cifra de Asocapitales)",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "ingested_at": "2026-08-11T23:03:23.234Z",
+      "notes": "Balance nacional preliminar. Las cifras variaron entre 169, 224 y 234 según fuente y hora."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 16,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "ingested_at": "2026-08-11T23:03:23.234Z",
+      "notes": "Estructuras colapsadas reportadas en Cali."
+    },
+    {
+      "metric": "health_facilities_affected",
+      "value": 7,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T22:00:00-05:00",
+      "ingested_at": "2026-08-11T23:03:23.234Z",
+      "notes": "Clínicas afectadas en Cali."
+    }
+  ]
+}

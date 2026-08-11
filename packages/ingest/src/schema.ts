@@ -60,19 +60,43 @@ export type Metric = z.infer<typeof MetricSchema>;
 
 /**
  * P-code COD-AB de Colombia. `CO` + código DIVIPOLA del DANE.
+ *   admin0 (país):         CO          → sin dígitos
  *   admin1 (departamento): CO05        → 2 dígitos
  *   admin2 (municipio):    CO05001     → 5 dígitos
+ *
+ * El nivel nacional existe porque las cifras que más circulan en una emergencia son
+ * justamente las del país entero —«234 fallecidos»— y sin un lugar donde ponerlas
+ * tendrían que quedarse fuera del sistema de procedencia, que es donde más falta hace.
  * Ver ADR-006.
  */
 export const PcodeSchema = z
   .string()
-  .regex(/^CO(\d{2}|\d{5})$/, 'P-code inválido: se espera CO + 2 dígitos (depto) o 5 (municipio)');
+  .regex(
+    /^CO(\d{2}|\d{5})?$/,
+    'P-code inválido: se espera CO (país), CO + 2 dígitos (depto) o CO + 5 (municipio)',
+  );
 
-export const ADMIN_LEVELS = [1, 2] as const;
+export const ADMIN_LEVELS = [0, 1, 2] as const;
 
 /** Nivel administrativo implícito en el P-code. */
-export function adminLevelOf(pcode: string): 1 | 2 {
+export function adminLevelOf(pcode: string): 0 | 1 | 2 {
+  if (pcode.length === 2) return 0;
   return pcode.length === 4 ? 1 : 2;
+}
+
+/**
+ * DIVIPOLA del DANE → P-code COD-AB.
+ *
+ * Los datasets del Estado publican el código con y sin cero inicial —«5656» y «05656»
+ * son el mismo municipio de Antioquia—, así que se rellena a cinco dígitos. Sin esto, los
+ * 32 departamentos cuyo código empieza por cero no cruzarían con la geometría.
+ */
+export function pcodeFromDivipola(divipola: string | number): string {
+  const digits = String(divipola).replace(/\D/g, '');
+  if (digits.length === 0) throw new Error(`DIVIPOLA vacío o no numérico: ${String(divipola)}`);
+
+  if (digits.length <= 2) return `CO${digits.padStart(2, '0')}`;
+  return `CO${digits.padStart(5, '0')}`;
 }
 
 /**

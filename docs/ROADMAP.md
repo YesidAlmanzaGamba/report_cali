@@ -8,21 +8,40 @@ búsqueda de personas enrutando a los canales oficiales. 77 pruebas, CI en verde
 
 ---
 
-## Fase 3 — Cifras oficiales por municipio
+## Fase 3 — Cifras de afectación · **parcialmente entregada**
 
-**Objetivo.** Que al abrir un municipio no solo se vea cuánto se sacudió, sino qué
-reportan las autoridades: fallecidos, heridos, albergues abiertos, viviendas afectadas.
+**Objetivo.** Que no solo se vea cuánto se sacudió cada municipio, sino qué se reporta:
+fallecidos, heridos, albergues, viviendas afectadas.
 
-- Adaptador **UNGRD** vía Socrata. Los IDs de dataset hay que resolverlos consultando el
-  catálogo, no adivinarlos (ver `DATA_SOURCES.md`).
-- Adaptador **ReliefWeb** para los informes de situación. Requiere resolver el `appname`;
-  una petición genérica devolvió 403.
-- Panel de procedencia por cifra, con antigüedad y degradado visual cuando envejece.
-- **Exportación CSV / GeoJSON / HXL.** Es lo que convierte el sitio en herramienta de
-  trabajo: un coordinador se lleva la tabla a su propio análisis. HXL es el estándar de
-  etiquetado humanitario y hace que los datos entren directo al ecosistema de OCHA.
+### El supuesto que no se sostuvo
 
-**Depende de:** nada. Se puede empezar ya.
+La fase asumía que las cifras vendrían automáticamente de UNGRD y ReliefWeb. Verificado
+el 2026-08-11, **ninguna de las dos sirve hoy**:
+
+- **UNGRD**: sus datos abiertos terminan el **31 de diciembre de 2024**. Publican con más
+  de un año de rezago, así que no habrá cifras de este terremoto por esa vía en meses.
+- **ReliefWeb**: la API v1 está **decomisionada** y la v2 exige un `appname` **aprobado
+  por ellos**. Es un trámite humano, no un problema de código.
+
+### Lo que se entregó
+
+- ✅ **Adaptador UNGRD** con los IDs resueltos del catálogo y el DIVIPOLA rellenado a
+  cinco dígitos. Hoy devuelve cero filas —correcto, no un fallo— y se llenará solo el día
+  que publiquen 2026.
+- ✅ **`curated/observaciones.json`**: vía humana para registrar cifras desde boletines,
+  con las mismas garantías que el resto (fuente con enlace, hora de corte, mismo esquema,
+  revisión por pull request). Es lo que permite tener cifras hoy.
+- ✅ **Sección «Cifras reportadas»** con procedencia, tipo de fuente y antigüedad, que
+  degrada visualmente lo viejo.
+
+### Lo que falta
+
+- ⬜ **Exportación CSV / GeoJSON / HXL.** Convierte el sitio en herramienta de trabajo: un
+  coordinador se lleva la tabla a su propio análisis. HXL es el estándar de etiquetado de
+  OCHA y hace que los datos entren directo a ese ecosistema.
+- ⬜ **Cifras dentro de la ficha del municipio**, al tocarlo en el mapa.
+- ⬜ **Solicitar el `appname` a ReliefWeb** en
+  <https://apidoc.reliefweb.int/parameters#appname> — trámite, no código.
 
 ---
 

@@ -12,9 +12,12 @@
 import { readFile } from 'node:fs/promises';
 import type { FeatureCollection, Geometry } from 'geojson';
 
+import { loadCuratedObservations } from './curated.js';
 import { joinMmiToMunicipios } from './join/mmi.js';
 import { DATA_DIR } from './paths.js';
-import { writeGeoJson, writeJson } from './persist.js';
+import { writeDataset, writeGeoJson, writeJson } from './persist.js';
+import type { Observation } from './schema.js';
+import { fetchUngrdSeismic } from './sources/ungrd.js';
 import {
   topologyToFeatures,
   type MunicipioProperties,
@@ -115,6 +118,33 @@ async function main(): Promise<void> {
 
       const top = joined[0];
       return `${joined.length} municipios, máximo ${top?.mmi} (${top?.mmi_roman}) en ${top?.name} ${
+        written.changed ? '(escrito)' : '(sin cambios)'
+      }`;
+    });
+
+    await step('Cifras oficiales y de prensa', async () => {
+      // Dos orígenes con el mismo destino. La UNGRD hoy devuelve cero filas porque sus
+      // datos abiertos llegan hasta 2024; queda consultando para que el día que publiquen
+      // 2026 esto se llene solo, sin que nadie tenga que acordarse.
+      const [curadas, ungrd] = await Promise.all([
+        loadCuratedObservations(),
+        fetchUngrdSeismic(currentEvent.originTime).catch((error: unknown) => {
+          console.warn(`\n  (UNGRD no respondió: ${(error as Error).message})`);
+          return [] as Observation[];
+        }),
+      ]);
+
+      const todas = [...curadas, ...ungrd];
+      if (todas.length === 0) throw new Error('No hay ninguna observación que publicar');
+
+      const written = await writeDataset({
+        dataDir: DATA_DIR,
+        name: 'observations/afectacion',
+        observations: todas,
+        sources: [...new Map(todas.map((o) => [o.source.url, o.source])).values()],
+      });
+
+      return `${curadas.length} curadas + ${ungrd.length} de UNGRD ${
         written.changed ? '(escrito)' : '(sin cambios)'
       }`;
     });
