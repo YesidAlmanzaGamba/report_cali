@@ -16,6 +16,7 @@ import { feature } from 'topojson-client';
 import type { FeatureCollection, Geometry } from 'geojson';
 
 import { levelFor, mmiColorStops } from './mmi';
+import { ETIQUETAS, TIPOS_FUENTE, ordenar } from './metricas';
 
 interface MunicipioProps {
   pcode: string;
@@ -32,6 +33,9 @@ interface MunicipioMmi {
   mmi_roman: string;
   method: 'grid' | 'centroid';
 }
+
+/** Lo que el mapa necesita de una observación. El tipo completo vive en el paquete de ingesta. */
+type ObservacionLigera = import('@report-cali/ingest/schema').Observation;
 
 /**
  * Origen de los datos.
@@ -87,17 +91,23 @@ export async function iniciarMapa(): Promise<void> {
   let mmiPorMunicipio: { municipalities: MunicipioMmi[] };
   let evento: { longitude: number; latitude: number; magnitude: number };
   let replicas: FeatureCollection<Geometry, { magnitude: number; place: string; time: string }>;
+  let afectacion: { observations: ObservacionLigera[] };
 
   try {
-    [municipiosTopo, departamentosTopo, mmiPorMunicipio, evento, replicas] = await Promise.all([
-      getJson('boundaries/municipios.topojson'),
-      getJson('boundaries/departamentos.topojson'),
-      getJson<{ municipalities: MunicipioMmi[] }>('event/mmi-by-municipality.json'),
-      getJson<{ longitude: number; latitude: number; magnitude: number }>('event/event.json'),
-      getJson<FeatureCollection<Geometry, { magnitude: number; place: string; time: string }>>(
-        'event/aftershocks.geojson',
-      ),
-    ]);
+    [municipiosTopo, departamentosTopo, mmiPorMunicipio, evento, replicas, afectacion] =
+      await Promise.all([
+        getJson('boundaries/municipios.topojson'),
+        getJson('boundaries/departamentos.topojson'),
+        getJson<{ municipalities: MunicipioMmi[] }>('event/mmi-by-municipality.json'),
+        getJson<{ longitude: number; latitude: number; magnitude: number }>('event/event.json'),
+        getJson<FeatureCollection<Geometry, { magnitude: number; place: string; time: string }>>(
+          'event/aftershocks.geojson',
+        ),
+        // Las cifras son opcionales: si aún no hay ninguna, el mapa funciona igual.
+        getJson<{ observations: ObservacionLigera[] }>('observations/afectacion.json').catch(
+          () => ({ observations: [] }),
+        ),
+      ]);
   } catch (error) {
     // La tabla ya está renderizada en el HTML, así que la página sigue siendo útil.
     contenedor.innerHTML =
@@ -250,6 +260,63 @@ export async function iniciarMapa(): Promise<void> {
     if (el) el.textContent = texto;
   };
 
+  // Cifras agrupadas por municipio, para poder mostrarlas al tocar uno.
+  const cifrasPorPcode = new Map<string, ObservacionLigera[]>();
+  for (const o of afectacion.observations) {
+    const lista = cifrasPorPcode.get(o.pcode);
+    if (lista) lista.push(o);
+    else cifrasPorPcode.set(o.pcode, [o]);
+  }
+
+  /**
+   * Pinta las cifras del municipio dentro de la ficha.
+   *
+   * Se construye con `textContent` y `createElement`, nunca con `innerHTML`: el nombre de
+   * la fuente y las notas vienen de un archivo que edita gente por pull request, y aunque
+   * pase por revisión, no es lugar para confiar en que nadie escriba una etiqueta.
+   */
+  function pintarCifras(pcode: string): void {
+    const contenedor = document.getElementById('detalle-cifras');
+    const lista = document.getElementById('detalle-lista');
+    if (!contenedor || !lista) return;
+
+    const cifras = ordenar(cifrasPorPcode.get(pcode) ?? []);
+    lista.replaceChildren();
+
+    if (cifras.length === 0) {
+      contenedor.setAttribute('hidden', '');
+      return;
+    }
+
+    for (const o of cifras) {
+      const li = document.createElement('li');
+
+      const n = document.createElement('span');
+      n.className = 'n';
+      n.textContent = o.value.toLocaleString('es-CO');
+
+      const q = document.createElement('span');
+      q.className = 'q';
+      q.textContent = ETIQUETAS[o.metric];
+
+      const f = document.createElement('span');
+      f.className = 'f';
+      f.textContent = `${TIPOS_FUENTE[o.source.type]} · `;
+
+      const a = document.createElement('a');
+      a.href = o.source.url;
+      a.rel = 'noopener';
+      a.textContent = o.source.name;
+      f.append(a);
+
+      q.append(f);
+      li.append(n, q);
+      lista.append(li);
+    }
+
+    contenedor.removeAttribute('hidden');
+  }
+
   function mostrar(props: Record<string, unknown>): void {
     const mmi = typeof props['mmi'] === 'number' ? props['mmi'] : null;
 
@@ -279,6 +346,8 @@ export async function iniciarMapa(): Promise<void> {
         grado.style.color = nivel.ink;
       }
     }
+
+    pintarCifras(String(props['pcode'] ?? ''));
 
     panel?.removeAttribute('hidden');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], props['pcode'] as string]);

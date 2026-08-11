@@ -35,7 +35,16 @@ const ahora = new Date();
 // Renderizamos la tabla y el resumen en tiempo de compilación a propósito: la página
 // sirve aunque el JavaScript no cargue nunca, que es exactamente lo que pasa con un
 // celular en 3G en zona de desastre. El mapa es una mejora, no un requisito.
-const masAfectados = municipios.slice(0, 25);
+// Los 25 de mayor intensidad, más cualquier municipio con cifras reportadas aunque su
+// sacudimiento no esté entre los más fuertes: si alguien reportó daños ahí, es
+// operativamente relevante y esconderlo por no llegar al top 25 sería un error.
+const conCifras = new Set(
+  (afectacion.observations as { pcode: string }[]).map((o) => o.pcode),
+);
+const masAfectados = [
+  ...municipios.slice(0, 25),
+  ...municipios.slice(25).filter((m) => conCifras.has(m.pcode)),
+];
 const leyenda = levelsPresent(municipios.map((m) => m.mmi)).reverse();
 
 const porDepartamento = [...municipios].reduce<Map<string, { nombre: string; max: number; n: number }>>(
@@ -145,6 +154,12 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
               <span id="detalle-valor" class="detalle-valor"></span>
             </p>
             <p id="detalle-label" class="detalle-label"></p>
+
+            <div id="detalle-cifras" class="detalle-cifras" hidden>
+              <h4>Cifras reportadas</h4>
+              <ul id="detalle-lista"></ul>
+            </div>
+
             <p id="detalle-metodo" class="detalle-metodo"></p>
           </aside>
 
@@ -189,7 +204,8 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
         <h2 id="t-tabla">Municipios con mayor intensidad</h2>
         <p class="intro">
           Los 25 municipios donde el sacudimiento fue más fuerte, de {municipios.length.toLocaleString('es-CO')}
-          con cobertura de la malla del ShakeMap.
+          con cobertura de la malla del ShakeMap, más los que tengan cifras reportadas.
+          Toca una fila para verla en el mapa.
         </p>
 
         <div class="tabla-scroll">
@@ -231,6 +247,43 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
           <strong>Método:</strong> «malla» significa que había celdas del ShakeMap dentro del
           municipio y se tomó la mayor. «Centroide» significa que el municipio es más pequeño que
           una celda y se muestreó en su centro. Se registra para que el dato sea auditable.
+        </p>
+      </section>
+
+      <section aria-labelledby="t-descargas">
+        <h2 id="t-descargas">Descargar los datos</h2>
+        <p class="intro">
+          Para llevarlos a tu propio análisis. Los CSV traen una segunda fila con etiquetas
+          <strong>HXL</strong>, el estándar de OCHA: se ve rara al abrirla en Excel, pero es lo
+          que permite que las herramientas del ecosistema humanitario entiendan las columnas sin
+          que nadie las mapee a mano.
+        </p>
+
+        <ul class="descargas">
+          <li>
+            <a href={`${import.meta.env.BASE_URL}data/export/mmi-por-municipio.csv`} download>
+              Intensidad por municipio <span class="fmt">CSV + HXL</span>
+            </a>
+            <span class="det">{municipios.length.toLocaleString('es-CO')} municipios con su MMI, grado Mercalli y método de cálculo</span>
+          </li>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}data/export/observaciones.csv`} download>
+              Cifras reportadas <span class="fmt">CSV + HXL</span>
+            </a>
+            <span class="det">Una fila por cifra, con fuente, enlace y hora de corte</span>
+          </li>
+          <li>
+            <a href={`${import.meta.env.BASE_URL}data/boundaries/municipios.topojson`} download>
+              Límites municipales <span class="fmt">TopoJSON</span>
+            </a>
+            <span class="det">Geometría COD-AB con P-codes, para cruzar por <code>pcode</code></span>
+          </li>
+        </ul>
+
+        <p class="pie-tabla">
+          Datos bajo CC-BY-4.0, respetando las licencias de las fuentes originales
+          (<a href="https://github.com/YesidAlmanzaGamba/report_cali/blob/main/docs/DATA_SOURCES.md">documentadas aquí</a>).
+          Los P-codes equivalen a DIVIPOLA del DANE, así que cruzan directo con datos nacionales.
         </p>
       </section>
 
@@ -558,6 +611,49 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
         font-size: 0.75rem;
         color: var(--tinta-3);
       }
+
+      .detalle-cifras {
+        margin-top: 0.85rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--borde);
+      }
+      .detalle-cifras h4 {
+        margin: 0 0 0.5rem;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--tinta-3);
+      }
+      .detalle-cifras ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .detalle-cifras li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0 0.6rem;
+        align-items: baseline;
+        font-size: 0.85rem;
+      }
+      .detalle-cifras .n {
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        font-size: 1.05rem;
+      }
+      .detalle-cifras .q {
+        line-height: 1.35;
+      }
+      .detalle-cifras .f {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--tinta-3);
+      }
+      .detalle-cifras .f a {
+        color: inherit;
+      }
       #cerrar-detalle {
         position: absolute;
         top: 0.4rem;
@@ -710,6 +806,44 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
         font-size: 0.85rem;
         color: var(--tinta-2);
         max-width: 70ch;
+      }
+
+      /* ── Descargas ────────────────────────────────────────── */
+      .descargas {
+        list-style: none;
+        margin: 1.25rem 0 1rem;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .descargas li {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.8rem 1rem;
+        background: var(--fondo-2);
+        border: 1px solid var(--borde);
+        border-radius: var(--radio);
+      }
+      .descargas a {
+        font-weight: 600;
+      }
+      .descargas .fmt {
+        display: inline-block;
+        margin-left: 0.4rem;
+        padding: 0.05em 0.5em;
+        border-radius: 999px;
+        background: var(--fondo-3);
+        color: var(--tinta-2);
+        font-size: 0.68rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        vertical-align: 1px;
+      }
+      .descargas .det {
+        font-size: 0.84rem;
+        color: var(--tinta-3);
       }
 
       /* ── Alcance y pie ────────────────────────────────────── */

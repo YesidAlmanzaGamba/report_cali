@@ -209,6 +209,15 @@ export async function writeGeoJson(
   );
 }
 
+/** Texto plano generado (CSV de exportación). */
+export async function writeText(
+  dataDir: string,
+  name: string,
+  contents: string,
+): Promise<WriteResult> {
+  return writeIfChanged(join(dataDir, name), contents);
+}
+
 /** TopoJSON compacto: es lo que descarga el navegador. */
 export async function writeTopoJson(
   dataDir: string,

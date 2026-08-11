@@ -13,9 +13,10 @@ import { readFile } from 'node:fs/promises';
 import type { FeatureCollection, Geometry } from 'geojson';
 
 import { loadCuratedObservations } from './curated.js';
-import { joinMmiToMunicipios } from './join/mmi.js';
+import { mmiToCsv, observacionesToCsv } from './export.js';
+import { joinMmiToMunicipios, type MunicipioMmi } from './join/mmi.js';
 import { DATA_DIR } from './paths.js';
-import { writeDataset, writeGeoJson, writeJson } from './persist.js';
+import { writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
 import type { Observation } from './schema.js';
 import { fetchUngrdSeismic } from './sources/ungrd.js';
 import {
@@ -80,6 +81,9 @@ async function main(): Promise<void> {
   console.log('Ingesta — mapa de situación terremoto Colombia 2026\n');
 
   let event: EarthquakeEvent | undefined;
+  // Se guardan para la exportación final, que necesita ambos conjuntos a la vez.
+  let mmiPorMunicipio: MunicipioMmi[] = [];
+  let observaciones: Observation[] = [];
 
   await step('Evento USGS', async () => {
     event = await fetchEvent();
@@ -106,6 +110,7 @@ async function main(): Promise<void> {
       if (joined.length === 0) {
         throw new Error('El cruce MMI × municipios no produjo ningún resultado');
       }
+      mmiPorMunicipio = joined;
 
       const written = await writeJson(DATA_DIR, 'event/mmi-by-municipality', {
         source: USGS_SOURCE,
@@ -136,6 +141,7 @@ async function main(): Promise<void> {
 
       const todas = [...curadas, ...ungrd];
       if (todas.length === 0) throw new Error('No hay ninguna observación que publicar');
+      observaciones = todas;
 
       const written = await writeDataset({
         dataDir: DATA_DIR,
@@ -168,6 +174,26 @@ async function main(): Promise<void> {
       });
 
       return `${aftershocks.length} réplicas ${written.changed ? '(escrito)' : '(sin cambios)'}`;
+    });
+  }
+
+  if (mmiPorMunicipio.length > 0) {
+    await step('Exportación CSV/HXL', async () => {
+      const nombres = new Map(
+        mmiPorMunicipio.map((m) => [m.pcode, `${m.name}, ${m.admin1_name}`]),
+      );
+
+      const escritos = [
+        await writeText(DATA_DIR, 'export/mmi-por-municipio.csv', mmiToCsv(mmiPorMunicipio)),
+        await writeText(
+          DATA_DIR,
+          'export/observaciones.csv',
+          observacionesToCsv(observaciones, { nombres }),
+        ),
+      ];
+
+      const cambiados = escritos.filter((e) => e.changed).length;
+      return `2 archivos ${cambiados > 0 ? `(${cambiados} escrito${cambiados > 1 ? 's' : ''})` : '(sin cambios)'}`;
     });
   }
 
