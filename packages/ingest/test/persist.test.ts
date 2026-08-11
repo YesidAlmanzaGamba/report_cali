@@ -8,6 +8,8 @@ import {
   SourceContractError,
   contentHashOf,
   writeDataset,
+  writeGeoJson,
+  writeJson,
   type DatasetFile,
 } from '../src/persist.js';
 import type { Observation, Source } from '../src/schema.js';
@@ -173,6 +175,87 @@ describe('writeDataset', () => {
 
       assert.equal(result.changed, true);
     });
+  });
+});
+
+describe('writeJson / writeGeoJson — marcas de tiempo volátiles', () => {
+  // Regresión de un fallo real observado en producción: el cron hizo commit de
+  // `mmi-by-municipality.json` cuando lo ÚNICO que cambió fue `generated_at`. Los 1.122
+  // valores de intensidad eran idénticos. A 96 corridas diarias, eso ahoga el historial
+  // de git — que es justamente nuestra trazabilidad de procedencia (ADR-004).
+  it('no reescribe cuando solo cambió generated_at', async () => {
+    const dataset = (generadoEn: string) => ({
+      generated_at: generadoEn,
+      event_id: 'us6000tjl2',
+      municipalities: [{ pcode: 'CO17001', name: 'Manizales', mmi: 8 }],
+    });
+
+    const primera = await writeJson(dataDir, 'event/mmi', dataset('2026-08-11T17:35:56.313Z'));
+    assert.equal(primera.changed, true);
+
+    const segunda = await writeJson(dataDir, 'event/mmi', dataset('2026-08-11T21:29:48.498Z'));
+    assert.equal(segunda.changed, false);
+  });
+
+  it('no reescribe cuando el USGS solo tocó `updatedAt` del registro', async () => {
+    // El USGS mueve `updated` sin que cambie la ciencia. Cuando revisan el ShakeMap de
+    // verdad, cambian el MMI y la URL versionada del producto, y eso sí se escribe.
+    const evento = (actualizado: string) => ({
+      id: 'us6000tjl2',
+      magnitude: 7.4,
+      updatedAt: actualizado,
+      ingested_at: actualizado,
+    });
+
+    await writeJson(dataDir, 'event/event', evento('2026-08-11T17:26:19.239Z'));
+    const segunda = await writeJson(dataDir, 'event/event', evento('2026-08-11T21:19:40.010Z'));
+
+    assert.equal(segunda.changed, false);
+  });
+
+  it('sí reescribe cuando cambia un valor real junto a la marca de tiempo', async () => {
+    const dataset = (mmi: number, generadoEn: string) => ({
+      generated_at: generadoEn,
+      municipalities: [{ pcode: 'CO17001', mmi }],
+    });
+
+    await writeJson(dataDir, 'event/mmi', dataset(8, '2026-08-11T17:00:00.000Z'));
+    const segunda = await writeJson(dataDir, 'event/mmi', dataset(8.3, '2026-08-11T21:00:00.000Z'));
+
+    assert.equal(segunda.changed, true);
+  });
+
+  it('escribe la marca nueva cuando sí hubo cambio real', async () => {
+    await writeJson(dataDir, 'event/mmi', { generated_at: 'a', mmi: 1 });
+    const { path } = await writeJson(dataDir, 'event/mmi', { generated_at: 'b', mmi: 2 });
+
+    const guardado = JSON.parse(await readFile(path, 'utf8')) as { generated_at: string };
+    assert.equal(guardado.generated_at, 'b');
+  });
+
+  it('ignora marcas volátiles anidadas, no solo las de primer nivel', async () => {
+    const conAnidado = (t: string) => ({
+      meta: { fuente: { name: 'USGS' }, generated_at: t },
+      valores: [{ pcode: 'CO17001', mmi: 8, ingested_at: t }],
+    });
+
+    await writeJson(dataDir, 'event/anidado', conAnidado('2026-08-11T17:00:00.000Z'));
+    const segunda = await writeJson(dataDir, 'event/anidado', conAnidado('2026-08-11T21:00:00.000Z'));
+
+    assert.equal(segunda.changed, false);
+  });
+
+  it('aplica lo mismo a GeoJSON', async () => {
+    const replicas = (t: string) => ({
+      type: 'FeatureCollection',
+      generated_at: t,
+      features: [{ type: 'Feature', properties: { magnitude: 4.6 } }],
+    });
+
+    await writeGeoJson(dataDir, 'event/replicas', replicas('2026-08-11T17:00:00.000Z'));
+    const segunda = await writeGeoJson(dataDir, 'event/replicas', replicas('2026-08-11T21:00:00.000Z'));
+
+    assert.equal(segunda.changed, false);
   });
 });
 

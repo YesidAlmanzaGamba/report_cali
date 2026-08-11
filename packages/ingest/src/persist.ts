@@ -127,18 +127,64 @@ export async function writeDataset(options: WriteDatasetOptions): Promise<WriteR
 }
 
 /**
+ * Marcas de tiempo que cambian en cada corrida sin que cambie ningún dato real.
+ *
+ * `generated_at` e `ingested_at` son nuestras. `updatedAt` viene del USGS y se mueve cada
+ * vez que tocan el registro del evento, aunque la ciencia sea idéntica. Cuando el USGS
+ * revisa de verdad el ShakeMap sí cambian cosas que nos importan —el MMI, la URL versionada
+ * del producto— y esas sí disparan escritura.
+ *
+ * Sin esta lista, el cron produce ~96 commits diarios en los que lo único que cambia es la
+ * hora, y el historial de git —que ES nuestra trazabilidad de procedencia (ADR-004)— queda
+ * ahogado en ruido.
+ */
+const VOLATILE_KEYS = new Set(['generated_at', 'ingested_at', 'updatedAt']);
+
+/** Copia sin las marcas de tiempo volátiles, a cualquier profundidad. */
+function stripVolatile(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(stripVolatile);
+
+  if (value !== null && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [key, inner] of Object.entries(value as Record<string, unknown>)) {
+      if (VOLATILE_KEYS.has(key)) continue;
+      out[key] = stripVolatile(inner);
+    }
+    return out;
+  }
+
+  return value;
+}
+
+/**
  * Escribe un archivo generado solo si su contenido cambió.
  *
  * Sirve para los datasets que no son observaciones — geometría, malla de intensidad,
  * ficha del evento. No llevan el envelope `Observation` porque no son cifras reportadas
  * por alguien: son la base cartográfica y científica sobre la que se dibuja todo.
+ *
+ * `hashBasis` permite comparar por el contenido significativo y aun así escribir el
+ * archivo completo, con sus marcas de tiempo, cuando algo cambió de verdad.
  */
-async function writeIfChanged(path: string, serialized: string): Promise<WriteResult> {
-  const hash = createHash('sha256').update(serialized).digest('hex');
+async function writeIfChanged(
+  path: string,
+  serialized: string,
+  hashBasis: string = serialized,
+): Promise<WriteResult> {
+  const hash = createHash('sha256').update(hashBasis).digest('hex');
   const previous = await readFile(path, 'utf8').catch(() => undefined);
 
-  if (previous !== undefined && createHash('sha256').update(previous).digest('hex') === hash) {
-    return { path, changed: false, recordCount: 0 };
+  if (previous !== undefined) {
+    let previousBasis = previous;
+    try {
+      previousBasis = JSON.stringify(stripVolatile(JSON.parse(previous)));
+    } catch {
+      // No es JSON o está corrupto: se compara crudo y, si difiere, se reescribe.
+    }
+
+    if (createHash('sha256').update(previousBasis).digest('hex') === hash) {
+      return { path, changed: false, recordCount: 0 };
+    }
   }
 
   await mkdir(dirname(path), { recursive: true });
@@ -156,7 +202,11 @@ export async function writeGeoJson(
   name: string,
   geojson: unknown,
 ): Promise<WriteResult> {
-  return writeIfChanged(join(dataDir, `${name}.geojson`), `${JSON.stringify(geojson)}\n`);
+  return writeIfChanged(
+    join(dataDir, `${name}.geojson`),
+    `${JSON.stringify(geojson)}\n`,
+    JSON.stringify(stripVolatile(geojson)),
+  );
 }
 
 /** TopoJSON compacto: es lo que descarga el navegador. */
@@ -165,7 +215,11 @@ export async function writeTopoJson(
   name: string,
   topology: unknown,
 ): Promise<WriteResult> {
-  return writeIfChanged(join(dataDir, `${name}.topojson`), `${JSON.stringify(topology)}\n`);
+  return writeIfChanged(
+    join(dataDir, `${name}.topojson`),
+    `${JSON.stringify(topology)}\n`,
+    JSON.stringify(stripVolatile(topology)),
+  );
 }
 
 /**
@@ -177,5 +231,9 @@ export async function writeJson(
   name: string,
   value: unknown,
 ): Promise<WriteResult> {
-  return writeIfChanged(join(dataDir, `${name}.json`), `${JSON.stringify(value, null, 2)}\n`);
+  return writeIfChanged(
+    join(dataDir, `${name}.json`),
+    `${JSON.stringify(value, null, 2)}\n`,
+    JSON.stringify(stripVolatile(value)),
+  );
 }
