@@ -74,10 +74,12 @@ jobs:
               echo "  En Cloudflare: Workers & Pages → Overview. La primera vez pide"
               echo "  elegir un subdominio; sin eso no se puede publicar desde CI."
             fi
-            if grep -qiE "authentication|unauthorized|10000|permission" salida.txt; then
-              echo "→ El token no tiene los permisos necesarios."
-              echo "  Debe incluir 'Account · Workers Scripts · Edit'."
-              echo "  Rehazlo siguiendo el paso A2 de docs/TUTORIAL.md."
+            if grep -qiE "authentication|unauthorized|10000|permission|forbidden|denied" salida.txt; then
+              echo "→ Al token le faltan permisos."
+              echo "  Rehazlo con la PLANTILLA 'Edit Cloudflare Workers' (no a mano):"
+              echo "  My Profile → API Tokens → Create Token → 'Edit Cloudflare Workers' → Use template."
+              echo "  Armado a mano falla de forma confusa: whoami funciona pero deploy no."
+              echo "  Detalle en el paso A2 de docs/TUTORIAL.md."
             fi
             if grep -qiE "account.*not found|invalid account" salida.txt; then
               echo "→ El CLOUDFLARE_ACCOUNT_ID no corresponde a la cuenta del token."

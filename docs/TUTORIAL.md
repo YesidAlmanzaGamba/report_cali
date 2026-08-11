@@ -40,18 +40,25 @@ Este token es lo que le permite a GitHub publicar en tu cuenta de Cloudflare.
 1. Arriba a la derecha, haz clic en el **ícono de tu perfil** → **My Profile**.
 2. En el menú izquierdo, **API Tokens**.
 3. Botón azul **Create Token**.
-4. Baja hasta el final y elige **Create Custom Token** → **Get started**.
-5. Llénalo así:
+4. En la lista de plantillas, busca **«Edit Cloudflare Workers»** y haz clic en
+   **Use template**.
+
+> **Usa la plantilla, no armes los permisos a mano.** Es lo que recomienda la propia
+> documentación de Cloudflare para CI/CD, y trae varios permisos que el despliegue
+> necesita y que no son evidentes: además de `Workers Scripts · Edit`, incluye
+> `Account Settings · Read`, `Workers KV · Edit`, `Workers R2 Storage · Edit` y
+> `Workers Routes · Edit`. Con un token armado a mano el despliegue falla de formas
+> difíciles de diagnosticar — `wrangler whoami` funciona, pero `wrangler deploy` no.
+>
+> Ventaja extra: ya incluye el permiso de R2, así que no hay que volver aquí para la
+> Parte C.
+
+5. En el formulario, deja los permisos como vienen y ajusta solo los recursos:
 
    | Campo | Valor |
    |---|---|
-   | **Token name** | `report-cali-deploy` |
-   | **Permissions** — fila 1 | `Account` · `Workers Scripts` · **`Edit`** |
-   | **Permissions** — fila 2 | `Account` · `Workers R2 Storage` · **`Edit`** |
    | **Account Resources** | `Include` · tu cuenta |
-
-   La fila 2 se agrega con el botón **+ Add more**. La necesitas para la Parte C; si la
-   agregas ahora te ahorras volver.
+   | **Zone Resources** | `Include` · `All zones` (o déjalo como venga) |
 
 6. **Continue to summary** → **Create Token**.
 7. **Copia el token que aparece y guárdalo ya.** Cloudflare **no lo vuelve a mostrar
@@ -184,7 +191,8 @@ corre `wrangler whoami`, que muestra a qué cuenta pertenece el token y qué per
 | Síntoma | Causa casi siempre | Solución |
 |---|---|---|
 | Falla al publicar y el log menciona **`subdomain`** | La cuenta nunca ha publicado un Worker y **falta elegir el subdominio `workers.dev`** | Cloudflare → **Workers & Pages** → **Overview**. Te pedirá elegir un subdominio una sola vez. Es la causa más común en cuentas nuevas |
-| `Authentication error` / `code 10000` | Al token le falta un permiso | Rehaz A2. Debe tener **Workers Scripts · Edit** |
+| El Worker responde **«Hello world»** | Existe el Worker de ejemplo del panel, pero nuestro sitio nunca se subió porque el despliegue falla | Arregla el despliegue; el primer `wrangler deploy` correcto lo reemplaza |
+| `Authentication error` / `code 10000` / falla sin mensaje claro | El token se armó a mano y le faltan permisos | **Rehaz A2 usando la plantilla «Edit Cloudflare Workers»**. Es la causa más común después del subdominio |
 | `account not found` | El Account ID no es de la misma cuenta del token | Revisa A1; cópialo de la URL del panel |
 | **Desplegar** en verde pero no hay Worker | Los secretos no existen o están mal escritos | Revisa mayúsculas y guiones bajos en A3 |
 | **Subir a R2** avisa y sigue | El bucket no existe todavía | Normal si no has hecho la Parte C. **No rompe nada** |
