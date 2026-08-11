@@ -33,7 +33,19 @@ interface MunicipioMmi {
   method: 'grid' | 'centroid';
 }
 
-const DATA = '/data';
+/**
+ * Origen de los datos.
+ *
+ * Por defecto, el propio sitio (`/data`), que es lo que hace funcionar `npm run dev` sin
+ * configurar nada. En producción se apunta a un bucket de R2 con `PUBLIC_DATA_URL`.
+ *
+ * El motivo es de cuota, no de rendimiento: Cloudflare Pages da 500 compilaciones al mes
+ * en el plan gratuito, y si los datos viajan dentro del sitio, cada actualización del
+ * cron gasta una. En emergencia activa eso son 600–1.500 al mes y los despliegues se
+ * detienen. Sirviendo los datos aparte, solo el código dispara compilaciones.
+ * Ver docs/DESPLIEGUE.md.
+ */
+const DATA = (import.meta.env['PUBLIC_DATA_URL'] as string | undefined)?.replace(/\/$/, '') ?? '/data';
 
 async function getJson<T>(path: string): Promise<T> {
   const response = await fetch(`${DATA}/${path}`);

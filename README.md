@@ -125,6 +125,15 @@ pregunta. Esto es deliberado: la conexión real de un socorrista en zona de desa
 
 ## Despliegue
 
+Guía completa —arquitectura, almacenamiento, cuotas y costos— en
+[`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md). Qué sigue, en
+[`docs/ROADMAP.md`](docs/ROADMAP.md).
+
+> **La regla que sostiene el costo en cero:** los datos **no** pasan por la compilación del
+> sitio. Cloudflare Pages da 500 compilaciones al mes en el plan gratuito, y el cron de
+> ingesta produciría entre 600 y 1.500 en emergencia activa. Los datos se sirven desde R2
+> —con egreso sin cargo— y solo el código dispara compilaciones.
+
 El sitio es estático y se publica en Cloudflare Pages. Dos caminos:
 
 1. **Desde el panel de Cloudflare** (más simple): conectar el repositorio con
