@@ -137,6 +137,12 @@ El sitio es estático y se publica en Cloudflare Pages. Dos caminos:
 `.github/workflows/ingesta.yml` vuelve a consultar las fuentes cada 15 minutos y hace
 commit en `data/` **solo si el contenido cambió**, lo que a su vez dispara un despliegue.
 
+> **Falta un ajuste manual para que el cron pueda publicar.**
+> En *Settings → Actions → General → Workflow permissions*, elegir
+> **«Read and write permissions»**. Sin eso el flujo de ingesta corre y trae los datos,
+> pero el `git push` final falla: el permiso `contents: write` del archivo no puede
+> superar el máximo que fije el repositorio.
+
 ## Cómo contribuir
 
 Se necesita ayuda y se agradece. Cada adaptador de ingesta es una tarea autocontenida y
