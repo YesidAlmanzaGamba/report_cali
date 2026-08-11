@@ -1,0 +1,39 @@
+name: Dato incorrecto / Incorrect data
+description: Reportar una cifra equivocada, desactualizada o mal ubicada en el mapa
+title: "[dato] "
+labels: ["dato-incorrecto", "prioridad-alta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Los datos equivocados en una emergencia hacen daño real. Este reporte tiene
+        prioridad alta y se atiende antes que cualquier función nueva.
+
+        **Si es una emergencia en curso, no abras un issue: llama al 123.**
+
+  - type: input
+    id: municipio
+    attributes:
+      label: Municipio o lugar afectado
+      placeholder: "Ej: Quibdó, Chocó"
+    validations:
+      required: true
+
+  - type: textarea
+    id: incorrecto
+    attributes:
+      label: ¿Qué muestra el sitio ahora?
+      placeholder: "El mapa dice 12 albergues abiertos, con fuente UNGRD del 11 de agosto."
+    validations:
+      required: true
+
+  - type: textarea
+    id: correcto
+    attributes:
+      label: ¿Cuál es el dato correcto, y cuál es la fuente?
+      description: |
+        Necesitamos la fuente. Sin fuente verificable no podemos publicar una corrección
+        — es la regla ADR-003 y aplica también para las correcciones.
+      placeholder: "Son 8. Boletín de la Alcaldía de Quibdó del 11/08 6:00 p.m.: <URL>"
+    validations:
+      required: true

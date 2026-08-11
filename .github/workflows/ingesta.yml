@@ -1,0 +1,49 @@
+name: Ingesta de datos
+
+# Cada 15 minutos. Solo hace commit si el contenido cambió de verdad: el hash que
+# calcula `writeDataset` ignora `ingested_at`, así que una corrida sin novedades no
+# ensucia el historial. Ese historial ES la trazabilidad de procedencia (ADR-004).
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+# Evita que dos corridas se pisen y produzcan un conflicto al hacer push.
+concurrency:
+  group: ingesta
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  ingesta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Consultar fuentes
+        run: npm run ingest
+
+      - name: Publicar si hubo cambios
+        run: |
+          if [ -z "$(git status --porcelain data/)" ]; then
+            echo "Sin cambios en los datos."
+            exit 0
+          fi
+
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/
+          git commit -m "datos: actualización automática $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+          # Otra corrida pudo haber hecho push mientras esta trabajaba.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -1,0 +1,17 @@
+{
+  "source": {
+    "name": "COD-AB (OCHA / DANE)",
+    "url": "https://data.humdata.org/dataset/cod-ab-col",
+    "type": "humanitarian"
+  },
+  "generated_at": "2026-08-11T17:35:21.097Z",
+  "municipio_count": 1122,
+  "departamento_count": 33,
+  "format": "TopoJSON — arcos compartidos y coordenadas cuantizadas",
+  "simplification": {
+    "method": "topojson-simplify (Visvalingam, topología preservada)",
+    "municipio_retention": 0.04,
+    "departamento_retention": 0.06
+  },
+  "license": "CC-BY-IGO 3.0 — OCHA / DANE"
+}

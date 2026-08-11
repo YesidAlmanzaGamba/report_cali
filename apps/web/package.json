@@ -1,0 +1,24 @@
+{
+  "name": "@report-cali/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "predev": "node scripts/copy-data.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/copy-data.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check --minimumSeverity error"
+  },
+  "dependencies": {
+    "maplibre-gl": "^5.6.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.2.1",
+    "typescript": "^5.7.2"
+  }
+}

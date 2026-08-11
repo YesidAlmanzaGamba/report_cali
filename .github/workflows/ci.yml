@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Las pruebas nunca tocan la red: corren contra fixtures grabados.
+# Ver CONTRIBUTING.md → "Reglas de las pruebas".
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Astro exige Node >= 22.12. '22' resuelve a la última 22.x.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Pruebas
+        run: npm test
+
+      - name: Compilar el sitio
+        run: npm run build
+
+  # Barrera automática de la regla dura ADR-001: ningún dato personal
+  # puede entrar al repositorio, ni siquiera por accidente.
+  sin-datos-personales:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar que data/ no contiene datos personales
+        run: bash scripts/check-no-personal-data.sh

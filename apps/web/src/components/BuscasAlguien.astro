@@ -1,0 +1,111 @@
+---
+/**
+ * Panel de búsqueda de personas.
+ *
+ * Va arriba del mapa y no se puede colapsar. Alguien que llega a este sitio buscando a un
+ * familiar tiene que encontrar el canal correcto antes que cualquier gráfica. Este
+ * proyecto no recoge esos reportes (ADR-001): los enruta a quien sí tiene el mandato y
+ * el equipo para atenderlos.
+ */
+---
+
+<aside class="buscas" aria-labelledby="buscas-titulo">
+  <div class="contenido">
+    <h2 id="buscas-titulo">¿Buscas a un familiar?</h2>
+    <p class="advertencia">
+      Este sitio <strong>no es un registro de personas desaparecidas</strong>. Usa estos canales,
+      que sí lo son:
+    </p>
+
+    <ul class="canales">
+      <li>
+        <span class="etiqueta">Emergencia</span>
+        <a class="principal" href="tel:123">Línea 123</a>
+        <span class="ayuda">Atención inmediata en todo el país</span>
+      </li>
+      <li>
+        <span class="etiqueta">Cruz Roja Colombiana</span>
+        <a class="principal" href="https://wa.me/573212139525">WhatsApp +57 321 213 9525</a>
+        <span class="ayuda">
+          Restablecimiento del Contacto Familiar ·
+          <a href="mailto:rcf@cruzrojacolombiana.org">rcf@cruzrojacolombiana.org</a>
+        </span>
+      </li>
+      <li>
+        <span class="etiqueta">Plataforma ciudadana</span>
+        <a class="principal" href="https://colombiatebusca.com">colombiatebusca.com</a>
+        <span class="ayuda">Publicar y consultar reportes</span>
+      </li>
+    </ul>
+
+    <p class="fragmenta">
+      Reportar en varios sitios a la vez <strong>fragmenta la búsqueda</strong>. Usa un canal
+      oficial y mantén ese caso actualizado.
+    </p>
+  </div>
+</aside>
+
+<style>
+  .buscas {
+    background: var(--urgente-fondo);
+    border-block: 2px solid var(--urgente);
+    padding-block: 1.5rem 1.75rem;
+  }
+
+  h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.25rem;
+    color: var(--urgente);
+  }
+
+  .advertencia {
+    margin: 0 0 1.1rem;
+    max-width: 60ch;
+  }
+
+  .canales {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.85rem;
+  }
+
+  .canales li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 0.75rem 0.9rem;
+  }
+
+  .etiqueta {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tinta-3);
+  }
+
+  .principal {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--tinta);
+    text-decoration-color: var(--urgente);
+    text-underline-offset: 3px;
+  }
+
+  .ayuda {
+    font-size: 0.82rem;
+    color: var(--tinta-2);
+  }
+
+  .fragmenta {
+    margin: 1.1rem 0 0;
+    font-size: 0.88rem;
+    color: var(--tinta-2);
+    max-width: 62ch;
+  }
+</style>

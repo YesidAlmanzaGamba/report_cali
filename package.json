@@ -1,0 +1,25 @@
+{
+  "name": "report-cali",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mapa de situación abierto del terremoto de Colombia del 10 de agosto de 2026",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "ingest": "npm run fetch --workspace=@report-cali/ingest",
+    "dev": "npm run dev --workspace=@report-cali/web",
+    "build": "npm run build --workspace=@report-cali/web"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

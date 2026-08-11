@@ -1,0 +1,10 @@
+# Normalizamos a LF en el repositorio. Sin esto, alguien en Windows convierte los
+# archivos de `data/` a CRLF y el diff del cron —que es nuestra trazabilidad de
+# procedencia (ADR-004)— aparece como «cambió todo el archivo» en cada corrida.
+* text=auto eol=lf
+
+# Binarios: que Git no los toque.
+*.png binary
+*.jpg binary
+*.zip binary
+*.pdf binary

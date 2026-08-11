@@ -1,0 +1,40 @@
+{
+  "name": "@report-cali/ingest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Adaptadores de ingesta: cada fuente → Observation[] normalizado",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "fetch": "tsx src/runner.ts",
+    "boundaries": "node --max-old-space-size=8192 --import tsx src/boundaries.ts",
+    "test": "tsx --test test/**/*.test.ts",
+    "test:watch": "tsx --test --watch test/**/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@turf/boolean-point-in-polygon": "^7.1.0",
+    "@turf/helpers": "^7.1.0",
+    "@turf/intersect": "^7.1.0",
+    "fflate": "^0.8.3",
+    "shapefile": "^0.6.6",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.15",
+    "@types/node": "^22.10.2",
+    "@types/shapefile": "^0.6.4",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-server": "^3.0.4",
+    "@types/topojson-simplify": "^3.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

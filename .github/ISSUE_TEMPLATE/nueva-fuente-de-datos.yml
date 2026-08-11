@@ -1,0 +1,70 @@
+name: Nueva fuente de datos / New data source
+description: Proponer un adaptador de ingesta para una fuente nueva
+title: "[fuente] "
+labels: ["fuente-de-datos", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer una fuente. Cada adaptador es una unidad independiente y es
+        una buena tarea para empezar en el proyecto.
+
+        **Antes de seguir:** si la fuente contiene datos personales de personas
+        desaparecidas o fallecidas, no la podemos usar. Ver
+        [ADR-001](../blob/main/docs/DECISIONS.md).
+
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre de la fuente
+      placeholder: "Ej: IDEAM, Bomberos de Pereira, Alcaldía de Quibdó"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL del endpoint o del portal
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de fuente
+      options:
+        - Oficial (entidad estatal u organismo de socorro)
+        - Prensa
+        - Humanitaria internacional (OCHA, Cruz Roja, ONU)
+        - Otra
+    validations:
+      required: true
+
+  - type: textarea
+    id: datos
+    attributes:
+      label: ¿Qué datos aporta?
+      description: Qué métricas, con qué desagregación geográfica, cada cuánto se actualiza.
+      placeholder: "Conteo de albergues abiertos por municipio, actualizado dos veces al día."
+    validations:
+      required: true
+
+  - type: input
+    id: licencia
+    attributes:
+      label: Licencia de los datos
+      placeholder: "Ej: Datos abiertos Ley 1712, CC-BY-4.0, dominio público"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: reglas
+    attributes:
+      label: Verificación
+      options:
+        - label: La fuente NO contiene datos personales de personas desaparecidas o fallecidas
+          required: true
+        - label: Los datos se pueden asociar a un municipio (P-code / DIVIPOLA) o a coordenadas
+          required: true
+        - label: La licencia permite redistribuir con atribución
+          required: true
