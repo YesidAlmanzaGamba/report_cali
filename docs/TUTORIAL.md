@@ -191,6 +191,8 @@ corre `wrangler whoami`, que muestra a qué cuenta pertenece el token y qué per
 | Síntoma | Causa casi siempre | Solución |
 |---|---|---|
 | Falla al publicar y el log menciona **`subdomain`** | La cuenta nunca ha publicado un Worker y **falta elegir el subdominio `workers.dev`** | Cloudflare → **Workers & Pages** → **Overview**. Te pedirá elegir un subdominio una sola vez. Es la causa más común en cuentas nuevas |
+| **`code: 10502`** «Too many authentication failures» | Cloudflare **bloqueó temporalmente** la autenticación por intentos fallidos repetidos | **Espera 15–30 minutos.** Durante el bloqueo, hasta un token correcto falla; reintentar solo alarga el bloqueo |
+| **`code: 10000`** «Authentication error» sobre `/accounts/…/workers/services/…` | O al token le faltan permisos, **o el Account ID es de otra cuenta distinta a la del token** | El paso *Verificar credenciales* ahora compara ambos y avisa si no coinciden |
 | El Worker responde **«Hello world»** | Existe el Worker de ejemplo del panel, pero nuestro sitio nunca se subió porque el despliegue falla | Arregla el despliegue; el primer `wrangler deploy` correcto lo reemplaza |
 | `Authentication error` / `code 10000` / falla sin mensaje claro | El token se armó a mano y le faltan permisos | **Rehaz A2 usando la plantilla «Edit Cloudflare Workers»**. Es la causa más común después del subdominio |
 | `account not found` | El Account ID no es de la misma cuenta del token | Revisa A1; cópialo de la URL del panel |

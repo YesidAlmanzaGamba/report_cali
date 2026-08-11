@@ -54,7 +54,25 @@ jobs:
         continue-on-error: true
         run: |
           echo "Account ID configurado: ${CLOUDFLARE_ACCOUNT_ID:0:6}… (${#CLOUDFLARE_ACCOUNT_ID} caracteres)"
-          npx --yes wrangler@latest whoami
+          npx --yes wrangler@latest whoami 2>&1 | tee whoami.txt || true
+
+          # El error 10000 sobre /accounts/<id>/workers/... casi siempre significa una de
+          # dos cosas: al token le faltan permisos, o el Account ID es de OTRA cuenta
+          # distinta a la que el token puede tocar. Lo segundo es invisible a simple vista
+          # —ambos valores «se ven bien»— así que lo comparamos aquí.
+          ids=$(grep -oiE '\b[0-9a-f]{32}\b' whoami.txt | sort -u || true)
+
+          if [ -z "$ids" ]; then
+            echo "::warning::No se pudo leer la lista de cuentas del token."
+          elif echo "$ids" | grep -qix "$CLOUDFLARE_ACCOUNT_ID"; then
+            echo "✓ El Account ID coincide con una cuenta a la que el token tiene acceso."
+          else
+            echo "::error::EL ACCOUNT ID NO COINCIDE con ninguna cuenta del token."
+            echo "  Configurado en el secreto : ${CLOUDFLARE_ACCOUNT_ID:0:8}…"
+            echo "  El token puede acceder a  :"
+            echo "$ids" | sed 's/^\(........\).*/    \1…/'
+            echo "  Corrige CLOUDFLARE_ACCOUNT_ID con el valor que aparece arriba."
+          fi
 
       - name: Publicar en Cloudflare
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
@@ -73,6 +91,13 @@ jobs:
               echo "→ Falta registrar el subdominio workers.dev de la cuenta."
               echo "  En Cloudflare: Workers & Pages → Overview. La primera vez pide"
               echo "  elegir un subdominio; sin eso no se puede publicar desde CI."
+            fi
+            if grep -q "10502" salida.txt; then
+              echo "→ Cloudflare bloqueó temporalmente los intentos de autenticación"
+              echo "  ('Too many authentication failures', código 10502)."
+              echo "  ESPERA entre 15 y 30 minutos antes de volver a intentar. Mientras"
+              echo "  dure el bloqueo, hasta un token correcto va a fallar — así que"
+              echo "  reintentar ahora solo alarga el bloqueo y confunde el diagnóstico."
             fi
             if grep -qiE "authentication|unauthorized|10000|permission|forbidden|denied" salida.txt; then
               echo "→ Al token le faltan permisos."
