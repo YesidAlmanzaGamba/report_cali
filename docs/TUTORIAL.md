@@ -177,10 +177,17 @@ revisa que el token del paso A2 tenga la fila de **Workers R2 Storage · Edit**.
 
 # Si algo sale mal
 
+**Lo primero: mira la salida real del error.** Actions → la corrida en rojo → el paso con
+✗. El flujo ya imprime un diagnóstico con la causa probable, y antes de intentar publicar
+corre `wrangler whoami`, que muestra a qué cuenta pertenece el token y qué permisos tiene.
+
 | Síntoma | Causa casi siempre | Solución |
 |---|---|---|
+| Falla al publicar y el log menciona **`subdomain`** | La cuenta nunca ha publicado un Worker y **falta elegir el subdominio `workers.dev`** | Cloudflare → **Workers & Pages** → **Overview**. Te pedirá elegir un subdominio una sola vez. Es la causa más común en cuentas nuevas |
+| `Authentication error` / `code 10000` | Al token le falta un permiso | Rehaz A2. Debe tener **Workers Scripts · Edit** |
+| `account not found` | El Account ID no es de la misma cuenta del token | Revisa A1; cópialo de la URL del panel |
 | **Desplegar** en verde pero no hay Worker | Los secretos no existen o están mal escritos | Revisa mayúsculas y guiones bajos en A3 |
-| `Authentication error` en el log | Al token le falta un permiso | Rehaz A2 con las dos filas |
+| **Subir a R2** avisa y sigue | El bucket no existe todavía | Normal si no has hecho la Parte C. **No rompe nada** |
 | El robot trae datos pero no los guarda | Falta el permiso de escritura | Paso A4 |
 | El mapa carga pero sale vacío | `PUBLIC_DATA_URL` mal puesta | Ábrela en el navegador: debe descargar un archivo |
 | **Espejo** se salta la publicación | Pages sin habilitar | Parte B |

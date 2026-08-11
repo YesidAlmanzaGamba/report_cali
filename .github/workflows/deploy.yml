@@ -46,10 +46,47 @@ jobs:
 
       - run: npm run build
 
+      # Diagnóstico antes de intentar publicar. `whoami` imprime a qué cuenta pertenece el
+      # token y qué permisos tiene — nunca el token en sí. Cuando el despliegue falla, casi
+      # siempre la causa está en esta salida, y sin ella hay que adivinar.
+      - name: Verificar credenciales
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        continue-on-error: true
+        run: |
+          echo "Account ID configurado: ${CLOUDFLARE_ACCOUNT_ID:0:6}… (${#CLOUDFLARE_ACCOUNT_ID} caracteres)"
+          npx --yes wrangler@latest whoami
+
       - name: Publicar en Cloudflare
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         # La configuración vive en wrangler.jsonc, en la raíz del repositorio.
-        run: npx wrangler@latest deploy
+        run: |
+          set +e
+          npx --yes wrangler@latest deploy 2>&1 | tee salida.txt
+          codigo=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$codigo" -ne 0 ]; then
+            echo "─────────────────────────────────────────────────────────"
+            echo "El despliegue falló. Causas más frecuentes:"
+
+            if grep -qi "subdomain" salida.txt; then
+              echo "→ Falta registrar el subdominio workers.dev de la cuenta."
+              echo "  En Cloudflare: Workers & Pages → Overview. La primera vez pide"
+              echo "  elegir un subdominio; sin eso no se puede publicar desde CI."
+            fi
+            if grep -qiE "authentication|unauthorized|10000|permission" salida.txt; then
+              echo "→ El token no tiene los permisos necesarios."
+              echo "  Debe incluir 'Account · Workers Scripts · Edit'."
+              echo "  Rehazlo siguiendo el paso A2 de docs/TUTORIAL.md."
+            fi
+            if grep -qiE "account.*not found|invalid account" salida.txt; then
+              echo "→ El CLOUDFLARE_ACCOUNT_ID no corresponde a la cuenta del token."
+            fi
+
+            echo "El texto exacto del error está arriba, en la salida de wrangler."
+            echo "─────────────────────────────────────────────────────────"
+            exit "$codigo"
+          fi
 
       - name: Aviso si falta configurar credenciales
         if: ${{ env.CLOUDFLARE_API_TOKEN == '' }}

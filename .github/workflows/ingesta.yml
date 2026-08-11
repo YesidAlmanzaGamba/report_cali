@@ -36,7 +36,11 @@ jobs:
       # lo que le importa a quien está consultando el mapa es tener el dato fresco; el
       # commit es el archivo histórico y puede esperar unos segundos.
       # Sin credenciales configuradas, el script no hace nada y sale en cero.
+      # `continue-on-error` a propósito: archivar los datos en git es la garantía
+      # principal del proyecto, y una subida a R2 —que es una optimización— nunca puede
+      # impedirla. Si R2 falla, el mapa sigue sirviendo datos desde su propio dominio.
       - name: Subir a R2
+        continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

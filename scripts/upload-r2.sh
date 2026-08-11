@@ -25,6 +25,20 @@ if [ ! -d "$DATA_DIR" ]; then
   exit 1
 fi
 
+# El bucket es opcional (Parte C del tutorial). Si todavía no existe —o el token no tiene
+# permiso de R2— avisamos y salimos en cero.
+#
+# Esto no es cortesía: si este script falla, el paso siguiente del cron no corre y los
+# datos no quedan archivados en git. Una mejora opcional no puede tumbar la garantía
+# principal del proyecto.
+if ! npx --yes wrangler@latest r2 bucket list 2>/dev/null | grep -q "$BUCKET"; then
+  echo "· El bucket '$BUCKET' no está disponible; no se sube nada."
+  echo "  Puede ser que aún no exista (Parte C de docs/TUTORIAL.md) o que al token"
+  echo "  le falte el permiso 'Workers R2 Storage · Edit'."
+  echo "  El sitio funciona igual: sirve los datos desde su propio dominio."
+  exit 0
+fi
+
 # La caché es lo que mantiene el costo en cero: casi ninguna petición llega a R2 porque
 # el CDN las sirve desde el borde. `stale-while-revalidate` hace que el usuario reciba el
 # dato al instante y el refresco ocurra por detrás — nadie espera.
