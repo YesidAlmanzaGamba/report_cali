@@ -1,0 +1,20 @@
+{
+  // Sitio estático servido por Cloudflare Workers.
+  //
+  // ¿Por qué Workers y no Pages? Cloudflare puso Pages en modo mantenimiento y recomienda
+  // Workers para proyectos nuevos. Para nosotros el argumento decisivo es otro: cuando la
+  // fase 5 necesite guardar reportes de albergues, se le agrega un manejador y un binding
+  // a este mismo Worker, en vez de tener que mudar el proyecto de plataforma.
+  //
+  // Costo: «las peticiones a activos estáticos son gratis e ilimitadas» — no consumen el
+  // límite de 100.000 peticiones diarias del plan gratuito, que aplica solo cuando se
+  // ejecuta código. Como aquí no hay `main`, todo el tráfico del sitio es estático.
+  "name": "report-cali",
+  "compatibility_date": "2026-08-11",
+
+  // Sin `main`: no hay código de servidor, solo archivos. Es lo que mantiene el
+  // tráfico dentro de la categoría gratuita e ilimitada.
+  "assets": {
+    "directory": "./apps/web/dist"
+  }
+}

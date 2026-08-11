@@ -125,23 +125,19 @@ pregunta. Esto es deliberado: la conexión real de un socorrista en zona de desa
 
 ## Despliegue
 
-Guía completa —arquitectura, almacenamiento, cuotas y costos— en
-[`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md). Qué sigue, en
-[`docs/ROADMAP.md`](docs/ROADMAP.md).
+**Paso a paso, con los nombres exactos de cada botón: [`docs/TUTORIAL.md`](docs/TUTORIAL.md).**
+Arquitectura, cuotas y costos en [`docs/DESPLIEGUE.md`](docs/DESPLIEGUE.md).
+Qué sigue, en [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-> **La regla que sostiene el costo en cero:** los datos **no** pasan por la compilación del
-> sitio. Cloudflare Pages da 500 compilaciones al mes en el plan gratuito, y el cron de
-> ingesta produciría entre 600 y 1.500 en emergencia activa. Los datos se sirven desde R2
-> —con egreso sin cargo— y solo el código dispara compilaciones.
+El sitio es estático y se publica en **Cloudflare Workers** desde GitHub Actions. No hay
+que configurar nada en el panel de Cloudflare: el Worker se crea solo en el primer
+despliegue. Bastan dos secretos —`CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID`— y sin
+ellos el flujo compila, avisa y no falla.
 
-El sitio es estático y se publica en Cloudflare Pages. Dos caminos:
-
-1. **Desde el panel de Cloudflare** (más simple): conectar el repositorio con
-   `Build command: npm run build`, `Build output: apps/web/dist`, `NODE_VERSION: 22`,
-   y borrar `.github/workflows/deploy.yml`.
-2. **Desde GitHub Actions**: crear los secretos `CLOUDFLARE_API_TOKEN` y
-   `CLOUDFLARE_ACCOUNT_ID`, y un proyecto de Pages llamado `report-cali`. Sin esos
-   secretos el flujo compila pero no publica, y avisa en vez de fallar.
+> **La regla que sostiene el costo en cero:** los datos **no** pasan por el despliegue.
+> Se sirven desde R2, donde el egreso no tiene cargo, y solo los cambios de código
+> republican el sitio. Las peticiones a activos estáticos en Workers son gratis e
+> ilimitadas.
 
 `.github/workflows/ingesta.yml` vuelve a consultar las fuentes cada 15 minutos y hace
 commit en `data/` **solo si el contenido cambió**, lo que a su vez dispara un despliegue.

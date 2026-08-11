@@ -1,21 +1,17 @@
 name: Desplegar
 
-# Publica el sitio en Cloudflare Pages cuando cambia el código o los datos.
-# El cron de ingesta hace commit en `data/`, así que cada actualización de datos
-# dispara un despliegue nuevo sin intervención.
+# Publica el sitio en Cloudflare Workers cuando cambia el código.
+#
+# El despliegue lo hace GitHub Actions, no la integración Git de Cloudflare. Así hay un
+# solo sistema de CI que entender, y el Worker se crea solo en el primer despliegue: no
+# hay que configurar nada en el panel de Cloudflare.
 #
 # ── Configuración necesaria una sola vez ────────────────────────────────────
 # En Settings → Secrets and variables → Actions, crear:
-#   CLOUDFLARE_API_TOKEN    token con permiso "Cloudflare Pages: Edit"
+#   CLOUDFLARE_API_TOKEN    token con permisos de edición de Workers y de R2
 #   CLOUDFLARE_ACCOUNT_ID   ID de la cuenta (visible en el panel de Cloudflare)
-# Y en Cloudflare, crear un proyecto de Pages llamado `report-cali`.
 #
-# Alternativa sin secretos: conectar el repositorio desde el panel de Cloudflare
-# Pages con estos ajustes, y borrar este archivo.
-#   Build command:     npm run build
-#   Build output:      apps/web/dist
-#   Root directory:    /
-#   NODE_VERSION:      22
+# Paso a paso completo, con nombres exactos de botones: docs/TUTORIAL.md
 on:
   push:
     branches: [main]
@@ -50,9 +46,10 @@ jobs:
 
       - run: npm run build
 
-      - name: Publicar en Cloudflare Pages
+      - name: Publicar en Cloudflare
         if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
-        run: npx wrangler@latest pages deploy apps/web/dist --project-name=report-cali
+        # La configuración vive en wrangler.jsonc, en la raíz del repositorio.
+        run: npx wrangler@latest deploy
 
       - name: Aviso si falta configurar credenciales
         if: ${{ env.CLOUDFLARE_API_TOKEN == '' }}

@@ -12,14 +12,26 @@ Si el sitio se cae en ese pico, no sirve de nada que fuera barato.
 
 Y hay una trampa menos obvia, que es la que decide el diseño:
 
-> **Cloudflare Pages permite 500 compilaciones al mes en el plan gratuito.**
+> **Si se conecta el repositorio a la integración Git de Cloudflare, el plan gratuito da
+> 500 compilaciones al mes.**
 >
-> Nuestro cron de ingesta hace commit cada vez que cambian los datos, y cada commit a
-> `main` dispara una compilación. En emergencia activa eso son entre 20 y 50 al día:
+> El cron de ingesta hace commit cada vez que cambian los datos, y cada commit a `main`
+> dispararía una compilación. En emergencia activa son entre 20 y 50 al día:
 > **600 a 1.500 al mes**. Se agota la cuota y los despliegues se detienen justo cuando los
 > datos importan.
 
-De ahí la regla central: **los datos no pasan por la compilación del sitio.**
+**No caemos en esa cuota, porque compilamos en GitHub Actions y no en Cloudflare** — y los
+repositorios públicos tienen minutos de Actions gratuitos sin límite. Aun así mantenemos
+los datos separados del despliegue, por tres razones que siguen valiendo:
+
+1. **Velocidad.** Subir un archivo a R2 tarda segundos; compilar y desplegar el sitio
+   entero tarda minutos. En emergencia esa diferencia importa.
+2. **No ensuciar el historial de versiones.** Publicar el sitio completo 96 veces al día
+   generaría 96 versiones del Worker por cambios que no tocaron una sola línea de código.
+3. **Independencia.** Si mañana alguien conecta la integración Git de Cloudflare por
+   comodidad, la cuota de 500 vuelve a ser real. La arquitectura ya quedó a salvo.
+
+De ahí la regla central: **los datos no pasan por el despliegue del sitio.**
 
 ---
 
@@ -28,17 +40,25 @@ De ahí la regla central: **los datos no pasan por la compilación del sitio.**
 ```
 Repositorio GitHub  ─── sistema de registro (el historial ES la trazabilidad, ADR-004)
    │
-   ├── cambia el código  ──→  Cloudflare Pages compila  ──→  sitio estático
+   ├── cambia el código  ──→  GitHub Actions compila  ──→  Cloudflare Workers
    │                          (pocas veces: ~5–20 al mes)
    │
-   └── cron de ingesta   ──┬─→  sube los datos a R2   ──→  CDN  (sin compilar)
+   └── cron de ingesta   ──┬─→  sube los datos a R2   ──→  CDN  (sin desplegar)
        (cada 15 min)       │    (frecuente, gratis)
                            └─→  commit en data/  ──→  archivo auditable
 ```
 
 El sitio es HTML estático que pide los datos por `fetch` en tiempo de ejecución. Al
-apuntar ese `fetch` a R2 y no a su propio dominio de compilación, actualizar datos deja de
-costar una compilación. El cron pasa de consumir ~1.500 compilaciones al mes a **cero**.
+apuntar ese `fetch` a R2 y no a su propio dominio, actualizar datos deja de requerir un
+despliegue.
+
+**Por qué Workers y no Pages.** Cloudflare puso Pages en modo mantenimiento y recomienda
+Workers para proyectos nuevos. Para nosotros el argumento decisivo es otro: cuando la fase
+5 necesite guardar reportes de albergues, se le agrega un manejador y un binding a este
+mismo Worker, en vez de mudar el proyecto de plataforma. Y el costo no cambia: *«las
+peticiones a activos estáticos son gratis e ilimitadas»* — no consumen el límite de
+100.000 peticiones diarias, que solo aplica cuando se ejecuta código. Como nuestro
+`wrangler.jsonc` no declara `main`, todo el tráfico del sitio es estático.
 
 Los datos siguen quedando en `data/` dentro de git: ahí no son la ruta de servicio, son el
 archivo histórico auditable.
@@ -49,26 +69,27 @@ archivo histórico auditable.
 
 Las dos opciones son gratis. La diferencia está en cómo fallan bajo carga.
 
-| | **Cloudflare Pages** | **GitHub Pages** |
+| | **Cloudflare Workers** | **GitHub Pages** |
 |---|---|---|
 | Ancho de banda | **Sin medir** | **100 GB/mes (límite blando)** |
+| Peticiones a estáticos | **Gratis e ilimitadas** | Cuentan contra los 100 GB |
 | Qué pasa al excederlo | Nada | GitHub puede dejar de servir el sitio y te escribe |
-| Compilaciones | 500/mes (gratis) | 10/hora (blando; no aplica con Actions propio) |
-| Archivos por sitio | 20.000 | — |
-| Tamaño máx. por archivo | 25 MiB | Sitio ≤ 1 GB |
 | Protección DDoS | Incluida | La de GitHub |
-| Dominios propios | 100 | 1 |
+| Dominios propios | Sí | 1 |
 | Reglas de caché | Sí, configurables | No |
+| Camino a futuro | Se le agrega código y base de datos sin mudarse | Solo estático, siempre |
 
 Con nuestro peso —unos 600 KB por sesión que abre el mapa— los 100 GB de GitHub dan para
 **~170.000 sesiones al mes**. En un país de 52 millones de personas con un desastre
 nacional declarado, eso se alcanza en días. Y es un límite *blando*: no hay un aviso claro,
 simplemente el sitio puede dejar de responder.
 
-**Recomendación: Cloudflare Pages como principal, GitHub Pages como espejo.** El espejo
+**Recomendación: Cloudflare Workers como principal, GitHub Pages como espejo.** El espejo
 es gratis, se publica desde el mismo `dist/`, y da a dónde apuntar si Cloudflare tiene un
 incidente o si la cuenta se pierde. En una respuesta a desastre, tener dos orígenes con
 distinto dueño es prudencia básica, no exceso.
+
+> **Paso a paso con nombres exactos de botones: [`TUTORIAL.md`](TUTORIAL.md).**
 
 ---
 
@@ -154,8 +175,9 @@ que lo cambiarían:
    USD 0,015 por GB al mes. Mitigación: recomprimir al subir, guardar solo tamaños web.
 2. **Escrituras masivas (fase 5).** Si el registro de necesidades supera la cuota gratuita
    de Workers, el plan de pago arranca en USD 5 al mes.
-3. **Más de 500 compilaciones al mes.** Solo pasaría si alguien vuelve a acoplar los datos
-   a la compilación. Es exactamente lo que esta arquitectura evita.
+3. **Ejecutar código en el borde.** Hoy el Worker no tiene `main`, así que todo el
+   tráfico es estático —gratis e ilimitado—. En cuanto se agregue lógica de servidor
+   empieza a contar el límite de 100.000 peticiones diarias.
 
 **Techo realista del proyecto tal como está: USD 0.** Incluso con tráfico nacional.
 
@@ -163,17 +185,22 @@ que lo cambiarían:
 
 ## Pasos para dejarlo publicado
 
-1. **Crear el proyecto en Cloudflare Pages** llamado `report-cali`.
-   - `Build command: npm run build` · `Build output: apps/web/dist` · `NODE_VERSION: 22`
-2. **Crear el bucket R2** `report-cali-datos` y habilitarle dominio público.
-3. **Secretos en GitHub** (*Settings → Secrets and variables → Actions*):
-   `CLOUDFLARE_API_TOKEN` (permisos: Pages Edit + R2 Edit) y `CLOUDFLARE_ACCOUNT_ID`.
-4. **Permisos de Actions** (*Settings → Actions → General → Workflow permissions*):
+> **El paso a paso detallado, con los nombres exactos de cada botón, está en
+> [`TUTORIAL.md`](TUTORIAL.md).** Esto es solo el resumen.
+
+No hay que configurar nada en el panel de Cloudflare: el Worker se crea solo en el primer
+despliegue, porque publicamos desde GitHub Actions y no desde la integración Git.
+
+1. **Secretos en GitHub** (*Settings → Secrets and variables → Actions*):
+   `CLOUDFLARE_API_TOKEN` (permisos: **Workers Scripts · Edit** y **Workers R2 Storage ·
+   Edit**) y `CLOUDFLARE_ACCOUNT_ID`.
+2. **Permisos de Actions** (*Settings → Actions → General → Workflow permissions*):
    **Read and write**. Sin esto el cron trae los datos pero no puede hacer commit.
-5. **Apuntar el sitio a R2**: variable `PUBLIC_DATA_URL` con la URL del bucket.
-   Mientras no exista, el sitio sigue leyendo de `/data` y todo funciona igual.
-6. **Espejo en GitHub Pages**: *Settings → Pages → Source: **GitHub Actions***.
+3. **Lanzar** *Actions → Desplegar → Run workflow*. El Worker queda creado y publicado.
+4. **Espejo en GitHub Pages**: *Settings → Pages → Source: **GitHub Actions***.
    Sin secretos. El flujo `pages.yml` ya compila con `PUBLIC_BASE=/report_cali/`, porque
    GitHub Pages sirve en una subruta y no en la raíz del dominio.
-7. *(Opcional)* **Dominio propio.** Un `.org` cuesta ~USD 12 al año y es lo único que
+5. **Bucket R2** `report-cali-datos` con acceso público, y variable `PUBLIC_DATA_URL`
+   apuntando a él. Mientras no exista, el sitio lee de `/data` y todo funciona igual.
+6. *(Opcional)* **Dominio propio.** Un `.org` cuesta ~USD 12 al año y es lo único que
    costaría plata. Un dominio memorable importa cuando la gente lo comparte por WhatsApp.
