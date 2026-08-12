@@ -986,27 +986,47 @@ const { leyenda } = Astro.props;
       left: 0.6rem;
       right: 0.6rem;
       width: auto;
-      /* La mitad de la pantalla como techo duro: es una ficha sobre un mapa, y el mapa
-         es lo que la persona vino a ver. Lo que no quepa se desplaza dentro. */
       max-height: 50%;
     }
 
-    /* ── Con un municipio abierto, el mapa manda ──────────────────────────
-       `data-ficha` lo pone `mapa.ts` al abrir la ficha y lo quita al cerrarla.
+    /* ── Con un municipio abierto, la pantalla se parte en dos ────────────
+       `data-ficha` lo pone `mapa.ts` en `<html>` al abrir la ficha y lo quita al cerrar.
 
-       Se va el conmutador de modo y la capa: son ajustes de la vista general, y con un
-       municipio abierto la mitad de abajo ya está ocupada por la ficha — dejarlos
-       arriba deja al mapa reducido a una franja. `← Ver todo` **no** se va: es la
-       salida, y sin mapa base es lo único que devuelve la referencia de dónde está uno.
+       **Mitad y mitad: mapa arriba, ficha abajo.** Antes la ficha ya estaba limitada al
+       50 %, pero por debajo seguía asomada la hoja con su resumen de fallecidos — 104 px
+       más— así que entre las dos se quedaban con dos tercios de la pantalla y al mapa le
+       tocaba un tercio. Ahora la ficha se pega abajo del todo y ocupa exactamente la
+       mitad; la hoja se retira (regla en `Hoja.astro`) y vuelve al cerrar la ficha.
 
-       Se van también las leyendas. Ancladas abajo a la izquierda, quedaban por encima de
-       la ficha: en la captura, «Personas donde tembló fuerte» flotando sobre el aviso de
-       cobertura. Replegarlas no bastaba, porque el título replegado sigue ocupando su
-       rectángulo. Vuelven al cerrar la ficha. */
-    .marco[data-ficha] .modos,
-    .marco[data-ficha] .capa,
-    .marco[data-ficha] .leyenda {
+       Se van también el conmutador de modo, la capa y las leyendas: son ajustes de la
+       vista general. Las leyendas además se montaban sobre la ficha —«Personas donde
+       tembló fuerte» flotando encima del aviso de cobertura—, y replegarlas no bastaba
+       porque el título replegado sigue ocupando su rectángulo.
+
+       `← Ver todo` **no** se va: es la salida, y sin mapa base es lo único que devuelve
+       la referencia de dónde está uno. */
+    :global(html[data-ficha]) .modos,
+    :global(html[data-ficha]) .capa,
+    :global(html[data-ficha]) .leyenda {
       display: none;
+    }
+
+    :global(html[data-ficha]) .ficha {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 50%;
+      max-height: 50%;
+      /* Pegada al borde: sin esquinas ni bordes abajo, que es lo que la hace leerse como
+         media pantalla y no como una tarjeta flotando. */
+      border-radius: var(--radio) var(--radio) 0 0;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      /* El indicador de inicio del teléfono se come la última línea si no. */
+      padding-bottom: calc(1rem + var(--seguro-abajo));
     }
 
     .leyenda {

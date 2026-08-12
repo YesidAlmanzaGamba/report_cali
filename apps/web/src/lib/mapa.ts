@@ -729,22 +729,63 @@ export async function iniciarMapa(): Promise<void> {
   let pcodeAbierto: string | null = null;
 
   /**
-   * Marca el marco mientras hay una ficha abierta.
+   * Marca el documento mientras hay una ficha abierta.
    *
-   * En celular, el CSS usa esto para quitar de en medio el conmutador de modo, la capa
-   * de deslizamientos y las leyendas: con la ficha ocupando la mitad de abajo, dejar
-   * todo eso arriba reduce el mapa a una franja. «← Ver todo» se queda, que es la
-   * salida. Después hay que volver a medir: la fila de arriba acaba de encoger y
-   * `--ficha-top` manda sobre lo que va debajo.
+   * Va en `<html>` y no en `.marco` porque la hoja inferior es un componente aparte, que
+   * en el DOM no es descendiente ni hermano del mapa: desde `.marco` no hay selector CSS
+   * que la alcance. Con la marca en la raíz, cualquier parte de la página puede
+   * reaccionar sin que haya que cablear nada entre componentes.
+   *
+   * En celular el CSS usa esto para dejar la pantalla partida en dos: mapa arriba, ficha
+   * abajo. Se van el conmutador de modo, la capa y las leyendas —son ajustes de la vista
+   * general— y se retira la hoja, que si no le suma sus 104 px a la ficha y entre las dos
+   * dejan el mapa en un tercio. «← Ver todo» se queda: es la salida.
+   *
+   * `colapsarHoja()` antes de marcar, para que la hoja no se quede con un `transform` en
+   * línea de un arrastre previo — el estilo en línea le gana a la regla CSS que la
+   * retira, y se quedaría a medio camino tapando la ficha.
    */
   function marcarFichaAbierta(abierta: boolean): void {
-    const marco = document.querySelector<HTMLElement>('.marco');
-    if (!marco) return;
+    if (abierta) {
+      colapsarHoja();
+      document.documentElement.dataset['ficha'] = '';
+    } else {
+      delete document.documentElement.dataset['ficha'];
+    }
 
-    if (abierta) marco.dataset['ficha'] = '';
-    else delete marco.dataset['ficha'];
-
+    // La fila de arriba acaba de cambiar de alto y `--ficha-top` manda sobre lo de abajo.
     ajustarControlesSuperiores();
+  }
+
+  /**
+   * Cuánto de la parte de abajo está tapado ahora mismo, para que la cámara encuadre el
+   * municipio en lo que **se ve** y no detrás de un panel.
+   *
+   * Se mide, no se supone: con la ficha abierta tapa media pantalla, y con la ficha
+   * cerrada tapa solo el asa de la hoja. Antes se restaba siempre `--asomada`, así que al
+   * abrir la ficha el casco urbano quedaba centrado justo debajo de ella.
+   */
+  function altoTapadoAbajo(): number {
+    const ficha = document.getElementById('detalle');
+    const marco = document.querySelector('.marco');
+
+    if (ficha && marco && !ficha.hasAttribute('hidden')) {
+      const caja = ficha.getBoundingClientRect();
+      const borde = marco.getBoundingClientRect();
+      /**
+       * Solo cuenta si **de verdad** llega al borde de abajo. En celular la ficha ocupa
+       * la mitad inferior y hay que descontarla entera; en escritorio vive arriba a la
+       * derecha y no tapa nada de abajo, así que restarle su alto encuadraría el
+       * municipio demasiado arriba. Se comprueba con el rectángulo en vez de con un
+       * `matchMedia`: si algún día cambia el punto de quiebre, esto sigue siendo cierto.
+       */
+      if (caja.height > 0 && caja.bottom >= borde.bottom - 2) return caja.height;
+    }
+
+    return (
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
+      104
+    );
   }
 
   function cerrarFicha(): void {
@@ -831,17 +872,13 @@ export async function iniciarMapa(): Promise<void> {
     const caja = urbano ?? bboxDe(feature.geometry);
     if (!Number.isFinite(caja[0])) return;
 
-    const alturaAsomada =
-      parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
-      104;
-
     mapa.fitBounds(
       [
         [caja[0], caja[1]],
         [caja[2], caja[3]],
       ],
       {
-        padding: { top: 40, right: 40, bottom: Math.round(alturaAsomada) + 24, left: 40 },
+        padding: { top: 40, right: 40, bottom: Math.round(altoTapadoAbajo()) + 24, left: 40 },
         // Más cerca cuando encuadramos el casco: ahí sí tiene sentido ver manzanas.
         maxZoom: urbano ? 14 : 11,
         duration: prefiereMenosMovimiento ? 0 : 500,

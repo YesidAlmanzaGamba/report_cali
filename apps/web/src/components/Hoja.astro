@@ -119,6 +119,26 @@ const primero = modulos[0]?.id ?? '';
     transform: translateY(45%);
   }
 
+  /* Con la ficha de un municipio abierta en celular, la hoja se retira del todo.
+     `data-ficha` lo pone `mapa.ts` en `<html>`.
+
+     Su asa asomada mide 104 px, y sumados a la media pantalla de la ficha dejaban el
+     mapa en un tercio. La idea es mitad y mitad: mapa arriba, municipio abajo. Vuelve
+     sola al cerrar la ficha, y como esto es un `transform` viaja con la misma
+     transición que ya tenía — no aparece ni desaparece de golpe.
+
+     Va después de los estados para ganarles por orden: la hoja puede estar en
+     `asomada`, `media` o `completa` cuando alguien toca un municipio, y desde las tres
+     tiene que retirarse igual. El `transform` en línea de un arrastre lo limpia
+     `colapsarHoja()`, que `mapa.ts` llama justo antes de marcar. */
+  @media (max-width: 40rem) {
+    :global(html.js[data-ficha]) .hoja,
+    :global(html.js[data-ficha]) .hoja[data-estado='media'],
+    :global(html.js[data-ficha]) .hoja[data-estado='completa'] {
+      transform: translateY(100%);
+    }
+  }
+
   :global(html.js) .hoja[data-estado='completa'] {
     transform: translateY(0);
   }

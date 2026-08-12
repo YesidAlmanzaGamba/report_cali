@@ -529,6 +529,56 @@ oculta. Fuera.
 
 **Carga:** 14,88 → **14,91 KB** (+22 B).
 
+### Mitad y mitad de verdad: la hoja se retira con la ficha abierta
+
+Cuarta captura. La ficha ya estaba limitada al 50 %, pero **por debajo seguía asomada la
+hoja** con su resumen de fallecidos —104 px más—, así que entre las dos se quedaban con
+dos tercios de la pantalla y al mapa le tocaba un tercio. Pedido: **media pantalla para el
+mapa, media para la información.**
+
+Ahora, con un municipio abierto en celular, la hoja se retira del todo
+(`translateY(100%)`) y la ficha se pega abajo ocupando exactamente la mitad, a lo ancho
+completo y sin esquinas abajo, para que se lea como media pantalla y no como una tarjeta
+flotando. Todo vuelve al cerrar la ficha, y como es un `transform` viaja con la transición
+que la hoja ya tenía.
+
+**La marca pasó de `.marco` a `<html>`.** La hoja es un componente aparte que en el DOM no
+es descendiente ni hermano del mapa: desde `.marco` no hay selector CSS que la alcance.
+Con `data-ficha` en la raíz, cualquier parte de la página reacciona sin cablear nada entre
+componentes.
+
+**Y la cámara tenía que enterarse.** `acercarA()` restaba siempre `--asomada` al encuadrar,
+así que con la ficha tapando media pantalla el casco urbano quedaba centrado justo detrás
+de ella. Ahora se mide lo que de verdad tapa: `altoTapadoAbajo()`.
+
+Esa función tuvo un fallo que solo apareció al probar en escritorio: la primera versión
+devolvía el alto de la ficha en cuanto estuviera abierta, y **en escritorio la ficha vive
+arriba a la derecha y no tapa nada de abajo** — habría encuadrado el municipio demasiado
+arriba. Se arregló comprobando el rectángulo: solo cuenta si llega al borde inferior del
+mapa. Se comprueba midiendo y no con un `matchMedia`, para que siga siendo cierto si algún
+día cambia el punto de quiebre.
+
+Medido a 390 × 844, con el encabezado ya replegado y un municipio abierto:
+
+| | resultado |
+|---|---|
+| mapa visible | **423 px = 50 %** |
+| ficha | **422 px = 50 %**, pegada abajo, ancho completo |
+| hoja | fuera de pantalla (`y = 844`) |
+| `← Ver todo` | visible |
+
+Y en escritorio (1880 px), con Tadó abierto: la ficha va de y=61 a y=821 contra un mapa
+que acaba en 917, así que **no** llega al borde y la cámara toma la rama del asa; la hoja,
+el conmutador y las leyendas siguen visibles. Ninguna de las reglas de celular se activa.
+
+**Sobre medir en este entorno.** La hoja parecía no retirarse: `display` cambiaba pero
+`transform` no. No era el CSS — el iframe de prueba queda `visibilityState: hidden` y un
+documento que no se pinta no produce fotogramas, así que **las transiciones se congelan en
+su valor inicial**. Con `transition: none` el valor salta a `translateY(100%)` al
+instante. Queda anotado porque cuesta media hora cada vez que pasa.
+
+**Carga:** 14,91 → **14,97 KB** (+67 B).
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda
