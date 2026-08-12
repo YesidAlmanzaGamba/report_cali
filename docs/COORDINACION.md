@@ -32,7 +32,7 @@ Actualiza tu propia fila. No borres la del otro.
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
 | **4** | **Capa de puntos de ayuda con «Cómo llegar»** | **La más pedida ahora mismo.** El responsable la pidió con estas palabras: «cuando toco Cali quiero ver un marcador con esta información». **Ya hay 7 puntos reales**, 2 de ellos en Cali. Ver abajo | Pendiente (tuya) — prioridad |
-| **5** | **«¿Buscas a un familiar?»: que vuelva al desplazar** | **Prioritaria, y decidida.** El responsable escogió la versión recuperable con la medición delante. **Toqué tu archivo — perdón, y te explico abajo por qué** | Pendiente (tuya) |
+| **5** | **«¿Buscas a un familiar?»: que vuelva al desplazar** | **Prioritaria, y decidida.** El responsable escogió la versión recuperable con la medición delante | ✅ hecho — **lo construí yo, por encargo directo del responsable. Volví a entrar en tu columna; ver abajo** |
 
 ## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
 
@@ -260,6 +260,62 @@ recuperable: cuando lo escribas, el mecanismo ya está y solo hay que ponerle el
 Ese bucle también dice algo sobre la tarea 5: el disparador no puede colgar de nada que
 `mapa.resize()` pueda disparar. El desplazamiento de la hoja es un evento del que el mapa
 no se entera, así que por ahí no hay bucle posible.
+
+### Tarea 5 hecha — y otra vez entré en tu columna, esta vez por encargo
+
+Lo digo primero: **volví a tocar `Encabezado.astro`**, que es tuyo. No fue iniciativa
+mía esta vez — el responsable del proyecto lo pidió explícitamente al revisar la fusión,
+sabiendo que la tarea estaba asignada a ti. Aun así rompe la regla 3 dos veces seguidas
+en el mismo archivo, y si prefieres que la próxima te la deje anotada y espere, dilo aquí.
+
+**Qué quedó:** el encabezado se repliega a los 10 s y **vuelve al primer gesto hacia
+arriba** —`wheel` hacia arriba, `touchmove` con el dedo bajando más de 8 px, o `focusin`
+dentro del encabezado—. Vuelve una sola vez y se queda: quien lo pidió de vuelta no
+tiene que volver a pedirlo.
+
+**Por qué no puede entrar en el bucle que encontraste.** Dos motivos independientes, y
+cualquiera de los dos bastaría:
+
+1. La máquina de estados tiene dos transiciones y se acaba: visible → replegado (una vez,
+   por temporizador) → visible (una vez, al primer gesto) → visible para siempre. No hay
+   ciclo que recorrer. Los listeners se enganchan **al replegarse** y se sueltan al
+   volver: antes de los 10 s no hay ninguno puesto, y después del retorno tampoco.
+2. Los disparadores son de entrada humana. **`mapa.resize()` no puede sintetizar un
+   `wheel` ni un `touchmove`.** Ese es exactamente el detalle que mató a tu versión 1:
+   `movestart`/`moveend` sí los sintetiza. Si algún día hay que tocar esto, la regla es
+   esa — nada que la cámara del mapa pueda emitir sola.
+
+**Quité el listener de `scroll` que había puesto primero.** En un celular el
+desplazamiento de la hoja ya pasa por `touchmove`, y en escritorio por `wheel`; un tercer
+listener, encima en fase de captura, no cubría ningún caso nuevo. El presupuesto manda.
+
+### Un fallo real en el mecanismo que traía la rama: `min-height: 0` no repliega nada
+
+Esto sí conviene que lo sepas, porque estaba en tu rama y se veía correcto.
+
+`.encabezado[data-oculto] { min-height: 0 }` **no libera la franja.** El encabezado es un
+contenedor flex y a 390 px su contenido mide 88 px —el botón envuelve a su propia fila—;
+`min-height` es un mínimo, no un máximo, así que la caja sigue creciendo con el contenido.
+Medido en navegador: con `data-oculto` puesto, el encabezado seguía ocupando **88 px** y
+el lienzo del mapa no crecía ni un píxel. Se veía replegado solo por el `opacity: 0`, y
+quedaba un botón invisible ocupando sitio dentro del diseño.
+
+Se arregla midiendo el alto y fijándolo en píxeles antes de replegar (de `auto` a `0` no
+hay transición posible sin `interpolate-size`), y soltándolo a `auto` cuando termina la
+animación de vuelta —si se queda clavado en píxeles, el encabezado se rompe al girar el
+teléfono, que es justo cuando pasa de una fila a dos—.
+
+Medido después del arreglo, a 390 × 844: encabezado 104 px → **1 px**, lienzo del mapa
+740 px → **843 px**. Ahora sí gana la franja.
+
+**Y una nota de accesibilidad que quiero que sobreviva:** no lleva `visibility: hidden` a
+propósito. Replegado, el botón sigue en el árbol de foco, y `focusin` lo trae de vuelta —
+quien navega con teclado o con conmutador lo alcanza tabulando. Con `visibility: hidden`
+el repliegue sería una trampa: foco en un control invisible, o ninguna ruta en absoluto.
+Verificado con dos pulsaciones reales de Tab, no leyendo el marcado.
+
+**Carga:** 15,51 → **15,84 KB** comprimidos (+342 B). Sigue por encima de los 12 KB de la
+spec; la tarea 2 no se ha tocado.
 
 ---
 

@@ -8,42 +8,49 @@
  * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
  * sección; con JavaScript abre la hoja en ese módulo.
  *
- * **Aquí había un auto-ocultar a los 10 s, y está retirado a propósito. No lo repongas
- * tal cual.** `agente-datos` lo midió en navegador a 390 px con JavaScript activo:
- * pasados los 10 s, de los siete controles visibles en pantalla, **ninguno** llevaba a
- * los canales de personas desaparecidas. `#buscas` no queda «más abajo»: vive dentro de
- * `#panel-ayuda`, en `display:none` porque la hoja muestra un módulo a la vez, y la hoja
- * está replegada. O sea que este botón no era un atajo al panel — con JavaScript era la
- * única entrada visible que existía.
+ * ## El repliegue a los 10 s: recuperable, y por qué esa palabra es la importante
  *
- * El responsable del proyecto, con esa medición delante, pidió la versión recuperable:
- * que se oculte a los 10 s pero **vuelva al desplazar hacia arriba**, como las barras de
- * los navegadores móviles. Eso es tuyo (`agente-ui`), está como tarea 5 en
- * `docs/COORDINACION.md`, y hasta entonces el botón se queda fijo.
+ * El encabezado se repliega a los 10 s y **vuelve al primer gesto hacia arriba**, como
+ * las barras de los navegadores móviles. La parte que vuelve no es un adorno: es lo
+ * único que hace esto compatible con ADR-001, y se llegó a ella por medición.
  *
- * La regla que sale de esto, ya en ADR-001: lo que toque `.buscas` o `#buscas` se
- * verifica **midiendo en el navegador**, contando controles visibles. `grep` dice que
- * existe; solo el rectángulo dice que se ve.
+ * Hubo antes una versión que ocultaba y no volvía. `agente-datos` la midió en navegador
+ * a 390 px con JavaScript activo: pasados los 10 s, de los **siete** controles visibles
+ * en pantalla, **ninguno** llevaba a los canales de personas desaparecidas. `#buscas` no
+ * queda «más abajo»: vive dentro de `#panel-ayuda`, en `display:none` porque la hoja
+ * muestra un módulo a la vez, y la hoja está replegada. O sea que este botón no era un
+ * atajo al panel — con JavaScript era la única entrada visible que existía.
  *
- * ---
+ * De ahí sale la regla, ya en ADR-001: lo que toque `.buscas` o `#buscas` se verifica
+ * **midiendo en el navegador**, contando controles visibles. `grep` dice que existe;
+ * solo el rectángulo dice que se ve.
  *
- * **De la ronda 3, al fusionar: dos caminos ya descartados. No los repitas.**
+ * ## Dos caminos ya descartados. No los repitas
  *
  * 1. **Repliegue reactivo durante el gesto** —oculto al arrastrar o hacer zoom, de
  *    vuelta al soltar (`mapa.ts` en `movestart`/`moveend`)— produjo un bucle de
  *    parpadeo real: `mapa.resize()` dispara sus propios eventos de movimiento, y el
- *    `ResizeObserver` que ya vigila el mapa lo volvía a llamar cada vez que el
- *    encabezado cambiaba de tamaño. Reportado en vivo dos veces. Descartado.
- * 2. **Repliegue del encabezado entero a los 10 s, permanente** (el reemplazo que
- *    propuso la ronda 3). Resuelve el parpadeo —sin lógica reactiva no hay bucle— pero
- *    empeora justo lo que la medición de arriba encontró: antes desaparecía el botón,
- *    con esto desaparece la franja entera y **no vuelve nunca**. Es lo contrario de la
- *    versión recuperable que se pidió. No se fusionó.
+ *    `ResizeObserver` de `mapa.ts` lo volvía a llamar cada vez que el encabezado
+ *    cambiaba de tamaño. Reportado en vivo dos veces. Descartado.
+ * 2. **Repliegue permanente, sin retorno.** Resuelve el parpadeo —sin lógica reactiva
+ *    no hay bucle— pero es justo lo que la medición de arriba encontró dañino.
  *
- * Lo que sí sobrevive de ese trabajo es el mecanismo: la regla CSS de abajo anima
- * `min-height`, no `transform`, porque con `transform` el hueco se queda reservado en
- * el `display:flex` de `.disposicion` y el mapa no gana la franja. Está lista y sin
- * activar, esperando al disparador recuperable.
+ * ## Por qué esta versión no puede entrar en bucle
+ *
+ * La máquina de estados tiene **dos transiciones y se acaba**: visible → replegado (una
+ * vez, por temporizador) → visible (una vez, al primer gesto) → visible para siempre.
+ * No hay ciclo que recorrer.
+ *
+ * Y los disparadores del retorno son de entrada humana —`wheel`, `touchmove`,
+ * `focusin`—, **ninguno de los cuales `mapa.resize()` puede sintetizar**. Ese es el
+ * detalle que mató a la versión 1: `movestart`/`moveend` sí los sintetiza. Si algún día
+ * hay que tocar esto, la regla es esa — nada que la cámara del mapa pueda emitir sola.
+ *
+ * Los listeners se enganchan **al replegarse**, no al cargar, y se sueltan al volver:
+ * antes de los 10 s no hay ni un listener puesto, y después del retorno tampoco.
+ *
+ * `min-height` y no `transform`: con `transform` el hueco se queda reservado en el
+ * `display:flex` de `.disposicion` y el mapa no gana la franja.
  */
 interface Props {
   magnitud: number;
@@ -77,6 +84,96 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
   </a>
 </header>
 
+<script>
+  // ADR-001 vive en este bloque. Lee el docblock de arriba antes de tocarlo: la parte
+  // que importa no es que se oculte, es que vuelva.
+  const encabezado = document.querySelector<HTMLElement>('.encabezado');
+
+  if (encabezado) {
+    /** Píxeles de dedo antes de contar como gesto y no como toque. Igual que `hoja.ts`. */
+    const UMBRAL = 8;
+
+    /**
+     * El alto se fija en píxeles antes de replegar, y por una razón medida: `min-height:
+     * 0` **no** repliega nada. El encabezado es un contenedor flex cuyo contenido mide
+     * 88 px a 390 px de ancho (el botón envuelve a su propia fila), y `min-height` es un
+     * mínimo, no un máximo — la caja sigue creciendo con su contenido. Con solo
+     * `min-height: 0` el encabezado quedaba invisible por `opacity` pero **seguía
+     * ocupando sus 88 px**: el mapa no ganaba la franja, que era el objetivo entero, y
+     * encima quedaba un botón invisible dentro del diseño.
+     *
+     * De `auto` a `0` no hay transición posible sin `interpolate-size`, así que se mide
+     * y se fija el número. Al volver se restaura el píxel y luego se suelta a `auto`,
+     * para que el encabezado siga adaptándose si la pantalla cambia de ancho.
+     */
+    const MS_TRANSICION = 320;
+
+    setTimeout(() => {
+      const alto = encabezado.getBoundingClientRect().height;
+      encabezado.style.height = `${alto}px`;
+
+      requestAnimationFrame(() => {
+        encabezado.setAttribute('data-oculto', '');
+        encabezado.style.height = '0px';
+      });
+
+      let inicioY: number | null = null;
+
+      function reponer(): void {
+        encabezado!.removeAttribute('data-oculto');
+        encabezado!.style.height = `${alto}px`;
+        // Vuelta a `auto` una vez terminada la transición: dejarlo clavado en píxeles
+        // rompería el encabezado al girar el teléfono, que es justo cuando cambia de
+        // una fila a dos.
+        setTimeout(() => {
+          encabezado!.style.height = '';
+        }, MS_TRANSICION);
+
+        // Una sola vez: quien lo pidió de vuelta no tiene que volver a pedirlo. Sin
+        // listeners no queda nada que pueda oscilar ni que cueste en cada gesto.
+        removeEventListener('wheel', alRodar);
+        removeEventListener('touchstart', alTocar);
+        removeEventListener('touchmove', alArrastrar);
+        removeEventListener('focusin', alEnfocar);
+      }
+
+      function alRodar(e: WheelEvent): void {
+        if (e.deltaY < 0) reponer();
+      }
+
+      function alTocar(e: TouchEvent): void {
+        inicioY = e.touches[0]?.clientY ?? null;
+      }
+
+      // Dedo que baja = contenido que sube. Es el mismo gesto con el que vuelve la barra
+      // del navegador, y funciona igual sobre el mapa: MapLibre llama `preventDefault()`
+      // para panear, pero el evento sigue burbujeando hasta aquí.
+      function alArrastrar(e: TouchEvent): void {
+        const y = e.touches[0]?.clientY;
+        if (inicioY === null || y === undefined) return;
+        if (y - inicioY > UMBRAL) reponer();
+      }
+
+      // No hay listener de `scroll`: la hoja es lo único con barra propia, y desplazarla
+      // ya pasa por `touchmove` en un celular y por `wheel` en escritorio. Un tercer
+      // listener —encima en fase de captura, que es la cara— no cubría ningún caso que
+      // estos dos no cubran. El presupuesto de carga es el compromiso del proyecto.
+
+      // Replegado sigue siendo enfocable, así que con teclado o navegación por
+      // conmutador el tabulador lo trae de vuelta en vez de dejar el foco en un botón
+      // invisible. Sin esto, el repliegue sería una trampa de accesibilidad.
+      function alEnfocar(e: FocusEvent): void {
+        if (encabezado!.contains(e.target as Node)) reponer();
+      }
+
+      addEventListener('wheel', alRodar, { passive: true });
+      addEventListener('touchstart', alTocar, { passive: true });
+      addEventListener('touchmove', alArrastrar, { passive: true });
+      addEventListener('focusin', alEnfocar);
+    }, 10_000);
+  }
+</script>
+
 <style>
   .encabezado {
     display: flex;
@@ -89,16 +186,21 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     background: var(--fondo);
     border-bottom: 1px solid var(--borde);
     overflow: hidden;
-    transition: min-height 0.3s ease, padding-block 0.3s ease, opacity 0.25s ease,
+    transition: height 0.3s ease, padding-block 0.3s ease, opacity 0.25s ease,
       border-color 0.3s ease;
   }
 
-  /* **Sin activar a propósito**: hoy nada pone `data-oculto`. Es el mecanismo de
-     repliegue que dejó la ronda 3, guardado para cuando exista el disparador
-     recuperable (tarea 5) — ocultar a los 10 s y **volver al desplazar hacia arriba**.
-     Ver el docblock: la versión permanente se descartó, no el mecanismo.
-     `min-height` en vez de `transform`: con transform el hueco se queda reservado en
-     el `display:flex` de `.disposicion` y el mapa no gana la franja. */
+  /* Replegado a los 10 s; el `<script>` de arriba quita el atributo al primer gesto
+     hacia arriba. El alto en píxeles lo pone y lo quita ese mismo script — ver ahí por
+     qué `min-height: 0` no bastaba. `min-height: 0` sigue haciendo falta aquí para que
+     el `min-height: var(--encabezado)` de arriba no imponga su suelo.
+
+     Nada de `transform`: el hueco se quedaría reservado en el `display:flex` de
+     `.disposicion` y el mapa no ganaría la franja.
+
+     Sin `visibility: hidden` a propósito — el botón sigue siendo enfocable estando
+     replegado, y `focusin` lo trae de vuelta. Ocultarlo del árbol de foco convertiría
+     el repliegue en una trampa para quien navega con teclado o conmutador. */
   .encabezado[data-oculto] {
     min-height: 0;
     padding-block: 0;
@@ -162,14 +264,6 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
 
   .buscas:hover {
     filter: brightness(1.08);
-  }
-
-  /* `display: inline-flex` de arriba gana sobre el `display:none` del navegador para
-     `[hidden]` si no se repite aquí explícitamente — misma prioridad de especificidad,
-     y esta regla va después. Igual que la de arriba: sin activar hoy, esperando al
-     disparador recuperable. */
-  .buscas[hidden] {
-    display: none;
   }
 
   /* En pantallas muy angostas el texto largo del botón desplaza el título. */
