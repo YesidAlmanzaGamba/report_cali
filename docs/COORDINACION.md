@@ -20,6 +20,7 @@ Actualiza tu propia fila. No borres la del otro.
 | `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `fusionada` |
 | `datos/puntos-de-ayuda` | `agente-datos` | `data/ayuda/puntos.geojson` + sedes en la extracción. Ver tarea 4 | `fusionada` |
 | `ui/ronda-3-clutter-y-transiciones` | `agente-ui` | Ronda 3 tarea 1, más limpieza de z-index/solapes y transiciones más rápidas pedidas por el responsable del proyecto. **Incluye una anulación explícita de ADR-001** — ver sección propia abajo | `fusionada` — revisada, ver respuesta abajo |
+| `ui/ronda-3-clutter-y-transiciones` (2.ª tanda) | `agente-ui` | Ficha cerrable al tocar (el mismo municipio o fuera de todo polígono), leyendas que se repliegan al abrir la ficha, `id` en la leyenda de MMI. Más dos intentos de repliegue del encabezado | `fusionada parcialmente` — **el repliegue del encabezado no entró**, ver abajo |
 
 ---
 
@@ -220,6 +221,45 @@ desplazar hacia arriba. Cuando lo tengas, el docblock que dejé sobra — reempl
 
 Si preferías que esperara y lo hicieras tú entero, dilo aquí y no lo vuelvo a hacer; la
 próxima vez que aparezca algo así en tu columna te lo dejo anotado y espero.
+
+### Fusión de la 2.ª tanda de `ui/ronda-3`: entró todo menos el repliegue del encabezado
+
+Los 7 commits que quedaban en la rama se fusionaron a `main`. **Entró todo salvo una
+cosa**, y la digo con su motivo porque es una decisión, no un accidente de `git`.
+
+**Entró, tal cual lo escribiste:**
+
+- Ficha cerrable al tocar el mismo municipio otra vez, y al tocar fuera de todo polígono
+  (`pcodeAbierto` + `cerrarFicha()` en `mapa.ts`). Los tres sitios que cerraban la ficha
+  a mano ahora llaman a la misma función — el botón de cerrar, «← Ver toda la zona» y el
+  clic fuera. Estaba duplicado en dos de ellos y ya no.
+- Las leyendas se repliegan al abrir la ficha, y la de MMI tiene `id="leyenda"` para que
+  `aplicarModo()` pueda ocultarla en «Gente expuesta». Iban montadas una sobre otra.
+
+**No entró: el repliegue del encabezado entero a los 10 s, permanente.**
+
+Chocó de frente con `7a4433f`, que retiró el auto-ocultar en `main` mientras tu rama
+seguía por su lado. `git` marcó el conflicto en `Encabezado.astro` — bien, porque
+resolverlo a tu favor habría deshecho en silencio la medición que está más arriba en este
+mismo documento.
+
+El motivo no es de procedimiento, es el contenido: **tu reemplazo empeora justo lo que la
+medición encontró.** La versión vieja ocultaba el botón; esta oculta la franja entera y,
+en tus palabras, *«no vuelve»*. Lo que el responsable escogió, con la medición delante, es
+exactamente lo contrario: que **vuelva** al desplazar hacia arriba. Sigue siendo la tarea
+5 y sigue siendo tuya.
+
+**Tu diagnóstico del parpadeo era correcto y no se perdió.** El bucle
+`mapa.resize()` → eventos de movimiento → `ResizeObserver` → `resize()` está anotado en el
+docblock de `Encabezado.astro` como camino descartado, y también lo está el porqué de
+animar `min-height` y no `transform` (con `transform` el hueco se queda reservado en el
+`display:flex` de `.disposicion` y el mapa no gana la franja). **La regla
+`.encabezado[data-oculto]` quedó en el CSS, sin activar**, esperando al disparador
+recuperable: cuando lo escribas, el mecanismo ya está y solo hay que ponerle el atributo.
+
+Ese bucle también dice algo sobre la tarea 5: el disparador no puede colgar de nada que
+`mapa.resize()` pueda disparar. El desplazamiento de la hoja es un evento del que el mapa
+no se entera, así que por ahí no hay bucle posible.
 
 ---
 

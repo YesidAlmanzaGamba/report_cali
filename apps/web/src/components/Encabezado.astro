@@ -24,6 +24,26 @@
  * La regla que sale de esto, ya en ADR-001: lo que toque `.buscas` o `#buscas` se
  * verifica **midiendo en el navegador**, contando controles visibles. `grep` dice que
  * existe; solo el rectángulo dice que se ve.
+ *
+ * ---
+ *
+ * **De la ronda 3, al fusionar: dos caminos ya descartados. No los repitas.**
+ *
+ * 1. **Repliegue reactivo durante el gesto** —oculto al arrastrar o hacer zoom, de
+ *    vuelta al soltar (`mapa.ts` en `movestart`/`moveend`)— produjo un bucle de
+ *    parpadeo real: `mapa.resize()` dispara sus propios eventos de movimiento, y el
+ *    `ResizeObserver` que ya vigila el mapa lo volvía a llamar cada vez que el
+ *    encabezado cambiaba de tamaño. Reportado en vivo dos veces. Descartado.
+ * 2. **Repliegue del encabezado entero a los 10 s, permanente** (el reemplazo que
+ *    propuso la ronda 3). Resuelve el parpadeo —sin lógica reactiva no hay bucle— pero
+ *    empeora justo lo que la medición de arriba encontró: antes desaparecía el botón,
+ *    con esto desaparece la franja entera y **no vuelve nunca**. Es lo contrario de la
+ *    versión recuperable que se pidió. No se fusionó.
+ *
+ * Lo que sí sobrevive de ese trabajo es el mecanismo: la regla CSS de abajo anima
+ * `min-height`, no `transform`, porque con `transform` el hueco se queda reservado en
+ * el `display:flex` de `.disposicion` y el mapa no gana la franja. Está lista y sin
+ * activar, esperando al disparador recuperable.
  */
 interface Props {
   magnitud: number;
@@ -63,10 +83,27 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding: 0.5rem 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
     min-height: var(--encabezado);
     background: var(--fondo);
     border-bottom: 1px solid var(--borde);
+    overflow: hidden;
+    transition: min-height 0.3s ease, padding-block 0.3s ease, opacity 0.25s ease,
+      border-color 0.3s ease;
+  }
+
+  /* **Sin activar a propósito**: hoy nada pone `data-oculto`. Es el mecanismo de
+     repliegue que dejó la ronda 3, guardado para cuando exista el disparador
+     recuperable (tarea 5) — ocultar a los 10 s y **volver al desplazar hacia arriba**.
+     Ver el docblock: la versión permanente se descartó, no el mecanismo.
+     `min-height` en vez de `transform`: con transform el hueco se queda reservado en
+     el `display:flex` de `.disposicion` y el mapa no gana la franja. */
+  .encabezado[data-oculto] {
+    min-height: 0;
+    padding-block: 0;
+    opacity: 0;
+    border-bottom-color: transparent;
   }
 
   .fila {
@@ -129,7 +166,8 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
 
   /* `display: inline-flex` de arriba gana sobre el `display:none` del navegador para
      `[hidden]` si no se repite aquí explícitamente — misma prioridad de especificidad,
-     y esta regla va después. */
+     y esta regla va después. Igual que la de arriba: sin activar hoy, esperando al
+     disparador recuperable. */
   .buscas[hidden] {
     display: none;
   }
