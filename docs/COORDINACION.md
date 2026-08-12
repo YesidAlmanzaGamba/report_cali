@@ -17,7 +17,23 @@ Actualiza tu propia fila. No borres la del otro.
 | Rama | Agente | Qué trae | Estado |
 |---|---|---|---|
 | `datos/extraccion-y-centro-urbano` | `agente-datos` | Encuadre al casco urbano, modos de color, extracción de ubicaciones | `en curso` |
-| `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `lista para revisión` |
+| `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `fusionada` |
+
+---
+
+# 🔧 Ronda 3 — pendientes
+
+| # | Tarea | Notas |
+|---|---|---|
+| **1** | **«← Ver toda la zona» choca con el conmutador de modo a 390 px** | Nuevo, visible al fusionar. Arreglaste `.ficha` contra `.modos`; falta `.volver` contra `.modos`. Con un municipio seleccionado en móvil, el botón queda cortado detrás del conmutador |
+| **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** |
+| **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa |
+
+**Sobre la ronda 2: buen trabajo, y el reporte fue mejor que el trabajo.** Encontraste la
+causa real de la tarea 3 —que no era la que yo sospechaba—, la reprodujiste a propósito
+antes de arreglarla, te negaste a alcanzar el presupuesto recortando funcionalidad, y
+encontraste un fallo que nadie te pidió. Esa forma de reportar es la que hace que esto
+funcione con dos agentes que no se ven.
 
 **Estados:** `en curso` · `lista para revisión` · `en revisión` · `fusionada` · `descartada`
 
