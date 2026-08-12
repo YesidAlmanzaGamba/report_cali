@@ -32,6 +32,7 @@ import {
   observacionesDeslizamiento,
   parsearDeslizamientos,
 } from './sources/deslizamientos.js';
+import { aGeoJson as aGeoJsonAyuda, cargarAyuda, enlaceBusqueda, publicar } from './ayuda.js';
 import { extraer } from './extraccion/reglas.js';
 import { fetchJson } from './http.js';
 import { recolectarNoticias } from './sources/noticias.js';
@@ -284,6 +285,20 @@ async function main(): Promise<void> {
         .map((c) => {
           const e = extraer(c.titulo);
           if (!e) return undefined;
+          // Búsqueda armada para quien cura: sede (o barrio) + municipio si lo hay.
+          // Se arma aunque falte el municipio —«Estadio El Campín» se ubica solo— porque
+          // esto no se publica: es la herramienta de quien va a mirar el mapa y confirmar.
+          // La ambigüedad no la resuelve el municipio de todos modos: la Universidad de
+          // Caldas tiene cinco sedes en Manizales. Siempre la resuelve la persona.
+          const nombre = e.sede ?? (e.lugar ? `${e.clase} ${e.lugar}` : undefined);
+          const buscar = nombre
+            ? {
+                buscar_en_mapa: enlaceBusqueda(
+                  [nombre, c.municipio, 'Colombia'].filter(Boolean).join(', '),
+                ),
+              }
+            : {};
+
           return {
             ...e,
             titulo: c.titulo,
@@ -292,6 +307,7 @@ async function main(): Promise<void> {
             tipo_fuente: c.tipo,
             publicado: c.publicado,
             ...(c.pcode ? { pcode: c.pcode, municipio: c.municipio } : {}),
+            ...buscar,
           };
         })
         .filter((s) => s !== undefined);
@@ -338,6 +354,24 @@ async function main(): Promise<void> {
 
       const exactos = listos.filter((i) => i.precision === 'exacta').length;
       return `${listos.length} incidentes en ${grupos.size} municipios (${exactos} verificados) ${
+        written.changed ? '(escrito)' : '(sin cambios)'
+      }`;
+    });
+
+    await step('Puntos de ayuda', async () => {
+      const puntos = publicar(await cargarAyuda());
+
+      // Un solo archivo nacional, no uno por municipio como los incidentes: los puntos
+      // de ayuda son pocos y quien busca dónde donar no sabe todavía en qué municipio
+      // va a mirar. Cargarlos todos de una es más útil y sigue siendo diminuto.
+      const written = await writeGeoJson(DATA_DIR, 'ayuda/puntos', aGeoJsonAyuda(puntos));
+
+      const porTipo = puntos.reduce<Record<string, number>>((acc, p) => {
+        acc[p.tipo] = (acc[p.tipo] ?? 0) + 1;
+        return acc;
+      }, {});
+
+      return `${puntos.length} puntos ${JSON.stringify(porTipo)} ${
         written.changed ? '(escrito)' : '(sin cambios)'
       }`;
     });

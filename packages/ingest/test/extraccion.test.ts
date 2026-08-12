@@ -3,6 +3,49 @@ import { describe, it } from 'node:test';
 
 import { extraer } from '../src/extraccion/reglas.js';
 
+describe('extraer — en qué sede', () => {
+  // Titulares reales de data/fuentes/extraidos.json. Los de acopio traen sede porque
+  // convocar exige decir dónde; los de colapso no la traen porque cuentan, no convocan.
+  it('saca la sede de un titular de acopio real', () => {
+    const e = extraer('Universidad de Caldas habilita centro de acopio para damnificados');
+    assert.equal(e?.tipo, 'centro_acopio');
+    assert.equal(e?.sede, 'Universidad de Caldas');
+  });
+
+  it('captura nombres con artículo interno', () => {
+    assert.equal(
+      extraer('Ciudadela del Petronio es centro de acopio')?.sede,
+      'Ciudadela del Petronio',
+    );
+    assert.equal(
+      extraer('Coliseo El Pueblo habilitado como albergue')?.sede,
+      'Coliseo El Pueblo',
+    );
+  });
+
+  it('descarta la palabra clave sin nombre propio', () => {
+    // «la universidad más cercana» no ubica nada: hay 400 en el país.
+    assert.equal(extraer('Centro de acopio en la universidad más cercana')?.sede, undefined);
+  });
+
+  it('no deja conectores colgando al final', () => {
+    const e = extraer('El albergue de la Parroquia de la comunidad recibe familias');
+    assert.ok(!/\s(?:de|del|la|el)$/.test(e?.sede ?? ''));
+  });
+
+  it('conserva sede y barrio cuando el titular trae los dos', () => {
+    const e = extraer('Colegio San José en el barrio Egipto habilitado como albergue');
+    assert.equal(e?.sede, 'Colegio San José');
+    assert.equal(e?.lugar, 'Egipto');
+  });
+
+  it('no inventa sede en los titulares de colapso, que solo traen cifras', () => {
+    const e = extraer('Terremoto deja 181 muertos y cientos de edificios colapsados');
+    assert.equal(e?.tipo, 'edificacion_colapsada');
+    assert.equal(e?.sede, undefined);
+  });
+});
+
 describe('extraer — qué pasó', () => {
   it('reconoce una edificación colapsada', () => {
     assert.equal(extraer('Edificación derrumbada en el barrio Egipto')?.tipo, 'edificacion_colapsada');

@@ -14,3 +14,6 @@ export const CURATED_FILE = resolve(REPO_ROOT, 'curated', 'observaciones.json');
 
 /** Incidentes puntuales registrados a mano. Mismo trato: los escriben personas. */
 export const INCIDENTES_FILE = resolve(REPO_ROOT, 'curated', 'incidentes.json');
+
+/** Puntos de ayuda. Política contraria a la de incidentes: ubicación exacta siempre. */
+export const AYUDA_FILE = resolve(REPO_ROOT, 'curated', 'ayuda.json');
