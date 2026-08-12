@@ -384,7 +384,10 @@ export async function iniciarMapa(): Promise<void> {
       }
     }
 
-    pintarCifras(String(props['pcode'] ?? ''));
+    const pcode = String(props['pcode'] ?? '');
+    pintarCifras(pcode);
+    void mostrarIncidentes(pcode);
+    pintarCobertura(pcode);
 
     panel?.removeAttribute('hidden');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], props['pcode'] as string]);
@@ -493,6 +496,88 @@ export async function iniciarMapa(): Promise<void> {
     });
   }
 
+  // ── Incidentes por municipio ────────────────────────────────────────────
+  //
+  // Se descargan solo al abrir un municipio. El índice dice cuáles tienen registro; los
+  // que no aparecen **no tienen cartografía**, que no es lo mismo que no tener daños, y
+  // la interfaz tiene que decir esa diferencia en voz alta.
+  const indiceIncidentes = await getJson<{ municipios: string[] }>('incidentes/index.json').catch(
+    () => ({ municipios: [] as string[] }),
+  );
+  const conIncidentes = new Set(indiceIncidentes.municipios);
+  const incidentesCargados = new Map<string, unknown>();
+
+  mapa.addSource('incidentes', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: [] },
+  });
+
+  mapa.addLayer({
+    id: 'incidentes',
+    type: 'circle',
+    source: 'incidentes',
+    paint: {
+      'circle-radius': 7,
+      'circle-color': [
+        'match',
+        ['get', 'tipo'],
+        'edificacion_colapsada', '#a52020',
+        'edificacion_danada', '#d97706',
+        'via_bloqueada', '#7c3aed',
+        'albergue', '#1f8a4c',
+        'centro_acopio', '#1b4d8f',
+        'centro_salud_afectado', '#be185d',
+        '#666',
+      ],
+      'circle-stroke-color': '#fff',
+      'circle-stroke-width': 2,
+      // Lo recortado a la rejilla se dibuja más difuso: el punto no es la ubicación
+      // real y el mapa no debería sugerir que sí.
+      'circle-opacity': ['case', ['==', ['get', 'precision'], 'exacta'], 0.95, 0.6],
+    },
+  });
+
+  async function mostrarIncidentes(pcode: string): Promise<void> {
+    const fuente = mapa.getSource('incidentes') as maplibregl.GeoJSONSource | undefined;
+    if (!fuente) return;
+
+    if (!conIncidentes.has(pcode)) {
+      fuente.setData({ type: 'FeatureCollection', features: [] });
+      return;
+    }
+
+    if (!incidentesCargados.has(pcode)) {
+      try {
+        incidentesCargados.set(pcode, await getJson(`incidentes/${pcode}.geojson`));
+      } catch {
+        return;
+      }
+    }
+
+    fuente.setData(incidentesCargados.get(pcode) as never);
+  }
+
+  /**
+   * Dice si este municipio tiene cartografía de incidentes o no.
+   *
+   * Es la frase más importante de la ficha. Un mapa vacío se lee como «aquí no pasó
+   * nada», y en la mayoría de municipios lo que ocurre es que **nadie ha cartografiado
+   * todavía**. Confundir esas dos cosas en una emergencia manda equipos al lugar
+   * equivocado; decirlo explícitamente cuesta una línea.
+   */
+  function pintarCobertura(pcode: string): void {
+    const el = document.getElementById('detalle-cobertura');
+    if (!el) return;
+
+    if (conIncidentes.has(pcode)) {
+      el.textContent = 'Puntos de incidentes registrados. Los no verificados aparecen agrupados a ~100 m.';
+      el.className = 'cobertura cobertura--con';
+    } else {
+      el.textContent = 'Sin cartografía de incidentes en este municipio. No significa que no haya daños: significa que nadie los ha registrado todavía.';
+      el.className = 'cobertura cobertura--sin';
+    }
+  }
+
   // Botón para volver a la vista general. Sin mapa base, alguien que se acercó a un
   // municipio pequeño puede perder por completo la referencia de dónde está.
   const volver = document.getElementById('volver-vista');
@@ -500,6 +585,10 @@ export async function iniciarMapa(): Promise<void> {
     volver.setAttribute('hidden', '');
     document.getElementById('detalle')?.setAttribute('hidden', '');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
+    (mapa.getSource('incidentes') as maplibregl.GeoJSONSource | undefined)?.setData({
+      type: 'FeatureCollection',
+      features: [],
+    });
 
     if (vistaGeneral) {
       mapa.fitBounds(vistaGeneral, {

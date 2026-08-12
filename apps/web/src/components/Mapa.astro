@@ -59,6 +59,7 @@ const { leyenda } = Astro.props;
       <ul id="detalle-lista"></ul>
     </div>
 
+    <p id="detalle-cobertura" class="cobertura"></p>
     <p id="detalle-metodo" class="metodo"></p>
   </aside>
 </div>
@@ -243,6 +244,31 @@ const { leyenda } = Astro.props;
     margin: 0.5rem 0 0;
     font-size: 0.73rem;
     color: var(--tinta-3);
+  }
+
+  /* «Sin cartografía» no es lo mismo que «sin daños». Lo decimos con todas las letras
+     y con peso visual, porque un mapa vacío se lee como lo segundo. */
+  .cobertura {
+    margin: 0.8rem 0 0;
+    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .cobertura:empty {
+    display: none;
+  }
+
+  .cobertura--con {
+    background: var(--fondo-3);
+    color: var(--tinta-2);
+  }
+
+  .cobertura--sin {
+    background: var(--urgente-fondo);
+    color: var(--tinta);
+    border-left: 3px solid var(--urgente);
   }
 
   #cerrar-detalle {

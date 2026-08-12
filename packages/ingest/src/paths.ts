@@ -11,3 +11,6 @@ export const DATA_DIR = resolve(REPO_ROOT, 'data');
 
 /** Cifras registradas a mano desde boletines. Lo escriben personas; el robot no lo toca. */
 export const CURATED_FILE = resolve(REPO_ROOT, 'curated', 'observaciones.json');
+
+/** Incidentes puntuales registrados a mano. Mismo trato: los escriben personas. */
+export const INCIDENTES_FILE = resolve(REPO_ROOT, 'curated', 'incidentes.json');
