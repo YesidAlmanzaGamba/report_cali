@@ -57,6 +57,39 @@ daño que este ADR existe para impedir.
 controles visibles — no leyendo el marcado. `grep` dice que existe; solo el rectángulo
 dice que se ve.
 
+### Excepción vigente: el encabezado se repliega a los 4 s y no vuelve por gesto
+
+**Decidida por el responsable del proyecto el 2026-08-12, con la medición de arriba
+delante y a sabiendas de lo que cuesta.** Se anota aquí porque este ADR está marcado
+`permanente` y una excepción sin registrar es la que alguien deshace dentro de tres
+semanas creyendo que corrige un descuido. No lo es.
+
+**Qué hace hoy.** Con JavaScript, el encabezado entero —título, magnitud, alerta y el
+botón «¿Buscas a un familiar?»— se repliega a los 4 s y le cede esa franja al mapa.
+**Sin JavaScript no se repliega nada** y este ADR se sostiene entero para quien navega
+sin él.
+
+**Qué cuesta, medido y no argumentado.** Pasados los 4 s, a 390 px con JavaScript
+activo, ninguno de los controles visibles menciona familiares, desaparecidos ni
+búsqueda. La ruta sigue existiendo —abrir la hoja, pestaña «Buscar personas»— pero deja
+de ser *descubrible*, que es justo la propiedad que el resto de este ADR defiende.
+
+**El camino recorrido, para no repetirlo.** Primero se pidió ocultar solo el botón a los
+10 s; se revirtió al medir. Después se construyó una versión recuperable —vuelta con
+`wheel` y `touchmove`—, y en uso real resultó peor de lo que parecía sobre el papel:
+rodar y arrastrar *es* panear y hacer zoom, así que el encabezado reaparecía justo
+cuando alguien empezaba a usar el mapa. Reponerlo por gesto y no tapar el mapa resultaron
+ser incompatibles. Entre las dos, el responsable escogió el mapa.
+
+**Lo que sobrevive de la regla.** Queda `focusin`: el encabezado replegado sigue en el
+árbol de foco, así que quien navega con teclado o conmutador lo recupera tabulando. No
+lo puede disparar el mapa ni `mapa.resize()`. Sin eso, el foco caería en un control
+invisible, que es un defecto de accesibilidad y no una decisión de producto.
+
+**Si algún día se quiere recuperar la ruta visible** sin devolver la franja al
+encabezado, el camino que no choca con lo decidido es la hoja: que «Buscar personas» se
+vea con la hoja asomada. Está anotado en `docs/COORDINACION.md`, sin construir.
+
 Y la barrera automática de esta regla admite **una** excepción, acotada a un archivo:
 `"telefono` dentro de `data/ayuda/`. Es el conmutador de un centro de acopio publicado en
 prensa, no el dato de una persona; está razonada en `scripts/check-no-personal-data.sh` y

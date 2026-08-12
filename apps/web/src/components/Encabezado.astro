@@ -8,46 +8,46 @@
  * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
  * sección; con JavaScript abre la hoja en ese módulo.
  *
- * ## El repliegue a los 10 s: recuperable, y por qué esa palabra es la importante
+ * ## El repliegue a los 4 s — excepción registrada a ADR-001
  *
- * El encabezado se repliega a los 10 s y **vuelve al primer gesto hacia arriba**, como
- * las barras de los navegadores móviles. La parte que vuelve no es un adorno: es lo
- * único que hace esto compatible con ADR-001, y se llegó a ella por medición.
+ * El encabezado se repliega a los **4 s** y **no vuelve por gesto**. Lo pidió el
+ * responsable del proyecto viéndolo funcionar, con este motivo: la franja tapa la
+ * información del mapa y no la quiere de vuelta. Es una excepción **anotada en
+ * `docs/DECISIONS.md`, dentro de ADR-001** — no un descuido ni algo que puedas revertir
+ * por tu cuenta porque «rompe el ADR». Ya se sabe que lo tensa; está decidido.
  *
- * Hubo antes una versión que ocultaba y no volvía. `agente-datos` la midió en navegador
- * a 390 px con JavaScript activo: pasados los 10 s, de los **siete** controles visibles
- * en pantalla, **ninguno** llevaba a los canales de personas desaparecidas. `#buscas` no
- * queda «más abajo»: vive dentro de `#panel-ayuda`, en `display:none` porque la hoja
- * muestra un módulo a la vez, y la hoja está replegada. O sea que este botón no era un
- * atajo al panel — con JavaScript era la única entrada visible que existía.
+ * **Lo que cuesta, medido, para que nadie lo redescubra:** pasados los 4 s, a 390 px y
+ * con JavaScript activo, **ninguno de los controles visibles menciona familiares,
+ * desaparecidos ni búsqueda**. `#buscas` no queda «más abajo»: vive dentro de
+ * `#panel-ayuda`, en `display:none` porque la hoja muestra un módulo a la vez, y la
+ * hoja está replegada. La ruta existe —abrir la hoja, pestaña «Buscar personas»— pero
+ * deja de ser visible. Sin JavaScript no se repliega nada y ADR-001 se sostiene entero.
  *
- * De ahí sale la regla, ya en ADR-001: lo que toque `.buscas` o `#buscas` se verifica
- * **midiendo en el navegador**, contando controles visibles. `grep` dice que existe;
- * solo el rectángulo dice que se ve.
+ * Si algún día quieres devolverle a ADR-001 su ruta visible sin devolver esta franja,
+ * el camino que no choca con lo pedido es la hoja, no el encabezado: que «Buscar
+ * personas» se vea con la hoja asomada.
  *
- * ## Dos caminos ya descartados. No los repitas
+ * ## Tres caminos ya descartados. No los repitas
  *
  * 1. **Repliegue reactivo durante el gesto** —oculto al arrastrar o hacer zoom, de
  *    vuelta al soltar (`mapa.ts` en `movestart`/`moveend`)— produjo un bucle de
  *    parpadeo real: `mapa.resize()` dispara sus propios eventos de movimiento, y el
  *    `ResizeObserver` de `mapa.ts` lo volvía a llamar cada vez que el encabezado
- *    cambiaba de tamaño. Reportado en vivo dos veces. Descartado.
- * 2. **Repliegue permanente, sin retorno.** Resuelve el parpadeo —sin lógica reactiva
- *    no hay bucle— pero es justo lo que la medición de arriba encontró dañino.
+ *    cambiaba de tamaño. Reportado en vivo dos veces.
+ * 2. **Vuelta con `wheel` y `touchmove`.** Sin bucle —`mapa.resize()` no puede
+ *    sintetizar entrada humana— pero rodar y arrastrar *es* panear y hacer zoom, así
+ *    que el encabezado reaparecía justo al empezar a usar el mapa. Reportado en vivo.
+ * 3. **`min-height: 0` para replegar.** No repliega: ver el comentario del `<script>`.
  *
- * ## Por qué esta versión no puede entrar en bucle
+ * ## Por qué esto no puede entrar en bucle ni reaparecer solo
  *
  * La máquina de estados tiene **dos transiciones y se acaba**: visible → replegado (una
- * vez, por temporizador) → visible (una vez, al primer gesto) → visible para siempre.
- * No hay ciclo que recorrer.
+ * vez, por temporizador) → visible (como mucho una vez, por `focusin`) → fin. El único
+ * listener se engancha al replegarse y se suelta al usarse.
  *
- * Y los disparadores del retorno son de entrada humana —`wheel`, `touchmove`,
- * `focusin`—, **ninguno de los cuales `mapa.resize()` puede sintetizar**. Ese es el
- * detalle que mató a la versión 1: `movestart`/`moveend` sí los sintetiza. Si algún día
- * hay que tocar esto, la regla es esa — nada que la cámara del mapa pueda emitir sola.
- *
- * Los listeners se enganchan **al replegarse**, no al cargar, y se sueltan al volver:
- * antes de los 10 s no hay ni un listener puesto, y después del retorno tampoco.
+ * Y `focusin` **no lo puede disparar el mapa**: ni un gesto, ni la cámara, ni
+ * `mapa.resize()`. Hace falta que alguien lleve el foco al encabezado. Esa es la regla
+ * si hay que tocar esto — nada que el mapa pueda emitir solo.
  *
  * `min-height` y no `transform`: con `transform` el hueco se queda reservado en el
  * `display:flex` de `.disposicion` y el mapa no gana la franja.
@@ -90,8 +90,11 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
   const encabezado = document.querySelector<HTMLElement>('.encabezado');
 
   if (encabezado) {
-    /** Píxeles de dedo antes de contar como gesto y no como toque. Igual que `hoja.ts`. */
-    const UMBRAL = 8;
+    /**
+     * 4 s, no 10. Lo pidió el responsable del proyecto tras verlo en vivo: 10 s son
+     * mucho tiempo con la franja puesta encima del mapa.
+     */
+    const MS_HASTA_REPLEGAR = 4_000;
 
     /**
      * El alto se fija en píxeles antes de replegar, y por una razón medida: `min-height:
@@ -117,9 +120,25 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
         encabezado.style.height = '0px';
       });
 
-      let inicioY: number | null = null;
+      /**
+       * Único disparador de vuelta, y **no se dispara mirando ni manejando el mapa**.
+       *
+       * Hubo `wheel` y `touchmove` aquí, y era un error de diseño: rodar y arrastrar es
+       * exactamente panear y hacer zoom, así que el encabezado volvía justo cuando la
+       * persona empezaba a usar el mapa y le comía la franja otra vez. El responsable
+       * del proyecto lo reportó con esas palabras — que no lo quiere de vuelta porque
+       * tapa la información del mapa— y tiene razón: quitarlos es el arreglo, no una
+       * concesión.
+       *
+       * `focusin` se queda, y no es lo mismo. No lo puede disparar el mapa, ni un
+       * gesto, ni `mapa.resize()`: hace falta que alguien lleve el foco al encabezado,
+       * que es un acto deliberado. Sin esto, quien navega con teclado o con conmutador
+       * tabula hasta un botón invisible y se queda con el foco perdido dentro de una
+       * caja de alto 0 — eso es un defecto, no una preferencia de diseño.
+       */
+      function alEnfocar(e: FocusEvent): void {
+        if (!encabezado!.contains(e.target as Node)) return;
 
-      function reponer(): void {
         encabezado!.removeAttribute('data-oculto');
         encabezado!.style.height = `${alto}px`;
         // Vuelta a `auto` una vez terminada la transición: dejarlo clavado en píxeles
@@ -129,48 +148,11 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
           encabezado!.style.height = '';
         }, MS_TRANSICION);
 
-        // Una sola vez: quien lo pidió de vuelta no tiene que volver a pedirlo. Sin
-        // listeners no queda nada que pueda oscilar ni que cueste en cada gesto.
-        removeEventListener('wheel', alRodar);
-        removeEventListener('touchstart', alTocar);
-        removeEventListener('touchmove', alArrastrar);
         removeEventListener('focusin', alEnfocar);
       }
 
-      function alRodar(e: WheelEvent): void {
-        if (e.deltaY < 0) reponer();
-      }
-
-      function alTocar(e: TouchEvent): void {
-        inicioY = e.touches[0]?.clientY ?? null;
-      }
-
-      // Dedo que baja = contenido que sube. Es el mismo gesto con el que vuelve la barra
-      // del navegador, y funciona igual sobre el mapa: MapLibre llama `preventDefault()`
-      // para panear, pero el evento sigue burbujeando hasta aquí.
-      function alArrastrar(e: TouchEvent): void {
-        const y = e.touches[0]?.clientY;
-        if (inicioY === null || y === undefined) return;
-        if (y - inicioY > UMBRAL) reponer();
-      }
-
-      // No hay listener de `scroll`: la hoja es lo único con barra propia, y desplazarla
-      // ya pasa por `touchmove` en un celular y por `wheel` en escritorio. Un tercer
-      // listener —encima en fase de captura, que es la cara— no cubría ningún caso que
-      // estos dos no cubran. El presupuesto de carga es el compromiso del proyecto.
-
-      // Replegado sigue siendo enfocable, así que con teclado o navegación por
-      // conmutador el tabulador lo trae de vuelta en vez de dejar el foco en un botón
-      // invisible. Sin esto, el repliegue sería una trampa de accesibilidad.
-      function alEnfocar(e: FocusEvent): void {
-        if (encabezado!.contains(e.target as Node)) reponer();
-      }
-
-      addEventListener('wheel', alRodar, { passive: true });
-      addEventListener('touchstart', alTocar, { passive: true });
-      addEventListener('touchmove', alArrastrar, { passive: true });
       addEventListener('focusin', alEnfocar);
-    }, 10_000);
+    }, MS_HASTA_REPLEGAR);
   }
 </script>
 

@@ -1,14 +1,34 @@
 # Tablero de coordinación
 
-Estado en curso entre los dos agentes. **El contrato y los límites están en
+Estado en curso del proyecto. **El contrato y los límites están en
 [`../CLAUDE.md`](../CLAUDE.md)**; esto es solo el pizarrón: qué hay en vuelo y qué se
 está esperando de quién.
 
-**Escribir aquí es obligatorio, no cortés.** Los dos agentes trabajan sin ver la
-conversación del otro: lo que no esté anotado aquí, para el otro no existe. Anota al
-empezar una rama, al dejarla lista, al fusionarla y al descartarla.
+> ## ⚠️ 2026-08-12 — un solo agente, y el tablero se sigue escribiendo igual
+>
+> El responsable del proyecto lo dijo así: **«actually you're the only working, so I'll
+> be giving you the changes»**. Ya no hay dos agentes en paralelo. Un solo agente recibe
+> los encargos y toca todo el repositorio — `apps/web/**` incluido, sin pedir permiso
+> cruzado ni disculparse por entrar en una columna ajena, porque ya no hay columna ajena.
+>
+> **Lo que NO cambia, y es lo que importa:**
+>
+> - **Este archivo se sigue escribiendo.** Se pidió expresamente. Deja de ser un canal
+>   entre dos agentes y pasa a ser el registro de qué se hizo y por qué, para el
+>   responsable del proyecto y para cualquier agente futuro que empiece sin esta
+>   conversación. Ese lector siempre existe.
+> - **La puerta de verificación completa**, corrida siempre después de fusionar:
+>   `typecheck`, `test`, `build`, `check-no-personal-data.sh`, más medición en navegador
+>   a 390 × 844.
+> - **Las cuatro reglas duras de `CLAUDE.md`.** No dependían de haber dos agentes.
+>
+> La tabla de columnas de `CLAUDE.md` («es dueño de…», «solo `agente-datos` empuja a
+> `main`») queda como historia de cómo se trabajó, no como regla vigente. Lo que sigue
+> abajo está escrito en aquel registro de dos voces; se conserva tal cual porque el
+> razonamiento vale, aunque los nombres ya no correspondan a nadie.
 
-Actualiza tu propia fila. No borres la del otro.
+**Escribir aquí es obligatorio, no cortés.** Anota al empezar algo, al dejarlo listo, al
+fusionarlo y al descartarlo. Lo que no esté anotado aquí, para el siguiente no existe.
 
 ---
 
@@ -32,7 +52,7 @@ Actualiza tu propia fila. No borres la del otro.
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
 | **4** | **Capa de puntos de ayuda con «Cómo llegar»** | **La más pedida ahora mismo.** El responsable la pidió con estas palabras: «cuando toco Cali quiero ver un marcador con esta información». **Ya hay 7 puntos reales**, 2 de ellos en Cali. Ver abajo | Pendiente (tuya) — prioridad |
-| **5** | **«¿Buscas a un familiar?»: que vuelva al desplazar** | **Prioritaria, y decidida.** El responsable escogió la versión recuperable con la medición delante | ✅ hecho — **lo construí yo, por encargo directo del responsable. Volví a entrar en tu columna; ver abajo** |
+| **5** | ~~«¿Buscas a un familiar?»: que vuelva al desplazar~~ → **repliegue a los 4 s, sin vuelta por gesto** | Se construyó la versión recuperable y **en uso real resultó peor que sobre el papel**: volvía justo al empezar a usar el mapa. El responsable cambió el encargo con eso delante | ✅ cerrada — **excepción registrada en ADR-001**, ver abajo |
 
 ## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
 
@@ -316,6 +336,43 @@ Verificado con dos pulsaciones reales de Tab, no leyendo el marcado.
 
 **Carga:** 15,51 → **15,84 KB** comprimidos (+342 B). Sigue por encima de los 12 KB de la
 spec; la tarea 2 no se ha tocado.
+
+### Corrección en caliente: 4 s, y la vuelta por gesto se retira
+
+Lo de arriba duró una revisión. El responsable lo probó en vivo y pidió dos cambios, con
+un motivo que conviene citar porque es el que manda: **«no quiero que vuelva a salir esta
+caja, porque no deja ver bien la información del mapa»**.
+
+**1. De 10 s a 4 s.** Con la franja encima del mapa, 10 s son mucho.
+
+**2. Fuera `wheel` y `touchmove`. Era un error de diseño mío, no una discrepancia de
+gusto.** Los elegí porque son el gesto de las barras de los navegadores móviles, y en un
+sitio que hace scroll son exactamente eso. Aquí no: **el cuerpo no hace scroll** —
+`.disposicion` mide `100dvh`— y lo único que hay debajo del dedo es el mapa. Así que
+«rodar hacia arriba» y «arrastrar el dedo hacia abajo» no eran el gesto de recuperar la
+barra: eran *panear y hacer zoom*. El encabezado volvía justo en el momento en que
+alguien empezaba a usar el mapa, y le comía la franja otra vez. Quitarlos es el arreglo.
+
+Ahí hay una lección que vale más que este caso: **el gesto correcto en un patrón no lo es
+en un layout distinto.** Copié el patrón de las barras móviles sin comprobar que existiera
+la superficie que lo hace funcionar.
+
+**3. Se queda `focusin`, y no es lo mismo.** No lo puede disparar el mapa, ni un gesto,
+ni `mapa.resize()`: hace falta llevar el foco al encabezado, que es deliberado. Sin él,
+quien navega con teclado o conmutador tabula hasta un botón invisible dentro de una caja
+de alto 0. Eso es un defecto, no una preferencia.
+
+**Lo que esto le cuesta a ADR-001, dicho sin adornos y con la excepción ya registrada en
+`DECISIONS.md`:** pasados los 4 s no queda ningún control visible que mencione
+familiares, desaparecidos ni búsqueda. La ruta existe —hoja, pestaña «Buscar personas»—
+pero deja de ser descubrible. Decidido por el responsable con la medición delante.
+
+**El camino que reconciliaría las dos cosas, sin construir:** que «Buscar personas» se
+vea con la hoja **asomada**. Devuelve una ruta visible sin devolverle la franja al
+encabezado, que es lo que se pidió quitar. No lo hago sin encargo — es diseño de la hoja
+y toca la tarea 2 (presupuesto).
+
+**Carga tras el cambio:** 15,84 → **15,71 KB** (−134 B; dos listeners menos).
 
 ---
 
