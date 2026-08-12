@@ -43,13 +43,25 @@ jobs:
       # principal del proyecto, y una subida a R2 —que es una optimización— nunca puede
       # impedirla. Si R2 falla, el mapa sigue sirviendo datos desde su propio dominio.
       - name: Subir a R2
+        if: '!cancelled()'
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: bash scripts/upload-r2.sh
 
+      # `if: !cancelled()` — se publica AUNQUE la ingesta haya fallado, y no es descuido.
+      #
+      # `runner.ts` aísla cada paso: si uno falla, los demás ya escribieron su dato bueno
+      # en disco. Sin esta línea, un paso caído se llevaba por delante la publicación de
+      # todos los demás — y el paso más fácil de tumbar es el que lee los archivos
+      # curados, que los edita gente a mano. Una coma de más en curated/ayuda.json
+      # congelaba el mapa entero, USGS incluido, hasta que alguien lo notara.
+      #
+      # Publicar lo que sí salió bien es siempre mejor que servir datos de hace horas.
+      # El trabajo igual queda marcado como fallido, así que el error no pasa inadvertido.
       - name: Publicar si hubo cambios
+        if: '!cancelled()'
         run: |
           if [ -z "$(git status --porcelain data/)" ]; then
             echo "Sin cambios en los datos."
