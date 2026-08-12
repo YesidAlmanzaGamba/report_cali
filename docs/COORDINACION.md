@@ -435,6 +435,46 @@ avance real hacia esa meta y no costó ni una función.
 del frontmatter, nunca en un comentario HTML. Merece estar en las «Trampas conocidas» de
 `CLAUDE.md`, que sigue pendiente de actualizar.
 
+### La leyenda cambia de contenido en vez de crecer
+
+Segunda captura del sitio en vivo: al abrir «¿Qué significan los colores?» la leyenda
+crecía hasta **~750 px**, se salía por arriba de la pantalla —la fila «moderado» quedaba
+cortada— y se montaba sobre la fila de controles. El mapa desaparecía detrás del cuadro.
+
+La causa es que la explicación se **apilaba debajo** de la escala en vez de reemplazarla.
+Pedido textual: *«que ponga la información en la misma caja, escondiendo la anterior, para
+no alterar la vista del mapa»*.
+
+**Ahora el cuadro cambia de contenido, no de tamaño.** Con `.leyenda:has(.explica[open])`
+se ocultan la escala y su nota mientras se lee la explicación, y vuelven al cerrarla. Con
+CSS y sin JavaScript, que es lo que mantiene la leyenda viva cuando el script no carga;
+donde no haya `:has()` vuelve al apilado de antes, pero ya con el techo de abajo, así que
+se desplaza dentro del cuadro en vez de desbordarse.
+
+**Y un techo medido, no adivinado:** `max-height: calc(100% - var(--ficha-top) - …)`, con
+`overflow-y: auto`. `--ficha-top` ya es el alto real de la fila de controles, así que si
+esa fila cambia, el techo cambia solo. Es el mismo valor que usan la ficha y «← Ver toda
+la zona»: **un único número medido para todo lo que no puede chocar ahí arriba.**
+
+Medido a 390 × 844, con la escala y con la explicación:
+
+| | alto del cuadro |
+|---|---|
+| leyenda cerrada | 40 px |
+| abierta, con la escala | 347 px |
+| explicación abierta — **antes** | ~750 px, desbordando por arriba |
+| explicación abierta — **ahora** | **422 px** (50 % de pantalla), sin desbordar |
+
+Arriba queda en y=308 con los controles acabando en y=163: no los toca. Al cerrar,
+vuelven la escala y la nota y el cuadro regresa a 347 px.
+
+Se agregó una pista —*«cerrar para ver la escala»*— porque si no, quien abre la
+explicación ve desaparecer la escala de color sin saber que vuelve. Va en su propio
+renglón (`flex-basis: 100%`): el `summary` genérico es flex y sin eso la pista se
+acomodaba como segunda columna, partiendo las dos en renglones de tres palabras.
+
+**Carga:** 14,74 → **14,88 KB** (+148 B).
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda

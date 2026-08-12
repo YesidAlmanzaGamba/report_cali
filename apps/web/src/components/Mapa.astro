@@ -412,11 +412,46 @@ const { leyenda } = Astro.props;
     bottom: 0.6rem;
     z-index: 8;
     max-width: 15rem;
+    /* Techo medido, no adivinado: nunca puede crecer hasta la fila de controles.
+       `--ficha-top` ya es el alto real de esa fila (lo mide `ajustarControlesSuperiores()`),
+       así que si la fila cambia, este techo cambia con ella. Lo que no quepa se desplaza
+       dentro del cuadro; el mapa no se toca. */
+    max-height: calc(100% - var(--ficha-top, 3.9rem) - 1.2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: color-mix(in srgb, var(--fondo) 93%, transparent);
     backdrop-filter: blur(6px);
     border: 1px solid var(--borde);
     border-radius: var(--radio);
     font-size: 0.78rem;
+  }
+
+  /* Abrir «¿Qué significan los colores?» **cambia el contenido del cuadro, no lo agranda**:
+     la escala se esconde mientras se lee la explicación y vuelve al cerrarla. Antes las dos
+     cosas se apilaban y el cuadro crecía hasta tapar el mapa entero y montarse sobre los
+     controles de arriba.
+
+     Con `:has()` y sin JavaScript, que es lo que hace que la leyenda siga funcionando
+     cuando el script no carga. Donde no haya `:has()` el cuadro vuelve al comportamiento
+     de antes — pero ya con el techo de arriba, así que se desplaza en vez de desbordarse. */
+  .leyenda:has(.explica[open]) > ul,
+  .leyenda:has(.explica[open]) > .nota {
+    display: none;
+  }
+
+  /* Sin esto, quien abre la explicación ve desaparecer la escala de color y no tiene por
+     qué saber que vuelve. `flex-basis: 100%` porque el `summary` genérico es flex: sin
+     eso la pista se acomoda como segunda columna al lado del título, en un cuadro de
+     12,5 rem, y las dos quedan partidas en renglones cortos. */
+  .explica > summary {
+    flex-wrap: wrap;
+  }
+
+  .explica[open] > summary::after {
+    content: 'cerrar para ver la escala';
+    flex-basis: 100%;
+    font-weight: 400;
+    color: var(--tinta-3);
   }
 
   summary {
@@ -945,6 +980,9 @@ const { leyenda } = Astro.props;
       bottom: calc(var(--asomada) + 0.6rem);
       max-width: 12.5rem;
       font-size: 0.72rem;
+      /* En celular el cuadro además arranca por encima de la hoja asomada, así que hay
+         que descontarla del techo o volvería a desbordar por arriba. */
+      max-height: calc(100% - var(--asomada) - var(--ficha-top, 3.9rem) - 1.2rem);
     }
 
     /* Ronda 3, tarea 1: a 390 px «← Ver toda la zona» (izquierda) y la columna de
