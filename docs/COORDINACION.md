@@ -28,6 +28,42 @@ Actualiza tu propia fila. No borres la del otro.
 | **1** | **«← Ver toda la zona» choca con el conmutador de modo a 390 px** | Nuevo, visible al fusionar. Arreglaste `.ficha` contra `.modos`; falta `.volver` contra `.modos`. Con un municipio seleccionado en móvil, el botón queda cortado detrás del conmutador |
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa |
+| **4** | **Capa de puntos de ayuda con «Cómo llegar»** ← nuevo, dato ya listo | Ver abajo |
+
+## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
+
+Hay un archivo nuevo: **`data/ayuda/puntos.geojson`**. Centros de acopio, albergues y
+puestos médicos.
+
+**Su política es la CONTRARIA a la de los incidentes, y por eso no deben compartir capa
+ni estilo.** Un punto de daño se difumina a 100 m a propósito (ADR-012). Un centro de
+acopio se publica exacto, porque la pregunta que responde es *«tengo mercado en el carro,
+¿a dónde lo llevo?»*. Que sea fácil de encontrar es el objetivo, no un riesgo.
+
+Cada punto trae, en `properties`:
+
+| Campo | Para qué |
+|---|---|
+| `nombre`, `direccion` | Identificarlo: «Universidad de Caldas», «Coliseo El Pueblo» |
+| `horario` | Que nadie llegue a puerta cerrada |
+| `necesita` | **Lo más útil.** Evita que lleguen diez camiones de ropa y ningún litro de agua |
+| `telefono` | Vacío salvo que la fuente oficial lo publicara |
+| **`como_llegar`** | URL de navegación ya armada. **La interfaz no debe construir URLs** |
+| `fuente`, `fuente_url` | Como todo dato publicado (ADR-003) |
+
+**Lo que pediría de la interfaz:**
+
+- Marcadores claramente distintos de los de incidentes — estos son a dónde ir, aquellos
+  son qué pasó. Si se parecen, alguien va a conducir hacia un edificio colapsado.
+- Un botón **«Cómo llegar»** bien visible que abra `como_llegar`. Es la acción principal:
+  quien mira esto ya decidió ayudar y solo necesita la dirección.
+- `necesita` visible sin abrir nada más, si cabe.
+- **Ojo: muchos puntos están lejos del sismo** —Bogotá, incluso Ecuador o México—, porque
+  ahí está quien quiere donar. No los filtres por la zona afectada ni por los municipios
+  con MMI: se perderían justo los que más gente puede usar.
+
+Hoy el archivo tiene **0 puntos**: la curaduría va aparte. Lo puedes construir contra la
+estructura y probar inyectando puntos, como hiciste con la leyenda de incidentes.
 
 **Sobre la ronda 2: buen trabajo, y el reporte fue mejor que el trabajo.** Encontraste la
 causa real de la tarea 3 —que no era la que yo sospechaba—, la reprodujiste a propósito
@@ -251,6 +287,8 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 | Fecha | Archivo | Cambio | Aviso previo |
 |---|---|---|---|
 | 2026-08-12 | `event/mmi-by-municipality.json` | Se agrega `poblacion` por municipio (de `cod-ps-col`, HDX). Campo nuevo, nada se quita | Este aviso |
+| 2026-08-12 | `event/deslizamientos.json` + `.png` | Nuevos. Superposición de probabilidad de deslizamiento del USGS con sus esquinas | Ya en `main` |
+| 2026-08-12 | `ayuda/puntos.geojson` | **Nuevo.** Centros de acopio y albergues, ubicación exacta, con `como_llegar` ya armado | Este aviso — ver tarea 4 |
 
 ---
 

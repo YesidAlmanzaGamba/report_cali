@@ -76,26 +76,82 @@ export const REGLAS_TIPO: readonly ReglaTipo[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * Conectores de lugar. El grupo capturado es el nombre.
+ * Un nombre propio: palabra en mayúscula, seguida de hasta cuatro palabras que sean o
+ * bien conectores (`de`, `del`, `la`…) o bien más palabras en mayúscula. Así entra
+ * «Santa Rita del Norte» completa y se para justo antes de «habilitado».
  *
- * Se exige **mayúscula inicial** en el nombre: «en el barrio Egipto» sí, «en el barrio
- * más afectado» no. Sin ese filtro, la mitad de las capturas serían adjetivos.
+ * **El `\b` después de los conectores no es decorativo.** Sin él, `de` coincide con el
+ * principio de `del`, la repetición se corta ahí y «Ciudadela del Petronio» queda en
+ * «Ciudadela de» — un fallo que no se ve leyendo, solo probando.
  *
- * El nombre se corta en 40 caracteres y en la primera coma o punto. Capturar de más es
- * peor que no capturar: una sugerencia con media frase pegada es ruido que alguien tiene
- * que limpiar a mano.
+ * Se exige mayúscula inicial: «en el barrio Egipto» sí, «en el barrio más afectado» no.
+ * Y el nombre termina en la primera palabra en minúscula, porque **capturar de más es
+ * peor que no capturar**: una sugerencia con media frase pegada la tiene que limpiar
+ * alguien a mano.
  */
+const PALABRA = String.raw`[A-ZÁÉÍÓÚÑ][\wáéíóúñüÁÉÍÓÚÑ]*`;
+const CONECTOR = String.raw`(?:de|del|la|las|el|los|San|Santa|Santo)\b`;
+const NOMBRE_PROPIO = String.raw`${PALABRA}(?:\s+(?:${CONECTOR}|${PALABRA})){0,4}`;
+
+/** Conectores de lugar. El grupo capturado es el nombre. */
 export const CONECTORES: readonly { clase: string; patron: RegExp }[] = [
-  { clase: 'barrio', patron: /\b(?:en|del|el)\s+barrio\s+([A-ZÁÉÍÓÚÑ][^,.;:]{2,40})/ },
-  { clase: 'sector', patron: /\bsector\s+(?:de\s+)?([A-ZÁÉÍÓÚÑ][^,.;:]{2,40})/ },
-  { clase: 'comuna', patron: /\bcomuna\s+([0-9]{1,2}|[A-ZÁÉÍÓÚÑ][^,.;:]{2,40})/ },
-  { clase: 'vereda', patron: /\bvereda\s+([A-ZÁÉÍÓÚÑ][^,.;:]{2,40})/ },
-  { clase: 'corregimiento', patron: /\bcorregimiento\s+(?:de\s+)?([A-ZÁÉÍÓÚÑ][^,.;:]{2,40})/ },
+  { clase: 'barrio', patron: new RegExp(String.raw`\b(?:en|del|el)\s+barrio\s+(${NOMBRE_PROPIO})`) },
+  { clase: 'sector', patron: new RegExp(String.raw`\bsector\s+(?:de\s+)?(${NOMBRE_PROPIO})`) },
+  { clase: 'comuna', patron: new RegExp(String.raw`\bcomuna\s+([0-9]{1,2}|${NOMBRE_PROPIO})`) },
+  { clase: 'vereda', patron: new RegExp(String.raw`\bvereda\s+(${NOMBRE_PROPIO})`) },
+  {
+    clase: 'corregimiento',
+    patron: new RegExp(String.raw`\bcorregimiento\s+(?:de\s+)?(${NOMBRE_PROPIO})`),
+  },
   // Se quitó el conector de «vía X». En la primera corrida sobre titulares reales fue el
   // único que produjo algo — y fue un falso positivo: «vía Quito-Lago Agrio», que es un
   // oleoducto en Ecuador. Un nombre de carretera describe el incidente, no la localidad,
   // y su tasa de error no compensa lo poco que aporta.
 ];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Tabla 3 — en qué sede
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Nombres de sedes. Esta tabla existe por algo que se vio en los titulares reales y que
+ * contradice a la tabla 2:
+ *
+ * > «Terremoto deja 181 muertos y cientos de edificios colapsados» — una cifra, ningún
+ * > lugar.
+ * > «**Universidad de Caldas** habilita centro de acopio» — un lugar que se puede ubicar
+ * > en un mapa en diez segundos.
+ *
+ * Los daños se cuentan; la ayuda se convoca. Y para convocar hay que decir dónde. Por eso
+ * los titulares de acopio y albergue **sí** traen ubicación, mientras los de colapso no —
+ * y por eso vale la pena extraerla aunque la tabla 2 haya rendido casi nada.
+ *
+ * Se capturan sedes con nombre propio: la palabra clave más lo que la sigue, mientras sea
+ * conector (`de`, `del`, `la`…) o palabra en mayúscula. «Universidad de Caldas» entra
+ * completa; «universidad más cercana» no entra.
+ */
+const CLASES_SEDE =
+  'Universidad|Coliseo|Estadio|Polideportivo|Unidad Deportiva|Parroquia|Iglesia|Catedral|' +
+  'Colegio|Instituto|Ciudadela|Biblioteca|Teatro|Gimnasio|Batall[oó]n|Plaza de Mercado|' +
+  'Centro Comercial|Corferias|Hospital|Cl[ií]nica|Aeropuerto|Terminal';
+
+export const SEDES: readonly RegExp[] = [
+  new RegExp(String.raw`\b(?:${CLASES_SEDE})(?:\s+(?:${CONECTOR}|${PALABRA})){1,4}`),
+];
+
+/** Conectores sueltos al final: «Universidad de la» se queda en «Universidad». */
+const CONECTOR_FINAL = /\s+(?:de|del|la|las|el|los|y|en)$/i;
+
+/**
+ * Recorta la sede capturada, o la descarta si quedó en la pura palabra clave.
+ *
+ * «Universidad» sola no ubica nada: hay 400 en el país. Solo sirve con nombre propio.
+ */
+function limpiarSede(bruto: string): string | undefined {
+  let nombre = bruto.trim().replace(/\s+/g, ' ');
+  while (CONECTOR_FINAL.test(nombre)) nombre = nombre.replace(CONECTOR_FINAL, '');
+  return nombre.includes(' ') ? nombre : undefined;
+}
 
 /** Palabras que delatan que lo capturado no es un nombre propio de lugar. */
 const NO_ES_LUGAR =
@@ -111,11 +167,14 @@ export interface Extraido {
   clase?: string;
   /** Nombre del lugar tal como lo escribe la fuente. */
   lugar?: string;
+  /** Sede con nombre propio: «Universidad de Caldas», «Coliseo El Pueblo». */
+  sede?: string;
 }
 
 /** Limpia el nombre capturado, o lo descarta si no parece un lugar. */
 function limpiarLugar(bruto: string): string | undefined {
-  const nombre = bruto.trim().replace(/\s+/g, ' ').replace(/\s+(?:y|e|donde|que)$/i, '');
+  let nombre = bruto.trim().replace(/\s+/g, ' ').replace(/\s+(?:y|e|donde|que)$/i, '');
+  while (CONECTOR_FINAL.test(nombre)) nombre = nombre.replace(CONECTOR_FINAL, '');
   if (NO_ES_LUGAR.test(nombre)) return undefined;
 
   // Las comunas se nombran por número —«comuna 13»— así que un nombre corto es válido
@@ -137,11 +196,18 @@ export function extraer(texto: string): Extraido | undefined {
   const tipo = REGLAS_TIPO.find((r) => r.patron.test(texto))?.tipo;
   if (!tipo) return undefined;
 
+  let sede: string | undefined;
+  for (const patron of SEDES) {
+    const m = patron.exec(texto);
+    sede = m?.[0] === undefined ? undefined : limpiarSede(m[0]);
+    if (sede) break;
+  }
+
   for (const { clase, patron } of CONECTORES) {
     const m = patron.exec(texto);
     const lugar = m?.[1] === undefined ? undefined : limpiarLugar(m[1]);
-    if (lugar) return { tipo, clase, lugar };
+    if (lugar) return { tipo, clase, lugar, ...(sede ? { sede } : {}) };
   }
 
-  return { tipo };
+  return sede ? { tipo, sede } : { tipo };
 }
