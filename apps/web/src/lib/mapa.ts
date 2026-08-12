@@ -24,6 +24,7 @@ import {
 } from './mmi';
 import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
 import { colapsarHoja } from './hoja';
+import { mostrarEncabezado, ocultarEncabezado } from './encabezado';
 
 interface MunicipioProps {
   pcode: string;
@@ -657,6 +658,7 @@ export async function iniciarMapa(): Promise<void> {
       boton.append(tipo, desc, meta);
       boton.addEventListener('click', () => {
         const [lon, lat] = f.geometry.coordinates;
+        vueloPropio = true;
         mapa.flyTo({ center: [lon, lat], zoom: 13, duration: prefiereMenosMovimiento ? 0 : 700 });
       });
 
@@ -785,6 +787,7 @@ export async function iniciarMapa(): Promise<void> {
       parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
       104;
 
+    vueloPropio = true;
     mapa.fitBounds(
       [
         [caja[0], caja[1]],
@@ -856,6 +859,42 @@ export async function iniciarMapa(): Promise<void> {
     mapa.getCanvas().style.cursor = '';
   });
 
+  /**
+   * El encabezado se repliega mientras la persona arrastra o hace zoom, para ganar
+   * esa franja justo cuando más se necesita, y vuelve en cuanto el mapa se asienta.
+   *
+   * La idea original era usar `e.originalEvent` para distinguir un gesto real de un
+   * vuelo de cámara que dispara el propio sitio (`acercarA()`, «volver»), tal como lo
+   * documenta MapLibre. **Comprobado en navegador y no funcionó**: en esta versión
+   * `originalEvent` llega vacío incluso para una rueda de mouse real (gesto de scroll
+   * disparado con eventos confiables, no sintéticos). En vez de confiar en un detalle de
+   * la librería que no se comportó como decía la documentación, se marca a mano cada
+   * vuelo propio con `vueloPropio` — determinista, no depende de qué tan fiel sea el
+   * evento que MapLibre decida adjuntar.
+   */
+  let vueloPropio = false;
+
+  /**
+   * Un scroll o arrastre continuo no es un solo `movestart`…`moveend`: MapLibre cierra
+   * ese par en cada pequeño paso (comprobado en navegador — varios pares por segundo
+   * durante un scroll sostenido). Mostrarlo de inmediato en cada `moveend` hacía que el
+   * encabezado parpadeara todo el tiempo que durara el gesto, en vez de quedarse
+   * replegado durante el gesto entero. Por eso `mostrarEncabezado()` se demora un poco:
+   * si llega un `movestart` nuevo antes de que se cumpla la espera, se cancela y sigue
+   * oculto.
+   */
+  let temporizadorMostrarEncabezado: ReturnType<typeof setTimeout> | undefined;
+
+  mapa.on('movestart', () => {
+    clearTimeout(temporizadorMostrarEncabezado);
+    if (!vueloPropio) ocultarEncabezado();
+  });
+  mapa.on('moveend', () => {
+    vueloPropio = false;
+    clearTimeout(temporizadorMostrarEncabezado);
+    temporizadorMostrarEncabezado = setTimeout(mostrarEncabezado, 350);
+  });
+
   document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
 
   // En móvil la leyenda pasa a flujo normal dentro del marco, así que el alto del
@@ -901,6 +940,7 @@ export async function iniciarMapa(): Promise<void> {
       vistaGeneral.extend([maxX, maxY]);
     }
 
+    vueloPropio = true;
     mapa.fitBounds(vistaGeneral, {
       padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
       duration: 0,
@@ -1102,6 +1142,7 @@ export async function iniciarMapa(): Promise<void> {
     }
 
     if (vistaGeneral) {
+      vueloPropio = true;
       mapa.fitBounds(vistaGeneral, {
         padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
         duration: prefiereMenosMovimiento ? 0 : 450,

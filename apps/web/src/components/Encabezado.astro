@@ -13,6 +13,12 @@
  * contradicción — no un descuido. Sin JavaScript el botón se queda fijo, así que
  * ADR-001 se sostiene igual que siempre para quien navega sin JS. Registrado en
  * `docs/COORDINACION.md` para que `agente-datos`, dueño de ADR-001, lo vea.
+ *
+ * **Todo el encabezado se repliega mientras se arrastra o se hace zoom en el mapa**
+ * (ver `lib/encabezado.ts`, activado desde `mapa.ts` en `movestart`/`moveend`), y
+ * vuelve en cuanto el gesto termina. Solo gestos reales del usuario lo ocultan — los
+ * vuelos de cámara propios del sitio (tocar un municipio, «volver») no traen
+ * `originalEvent` y no lo disparan.
  */
 interface Props {
   magnitud: number;
@@ -62,10 +68,25 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding: 0.5rem 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
     min-height: var(--encabezado);
     background: var(--fondo);
     border-bottom: 1px solid var(--borde);
+    overflow: hidden;
+    transition: min-height 0.2s ease, padding-block 0.2s ease, opacity 0.15s ease,
+      border-color 0.2s ease;
+  }
+
+  /* Se repliega a cero durante un gesto real sobre el mapa (arrastrar, pellizcar,
+     hacer zoom) para ganarle esa franja al mapa justo cuando se está mirando de cerca.
+     `min-height` en vez de `transform`: con transform el hueco se queda reservado en el
+     `display:flex` de `.disposicion` y el mapa no gana nada. */
+  .encabezado[data-oculto] {
+    min-height: 0;
+    padding-block: 0;
+    opacity: 0;
+    border-bottom-color: transparent;
   }
 
   .fila {
