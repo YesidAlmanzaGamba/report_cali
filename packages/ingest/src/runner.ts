@@ -14,6 +14,7 @@ import type { FeatureCollection, Geometry } from 'geojson';
 
 import { loadCuratedObservations } from './curated.js';
 import { mmiToCsv, observacionesToCsv } from './export.js';
+import { aGeoJson, cargarIncidentes, porMunicipio, publicables } from './incidentes.js';
 import { joinMmiToMunicipios, type MunicipioMmi } from './join/mmi.js';
 import { DATA_DIR } from './paths.js';
 import { writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
@@ -206,6 +207,34 @@ async function main(): Promise<void> {
       const oficiales = candidatos.filter((c) => c.tipo === 'official').length;
 
       return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) ${
+        written.changed ? '(escrito)' : '(sin cambios)'
+      }`;
+    });
+
+    await step('Incidentes por municipio', async () => {
+      const curados = await cargarIncidentes();
+      const listos = publicables(curados);
+      const grupos = porMunicipio(listos);
+
+      // Un archivo por municipio, descargado solo al abrirlo: la vista nacional no
+      // engorda por incidentes que casi nadie va a mirar.
+      for (const [pcode, incidentes] of grupos) {
+        await writeGeoJson(DATA_DIR, `incidentes/${pcode}`, aGeoJson(incidentes));
+      }
+
+      // El índice le dice a la interfaz qué municipios tienen detalle. Es lo que permite
+      // distinguir «aquí no hay cartografía» de «aquí no hubo daño» — confundir esas dos
+      // cosas en un mapa de emergencia hace daño real.
+      const written = await writeJson(DATA_DIR, 'incidentes/index', {
+        generado: new Date().toISOString(),
+        nota: 'Municipios con incidentes registrados. Los no listados NO tienen cartografía, que no es lo mismo que no tener daños.',
+        recorte: 'Los incidentes sin verificar se recortan a una rejilla de ~100 m (ADR-012).',
+        municipios: [...grupos.keys()].sort(),
+        total: listos.length,
+      });
+
+      const exactos = listos.filter((i) => i.precision === 'exacta').length;
+      return `${listos.length} incidentes en ${grupos.size} municipios (${exactos} verificados) ${
         written.changed ? '(escrito)' : '(sin cambios)'
       }`;
     });
