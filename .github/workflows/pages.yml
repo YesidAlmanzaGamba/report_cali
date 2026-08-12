@@ -48,6 +48,14 @@ jobs:
           PUBLIC_SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: npm run build
 
+      # Red de seguridad para el problema de Jekyll. GitHub Pages ignora todo lo que
+      # empiece por guion bajo, y Astro pone sus recursos en `_astro/`. Sin este archivo
+      # el sitio responde 200 pero sin CSS ni JavaScript — peor que un error, porque
+      # parece que funciona. También está en `public/`; esto cubre el caso de que alguien
+      # lo borre sin saber para qué servía.
+      - name: Asegurar .nojekyll
+        run: touch apps/web/dist/.nojekyll
+
       # Este paso falla si GitHub Pages no está habilitado en el repositorio, que es el
       # estado de cualquier fork y del repo antes de configurarlo. Lo dejamos avisar en
       # vez de fallar: una X roja permanente en un espejo opcional enseña a ignorar el
