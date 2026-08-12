@@ -728,10 +728,30 @@ export async function iniciarMapa(): Promise<void> {
    */
   let pcodeAbierto: string | null = null;
 
+  /**
+   * Marca el marco mientras hay una ficha abierta.
+   *
+   * En celular, el CSS usa esto para quitar de en medio el conmutador de modo, la capa
+   * de deslizamientos y las leyendas: con la ficha ocupando la mitad de abajo, dejar
+   * todo eso arriba reduce el mapa a una franja. «← Ver todo» se queda, que es la
+   * salida. Después hay que volver a medir: la fila de arriba acaba de encoger y
+   * `--ficha-top` manda sobre lo que va debajo.
+   */
+  function marcarFichaAbierta(abierta: boolean): void {
+    const marco = document.querySelector<HTMLElement>('.marco');
+    if (!marco) return;
+
+    if (abierta) marco.dataset['ficha'] = '';
+    else delete marco.dataset['ficha'];
+
+    ajustarControlesSuperiores();
+  }
+
   function cerrarFicha(): void {
     panel?.setAttribute('hidden', '');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
     pcodeAbierto = null;
+    marcarFichaAbierta(false);
   }
 
   function mostrar(props: Record<string, unknown>): void {
@@ -742,6 +762,7 @@ export async function iniciarMapa(): Promise<void> {
     document.getElementById('leyenda-poblacion')?.removeAttribute('open');
 
     pcodeAbierto = String(props['pcode'] ?? '') || null;
+    marcarFichaAbierta(true);
 
     const mmi = typeof props['mmi'] === 'number' ? props['mmi'] : null;
 

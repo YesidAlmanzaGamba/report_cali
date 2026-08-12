@@ -85,6 +85,10 @@ const { leyenda } = Astro.props;
   </div>
 
   <div class="controles-superiores" id="controles-superiores">
+    <button type="button" id="volver-vista" class="volver" aria-label="Ver toda la zona" hidden>
+      ← Ver todo
+    </button>
+
     <div class="modos" role="group" aria-label="Qué muestra el color del mapa">
       <button type="button" data-modo="sacudimiento" aria-pressed="true" aria-label="Fuerza del temblor">
         Fuerza
@@ -100,10 +104,6 @@ const { leyenda } = Astro.props;
 
     <p class="aviso-modo" id="aviso-modo" role="status" hidden tabindex="0"></p>
   </div>
-
-  <button type="button" id="volver-vista" class="volver" hidden>
-    ← Ver toda la zona
-  </button>
 
   <details class="leyenda" id="leyenda">
     <summary>
@@ -277,28 +277,28 @@ const { leyenda } = Astro.props;
   }
 
   /* Sin mapa base, quien se acerca a un municipio pequeño pierde la referencia de
-     dónde está. Este botón es la salida. */
+     dónde está. Este botón es la salida.
+
+     Vive dentro de `.controles-superiores` como un elemento más del flex, no flotando
+     con su propio `top`/`left`. `margin-right: auto` lo empuja a la izquierda y deja los
+     modos a la derecha: una sola fila, y si algún día no cupieran, `flex-wrap` los
+     separa en vez de montarlos. Antes tenía posición propia y había que acordarse de
+     esquivar el zoom con un `left: 3.4rem` — otro número adivinado, ya no hace falta. */
   .volver {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.6rem;
-    z-index: 5;
-    min-height: 40px;
-    padding: 0 0.85rem;
+    margin-right: auto;
+    min-height: 44px;
+    padding: 0 0.7rem;
     border: 1px solid var(--borde);
     border-radius: 999px;
     background: color-mix(in srgb, var(--fondo) 94%, transparent);
     backdrop-filter: blur(6px);
     color: var(--tinta);
-    font-size: 0.84rem;
+    font-size: 0.72rem;
     font-weight: 600;
+    white-space: nowrap;
     cursor: pointer;
   }
 
-  /* Los controles de zoom de MapLibre viven arriba a la izquierda. */
-  :global(html.js) .volver {
-    left: 3.4rem;
-  }
 
   /* ── Columna de controles superior derecha ───────────────────────────── */
   /* Un solo contenedor posicionado en vez de un `top` en rem por control: agregar o
@@ -967,13 +967,46 @@ const { leyenda } = Astro.props;
   /* En celular la ficha se ancla abajo, encima de la hoja asomada: arriba a la
      derecha tapa justo la zona que la persona acaba de tocar. */
   @media (max-width: 40rem) {
+    /* Fuera los botones de zoom en celular: se hace pinza, y ese rincón vale más como
+       sitio para «← Ver todo». En pantallas anchas se quedan — ahí no hay pinza y son la
+       única forma de acercarse con el ratón. El teclado sigue cubierto en los dos casos:
+       con el mapa enfocado, `+` y `−` acercan y alejan igual. */
+    :global(.maplibregl-ctrl-top-left) {
+      display: none;
+    }
+
+    /* Ya no hay zoom que esquivar, así que la fila recupera ese ancho. */
+    :global(html.js) .controles-superiores {
+      padding-left: 0;
+    }
+
     .ficha {
       top: auto;
       bottom: calc(var(--asomada) + 0.6rem);
       left: 0.6rem;
       right: 0.6rem;
       width: auto;
-      max-height: 55%;
+      /* La mitad de la pantalla como techo duro: es una ficha sobre un mapa, y el mapa
+         es lo que la persona vino a ver. Lo que no quepa se desplaza dentro. */
+      max-height: 50%;
+    }
+
+    /* ── Con un municipio abierto, el mapa manda ──────────────────────────
+       `data-ficha` lo pone `mapa.ts` al abrir la ficha y lo quita al cerrarla.
+
+       Se va el conmutador de modo y la capa: son ajustes de la vista general, y con un
+       municipio abierto la mitad de abajo ya está ocupada por la ficha — dejarlos
+       arriba deja al mapa reducido a una franja. `← Ver todo` **no** se va: es la
+       salida, y sin mapa base es lo único que devuelve la referencia de dónde está uno.
+
+       Se van también las leyendas. Ancladas abajo a la izquierda, quedaban por encima de
+       la ficha: en la captura, «Personas donde tembló fuerte» flotando sobre el aviso de
+       cobertura. Replegarlas no bastaba, porque el título replegado sigue ocupando su
+       rectángulo. Vuelven al cerrar la ficha. */
+    .marco[data-ficha] .modos,
+    .marco[data-ficha] .capa,
+    .marco[data-ficha] .leyenda {
+      display: none;
     }
 
     .leyenda {
@@ -983,19 +1016,6 @@ const { leyenda } = Astro.props;
       /* En celular el cuadro además arranca por encima de la hoja asomada, así que hay
          que descontarla del techo o volvería a desbordar por arriba. */
       max-height: calc(100% - var(--asomada) - var(--ficha-top, 3.9rem) - 1.2rem);
-    }
-
-    /* Ronda 3, tarea 1: a 390 px «← Ver toda la zona» (izquierda) y la columna de
-       controles de arriba a la derecha son lo bastante anchos para tocarse en el medio
-       si comparten fila. Reutiliza el mismo `--ficha-top` medido en mapa.ts en vez de
-       un número fijo: si la columna crece (ya pasó una vez, con el interruptor de
-       deslizamientos), un valor fijo vuelve a quedar corto y a chocar de nuevo. Ya no
-       necesita esquivar el control de zoom a la izquierda porque a esta altura no hay
-       nada con quien chocar. */
-    .volver,
-    :global(html.js) .volver {
-      top: var(--ficha-top, 3.9rem);
-      left: 0.6rem;
     }
 
     :global(html:not(.js)) .leyenda,

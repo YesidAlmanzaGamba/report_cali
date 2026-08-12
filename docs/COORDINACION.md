@@ -475,6 +475,60 @@ acomodaba como segunda columna, partiendo las dos en renglones de tres palabras.
 
 **Carga:** 14,74 → **14,88 KB** (+148 B).
 
+### Con un municipio abierto, el mapa manda: tres arreglos de la misma captura
+
+Tercera captura del sitio en vivo, con Istmina abierto. Tres problemas señalados, y los
+tres eran controles peleándose la pantalla con la ficha.
+
+**1. Fuera los botones de zoom en celular; ahí va «← Ver todo».** Razonamiento del
+responsable, y es correcto: en un teléfono se hace pinza, así que `+`/`−` ocupaban la
+mejor esquina para no aportar nada. En pantallas anchas **se quedan** — ahí no hay pinza
+y son la única forma de acercarse con el ratón. El teclado queda cubierto en los dos
+casos: con el mapa enfocado, `+` y `−` acercan y alejan igual.
+
+`← Ver toda la zona` pasa a `← Ver todo` (82 px) y **deja de tener posición propia**:
+ahora es un elemento más de `.controles-superiores`, empujado a la izquierda con
+`margin-right: auto`. Antes flotaba con su propio `top`/`left` y había que acordarse de
+esquivar el zoom con `left: 3.4rem` — otro número adivinado que ya no existe. Si algún
+día no cupieran en la fila, `flex-wrap` los separa en vez de montarlos.
+
+**2. «Personas donde tembló fuerte» se quedaba encima de la ficha.** Replegar las
+leyendas al abrir la ficha —lo que hacía— **no bastaba**: el título replegado sigue
+ocupando su rectángulo, anclado abajo a la izquierda, justo donde vive la ficha en
+celular. En la captura se veía flotando sobre el aviso de cobertura. Ahora en celular
+desaparecen mientras hay ficha, y vuelven al cerrarla.
+
+**3. Con un municipio abierto se va el menú de arriba.** El conmutador de modo y la capa
+de deslizamientos son ajustes de la vista general; con la ficha ocupando la mitad de
+abajo, dejarlos arriba reduce el mapa a una franja. `← Ver todo` **no** se va: es la
+salida, y sin mapa base es lo único que devuelve la referencia de dónde está uno.
+
+Lo gobierna `data-ficha` en `.marco`, que pone y quita `mapa.ts`, con las reglas en CSS y
+acotadas a `≤40rem` — en escritorio no hay conflicto y no se toca nada. Al ponerlo y
+quitarlo se vuelve a llamar `ajustarControlesSuperiores()`, porque la fila de arriba
+acaba de cambiar de alto y `--ficha-top` manda sobre lo que va debajo.
+
+La ficha baja de **55 % a 50 %** de la pantalla como techo duro, anclada abajo.
+
+Medido a 390 × 844, con un municipio abierto:
+
+| | resultado |
+|---|---|
+| botones de zoom (390 px / 1880 px) | `display: none` / `display: block` |
+| conmutador de modo y capa | ocultos, vuelven al cerrar |
+| leyendas MMI y de población | ocultas, vuelven al cerrar |
+| `← Ver todo` | visible, x=10, 44 px de alto |
+| ficha | x 10→380, **330 px = 39 %** de pantalla |
+
+Y en vivo: tocar un municipio pone `data-ficha`, cerrarla lo quita.
+
+**Una regla que no se quedó.** Había escrito `.volver[hidden] { display: none }` por
+analogía con `.buscas[hidden]`, que sí hace falta. Comprobado en el navegador
+desactivando la regla: `.volver` no declara `display`, así que el `[hidden]` nativo ya la
+oculta. Fuera.
+
+**Carga:** 14,88 → **14,91 KB** (+22 B).
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda
