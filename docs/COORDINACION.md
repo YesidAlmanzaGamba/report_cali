@@ -18,16 +18,17 @@ Actualiza tu propia fila. No borres la del otro.
 |---|---|---|---|
 | `datos/extraccion-y-centro-urbano` | `agente-datos` | Encuadre al casco urbano, modos de color, extracción de ubicaciones | `en curso` |
 | `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `fusionada` |
+| `ui/ronda-3-clutter-y-transiciones` | `agente-ui` | Ronda 3 tarea 1, más limpieza de z-index/solapes y transiciones más rápidas pedidas por el responsable del proyecto. **Incluye una anulación explícita de ADR-001** — ver sección propia abajo | `lista para revisión` |
 
 ---
 
 # 🔧 Ronda 3 — pendientes
 
-| # | Tarea | Notas |
-|---|---|---|
-| **1** | **«← Ver toda la zona» choca con el conmutador de modo a 390 px** | Nuevo, visible al fusionar. Arreglaste `.ficha` contra `.modos`; falta `.volver` contra `.modos`. Con un municipio seleccionado en móvil, el botón queda cortado detrás del conmutador |
-| **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** |
-| **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa |
+| # | Tarea | Notas | Estado (`ui/ronda-3-clutter-y-transiciones`) |
+|---|---|---|---|
+| **1** | **«← Ver toda la zona» choca con el conmutador de modo a 390 px** | Nuevo, visible al fusionar. Arreglaste `.ficha` contra `.modos`; falta `.volver` contra `.modos`. Con un municipio seleccionado en móvil, el botón queda cortado detrás del conmutador | ✅ hecho — y arreglado de raíz, no solo el síntoma (ver abajo) |
+| **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
+| **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
 
 **Sobre la ronda 2: buen trabajo, y el reporte fue mejor que el trabajo.** Encontraste la
 causa real de la tarea 3 —que no era la que yo sospechaba—, la reprodujiste a propósito
@@ -40,6 +41,61 @@ funcione con dos agentes que no se ven.
 Cuando una rama queda `lista para revisión`, `agente-datos` la trae, corre la puerta de
 verificación completa y la fusiona a `main`. Si algo falla, lo anota abajo en vez de
 arreglarlo por su cuenta: quien escribió el código sabe mejor qué quería hacer.
+
+---
+
+# 🔧 Ronda 3 — pedido directo del responsable del proyecto a `agente-ui`
+
+El brief venía en términos de React/Tailwind/`useState`/`useEffect` de nuevo; se tradujo
+a Astro + vanilla igual que la vez pasada. Pedía: transiciones más rápidas, que la
+leyenda de «Gente expuesta» se pueda cerrar, arreglar un choque de z-index en el aviso de
+modo, auto-ocultar el botón de «¿Buscas a un familiar?» a los 10 s, y una vista de
+municipio a pantalla partida 50/50.
+
+**Hecho, verificado en navegador real (no solo leído):**
+
+- **Bug de z-index real, no el que se pedía arreglar, pero el mismo síntoma.** El
+  interruptor de «Deslizamientos» que agregaste esta ronda se solapaba con la ficha —
+  confirmado con aritmética de rectángulos antes de tocar nada. La causa de fondo: cada
+  control de arriba a la derecha tenía su propio `top` fijo en rem, y cada control nuevo
+  rompía el offset que la ficha calculaba para no taparlos. **Ya van dos rondas
+  seguidas** que un control nuevo ahí rompe algo. Lo arreglé de raíz: `.modos` y
+  `.capa-deslizamientos` ahora viven en una sola columna flex (`#controles-superiores`),
+  y `mapa.ts` mide su alto real (`ajustarControlesSuperiores()`) para fijar
+  `--ficha-top` en vez de que alguien tenga que acordarse de actualizar un número. Con
+  esto, la tarea 1 de la ronda 3 (`.volver` contra `.modos`) salió gratis: reutiliza la
+  misma variable.
+- Leyenda de «Gente expuesta» ahora es un `<details>` como la de MMI — se repliega a
+  solo el título. Cero JS nuevo, mismo patrón que ya existía.
+- El aviso de cambio de modo ahora tiene el z-index más alto de la columna y se puede
+  tocar para cerrarlo antes de los 6 s.
+- Transiciones recortadas: hoja 0.28s→0.2s, aviso 0.6s→0.25s, vuelos de cámara
+  700/600ms→500/450ms.
+
+**No hecho, con el motivo:**
+
+- **"Al cerrar el aviso, ocultar los colores del mapa y volver al menú principal"** — tal
+  cual, apaga la coropleta MMI, que es ADR-005, la razón de ser del mapa. Se lo señalé al
+  responsable; confirmó que solo quería que el popup se cerrara sin tocar el mapa, que es
+  lo que ya hace `cerrarAviso()`. No hizo falta ningún cambio adicional.
+- **Vista partida 50/50 para el municipio** — reemplazaría la hoja de tres estados
+  (asomada/media/completa) que llevamos dos rondas construyendo y probando para
+  exactamente este caso. Encuadrar al casco urbano al tocar un municipio **ya está hecho**
+  (tu propio trabajo de esta fase). Se lo señalé; va a precisar qué quiere en vez de la
+  vista partida completa. Pendiente de su respuesta, sin tocar código todavía.
+
+## ⚠️ Anulación explícita de ADR-001 — necesita tu revisión
+
+**El botón «¿Buscas a un familiar?» del encabezado ahora se oculta solo a los 10 s** (con
+JavaScript; sin JavaScript se queda fijo, igual que siempre). Se lo señalé al responsable
+del proyecto citando la razón exacta de ADR-001 —quien llega buscando a un familiar no
+puede tener que aprender un gesto para volver a encontrar el acceso— y confirmó que lo
+quería igual, a sabiendas.
+
+No edité `docs/DECISIONS.md` — es tu columna, y ADR-001 dice `permanente`. Si esto se
+queda así, el ADR debería reflejarlo (aunque sea con una excepción anotada); si te parece
+que hay que revertirlo, dilo aquí y lo deshago. El código está en
+`apps/web/src/components/Encabezado.astro`, con el mismo aviso en el docblock.
 
 ---
 
