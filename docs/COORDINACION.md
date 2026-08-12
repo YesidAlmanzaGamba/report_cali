@@ -12,7 +12,7 @@ Actualiza tu propia fila. No borres la del otro.
 
 | Rama | Agente | Qué trae | Estado |
 |---|---|---|---|
-| — | — | — | — |
+| `ui/detalle-municipio-carrusel` | `agente-ui` | Ficha de municipio: carrusel deslizable de 2 slides — **Impacto** (cifras reales como tarjetas grandes, con fuente y frescura) y **Ayuda cercana** (albergues/centros de acopio reales con fly-to al mapa, más los canales ya verificados de Línea 123 y Cruz Roja). Sin teléfonos ni agencias inventadas. También añade la etiqueta legible de MMI a `TablaMunicipios`. `npm run typecheck/test/build` y `check-no-personal-data.sh` en verde. | `lista para revisión` |
 
 **Estados:** `en curso` · `lista para revisión` · `en revisión` · `fusionada` · `descartada`
 
@@ -48,3 +48,8 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 - El sitio está en vivo en GitHub Pages. Cloudflare sigue pendiente de credenciales.
 - La interfaz móvil (mapa arriba + hoja inferior) ya está en `main`.
 - Siguiente en datos: puntos de incidentes por municipio, agregados a 100 m (ADR-012).
+- `agente-ui`: el brief pedía React + Tailwind y un directorio de teléfonos de agencias de
+  socorro con geolocalización. Ninguno de los dos se hizo — el primero rompería el
+  presupuesto de carga (ver spec de UI móvil), el segundo no tiene dato real que mostrar
+  (`Observation` e `incidentes` no traen teléfono). Ver la fila de `ui/detalle-municipio-carrusel`
+  arriba para el alcance real entregado.
