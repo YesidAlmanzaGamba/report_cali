@@ -49,6 +49,11 @@ type ObservacionLigera = import('@report-cali/ingest/schema').Observation;
  * detienen. Sirviendo los datos aparte, solo el código dispara compilaciones.
  * Ver docs/DESPLIEGUE.md.
  */
+/** Quien pidió menos animación no debería recibir un vuelo de cámara de 700 ms. */
+const prefiereMenosMovimiento =
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const DATA =
   (import.meta.env['PUBLIC_DATA_URL'] as string | undefined)?.replace(/\/$/, '') ??
   // `BASE_URL` ya trae la barra final. En el espejo de GitHub Pages vale
@@ -385,9 +390,45 @@ export async function iniciarMapa(): Promise<void> {
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], props['pcode'] as string]);
   }
 
+  /**
+   * Acerca el mapa al municipio.
+   *
+   * `maxZoom` evita que un municipio diminuto deje la pantalla llena de un solo polígono
+   * sin referencias alrededor: al no haber mapa base, quedarse sin vecinos a la vista es
+   * quedarse sin saber dónde se está.
+   */
+  function acercarA(feature: (typeof municipios.features)[number]): void {
+    const [minX, minY, maxX, maxY] = bboxDe(feature.geometry);
+    if (!Number.isFinite(minX)) return;
+
+    const alturaAsomada =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
+      104;
+
+    mapa.fitBounds(
+      [
+        [minX, minY],
+        [maxX, maxY],
+      ],
+      {
+        padding: { top: 40, right: 40, bottom: Math.round(alturaAsomada) + 24, left: 40 },
+        maxZoom: 11,
+        duration: prefiereMenosMovimiento ? 0 : 700,
+      },
+    );
+  }
+
   mapa.on('click', 'municipios-relleno', (e) => {
     const props = e.features?.[0]?.properties;
-    if (props) mostrar(props);
+    if (!props) return;
+
+    mostrar(props);
+
+    const f = municipios.features.find((x) => x.properties.pcode === props['pcode']);
+    if (f) {
+      acercarA(f);
+      volver?.removeAttribute('hidden');
+    }
   });
 
   mapa.on('mouseenter', 'municipios-relleno', () => {
@@ -432,24 +473,42 @@ export async function iniciarMapa(): Promise<void> {
     return typeof mmi === 'number' && mmi >= 5.5;
   });
 
+  const alturaAsomada =
+    parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 || 104;
+
+  let vistaGeneral: maplibregl.LngLatBounds | undefined;
+
   if (afectados.length > 0) {
-    const limites = new maplibregl.LngLatBounds();
+    vistaGeneral = new maplibregl.LngLatBounds();
     for (const f of afectados) {
       const [minX, minY, maxX, maxY] = bboxDe(f.geometry);
-      limites.extend([minX, minY]);
-      limites.extend([maxX, maxY]);
+      vistaGeneral.extend([minX, minY]);
+      vistaGeneral.extend([maxX, maxY]);
     }
 
-    const alturaAsomada =
-      parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
-      104;
-
-    mapa.fitBounds(limites, {
+    mapa.fitBounds(vistaGeneral, {
       padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
       duration: 0,
       maxZoom: 8,
     });
   }
+
+  // Botón para volver a la vista general. Sin mapa base, alguien que se acercó a un
+  // municipio pequeño puede perder por completo la referencia de dónde está.
+  const volver = document.getElementById('volver-vista');
+  volver?.addEventListener('click', () => {
+    volver.setAttribute('hidden', '');
+    document.getElementById('detalle')?.setAttribute('hidden', '');
+    mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
+
+    if (vistaGeneral) {
+      mapa.fitBounds(vistaGeneral, {
+        padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
+        duration: prefiereMenosMovimiento ? 0 : 600,
+        maxZoom: 8,
+      });
+    }
+  });
 
   // Desde la tabla se puede saltar al mapa: es la ruta natural para alguien que
   // busca un municipio concreto y no quiere cazarlo con el dedo.
@@ -461,8 +520,17 @@ export async function iniciarMapa(): Promise<void> {
     fila.addEventListener('click', () => {
       const f = municipios.features.find((x) => x.properties.name === nombre);
       if (!f) return;
+
       mostrar(f.properties as unknown as Record<string, unknown>);
-      document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      acercarA(f);
+      volver?.removeAttribute('hidden');
+
+      // En móvil la hoja tapa el mapa; se recoge para que se vea a dónde voló.
+      const hoja = document.getElementById('hoja');
+      if (hoja && hoja.dataset['estado'] !== 'asomada') {
+        hoja.dataset['estado'] = 'asomada';
+        document.querySelector('.asa')?.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 }

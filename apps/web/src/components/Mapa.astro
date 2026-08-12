@@ -20,6 +20,10 @@ const { leyenda } = Astro.props;
     <p class="mapa-estado">Mapa de intensidad — se carga en un momento.</p>
   </div>
 
+  <button type="button" id="volver-vista" class="volver" hidden>
+    ← Ver toda la zona
+  </button>
+
   <!-- Cerrada por defecto: en un celular, seis filas de leyenda tapan justo la parte
        del mapa que la persona vino a mirar. En pantallas anchas la abre `mapa.ts`. -->
   <details class="leyenda">
@@ -92,6 +96,30 @@ const { leyenda } = Astro.props;
   }
   :global(html:not(.js)) #mapa {
     height: auto;
+  }
+
+  /* Sin mapa base, quien se acerca a un municipio pequeño pierde la referencia de
+     dónde está. Este botón es la salida. */
+  .volver {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 5;
+    min-height: 40px;
+    padding: 0 0.85rem;
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--fondo) 94%, transparent);
+    backdrop-filter: blur(6px);
+    color: var(--tinta);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Los controles de zoom de MapLibre viven arriba a la izquierda. */
+  :global(html.js) .volver {
+    left: 3.4rem;
   }
 
   /* ── Leyenda ─────────────────────────────────────────────────────────── */
