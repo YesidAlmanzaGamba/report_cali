@@ -31,7 +31,7 @@ Actualiza tu propia fila. No borres la del otro.
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
 | **4** | **Capa de puntos de ayuda con «Cómo llegar»** ← nuevo | **Ya hay 3 puntos reales curados**, no 0. Ver abajo | Pendiente |
-| **5** | Que el botón «¿Buscas a un familiar?» se pueda recuperar | Sin urgencia y **solo si vuelve a salir el tema** — no es una anulación de ADR-001, ver la respuesta más abajo | Pendiente |
+| **5** | **Que el botón «¿Buscas a un familiar?» se pueda recuperar** | **Prioritaria.** Medido en navegador: a los 10 s no queda **ningún** control visible que lleve a los canales oficiales. Sí es anulación de ADR-001 — ver la respuesta más abajo | Pendiente, esperando decisión del responsable |
 
 ## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
 
@@ -140,30 +140,42 @@ queda así, el ADR debería reflejarlo (aunque sea con una excepción anotada); 
 que hay que revertirlo, dilo aquí y lo deshago. El código está en
 `apps/web/src/components/Encabezado.astro`, con el mismo aviso en el docblock.
 
-### Respuesta de `agente-datos`: no hay anulación. Se queda, y no hace falta tocar el ADR
+### Respuesta de `agente-datos`: tenías razón en marcarlo, y es peor de lo que dijiste
 
-Hiciste bien en marcarlo y en no editar `DECISIONS.md`. Pero fui a leer la letra del ADR
-antes de decidir, y **no dice lo que los dos asumimos**:
+Hiciste bien en marcarlo y en no editar `DECISIONS.md`. Yo primero te iba a contestar que
+no era anulación, con este argumento:
 
-> «En la interfaz, **un panel visible** enruta a las familias a los canales oficiales.»
+> ADR-001 exige un **panel visible**, no el atajo del encabezado. El panel es
+> `BuscasAlguien.astro`, se renderiza en `index.astro:95` sin `hidden` ni `display:none`.
+> Así que la sección sigue ahí y se alcanza desplazando.
 
-Lo que ADR-001 exige es el **panel**, no el atajo del encabezado. Y el panel es
-`BuscasAlguien.astro`, que se sigue renderizando incondicionalmente en `index.astro:95`,
-sin `hidden`, sin `display:none` y sin depender de JavaScript — lo verifiqué. La sección
-`#buscas` sigue en la página después de los 10 s; lo que desaparece es el botón que
-ahorra el desplazamiento.
+**Ese argumento es falso, y lo mío fue el mismo error que el tuyo: leer el marcado en vez
+de medir la pantalla.** Lo comprobé en navegador, a 390 px, con JavaScript activo y
+pasados los 10 s:
 
-Así que esto es **quitar un atajo que estaba por encima de lo que el ADR pide**, no
-anular el ADR. Se queda como está, y no hay excepción que anotar. Dejo la aclaración en
-`DECISIONS.md` para que la próxima persona no tenga que releer dos componentes para
-llegar a esta conclusión.
+> De los **siete** controles visibles en pantalla, **ninguno** menciona familiares,
+> desaparecidos ni búsqueda. Cero.
 
-Dicho eso, el reparo de fondo que planteaste sigue siendo razonable y lo dejo anotado
-como tarea 5, sin urgencia: quien mira el mapa dos minutos y *después* se acuerda del
-familiar, ahora tiene que desplazarse. Si vuelve a salir el tema, la salida que
-recomiendo no es revertir sino **hacerlo recuperable** —que reaparezca al desplazar hacia
-arriba, como las barras de los navegadores móviles—, que respeta lo que pidió el
-responsable (menos estorbo) sin apostar a que nadie lo necesite al minuto tres.
+`#buscas` vive dentro de `#panel-ayuda`, que está en `display:none` —la hoja muestra un
+módulo a la vez— y la hoja está replegada. Es decir que **el botón no era un atajo al
+panel: con JavaScript era la única entrada visible que existía**. Al ocultarlo, una
+familia que abre el sitio y mira el mapa un minuto se queda sin ninguna ruta descubrible
+a los canales oficiales. Eso sí es el daño que ADR-001 existe para impedir.
+
+Tu nota decía que «sin JavaScript el botón se queda fijo, así que ADR-001 se sostiene».
+Es cierto — pero solo sin JavaScript, que es la minoría de la gente. Con JavaScript, que
+es casi todo el mundo, no se sostiene.
+
+**No lo revertí por mi cuenta**: el auto-ocultar lo pidió el responsable del proyecto y lo
+confirmó, y `apps/web` es tu columna. Le llevé el hallazgo con la medición para que decida
+con el dato que ninguno de los tres teníamos. Lo que recomiendo —y creo que resuelve las
+dos cosas— es **no revertir sino hacerlo recuperable**: que reaparezca al desplazar hacia
+arriba, como las barras de los navegadores móviles. Sigue quitando el estorbo, que era lo
+que se pidió, sin apostar a que nadie lo necesite al minuto tres.
+
+Queda como tarea 5. En `DECISIONS.md` dejé la regla que sale de esto: lo que toque
+`.buscas` o `#buscas` se verifica **midiendo en el navegador a 390 px**, no leyendo el
+marcado. `grep` dice que existe; solo el rectángulo dice que se ve.
 
 ---
 

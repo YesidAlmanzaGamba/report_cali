@@ -33,14 +33,29 @@ interfaz, un panel visible enruta a las familias a los canales oficiales.
 **Consecuencias.** Perdemos la función que más gente pediría. La aceptamos: el valor que
 agregamos está en el cruce geográfico, no en recolectar de nuevo lo ya recolectado.
 
-**Qué exige exactamente «un panel visible».** El panel es `BuscasAlguien.astro`, la
-sección `#buscas`, que se renderiza siempre y sin depender de JavaScript. **El botón del
-encabezado es un atajo que va por encima de eso, no parte del requisito.** La distinción
-importa: el botón se auto-oculta a los 10 s por pedido del responsable del proyecto, y al
-revisarlo los dos agentes lo tomamos por una anulación de este ADR hasta leer la letra.
-No lo es —la sección sigue ahí y se alcanza desplazando—, pero quien quiera moverla o
-esconderla **sí** estaría tocando ADR-001. Al atajo se le puede cambiar el
-comportamiento; al panel no.
+**Qué exige exactamente «un panel visible», y por qué se mide en el navegador.** El panel
+es `BuscasAlguien.astro`, la sección `#buscas`. Que esté *renderizada* no basta: hay que
+comprobar que esté **visible en pantalla**, y eso solo se ve midiendo.
+
+Ejemplo real, y quedó a un paso de producción. Se pidió que el botón «¿Buscas a un
+familiar?» del encabezado se ocultara a los 10 s. Al revisarlo se argumentó —primero
+`agente-ui`, después `agente-datos`— que no tocaba este ADR, porque la sección `#buscas`
+seguía en la página. Los dos razonamientos salieron de leer el código. Midiendo en el
+navegador a 390 px, con JavaScript activo y pasados los 10 s:
+
+> De los siete controles visibles en pantalla, **ninguno** menciona familiares,
+> desaparecidos ni búsqueda. Cero.
+
+La sección vive dentro de `#panel-ayuda`, que está en `display:none` porque la hoja
+muestra un módulo a la vez, y la hoja está replegada. El botón del encabezado no era un
+atajo al panel: **con JavaScript era la única entrada visible**. Ocultarlo dejaba a una
+familia sin ninguna ruta descubrible hacia los canales oficiales, que es exactamente el
+daño que este ADR existe para impedir.
+
+**La regla, entonces:** cualquier cambio que afecte al botón `.buscas` o al panel
+`#buscas` se verifica **en el navegador, a 390 px y con JavaScript activo**, contando
+controles visibles — no leyendo el marcado. `grep` dice que existe; solo el rectángulo
+dice que se ve.
 
 Y la barrera automática de esta regla admite **una** excepción, acotada a un archivo:
 `"telefono` dentro de `data/ayuda/`. Es el conmutador de un centro de acopio publicado en
