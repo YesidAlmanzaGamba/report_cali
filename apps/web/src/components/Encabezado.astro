@@ -7,6 +7,12 @@
  * (ADR-001): quien llega buscando a alguien no puede tener que aprender un gesto
  * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
  * sección; con JavaScript abre la hoja en ese módulo.
+ *
+ * **Se oculta solo a los 10 s (con JavaScript).** Es una anulación explícita de
+ * ADR-001, pedida por el responsable del proyecto después de que se le señalara la
+ * contradicción — no un descuido. Sin JavaScript el botón se queda fijo, así que
+ * ADR-001 se sostiene igual que siempre para quien navega sin JS. Registrado en
+ * `docs/COORDINACION.md` para que `agente-datos`, dueño de ADR-001, lo vea.
  */
 interface Props {
   magnitud: number;
@@ -39,6 +45,16 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     ¿Buscas a un familiar?
   </a>
 </header>
+
+<script>
+  // Anulación explícita de ADR-001 — ver el docblock de arriba antes de tocar esto.
+  const boton = document.querySelector<HTMLAnchorElement>('.buscas');
+  if (boton) {
+    setTimeout(() => {
+      boton.hidden = true;
+    }, 10_000);
+  }
+</script>
 
 <style>
   .encabezado {
@@ -108,6 +124,13 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
 
   .buscas:hover {
     filter: brightness(1.08);
+  }
+
+  /* `display: inline-flex` de arriba gana sobre el `display:none` del navegador para
+     `[hidden]` si no se repite aquí explícitamente — misma prioridad de especificidad,
+     y esta regla va después. */
+  .buscas[hidden] {
+    display: none;
   }
 
   /* En pantallas muy angostas el texto largo del botón desplaza el título. */
