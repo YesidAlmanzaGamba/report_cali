@@ -115,9 +115,12 @@ const modulos = [
   <script>
     import { iniciarHoja } from '../lib/hoja';
     import { prepararMapa } from '../lib/cargar-mapa';
+    import { iniciarCarruseles } from '../lib/carrusel';
 
     iniciarHoja();
     prepararMapa();
+    // Vive fuera de #mapa (ver Mapa.astro), así que no depende de que el mapa cargue.
+    iniciarCarruseles();
   </script>
 </Base>
 

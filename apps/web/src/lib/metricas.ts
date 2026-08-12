@@ -65,3 +65,47 @@ export function nombreDeLugar(pcode: string, municipios: Map<string, string>): s
   if (pcode === 'CO') return 'Colombia';
   return municipios.get(pcode) ?? pcode;
 }
+
+export type Frescura = 'fresh' | 'aging' | 'stale';
+
+interface Umbrales {
+  /** Hasta aquí es `fresh`, en horas. */
+  frescoHoras: number;
+  /** Hasta aquí es `aging`; más allá, `stale`. */
+  envejeceHoras: number;
+}
+
+const RAPIDO: Umbrales = { frescoHoras: 6, envejeceHoras: 24 };
+const DIARIO: Umbrales = { frescoHoras: 24, envejeceHoras: 72 };
+const LENTO: Umbrales = { frescoHoras: 48, envejeceHoras: 168 };
+
+const UMBRALES: Record<Metric, Umbrales> = {
+  deaths_confirmed: DIARIO,
+  injured: DIARIO,
+  missing_reported: DIARIO,
+  people_affected: DIARIO,
+  people_displaced: DIARIO,
+  shelters_open: RAPIDO,
+  shelter_capacity: RAPIDO,
+  roads_blocked: RAPIDO,
+  power_outage_users: RAPIDO,
+  water_service_affected: RAPIDO,
+  buildings_collapsed: LENTO,
+  buildings_damaged: LENTO,
+  health_facilities_affected: LENTO,
+};
+
+const HORA_MS = 3_600_000;
+
+/**
+ * Duplica `freshnessOf` de `@report-cali/ingest` en vez de importarla: ese paquete
+ * arrastra zod y módulos de Node al bundle del navegador (mismo motivo que `bboxDe`
+ * en `mapa.ts`). Los umbrales deben mantenerse iguales a los de `packages/ingest/src/freshness.ts`.
+ */
+export function frescuraDe(o: Observation, ahora: Date): Frescura {
+  const u = UMBRALES[o.metric];
+  const horas = (ahora.getTime() - Date.parse(o.observed_at)) / HORA_MS;
+  if (horas <= u.frescoHoras) return 'fresh';
+  if (horas <= u.envejeceHoras) return 'aging';
+  return 'stale';
+}
