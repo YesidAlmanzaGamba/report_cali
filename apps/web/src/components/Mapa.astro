@@ -20,26 +20,35 @@ const { leyenda } = Astro.props;
     <p class="mapa-estado">Mapa de intensidad — se carga en un momento.</p>
   </div>
 
-  <!-- Los botones dicen la pregunta que responden, no el nombre técnico del parámetro.
-       Nadie fuera de la sismología sabe qué es «MMI», y quien lo ve asume que es EL
-       indicador de daño. -->
-  <div class="modos" role="group" aria-label="Qué muestra el color del mapa">
-    <button type="button" data-modo="sacudimiento" aria-pressed="true">
-      Sacudimiento
-      <small>qué tan fuerte tembló</small>
-    </button>
-    <button type="button" data-modo="expuesta" aria-pressed="false">
-      Gente expuesta
-      <small>cuánta gente lo vivió</small>
+  <!-- Todo lo que flota arriba a la derecha vive en una sola columna. Antes cada control
+       tenía su propio `top` fijo en rem, y cada control nuevo (el interruptor de
+       deslizamientos, por ejemplo) rompía el offset que la ficha calculaba para no
+       taparlos — dos rondas seguidas. Ahora la columna se apila sola con flexbox y
+       `ajustarControlesSuperiores()` en mapa.ts mide su alto real para correr la ficha. -->
+  <div class="controles-superiores" id="controles-superiores">
+    <!-- Los botones dicen la pregunta que responden, no el nombre técnico del parámetro.
+         Nadie fuera de la sismología sabe qué es «MMI», y quien lo ve asume que es EL
+         indicador de daño. -->
+    <div class="modos" role="group" aria-label="Qué muestra el color del mapa">
+      <button type="button" data-modo="sacudimiento" aria-pressed="true">
+        Sacudimiento
+        <small>qué tan fuerte tembló</small>
+      </button>
+      <button type="button" data-modo="expuesta" aria-pressed="false">
+        Gente expuesta
+        <small>cuánta gente lo vivió</small>
+      </button>
+    </div>
+
+    <!-- Se muestra solo si el evento trae modelo de deslizamiento. -->
+    <button type="button" id="capa-deslizamientos" class="capa" aria-pressed="false" hidden>
+      Deslizamientos
     </button>
   </div>
 
-  <p class="aviso-modo" id="aviso-modo" role="status" hidden></p>
-
-  <!-- Se muestra solo si el evento trae modelo de deslizamiento. -->
-  <button type="button" id="capa-deslizamientos" class="capa" aria-pressed="false" hidden>
-    Deslizamientos
-  </button>
+  <!-- `role="status"` avisa a lectores de pantalla solo; el clic es un atajo visual
+       para cerrarlo antes de los 6 s, no la única forma de que desaparezca. -->
+  <p class="aviso-modo" id="aviso-modo" role="status" hidden tabindex="0"></p>
 
   <button type="button" id="volver-vista" class="volver" hidden>
     ← Ver toda la zona
@@ -84,15 +93,17 @@ const { leyenda } = Astro.props;
     </details>
   </details>
 
-  <!-- Leyenda del segundo modo. Oculta hasta que se activa. -->
-  <div class="leyenda leyenda-pob" id="leyenda-poblacion" hidden>
-    <h3>Personas donde tembló fuerte</h3>
+  <!-- Leyenda del segundo modo. Oculta hasta que se activa el modo; una vez visible,
+       es un <details> como la de MMI — se puede replegar a solo el título en vez de
+       quedarse fija ocupando la esquina (antes no tenía forma de cerrarse). -->
+  <details class="leyenda leyenda-pob" id="leyenda-poblacion" open hidden>
+    <summary><span>Personas donde tembló fuerte</span></summary>
     <ul id="escala-poblacion"></ul>
     <p class="nota">
       Población que vive donde la intensidad llegó a VI o más — el nivel donde empieza el
       daño. Proyección 2025 del DANE.
     </p>
-  </div>
+  </details>
 
   <aside class="ficha" id="detalle" hidden>
     <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
@@ -201,12 +212,10 @@ const { leyenda } = Astro.props;
     height: auto;
   }
 
-  /* Interruptor de capa. Debajo del conmutador de modo, alineado a la derecha. */
+  /* Interruptor de capa. Ya no lleva su propia posición: vive dentro de
+     `.controles-superiores` y se apila solo debajo del conmutador de modo. */
   .capa {
-    position: absolute;
-    top: 4rem;
-    right: 0.6rem;
-    z-index: 6;
+    align-self: flex-end;
     min-height: 36px;
     padding: 0 0.75rem;
     border: 1px solid var(--borde);
@@ -249,14 +258,24 @@ const { leyenda } = Astro.props;
     left: 3.4rem;
   }
 
-  /* ── Conmutador de modo ──────────────────────────────────────────────── */
-  /* Visible sobre el mapa, no escondido en un menú: en una emergencia nadie va a
-     buscar un ajuste. */
-  .modos {
+  /* ── Columna de controles superior derecha ───────────────────────────── */
+  /* Un solo contenedor posicionado en vez de un `top` en rem por control: agregar o
+     quitar un botón (el de deslizamientos, el que siga) reacomoda la columna sola, sin
+     tocar la posición de los demás ni la de la ficha. */
+  .controles-superiores {
     position: absolute;
     top: 0.6rem;
     right: 0.6rem;
     z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+
+  /* Visible sobre el mapa, no escondido en un menú: en una emergencia nadie va a
+     buscar un ajuste. */
+  .modos {
     display: flex;
     gap: 2px;
     padding: 2px;
@@ -297,13 +316,15 @@ const { leyenda } = Astro.props;
     color: color-mix(in srgb, var(--fondo) 75%, transparent);
   }
 
-  /* El aviso que aparece al cambiar de modo y se va solo. */
+  /* El aviso que aparece al cambiar de modo y se va solo. z-index más alto que
+     cualquier otro control: es la explicación de lo que el color significa *ahora*, y
+     no puede quedar tapado por nada, ni un instante. Tocarlo lo cierra antes de tiempo. */
   .aviso-modo {
     position: absolute;
     top: 4.6rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 7;
+    z-index: 9;
     margin: 0;
     padding: 0.45rem 0.9rem;
     max-width: calc(100% - 1.5rem);
@@ -312,7 +333,8 @@ const { leyenda } = Astro.props;
     color: var(--fondo);
     font-size: 0.78rem;
     text-align: center;
-    animation: aparecer 0.25s ease-out;
+    cursor: pointer;
+    animation: aparecer 0.15s ease-out;
   }
 
   @keyframes aparecer {
@@ -328,14 +350,18 @@ const { leyenda } = Astro.props;
 
   .aviso-modo[data-yendose] {
     opacity: 0;
-    transition: opacity 0.6s;
+    transition: opacity 0.25s;
   }
 
   /* ── Leyenda ─────────────────────────────────────────────────────────── */
+  /* z-index por encima de la ficha (8 > 7): en móvil ambas anclan al mismo `bottom` y,
+     si la persona expandió la leyenda a propósito, no debería desaparecer detrás de la
+     ficha que se abrió como efecto secundario de tocar el mapa. */
   .leyenda {
     position: absolute;
     left: 0.6rem;
     bottom: 0.6rem;
+    z-index: 8;
     max-width: 15rem;
     background: color-mix(in srgb, var(--fondo) 93%, transparent);
     backdrop-filter: blur(6px);
@@ -418,13 +444,14 @@ const { leyenda } = Astro.props;
     color: var(--tinta-2);
   }
 
-  /* La leyenda del segundo modo comparte estilos con la de intensidad. */
-  .leyenda-pob h3 {
+  /* La leyenda del segundo modo comparte estilos con la de intensidad; su `summary`
+     lleva texto normal en vez de las mayúsculas pequeñas del summary genérico. */
+  .leyenda-pob summary {
     text-transform: none;
     letter-spacing: 0;
     font-size: 0.75rem;
     color: var(--tinta-2);
-    padding: 0.55rem 0.7rem 0;
+    font-weight: 600;
   }
 
   .leyenda-pob ul {
@@ -454,14 +481,19 @@ const { leyenda } = Astro.props;
   }
 
   /* ── Ficha del municipio ─────────────────────────────────────────────── */
-  /* `top` libra el conmutador de modo, que ancla en el mismo `right:0.6rem` y sin esto
-     la ficha lo tapa por completo en cuanto se abre un municipio (tarea 6). */
+  /* `--ficha-top` la fija `ajustarControlesSuperiores()` en mapa.ts, midiendo el alto
+     real de `.controles-superiores` — así un control nuevo ahí arriba no vuelve a dejar
+     la ficha tapándolo (pasó dos rondas seguidas con un valor fijo en rem). El `3.9rem`
+     es el respaldo antes de que el JS corra o si no corre. z-index por debajo de la
+     leyenda (8) y del aviso (9): si las tres estuvieran visibles a la vez, gana lo que
+     la persona pidió ver a propósito. */
   .ficha {
     position: absolute;
     right: 0.6rem;
-    top: 3.9rem;
+    top: var(--ficha-top, 3.9rem);
+    z-index: 7;
     width: min(19rem, calc(100% - 1.2rem));
-    max-height: calc(100% - 4.5rem);
+    max-height: calc(100% - var(--ficha-top, 3.9rem) - 0.6rem);
     overflow-y: auto;
     background: color-mix(in srgb, var(--fondo) 96%, transparent);
     backdrop-filter: blur(6px);
@@ -864,6 +896,19 @@ const { leyenda } = Astro.props;
       bottom: calc(var(--asomada) + 0.6rem);
       max-width: 12.5rem;
       font-size: 0.72rem;
+    }
+
+    /* Ronda 3, tarea 1: a 390 px «← Ver toda la zona» (izquierda) y la columna de
+       controles de arriba a la derecha son lo bastante anchos para tocarse en el medio
+       si comparten fila. Reutiliza el mismo `--ficha-top` medido en mapa.ts en vez de
+       un número fijo: si la columna crece (ya pasó una vez, con el interruptor de
+       deslizamientos), un valor fijo vuelve a quedar corto y a chocar de nuevo. Ya no
+       necesita esquivar el control de zoom a la izquierda porque a esta altura no hay
+       nada con quien chocar. */
+    .volver,
+    :global(html.js) .volver {
+      top: var(--ficha-top, 3.9rem);
+      left: 0.6rem;
     }
 
     :global(html:not(.js)) .leyenda,

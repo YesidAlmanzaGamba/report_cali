@@ -405,6 +405,29 @@ export async function iniciarMapa(): Promise<void> {
     });
   }
 
+  /**
+   * Mide el alto real de `.controles-superiores` (conmutador de modo + interruptor de
+   * deslizamientos, si está) y se lo pasa a `--ficha-top` en CSS.
+   *
+   * Reemplaza un `top` fijo en rem que dos rondas seguidas quedó desactualizado en
+   * cuanto se agregó un control nuevo ahí arriba: la ficha lo tapaba porque nadie
+   * recordaba subir el número. Midiendo en vez de adivinar, un control de más o de
+   * menos ya no puede volver a romperlo.
+   */
+  function ajustarControlesSuperiores(): void {
+    const controles = document.getElementById('controles-superiores');
+    const marco = document.querySelector<HTMLElement>('.marco');
+    if (!controles || !marco) return;
+
+    const alto = controles.getBoundingClientRect().height;
+    // 0.6rem de brecha antes de la ficha, la misma que separa los controles del borde.
+    const separacion = 0.6 * 16;
+    marco.style.setProperty('--ficha-top', `${Math.round(alto + separacion)}px`);
+  }
+
+  ajustarControlesSuperiores();
+  window.addEventListener('resize', ajustarControlesSuperiores);
+
   // ── Modos de color ──────────────────────────────────────────────────────
   //
   // Dos preguntas distintas sobre el mismo mapa:
@@ -475,8 +498,14 @@ export async function iniciarMapa(): Promise<void> {
     );
   }
 
-  /** Aviso breve que explica qué significa el color ahora, y se va solo. */
+  /** Aviso breve que explica qué significa el color ahora, y se va solo — o al tocarlo. */
   let temporizadorAviso: ReturnType<typeof setTimeout> | undefined;
+
+  function cerrarAviso(el: HTMLElement): void {
+    clearTimeout(temporizadorAviso);
+    el.setAttribute('data-yendose', '');
+    setTimeout(() => el.setAttribute('hidden', ''), prefiereMenosMovimiento ? 0 : 250);
+  }
 
   function avisar(texto: string): void {
     const el = document.getElementById('aviso-modo');
@@ -487,11 +516,12 @@ export async function iniciarMapa(): Promise<void> {
     el.removeAttribute('data-yendose');
     el.removeAttribute('hidden');
 
-    temporizadorAviso = setTimeout(() => {
-      el.setAttribute('data-yendose', '');
-      setTimeout(() => el.setAttribute('hidden', ''), prefiereMenosMovimiento ? 0 : 600);
-    }, 6000);
+    temporizadorAviso = setTimeout(() => cerrarAviso(el), 6000);
   }
+
+  document.getElementById('aviso-modo')?.addEventListener('click', (e) => {
+    cerrarAviso(e.currentTarget as HTMLElement);
+  });
 
   // Escala del segundo modo, construida desde la misma rampa que pinta el mapa para que
   // no puedan desincronizarse.
@@ -743,7 +773,7 @@ export async function iniciarMapa(): Promise<void> {
         padding: { top: 40, right: 40, bottom: Math.round(alturaAsomada) + 24, left: 40 },
         // Más cerca cuando encuadramos el casco: ahí sí tiene sentido ver manzanas.
         maxZoom: urbano ? 14 : 11,
-        duration: prefiereMenosMovimiento ? 0 : 700,
+        duration: prefiereMenosMovimiento ? 0 : 500,
       },
     );
   }
@@ -1041,7 +1071,7 @@ export async function iniciarMapa(): Promise<void> {
     if (vistaGeneral) {
       mapa.fitBounds(vistaGeneral, {
         padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
-        duration: prefiereMenosMovimiento ? 0 : 600,
+        duration: prefiereMenosMovimiento ? 0 : 450,
         maxZoom: 8,
       });
     }

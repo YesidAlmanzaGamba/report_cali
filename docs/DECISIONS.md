@@ -33,6 +33,20 @@ interfaz, un panel visible enruta a las familias a los canales oficiales.
 **Consecuencias.** Perdemos la función que más gente pediría. La aceptamos: el valor que
 agregamos está en el cruce geográfico, no en recolectar de nuevo lo ya recolectado.
 
+**Qué exige exactamente «un panel visible».** El panel es `BuscasAlguien.astro`, la
+sección `#buscas`, que se renderiza siempre y sin depender de JavaScript. **El botón del
+encabezado es un atajo que va por encima de eso, no parte del requisito.** La distinción
+importa: el botón se auto-oculta a los 10 s por pedido del responsable del proyecto, y al
+revisarlo los dos agentes lo tomamos por una anulación de este ADR hasta leer la letra.
+No lo es —la sección sigue ahí y se alcanza desplazando—, pero quien quiera moverla o
+esconderla **sí** estaría tocando ADR-001. Al atajo se le puede cambiar el
+comportamiento; al panel no.
+
+Y la barrera automática de esta regla admite **una** excepción, acotada a un archivo:
+`"telefono` dentro de `data/ayuda/`. Es el conmutador de un centro de acopio publicado en
+prensa, no el dato de una persona; está razonada en `scripts/check-no-personal-data.sh` y
+en cualquier otra ruta de `data/` el patrón sigue tumbando la verificación.
+
 ---
 
 ## ADR-002 — Nada de scraping de redes sociales
