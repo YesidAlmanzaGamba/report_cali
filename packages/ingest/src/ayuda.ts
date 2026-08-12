@@ -60,6 +60,12 @@ const PuntoSchema = z
     telefono: z.string().max(40).optional(),
     source: SourceSchema,
     observed_at: IsoDateTimeSchema,
+    /**
+     * Para quien cure después: por qué este punto quedó como quedó. Sirve sobre todo
+     * cuando el dato tiene un pero —«el polígono lo pone en otro municipio, pero…»— que
+     * si no queda escrito, alguien va a «corregir» dentro de seis meses.
+     */
+    notes: z.string().max(400).optional(),
     /** `true` cuando alguien confirmó que sigue operando. */
     activo: z.boolean().default(true),
   })

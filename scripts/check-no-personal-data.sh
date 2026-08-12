@@ -33,9 +33,34 @@ PATTERNS=(
   '"victima_nombre'
 )
 
+# ── Excepciones ──────────────────────────────────────────────────────────────
+#
+# Una sola, y acotada a un archivo: `"telefono` dentro de data/ayuda/.
+#
+# ADR-001 protege a PERSONAS desaparecidas o fallecidas. El teléfono de un centro
+# de acopio no es eso: es el conmutador de una institución, publicado por un medio
+# o por una alcaldía para que la gente llame. `curated/ayuda.json` solo admite
+# instituciones, y su regla dice que el número entra únicamente si la fuente
+# oficial lo publicó — nunca deducido ni buscado aparte.
+#
+# La excepción se acota al archivo, no al patrón: `"telefono` en cualquier otro
+# lugar de data/ sigue tumbando la verificación. Y se escribe aquí, con su razón,
+# en vez de ampliar la regla: una barrera que estorba en un caso legítimo termina
+# desactivada entera, y eso sí sería perder ADR-001.
+excepcion_de() {
+  case "$1" in
+    '"telefono') printf '%s' "^${DATA_DIR}/ayuda/" ;;
+    *) printf '' ;;
+  esac
+}
+
 found=0
 for pattern in "${PATTERNS[@]}"; do
   if matches=$(grep -rEil "$pattern" "$DATA_DIR" 2>/dev/null); then
+    excepcion=$(excepcion_de "$pattern")
+    if [ -n "$excepcion" ]; then
+      matches=$(printf '%s\n' "$matches" | grep -Ev "$excepcion" || true)
+    fi
     if [ -n "$matches" ]; then
       echo "✗ Posible dato personal — patrón '$pattern' encontrado en:"
       echo "$matches" | sed 's/^/    /'

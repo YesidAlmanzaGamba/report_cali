@@ -162,6 +162,7 @@ Lo que `apps/web` puede dar por hecho. Los archivos se sirven desde
 | `event/mmi-by-municipality.json` | `{ generated_at, municipalities: [{ pcode, name, admin1_name, mmi, mmi_roman, method }] }` |
 | `event/aftershocks.geojson` | Puntos con `magnitude`, `depth_km`, `place`, `time` |
 | `observations/afectacion.json` | `{ meta, observations: Observation[] }` |
+| `ayuda/puntos.geojson` | Centros de acopio y albergues. Ubicación **exacta** (política contraria a la de incidentes) con `como_llegar` ya armado |
 | `fuentes/candidatos.json` | Notas de prensa para revisión humana |
 | `export/*.csv` | CSV con etiquetas HXL |
 
@@ -203,6 +204,11 @@ Cosas que ya costaron una tarde. No hace falta descubrirlas otra vez.
 - **Los datos abiertos de la UNGRD terminan en 2024.** No es un fallo del adaptador:
   publican con más de un año de rezago.
 - **La API de ReliefWeb exige un `appname` aprobado** por ellos. Trámite, no código.
+- **Los límites de `data/` están simplificados y no sirven para asignar municipio cerca
+  de un borde.** La sede de la Cruz Roja de Caldas cae 549 m dentro del polígono de
+  Villamaría; está en Manizales, y lo dicen la prensa, los directorios y su DIVIPOLA. El
+  límite ahí es el río Chinchiná, y simplificar un río que serpentea le corta las curvas.
+  Para el pcode manda la fuente, no el punto en polígono.
 - **Hay un municipio llamado Colombia** (Huila) y otro llamado **Risaralda** (Caldas).
   Al reconocer municipios en titulares hay que descartar los nombres que coinciden con el
   país o con un departamento.

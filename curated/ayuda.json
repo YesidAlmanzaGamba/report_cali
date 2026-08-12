@@ -27,20 +27,89 @@
     "suelen ser sitios conocidos —coliseos, universidades, parroquias— así que aparecen",
     "con su nombre.",
     "",
+    "OJO CON EL ORDEN: los mapas dan «latitud, longitud» y este archivo las guarda al",
+    "revés, cada una con su nombre. Invertirlas manda el punto al otro lado del mundo y",
+    "no se nota leyendo. Fíjate en el signo: en Colombia la longitud SIEMPRE es negativa",
+    "(-75…) y la latitud casi siempre positiva (5…).",
+    "",
     "DE DÓNDE SALEN LOS CANDIDATOS",
     "data/fuentes/extraidos.json trae las notas que mencionan acopio o albergue, con su",
-    "enlace. Se actualiza cada 30 minutos.",
-    "",
-    "EJEMPLO (estructura; borra o reemplaza)",
-    "{ \"tipo\": \"centro_acopio\", \"nombre\": \"Universidad de Caldas\",",
-    "  \"pcode\": \"CO17001\", \"longitud\": -75.4917, \"latitud\": 5.0570,",
-    "  \"direccion\": \"Calle 65 # 26-10\", \"horario\": \"8:00 a. m. a 6:00 p. m.\",",
-    "  \"necesita\": [\"agua\", \"alimentos no perecederos\", \"kits de aseo\"],",
-    "  \"source\": { \"name\": \"...\", \"url\": \"https://...\", \"type\": \"press\" },",
-    "  \"observed_at\": \"2026-08-11T10:00:00-05:00\", \"activo\": true }",
+    "enlace y con `buscar_en_mapa` ya armado. Se actualiza cada 30 minutos.",
     "",
     "TIPOS: centro_acopio · albergue · puesto_medico · punto_hidratacion · brigada"
   ],
 
-  "puntos": []
+  "puntos": [
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Coliseo de la Universidad de Caldas",
+      "pcode": "CO17001",
+      "longitud": -75.4914175,
+      "latitud": 5.0587763,
+      "direccion": "Cra. 27, detrás de la Normal Superior de Caldas, sector del Estadio Palogrande",
+      "necesita": [
+        "productos de aseo",
+        "alimentos no perecederos",
+        "pañales de adulto y de niño",
+        "agua",
+        "ropa en muy buen estado"
+      ],
+      "source": {
+        "name": "La Patria",
+        "url": "https://www.lapatria.com/manizales/universidad-de-caldas-habilita-centro-de-acopio-en-manizales-para-damnificados-del-sismo",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "notes": "En el Coliseo, no en el campus. La nota reporta además atención médica, psicológica, veterinaria y jurídica en el mismo sitio.",
+      "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Coliseo Menor Ramón Marín Vargas",
+      "pcode": "CO17001",
+      "longitud": -75.4912065,
+      "latitud": 5.0559074,
+      "necesita": [
+        "colchonetas, almohadas, cobijas y toallas (nuevas)",
+        "ropa nueva con etiqueta (no ropa interior)",
+        "arroz, fríjol, lenteja, aceite, sal, azúcar y enlatados",
+        "jabón, champú, crema y cepillo dental, papel higiénico",
+        "pañales y crema para bebé",
+        "alimento para perros, gatos, gallinas y patos",
+        "caminadores, sillas de ruedas y bastones"
+      ],
+      "source": {
+        "name": "La Patria",
+        "url": "https://www.lapatria.com/manizales/ayudas-para-damnificados-en-manizales-por-el-terremoto-que-donar-y-donde-llevarlo",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "notes": "A 318 m del coliseo de la Universidad de Caldas: los dos están en el complejo de Palogrande.",
+      "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Cruz Roja Colombiana — Seccional Caldas",
+      "pcode": "CO17001",
+      "longitud": -75.520176,
+      "latitud": 5.044427,
+      "direccion": "Avenida Kevin Ángel, carrera 21 # 69-350",
+      "horario": "Desde el martes 11 de agosto",
+      "necesita": [
+        "alimentos no perecederos",
+        "kits de aseo",
+        "elementos de hogar",
+        "insumos para mascotas",
+        "todo nuevo, sellado y en perfecto estado"
+      ],
+      "source": {
+        "name": "La Patria",
+        "url": "https://www.lapatria.com/manizales/ayudas-para-damnificados-en-manizales-por-el-terremoto-que-donar-y-donde-llevarlo",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "notes": "El punto cae en el polígono de Villamaría por 549 m, pero se registra en Manizales: así lo dicen La Patria, los directorios de empresas y su código DIVIPOLA (17001). El límite con Villamaría es el río Chinchiná, y nuestros límites están simplificados para la web, así que cerca de un borde no sirven para asignar municipio.",
+      "activo": true
+    }
+  ]
 }
