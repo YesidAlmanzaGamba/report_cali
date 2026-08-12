@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-12T22:44:48.083Z",
+  "generado": "2026-08-12T22:32:35.338Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -403,6 +403,14 @@
     },
     {
       "tipo": "edificacion_colapsada",
+      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
+      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
+      "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T06:13:17.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
       "titulo": "Tragedia en Colombia: por el terremoto hay al menos 132 muertos y 61 edificios colapsados - Revista Gerente - Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOR3JMVkdNN281VXFtdUZpNkM5TG52RGlHa284UElOb0VTLTBTNmtLYkpJWTFEUDNpcXhwQ1Y3TmZBMXVtbm5ock5SSHJMUTYxcVNPdGktVHdOTm0zV0h6d0pZcGJiMUQ5a294bTFHeHU0Zzh2ZnBMcjA5NU9BT182REFSMTVhTXR4Z2xJZndDdkZYTjg4YUJIWWVXVGFsYklZVDl4dU5PbnVwc0U0MGxRZUxMUXNrT09xTVZ2Zg?oc=5",
       "medio": "Revista Gerente - Colombia",
@@ -759,16 +767,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Atención en Cali: reportan 19 edificios colapsados con personas atrapadas | El Colombiano - El Colombiano",
-      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMzY5YXBqREVkdG1ZUFJqMFFHMmNiSjNxN2ZZeVIzaWNlX2J1TjFEbzdLSlVKNzRvSUw0LU9HSGtGWDlkaEZFNGtia1lHSzNmVFZLLTM4cmRUX1FwREZsZlRkcUZJZlB6QVBUcWVzNFJhSlJpQWkwN08ydGxiV1Z0cWZJQi13NEpDZkVobHdDRlNtR0FVUUltU1ZQWkNyZEdiVm5ETWpIbTBNY0RpS1FkY0hnYTRBbE1rQndNUW9n0gHDAUFVX3lxTE5GNTh4dXk1SUExenplRk1EQ0dWSjgyUE1kSEpkQkFVS1JSLU91ZEVRTGZWM3g4TlhMb0Qwd2xGenN2TDF4Zm1DSHlLdGJlZXJraHVDUkh0b2tjWnhhRWU2RFVhZS14RlNHZHhPa21Ca2QxV1dKUjZTUEI1ZUNyZGJFLW14YnB3c0pkc0trcXRBODNNOEFOaXFaanh6NlRudGdDN3VRbHAyWGRNQndVbFVUNlYzMWJyM3VRcVBSSlN3RDJ1dw?oc=5",
-      "medio": "El Colombiano",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T14:19:27.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Terremoto en Colombia: reportan edificios colapsados en Cali y suspenden operaciones en aeropuertos - latinus.us",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOczZ3ZGxjWkpwcTFPXzFFLUxWc0Y3TDc4SVRVeUJ0dlVRcnYxbm9DQTB2VlNFM3daYm91WDNzLVdmb3lFOWFtZ1lhS2dqWWxGejZyWVUyQmVlcmk2N045aS1NVGZoZTlaZ0dTT2FfWWV1cHQtbXVDVGpaQ2ZsbTA5aWJaWHRRQ29KSGg4b0ZZUnFRLURERzRhNTNfMVFYa2w4UXZ5M2hmRjMtNkE3ZV9ITUw2RzJfc3J1UE9GbGE0WFpoQnZqZTgxWEpxY0tnME9WU1RYTVh0WS05dk3SAdsBQVVfeXFMTnM2d2RsY1pKcHExT18xRS1MVnNGN0w3OElUVXlCdHZVUXJ2MW5vQ0EwdlZTRTN3WmJvdVgzcy1XZm95RTlhbWdZYUtnallsRno2cllVMkJlZXJpNjdOOWktTVRmaGU5WmdHU09hX1lldXB0LW11Q1RqWkNmbG0wOWliWlh0UUNvSkhoOG9GWVJxUS1EREc0YTUzXzFRWGtsOFF2eTNoZkYzLTZBN2VfSE1MNkcyX3NydVBPRmxhNFhaaEJ2amU4MVhKcWNLZzBPVlNUWE1YdFktOXZN?oc=5",
       "medio": "latinus.us",
@@ -787,7 +785,7 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 124 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
+      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
       "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVFNTQmlqdkx0Vm01N0JyR3c3a2g5VDRaX1hxNnVRb0JSQS1wTWt1WmZvOW9YdjhfV29Rdm9RamxEaTZyUVU2QVlhYklzdjBkV3ZvUFJuZnNqNjRyYmhJUFZpcFVVQ2xMcHlpSEg2ektydmJVeGxVZ2k0YW8wQjl3NlVZcEN6S2xrSTgwTDB5RnM5WkJTNmk5am5uc3VEeVNOVEE?oc=5",
       "medio": "Clarin.com",
       "tipo_fuente": "unverified",
@@ -812,14 +810,6 @@
       "publicado": "2026-07-05T07:00:00.000Z"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Los refugios de animales, desbordados tras el doble terremoto en Venezuela - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcVBGTWZheVA5QmJSSWdfbkVlMTFydTFlZGN3aE56SnpzX25nVnZVQ0ZUR1pPcUJMalpyQjRsX1ROQVpxaGJDazZzYUg2NTJLQ3VoMy1wdUs2enR2WTFiRVhZLVFYenVnV2MyTTJGQ2dESV84VFdUUWJ6VHpQWnpXOVlxZWFQUWl3ekd1NVl1M2tfZm1NSVRXcWRpSk9jM3pyQWh1WE00SzRSeVRQZ3Vpb0tzLVg5VGvSAdIBQVVfeXFMUFZpVU5VLU52TUljd2VIeWdFbEs3aXNMV3pBYmM4NmFpVGN1V2lQaXpNZm9iTEhkbFJWbC1uZWdwc0dpNjVDeFpJbHlhWEF6ZTczQzQ4cnNvV3l0UlBPX25neWd5MTNRZ3NFeVNQMzZuV3Vha1R3bl8xeTZNMUV6dlpaYVJNQzZQTWZMQnpyX2tFTEI1blAxN1M2enRWYUNhM3JYTVZqd29QbUJhdmVpSzAxcEZ0UUtTRjZqcjREOVdTNEhmcm8ydkVxWHlMbFB1YXZR?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-07-03T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "La Patria Manizales. . Manizales ha recaudado 7 toneladas de ayuda para los afectados del terremoto en Venezuela La iniciativa es liderada por un grupo de venezolanos radicados en Manizales. Una mujer prestó su casa para que fuera centro de acopio. O - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQVhFRE1tZm5yci16ODhrXy1Db2pNUWxaQUFIQjVfVjlKSmUyaUhTN2tpQlVLb3hmTVY1MzFoMG1CMkNMT1BSdVVVSWRWMWRiSjUwNzV5Q29wcHpTbEtGend5N3lTWU50MTBPMjMxNWZpTmNfNkNhZ1dIdkNMTDZjZXhvLUJEbnhKTjRjT3hXaV8ybk9MMjlXWDFmOXhJNEk3N0JBQnJ4aWNjeXhSenFiNkx1NEJzVEVNcmZINUpwY2RnUFBuNm45V05JVjZScUhPSTg1RlNXTkZHR1BPRnpsaVV6cw?oc=5",
@@ -831,9 +821,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - codiceinformativo.com",
+      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - Códice Informativo",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ1JVbzJ6d25YYXNWdmtUUU9MRnEyMzJpQVRIUWpCTTRTNmxjOUVNaGUwbjBzVVZpUTFsdzN4WldRdzBELU12bG5kQWZzUk0tb1NXSVZHeWgzNWNNRU53TUdTUWNwTVlQMnhFZkVDUlhkRFBaSmtxRmY0Uk1uc1VXYk5SNlNYZHZCeG1qcXFmMDQzU2JMQVNiZHk4YzloMDZ6MFVyZTM2VlBnWThpU3lHTDFXLVRDVXdyQlV0ajI5OXgyaXd3VkJkYWhVNA?oc=5",
-      "medio": "codiceinformativo.com",
+      "medio": "Códice Informativo",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-29T07:00:00.000Z"
     },
@@ -863,17 +853,17 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lista de centros de acopio y albergues en la CDMX - El Universal",
+      "titulo": "Lista de centros de acopio y albergues en la CDMX - eluniversal.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVmNkcmVOb0lLclA4QWF5MldGOEFPbGQ3a3JOZGZDNzQ2RnlUTjUzWXMxeUJrd0FUVjY0RVRUV01fSmVub0x3RkY3OXpUbWJQOERXZVI1SlI4YktpUUtQQlRtWmZXQjJZb3ZPMFBCd25hV2tkUVhHdjZyemNESm4tbGR3UFhyMlRaZVF6UTdTUUV2djh60gGoAUFVX3lxTE5hUXc1QU5IYkk2NHA2RlF0dWJSdXMwS3lIWFY0TzhnRm1nVU9naXVvbV9rWTZtcmhYOUVQczNCVGh6aWY0QlhkQXZNZk1RbkhlUXRKTkZmWHFfa3ExU0RZQzg1OVltME9jQWVJeXNja0RMWnRuR0owM0N4UU9UZlBveEs4NXpzdG9EclVSbDU2UHAzT2pmZGg0dWtmV2tzYkQtbk1JZGdTQw?oc=5",
-      "medio": "El Universal",
+      "medio": "eluniversal.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Reportan 5 muertos en edificio colapsado de Iztapalapa - El Universal",
+      "titulo": "Reportan 5 muertos en edificio colapsado de Iztapalapa - eluniversal.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOc3VhMWJVOFlIX3lnOW1hMUpJZmo4OU1mRGNwM2Zxa0F5RDJSV0RnU1Y4cTdHMXlCMnEtR3FIQ1A0cC1acGV3SmliRk5tekhaemFSalF2STgzT3ROc1JMRWtuT2pmUjdYdDhpS2FEQ2hZbU9sMDg4QWJxY0J4Z3JVRGxYbmZXWE9qZW1YaGx1d0RrWGNoandYQVV6UmlHOHlBMkxF0gG3AUFVX3lxTE1mSVM0QlNvcnFjWHRiRmVkdEM1eG56cW4yTWFaVUp1ZTBEMm91ZzQ5all5QzRWU0diVUUzNmtyQ2J0R0JfWjEwOG5fbGtsV2t2cVRWME14a09xTGJVaHphNmNPbFJyeTByWURWby1WQW1YQ1NXV1g3VUxmRzhyYUJPYjdJOUFDVVJDTjFOZk5HcHdiRDh1M2ZJLTNLZUdGcnR3d1VETEpoTmNZd2tqQ2pkc1FPMnI1QQ?oc=5",
-      "medio": "El Universal",
+      "medio": "eluniversal.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
