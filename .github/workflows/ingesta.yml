@@ -5,7 +5,10 @@ name: Ingesta de datos
 # ensucia el historial. Ese historial ES la trazabilidad de procedencia (ADR-004).
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    # Cada 30 minutos. El ShakeMap del USGS se revisa pocas veces al día y los boletines
+    # oficiales salen cada varias horas, así que consultar más seguido no trae datos más
+    # frescos: solo golpea servicios públicos que ahora mismo están bajo carga.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 # Evita que dos corridas se pisen y produzcan un conflicto al hacer push.

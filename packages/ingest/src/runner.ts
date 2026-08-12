@@ -18,6 +18,7 @@ import { joinMmiToMunicipios, type MunicipioMmi } from './join/mmi.js';
 import { DATA_DIR } from './paths.js';
 import { writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
 import type { Observation } from './schema.js';
+import { recolectarNoticias } from './sources/noticias.js';
 import { fetchUngrdSeismic } from './sources/ungrd.js';
 import {
   topologyToFeatures,
@@ -178,6 +179,37 @@ async function main(): Promise<void> {
   }
 
   if (mmiPorMunicipio.length > 0) {
+    await step('Notas de prensa y boletines', async () => {
+      // Recoge ENLACES, no cifras. Lo que produce es una lista de candidatos para que
+      // una persona los lea; sacar números de prosa automáticamente confunde totales con
+      // parciales y publica cifras equivocadas. Ver sources/noticias.ts.
+      const { candidatos, consultas } = await recolectarNoticias(
+        mmiPorMunicipio.map((m) => ({
+          pcode: m.pcode,
+          name: m.name,
+          admin1_name: m.admin1_name,
+        })),
+      );
+
+      if (candidatos.length === 0) throw new Error('Ninguna consulta devolvió resultados');
+
+      const written = await writeJson(DATA_DIR, 'fuentes/candidatos', {
+        generado: new Date().toISOString(),
+        consultas,
+        nota:
+          'Enlaces recogidos automáticamente para revisión humana. Las cifras verificadas ' +
+          'se registran en curated/observaciones.json.',
+        candidatos,
+      });
+
+      const conMunicipio = candidatos.filter((c) => c.pcode).length;
+      const oficiales = candidatos.filter((c) => c.tipo === 'official').length;
+
+      return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) ${
+        written.changed ? '(escrito)' : '(sin cambios)'
+      }`;
+    });
+
     await step('Exportación CSV/HXL', async () => {
       const nombres = new Map(
         mmiPorMunicipio.map((m) => [m.pcode, `${m.name}, ${m.admin1_name}`]),
