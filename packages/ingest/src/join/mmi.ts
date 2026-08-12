@@ -23,7 +23,14 @@ export interface MunicipioMmi {
   /** `grid` si hubo celdas dentro del polígono; `centroid` si el municipio es más
    *  pequeño que una celda y hubo que muestrear en su centro. */
   method: 'grid' | 'centroid';
+  /** Población proyectada 2025 (DANE/OCHA). Ausente si no se pudo cruzar. */
+  poblacion?: number;
+  /** Menores de 5 más mayores de 65: el grupo que prioriza una respuesta humanitaria. */
+  poblacion_vulnerable?: number;
 }
+
+/** Umbral donde el sacudimiento empieza a causar daño. Define «gente expuesta». */
+export const MMI_UMBRAL_DANINO = 6;
 
 const ROMAN = [
   'I',
@@ -145,4 +152,51 @@ export function joinMmiToMunicipios(
   }
 
   return result.sort((a, b) => b.mmi - a.mmi || a.pcode.localeCompare(b.pcode));
+}
+
+/**
+ * Añade la población a cada municipio.
+ *
+ * Se hace aparte del cruce con la malla para que un fallo de la fuente de población no
+ * tumbe el mapa de intensidad, que es la capa principal. Sin población, el municipio
+ * simplemente no aparece en el modo «Gente expuesta».
+ */
+export function conPoblacion(
+  municipios: MunicipioMmi[],
+  poblacion: { pcode: string; total: number; vulnerable: number }[],
+): MunicipioMmi[] {
+  const porPcode = new Map(poblacion.map((p) => [p.pcode, p]));
+
+  return municipios.map((m) => {
+    const p = porPcode.get(m.pcode);
+    if (!p) return m;
+
+    return { ...m, poblacion: p.total, poblacion_vulnerable: p.vulnerable };
+  });
+}
+
+/**
+ * Personas que vivieron un sacudimiento dañino, por municipio.
+ *
+ * No es un índice ni un modelo: es la población de los municipios donde el MMI llegó al
+ * umbral de daño. Los que quedan por debajo se excluyen en vez de ponerles cero, porque
+ * un cero se dibujaría como «aquí no hay nadie».
+ */
+export function genteExpuesta(municipios: MunicipioMmi[]): {
+  total: number;
+  vulnerable: number;
+  municipios: number;
+} {
+  let total = 0;
+  let vulnerable = 0;
+  let contados = 0;
+
+  for (const m of municipios) {
+    if (m.mmi < MMI_UMBRAL_DANINO || m.poblacion === undefined) continue;
+    total += m.poblacion;
+    vulnerable += m.poblacion_vulnerable ?? 0;
+    contados++;
+  }
+
+  return { total, vulnerable, municipios: contados };
 }

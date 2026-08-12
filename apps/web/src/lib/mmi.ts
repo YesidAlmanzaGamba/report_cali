@@ -55,3 +55,39 @@ export function levelsPresent(values: number[]): MmiLevel[] {
   const degrees = new Set(values.map((v) => levelFor(v).degree));
   return MMI_LEVELS.filter((l) => degrees.has(l.degree));
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Modo «Gente expuesta»
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** MMI a partir del cual se considera que el sacudimiento pudo causar daño. */
+export const UMBRAL_DANINO = 6;
+
+/**
+ * Rampa para población: **un solo tono, de claro a oscuro**.
+ *
+ * A diferencia del MMI —donde la paleta multicolor del USGS es un estándar que los
+ * socorristas ya leen (ADR-009)— aquí estamos midiendo una magnitud, y para magnitudes la
+ * regla normal sí aplica: un tono, más oscuro cuanto más. Que las dos escalas se vean
+ * completamente distintas **es la señal** de que miden cosas distintas; si se parecieran,
+ * la gente creería que el mapa no cambió al cambiar de modo.
+ */
+export const RAMPA_POBLACION: readonly { desde: number; color: string; etiqueta: string }[] = [
+  { desde: 0, color: '#f2e9e4', etiqueta: 'menos de 5 mil' },
+  { desde: 5_000, color: '#dbc3bd', etiqueta: '5 mil' },
+  { desde: 20_000, color: '#c39c98', etiqueta: '20 mil' },
+  { desde: 50_000, color: '#a97674', etiqueta: '50 mil' },
+  { desde: 150_000, color: '#8a5252', etiqueta: '150 mil' },
+  { desde: 500_000, color: '#63302f', etiqueta: '500 mil o más' },
+];
+
+/**
+ * Paradas para MapLibre, en escala logarítmica.
+ *
+ * Sin logaritmo, Cali con 2,3 millones aplastaría a todos los demás y el mapa quedaría en
+ * un solo color con un punto oscuro. La población urbana se reparte así de desigual, y la
+ * escala tiene que reconocerlo para que un municipio de 50 mil siga siendo distinguible.
+ */
+export function poblacionColorStops(): (string | number)[] {
+  return RAMPA_POBLACION.flatMap((p) => [Math.log10(Math.max(1, p.desde || 1)), p.color]);
+}
