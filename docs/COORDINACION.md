@@ -374,6 +374,67 @@ y toca la tarea 2 (presupuesto).
 
 **Carga tras el cambio:** 15,84 → **15,71 KB** (−134 B; dos listeners menos).
 
+### Controles del mapa en una fila, y el aviso deja de solaparse
+
+Pedido con captura del sitio en vivo: los tres controles ocupaban dos renglones y el aviso
+de «Probabilidad de deslizamiento» caía **encima** del botón de Deslizamientos.
+
+**Una sola fila.** Los dos modos y la capa comparten renglón. La columna medía **100 px**
+y ahora mide **50 px** — 6 % de una pantalla de 844 px recuperados para el mapa, que es
+lo que la gente vino a ver. Se retiraron los subtítulos (*qué tan fuerte tembló*, *cuánta
+gente lo vivió*): lo que explicaban lo dice el aviso al cambiar de modo.
+
+**Los objetivos táctiles no bajaron.** Bajó el ancho y el cuerpo de letra (0,8 → 0,72 rem);
+el alto se queda en 44 px. De hecho **subió uno**: «Deslizamientos» estaba en 36 px, era
+el único control del mapa por debajo del mínimo, y en la fila nueva llegar a 44 no cuesta
+alto porque los otros dos ya lo imponen.
+
+**«Sacudimiento» → «Fuerza».** Se pidió «fuerza temblor o algo así». El rótulo completo
+no cabía: medido a 390 px, «Fuerza del temblor» dejaba la fila **15 px por encima** del
+ancho disponible y tiraba «Deslizamientos» a un segundo renglón — justo lo que la fila
+viene a evitar. `aria-label="Fuerza del temblor"` conserva el nombre para lectores de
+pantalla, y como el texto visible es un prefijo suyo, el nombre accesible sigue
+conteniendo lo que se ve (WCAG 2.5.3). **Si «Fuerza» a secas se queda corto, la salida no
+es alargarlo: es acortar «Deslizamientos» o bajar el cuerpo de letra.**
+
+**El solape del aviso era el mismo fallo de siempre: un `top: 4.6rem` fijo adivinando el
+alto de algo que crece.** Es la tercera vez que un número en rem ahí arriba rompe algo.
+Ahora el aviso es **una fila más del mismo contenedor flex** (`flex: 1 0 100%`), así que
+no puede solaparse por construcción, y `ajustarControlesSuperiores()` lo mide: mientras
+está visible, la ficha y «← Ver toda la zona» se corren solos y vuelven al irse.
+
+**El aviso sale una vez por clave y por sesión**, no en cada toque. Una vez por *clave*
+—`modo:sacudimiento`, `modo:expuesta`, `capa:deslizamientos`— y no una vez en total: cada
+modo pinta el color con otro significado, así que si «Gente expuesta» no ha salido nunca
+tiene que salir, o quedaría una escala de color sin explicar.
+
+### Hallazgo aparte, y el que más pesa: **Astro no borra los comentarios HTML**
+
+Al medir el resultado la carga había **subido** 442 B, que es lo contrario de lo que
+esperaba de un cambio que quita marcado. La causa: los `<!-- … -->` de las plantillas
+`.astro` **viajan enteros al navegador**. `Mapa.astro` tenía **3.282 bytes** de comentarios
+descargándose en cada visita, en el sitio cuyo compromiso central es pesar poco sobre una
+conexión mala.
+
+Se movieron todos al docblock del frontmatter, que se queda en el servidor. **No se borró
+ni una explicación** — solo cambiaron de sitio.
+
+| | KB comprimidos |
+|---|---|
+| `main` al empezar la sesión | 15,36 |
+| tras fusionar la ronda 3 | 15,51 |
+| con el repliegue recuperable | 15,84 |
+| tras quitarle la vuelta por gesto | 15,71 |
+| **ahora** | **14,74** |
+
+−995 B solo por mover comentarios, y la carga queda **por debajo de donde empezó** pese a
+todo lo agregado. Sigue por encima de los 12 KB de la spec (tarea 2), pero es el primer
+avance real hacia esa meta y no costó ni una función.
+
+**Regla que sale de esto:** una explicación en una plantilla `.astro` va en el docblock
+del frontmatter, nunca en un comentario HTML. Merece estar en las «Trampas conocidas» de
+`CLAUDE.md`, que sigue pendiente de actualizar.
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda

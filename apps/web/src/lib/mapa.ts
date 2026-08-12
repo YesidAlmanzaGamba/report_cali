@@ -401,7 +401,12 @@ export async function iniciarMapa(): Promise<void> {
       mapa.setPaintProperty('municipios-relleno', 'fill-opacity', visible ? 0.9 : 0.2);
       mapa.setPaintProperty('deslizamientos', 'raster-opacity', 0.95);
 
-      if (!visible) avisar('Probabilidad de deslizamiento — dónde puede estar cortada la vía');
+      if (!visible) {
+        avisar(
+          'capa:deslizamientos',
+          'Probabilidad de deslizamiento — dónde puede estar cortada la vía',
+        );
+      }
     });
   }
 
@@ -492,6 +497,7 @@ export async function iniciarMapa(): Promise<void> {
     }
 
     avisar(
+      `modo:${modo}`,
       modo === 'expuesta'
         ? 'Color = cuánta gente vive donde el temblor fue dañino'
         : 'Color = qué tan fuerte tembló el suelo',
@@ -501,20 +507,43 @@ export async function iniciarMapa(): Promise<void> {
   /** Aviso breve que explica qué significa el color ahora, y se va solo — o al tocarlo. */
   let temporizadorAviso: ReturnType<typeof setTimeout> | undefined;
 
+  /**
+   * Avisos ya mostrados, por clave. Cada explicación sale **una vez por sesión**, no en
+   * cada toque: quien alterna entre los dos modos comparando ya leyó qué significa el
+   * color, y repetírselo cada vez es ruido encima del mapa.
+   *
+   * Es una vez por *clave*, no una vez en total, y esa diferencia importa: cada modo y
+   * cada capa pintan el color con otro significado, así que si «Gente expuesta» no ha
+   * salido nunca, tiene que salir — si no, quedaría una escala de color sin explicar, y
+   * eso es la regla que este proyecto repite en todas partes.
+   */
+  const avisosMostrados = new Set<string>();
+
   function cerrarAviso(el: HTMLElement): void {
     clearTimeout(temporizadorAviso);
     el.setAttribute('data-yendose', '');
-    setTimeout(() => el.setAttribute('hidden', ''), prefiereMenosMovimiento ? 0 : 250);
+    setTimeout(
+      () => {
+        el.setAttribute('hidden', '');
+        // El aviso ocupa una fila de `.controles-superiores`; al irse, la ficha y
+        // «← Ver toda la zona» recuperan ese alto.
+        ajustarControlesSuperiores();
+      },
+      prefiereMenosMovimiento ? 0 : 250,
+    );
   }
 
-  function avisar(texto: string): void {
+  function avisar(clave: string, texto: string): void {
     const el = document.getElementById('aviso-modo');
-    if (!el) return;
+    if (!el || avisosMostrados.has(clave)) return;
+    avisosMostrados.add(clave);
 
     clearTimeout(temporizadorAviso);
     el.textContent = texto;
     el.removeAttribute('data-yendose');
     el.removeAttribute('hidden');
+    // Acaba de aparecer una fila nueva aquí arriba: lo que va debajo se corre.
+    ajustarControlesSuperiores();
 
     temporizadorAviso = setTimeout(() => cerrarAviso(el), 6000);
   }
