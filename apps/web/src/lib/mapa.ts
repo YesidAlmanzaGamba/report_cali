@@ -897,13 +897,28 @@ export async function iniciarMapa(): Promise<void> {
 
   document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
 
+  /**
+   * `mapa.resize()` también cuenta como vuelo propio: MapLibre dispara
+   * `movestart`/`move`/`moveend` dentro de su propio `resize()`, no solo cuando cambia
+   * el zoom o el centro. Sin marcarlo, quedaba un bucle de parpadeo real: el encabezado
+   * se oculta → `.zona-mapa` crece → el `ResizeObserver` llama a `mapa.resize()` → ese
+   * resize dispara su propio `movestart` → como no venía marcado, se interpretaba como
+   * gesto real y ocultaba el encabezado otra vez (ya oculto) → al mostrarlo pasados los
+   * 350ms, el contenedor volvía a cambiar de tamaño → mismo ciclo, sin parar. Encontrado
+   * en vivo por un reporte de pantalla parpadeando, no leyendo código.
+   */
+  function redimensionar(): void {
+    vueloPropio = true;
+    mapa.resize();
+  }
+
   // En móvil la leyenda pasa a flujo normal dentro del marco, así que el alto del
   // contenedor cambia después de inicializar el mapa. MapLibre no se entera solo y
   // el lienzo queda con el tamaño viejo — en blanco, en la práctica.
   if ('ResizeObserver' in window) {
-    new ResizeObserver(() => mapa.resize()).observe(contenedor);
+    new ResizeObserver(redimensionar).observe(contenedor);
   }
-  mapa.resize();
+  redimensionar();
 
   // La leyenda se abre sola solo donde sobra espacio.
   if (window.matchMedia('(min-width: 40rem)').matches) {
