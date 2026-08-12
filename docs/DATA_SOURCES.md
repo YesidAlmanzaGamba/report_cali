@@ -194,6 +194,46 @@ Se probaron uno a uno pidiendo el feed y comprobando que devolviera `<item>` con
 Cubren los departamentos con más municipios sobre el umbral de daño: Valle del Cauca (42),
 Tolima (41), Chocó (25), Risaralda (14) y Cauca (9).
 
+### Gacetas oficiales — se buscaron para Cartago, y este es el resultado
+
+**Encontrada una, y sirve:** `valledelcauca.gov.co/rss` — 100 entradas, 34 sobre el sismo,
+al día. Va marcada `official`, que en toda la aplicación es un escalón distinto de la
+prensa (ADR-003): son los boletines de quien coordina la respuesta.
+
+**Para Cartago no hay ninguna, y el motivo es peor que «no tienen».** Cartago sí expone un
+feed —`cartago.gov.co/rss` devuelve 200— pero sus diez entradas son dos páginas
+institucionales de febrero y **ocho textos de relleno «lorem ipsum» de 2020**:
+«How to make lorem ipsum dolor sit glavrida». Nunca conectaron el feed a su sala de
+prensa. El municipio ha publicado sobre la emergencia; su canal automático no lo cuenta.
+
+**El patrón `/rss` no se generaliza.** Se probó en trece municipios golpeados: solo
+respondieron Cartago (relleno) y Manizales (real, pero su última entrada es de julio,
+anterior al sismo). El resto da 404, 403 o ni resuelve el dominio. La variante
+`<municipio>-<departamento>.gov.co` responde 200 pero sirve HTML, no RSS.
+
+**Ninguna otra gobernación tiene feed.** Se probaron las nueve de los departamentos
+golpeados en `/rss`, `/publicaciones/rss` y `/feed`: Tolima da 403; Chocó y Cundinamarca
+responden con cero entradas; Risaralda, Caldas, Quindío, Cauca y Antioquia dan 404.
+
+**Conclusión para el mapa:** no existe una gaceta municipal legible por máquina. Las
+cifras oficiales de un municipio como Cartago solo entran por `curated/observaciones.json`,
+leídas por una persona. Es la conclusión honesta, no la que esperábamos.
+
+### Dos trampas del feed oficial, medidas
+
+**La fecha no lleva zona horaria.** El CMS de gov.co manda `2026-08-12 09:40:28`, y
+`Date.parse` lo interpreta como hora local del proceso — UTC en el runner de CI. Las notas
+quedaban **cinco horas más viejas de lo que son**: suficiente para que una recién publicada
+caiga del lado equivocado del filtro por fecha del sismo. Colombia es UTC-5 todo el año y
+sin horario de verano, así que `fechaDe()` se lo añade.
+
+**«Toro» es la gobernadora, no el municipio.** En el feed de la Gobernación, «Toro»
+aparece en **21 de 100 entradas**, y en las 21 es el apellido de **Dilian Francisca Toro**.
+Solo hacía daño en el paso relajado a cuatro letras — con el mínimo de cinco ni se
+compara—, así que los nombres cortos que además son apellido corriente quedan fuera de la
+atribución automática (`CHOCAN_CON_APELLIDOS`). Se pierde la cobertura real de Toro
+(Valle) y se acepta: etiquetar mal es peor que no etiquetar.
+
 ### Probados y sin feed utilizable
 
 No hace falta volver a intentarlo a ciegas:

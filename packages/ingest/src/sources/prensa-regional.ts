@@ -107,6 +107,22 @@ export const MEDIOS_REGIONALES: MedioRegional[] = [
     tipo: 'press',
     departamentos: [],
   },
+  /**
+   * **La única gaceta oficial con feed que se encontró.** Va marcada `official`, que es
+   * un escalón distinto de la prensa en toda la aplicación (ADR-003): son los boletines
+   * de quien coordina la respuesta, no la crónica de quien la observa.
+   *
+   * Se probaron las nueve gobernaciones de los departamentos golpeados en `/rss`,
+   * `/publicaciones/rss` y `/feed`. Solo esta devuelve items: Tolima da 403, Chocó y
+   * Cundinamarca responden con cero items, y Risaralda, Caldas, Quindío, Cauca y
+   * Antioquia dan 404. Ver la nota de `MEDIOS_SIN_FEED`.
+   */
+  {
+    nombre: 'Gobernación del Valle del Cauca',
+    url: 'https://www.valledelcauca.gov.co/rss',
+    tipo: 'official',
+    departamentos: ['Valle del Cauca'],
+  },
 ];
 
 /**
@@ -182,6 +198,45 @@ export const MEDIOS_QUE_NOS_BLOQUEAN: MedioRegional[] = [
 const TEMA =
   /terremoto|sismo|temblor|r[ée]plica|damnificad|colaps|derrumb|deslizamiento|albergue|acopio|evacua|socorr|desapareci|remoci[óo]n|escombro|damnific|emergencia s[íi]smica|UNGRD|Defensa Civil|Cruz Roja/i;
 
+/**
+ * Nombres cortos de municipio que además son apellido corriente.
+ *
+ * Solo estorban en el paso relajado a cuatro letras — con el mínimo normal de cinco no
+ * llegan a compararse—, y ahí hacen un destrozo. Medido en el feed de la Gobernación del
+ * Valle: **«Toro» aparece en 21 de 100 entradas**, y en las 21 es el apellido de la
+ * gobernadora, **Dilian Francisca Toro**. Ninguna hablaba del municipio de Toro.
+ *
+ * Se quedan fuera de la atribución automática. Se pierde la cobertura real que pudiera
+ * tener Toro (Valle), y se acepta: etiquetar mal un reporte manda a alguien a leer una
+ * nota que no habla de su municipio, y eso es peor que no etiquetarla.
+ */
+export const CHOCAN_CON_APELLIDOS = new Set(['toro']);
+
+/**
+ * Fecha de una entrada, tolerando los dos formatos que aparecen en la práctica.
+ *
+ * Casi todos los feeds mandan RFC-822 (`Wed, 12 Aug 2026 14:03:20 +0000`), que `Date`
+ * entiende. El CMS de gov.co manda `2026-08-12 09:40:28`, **sin zona horaria**, y ahí
+ * está la trampa: `Date.parse` lo interpreta como hora local del proceso, que en el
+ * runner de CI es UTC. Las notas quedarían **cinco horas más viejas de lo que son** —
+ * suficiente para que una nota recién publicada caiga del lado equivocado del filtro por
+ * fecha del sismo, y para que la ficha diga «hace 7 h» de algo de hace dos.
+ *
+ * Colombia es UTC-5 todo el año y no aplica horario de verano, así que el desplazamiento
+ * es fijo y se puede escribir sin más.
+ */
+export function fechaDe(texto: string): number {
+  const limpio = texto.trim();
+  if (!limpio) return Number.NaN;
+
+  // `2026-08-12 09:40:28` o `2026-08-12T09:40:28`, sin zona: es hora de Bogotá.
+  if (/^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(:\d{2})?$/.test(limpio)) {
+    return Date.parse(`${limpio.replace(' ', 'T')}-05:00`);
+  }
+
+  return Date.parse(limpio);
+}
+
 /** Quita etiquetas y entidades del resumen: viene con HTML en casi todos los feeds. */
 export function textoPlano(html: string): string {
   return limpiar(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
@@ -246,8 +301,7 @@ export function parsearFeedRegional(
     // Tema antes que nada: es lo que evita que un feed general meta clasificados.
     if (!TEMA.test(`${titulo} ${resumen}`)) continue;
 
-    const fecha = extraerEtiqueta(bloque, 'pubDate');
-    const t = fecha ? Date.parse(fecha) : Number.NaN;
+    const t = fechaDe(extraerEtiqueta(bloque, 'pubDate'));
     // Sin fecha no se puede saber si es de este desastre; fuera. Y nada anterior al sismo.
     if (Number.isNaN(t) || t < desde) continue;
 
@@ -306,6 +360,9 @@ export function municipioDeNota(
   const propios = municipios.filter(
     (m) => m.admin1_name !== undefined && cubre.has(normalizar(m.admin1_name)),
   );
+  // Solo el paso relajado a cuatro letras necesita esta poda: con el mínimo de cinco,
+  // «Toro» ni se compara. Ver `CHOCAN_CON_APELLIDOS`.
+  const propiosSeguros = propios.filter((m) => !CHOCAN_CON_APELLIDOS.has(normalizar(m.name)));
 
   const masLargo = (lista: MunicipioRef[]): MunicipioRef | undefined =>
     lista.length === 0
@@ -315,9 +372,9 @@ export function municipioDeNota(
   const ruta = rutaComoTexto(enlace);
 
   return (
-    masLargo(municipiosEn(ruta, propios, ambiguos, 4)) ??
+    masLargo(municipiosEn(ruta, propiosSeguros, ambiguos, 4)) ??
     masLargo(municipiosEn(ruta, municipios, ambiguos)) ??
-    masLargo(municipiosEn(titulo, propios, ambiguos, 4)) ??
+    masLargo(municipiosEn(titulo, propiosSeguros, ambiguos, 4)) ??
     masLargo(municipiosEn(titulo, municipios, ambiguos)) ??
     masLargo(municipiosEn(resumen, propios, ambiguos))
   );

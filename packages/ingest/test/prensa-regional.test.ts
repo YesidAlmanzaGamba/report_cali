@@ -4,6 +4,7 @@ import { describe, it } from 'node:test';
 import type { MunicipioRef } from '../src/sources/noticias.js';
 import {
   MEDIOS_REGIONALES,
+  fechaDe,
   municipioDeNota,
   parsearFeedRegional,
   rutaComoTexto,
@@ -245,7 +246,89 @@ describe('parsearFeedRegional', () => {
   });
 });
 
+describe('fechaDe', () => {
+  it('entiende el RFC-822 de los feeds de prensa', () => {
+    assert.equal(
+      new Date(fechaDe('Wed, 12 Aug 2026 14:03:20 +0000')).toISOString(),
+      '2026-08-12T14:03:20.000Z',
+    );
+  });
+
+  /**
+   * El CMS de gov.co manda `2026-08-12 09:40:28` sin zona. Interpretarlo como hora local
+   * del proceso —UTC en el runner— envejece las notas cinco horas.
+   */
+  it('interpreta la fecha sin zona de gov.co como hora de Bogotá', () => {
+    assert.equal(
+      new Date(fechaDe('2026-08-12 09:40:28')).toISOString(),
+      '2026-08-12T14:40:28.000Z',
+    );
+    assert.equal(
+      new Date(fechaDe('2026-08-12T09:40:28')).toISOString(),
+      '2026-08-12T14:40:28.000Z',
+    );
+  });
+
+  it('devuelve NaN con lo que no es fecha', () => {
+    assert.ok(Number.isNaN(fechaDe('')));
+    assert.ok(Number.isNaN(fechaDe('el martes')));
+  });
+});
+
+describe('CHOCAN_CON_APELLIDOS', () => {
+  /**
+   * Caso real: en el feed de la Gobernación del Valle, «Toro» aparece en 21 de 100
+   * entradas y en todas es el apellido de la gobernadora, Dilian Francisca Toro.
+   */
+  it('no atribuye a Toro (Valle) lo que dice el apellido de la gobernadora', () => {
+    const gobernacion: MedioRegional = {
+      nombre: 'Gobernación del Valle del Cauca',
+      url: 'https://www.valledelcauca.gov.co/rss',
+      tipo: 'official',
+      departamentos: ['Valle del Cauca'],
+    };
+    const conToro: MunicipioRef[] = [
+      ...municipios,
+      { pcode: 'CO76823', name: 'Toro', admin1_name: 'Valle del Cauca' },
+    ];
+
+    assert.equal(
+      municipioDeNota(
+        'La Gobernadora Dilian Francisca Toro anunció medidas para los damnificados',
+        '',
+        'https://www.valledelcauca.gov.co/publicaciones/90193/gobernadora-anuncio',
+        gobernacion,
+        conToro,
+      ),
+      undefined,
+    );
+  });
+
+  it('sigue encontrando los cortos que no chocan con apellidos', () => {
+    const choco: MedioRegional = {
+      nombre: 'Chocó 7 Días',
+      url: 'https://choco7dias.com/feed/',
+      tipo: 'press',
+      departamentos: ['Chocó'],
+    };
+    const conTado: MunicipioRef[] = [
+      ...municipios,
+      { pcode: 'CO27787', name: 'Tadó', admin1_name: 'Chocó' },
+    ];
+    assert.equal(
+      municipioDeNota('Tadó sigue sin agua', '', 'https://choco7dias.com/a', choco, conTado)?.pcode,
+      'CO27787',
+    );
+  });
+});
+
 describe('MEDIOS_REGIONALES', () => {
+  it('incluye la gaceta oficial del Valle, marcada como oficial', () => {
+    const gobernacion = MEDIOS_REGIONALES.find((m) => m.url.includes('valledelcauca.gov.co'));
+    assert.ok(gobernacion, 'falta la Gobernación del Valle');
+    assert.equal(gobernacion?.tipo, 'official');
+  });
+
   it('no repite URLs', () => {
     const urls = MEDIOS_REGIONALES.map((m) => m.url);
     assert.equal(new Set(urls).size, urls.length);
