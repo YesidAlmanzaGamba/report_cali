@@ -1,0 +1,137 @@
+---
+/**
+ * Encabezado compacto. En un celular no puede robarle pantalla al mapa, así que se
+ * queda en ~52 px y guarda el detalle del evento para la hoja.
+ *
+ * El botón «¿Buscas a un familiar?» vive aquí y no dentro de la hoja, a propósito
+ * (ADR-001): quien llega buscando a alguien no puede tener que aprender un gesto
+ * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
+ * sección; con JavaScript abre la hoja en ese módulo.
+ */
+interface Props {
+  magnitud: number;
+  alerta: string | null;
+  fechaLocal: string;
+}
+
+const { magnitud, alerta, fechaLocal } = Astro.props;
+---
+
+<header class="encabezado">
+  <div class="fila">
+    <div class="identidad">
+      <h1>
+        Terremoto de Colombia
+        <span class="detalle">M{magnitud} · {fechaLocal}</span>
+      </h1>
+    </div>
+
+    {
+      alerta === 'red' && (
+        <span class="alerta" title="Nivel de alerta PAGER del USGS">
+          Alerta roja
+        </span>
+      )
+    }
+  </div>
+
+  <a class="buscas" href="#buscas" data-modulo="ayuda">
+    ¿Buscas a un familiar?
+  </a>
+</header>
+
+<style>
+  .encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    min-height: var(--encabezado);
+    background: var(--fondo);
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .fila {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .detalle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--tinta-3);
+  }
+
+  .alerta {
+    flex-shrink: 0;
+    background: #c80000;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2em 0.55em;
+    border-radius: 999px;
+  }
+
+  /* 44 px de alto mínimo: es un objetivo táctil, y probablemente el más importante
+     de la página. */
+  .buscas {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 0.9rem;
+    border-radius: 999px;
+    background: var(--urgente);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .buscas:hover {
+    filter: brightness(1.08);
+  }
+
+  /* En pantallas muy angostas el texto largo del botón desplaza el título. */
+  @media (max-width: 30rem) {
+    .encabezado {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .buscas {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .encabezado {
+      padding-inline: 1.5rem;
+    }
+    h1 {
+      font-size: 1.15rem;
+    }
+    .detalle {
+      display: inline;
+      margin-left: 0.5rem;
+    }
+  }
+</style>

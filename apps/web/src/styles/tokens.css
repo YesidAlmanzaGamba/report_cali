@@ -1,0 +1,57 @@
+/**
+ * Tokens de diseño.
+ *
+ * Los colores de intensidad MMI NO están aquí: son un estándar del USGS y viven en
+ * `src/lib/mmi.ts` junto con su explicación (ADR-009). Estos son los del cascarón.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Superficies e tinta */
+  --fondo: #ffffff;
+  --fondo-2: #f4f5f7;
+  --fondo-3: #e9ebef;
+  --borde: #d5d9e0;
+  --tinta: #14161a;
+  --tinta-2: #464b54;
+  --tinta-3: #6b717c;
+
+  --acento: #1b4d8f;
+  --urgente: #a8140f;
+  --urgente-fondo: #fdf2f1;
+
+  /* Estado de las cifras: la antigüedad se codifica también en color */
+  --fresco: #1f8a4c;
+  --envejece: #b8860b;
+  --obsoleto: #a52020;
+
+  --radio: 10px;
+  --ancho: 66rem;
+
+  /* Medidas de la interfaz móvil.
+     `--asomada` es cuánto de la hoja queda a la vista sin tocarla: lo justo para el
+     asa y la cifra principal, sin robarle pantalla al mapa. */
+  --encabezado: 3.25rem;
+  --asomada: 6.5rem;
+  --seguro-abajo: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #101216;
+    --fondo-2: #171a20;
+    --fondo-3: #1f242c;
+    --borde: #2c323c;
+    --tinta: #eef0f3;
+    --tinta-2: #b3bac4;
+    --tinta-3: #868e9a;
+
+    --acento: #6ea8f0;
+    --urgente: #ff8a80;
+    --urgente-fondo: #2a1614;
+
+    --fresco: #5cbb7f;
+    --envejece: #d9a33c;
+    --obsoleto: #e88a80;
+  }
+}

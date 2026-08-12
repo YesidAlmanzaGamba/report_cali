@@ -1,0 +1,111 @@
+---
+/**
+ * Qué es y qué no es este sitio, y la procedencia de los datos.
+ *
+ * La aclaración de que esto no es un registro de desaparecidos no es un descargo legal:
+ * es la decisión de diseño que más define el proyecto (ADR-001), y quien llega merece
+ * saberlo sin tener que deducirlo.
+ */
+interface Props {
+  eventoUrl: string;
+  eventoId: string;
+  generadoEn: string;
+}
+
+const { eventoUrl, eventoId, generadoEn } = Astro.props;
+
+const fecha = new Intl.DateTimeFormat('es-CO', {
+  dateStyle: 'medium',
+  timeStyle: 'short',
+  timeZone: 'America/Bogota',
+}).format(new Date(generadoEn));
+---
+
+<section aria-labelledby="t-alcance">
+  <h2 id="t-alcance">Sobre este sitio</h2>
+
+  <p>
+    Es un <strong>agregador de solo lectura</strong>. Cruza la intensidad del ShakeMap del
+    USGS con los límites municipales COD-AB (DANE/OCHA) para responder una pregunta
+    operativa: qué municipios recibieron el sacudimiento más fuerte.
+  </p>
+
+  <p>
+    <strong>No es un registro de personas desaparecidas ni fallecidas</strong>, y nunca lo
+    será. No almacenamos datos personales. Ya existen cuatro canales haciendo esa labor y
+    sumar un quinto fragmentaría la búsqueda.
+  </p>
+
+  <p>
+    Proyecto ciudadano y voluntario. <strong>No reemplaza a las autoridades</strong>, a los
+    organismos de socorro ni a las líneas oficiales de emergencia.
+  </p>
+
+  <dl class="procedencia">
+    <div>
+      <dt>Fuente</dt>
+      <dd><a href={eventoUrl}>USGS</a> · evento {eventoId}</dd>
+    </div>
+    <div>
+      <dt>Actualizado</dt>
+      <dd><time datetime={generadoEn}>{fecha}</time></dd>
+    </div>
+  </dl>
+
+  <p class="pie">
+    Los datos se consultan automáticamente cada 30 minutos. Cada cambio de cada cifra queda
+    en el historial del repositorio, así que cualquiera puede auditar de dónde salió un
+    número y cuándo cambió. Código bajo MIT, datos bajo CC-BY-4.0.
+  </p>
+
+  <p class="emergencia">En una emergencia en curso, llama al <strong>123</strong>.</p>
+</section>
+
+<style>
+  h2 {
+    font-size: 1.25rem;
+    margin: 0 0 0.6rem;
+  }
+
+  p {
+    max-width: 62ch;
+    color: var(--tinta-2);
+  }
+
+  .procedencia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.8rem 1.5rem;
+    margin: 1.25rem 0;
+    padding: 0.9rem 1rem;
+    background: var(--fondo-2);
+    border-radius: var(--radio);
+  }
+
+  dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-3);
+  }
+
+  dd {
+    margin: 0.2rem 0 0;
+    font-weight: 600;
+    color: var(--tinta);
+  }
+
+  .pie {
+    font-size: 0.83rem;
+  }
+
+  .emergencia {
+    margin-top: 1.25rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--urgente-fondo);
+    border-left: 3px solid var(--urgente);
+    border-radius: var(--radio);
+    color: var(--tinta);
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,166 @@
+/**
+ * Interacción de la hoja inferior.
+ *
+ * Presupuesto: pequeño. Es lo único que se descarga antes del mapa, y el mapa ya pesa
+ * lo suyo. Sin dependencias, sin framework.
+ */
+
+const ESTADOS = ['asomada', 'media', 'completa'] as const;
+type Estado = (typeof ESTADOS)[number];
+
+/** Píxeles de arrastre a partir de los cuales se considera gesto y no toque. */
+const UMBRAL_GESTO = 8;
+
+export function iniciarHoja(): void {
+  const hoja = document.getElementById('hoja');
+  const asa = hoja?.querySelector<HTMLButtonElement>('.asa');
+  if (!hoja || !asa) return;
+
+  const alto = () => hoja.getBoundingClientRect().height;
+  const asomadaPx = () =>
+    parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 || 104;
+
+  const desplazamiento = (estado: Estado): number => {
+    if (estado === 'completa') return 0;
+    if (estado === 'media') return alto() * 0.45;
+    return alto() - asomadaPx();
+  };
+
+  const estadoActual = (): Estado => (hoja.dataset['estado'] as Estado) ?? 'asomada';
+
+  function fijar(estado: Estado): void {
+    hoja!.dataset['estado'] = estado;
+    hoja!.style.transform = '';
+    asa!.setAttribute('aria-expanded', estado === 'asomada' ? 'false' : 'true');
+  }
+
+  // ── Toque: alterna entre asomada y completa ───────────────────────────────
+  // Dos estados al tocar y tres al arrastrar. Un toque debería tener un resultado
+  // predecible; el estado intermedio se alcanza con el gesto, que es donde la persona
+  // ya está eligiendo una posición.
+  asa.addEventListener('click', (e) => {
+    if (arrastro) {
+      // El click que sigue a un arrastre no debe además alternar el estado.
+      e.preventDefault();
+      arrastro = false;
+      return;
+    }
+    fijar(estadoActual() === 'asomada' ? 'completa' : 'asomada');
+  });
+
+  // ── Arrastre ──────────────────────────────────────────────────────────────
+  let inicioY = 0;
+  let baseOffset = 0;
+  let arrastro = false;
+
+  asa.addEventListener('pointerdown', (e) => {
+    inicioY = e.clientY;
+    baseOffset = desplazamiento(estadoActual());
+    arrastro = false;
+    asa.setPointerCapture(e.pointerId);
+  });
+
+  asa.addEventListener('pointermove', (e) => {
+    if (!asa.hasPointerCapture(e.pointerId)) return;
+
+    const dy = e.clientY - inicioY;
+    if (!arrastro && Math.abs(dy) < UMBRAL_GESTO) return;
+
+    arrastro = true;
+    hoja.dataset['arrastrando'] = '';
+
+    const maximo = alto() - asomadaPx();
+    const offset = Math.min(maximo, Math.max(0, baseOffset + dy));
+    hoja.style.transform = `translateY(${offset}px)`;
+  });
+
+  function soltar(e: PointerEvent): void {
+    if (!asa!.hasPointerCapture(e.pointerId)) return;
+    asa!.releasePointerCapture(e.pointerId);
+    delete hoja!.dataset['arrastrando'];
+
+    if (!arrastro) return;
+
+    // Se ancla al estado más cercano a donde quedó el dedo.
+    const offset = baseOffset + (e.clientY - inicioY);
+    const cercano = ESTADOS.reduce((mejor, estado) =>
+      Math.abs(desplazamiento(estado) - offset) < Math.abs(desplazamiento(mejor) - offset)
+        ? estado
+        : mejor,
+    );
+
+    fijar(cercano);
+  }
+
+  asa.addEventListener('pointerup', soltar);
+  asa.addEventListener('pointercancel', soltar);
+
+  // ── Módulos ───────────────────────────────────────────────────────────────
+  const pestanas = [...hoja.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  const paneles = [...hoja.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+
+  function activar(id: string, moverFoco = false): void {
+    for (const p of pestanas) {
+      const activa = p.dataset['modulo'] === id;
+      p.setAttribute('aria-selected', activa ? 'true' : 'false');
+      p.tabIndex = activa ? 0 : -1;
+      if (activa && moverFoco) p.focus();
+    }
+
+    for (const panel of paneles) {
+      if (panel.dataset['modulo'] === id) panel.setAttribute('data-activo', '');
+      else panel.removeAttribute('data-activo');
+    }
+
+    // Al cambiar de módulo se vuelve arriba: quedarse a media altura del anterior
+    // desorienta.
+    hoja?.querySelector('.modulos')?.scrollTo({ top: 0 });
+  }
+
+  for (const pestana of pestanas) {
+    pestana.addEventListener('click', () => {
+      const id = pestana.dataset['modulo'];
+      if (id) activar(id);
+      if (estadoActual() === 'asomada') fijar('completa');
+    });
+  }
+
+  // Flechas entre pestañas, como espera un lector de pantalla en un `tablist`.
+  hoja.querySelector('[role="tablist"]')?.addEventListener('keydown', (e) => {
+    const evento = e as KeyboardEvent;
+    const paso = evento.key === 'ArrowRight' ? 1 : evento.key === 'ArrowLeft' ? -1 : 0;
+    if (paso === 0) return;
+
+    evento.preventDefault();
+    const actual = pestanas.findIndex((p) => p.getAttribute('aria-selected') === 'true');
+    const siguiente = pestanas[(actual + paso + pestanas.length) % pestanas.length];
+    if (siguiente?.dataset['modulo']) activar(siguiente.dataset['modulo'], true);
+  });
+
+  // ── Atajos y enlaces externos ─────────────────────────────────────────────
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && estadoActual() !== 'asomada') fijar('asomada');
+  });
+
+  /**
+   * Enlaces que abren la hoja en un módulo concreto — el botón «¿Buscas a un familiar?»
+   * del encabezado es el caso principal. Sin JavaScript son anclas normales que bajan
+   * a la sección, así que el enlace sirve igual.
+   */
+  for (const enlace of document.querySelectorAll<HTMLElement>('[data-modulo]')) {
+    if (enlace.getAttribute('role') === 'tab') continue;
+
+    enlace.addEventListener('click', (e) => {
+      const id = enlace.dataset['modulo'];
+      if (!id || !paneles.some((p) => p.dataset['modulo'] === id)) return;
+
+      e.preventDefault();
+      activar(id);
+      fijar('completa');
+    });
+  }
+
+  // El alto de la hoja se mide en píxeles al arrastrar; si la ventana cambia de
+  // tamaño, esos píxeles ya no corresponden al anclaje.
+  window.addEventListener('resize', () => fijar(estadoActual()));
+}

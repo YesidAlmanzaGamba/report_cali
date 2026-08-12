@@ -1,14 +1,19 @@
 ---
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import type { Observation } from '@report-cali/ingest/schema';
 
-import { MMI_LEVELS, levelFor, levelsPresent } from '../lib/mmi';
+import Base from '../layouts/Base.astro';
+import Alcance from '../components/Alcance.astro';
 import BuscasAlguien from '../components/BuscasAlguien.astro';
 import Cifras from '../components/Cifras.astro';
-import Fuente from '../components/Fuente.astro';
-
-const DATA = resolve(process.cwd(), '../../data');
-const readJson = async (p: string) => JSON.parse(await readFile(resolve(DATA, p), 'utf8'));
+import Descargas from '../components/Descargas.astro';
+import Encabezado from '../components/Encabezado.astro';
+import Hoja from '../components/Hoja.astro';
+import Mapa from '../components/Mapa.astro';
+import TablaMunicipios from '../components/TablaMunicipios.astro';
+import { levelsPresent } from '../lib/mmi';
+import { ETIQUETAS } from '../lib/metricas';
 
 interface Municipio {
   pcode: string;
@@ -20,895 +25,120 @@ interface Municipio {
   method: 'grid' | 'centroid';
 }
 
-const evento = await readJson('event/event.json');
-const mmiData = await readJson('event/mmi-by-municipality.json');
+const DATA = resolve(process.cwd(), '../../data');
+const leer = async (p: string) => JSON.parse(await readFile(resolve(DATA, p), 'utf8'));
+
+const evento = await leer('event/event.json');
+const mmiData = await leer('event/mmi-by-municipality.json');
 const municipios: Municipio[] = mmiData.municipalities;
 
-// Las cifras son opcionales: si todavía no hay ninguna, la página funciona igual y la
-// sección simplemente no aparece.
-const afectacion = await readJson('observations/afectacion.json').catch(() => ({
-  observations: [],
-}));
-const nombresPorPcode = new Map(municipios.map((m) => [m.pcode, `${m.name}, ${m.admin1_name}`]));
+const afectacion: { observations: Observation[] } = await leer(
+  'observations/afectacion.json',
+).catch(() => ({ observations: [] }));
+
+const nombres = new Map(municipios.map((m) => [m.pcode, `${m.name}, ${m.admin1_name}`]));
 const ahora = new Date();
 
-// Renderizamos la tabla y el resumen en tiempo de compilación a propósito: la página
-// sirve aunque el JavaScript no cargue nunca, que es exactamente lo que pasa con un
-// celular en 3G en zona de desastre. El mapa es una mejora, no un requisito.
-// Los 25 de mayor intensidad, más cualquier municipio con cifras reportadas aunque su
-// sacudimiento no esté entre los más fuertes: si alguien reportó daños ahí, es
-// operativamente relevante y esconderlo por no llegar al top 25 sería un error.
-const conCifras = new Set(
-  (afectacion.observations as { pcode: string }[]).map((o) => o.pcode),
-);
-const masAfectados = [
+// Los 25 de mayor intensidad, más cualquier municipio con cifras reportadas: si alguien
+// reportó daños ahí, es relevante aunque su sacudimiento no esté entre los más fuertes.
+const conCifras = new Set(afectacion.observations.map((o) => o.pcode));
+const listados = [
   ...municipios.slice(0, 25),
   ...municipios.slice(25).filter((m) => conCifras.has(m.pcode)),
 ];
+
 const leyenda = levelsPresent(municipios.map((m) => m.mmi)).reverse();
 
-const porDepartamento = [...municipios].reduce<Map<string, { nombre: string; max: number; n: number }>>(
-  (acc, m) => {
-    const actual = acc.get(m.admin1_pcode);
-    if (!actual) acc.set(m.admin1_pcode, { nombre: m.admin1_name, max: m.mmi, n: 1 });
-    else {
-      actual.max = Math.max(actual.max, m.mmi);
-      actual.n += 1;
-    }
-    return acc;
-  },
-  new Map(),
-);
-const departamentos = [...porDepartamento.values()].sort((a, b) => b.max - a.max).slice(0, 8);
-
-const fechaEvento = new Date(evento.originTime);
 const fechaLocal = new Intl.DateTimeFormat('es-CO', {
   dateStyle: 'long',
-  timeStyle: 'short',
   timeZone: 'America/Bogota',
-}).format(fechaEvento);
+}).format(new Date(evento.originTime));
+
+/**
+ * Lo único que se lee sin abrir la hoja, así que tiene que ser la cifra que más importa.
+ * Si hay un balance nacional, ese; si no, el alcance del sacudimiento.
+ */
+const nacional = afectacion.observations.find(
+  (o) => o.pcode === 'CO' && o.metric === 'deaths_confirmed',
+);
+const resumen = nacional
+  ? `${nacional.value.toLocaleString('es-CO')} ${ETIQUETAS[nacional.metric].toLowerCase()} · ${municipios.length.toLocaleString('es-CO')} municipios afectados`
+  : `${municipios.length.toLocaleString('es-CO')} municipios con sacudimiento registrado`;
+
+const modulos = [
+  { id: 'cifras', etiqueta: 'Cifras' },
+  { id: 'ayuda', etiqueta: 'Buscar personas' },
+  { id: 'municipios', etiqueta: 'Municipios' },
+  { id: 'descargas', etiqueta: 'Descargas' },
+  { id: 'alcance', etiqueta: 'Sobre esto' },
+];
 ---
 
-<html lang="es-CO">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mapa de situación — Terremoto Colombia, 10 de agosto de 2026</title>
-    <meta
-      name="description"
-      content="Mapa abierto de la intensidad y afectación del terremoto de magnitud 7.4 del 10 de agosto de 2026 en Colombia. Cada cifra con su fuente y su hora."
-    />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🗺️</text></svg>" />
-  </head>
+<Base
+  titulo="Mapa de situación — Terremoto Colombia, 10 de agosto de 2026"
+  descripcion="Mapa abierto de la intensidad y afectación del terremoto de magnitud 7.4 del 10 de agosto de 2026 en Colombia. Cada cifra con su fuente y su hora."
+>
+  <div class="disposicion">
+    <Encabezado magnitud={evento.magnitude} alerta={evento.alert} fechaLocal={fechaLocal} />
 
-  <body>
-    <a class="saltar" href="#mapa">Saltar al mapa</a>
-
-    <header class="cabecera">
-      <div class="contenido">
-        <p class="kicker">Mapa de situación · proyecto ciudadano abierto</p>
-        <h1>Terremoto de Colombia — {fechaLocal}</h1>
-
-        <dl class="ficha">
-          <div><dt>Magnitud</dt><dd>{evento.magnitude}</dd></div>
-          <div><dt>Profundidad</dt><dd>{Math.round(evento.depthKm)} km</dd></div>
-          <div><dt>Epicentro</dt><dd>{evento.place.replace(/^\d+ km \w+ of /, '')}</dd></div>
-          <div>
-            <dt>Alerta USGS</dt>
-            <dd><span class={`alerta alerta--${evento.alert}`}>{evento.alert === 'red' ? 'Roja' : evento.alert}</span></dd>
-          </div>
-          <div><dt>Municipios con sacudimiento</dt><dd>{municipios.length.toLocaleString('es-CO')}</dd></div>
-        </dl>
-
-        <p class="nota">
-          La profundidad de {Math.round(evento.depthKm)} km explica que se haya sentido en casi todo
-          el país: la energía de un sismo profundo se reparte en un volumen de roca mucho mayor y
-          llega más lejos que la de uno superficial.
-        </p>
-      </div>
-    </header>
-
-    <BuscasAlguien />
-
-    <main class="contenido">
-      <Cifras observaciones={afectacion.observations} municipios={nombresPorPcode} ahora={ahora} />
-
-      <section aria-labelledby="t-mapa">
-        <h2 id="t-mapa">Intensidad por municipio</h2>
-        <p class="intro">
-          El mapa colorea cada municipio por la <strong>intensidad Mercalli (MMI)</strong> que
-          alcanzó, no por la magnitud del sismo. La magnitud es un solo número para todo el
-          evento —7.4 en Quibdó y 7.4 en Bogotá—; la intensidad es lo que cada lugar sintió de
-          verdad.
-        </p>
-
-        <div class="mapa-marco">
-          <div id="mapa" role="application" aria-label="Mapa de intensidad por municipio">
-            <p class="mapa-estado">Mapa de intensidad — se carga al desplazarte hasta aquí.</p>
-          </div>
-
-          <div class="leyenda" id="leyenda">
-            <h3>Intensidad (MMI)</h3>
-            <ul>
-              {
-                leyenda.map((n) => (
-                  <li>
-                    <span class="muestra" style={`background:${n.color}`} aria-hidden="true"></span>
-                    <span class="grado">{n.roman}</span>
-                    <span class="desc">{n.label}</span>
-                  </li>
-                ))
-              }
-            </ul>
-            <p class="leyenda-nota">
-              Escala del ShakeMap del USGS, la misma que usan los organismos de socorro.
-            </p>
-          </div>
-
-          <aside class="detalle" id="detalle" hidden>
-            <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
-            <h3 id="detalle-nombre"></h3>
-            <p id="detalle-depto" class="detalle-depto"></p>
-            <p class="detalle-mmi">
-              <span id="detalle-grado" class="detalle-grado"></span>
-              <span id="detalle-valor" class="detalle-valor"></span>
-            </p>
-            <p id="detalle-label" class="detalle-label"></p>
-
-            <div id="detalle-cifras" class="detalle-cifras" hidden>
-              <h4>Cifras reportadas</h4>
-              <ul id="detalle-lista"></ul>
-            </div>
-
-            <p id="detalle-metodo" class="detalle-metodo"></p>
-          </aside>
-
-          <p class="atribucion">
-            Intensidad: <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2"
-              >USGS ShakeMap</a
-            > · Límites municipales: <a href="https://data.humdata.org/dataset/cod-ab-col"
-              >COD-AB (OCHA / DANE)</a
-            >
-          </p>
-        </div>
-
-        <noscript>
-          <p class="aviso">
-            El mapa interactivo necesita JavaScript. Abajo está la misma información en tabla.
-          </p>
-        </noscript>
-      </section>
-
-      <section aria-labelledby="t-departamentos">
-        <h2 id="t-departamentos">Departamentos más afectados</h2>
-        <ul class="deptos">
-          {
-            departamentos.map((d) => {
-              const n = levelFor(d.max);
-              return (
-                <li>
-                  <span class="depto-barra" style={`background:${n.color}`} aria-hidden="true"></span>
-                  <span class="depto-nombre">{d.nombre}</span>
-                  <span class="depto-grado">
-                    {n.roman} <span class="depto-mmi">({d.max})</span>
-                  </span>
-                  <span class="depto-n">{d.n} municipios</span>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </section>
-
-      <section aria-labelledby="t-tabla">
-        <h2 id="t-tabla">Municipios con mayor intensidad</h2>
-        <p class="intro">
-          Los 25 municipios donde el sacudimiento fue más fuerte, de {municipios.length.toLocaleString('es-CO')}
-          con cobertura de la malla del ShakeMap, más los que tengan cifras reportadas.
-          Toca una fila para verla en el mapa.
-        </p>
-
-        <div class="tabla-scroll">
-          <table>
-            <caption class="sr-only">Municipios ordenados por intensidad Mercalli descendente</caption>
-            <thead>
-              <tr>
-                <th scope="col">Municipio</th>
-                <th scope="col">Departamento</th>
-                <th scope="col">MMI</th>
-                <th scope="col">Grado</th>
-                <th scope="col">Método</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                masAfectados.map((m) => {
-                  const n = levelFor(m.mmi);
-                  return (
-                    <tr>
-                      <th scope="row">{m.name}</th>
-                      <td>{m.admin1_name}</td>
-                      <td class="num">{m.mmi}</td>
-                      <td>
-                        <span class="pastilla" style={`background:${n.color};color:${n.ink}`}>
-                          {m.mmi_roman}
-                        </span>
-                      </td>
-                      <td class="metodo">{m.method === 'grid' ? 'malla' : 'centroide'}</td>
-                    </tr>
-                  );
-                })
-              }
-            </tbody>
-          </table>
-        </div>
-
-        <p class="pie-tabla">
-          <strong>Método:</strong> «malla» significa que había celdas del ShakeMap dentro del
-          municipio y se tomó la mayor. «Centroide» significa que el municipio es más pequeño que
-          una celda y se muestreó en su centro. Se registra para que el dato sea auditable.
-        </p>
-      </section>
-
-      <section aria-labelledby="t-descargas">
-        <h2 id="t-descargas">Descargar los datos</h2>
-        <p class="intro">
-          Para llevarlos a tu propio análisis. Los CSV traen una segunda fila con etiquetas
-          <strong>HXL</strong>, el estándar de OCHA: se ve rara al abrirla en Excel, pero es lo
-          que permite que las herramientas del ecosistema humanitario entiendan las columnas sin
-          que nadie las mapee a mano.
-        </p>
-
-        <ul class="descargas">
-          <li>
-            <a href={`${import.meta.env.BASE_URL}data/export/mmi-por-municipio.csv`} download>
-              Intensidad por municipio <span class="fmt">CSV + HXL</span>
-            </a>
-            <span class="det">{municipios.length.toLocaleString('es-CO')} municipios con su MMI, grado Mercalli y método de cálculo</span>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}data/export/observaciones.csv`} download>
-              Cifras reportadas <span class="fmt">CSV + HXL</span>
-            </a>
-            <span class="det">Una fila por cifra, con fuente, enlace y hora de corte</span>
-          </li>
-          <li>
-            <a href={`${import.meta.env.BASE_URL}data/boundaries/municipios.topojson`} download>
-              Límites municipales <span class="fmt">TopoJSON</span>
-            </a>
-            <span class="det">Geometría COD-AB con P-codes, para cruzar por <code>pcode</code></span>
-          </li>
-        </ul>
-
-        <p class="pie-tabla">
-          Datos bajo CC-BY-4.0, respetando las licencias de las fuentes originales
-          (<a href="https://github.com/YesidAlmanzaGamba/report_cali/blob/main/docs/DATA_SOURCES.md">documentadas aquí</a>).
-          Los P-codes equivalen a DIVIPOLA del DANE, así que cruzan directo con datos nacionales.
-        </p>
-      </section>
-
-      <Fuente
-        nombre="USGS"
-        url={evento.url}
-        tipo="Oficial"
-        observado={mmiData.generated_at}
-        detalle={`Evento ${evento.id} · ShakeMap`}
-      />
-
-      <section aria-labelledby="t-alcance" class="alcance">
-        <h2 id="t-alcance">Qué es y qué no es este sitio</h2>
-        <p>
-          Es un <strong>agregador de solo lectura</strong>. Cruza la intensidad del ShakeMap del
-          USGS con los límites municipales COD-AB (DANE/OCHA) para responder una pregunta
-          operativa: qué municipios recibieron el sacudimiento más fuerte.
-        </p>
-        <p>
-          <strong>No es un registro de personas desaparecidas ni fallecidas</strong>, y nunca lo
-          será. No almacenamos datos personales. Ya existen cuatro canales haciendo esa labor y
-          sumar un quinto fragmentaría la búsqueda. Si buscas a alguien, usa los canales de arriba.
-        </p>
-        <p>
-          Es un proyecto ciudadano y voluntario. <strong>No reemplaza a las autoridades</strong>, a
-          los organismos de socorro ni a las líneas oficiales de emergencia.
-        </p>
-      </section>
+    <main id="contenido" class="zona-mapa">
+      <Mapa leyenda={leyenda} />
     </main>
+  </div>
 
-    <footer class="pie">
-      <div class="contenido">
-        <p>
-          Datos: <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2">USGS</a> ·
-          <a href="https://data.humdata.org/dataset/cod-ab-col">COD-AB (OCHA / DANE)</a>
-        </p>
-        <p>Código bajo licencia MIT. Datos bajo CC-BY-4.0.</p>
-        <p class="emergencia">En una emergencia en curso, llama al <strong>123</strong>.</p>
-      </div>
-    </footer>
+  <Hoja resumen={resumen} modulos={modulos}>
+    <Fragment slot="cifras">
+      <Cifras observaciones={afectacion.observations} municipios={nombres} ahora={ahora} />
+    </Fragment>
 
-    <script>
-      import { prepararMapa } from '../lib/cargar-mapa';
-      prepararMapa();
-    </script>
+    <Fragment slot="ayuda">
+      <BuscasAlguien />
+    </Fragment>
 
-    <style is:global>
-      :root {
-        color-scheme: light dark;
+    <Fragment slot="municipios">
+      <TablaMunicipios municipios={listados} total={municipios.length} />
+    </Fragment>
 
-        --fondo: #ffffff;
-        --fondo-2: #f4f5f7;
-        --fondo-3: #e9ebef;
-        --borde: #d5d9e0;
-        --tinta: #14161a;
-        --tinta-2: #464b54;
-        --tinta-3: #6b717c;
-        --acento: #1b4d8f;
-        --urgente: #a8140f;
-        --urgente-fondo: #fdf2f1;
-        --radio: 10px;
-        --ancho: 66rem;
-      }
+    <Fragment slot="descargas">
+      <Descargas totalMunicipios={municipios.length} />
+    </Fragment>
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --fondo: #101216;
-          --fondo-2: #171a20;
-          --fondo-3: #1f242c;
-          --borde: #2c323c;
-          --tinta: #eef0f3;
-          --tinta-2: #b3bac4;
-          --tinta-3: #868e9a;
-          --acento: #6ea8f0;
-          --urgente: #ff8a80;
-          --urgente-fondo: #2a1614;
-        }
-      }
+    <Fragment slot="alcance">
+      <Alcance
+        eventoUrl={evento.url}
+        eventoId={evento.id}
+        generadoEn={mmiData.generated_at}
+      />
+    </Fragment>
+  </Hoja>
 
-      * {
-        box-sizing: border-box;
-      }
+  <script>
+    import { iniciarHoja } from '../lib/hoja';
+    import { prepararMapa } from '../lib/cargar-mapa';
 
-      body {
-        margin: 0;
-        background: var(--fondo);
-        color: var(--tinta);
-        font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-        -webkit-text-size-adjust: 100%;
-      }
+    iniciarHoja();
+    prepararMapa();
+  </script>
+</Base>
 
-      .contenido {
-        max-width: var(--ancho);
-        margin-inline: auto;
-        padding-inline: 1.25rem;
-      }
+<style>
+  /* Sin JavaScript esto es flujo normal: encabezado, mapa, y debajo los módulos
+     apilados. Con JavaScript el mapa ocupa la pantalla y la hoja se le monta encima. */
+  :global(html.js) .disposicion {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+  }
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip-path: inset(50%);
-      }
+  :global(html.js) .zona-mapa {
+    flex: 1;
+    min-height: 0;
+  }
 
-      .saltar {
-        position: absolute;
-        left: -9999px;
-      }
-      .saltar:focus {
-        left: 1rem;
-        top: 1rem;
-        z-index: 100;
-        background: var(--acento);
-        color: #fff;
-        padding: 0.6rem 1rem;
-        border-radius: var(--radio);
-      }
-
-      a {
-        color: var(--acento);
-      }
-
-      h1,
-      h2,
-      h3 {
-        line-height: 1.25;
-        text-wrap: balance;
-      }
-
-      section {
-        margin-block: 3rem;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .intro {
-        color: var(--tinta-2);
-        max-width: 60ch;
-        margin-top: 0;
-      }
-
-      /* ── Cabecera ─────────────────────────────────────────── */
-      .cabecera {
-        background: var(--fondo-2);
-        border-bottom: 1px solid var(--borde);
-        padding-block: 2rem 1.75rem;
-      }
-
-      .kicker {
-        margin: 0 0 0.35rem;
-        font-size: 0.78rem;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-        color: var(--tinta-3);
-      }
-
-      .cabecera h1 {
-        margin: 0 0 1.25rem;
-        font-size: clamp(1.5rem, 4vw, 2.1rem);
-      }
-
-      .ficha {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-        gap: 1rem 1.5rem;
-        margin: 0;
-      }
-      .ficha dt {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--tinta-3);
-      }
-      .ficha dd {
-        margin: 0.15rem 0 0;
-        font-size: 1.3rem;
-        font-weight: 600;
-        font-variant-numeric: tabular-nums;
-      }
-
-      .alerta {
-        display: inline-block;
-        padding: 0.1em 0.6em;
-        border-radius: 999px;
-        font-size: 1rem;
-      }
-      .alerta--red {
-        background: #c80000;
-        color: #fff;
-      }
-
-      .nota {
-        margin: 1.25rem 0 0;
-        max-width: 62ch;
-        color: var(--tinta-2);
-        font-size: 0.94rem;
-      }
-
-      /* ── Mapa ─────────────────────────────────────────────── */
-      .mapa-marco {
-        position: relative;
-        border: 1px solid var(--borde);
-        border-radius: var(--radio);
-        overflow: hidden;
-        background: var(--fondo-2);
-      }
-
-      #mapa {
-        position: relative;
-        height: min(72vh, 640px);
-        width: 100%;
-      }
-
-      .atribucion {
-        margin: 0;
-        padding: 0.5rem 0.85rem;
-        border-top: 1px solid var(--borde);
-        background: var(--fondo-2);
-        font-size: 0.74rem;
-        color: var(--tinta-3);
-      }
-      .atribucion a {
-        color: inherit;
-      }
-
-      .leyenda {
-        position: absolute;
-        left: 0.75rem;
-        bottom: 0.75rem;
-        background: color-mix(in srgb, var(--fondo) 92%, transparent);
-        backdrop-filter: blur(6px);
-        border: 1px solid var(--borde);
-        border-radius: var(--radio);
-        padding: 0.7rem 0.85rem;
-        max-width: 17rem;
-      }
-      .leyenda h3 {
-        margin: 0 0 0.5rem;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--tinta-3);
-      }
-      .leyenda ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.3rem;
-      }
-      .leyenda li {
-        display: grid;
-        grid-template-columns: 1rem 2.2rem 1fr;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.8rem;
-      }
-      .muestra {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 3px;
-        border: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
-      }
-      .grado {
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
-      }
-      .desc {
-        color: var(--tinta-2);
-      }
-      .leyenda-nota {
-        margin: 0.6rem 0 0;
-        font-size: 0.72rem;
-        color: var(--tinta-3);
-      }
-
-      .detalle {
-        position: absolute;
-        right: 0.75rem;
-        top: 0.75rem;
-        width: min(19rem, calc(100% - 1.5rem));
-        background: color-mix(in srgb, var(--fondo) 95%, transparent);
-        backdrop-filter: blur(6px);
-        border: 1px solid var(--borde);
-        border-radius: var(--radio);
-        padding: 0.9rem 1rem 1rem;
-      }
-      .detalle h3 {
-        margin: 0 0 0.15rem;
-        font-size: 1.15rem;
-        padding-right: 1.5rem;
-      }
-      .detalle-depto {
-        margin: 0 0 0.75rem;
-        color: var(--tinta-3);
-        font-size: 0.85rem;
-      }
-      .detalle-mmi {
-        display: flex;
-        align-items: baseline;
-        gap: 0.6rem;
-        margin: 0;
-      }
-      .detalle-grado {
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1;
-        padding: 0.15em 0.4em;
-        border-radius: 8px;
-      }
-      .detalle-valor {
-        font-variant-numeric: tabular-nums;
-        color: var(--tinta-2);
-      }
-      .detalle-label {
-        margin: 0.6rem 0 0;
-        font-size: 0.9rem;
-      }
-      .detalle-metodo {
-        margin: 0.5rem 0 0;
-        font-size: 0.75rem;
-        color: var(--tinta-3);
-      }
-
-      .detalle-cifras {
-        margin-top: 0.85rem;
-        padding-top: 0.75rem;
-        border-top: 1px solid var(--borde);
-      }
-      .detalle-cifras h4 {
-        margin: 0 0 0.5rem;
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--tinta-3);
-      }
-      .detalle-cifras ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.5rem;
-      }
-      .detalle-cifras li {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0 0.6rem;
-        align-items: baseline;
-        font-size: 0.85rem;
-      }
-      .detalle-cifras .n {
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
-        font-size: 1.05rem;
-      }
-      .detalle-cifras .q {
-        line-height: 1.35;
-      }
-      .detalle-cifras .f {
-        display: block;
-        font-size: 0.72rem;
-        color: var(--tinta-3);
-      }
-      .detalle-cifras .f a {
-        color: inherit;
-      }
-      #cerrar-detalle {
-        position: absolute;
-        top: 0.4rem;
-        right: 0.5rem;
-        background: none;
-        border: none;
-        font-size: 1.4rem;
-        line-height: 1;
-        color: var(--tinta-3);
-        cursor: pointer;
-        padding: 0.2rem 0.4rem;
-      }
-
-      .aviso {
-        margin-top: 0.75rem;
-        padding: 0.75rem 1rem;
-        background: var(--fondo-3);
-        border-radius: var(--radio);
-        font-size: 0.9rem;
-      }
-
-      /* Estados de carga diferida del mapa */
-      .mapa-estado,
-      .mapa-oferta {
-        display: grid;
-        place-content: center;
-        gap: 0.5rem;
-        height: 100%;
-        padding: 2rem 1.5rem;
-        text-align: center;
-        color: var(--tinta-2);
-      }
-      .mapa-oferta p {
-        margin: 0;
-        max-width: 34ch;
-      }
-      .mapa-oferta-nota {
-        font-size: 0.88rem;
-        color: var(--tinta-3);
-      }
-      .mapa-boton {
-        justify-self: center;
-        margin-top: 0.5rem;
-        padding: 0.6rem 1.2rem;
-        border: 1px solid var(--acento);
-        border-radius: var(--radio);
-        background: var(--acento);
-        color: #fff;
-        font: inherit;
-        font-weight: 600;
-        cursor: pointer;
-      }
-      .mapa-boton:hover {
-        filter: brightness(1.1);
-      }
-      .error-mapa {
-        padding: 2rem 1.5rem;
-        text-align: center;
-        color: var(--tinta-2);
-      }
-
-      /* ── Departamentos ────────────────────────────────────── */
-      .deptos {
-        list-style: none;
-        margin: 1rem 0 0;
-        padding: 0;
-        display: grid;
-        gap: 0.4rem;
-      }
-      .deptos li {
-        display: grid;
-        grid-template-columns: 0.35rem 1fr auto auto;
-        align-items: center;
-        gap: 0.85rem;
-        padding: 0.6rem 0.85rem;
-        background: var(--fondo-2);
-        border-radius: var(--radio);
-      }
-      .depto-barra {
-        width: 0.35rem;
-        height: 1.7rem;
-        border-radius: 999px;
-      }
-      .depto-nombre {
-        font-weight: 600;
-      }
-      .depto-grado {
-        font-weight: 700;
-        font-variant-numeric: tabular-nums;
-      }
-      .depto-mmi {
-        font-weight: 400;
-        color: var(--tinta-3);
-      }
-      .depto-n {
-        color: var(--tinta-3);
-        font-size: 0.82rem;
-        min-width: 7rem;
-        text-align: right;
-      }
-
-      /* ── Tabla ────────────────────────────────────────────── */
-      .tabla-scroll {
-        overflow-x: auto;
-        border: 1px solid var(--borde);
-        border-radius: var(--radio);
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        font-size: 0.92rem;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 0.55rem 0.85rem;
-        border-bottom: 1px solid var(--borde);
-        white-space: nowrap;
-      }
-      thead th {
-        background: var(--fondo-2);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--tinta-3);
-        position: sticky;
-        top: 0;
-      }
-      tbody tr:last-child th,
-      tbody tr:last-child td {
-        border-bottom: none;
-      }
-      .num {
-        font-variant-numeric: tabular-nums;
-      }
-      .metodo {
-        color: var(--tinta-3);
-        font-size: 0.85rem;
-      }
-      .pastilla {
-        display: inline-block;
-        min-width: 2.6rem;
-        text-align: center;
-        padding: 0.1em 0.5em;
-        border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.85rem;
-      }
-      .pie-tabla {
-        font-size: 0.85rem;
-        color: var(--tinta-2);
-        max-width: 70ch;
-      }
-
-      /* ── Descargas ────────────────────────────────────────── */
-      .descargas {
-        list-style: none;
-        margin: 1.25rem 0 1rem;
-        padding: 0;
-        display: grid;
-        gap: 0.5rem;
-      }
-      .descargas li {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-        padding: 0.8rem 1rem;
-        background: var(--fondo-2);
-        border: 1px solid var(--borde);
-        border-radius: var(--radio);
-      }
-      .descargas a {
-        font-weight: 600;
-      }
-      .descargas .fmt {
-        display: inline-block;
-        margin-left: 0.4rem;
-        padding: 0.05em 0.5em;
-        border-radius: 999px;
-        background: var(--fondo-3);
-        color: var(--tinta-2);
-        font-size: 0.68rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        vertical-align: 1px;
-      }
-      .descargas .det {
-        font-size: 0.84rem;
-        color: var(--tinta-3);
-      }
-
-      /* ── Alcance y pie ────────────────────────────────────── */
-      .alcance p {
-        max-width: 65ch;
-        color: var(--tinta-2);
-      }
-
-      .pie {
-        border-top: 1px solid var(--borde);
-        background: var(--fondo-2);
-        padding-block: 1.75rem 2.5rem;
-        margin-top: 3rem;
-        font-size: 0.88rem;
-        color: var(--tinta-2);
-      }
-      .pie p {
-        margin: 0.3rem 0;
-      }
-      .emergencia {
-        margin-top: 0.9rem !important;
-        color: var(--tinta);
-      }
-
-      @media (max-width: 640px) {
-        /* En pantalla de celular la leyenda y el detalle no caben encima del mapa sin
-           taparlo: pasan a flujo normal, debajo. El mapa se entera del cambio de alto
-           con un ResizeObserver (ver src/lib/mapa.ts).
-
-           El orden importa: al tocar un municipio, su ficha tiene que quedar justo
-           debajo del mapa. Si va después de la leyenda, aparece fuera de pantalla y
-           parece que el toque no hizo nada. */
-        .mapa-marco {
-          display: flex;
-          flex-direction: column;
-        }
-        #mapa {
-          order: 1;
-        }
-        .detalle {
-          order: 2;
-          /* `relative` para que la × se ancle a la ficha y no al marco del mapa. */
-          position: relative;
-          width: auto;
-          margin: 0.75rem 0.75rem 0;
-          backdrop-filter: none;
-        }
-        .leyenda {
-          order: 3;
-          position: static;
-          margin: 0.75rem;
-          max-width: none;
-          backdrop-filter: none;
-        }
-        .atribucion {
-          order: 4;
-        }
-        #mapa {
-          height: 62vh;
-          min-height: 320px;
-        }
-        .leyenda li {
-          grid-template-columns: 1rem 2.6rem 1fr;
-        }
-      }
-    </style>
-  </body>
-</html>
+  /* En escritorio la hoja es un panel lateral, así que el mapa le cede el ancho. */
+  @media (min-width: 60rem) {
+    :global(html.js) .zona-mapa {
+      margin-right: min(27rem, 40vw);
+    }
+  }
+</style>

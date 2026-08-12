@@ -1,0 +1,101 @@
+---
+/** Descargas para llevarse los datos a otro análisis. */
+interface Props {
+  totalMunicipios: number;
+}
+
+const { totalMunicipios } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section aria-labelledby="t-descargas">
+  <h2 id="t-descargas">Descargar los datos</h2>
+  <p class="intro">
+    Los CSV traen una segunda fila con etiquetas <strong>HXL</strong>, el estándar de OCHA.
+    Se ve rara en Excel, pero es lo que permite que las herramientas del ecosistema
+    humanitario entiendan las columnas sin que nadie las mapee a mano.
+  </p>
+
+  <ul class="lista">
+    <li>
+      <a href={`${base}data/export/mmi-por-municipio.csv`} download>
+        Intensidad por municipio <span class="fmt">CSV + HXL</span>
+      </a>
+      <span class="det">
+        {totalMunicipios.toLocaleString('es-CO')} municipios con MMI, grado y método
+      </span>
+    </li>
+    <li>
+      <a href={`${base}data/export/observaciones.csv`} download>
+        Cifras reportadas <span class="fmt">CSV + HXL</span>
+      </a>
+      <span class="det">Una fila por cifra, con fuente, enlace y hora de corte</span>
+    </li>
+    <li>
+      <a href={`${base}data/boundaries/municipios.topojson`} download>
+        Límites municipales <span class="fmt">TopoJSON</span>
+      </a>
+      <span class="det">Geometría COD-AB con P-codes</span>
+    </li>
+  </ul>
+
+  <p class="pie">
+    Datos bajo CC-BY-4.0, respetando las licencias de las fuentes originales. Los P-codes
+    equivalen a DIVIPOLA del DANE, así que cruzan directo con datos nacionales.
+  </p>
+</section>
+
+<style>
+  h2 {
+    font-size: 1.25rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .lista {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .lista li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.75rem 0.9rem;
+    background: var(--fondo-2);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+  }
+
+  .lista a {
+    font-weight: 600;
+    min-height: 24px;
+  }
+
+  .fmt {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.05em 0.5em;
+    border-radius: 999px;
+    background: var(--fondo-3);
+    color: var(--tinta-2);
+    font-size: 0.66rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    vertical-align: 1px;
+  }
+
+  .det {
+    font-size: 0.82rem;
+    color: var(--tinta-3);
+  }
+
+  .pie {
+    font-size: 0.82rem;
+    color: var(--tinta-2);
+    max-width: 62ch;
+  }
+</style>

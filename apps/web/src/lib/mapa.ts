@@ -66,6 +66,36 @@ function topoToGeo<P>(topo: unknown, layer: string): FeatureCollection<Geometry,
   return feature(t as never, t.objects[layer] as never) as unknown as FeatureCollection<Geometry, P>;
 }
 
+/**
+ * Caja envolvente de una geometría.
+ *
+ * `@report-cali/ingest` ya tiene un `bboxOf` idéntico, pero importarlo arrastraría zod y
+ * módulos de Node al paquete del navegador. Quince líneas duplicadas cuestan menos que
+ * eso.
+ */
+function bboxDe(geometry: Geometry): [number, number, number, number] {
+  let minX = Infinity;
+  let minY = Infinity;
+  let maxX = -Infinity;
+  let maxY = -Infinity;
+
+  const visitar = (coords: unknown): void => {
+    if (!Array.isArray(coords)) return;
+    if (typeof coords[0] === 'number' && typeof coords[1] === 'number') {
+      const [x, y] = coords as [number, number];
+      if (x < minX) minX = x;
+      if (x > maxX) maxX = x;
+      if (y < minY) minY = y;
+      if (y > maxY) maxY = y;
+      return;
+    }
+    for (const hijo of coords) visitar(hijo);
+  };
+
+  visitar((geometry as { coordinates?: unknown }).coordinates);
+  return [minX, minY, maxX, maxY];
+}
+
 /** Estilo mínimo: solo un fondo. Las capas de datos se añaden al cargar. */
 function estiloBase(): StyleSpecification {
   const oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -135,8 +165,10 @@ export async function iniciarMapa(): Promise<void> {
   const mapa = new maplibregl.Map({
     container: contenedor,
     style: estiloBase(),
+    // Encuadre provisional; abajo se ajusta a la zona afectada según el tamaño real de
+    // la pantalla, que es lo que hace que sirva igual en un celular y en un monitor.
     center: [evento.longitude + 0.8, evento.latitude + 0.4],
-    zoom: 5.6,
+    zoom: 4.8,
     attributionControl: false,
     // Un socorrista en un celular no necesita rotar el mapa, y desactivarlo evita
     // desorientarse por un gesto accidental.
@@ -377,6 +409,47 @@ export async function iniciarMapa(): Promise<void> {
     new ResizeObserver(() => mapa.resize()).observe(contenedor);
   }
   mapa.resize();
+
+  // La leyenda se abre sola solo donde sobra espacio.
+  if (window.matchMedia('(min-width: 40rem)').matches) {
+    document.querySelector('.leyenda')?.setAttribute('open', '');
+  }
+
+  /**
+   * Encuadra la zona que de verdad se sacudió, en vez de fijar un zoom.
+   *
+   * Un zoom fijo se ve bien en la pantalla donde se eligió y mal en todas las demás: en
+   * un celular vertical recortaba media zona afectada. Encuadrando por los límites, el
+   * mapa se adapta a cualquier proporción.
+   *
+   * El relleno inferior deja libre la hoja asomada, para que no tape los municipios más
+   * golpeados justo al abrir.
+   */
+  // `mmi` se le añadió a las propiedades más arriba, al cruzar la intensidad con la
+  // geometría, así que el tipo declarado de MunicipioProps ya no lo describe del todo.
+  const afectados = municipios.features.filter((f) => {
+    const mmi = (f.properties as unknown as { mmi?: number }).mmi;
+    return typeof mmi === 'number' && mmi >= 5.5;
+  });
+
+  if (afectados.length > 0) {
+    const limites = new maplibregl.LngLatBounds();
+    for (const f of afectados) {
+      const [minX, minY, maxX, maxY] = bboxDe(f.geometry);
+      limites.extend([minX, minY]);
+      limites.extend([maxX, maxY]);
+    }
+
+    const alturaAsomada =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
+      104;
+
+    mapa.fitBounds(limites, {
+      padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
+      duration: 0,
+      maxZoom: 8,
+    });
+  }
 
   // Desde la tabla se puede saltar al mapa: es la ruta natural para alguien que
   // busca un municipio concreto y no quiere cazarlo con el dedo.

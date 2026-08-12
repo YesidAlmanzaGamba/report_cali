@@ -1,0 +1,61 @@
+---
+/**
+ * Cáscara del documento.
+ *
+ * Aquí vive la decisión que sostiene la interfaz móvil: la clase `js`.
+ *
+ * La hoja inferior necesita JavaScript, pero la página tiene que servir sin él —una
+ * conexión que falla a medias es el caso real, no el excepcional—. Por eso el CSS dibuja
+ * todo apilado por defecto y solo se convierte en hoja cuando esta clase existe.
+ *
+ * El script va en línea y antes del contenido a propósito: si se cargara después,
+ * habría un parpadeo entre el diseño apilado y el de hoja.
+ */
+interface Props {
+  titulo: string;
+  descripcion: string;
+}
+
+const { titulo, descripcion } = Astro.props;
+
+import '../styles/tokens.css';
+import '../styles/base.css';
+---
+
+<html lang="es-CO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🗺️</text></svg>"
+    />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <slot />
+  </body>
+</html>
+
+<style>
+  .saltar {
+    position: absolute;
+    left: -9999px;
+    z-index: 100;
+  }
+  .saltar:focus {
+    left: 1rem;
+    top: 1rem;
+    background: var(--acento);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radio);
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+/** Municipios ordenados por intensidad. Tocar una fila la muestra en el mapa. */
+import { levelFor } from '../lib/mmi';
+
+interface Municipio {
+  pcode: string;
+  name: string;
+  admin1_name: string;
+  mmi: number;
+  mmi_roman: string;
+  method: 'grid' | 'centroid';
+}
+
+interface Props {
+  municipios: Municipio[];
+  total: number;
+}
+
+const { municipios, total } = Astro.props;
+---
+
+<section aria-labelledby="t-tabla">
+  <h2 id="t-tabla">Municipios con mayor intensidad</h2>
+  <p class="intro">
+    Los 25 más golpeados de {total.toLocaleString('es-CO')} con cobertura del ShakeMap, más
+    los que tengan cifras reportadas. Toca una fila para verla en el mapa.
+  </p>
+
+  <div class="tabla-scroll">
+    <table>
+      <caption class="sr-only">Municipios ordenados por intensidad Mercalli descendente</caption>
+      <thead>
+        <tr>
+          <th scope="col">Municipio</th>
+          <th scope="col">Departamento</th>
+          <th scope="col">MMI</th>
+          <th scope="col">Grado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          municipios.map((m) => {
+            const n = levelFor(m.mmi);
+            return (
+              <tr>
+                <th scope="row">{m.name}</th>
+                <td>{m.admin1_name}</td>
+                <td class="num">{m.mmi}</td>
+                <td>
+                  <span class="pastilla" style={`background:${n.color};color:${n.ink}`}>
+                    {m.mmi_roman}
+                  </span>
+                </td>
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="pie">
+    El <strong>método</strong> con que se calculó cada valor —malla o centroide— está en el
+    CSV descargable y en la ficha de cada municipio. Se registra para que el dato sea
+    auditable.
+  </p>
+</section>
+
+<style>
+  h2 {
+    font-size: 1.25rem;
+    margin: 0 0 0.4rem;
+  }
+
+  tbody tr {
+    cursor: pointer;
+  }
+
+  tbody tr:hover {
+    background: var(--fondo-2);
+  }
+
+  .pastilla {
+    display: inline-block;
+    min-width: 2.5rem;
+    text-align: center;
+    padding: 0.1em 0.5em;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.82rem;
+  }
+
+  .pie {
+    font-size: 0.82rem;
+    color: var(--tinta-2);
+    max-width: 62ch;
+  }
+</style>

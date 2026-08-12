@@ -19,13 +19,21 @@ interface ConexionDegradada {
   effectiveType?: string;
 }
 
-/** ¿Conviene preguntar antes de gastarle los datos a alguien? */
+/**
+ * ¿Conviene preguntar antes de gastarle los datos a alguien?
+ *
+ * Solo cuando la persona **activó explícitamente** el ahorro de datos, o cuando la red es
+ * francamente mala (2G). Antes también se preguntaba en 3G, pero desde que el mapa es lo
+ * primero de la página eso dejaba a mucha gente frente a un botón en vez de frente al
+ * mapa que vino a ver. Quien enciende el ahorro de datos sí está pidiendo que le
+ * preguntemos; quien simplemente tiene 3G, no.
+ */
 function conexionLimitada(): boolean {
   const conexion = (navigator as Navigator & { connection?: ConexionDegradada }).connection;
   if (!conexion) return false;
   if (conexion.saveData) return true;
 
-  return conexion.effectiveType === 'slow-2g' || conexion.effectiveType === '2g' || conexion.effectiveType === '3g';
+  return conexion.effectiveType === 'slow-2g' || conexion.effectiveType === '2g';
 }
 
 async function arrancar(contenedor: HTMLElement): Promise<void> {

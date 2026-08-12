@@ -1,0 +1,306 @@
+---
+/**
+ * El mapa y lo que va encima: leyenda y ficha del municipio.
+ *
+ * En móvil ocupa toda la pantalla bajo el encabezado, y la hoja se le monta encima.
+ * La leyenda se pliega para no taparlo — en una pantalla de celular seis filas de
+ * leyenda son mucho territorio para algo que se consulta una vez.
+ */
+import type { MmiLevel } from '../lib/mmi';
+
+interface Props {
+  leyenda: MmiLevel[];
+}
+
+const { leyenda } = Astro.props;
+---
+
+<div class="marco">
+  <div id="mapa" role="application" aria-label="Mapa de intensidad por municipio">
+    <p class="mapa-estado">Mapa de intensidad — se carga en un momento.</p>
+  </div>
+
+  <!-- Cerrada por defecto: en un celular, seis filas de leyenda tapan justo la parte
+       del mapa que la persona vino a mirar. En pantallas anchas la abre `mapa.ts`. -->
+  <details class="leyenda">
+    <summary>
+      <span>Intensidad (MMI)</span>
+    </summary>
+    <ul>
+      {
+        leyenda.map((n) => (
+          <li>
+            <span class="muestra" style={`background:${n.color}`} aria-hidden="true" />
+            <span class="grado">{n.roman}</span>
+            <span class="desc">{n.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="nota">Escala del ShakeMap del USGS, la misma que usan los organismos de socorro.</p>
+  </details>
+
+  <aside class="ficha" id="detalle" hidden>
+    <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
+    <h3 id="detalle-nombre"></h3>
+    <p id="detalle-depto" class="depto"></p>
+    <p class="mmi">
+      <span id="detalle-grado" class="grado-grande"></span>
+      <span id="detalle-valor" class="valor"></span>
+    </p>
+    <p id="detalle-label" class="label"></p>
+
+    <div id="detalle-cifras" class="cifras" hidden>
+      <h4>Cifras reportadas</h4>
+      <ul id="detalle-lista"></ul>
+    </div>
+
+    <p id="detalle-metodo" class="metodo"></p>
+  </aside>
+</div>
+
+<style>
+  .marco {
+    position: relative;
+    background: var(--fondo-2);
+    height: 100%;
+    min-height: 20rem;
+  }
+
+  #mapa {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mapa-estado {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    color: var(--tinta-2);
+    font-size: 0.9rem;
+  }
+
+  /* Sin JavaScript el mapa no puede dibujarse, así que no vale la pena reservarle
+     media pantalla en blanco. */
+  :global(html:not(.js)) .marco {
+    height: auto;
+    min-height: 0;
+  }
+  :global(html:not(.js)) #mapa {
+    height: auto;
+  }
+
+  /* ── Leyenda ─────────────────────────────────────────────────────────── */
+  .leyenda {
+    position: absolute;
+    left: 0.6rem;
+    bottom: 0.6rem;
+    max-width: 15rem;
+    background: color-mix(in srgb, var(--fondo) 93%, transparent);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    font-size: 0.78rem;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 38px;
+    padding: 0 0.7rem;
+    cursor: pointer;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-3);
+    font-weight: 600;
+  }
+
+  .leyenda ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0.7rem 0.2rem;
+    display: grid;
+    gap: 0.28rem;
+  }
+
+  .leyenda li {
+    display: grid;
+    grid-template-columns: 0.9rem 2rem 1fr;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .muestra {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 3px;
+    border: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
+  }
+
+  .grado {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .desc {
+    color: var(--tinta-2);
+  }
+
+  .nota {
+    margin: 0.45rem 0 0;
+    padding: 0 0.7rem 0.6rem;
+    font-size: 0.68rem;
+    color: var(--tinta-3);
+  }
+
+  /* ── Ficha del municipio ─────────────────────────────────────────────── */
+  .ficha {
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+    width: min(19rem, calc(100% - 1.2rem));
+    max-height: calc(100% - 1.2rem);
+    overflow-y: auto;
+    background: color-mix(in srgb, var(--fondo) 96%, transparent);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 0.85rem 1rem 1rem;
+  }
+
+  .ficha h3 {
+    margin: 0 0 0.1rem;
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+  }
+
+  .depto {
+    margin: 0 0 0.7rem;
+    color: var(--tinta-3);
+    font-size: 0.83rem;
+  }
+
+  .mmi {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+  }
+
+  .grado-grande {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.15em 0.4em;
+    border-radius: 8px;
+  }
+
+  .valor {
+    font-variant-numeric: tabular-nums;
+    color: var(--tinta-2);
+  }
+
+  .label {
+    margin: 0.55rem 0 0;
+    font-size: 0.88rem;
+  }
+
+  .metodo {
+    margin: 0.5rem 0 0;
+    font-size: 0.73rem;
+    color: var(--tinta-3);
+  }
+
+  #cerrar-detalle {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.4rem;
+    width: 34px;
+    height: 34px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--tinta-3);
+    cursor: pointer;
+  }
+
+  .cifras {
+    margin-top: 0.8rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--borde);
+  }
+
+  .cifras h4 {
+    margin: 0 0 0.45rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tinta-3);
+  }
+
+  .cifras ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .cifras :global(li) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.55rem;
+    align-items: baseline;
+    font-size: 0.84rem;
+  }
+
+  .cifras :global(.n) {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    font-size: 1.02rem;
+  }
+
+  .cifras :global(.f) {
+    display: block;
+    font-size: 0.71rem;
+    color: var(--tinta-3);
+  }
+
+  .cifras :global(.f a) {
+    color: inherit;
+  }
+
+  /* En celular la ficha se ancla abajo, encima de la hoja asomada: arriba a la
+     derecha tapa justo la zona que la persona acaba de tocar. */
+  @media (max-width: 40rem) {
+    .ficha {
+      top: auto;
+      bottom: calc(var(--asomada) + 0.6rem);
+      left: 0.6rem;
+      right: 0.6rem;
+      width: auto;
+      max-height: 55%;
+    }
+
+    .leyenda {
+      bottom: calc(var(--asomada) + 0.6rem);
+      max-width: 12.5rem;
+      font-size: 0.72rem;
+    }
+
+    :global(html:not(.js)) .leyenda,
+    :global(html:not(.js)) .ficha {
+      position: static;
+      max-width: none;
+      margin: 0.6rem;
+      backdrop-filter: none;
+    }
+  }
+</style>

@@ -1,0 +1,268 @@
+---
+/**
+ * Hoja inferior con los módulos.
+ *
+ * Dos diseños en un solo marcado:
+ *
+ * · **Sin JavaScript** (por defecto) — es contenido apilado normal. Se ven todos los
+ *   módulos, uno tras otro, como en cualquier página. El asa y el conmutador se ocultan
+ *   porque sin JavaScript no harían nada.
+ * · **Con JavaScript** (`html.js`) — se vuelve una hoja fija sobre el mapa, con tres
+ *   anclajes y un módulo visible a la vez.
+ *
+ * El orden importa: lo que funciona sin JavaScript es el estado base, no el de respaldo.
+ * Así una conexión que falla a medias deja una página utilizable en vez de una en blanco.
+ */
+interface Modulo {
+  id: string;
+  etiqueta: string;
+}
+
+interface Props {
+  /** Línea que se lee sin abrir la hoja. Debe ser la cifra que más importa. */
+  resumen: string;
+  modulos: Modulo[];
+}
+
+const { resumen, modulos } = Astro.props;
+const primero = modulos[0]?.id ?? '';
+---
+
+<section class="hoja" id="hoja" data-estado="asomada" aria-label="Información del evento">
+  <button class="asa" type="button" aria-expanded="false" aria-controls="hoja-cuerpo">
+    <span class="agarre" aria-hidden="true"></span>
+    <span class="resumen">{resumen}</span>
+    <span class="chevron" aria-hidden="true">⌃</span>
+    <span class="sr-only">Mostrar u ocultar la información</span>
+  </button>
+
+  <div class="cuerpo" id="hoja-cuerpo">
+    <div class="conmutador" role="tablist" aria-label="Módulos">
+      {
+        modulos.map((m) => (
+          <button
+            role="tab"
+            type="button"
+            id={`tab-${m.id}`}
+            data-modulo={m.id}
+            aria-controls={`panel-${m.id}`}
+            aria-selected={m.id === primero ? 'true' : 'false'}
+            tabindex={m.id === primero ? 0 : -1}
+          >
+            {m.etiqueta}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="modulos">
+      {
+        modulos.map((m) => (
+          <div
+            class="modulo"
+            id={`panel-${m.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${m.id}`}
+            data-modulo={m.id}
+            data-activo={m.id === primero ? '' : undefined}
+          >
+            <slot name={m.id} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Estado base: contenido apilado, sin JavaScript ──────────────────── */
+  .hoja {
+    background: var(--fondo);
+  }
+
+  .asa,
+  .conmutador {
+    display: none;
+  }
+
+  .modulo {
+    padding-inline: 1rem;
+    max-width: var(--ancho);
+    margin-inline: auto;
+  }
+
+  .modulo + .modulo {
+    border-top: 1px solid var(--borde);
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  /* ── Con JavaScript: hoja sobre el mapa ──────────────────────────────── */
+  :global(html.js) .hoja {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 20;
+    height: 92dvh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px 14px 0 0;
+    border: 1px solid var(--borde);
+    border-bottom: none;
+    box-shadow: 0 -6px 28px rgb(0 0 0 / 0.16);
+    /* Asomada: solo se ve el asa. `--asomada` sale de tokens.css. */
+    transform: translateY(calc(100% - var(--asomada)));
+    transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  :global(html.js) .hoja[data-estado='media'] {
+    transform: translateY(45%);
+  }
+
+  :global(html.js) .hoja[data-estado='completa'] {
+    transform: translateY(0);
+  }
+
+  /* Durante el arrastre mandan los píxeles, no los anclajes: la transición haría que
+     la hoja persiguiera al dedo con retraso. */
+  :global(html.js) .hoja[data-arrastrando] {
+    transition: none;
+  }
+
+  :global(html.js) .asa {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'agarre agarre' 'resumen chevron';
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-height: var(--asomada);
+    padding: 0.55rem 1.1rem 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    /* Solo el asa captura el gesto. Si se pusiera en toda la hoja, arrastrar dentro
+       de los módulos dejaría de desplazar el contenido. */
+    touch-action: none;
+  }
+
+  .agarre {
+    grid-area: agarre;
+    justify-self: center;
+    width: 2.25rem;
+    height: 0.25rem;
+    border-radius: 999px;
+    background: var(--tinta-3);
+    opacity: 0.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .resumen {
+    grid-area: resumen;
+    font-weight: 650;
+    font-size: 0.98rem;
+    line-height: 1.3;
+  }
+
+  .chevron {
+    grid-area: chevron;
+    color: var(--tinta-3);
+    font-size: 1.1rem;
+    transition: transform 0.28s;
+  }
+
+  :global(html.js) .hoja[data-estado='completa'] .chevron {
+    transform: rotate(180deg);
+  }
+
+  :global(html.js) .cuerpo {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  :global(html.js) .conmutador {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0 1rem 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-bottom: 1px solid var(--borde);
+  }
+  :global(html.js) .conmutador::-webkit-scrollbar {
+    display: none;
+  }
+
+  .conmutador button {
+    flex-shrink: 0;
+    min-height: 40px;
+    padding: 0 0.85rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--fondo-2);
+    color: var(--tinta-2);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .conmutador button[aria-selected='true'] {
+    background: var(--tinta);
+    color: var(--fondo);
+  }
+
+  :global(html.js) .modulos {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-bottom: calc(2rem + var(--seguro-abajo));
+  }
+
+  :global(html.js) .modulo {
+    display: none;
+    padding: 1.1rem 1rem 0;
+  }
+
+  :global(html.js) .modulo[data-activo] {
+    display: block;
+  }
+
+  :global(html.js) .modulo + .modulo {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 1.1rem;
+  }
+
+  /* ── Escritorio: panel fijo al lado del mapa, mismos componentes ─────── */
+  @media (min-width: 60rem) {
+    :global(html.js) .hoja {
+      inset-block: var(--encabezado) 0;
+      inset-inline: auto 0;
+      width: min(27rem, 40vw);
+      height: auto;
+      transform: none;
+      border-radius: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--borde);
+      box-shadow: -4px 0 20px rgb(0 0 0 / 0.08);
+    }
+
+    /* En escritorio no hay que arrastrar nada: el panel ya está abierto. */
+    :global(html.js) .asa .agarre,
+    :global(html.js) .asa .chevron {
+      display: none;
+    }
+
+    :global(html.js) .asa {
+      min-height: 0;
+      grid-template-areas: 'resumen resumen';
+      padding: 1rem 1.1rem 0.75rem;
+      cursor: default;
+    }
+  }
+</style>

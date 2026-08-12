@@ -1,66 +1,59 @@
 ---
 /**
- * Panel de búsqueda de personas.
+ * Canales para buscar a un familiar.
  *
- * Va arriba del mapa y no se puede colapsar. Alguien que llega a este sitio buscando a un
- * familiar tiene que encontrar el canal correcto antes que cualquier gráfica. Este
- * proyecto no recoge esos reportes (ADR-001): los enruta a quien sí tiene el mandato y
- * el equipo para atenderlos.
+ * Este proyecto no recoge esos reportes (ADR-001): los enruta a quien sí tiene el
+ * mandato y el equipo para atenderlos. Se llega aquí de dos formas —el botón rojo
+ * permanente del encabezado y la pestaña de la hoja— porque es lo que menos puede
+ * costar encontrar.
  */
 ---
 
-<aside class="buscas" aria-labelledby="buscas-titulo">
-  <div class="contenido">
-    <h2 id="buscas-titulo">¿Buscas a un familiar?</h2>
-    <p class="advertencia">
-      Este sitio <strong>no es un registro de personas desaparecidas</strong>. Usa estos canales,
-      que sí lo son:
-    </p>
+<section id="buscas" aria-labelledby="t-buscas">
+  <h2 id="t-buscas">¿Buscas a un familiar?</h2>
 
-    <ul class="canales">
-      <li>
-        <span class="etiqueta">Emergencia</span>
-        <a class="principal" href="tel:123">Línea 123</a>
-        <span class="ayuda">Atención inmediata en todo el país</span>
-      </li>
-      <li>
-        <span class="etiqueta">Cruz Roja Colombiana</span>
-        <a class="principal" href="https://wa.me/573212139525">WhatsApp +57 321 213 9525</a>
-        <span class="ayuda">
-          Restablecimiento del Contacto Familiar ·
-          <a href="mailto:rcf@cruzrojacolombiana.org">rcf@cruzrojacolombiana.org</a>
-        </span>
-      </li>
-      <li>
-        <span class="etiqueta">Plataforma ciudadana</span>
-        <a class="principal" href="https://colombiatebusca.com">colombiatebusca.com</a>
-        <span class="ayuda">Publicar y consultar reportes</span>
-      </li>
-    </ul>
+  <p class="aviso">
+    Este sitio <strong>no es un registro de personas desaparecidas</strong>. Usa estos
+    canales, que sí lo son:
+  </p>
 
-    <p class="fragmenta">
-      Reportar en varios sitios a la vez <strong>fragmenta la búsqueda</strong>. Usa un canal
-      oficial y mantén ese caso actualizado.
-    </p>
-  </div>
-</aside>
+  <ul class="canales">
+    <li>
+      <span class="etiqueta">Emergencia</span>
+      <a class="principal" href="tel:123">Línea 123</a>
+      <span class="ayuda">Atención inmediata en todo el país</span>
+    </li>
+    <li>
+      <span class="etiqueta">Cruz Roja Colombiana</span>
+      <a class="principal" href="https://wa.me/573212139525">WhatsApp +57 321 213 9525</a>
+      <span class="ayuda">
+        Restablecimiento del Contacto Familiar ·
+        <a href="mailto:rcf@cruzrojacolombiana.org">rcf@cruzrojacolombiana.org</a>
+      </span>
+    </li>
+    <li>
+      <span class="etiqueta">Plataforma ciudadana</span>
+      <a class="principal" href="https://colombiatebusca.com">colombiatebusca.com</a>
+      <span class="ayuda">Publicar y consultar reportes</span>
+    </li>
+  </ul>
+
+  <p class="fragmenta">
+    Reportar en varios sitios a la vez <strong>fragmenta la búsqueda</strong>. Usa un canal
+    oficial y mantén ese caso actualizado.
+  </p>
+</section>
 
 <style>
-  .buscas {
-    background: var(--urgente-fondo);
-    border-block: 2px solid var(--urgente);
-    padding-block: 1.5rem 1.75rem;
-  }
-
   h2 {
     margin: 0 0 0.4rem;
     font-size: 1.25rem;
     color: var(--urgente);
   }
 
-  .advertencia {
-    margin: 0 0 1.1rem;
-    max-width: 60ch;
+  .aviso {
+    margin: 0 0 1rem;
+    max-width: 58ch;
   }
 
   .canales {
@@ -68,8 +61,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 0.85rem;
+    gap: 0.6rem;
   }
 
   .canales li {
@@ -77,19 +69,23 @@
     flex-direction: column;
     gap: 0.15rem;
     background: var(--fondo);
-    border: 1px solid var(--borde);
+    border: 1px solid var(--urgente);
     border-radius: var(--radio);
-    padding: 0.75rem 0.9rem;
+    padding: 0.7rem 0.85rem;
   }
 
   .etiqueta {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--tinta-3);
   }
 
+  /* Objetivo táctil generoso: alguien lo va a tocar con la mano temblando. */
   .principal {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
     font-size: 1.02rem;
     font-weight: 700;
     color: var(--tinta);
@@ -98,14 +94,20 @@
   }
 
   .ayuda {
-    font-size: 0.82rem;
+    font-size: 0.81rem;
     color: var(--tinta-2);
   }
 
   .fragmenta {
-    margin: 1.1rem 0 0;
-    font-size: 0.88rem;
+    margin: 1rem 0 0;
+    font-size: 0.86rem;
     color: var(--tinta-2);
-    max-width: 62ch;
+    max-width: 60ch;
+  }
+
+  @media (min-width: 40rem) {
+    .canales {
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
   }
 </style>
