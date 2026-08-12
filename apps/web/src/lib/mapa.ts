@@ -321,6 +321,68 @@ export async function iniciarMapa(): Promise<void> {
     },
   });
 
+  // ── Deslizamientos ──────────────────────────────────────────────────────
+  //
+  // El USGS solo publica esto como ráster, así que va como fuente de imagen con las
+  // esquinas que él mismo declara. En terreno montañoso se lee como riesgo de acceso
+  // vial: dónde puede estar cortada la carretera.
+  const deslizamientos = await getJson<{
+    imagen: string;
+    esquinas: [number, number][];
+    alerta: string | null;
+  }>('event/deslizamientos.json').catch(() => undefined);
+
+  // MapLibre exige exactamente cuatro esquinas. Se comprueba en vez de forzar el tipo:
+  // si el USGS cambiara el formato, preferimos quedarnos sin capa a montar una imagen
+  // deformada sobre el mapa, que sería peor que no tenerla.
+  if (deslizamientos && deslizamientos.esquinas.length === 4) {
+    const esquinas = deslizamientos.esquinas as [
+      [number, number],
+      [number, number],
+      [number, number],
+      [number, number],
+    ];
+
+    mapa.addSource('deslizamientos', {
+      type: 'image',
+      url: `${DATA}/${deslizamientos.imagen}`,
+      coordinates: esquinas,
+    });
+
+    mapa.addLayer(
+      {
+        id: 'deslizamientos',
+        type: 'raster',
+        source: 'deslizamientos',
+        paint: { 'raster-opacity': 0.55 },
+        layout: { visibility: 'none' },
+      },
+      // Debajo de los bordes para no tapar los límites municipales.
+      'municipios-borde',
+    );
+
+    const boton = document.getElementById('capa-deslizamientos');
+    boton?.removeAttribute('hidden');
+    boton?.addEventListener('click', () => {
+      const visible = mapa.getLayoutProperty('deslizamientos', 'visibility') === 'visible';
+      mapa.setLayoutProperty('deslizamientos', 'visibility', visible ? 'none' : 'visible');
+      boton.setAttribute('aria-pressed', visible ? 'false' : 'true');
+
+      /**
+       * Al encender la capa se atenúa la coropleta.
+       *
+       * El modelo del USGS es casi transparente: la probabilidad alta se concentra en
+       * una franja pequeña de montaña y el resto no pinta nada. Sobre una coropleta
+       * saturada, esa franja sencillamente no se ve. Bajarle opacidad al color de fondo
+       * es lo que hace que la capa sirva para algo.
+       */
+      mapa.setPaintProperty('municipios-relleno', 'fill-opacity', visible ? 0.9 : 0.2);
+      mapa.setPaintProperty('deslizamientos', 'raster-opacity', 0.95);
+
+      if (!visible) avisar('Probabilidad de deslizamiento — dónde puede estar cortada la vía');
+    });
+  }
+
   // ── Modos de color ──────────────────────────────────────────────────────
   //
   // Dos preguntas distintas sobre el mismo mapa:

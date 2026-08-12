@@ -24,8 +24,15 @@ import {
 } from './join/mmi.js';
 import { POBLACION_SOURCE, fetchPoblacion } from './sources/poblacion.js';
 import { DATA_DIR } from './paths.js';
-import { writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
+import { writeBinary, writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
 import type { Observation } from './schema.js';
+import {
+  DESLIZAMIENTOS_SOURCE,
+  fetchImagenDeslizamiento,
+  observacionesDeslizamiento,
+  parsearDeslizamientos,
+} from './sources/deslizamientos.js';
+import { fetchJson } from './http.js';
 import { recolectarNoticias } from './sources/noticias.js';
 import { fetchUngrdSeismic } from './sources/ungrd.js';
 import {
@@ -34,10 +41,11 @@ import {
   type SimplifiedTopology,
 } from './sources/codab.js';
 import {
+  EVENT_URL,
   USGS_SOURCE,
   fetchAftershocks,
-  fetchEvent,
   fetchMmiGrid,
+  parseEvent,
   type EarthquakeEvent,
 } from './sources/usgs.js';
 
@@ -93,9 +101,16 @@ async function main(): Promise<void> {
   // Se guardan para la exportación final, que necesita ambos conjuntos a la vez.
   let mmiPorMunicipio: MunicipioMmi[] = [];
   let observaciones: Observation[] = [];
+  // El JSON crudo del evento: los productos secundarios (deslizamientos) viven ahí y
+  // `parseEvent` no los conserva.
+  let crudoEvento: unknown;
+  // Se llenan en el paso de deslizamientos, que corre ANTES que el de cifras para que
+  // entren en el mismo dataset. Si se escribieran después, no se guardarían.
+  let obsDeslizamiento: Observation[] = [];
 
   await step('Evento USGS', async () => {
-    event = await fetchEvent();
+    crudoEvento = await fetchJson(EVENT_URL);
+    event = parseEvent(crudoEvento);
     const written = await writeJson(DATA_DIR, 'event/event', {
       ...event,
       source: USGS_SOURCE,
@@ -154,8 +169,38 @@ async function main(): Promise<void> {
       }`;
     });
 
+    // Va ANTES de las cifras a propósito: aporta una observación (personas expuestas a
+    // deslizamiento) que tiene que entrar en el mismo dataset. Si corriera después, se
+    // calcularía sobre un archivo ya escrito y no se guardaría.
+    await step('Deslizamientos', async () => {
+      const datos = parsearDeslizamientos(crudoEvento);
+      if (!datos) return 'el evento no trae modelo de deslizamiento';
+
+      // La imagen se guarda con nosotros en vez de enlazarla en caliente: mismo criterio
+      // que ADR-010, no depender de un servidor ajeno justo cuando más se consulta.
+      const imagen = await fetchImagenDeslizamiento(datos.url);
+      await writeBinary(DATA_DIR, 'event/deslizamientos.png', imagen);
+
+      const written = await writeJson(DATA_DIR, 'event/deslizamientos', {
+        imagen: 'event/deslizamientos.png',
+        esquinas: datos.esquinas,
+        alerta: datos.alerta,
+        amenaza: datos.amenaza,
+        poblacion_expuesta: datos.poblacion_expuesta,
+        modelo: datos.modelo,
+        fuente: DESLIZAMIENTOS_SOURCE,
+        nota: 'Probabilidad de deslizamiento del USGS. En terreno montañoso se lee como riesgo de acceso vial.',
+      });
+
+      obsDeslizamiento = observacionesDeslizamiento(datos, currentEvent);
+
+      return `alerta ${datos.alerta ?? 'n/d'}, ${
+        datos.poblacion_expuesta?.toLocaleString('es-CO') ?? '?'
+      } personas expuestas ${written.changed ? '(escrito)' : '(sin cambios)'}`;
+    });
+
     await step('Cifras oficiales y de prensa', async () => {
-      // Dos orígenes con el mismo destino. La UNGRD hoy devuelve cero filas porque sus
+      // Tres orígenes con el mismo destino. La UNGRD hoy devuelve cero filas porque sus
       // datos abiertos llegan hasta 2024; queda consultando para que el día que publiquen
       // 2026 esto se llene solo, sin que nadie tenga que acordarse.
       const [curadas, ungrd] = await Promise.all([
@@ -166,7 +211,7 @@ async function main(): Promise<void> {
         }),
       ]);
 
-      const todas = [...curadas, ...ungrd];
+      const todas = [...curadas, ...ungrd, ...obsDeslizamiento];
       if (todas.length === 0) throw new Error('No hay ninguna observación que publicar');
       observaciones = todas;
 
@@ -177,9 +222,9 @@ async function main(): Promise<void> {
         sources: [...new Map(todas.map((o) => [o.source.url, o.source])).values()],
       });
 
-      return `${curadas.length} curadas + ${ungrd.length} de UNGRD ${
-        written.changed ? '(escrito)' : '(sin cambios)'
-      }`;
+      return `${curadas.length} curadas + ${ungrd.length} de UNGRD + ${
+        obsDeslizamiento.length
+      } de deslizamiento ${written.changed ? '(escrito)' : '(sin cambios)'}`;
     });
 
     await step('Réplicas', async () => {

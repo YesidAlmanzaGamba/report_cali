@@ -209,6 +209,31 @@ export async function writeGeoJson(
   );
 }
 
+/**
+ * Archivo binario generado (la superposición de deslizamientos).
+ *
+ * Se compara por hash para no reescribirlo en cada corrida: un PNG idéntico reescrito
+ * cada 30 minutos ensuciaría el historial igual que un JSON.
+ */
+export async function writeBinary(
+  dataDir: string,
+  name: string,
+  bytes: Uint8Array,
+): Promise<WriteResult> {
+  const path = join(dataDir, name);
+  const hash = createHash('sha256').update(bytes).digest('hex');
+
+  const previo = await readFile(path).catch(() => undefined);
+  if (previo && createHash('sha256').update(previo).digest('hex') === hash) {
+    return { path, changed: false, recordCount: 0 };
+  }
+
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, bytes);
+
+  return { path, changed: true, recordCount: 0 };
+}
+
 /** Texto plano generado (CSV de exportación). */
 export async function writeText(
   dataDir: string,
