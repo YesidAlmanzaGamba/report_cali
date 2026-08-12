@@ -15,7 +15,13 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, Geometry, Point } from 'geojson';
 
-import { levelFor, mmiColorStops } from './mmi';
+import {
+  levelFor,
+  mmiColorStops,
+  poblacionColorStops,
+  RAMPA_POBLACION,
+  UMBRAL_DANINO,
+} from './mmi';
 import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
 
 interface MunicipioProps {
@@ -32,6 +38,8 @@ interface MunicipioMmi {
   mmi: number;
   mmi_roman: string;
   method: 'grid' | 'centroid';
+  /** Ausente si no se pudo cruzar con la proyección del DANE. */
+  poblacion?: number;
 }
 
 /** Lo que el mapa necesita de una observación. El tipo completo vive en el paquete de ingesta. */
@@ -184,6 +192,9 @@ export async function iniciarMapa(): Promise<void> {
       mmi: datos?.mmi ?? null,
       mmi_roman: datos?.mmi_roman ?? null,
       method: datos?.method ?? null,
+      // `null` y no 0: un cero se pintaría como «aquí no vive nadie», que es una
+      // afirmación distinta a «no tenemos el dato».
+      poblacion: datos?.poblacion ?? null,
     });
   }
 
@@ -309,6 +320,109 @@ export async function iniciarMapa(): Promise<void> {
       'circle-stroke-width': 2,
     },
   });
+
+  // ── Modos de color ──────────────────────────────────────────────────────
+  //
+  // Dos preguntas distintas sobre el mismo mapa:
+  //   · Sacudimiento  → qué tan fuerte tembló (MMI del USGS)
+  //   · Gente expuesta → cuánta gente vive donde tembló fuerte
+  //
+  // El segundo NO es un índice de daño con coeficientes inventados: es la población de
+  // los municipios que llegaron al umbral. Los que no llegan quedan grises, no en cero,
+  // porque un cero se dibujaría como «aquí no vive nadie».
+  const colorPorPoblacion: ExpressionSpecification = [
+    'interpolate',
+    ['linear'],
+    ['log10', ['max', 1, ['coalesce', ['get', 'poblacion'], 1]]],
+    ...poblacionColorStops(),
+  ] as ExpressionSpecification;
+
+  const SIN_DATO = '#9aa0aa';
+
+  function aplicarModo(modo: 'sacudimiento' | 'expuesta'): void {
+    if (modo === 'expuesta') {
+      mapa.setPaintProperty('municipios-relleno', 'fill-color', [
+        'case',
+        ['any', ['==', ['get', 'poblacion'], null], ['<', ['get', 'mmi'], UMBRAL_DANINO]],
+        SIN_DATO,
+        colorPorPoblacion,
+      ] as never);
+      mapa.setPaintProperty('municipios-relleno', 'fill-opacity', [
+        'case',
+        ['any', ['==', ['get', 'poblacion'], null], ['<', ['get', 'mmi'], UMBRAL_DANINO]],
+        0.18,
+        0.88,
+      ] as never);
+    } else {
+      mapa.setPaintProperty('municipios-relleno', 'fill-color', [
+        'case',
+        ['==', ['get', 'mmi'], null],
+        SIN_DATO,
+        colorPorMmi,
+      ] as never);
+      mapa.setPaintProperty('municipios-relleno', 'fill-opacity', [
+        'case',
+        ['==', ['get', 'mmi'], null],
+        0.25,
+        0.9,
+      ] as never);
+    }
+
+    document.getElementById('leyenda')?.toggleAttribute('hidden', modo !== 'sacudimiento');
+    document.getElementById('leyenda-poblacion')?.toggleAttribute('hidden', modo === 'sacudimiento');
+
+    for (const b of document.querySelectorAll<HTMLElement>('.modos button')) {
+      b.setAttribute('aria-pressed', b.dataset['modo'] === modo ? 'true' : 'false');
+    }
+
+    avisar(
+      modo === 'expuesta'
+        ? 'Color = cuánta gente vive donde el temblor fue dañino'
+        : 'Color = qué tan fuerte tembló el suelo',
+    );
+  }
+
+  /** Aviso breve que explica qué significa el color ahora, y se va solo. */
+  let temporizadorAviso: ReturnType<typeof setTimeout> | undefined;
+
+  function avisar(texto: string): void {
+    const el = document.getElementById('aviso-modo');
+    if (!el) return;
+
+    clearTimeout(temporizadorAviso);
+    el.textContent = texto;
+    el.removeAttribute('data-yendose');
+    el.removeAttribute('hidden');
+
+    temporizadorAviso = setTimeout(() => {
+      el.setAttribute('data-yendose', '');
+      setTimeout(() => el.setAttribute('hidden', ''), prefiereMenosMovimiento ? 0 : 600);
+    }, 6000);
+  }
+
+  // Escala del segundo modo, construida desde la misma rampa que pinta el mapa para que
+  // no puedan desincronizarse.
+  const escala = document.getElementById('escala-poblacion');
+  if (escala) {
+    for (const paso of RAMPA_POBLACION) {
+      const li = document.createElement('li');
+      const muestra = document.createElement('span');
+      muestra.className = 'muestra';
+      muestra.style.background = paso.color;
+      const texto = document.createElement('span');
+      texto.className = 'desc';
+      texto.textContent = paso.etiqueta;
+      li.append(muestra, texto);
+      escala.append(li);
+    }
+  }
+
+  for (const boton of document.querySelectorAll<HTMLElement>('.modos button')) {
+    boton.addEventListener('click', () => {
+      const modo = boton.dataset['modo'];
+      if (modo === 'expuesta' || modo === 'sacudimiento') aplicarModo(modo);
+    });
+  }
 
   // ── Interacción ─────────────────────────────────────────────────────────
   const panel = document.getElementById('detalle');
@@ -474,9 +588,23 @@ export async function iniciarMapa(): Promise<void> {
    * sin referencias alrededor: al no haber mapa base, quedarse sin vecinos a la vista es
    * quedarse sin saber dónde se está.
    */
-  function acercarA(feature: (typeof municipios.features)[number]): void {
-    const [minX, minY, maxX, maxY] = bboxDe(feature.geometry);
-    if (!Number.isFinite(minX)) return;
+  async function acercarA(feature: (typeof municipios.features)[number]): Promise<void> {
+    const pcode = feature.properties.pcode;
+
+    /**
+     * Encuadra el **casco urbano**, no el municipio entero.
+     *
+     * Un municipio colombiano es mayoritariamente rural: encuadrar sus límites deja el
+     * pueblo como un punto diminuto en una esquina, rodeado de monte. Y donde vive la
+     * gente —y donde se caen los edificios— es en el casco.
+     *
+     * Las secciones urbanas del DANE son exactamente el suelo urbano, así que su caja
+     * envolvente ES el casco. Si el municipio no tiene suelo urbano cartografiado, se
+     * cae de vuelta a los límites municipales.
+     */
+    const urbano = await bboxUrbano(pcode);
+    const caja = urbano ?? bboxDe(feature.geometry);
+    if (!Number.isFinite(caja[0])) return;
 
     const alturaAsomada =
       parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
@@ -484,15 +612,37 @@ export async function iniciarMapa(): Promise<void> {
 
     mapa.fitBounds(
       [
-        [minX, minY],
-        [maxX, maxY],
+        [caja[0], caja[1]],
+        [caja[2], caja[3]],
       ],
       {
         padding: { top: 40, right: 40, bottom: Math.round(alturaAsomada) + 24, left: 40 },
-        maxZoom: 11,
+        // Más cerca cuando encuadramos el casco: ahí sí tiene sentido ver manzanas.
+        maxZoom: urbano ? 14 : 11,
         duration: prefiereMenosMovimiento ? 0 : 700,
       },
     );
+  }
+
+  /** Caja del suelo urbano del municipio, si está cartografiado. */
+  async function bboxUrbano(pcode: string): Promise<[number, number, number, number] | undefined> {
+    const secciones = await cargarSecciones(pcode);
+    if (!secciones || secciones.features.length === 0) return undefined;
+
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+
+    for (const f of secciones.features) {
+      const [a, b, c, d] = bboxDe(f.geometry);
+      if (a < minX) minX = a;
+      if (b < minY) minY = b;
+      if (c > maxX) maxX = c;
+      if (d > maxY) maxY = d;
+    }
+
+    return Number.isFinite(minX) ? [minX, minY, maxX, maxY] : undefined;
   }
 
   mapa.on('click', 'municipios-relleno', (e) => {
@@ -612,25 +762,30 @@ export async function iniciarMapa(): Promise<void> {
     },
   });
 
-  async function mostrarSecciones(pcode: string): Promise<void> {
-    const fuente = mapa.getSource('secciones') as maplibregl.GeoJSONSource | undefined;
-    if (!fuente) return;
-
-    if (!conSecciones.has(pcode)) {
-      fuente.setData({ type: 'FeatureCollection', features: [] });
-      return;
-    }
+  /** Carga (y cachea) las secciones urbanas de un municipio. */
+  async function cargarSecciones(
+    pcode: string,
+  ): Promise<FeatureCollection<Geometry, unknown> | undefined> {
+    if (!conSecciones.has(pcode)) return undefined;
 
     if (!seccionesCargadas.has(pcode)) {
       try {
         const topo = await getJson(`secciones/${pcode}.topojson`);
         seccionesCargadas.set(pcode, topoToGeo(topo, 'municipios'));
       } catch {
-        return;
+        return undefined;
       }
     }
 
-    fuente.setData(seccionesCargadas.get(pcode) as never);
+    return seccionesCargadas.get(pcode) as FeatureCollection<Geometry, unknown> | undefined;
+  }
+
+  async function mostrarSecciones(pcode: string): Promise<void> {
+    const fuente = mapa.getSource('secciones') as maplibregl.GeoJSONSource | undefined;
+    if (!fuente) return;
+
+    const secciones = await cargarSecciones(pcode);
+    fuente.setData((secciones ?? { type: 'FeatureCollection', features: [] }) as never);
   }
 
   mapa.addSource('incidentes', {

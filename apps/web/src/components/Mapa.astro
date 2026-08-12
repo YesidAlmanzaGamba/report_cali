@@ -20,6 +20,22 @@ const { leyenda } = Astro.props;
     <p class="mapa-estado">Mapa de intensidad — se carga en un momento.</p>
   </div>
 
+  <!-- Los botones dicen la pregunta que responden, no el nombre técnico del parámetro.
+       Nadie fuera de la sismología sabe qué es «MMI», y quien lo ve asume que es EL
+       indicador de daño. -->
+  <div class="modos" role="group" aria-label="Qué muestra el color del mapa">
+    <button type="button" data-modo="sacudimiento" aria-pressed="true">
+      Sacudimiento
+      <small>qué tan fuerte tembló</small>
+    </button>
+    <button type="button" data-modo="expuesta" aria-pressed="false">
+      Gente expuesta
+      <small>cuánta gente lo vivió</small>
+    </button>
+  </div>
+
+  <p class="aviso-modo" id="aviso-modo" role="status" hidden></p>
+
   <button type="button" id="volver-vista" class="volver" hidden>
     ← Ver toda la zona
   </button>
@@ -42,7 +58,36 @@ const { leyenda } = Astro.props;
       }
     </ul>
     <p class="nota">Escala del ShakeMap del USGS, la misma que usan los organismos de socorro.</p>
+
+    <details class="explica">
+      <summary>¿Qué significan los colores?</summary>
+      <p>
+        El color muestra <strong>qué tan fuerte se sintió el temblor en cada municipio</strong>,
+        no cuántos daños hubo.
+      </p>
+      <p>
+        La <strong>magnitud</strong> (7.4) es un solo número para todo el sismo: no cambia
+        según dónde estés. La <strong>intensidad</strong> sí cambia de un lugar a otro — es
+        lo que la gente sintió y lo que alcanzó a dañarse. Va del I (no se siente) al XII
+        (destrucción total).
+      </p>
+      <p>
+        Un municipio puede tener intensidad alta y pocos daños si allí vive poca gente, o
+        intensidad media y muchos daños si es una ciudad densa. <strong>Por eso existe el
+        otro modo.</strong>
+      </p>
+    </details>
   </details>
+
+  <!-- Leyenda del segundo modo. Oculta hasta que se activa. -->
+  <div class="leyenda leyenda-pob" id="leyenda-poblacion" hidden>
+    <h3>Personas donde tembló fuerte</h3>
+    <ul id="escala-poblacion"></ul>
+    <p class="nota">
+      Población que vive donde la intensidad llegó a VI o más — el nivel donde empieza el
+      daño. Proyección 2025 del DANE.
+    </p>
+  </div>
 
   <aside class="ficha" id="detalle" hidden>
     <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
@@ -153,6 +198,88 @@ const { leyenda } = Astro.props;
     left: 3.4rem;
   }
 
+  /* ── Conmutador de modo ──────────────────────────────────────────────── */
+  /* Visible sobre el mapa, no escondido en un menú: en una emergencia nadie va a
+     buscar un ajuste. */
+  .modos {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 6;
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    background: color-mix(in srgb, var(--fondo) 94%, transparent);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+  }
+
+  .modos button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    min-height: 44px;
+    padding: 0.25rem 0.7rem;
+    border: none;
+    border-radius: 999px;
+    background: none;
+    color: var(--tinta-2);
+    font-size: 0.8rem;
+    font-weight: 650;
+    line-height: 1.15;
+    cursor: pointer;
+  }
+
+  .modos button small {
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: var(--tinta-3);
+  }
+
+  .modos button[aria-pressed='true'] {
+    background: var(--tinta);
+    color: var(--fondo);
+  }
+  .modos button[aria-pressed='true'] small {
+    color: color-mix(in srgb, var(--fondo) 75%, transparent);
+  }
+
+  /* El aviso que aparece al cambiar de modo y se va solo. */
+  .aviso-modo {
+    position: absolute;
+    top: 4.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 7;
+    margin: 0;
+    padding: 0.45rem 0.9rem;
+    max-width: calc(100% - 1.5rem);
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--fondo);
+    font-size: 0.78rem;
+    text-align: center;
+    animation: aparecer 0.25s ease-out;
+  }
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .aviso-modo[data-yendose] {
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+
   /* ── Leyenda ─────────────────────────────────────────────────────────── */
   .leyenda {
     position: absolute;
@@ -216,6 +343,63 @@ const { leyenda } = Astro.props;
     padding: 0 0.7rem 0.6rem;
     font-size: 0.68rem;
     color: var(--tinta-3);
+  }
+
+  .explica {
+    border-top: 1px solid var(--borde);
+    margin: 0 0.7rem 0.6rem;
+  }
+
+  .explica summary {
+    padding: 0.4rem 0;
+    min-height: 36px;
+    font-size: 0.7rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--acento);
+    font-weight: 600;
+  }
+
+  .explica p {
+    margin: 0 0 0.5rem;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: var(--tinta-2);
+  }
+
+  /* La leyenda del segundo modo comparte estilos con la de intensidad. */
+  .leyenda-pob h3 {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.75rem;
+    color: var(--tinta-2);
+    padding: 0.55rem 0.7rem 0;
+  }
+
+  .leyenda-pob ul {
+    padding-top: 0.35rem;
+  }
+
+  /* Estas filas las construye `mapa.ts` con createElement, así que NO llevan el atributo
+     de alcance que Astro le pone al marcado estático. Sin `:global` los estilos no las
+     alcanzan y la leyenda sale sin sus cuadros de color — que es justo lo que la hace
+     leerse. */
+  .leyenda-pob :global(li) {
+    display: grid;
+    grid-template-columns: 0.9rem 1fr;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .leyenda-pob :global(.muestra) {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 3px;
+    border: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
+  }
+
+  .leyenda-pob :global(.desc) {
+    color: var(--tinta-2);
   }
 
   /* ── Ficha del municipio ─────────────────────────────────────────────── */

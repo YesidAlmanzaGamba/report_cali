@@ -15,7 +15,14 @@ import type { FeatureCollection, Geometry } from 'geojson';
 import { loadCuratedObservations } from './curated.js';
 import { mmiToCsv, observacionesToCsv } from './export.js';
 import { aGeoJson, cargarIncidentes, porMunicipio, publicables } from './incidentes.js';
-import { joinMmiToMunicipios, type MunicipioMmi } from './join/mmi.js';
+import {
+  conPoblacion,
+  genteExpuesta,
+  joinMmiToMunicipios,
+  MMI_UMBRAL_DANINO,
+  type MunicipioMmi,
+} from './join/mmi.js';
+import { POBLACION_SOURCE, fetchPoblacion } from './sources/poblacion.js';
 import { DATA_DIR } from './paths.js';
 import { writeDataset, writeGeoJson, writeJson, writeText } from './persist.js';
 import type { Observation } from './schema.js';
@@ -112,19 +119,37 @@ async function main(): Promise<void> {
       if (joined.length === 0) {
         throw new Error('El cruce MMI × municipios no produjo ningún resultado');
       }
-      mmiPorMunicipio = joined;
+      // La población entra aquí y no en un paso propio: si su fuente falla, el mapa de
+      // intensidad —que es la capa principal— tiene que seguir saliendo igual.
+      const conPob = await fetchPoblacion()
+        .then((p) => conPoblacion(joined, p))
+        .catch((error: unknown) => {
+          console.warn(`\n  (población no disponible: ${(error as Error).message})`);
+          return joined;
+        });
+
+      mmiPorMunicipio = conPob;
+
+      const expuesta = genteExpuesta(conPob);
 
       const written = await writeJson(DATA_DIR, 'event/mmi-by-municipality', {
         source: USGS_SOURCE,
+        poblacion_source: POBLACION_SOURCE,
         generated_at: new Date().toISOString(),
         event_id: currentEvent.id,
         shakemap_url: currentEvent.shakemapBaseUrl,
-        municipality_count: joined.length,
-        municipalities: joined,
+        municipality_count: conPob.length,
+        // Cuánta gente vive donde el sacudimiento alcanzó el umbral de daño. No es un
+        // índice: es un conteo, y por eso se puede explicar en una frase.
+        gente_expuesta: expuesta,
+        umbral_mmi: MMI_UMBRAL_DANINO,
+        municipalities: conPob,
       });
 
-      const top = joined[0];
-      return `${joined.length} municipios, máximo ${top?.mmi} (${top?.mmi_roman}) en ${top?.name} ${
+      const top = conPob[0];
+      return `${conPob.length} municipios, máximo ${top?.mmi} (${top?.mmi_roman}) en ${
+        top?.name
+      } · ${expuesta.total.toLocaleString('es-CO')} personas expuestas ${
         written.changed ? '(escrito)' : '(sin cambios)'
       }`;
     });
