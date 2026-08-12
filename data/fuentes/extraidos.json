@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-12T23:22:47.819Z",
+  "generado": "2026-08-12T23:33:28.311Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -18,16 +18,6 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T22:48:10.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Petronio Solidario: así funcionará el nuevo centro de acopio en Cali tras el terremoto - elpais.com.co",
-      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOOWpDRnZmUkZQbjhQVk9OSFAyZEpTLWtuZDMtcUNpZTZjS2JJb1B3MV84U0tCbEdNMFRGejhma2h1Vm1NUWs3d0FGSHVzUHFja2JlUGhYNTkyMG5yTFVrLVlxZGJLbUZXQ3hqTjRlSnlMV09PS1pZeUI0UW1HZVB1UFpLM3RoZHJnQW9iRGpyMEI3dDhIem8tODFfdXVrN1BweVA1dFFUNWh1RUppcW1OeWN0cHVndWJCa1Y2TDE3VFVKczFZc1l2WXV30gHKAUFVX3lxTE45akNGdmZSRlBuOFBWT05IUDJkSlMta25kMy1xQ2llNmNLYklvUHcxXzhTS0JsR00wVEZ6OGZraHVWbU1Razd3QUZIdXNQcWNrYmVQaFg1OTIwbnJMVWstWXFkYkttRldDeGpONGVKeUxXT09LWll5QjRRbUdlUHVQWkszdGhkcmdBb2JEanIwQjd0OEh6by04MV91dWs3UHB5UDV0UVQ1aHVFSmlxbU55Y3RwdWd1YkJrVjZMMTdUVUpzMVlzWXZZdXc?oc=5",
-      "medio": "elpais.com.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T21:32:55.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "centro_acopio",
@@ -344,16 +334,6 @@
       "publicado": "2026-08-11T16:02:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Belén de Umbría reporta 487 viviendas afectadas por el sismo",
-      "enlace": "https://www.eldiario.com.co/actualidad/belen-de-umbria-reporta-487-viviendas-afectadas-por-el-sismo/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T15:07:08.000Z",
-      "pcode": "CO66088",
-      "municipio": "Belén de Umbría"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Alcaldía de Bogotá confirmó puntos de acopio de donaciones para los damnificados del terremoto en toda Colombia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdS00MjdPT1RXVXhPdW9lNHhaaXFqNnRTdDJxRmVyUkdobzN5SF9ERi04andsYkhaTk5uei1yZjZ2cmdtMU9vTFY2RTFCMExkbEM1SDFfZFRjQkVPTnU1Qm5zc09RWUVZdklLZHlkeVdXbWFfQlBBWk9PWDd5eThvVUZiN2ZfZ3pWWmRJUW1OeWYyYjZCdjBsYTNyZEtPQ3Vxbm1Jcl9PYkQ3Nm94ank3UHhYWXppM2VhQkxCQklqd084RU9oQmNxNlZ3b3BKSkNsQmUxREJKZnhFR21yMkh3Q0pwRVVISjg2T1dSadIBhwJBVV95cUxNOXAwSWVFRWhhbFVUdXdNbHFyVmdVREVSNXNUZHVqOTlDOWtLajdyZ0JKbWRvLXJGTFJtR0NKQkpqSHdENzZMOWJlNHJXUjB0bExQM0hZWUpmMC14Y2pRMzRvS3lWTDZ4aWZiSlh2RV9MbVdfYUMzbVpKYTdZQnYtYkUyLVJyLWY1eWNmNXV6Rl9JV3lHZlExakRaT0N1OTZmMVpzbGNpVVAzQzVWc0N0Ul9pb1JDVDBMS1g1WUtqa2F6cGcwQVRkOTNwWldxeUpYd0hoUVpKVTJzUC14cExwOGtsWWpoaUhIdkREbW1oQTlVOUZ2QnY0TUVNblVSRmliREJGUGlWaw?oc=5",
@@ -422,6 +402,14 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T10:18:57.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
+      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
+      "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T06:13:17.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -705,24 +693,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "40 personas fallecidas y 65 edificaciones colapsadas, según balance preliminar de la emergencia en Pereira.",
-      "enlace": "https://www.eldiario.com.co/actualidad/40-personas-fallecidas-y-65-edificaciones-colapsadas-segun-balance-preliminar-de-la-emergencia/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T16:32:19.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto de magnitud 7.4 deja 47 muertos y edificios colapsados en Colombia - WFLA",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRmFKTVhUSjV1cjNjUzB3anNWeEVTODhVT0Ywc0FlUjB2SjhKV1EzVU1CdWxCUlRiSjV6bkZILS1OaHlaTW5Sa0dWX1A0UVpJTlM4dTBMcFBXbnpoZGxqcTB0MnpsTjN4N2FlVXFsMGw4UjlHYzdHUURNMDJVRjQ5TzNqTnFQajVrUERQUWdNZExZam83QkUyLXlfaFdxMEd2aGNSVXdQdGpBR1U4SU9lOFZ3RU5ISXRHWi03cy1faXnSAcYBQVVfeXFMTkVRWGlzU0ttOW04RFBYWExaa0VnTDhJb1d4cGkySHhXQVROc0t4QXlRMXFpWTRibDdDNXdPS0JQZG5sNDRaajdpbmN0ZmFGT3JmT1NUUXVHVGR4YWhiNEdzdFA3cWlIWFRCX3Z6RWo3OFdfeFozNWYxdTN3Tk42UHpoRjNYMjN5ejFyUzZHdjJ6bzI4emU5X25SQVI0akcxbHNraHg0cVVvM0dIWXltT0NHYy1qZjVQSXdRV1dHa3VuVG9UYXdn?oc=5",
-      "medio": "WFLA",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T16:23:47.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "El momento del terremoto en Colombia: edificios colapsados y destrozos al oeste del país - EL PAÍS",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUEk0TFdLSjY4MGpXbWxBWHRUZnJGVjh0aU9MWDFCaUFVN3NUQnllUkE2WGhHaXUzSEVKNDRXRnJOaFRKNVFlVEdxaHlORERFRlgzcXhpZGtxdGZMblgzaGlUSGhvdEVsWnk0eFZfOEh0bHU2cWhFbnVra2VFOTNZNEVRTndPOHVtZlI0NjE0ckUxc1d4LTJoaVQtVG9XMGNlaGN6VDZPMkVZLXRMUm50U0ZjS3RtRWE4X3NNeWNaOU42T19qZHVpWNIB3AFBVV95cUxQYmF0Y28yVHhfcWVUbnhsdng3WHRJSWNKV0lfVGxPRXlxb0ZFQzhPMDUwVzg3MkIxc0wtak4tNkVsOWo0dHlJd0YxWFo5ZDkyMWV4VmFFRjUwbUIxRFhTQ2JudUpIb0hEY2VBZ3RsTmYtbXRpQWpFWVhldTJrSV8yWV9vby1JZFllZldFMjhHSTlCT3AyVkhEdWtTWkJQOENlSTlvLS1JR21EQTdVMlVaM2FSdkFkV1hwM21naW5hTV9rU3VIRDlHcGpQWjgzLXMwYXRRV2gzYnN2dG1K?oc=5",
       "medio": "EL PAÍS",
@@ -789,16 +759,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Atención en Cali: reportan 19 edificios colapsados con personas atrapadas | El Colombiano - El Colombiano",
-      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMzY5YXBqREVkdG1ZUFJqMFFHMmNiSjNxN2ZZeVIzaWNlX2J1TjFEbzdLSlVKNzRvSUw0LU9HSGtGWDlkaEZFNGtia1lHSzNmVFZLLTM4cmRUX1FwREZsZlRkcUZJZlB6QVBUcWVzNFJhSlJpQWkwN08ydGxiV1Z0cWZJQi13NEpDZkVobHdDRlNtR0FVUUltU1ZQWkNyZEdiVm5ETWpIbTBNY0RpS1FkY0hnYTRBbE1rQndNUW9n0gHDAUFVX3lxTE5GNTh4dXk1SUExenplRk1EQ0dWSjgyUE1kSEpkQkFVS1JSLU91ZEVRTGZWM3g4TlhMb0Qwd2xGenN2TDF4Zm1DSHlLdGJlZXJraHVDUkh0b2tjWnhhRWU2RFVhZS14RlNHZHhPa21Ca2QxV1dKUjZTUEI1ZUNyZGJFLW14YnB3c0pkc0trcXRBODNNOEFOaXFaanh6NlRudGdDN3VRbHAyWGRNQndVbFVUNlYzMWJyM3VRcVBSSlN3RDJ1dw?oc=5",
-      "medio": "El Colombiano",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T14:19:27.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Terremoto en Colombia: reportan edificios colapsados en Cali y suspenden operaciones en aeropuertos - latinus.us",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOczZ3ZGxjWkpwcTFPXzFFLUxWc0Y3TDc4SVRVeUJ0dlVRcnYxbm9DQTB2VlNFM3daYm91WDNzLVdmb3lFOWFtZ1lhS2dqWWxGejZyWVUyQmVlcmk2N045aS1NVGZoZTlaZ0dTT2FfWWV1cHQtbXVDVGpaQ2ZsbTA5aWJaWHRRQ29KSGg4b0ZZUnFRLURERzRhNTNfMVFYa2w4UXZ5M2hmRjMtNkE3ZV9ITUw2RzJfc3J1UE9GbGE0WFpoQnZqZTgxWEpxY0tnME9WU1RYTVh0WS05dk3SAdsBQVVfeXFMTnM2d2RsY1pKcHExT18xRS1MVnNGN0w3OElUVXlCdHZVUXJ2MW5vQ0EwdlZTRTN3WmJvdVgzcy1XZm95RTlhbWdZYUtnallsRno2cllVMkJlZXJpNjdOOWktTVRmaGU5WmdHU09hX1lldXB0LW11Q1RqWkNmbG0wOWliWlh0UUNvSkhoOG9GWVJxUS1EREc0YTUzXzFRWGtsOFF2eTNoZkYzLTZBN2VfSE1MNkcyX3NydVBPRmxhNFhaaEJ2amU4MVhKcWNLZzBPVlNUWE1YdFktOXZN?oc=5",
       "medio": "latinus.us",
@@ -817,7 +777,7 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 124 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
+      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
       "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVFNTQmlqdkx0Vm01N0JyR3c3a2g5VDRaX1hxNnVRb0JSQS1wTWt1WmZvOW9YdjhfV29Rdm9RamxEaTZyUVU2QVlhYklzdjBkV3ZvUFJuZnNqNjRyYmhJUFZpcFVVQ2xMcHlpSEg2ektydmJVeGxVZ2k0YW8wQjl3NlVZcEN6S2xrSTgwTDB5RnM5WkJTNmk5am5uc3VEeVNOVEE?oc=5",
       "medio": "Clarin.com",
       "tipo_fuente": "unverified",
@@ -866,14 +826,6 @@
       "medio": "eltelegrafo.com.ec",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-28T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Venezolanos en Lima habilitan centros de acopio para ayudar a damnificados por doble terremoto - RPP Noticias",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQZjd4a3VVNzY0M1VMOWlra1RoenltZUhZVzlQcFVFMDVPWmVuNWp5M1BtTDZrWGJjYWxwcHNDM2ZvOHJhY3NzWDJnUXRKMjlaTlJTdkJObHF4VWRETU5GVkY0X25Cb1BuaHFBSmNWRElXNEg4eVNGYm1JNVBKNlA5WDNMTHM0MTEwaDJVSXFEYXBEY1Ewck1aaDBTNW9YY3UtT0NRUGdkUmFUeFZCQW5HWnpVTmZPOUZ0bklGSVlkVWk2NXNyTGtsMl9fUnd6cjNpbnh5V3djeURackE?oc=5",
-      "medio": "RPP Noticias",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-06-26T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
