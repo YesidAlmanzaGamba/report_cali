@@ -151,16 +151,26 @@ const { leyenda } = Astro.props;
     </p>
   </details>
 
-  <aside class="ficha" id="detalle" hidden>
+  <aside class="ficha" id="detalle" data-carrusel-ambito hidden>
+    <div class="ficha-barra" aria-hidden="true"><span id="ficha-pulgar"></span></div>
+
     <header class="ficha-cabecera">
-      <div class="identidad">
-        <h3 id="detalle-nombre"></h3>
-        <p id="detalle-depto" class="depto"></p>
+      <div class="fila-identidad">
+        <div class="identidad">
+          <h3 id="detalle-nombre"></h3>
+          <p id="detalle-depto" class="depto"></p>
+        </div>
+
+        <span id="detalle-grado" class="grado-grande" aria-hidden="true"></span>
+
+        <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
       </div>
 
-      <span id="detalle-grado" class="grado-grande" aria-hidden="true"></span>
-
-      <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
+      <nav class="caras" aria-label="Secciones de la ficha">
+        <button type="button" class="cara-flecha" data-carrusel-prev aria-label="Sección anterior">‹</button>
+        <span class="cara-nombre" data-carrusel-etiqueta aria-live="polite"></span>
+        <button type="button" class="cara-flecha" data-carrusel-next aria-label="Sección siguiente">›</button>
+      </nav>
     </header>
 
     <div class="ficha-cuerpo">
@@ -207,14 +217,6 @@ const { leyenda } = Astro.props;
         </section>
       </div>
 
-      <div class="carrusel-controles">
-        <button type="button" class="carrusel-flecha" data-carrusel-prev aria-label="Diapositiva anterior">‹</button>
-        <div class="carrusel-puntos" role="group" aria-label="Diapositivas">
-          <button type="button" data-carrusel-punto aria-current="true" aria-label="Ver impacto reportado"></button>
-          <button type="button" data-carrusel-punto aria-current="false" aria-label="Ver ayuda cercana"></button>
-        </div>
-        <button type="button" class="carrusel-flecha" data-carrusel-next aria-label="Siguiente diapositiva">›</button>
-      </div>
     </div>
     </div>
 
@@ -624,17 +626,102 @@ const { leyenda } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 2;
+    padding: 0.7rem 0.5rem 0.5rem 0.9rem;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .fila-identidad {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    padding: 0.7rem 0.5rem 0.6rem 0.9rem;
-    background: var(--fondo);
-    border-bottom: 1px solid var(--borde);
   }
 
   .identidad {
     flex: 1;
     min-width: 0;
+  }
+
+  /* ── Paso entre caras, dentro de la cabecera fija ─────────────────────────
+     Los controles del carrusel vivían al final de la ficha, o sea **debajo del pliegue**:
+     para descubrir que existía «Ayuda cercana» —la línea 123 y el WhatsApp de la Cruz
+     Roja— había que desplazarse hasta abajo y además adivinar un gesto lateral. Aquí
+     arriba están siempre a la vista, y el nombre de la cara dice a dónde llevan, que es
+     más de lo que decían dos puntitos. */
+  .caras {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 0.45rem -0.2rem -0.1rem -0.35rem;
+  }
+
+  .cara-nombre {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tinta-3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cara-flecha {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 34px;
+    background: none;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--tinta-2);
+    cursor: pointer;
+  }
+
+  .cara-flecha:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  /* Con una sola cara no hay entre qué pasar. */
+  .caras:has(.cara-flecha:disabled:first-of-type):has(.cara-flecha:disabled:last-of-type) {
+    display: none;
+  }
+
+  /* ── Barra de desplazamiento propia ───────────────────────────────────────
+     En celular el navegador dibuja la barra **superpuesta**: aparece mientras el dedo
+     arrastra y se va. `scrollbar-width`/`::-webkit-scrollbar` no la convierten en una
+     barra clásica ahí, así que la pista de que hay más contenido seguía sin verse — que
+     es justo lo que se pidió. Esta se dibuja a mano y solo se enciende cuando la del
+     navegador no reserva ancho, para no acabar con dos barras en escritorio.
+
+     `sticky` con alto 0: se queda pegada al borde de arriba del área visible sin ocupar
+     sitio, y el pulgar se mueve dentro con `transform`. */
+  .ficha-barra {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    height: 0;
+  }
+
+  .ficha-barra span {
+    display: none;
+    position: absolute;
+    right: 2px;
+    width: 4px;
+    border-radius: 999px;
+    background: var(--tinta-3);
+    opacity: 0.5;
+  }
+
+  .ficha[data-barra] .ficha-barra span {
+    display: block;
   }
 
   .ficha-cuerpo {
@@ -981,58 +1068,8 @@ const { leyenda } = Astro.props;
     margin-top: 0.2rem;
   }
 
-  .carrusel-controles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.6rem;
-  }
-
-  .carrusel-flecha {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--borde);
-    border-radius: 999px;
-    background: var(--fondo);
-    color: var(--tinta);
-    font-size: 1.1rem;
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  .carrusel-flecha:disabled {
-    opacity: 0.35;
-    cursor: default;
-  }
-
-  .carrusel-puntos {
-    display: flex;
-  }
-
-  .carrusel-puntos button {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .carrusel-puntos button::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 999px;
-    background: var(--borde);
-  }
-
-  .carrusel-puntos button[aria-current='true']::before {
-    background: var(--acento);
-  }
+  /* Los controles del carrusel —flechas y puntitos— vivían aquí abajo. Se subieron a la
+     cabecera fija como `.caras`: debajo del pliegue no servían de nada. */
 
   /* En celular la ficha se ancla abajo, encima de la hoja asomada: arriba a la
      derecha tapa justo la zona que la persona acaba de tocar. */

@@ -798,8 +798,39 @@ export async function iniciarMapa(): Promise<void> {
    */
   function actualizarPistaDeMas(): void {
     if (!panel) return;
-    const quedaAbajo = panel.scrollHeight - panel.scrollTop - panel.clientHeight > 4;
-    panel.toggleAttribute('data-mas', quedaAbajo);
+
+    const desborde = panel.scrollHeight - panel.clientHeight;
+    panel.toggleAttribute('data-mas', desborde - panel.scrollTop > 4);
+
+    /**
+     * Barra de desplazamiento propia, solo donde la del navegador no se ve.
+     *
+     * En celular la barra nativa va **superpuesta**: aparece mientras el dedo arrastra y
+     * se va, así que la pista de que hay más contenido no está cuando hace falta. Ni
+     * `scrollbar-width` ni `::-webkit-scrollbar` la vuelven clásica ahí. Se dibuja a
+     * mano, y se enciende solo si la nativa **no reserva ancho** — si lo reserva, como
+     * en escritorio, ya se ve y poner otra sería tener dos.
+     */
+    const pulgar = document.getElementById('ficha-pulgar');
+    /**
+     * `offsetWidth - clientWidth` **no** es el ancho de la barra: incluye los bordes de
+     * la ficha. Medido, daba 2 px con la barra superpuesta —los dos bordes de 1 px— y el
+     * dibujo propio no se encendía nunca, que era justo el caso para el que existe. Hay
+     * que descontarlos para saber si el navegador reserva sitio o no.
+     */
+    const estilo = getComputedStyle(panel);
+    const bordes =
+      parseFloat(estilo.borderLeftWidth || '0') + parseFloat(estilo.borderRightWidth || '0');
+    const barraNativa = panel.offsetWidth - panel.clientWidth - bordes;
+    const dibujarla = barraNativa < 1 && desborde > 4;
+    panel.toggleAttribute('data-barra', dibujarla);
+    if (!pulgar || !dibujarla) return;
+
+    const visible = panel.clientHeight;
+    const alto = Math.max(28, (visible * visible) / panel.scrollHeight);
+    const recorrido = visible - alto;
+    pulgar.style.height = `${Math.round(alto)}px`;
+    pulgar.style.transform = `translateY(${Math.round((panel.scrollTop / desborde) * recorrido)}px)`;
   }
 
   function cerrarFicha(): void {

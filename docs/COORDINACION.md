@@ -658,6 +658,62 @@ porque una de las dos diapositivas está vacía.
 No lo hice porque borra trabajo probado de la ronda 2 y es una decisión de producto, no
 una corrección. Queda a decisión del responsable.
 
+### Respuesta: no se borra el carrusel, se le suben los controles a la cabecera
+
+El responsable escogió una tercera vía mejor que la mía: **flechitas en el título**, para
+poder pasar entre caras sin desplazarse. Mantiene la compactación del carrusel y resuelve
+lo que lo hacía inservible —que sus controles estuvieran bajo el pliegue— sin borrar nada.
+
+Ahora la cabecera fija lleva un segundo renglón: `‹  AYUDA CERCANA  ›`. **El rótulo dice a
+dónde llevan las flechas**, que es más de lo que decían dos puntitos, y sale del
+`aria-label` del propio slide, así que no hay una segunda lista de nombres que se pueda
+desincronizar del marcado. Al usarlas, el carrusel se trae a la vista
+(`scrollIntoView`): sin eso, tocar «›» cambia algo que puede estar fuera de pantalla y
+parece que el botón no hizo nada. Los controles de abajo se retiraron — duplicarlos no
+aportaba.
+
+`carrusel.ts` deja de exigir que los controles vivan **dentro** del carrusel: los busca en
+`[data-carrusel-ambito]` si existe, y si no, donde siempre. Es lo que permite tenerlos en
+la cabecera sin acoplar el módulo a la ficha.
+
+**Dos fallos encontrados al medir, ninguno pedido:**
+
+1. **El carrusel se inicializaba con las cuentas en `NaN`.** `iniciarCarruseles()` corre
+   al cargar la página, cuando la ficha todavía tiene `hidden`, así que `clientWidth` es
+   0 y `scrollLeft / clientWidth` da `NaN`. Los botones nunca se desactivaban y el rótulo
+   salía vacío. Con los puntitos el fallo era invisible —nadie mira si un punto está bien
+   relleno—; con un rótulo de texto saltó a la vista. Arreglado con un guardia, y con un
+   `ResizeObserver` sobre la pista para volver a sincronizar cuando la ficha se destapa y
+   el ancho pasa de 0 a real.
+2. **La barra propia no se habría encendido nunca en celular**, que era justo para lo que
+   se pidió. Detectaba la barra nativa con `offsetWidth - clientWidth`, y eso **incluye
+   los bordes**: medido, daba 2 px con la barra superpuesta —los dos bordes de 1 px— y el
+   umbral `< 1` no se cumplía jamás. En escritorio daba 12 y acertaba por casualidad. Se
+   descuentan los bordes con `getComputedStyle`.
+
+**Sobre la barra propia**, que es lo que se pidió: en celular el navegador dibuja la barra
+**superpuesta** —aparece mientras el dedo arrastra y se va—, y ni `scrollbar-width` ni
+`::-webkit-scrollbar` la vuelven clásica ahí. Así que se dibuja a mano, y **solo cuando la
+nativa no reserva ancho**, para no acabar con dos barras en escritorio.
+
+Medido, con la ficha de Manizales abierta:
+
+| | barra nativa | `data-barra` | pulgar |
+|---|---|---|---|
+| escritorio | 10 px | `false` | sin dibujar |
+| barra superpuesta (celular) | 0 px | `true` | 831 px, `translateY` 0 → 13 px al desplazar |
+
+Y el paso entre caras: rótulo `Impacto reportado` → `Ayuda cercana`, con `‹` desactivada
+en la primera y `›` desactivada en la última.
+
+**Carga:** 15,10 → **15,29 KB** (+200 B).
+
+> **Nota de método, otra vez.** El rótulo parecía no actualizarse al pasar de cara:
+> `sincronizar()` vive dentro de un `requestAnimationFrame`, y en esta pestaña ocluida no
+> hay fotogramas. Forzar una captura de pantalla produce uno y todo se pone al día. Es el
+> mismo patrón que ya congeló las transiciones dos veces; conviene sospechar de él antes
+> que del código.
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda
