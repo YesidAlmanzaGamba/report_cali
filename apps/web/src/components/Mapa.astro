@@ -186,6 +186,12 @@ const { leyenda } = Astro.props;
       </div>
     </div>
 
+    <section class="cobertura" id="detalle-cobertura" hidden>
+      <h4 class="slide-titulo">Quién está informando</h4>
+      <p class="cobertura-texto" id="cobertura-texto"></p>
+      <p class="cobertura-medios" id="cobertura-medios"></p>
+    </section>
+
     <div class="leyenda-incidentes" id="detalle-leyenda-incidentes" hidden>
       <h4 class="slide-titulo">Puntos en el mapa</h4>
       <ul id="leyenda-incidentes-lista"></ul>
@@ -861,14 +867,48 @@ const { leyenda } = Astro.props;
     color: var(--tinta-3);
   }
 
-  /* Aquí vivía el aviso de «sin cartografía de incidentes». Se retiró a pedido del
-     responsable del proyecto, y la razón es buena: **saltaba en los 1.122 municipios**,
-     porque hoy no hay ni un incidente curado en producción. Un aviso que sale siempre
-     deja de informar y pasa a ser decorado — y este ocupaba, en rojo, el sitio donde
-     debería estar lo que sí cambia de un municipio a otro.
-     La regla que lo motivaba —«sin dato» no es «sin daño»— sigue siendo cierta y sigue
-     en `CLAUDE.md`. Su sitio es una vez en la leyenda o en «Sobre esto», no repetida en
-     cada ficha. Anotado en `docs/COORDINACION.md`. */
+  /* ── Quién está informando ────────────────────────────────────────────────
+     Aquí vivía el aviso de «sin cartografía de incidentes», retirado porque **saltaba en
+     los 1.122 municipios**: un aviso que sale siempre deja de informar.
+
+     Esto lo reemplaza y **sí discrimina**, que es toda la diferencia. Sale de
+     `fuentes/cobertura.json`, que cuenta lo que cada medio publicó de verdad, y dice una
+     de dos cosas distintas: quién está informando de este municipio, o que no informa
+     nadie. Y solo aparece en los municipios que el registro considera —los que superan el
+     umbral de daño, o tienen alguna nota—, así que en un municipio que apenas tembló no
+     se dice nada en vez de decir una obviedad.
+
+     Con esto la regla de `CLAUDE.md` —«sin dato» no es «sin daño»— recupera su expresión
+     en la interfaz, ahora por municipio y solo cuando es cierta. */
+  .cobertura {
+    margin: 0.9rem 0 0;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--borde);
+  }
+
+  .cobertura-texto {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .cobertura-medios {
+    margin: 0.3rem 0 0;
+    font-size: 0.75rem;
+    color: var(--tinta-3);
+    line-height: 1.4;
+  }
+
+  .cobertura-medios:empty {
+    display: none;
+  }
+
+  /* El hueco se marca, pero en tono de aviso y no de alarma: no es una emergencia
+     añadida, es una laguna nuestra. El borde izquierdo lo distingue sin gritar. */
+  .cobertura[data-estado='sin'] .cobertura-texto {
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--urgente);
+  }
 
   /* Objetivo táctil de 44 px: se cierra con prisa y a veces con una sola mano. La `×`
      es glifo, así que se centra con grid en vez de con `line-height`. */

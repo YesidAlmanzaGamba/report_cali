@@ -1000,14 +1000,47 @@ tener veinte notas por ser capital y otro ninguna por ser pequeño y estar incom
 y el segundo puede necesitar más ayuda. Es un mapa de **nuestra información**, no del
 desastre. El `nota` del propio archivo lo dice, y hay una prueba que verifica que lo diga.
 
-### Pendiente, sin construir
+### Hecho: CSV con HXL, y la ficha lo dice
 
-- **Exportarlo a CSV con etiquetas HXL**, como los otros dos. «De qué municipios golpeados
-  no informa nadie» es justo lo que un coordinador humanitario querría cruzar con sus
-  propios datos, y `export.ts` ya tiene la maquinaria.
-- **Mostrarlo en la interfaz.** Encaja con la deuda que dejó quitar el aviso de «sin
-  cartografía» de la ficha: aquello se quitó por salir en los 1.122 municipios, pero aquí
-  la afirmación sí discrimina —179 de 228— y por municipio.
+**`export/cobertura-por-municipio.csv`.** La columna que lo hace útil es
+`sin_cobertura` (`#status+coverage`): filtrarla por «sí» en una hoja de cálculo da, en un
+clic, la lista de municipios golpeados de los que no informa nadie — la pregunta que un
+coordinador querría cruzar con sus propios datos, y que en el JSON obliga a recorrer un
+arreglo. Los medios van en una sola celda separados por «·» y no en columnas: cuántos
+medios cubren un municipio va de cero a veinticinco, y una tabla con veinticinco columnas
+de medio estaría vacía casi entera.
+
+Las dos primeras filas del CSV cuentan la historia solas:
+
+```
+CO76147,Cartago,Valle del Cauca,8,142255,0,,,sí
+CO17001,Manizales,Caldas,8,469600,43,La Patria (11) · …,2026-08-12T20:41:42Z,no
+```
+
+**Y la ficha lo dice, en un bloque «Quién está informando».** Esto salda la deuda que dejó
+quitar el aviso de «sin cartografía»: aquel salía **idéntico en los 1.122 municipios** y
+por eso dejó de informar. Este dice **una de dos cosas distintas** —quién publica, o que
+no publica nadie— y **solo aparece en los municipios que el registro considera**. En uno
+que apenas tembló el bloque no sale: callar es mejor que decir una obviedad.
+
+Con esto la regla de `CLAUDE.md` —«sin dato» no es «sin daño»— recupera su expresión en la
+interfaz, ahora por municipio y solo cuando es cierta.
+
+Verificado en el navegador con los dos casos, abiertos desde la tabla:
+
+| | bloque | texto |
+|---|---|---|
+| **Manizales** (43 notas) | `data-estado="con"` | «43 notas recogidas, la más reciente hace 2 h» + La Patria (11) · facebook.com (3) · El Colombiano (3) · El Tiempo (3) |
+| **Cartago** (0 notas) | `data-estado="sin"` | «Ningún medio ha publicado sobre este municipio desde el sismo. Que no haya reportes no significa que no haya daños: significa que no tenemos información de aquí.» |
+
+**Hay que saber esto antes de mirarlo:** de los 228 municipios considerados, **180 verán
+la variante roja**. No es un fallo del diseño — es el dato—, pero conviene saberlo:
+las capitales, que es donde más gente toca, están todas cubiertas, así que la variante que
+más se verá en uso normal es la de arriba.
+
+**Carga:** 15,29 → **15,43 KB** (+141 B). `cobertura.json` pesa 7,3 KB comprimidos y se
+pide en tiempo de ejecución dentro del trozo diferido del mapa, así que **no entra en la
+carga inicial**.
 
 ---
 

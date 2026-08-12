@@ -15,7 +15,7 @@ import type { FeatureCollection, Geometry } from 'geojson';
 
 import { construirCobertura, type NotaCandidata } from './cobertura.js';
 import { loadCuratedObservations } from './curated.js';
-import { mmiToCsv, observacionesToCsv } from './export.js';
+import { coberturaToCsv, mmiToCsv, observacionesToCsv } from './export.js';
 import { aGeoJson, cargarIncidentes, porMunicipio, publicables } from './incidentes.js';
 import {
   conPoblacion,
@@ -431,6 +431,11 @@ async function main(): Promise<void> {
       );
 
       const written = await writeJson(DATA_DIR, 'fuentes/cobertura', cobertura);
+      // El CSV sale aquí y no en el paso de exportación porque es donde está el dato.
+      // Su columna `sin_cobertura` es la que hace el archivo útil: filtrarla en una hoja
+      // de cálculo da la lista de municipios de los que no informa nadie.
+      await writeText(DATA_DIR, 'export/cobertura-por-municipio.csv', coberturaToCsv(cobertura));
+
       const { con_notas, sin_notas, poblacion_sin_notas, medios_distintos } = cobertura.resumen;
 
       return `${con_notas} con cobertura, ${sin_notas} sin ninguna (${poblacion_sin_notas.toLocaleString(

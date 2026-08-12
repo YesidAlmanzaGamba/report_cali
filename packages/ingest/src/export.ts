@@ -10,6 +10,7 @@
  * humanitario —HDX incluido— entiendan las columnas sin que nadie las mapee a mano.
  * Cuesta una fila y ahorra una reunión.
  */
+import type { Cobertura } from './cobertura.js';
 import type { Metric, Observation } from './schema.js';
 import type { MunicipioMmi } from './join/mmi.js';
 
@@ -132,6 +133,58 @@ export function mmiToCsv(municipios: MunicipioMmi[]): string {
     m.mmi,
     m.mmi_roman,
     m.method === 'grid' ? 'malla' : 'centroide',
+  ]);
+
+  return csvRows([encabezado, hxl, ...filas]);
+}
+
+/**
+ * Cobertura periodística por municipio — y su reverso.
+ *
+ * La columna que hace útil este archivo es `sin_cobertura`: filtrar por «sí» en una hoja
+ * de cálculo da, en un clic, la lista de municipios golpeados de los que no informa
+ * nadie. Es la pregunta que un coordinador quiere cruzar contra sus propios datos, y en
+ * el JSON obliga a recorrer un arreglo.
+ *
+ * `medios` va como texto separado por «·» y no como columnas: cuántos medios cubren un
+ * municipio varía de cero a diez, y una tabla con diez columnas de medio estaría vacía
+ * casi entera.
+ */
+export function coberturaToCsv(cobertura: Cobertura): string {
+  const encabezado = [
+    'pcode',
+    'municipio',
+    'departamento',
+    'mmi',
+    'poblacion',
+    'notas',
+    'medios',
+    'ultima_nota',
+    'sin_cobertura',
+  ];
+
+  const hxl = [
+    '#adm2+code',
+    '#adm2+name',
+    '#adm1+name',
+    '#severity+mmi+num',
+    '#population+total+num',
+    '#meta+count+num',
+    '#meta+source+list',
+    '#date+latest',
+    '#status+coverage',
+  ];
+
+  const filas = cobertura.municipios.map((m) => [
+    m.pcode,
+    m.nombre,
+    m.departamento,
+    m.mmi ?? undefined,
+    m.poblacion ?? undefined,
+    m.notas,
+    m.medios.map((x) => `${x.nombre} (${x.notas})`).join(' · '),
+    m.ultima,
+    m.notas === 0 ? 'sí' : 'no',
   ]);
 
   return csvRows([encabezado, hxl, ...filas]);

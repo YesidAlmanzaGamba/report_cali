@@ -60,6 +60,17 @@ interface IncidenteProps {
 }
 type ColeccionIncidentes = FeatureCollection<Point, IncidenteProps>;
 
+/**
+ * Una fila de `fuentes/cobertura.json`. Solo lo que la ficha necesita: el archivo trae
+ * además mmi y población, que aquí ya vienen de las propiedades del municipio.
+ */
+interface CoberturaMunicipio {
+  pcode: string;
+  notas: number;
+  ultima?: string;
+  medios: { nombre: string; notas: number }[];
+}
+
 /** Solo estos dos tipos de incidente son "ayuda cercana"; el resto son daño y solo se
  *  dibujan como puntos en el mapa, sin listarse como tarjetas en la ficha. */
 const TIPOS_AYUDA = new Set(['albergue', 'centro_acopio']);
@@ -598,6 +609,56 @@ export async function iniciarMapa(): Promise<void> {
    * la fuente y las notas vienen de un archivo que edita gente por pull request, y aunque
    * pase por revisión, no es lugar para confiar en que nadie escriba una etiqueta.
    */
+  /** «hace 40 min», «hace 6 h», «hace 3 días». Suficiente para situar una nota. */
+  function haceCuanto(iso: string, ahora: Date = new Date()): string {
+    const minutos = Math.max(0, Math.round((ahora.getTime() - Date.parse(iso)) / 60_000));
+    if (minutos < 60) return `hace ${minutos} min`;
+    const horas = Math.round(minutos / 60);
+    if (horas < 48) return `hace ${horas} h`;
+    return `hace ${Math.round(horas / 24)} días`;
+  }
+
+  /**
+   * Quién está informando de este municipio — o que no informa nadie.
+   *
+   * Las dos ramas dicen cosas distintas, y por eso esto se puede publicar donde el aviso
+   * anterior no se podía: aquel salía idéntico en los 1.122 municipios y dejó de
+   * informar. Si el municipio no está en el registro (apenas tembló y nadie lo mencionó),
+   * el bloque no aparece: callar es mejor que decir una obviedad.
+   */
+  function pintarCobertura(pcode: string): void {
+    const bloque = document.getElementById('detalle-cobertura');
+    const texto = document.getElementById('cobertura-texto');
+    const medios = document.getElementById('cobertura-medios');
+    if (!bloque || !texto || !medios) return;
+
+    const dato = coberturaPorPcode.get(pcode);
+    if (!dato) {
+      bloque.setAttribute('hidden', '');
+      return;
+    }
+
+    bloque.removeAttribute('hidden');
+
+    if (dato.notas === 0) {
+      bloque.dataset['estado'] = 'sin';
+      texto.textContent =
+        'Ningún medio ha publicado sobre este municipio desde el sismo. Que no haya reportes no significa que no haya daños: significa que no tenemos información de aquí.';
+      medios.textContent = '';
+      return;
+    }
+
+    bloque.dataset['estado'] = 'con';
+    const plural = dato.notas === 1 ? 'nota' : 'notas';
+    texto.textContent = `${dato.notas} ${plural} recogidas${
+      dato.ultima ? `, la más reciente ${haceCuanto(dato.ultima)}` : ''
+    }.`;
+    medios.textContent = dato.medios
+      .slice(0, 4)
+      .map((m) => `${m.nombre} (${m.notas})`)
+      .join(' · ');
+  }
+
   function pintarCifras(pcode: string): void {
     const contenedor = document.getElementById('detalle-cifras');
     if (!contenedor) return;
@@ -888,6 +949,7 @@ export async function iniciarMapa(): Promise<void> {
     document.getElementById('detalle-metricas')?.setAttribute('data-modo', modoActual);
 
     const pcode = String(props['pcode'] ?? '');
+    pintarCobertura(pcode);
     pintarCifras(pcode);
     void mostrarIncidentes(pcode);
     void mostrarSecciones(pcode);
@@ -1069,6 +1131,19 @@ export async function iniciarMapa(): Promise<void> {
   );
   const conIncidentes = new Set(indiceIncidentes.municipios);
   const incidentesCargados = new Map<string, ColeccionIncidentes>();
+
+  /**
+   * Cobertura periodística por municipio.
+   *
+   * Solo trae los municipios que el registro considera —los que superan el umbral de daño
+   * o tienen alguna nota—, y eso es justo lo que hace publicable el mensaje: en un
+   * municipio que apenas tembló no se dice nada, en vez de decir una obviedad en 1.122
+   * fichas. Ese fue el error del aviso anterior.
+   */
+  const cobertura = await getJson<{ municipios: CoberturaMunicipio[] }>(
+    'fuentes/cobertura.json',
+  ).catch(() => ({ municipios: [] as CoberturaMunicipio[] }));
+  const coberturaPorPcode = new Map(cobertura.municipios.map((m) => [m.pcode, m]));
 
   // ── Trama urbana ────────────────────────────────────────────────────────
   //
