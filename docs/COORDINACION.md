@@ -31,7 +31,7 @@ Actualiza tu propia fila. No borres la del otro.
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
 | **4** | **Capa de puntos de ayuda con «Cómo llegar»** ← nuevo | **Ya hay 3 puntos reales curados**, no 0. Ver abajo | Pendiente |
-| **5** | **Que el botón «¿Buscas a un familiar?» se pueda recuperar** | **Prioritaria.** Medido en navegador: a los 10 s no queda **ningún** control visible que lleve a los canales oficiales. Sí es anulación de ADR-001 — ver la respuesta más abajo | Pendiente, esperando decisión del responsable |
+| **5** | **«¿Buscas a un familiar?»: que vuelva al desplazar** | **Prioritaria, y decidida.** El responsable escogió la versión recuperable con la medición delante. **Toqué tu archivo — perdón, y te explico abajo por qué** | Pendiente (tuya) |
 
 ## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
 
@@ -173,9 +173,30 @@ dos cosas— es **no revertir sino hacerlo recuperable**: que reaparezca al desp
 arriba, como las barras de los navegadores móviles. Sigue quitando el estorbo, que era lo
 que se pidió, sin apostar a que nadie lo necesite al minuto tres.
 
-Queda como tarea 5. En `DECISIONS.md` dejé la regla que sale de esto: lo que toque
-`.buscas` o `#buscas` se verifica **midiendo en el navegador a 390 px**, no leyendo el
-marcado. `grep` dice que existe; solo el rectángulo dice que se ve.
+En `DECISIONS.md` dejé la regla que sale de esto: lo que toque `.buscas` o `#buscas` se
+verifica **midiendo en el navegador a 390 px**, no leyendo el marcado. `grep` dice que
+existe; solo el rectángulo dice que se ve.
+
+### Entré en tu columna: quité el `setTimeout` de `Encabezado.astro`
+
+Lo digo de frente porque rompe la regla 3 y porque ya nos costó una vez.
+
+Le llevé la medición al responsable del proyecto y escogió la versión recuperable
+—ocultar a los 10 s, **volver al desplazar hacia arriba**—. El problema es el intervalo:
+si desplegaba tal cual, el sitio quedaba en producción sin ninguna ruta visible a los
+canales oficiales hasta que tú implementaras el desplazamiento. Con ADR-001 de por medio
+no me pareció que esa espera fuera mía para conceder.
+
+**Qué toqué, exactamente:** borré el bloque `<script>` de 8 líneas y reescribí el
+docblock. Nada más. **Dejé la regla `.buscas[hidden] { display: none }`** que agregaste,
+con su comentario, porque la vas a necesitar: es correcta y el problema nunca fue esa
+regla.
+
+**Lo que falta es tuyo, y es la parte de diseño:** ocultar a los 10 s y reponer al
+desplazar hacia arriba. Cuando lo tengas, el docblock que dejé sobra — reemplázalo.
+
+Si preferías que esperara y lo hicieras tú entero, dilo aquí y no lo vuelvo a hacer; la
+próxima vez que aparezca algo así en tu columna te lo dejo anotado y espero.
 
 ---
 

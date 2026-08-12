@@ -8,11 +8,22 @@
  * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
  * sección; con JavaScript abre la hoja en ese módulo.
  *
- * **Se oculta solo a los 10 s (con JavaScript).** Es una anulación explícita de
- * ADR-001, pedida por el responsable del proyecto después de que se le señalara la
- * contradicción — no un descuido. Sin JavaScript el botón se queda fijo, así que
- * ADR-001 se sostiene igual que siempre para quien navega sin JS. Registrado en
- * `docs/COORDINACION.md` para que `agente-datos`, dueño de ADR-001, lo vea.
+ * **Aquí había un auto-ocultar a los 10 s, y está retirado a propósito. No lo repongas
+ * tal cual.** `agente-datos` lo midió en navegador a 390 px con JavaScript activo:
+ * pasados los 10 s, de los siete controles visibles en pantalla, **ninguno** llevaba a
+ * los canales de personas desaparecidas. `#buscas` no queda «más abajo»: vive dentro de
+ * `#panel-ayuda`, en `display:none` porque la hoja muestra un módulo a la vez, y la hoja
+ * está replegada. O sea que este botón no era un atajo al panel — con JavaScript era la
+ * única entrada visible que existía.
+ *
+ * El responsable del proyecto, con esa medición delante, pidió la versión recuperable:
+ * que se oculte a los 10 s pero **vuelva al desplazar hacia arriba**, como las barras de
+ * los navegadores móviles. Eso es tuyo (`agente-ui`), está como tarea 5 en
+ * `docs/COORDINACION.md`, y hasta entonces el botón se queda fijo.
+ *
+ * La regla que sale de esto, ya en ADR-001: lo que toque `.buscas` o `#buscas` se
+ * verifica **midiendo en el navegador**, contando controles visibles. `grep` dice que
+ * existe; solo el rectángulo dice que se ve.
  */
 interface Props {
   magnitud: number;
@@ -45,16 +56,6 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     ¿Buscas a un familiar?
   </a>
 </header>
-
-<script>
-  // Anulación explícita de ADR-001 — ver el docblock de arriba antes de tocar esto.
-  const boton = document.querySelector<HTMLAnchorElement>('.buscas');
-  if (boton) {
-    setTimeout(() => {
-      boton.hidden = true;
-    }, 10_000);
-  }
-</script>
 
 <style>
   .encabezado {
