@@ -110,6 +110,83 @@
       "observed_at": "2026-08-11T12:00:00-05:00",
       "notes": "El punto cae en el polígono de Villamaría por 549 m, pero se registra en Manizales: así lo dicen La Patria, los directorios de empresas y su código DIVIPOLA (17001). El límite con Villamaría es el río Chinchiná, y nuestros límites están simplificados para la web, así que cerca de un borde no sirven para asignar municipio.",
       "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Ciudadela del Petronio — Unidad Deportiva Alberto Galindo",
+      "pcode": "CO76001",
+      "longitud": -76.551424,
+      "latitud": 3.41308,
+      "direccion": "Unidad Deportiva Alberto Galindo, centro-sur de Cali",
+      "horario": "Desde el martes 11 de agosto, 3:00 p. m.",
+      "source": {
+        "name": "Pulzo",
+        "url": "https://www.pulzo.com/nacion/ciudadela-petronio-en-cali-se-convierte-en-centro-de-ayuda-tras-terremoto-zonas-y-donaciones-PP5271616A",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T15:00:00-05:00",
+      "notes": "Atiende también a los equipos de rescate. La coordenada es la de la Unidad Deportiva (OpenStreetMap, POI de tipo sports_centre); la Ciudadela queda dentro del complejo, que está señalizado. La nota no dice qué reciben.",
+      "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Plazoleta Jairo Varela",
+      "pcode": "CO76001",
+      "longitud": -76.534801,
+      "latitud": 3.455019,
+      "necesita": [
+        "agua",
+        "guantes de construcción",
+        "gafas de seguridad",
+        "cascos",
+        "colchonetas"
+      ],
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T18:00:00-05:00",
+      "notes": "Convocado por la Alcaldía de Cali. Lo que pide es material de rescate, no mercado: es el punto para quien quiera aportar a las brigadas.",
+      "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Estadio Nemesio Camacho El Campín",
+      "pcode": "CO11001",
+      "longitud": -74.077605,
+      "latitud": 4.64595,
+      "necesita": ["agua", "alimentos", "ropa", "medicamentos"],
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/estadio-el-campin-sera-centro-de-acopio-para-ayudar-a-damnificados-por-el-terremoto-en-colombia/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T10:00:00-05:00",
+      "notes": "Lejos del sismo a propósito: en Bogotá está quien quiere donar. Lo opera Sencia y la Cruz Roja Colombiana coordina el traslado a las zonas afectadas.",
+      "activo": true
+    },
+    {
+      "tipo": "centro_acopio",
+      "nombre": "Palacio de los Deportes",
+      "pcode": "CO11001",
+      "longitud": -74.084058,
+      "latitud": 4.655319,
+      "direccion": "Calle 63 # 59A-06",
+      "necesita": [
+        "agua",
+        "alimentos no perecederos",
+        "cobijas",
+        "colchonetas",
+        "insumos de primeros auxilios"
+      ],
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/10/centros-de-acopio-habilitados-en-colombia-tras-el-terremoto-guia-por-ciudad-para-donar-y-ayudar-a-las-victimas/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-10T18:00:00-05:00",
+      "activo": true
     }
   ]
 }

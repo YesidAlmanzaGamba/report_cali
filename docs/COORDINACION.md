@@ -30,7 +30,7 @@ Actualiza tu propia fila. No borres la del otro.
 | **1** | **«← Ver toda la zona» choca con el conmutador de modo a 390 px** | Nuevo, visible al fusionar. Arreglaste `.ficha` contra `.modos`; falta `.volver` contra `.modos`. Con un municipio seleccionado en móvil, el botón queda cortado detrás del conmutador | ✅ hecho — y arreglado de raíz, no solo el síntoma (ver abajo) |
 | **2** | Carga inicial: **15,3 KB** fusionada | Tu medición de 14,7 era correcta sobre tu rama; al fusionar se suman los dos modos y la capa de deslizamientos. Si 12 KB sigue siendo meta dura hace falta decidir qué sacrificar — **no recortes las tareas 1 y 4 de la ronda 2 para lograrlo** | Sin tocar esta ronda — no vino en el pedido del responsable del proyecto |
 | **3** | Mapa de calor de secciones por incidentes | Sigue esperando datos. En cuanto haya incidentes curados, es la mejora que más informa | Sin tocar — sigue sin haber datos |
-| **4** | **Capa de puntos de ayuda con «Cómo llegar»** ← nuevo | **Ya hay 3 puntos reales curados**, no 0. Ver abajo | Pendiente |
+| **4** | **Capa de puntos de ayuda con «Cómo llegar»** | **La más pedida ahora mismo.** El responsable la pidió con estas palabras: «cuando toco Cali quiero ver un marcador con esta información». **Ya hay 7 puntos reales**, 2 de ellos en Cali. Ver abajo | Pendiente (tuya) — prioridad |
 | **5** | **«¿Buscas a un familiar?»: que vuelva al desplazar** | **Prioritaria, y decidida.** El responsable escogió la versión recuperable con la medición delante. **Toqué tu archivo — perdón, y te explico abajo por qué** | Pendiente (tuya) |
 
 ## Tarea 4 — puntos de ayuda (dato nuevo, ya en `data/`)
@@ -65,13 +65,36 @@ Cada punto trae, en `properties`:
   ahí está quien quiere donar. No los filtres por la zona afectada ni por los municipios
   con MMI: se perderían justo los que más gente puede usar.
 
-**Ya no está vacío: hay 3 puntos reales**, los tres centros de acopio de Manizales
-(coliseo de la Universidad de Caldas, Coliseo Menor Ramón Marín Vargas y la sede de la
-Cruz Roja de Caldas), con dirección, qué pide cada uno y `como_llegar` armado. Se pueden
-ver de verdad en el mapa, no hace falta inyectar nada.
+**Ya no está vacío: hay 7 puntos reales**, con dirección, qué pide cada uno y
+`como_llegar` armado. No hace falta inyectar nada para construir contra ellos.
 
-Dos de ellos están a 318 m uno del otro —los dos en el complejo de Palogrande—, así que
-**sirven para probar el solape de marcadores al alejar el zoom**, que es el caso feo.
+| Municipio | Puntos |
+|---|---|
+| `CO76001` **Cali** | Ciudadela del Petronio (Unidad Deportiva Alberto Galindo) · Plazoleta Jairo Varela |
+| `CO17001` Manizales | Coliseo de la U. de Caldas · Coliseo Menor Ramón Marín Vargas · Cruz Roja Caldas |
+| `CO11001` Bogotá | Estadio El Campín · Palacio de los Deportes |
+
+### Lo que pidió el responsable, textual
+
+> «esta información no está desplegada en el mapa como un punto; cuando toco Cali quiero
+> ver un marcador con esta información»
+
+O sea que el caso de uso no es solo «una capa de marcadores», es **tocar un municipio y
+ver los suyos**. Ya encuadras al casco urbano al tocar un municipio (tu trabajo de la
+fase pasada): los marcadores de ayuda de ese municipio deberían quedar visibles en ese
+encuadre, y su información alcanzable desde ahí.
+
+Filtrar por `properties.pcode` es directo. **Pero los de otros municipios no se ocultan**
+—ver la advertencia de abajo sobre Bogotá—: lo que se pide es que los del municipio
+tocado se vean, no que desaparezcan los demás.
+
+### Dos casos feos que ya puedes probar con datos reales
+
+- **Solape:** los dos coliseos de Manizales están a **318 m** uno del otro (los dos en el
+  complejo de Palogrande). Al alejar el zoom se pisan. Es el caso que hay que resolver.
+- **Puntos lejos del sismo:** los dos de Bogotá están a cientos de kilómetros del
+  epicentro, y son de los más útiles que hay, porque ahí está quien puede donar. Si los
+  filtras por zona afectada o por MMI, desaparecen justo los que más gente puede usar.
 
 **Sobre la ronda 2: buen trabajo, y el reporte fue mejor que el trabajo.** Encontraste la
 causa real de la tarea 3 —que no era la que yo sospechaba—, la reprodujiste a propósito
