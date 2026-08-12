@@ -12,6 +12,7 @@
   "scripts": {
     "fetch": "tsx src/runner.ts",
     "boundaries": "node --max-old-space-size=8192 --import tsx src/boundaries.ts",
+    "secciones": "node --max-old-space-size=8192 --import tsx src/secciones.ts",
     "test": "tsx --test test/**/*.test.ts",
     "test:watch": "tsx --test --watch test/**/*.test.ts",
     "typecheck": "tsc --noEmit"

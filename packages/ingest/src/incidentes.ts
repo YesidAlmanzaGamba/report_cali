@@ -41,6 +41,14 @@ const CuratedIncidenteSchema = z
     pcode: PcodeSchema,
     longitud: z.number().gte(-82).lte(-66),
     latitud: z.number().gte(-4.3).lte(13.5),
+    /**
+     * Barrio o sector, tal como lo nombra el reporte: «Medrano», «Egipto», «San Antonio».
+     *
+     * Va como texto libre porque el MGN del DANE **no publica nombres de barrio** —solo
+     * códigos—, y en Colombia no hay un catálogo oficial de barrios. El nombre que la
+     * gente y la prensa usan solo existe en el reporte, así que ahí es donde lo tomamos.
+     */
+    barrio: z.string().max(80).optional(),
     /** Qué pasó. Nunca nombres ni datos de las personas afectadas (ADR-001). */
     descripcion: z.string().max(280),
     source: SourceSchema,
@@ -149,6 +157,7 @@ export function aGeoJson(incidentes: IncidentePublicado[]): unknown {
       geometry: { type: 'Point', coordinates: [i.longitud, i.latitud] },
       properties: {
         tipo: i.tipo,
+        barrio: i.barrio ?? '',
         descripcion: i.descripcion,
         precision: i.precision,
         fuente: i.source.name,

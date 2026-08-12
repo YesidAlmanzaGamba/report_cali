@@ -387,6 +387,7 @@ export async function iniciarMapa(): Promise<void> {
     const pcode = String(props['pcode'] ?? '');
     pintarCifras(pcode);
     void mostrarIncidentes(pcode);
+    void mostrarSecciones(pcode);
     pintarCobertura(pcode);
 
     panel?.removeAttribute('hidden');
@@ -507,6 +508,58 @@ export async function iniciarMapa(): Promise<void> {
   const conIncidentes = new Set(indiceIncidentes.municipios);
   const incidentesCargados = new Map<string, unknown>();
 
+  // ── Trama urbana ────────────────────────────────────────────────────────
+  //
+  // Secciones urbanas del DANE: la geografía oficial por debajo del municipio. Se
+  // dibujan al acercarse, para que un incidente se lea «en esta parte de la ciudad» y
+  // no solo «en Cali». No traen nombre de barrio —el MGN solo publica códigos—; el
+  // nombre lo aporta el reporte, en el campo `barrio` del incidente.
+  const indiceSecciones = await getJson<{ municipios: { pcode: string }[] }>(
+    'secciones/index.json',
+  ).catch(() => ({ municipios: [] as { pcode: string }[] }));
+
+  const conSecciones = new Set(indiceSecciones.municipios.map((m) => m.pcode));
+  const seccionesCargadas = new Map<string, unknown>();
+
+  mapa.addSource('secciones', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: [] },
+  });
+
+  mapa.addLayer({
+    id: 'secciones',
+    type: 'line',
+    source: 'secciones',
+    paint: {
+      'line-color': '#00000055',
+      'line-width': 0.6,
+      // Aparecen al acercarse. A escala nacional serían una maraña ilegible que
+      // taparía justo la coropleta de intensidad.
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 8, 0, 10, 0.7],
+    },
+  });
+
+  async function mostrarSecciones(pcode: string): Promise<void> {
+    const fuente = mapa.getSource('secciones') as maplibregl.GeoJSONSource | undefined;
+    if (!fuente) return;
+
+    if (!conSecciones.has(pcode)) {
+      fuente.setData({ type: 'FeatureCollection', features: [] });
+      return;
+    }
+
+    if (!seccionesCargadas.has(pcode)) {
+      try {
+        const topo = await getJson(`secciones/${pcode}.topojson`);
+        seccionesCargadas.set(pcode, topoToGeo(topo, 'municipios'));
+      } catch {
+        return;
+      }
+    }
+
+    fuente.setData(seccionesCargadas.get(pcode) as never);
+  }
+
   mapa.addSource('incidentes', {
     type: 'geojson',
     data: { type: 'FeatureCollection', features: [] },
@@ -585,10 +638,12 @@ export async function iniciarMapa(): Promise<void> {
     volver.setAttribute('hidden', '');
     document.getElementById('detalle')?.setAttribute('hidden', '');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
-    (mapa.getSource('incidentes') as maplibregl.GeoJSONSource | undefined)?.setData({
-      type: 'FeatureCollection',
-      features: [],
-    });
+    for (const capa of ['incidentes', 'secciones']) {
+      (mapa.getSource(capa) as maplibregl.GeoJSONSource | undefined)?.setData({
+        type: 'FeatureCollection',
+        features: [],
+      });
+    }
 
     if (vistaGeneral) {
       mapa.fitBounds(vistaGeneral, {
