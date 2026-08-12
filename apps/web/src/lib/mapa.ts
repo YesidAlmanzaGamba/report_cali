@@ -23,6 +23,7 @@ import {
   UMBRAL_DANINO,
 } from './mmi';
 import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
+import { colapsarHoja } from './hoja';
 
 interface MunicipioProps {
   pcode: string;
@@ -40,6 +41,8 @@ interface MunicipioMmi {
   method: 'grid' | 'centroid';
   /** Ausente si no se pudo cruzar con la proyección del DANE. */
   poblacion?: number;
+  /** Menores de 5 más mayores de 65. Ausente en las mismas condiciones que `poblacion`. */
+  poblacion_vulnerable?: number;
 }
 
 /** Lo que el mapa necesita de una observación. El tipo completo vive en el paquete de ingesta. */
@@ -58,12 +61,30 @@ interface IncidenteProps {
 type ColeccionIncidentes = FeatureCollection<Point, IncidenteProps>;
 
 /** Solo estos dos tipos de incidente son "ayuda cercana"; el resto son daño y solo se
- *  dibujan como puntos en el mapa, sin listarse en la ficha. */
+ *  dibujan como puntos en el mapa, sin listarse como tarjetas en la ficha. */
 const TIPOS_AYUDA = new Set(['albergue', 'centro_acopio']);
 const ETIQUETAS_INCIDENTE: Record<string, string> = {
+  edificacion_colapsada: 'Edificación colapsada',
+  edificacion_danada: 'Edificación dañada',
+  via_bloqueada: 'Vía bloqueada',
   albergue: 'Albergue',
   centro_acopio: 'Centro de acopio',
+  centro_salud_afectado: 'Centro de salud afectado',
 };
+
+/**
+ * Un solo color por tipo de incidente, compartido entre la capa del mapa y la leyenda
+ * de la ficha: así no pueden desincronizarse si alguien cambia uno y olvida el otro.
+ */
+const COLOR_INCIDENTE: Record<string, string> = {
+  edificacion_colapsada: '#a52020',
+  edificacion_danada: '#d97706',
+  via_bloqueada: '#7c3aed',
+  albergue: '#1f8a4c',
+  centro_acopio: '#1b4d8f',
+  centro_salud_afectado: '#be185d',
+};
+const COLOR_INCIDENTE_SIN_TIPO = '#666';
 
 /**
  * Origen de los datos.
@@ -195,6 +216,7 @@ export async function iniciarMapa(): Promise<void> {
       // `null` y no 0: un cero se pintaría como «aquí no vive nadie», que es una
       // afirmación distinta a «no tenemos el dato».
       poblacion: datos?.poblacion ?? null,
+      poblacion_vulnerable: datos?.poblacion_vulnerable ?? null,
     });
   }
 
@@ -401,7 +423,16 @@ export async function iniciarMapa(): Promise<void> {
 
   const SIN_DATO = '#9aa0aa';
 
+  /**
+   * Qué modo está activo ahora mismo, para que la ficha sepa qué destacar arriba
+   * (tarea 4) sin tener que volver a preguntárselo al conmutador cada vez.
+   */
+  let modoActual: 'sacudimiento' | 'expuesta' = 'sacudimiento';
+
   function aplicarModo(modo: 'sacudimiento' | 'expuesta'): void {
+    modoActual = modo;
+    document.getElementById('detalle-metricas')?.setAttribute('data-modo', modo);
+
     if (modo === 'expuesta') {
       mapa.setPaintProperty('municipios-relleno', 'fill-color', [
         'case',
@@ -603,6 +634,34 @@ export async function iniciarMapa(): Promise<void> {
     }
   }
 
+  /**
+   * Población del municipio, para el bloque que acompaña al de MMI en la ficha (tarea 4).
+   * Se oculta entera si no hay dato — pasa en 1 de 1122 municipios— en vez de mostrar un
+   * cero, por la misma razón que el mapa no pinta un cero de población.
+   */
+  function pintarPoblacion(props: Record<string, unknown>): void {
+    const bloque = document.getElementById('detalle-poblacion');
+    if (!bloque) return;
+
+    const poblacion = typeof props['poblacion'] === 'number' ? props['poblacion'] : null;
+    if (poblacion === null) {
+      bloque.setAttribute('hidden', '');
+      return;
+    }
+
+    bloque.removeAttribute('hidden');
+    set('detalle-pob-total', `${poblacion.toLocaleString('es-CO')} habitantes`);
+
+    const vulnerable =
+      typeof props['poblacion_vulnerable'] === 'number' ? props['poblacion_vulnerable'] : null;
+    set(
+      'detalle-pob-vulnerable',
+      vulnerable === null
+        ? ''
+        : `${vulnerable.toLocaleString('es-CO')} en edades vulnerables (menores de 5 o mayores de 65)`,
+    );
+  }
+
   function mostrar(props: Record<string, unknown>): void {
     const mmi = typeof props['mmi'] === 'number' ? props['mmi'] : null;
 
@@ -632,6 +691,9 @@ export async function iniciarMapa(): Promise<void> {
         grado.style.color = nivel.ink;
       }
     }
+
+    pintarPoblacion(props);
+    document.getElementById('detalle-metricas')?.setAttribute('data-modo', modoActual);
 
     const pcode = String(props['pcode'] ?? '');
     pintarCifras(pcode);
@@ -819,8 +881,10 @@ export async function iniciarMapa(): Promise<void> {
       'line-color': '#00000055',
       'line-width': 0.6,
       // Aparecen al acercarse. A escala nacional serían una maraña ilegible que
-      // taparía justo la coropleta de intensidad.
-      'line-opacity': ['interpolate', ['linear'], ['zoom'], 8, 0, 10, 0.7],
+      // taparía justo la coropleta de intensidad. Mientras no cartografían nada más que
+      // la trama administrativa (sin incidentes que resaltar por sección todavía), se
+      // mantienen discretas incluso de cerca — más zoom para aparecer, tope más bajo.
+      'line-opacity': ['interpolate', ['linear'], ['zoom'], 10, 0, 13, 0.4],
     },
   });
 
@@ -864,14 +928,9 @@ export async function iniciarMapa(): Promise<void> {
       'circle-color': [
         'match',
         ['get', 'tipo'],
-        'edificacion_colapsada', '#a52020',
-        'edificacion_danada', '#d97706',
-        'via_bloqueada', '#7c3aed',
-        'albergue', '#1f8a4c',
-        'centro_acopio', '#1b4d8f',
-        'centro_salud_afectado', '#be185d',
-        '#666',
-      ],
+        ...Object.entries(COLOR_INCIDENTE).flat(),
+        COLOR_INCIDENTE_SIN_TIPO,
+      ] as unknown as ExpressionSpecification,
       'circle-stroke-color': '#fff',
       'circle-stroke-width': 2,
       // Lo recortado a la rejilla se dibuja más difuso: el punto no es la ubicación
@@ -880,12 +939,51 @@ export async function iniciarMapa(): Promise<void> {
     },
   });
 
+  /**
+   * Leyenda de los puntos de incidentes (tarea 1): solo los tipos presentes en la
+   * colección del municipio abierto, más la nota de sólido/difuso. Vive en la ficha,
+   * no como caja flotante nueva, porque los incidentes solo se pintan mientras una
+   * ficha está abierta — no compite por espacio con `.modos` ni con las leyendas de MMI
+   * o población.
+   */
+  function pintarLeyendaIncidentes(features: Feature<Point, IncidenteProps>[]): void {
+    const contenedor = document.getElementById('detalle-leyenda-incidentes');
+    const lista = document.getElementById('leyenda-incidentes-lista');
+    if (!contenedor || !lista) return;
+
+    lista.replaceChildren();
+
+    const tipos = [...new Set(features.map((f) => f.properties.tipo))];
+    if (tipos.length === 0) {
+      contenedor.setAttribute('hidden', '');
+      return;
+    }
+
+    for (const tipo of tipos) {
+      const li = document.createElement('li');
+
+      const muestra = document.createElement('span');
+      muestra.className = 'muestra';
+      muestra.style.background = COLOR_INCIDENTE[tipo] ?? COLOR_INCIDENTE_SIN_TIPO;
+
+      const desc = document.createElement('span');
+      desc.className = 'desc';
+      desc.textContent = ETIQUETAS_INCIDENTE[tipo] ?? tipo;
+
+      li.append(muestra, desc);
+      lista.append(li);
+    }
+
+    contenedor.removeAttribute('hidden');
+  }
+
   async function mostrarIncidentes(pcode: string): Promise<void> {
     const fuente = mapa.getSource('incidentes') as maplibregl.GeoJSONSource | undefined;
 
     if (!conIncidentes.has(pcode)) {
       fuente?.setData({ type: 'FeatureCollection', features: [] });
       pintarAyuda([]);
+      pintarLeyendaIncidentes([]);
       return;
     }
 
@@ -894,6 +992,7 @@ export async function iniciarMapa(): Promise<void> {
         incidentesCargados.set(pcode, await getJson<ColeccionIncidentes>(`incidentes/${pcode}.geojson`));
       } catch {
         pintarAyuda([]);
+        pintarLeyendaIncidentes([]);
         return;
       }
     }
@@ -901,6 +1000,7 @@ export async function iniciarMapa(): Promise<void> {
     const coleccion = incidentesCargados.get(pcode) as ColeccionIncidentes;
     fuente?.setData(coleccion as never);
     pintarAyuda(coleccion.features);
+    pintarLeyendaIncidentes(coleccion.features);
   }
 
   /**
@@ -963,11 +1063,7 @@ export async function iniciarMapa(): Promise<void> {
       volver?.removeAttribute('hidden');
 
       // En móvil la hoja tapa el mapa; se recoge para que se vea a dónde voló.
-      const hoja = document.getElementById('hoja');
-      if (hoja && hoja.dataset['estado'] !== 'asomada') {
-        hoja.dataset['estado'] = 'asomada';
-        document.querySelector('.asa')?.setAttribute('aria-expanded', 'false');
-      }
+      colapsarHoja();
     });
   }
 }

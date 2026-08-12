@@ -11,6 +11,28 @@ type Estado = (typeof ESTADOS)[number];
 /** Píxeles de arrastre a partir de los cuales se considera gesto y no toque. */
 const UMBRAL_GESTO = 8;
 
+/**
+ * Recoge la hoja a «asomada» desde fuera de este módulo.
+ *
+ * `mapa.ts` necesita recogerla cuando el mapa vuela a un municipio tocado desde la
+ * tabla, para que la hoja no se quede tapándolo. Antes lo hacía escribiendo directo en
+ * `hoja.dataset.estado`, sin limpiar un `style.transform` que pudiera haber quedado de
+ * un arrastre — y el inline gana siempre sobre la regla CSS de `[data-estado]`, así que
+ * la hoja se quedaba donde estaba. Esta función replica exactamente lo que hace
+ * `fijar('asomada')` puertas adentro, como función de módulo independiente: no se
+ * acopla al closure de `iniciarHoja()`, que puede no existir todavía cuando el mapa
+ * (cargado aparte, más tarde) la necesita.
+ */
+export function colapsarHoja(): void {
+  const hoja = document.getElementById('hoja');
+  const asa = hoja?.querySelector<HTMLButtonElement>('.asa');
+  if (!hoja || !asa) return;
+
+  hoja.dataset['estado'] = 'asomada';
+  hoja.style.transform = '';
+  asa.setAttribute('aria-expanded', 'false');
+}
+
 export function iniciarHoja(): void {
   const hoja = document.getElementById('hoja');
   const asa = hoja?.querySelector<HTMLButtonElement>('.asa');
@@ -146,9 +168,18 @@ export function iniciarHoja(): void {
    * Enlaces que abren la hoja en un módulo concreto — el botón «¿Buscas a un familiar?»
    * del encabezado es el caso principal. Sin JavaScript son anclas normales que bajan
    * a la sección, así que el enlace sirve igual.
+   *
+   * Los propios paneles (`role="tabpanel"`) también llevan `data-modulo`, y sin excluirlos
+   * aquí quedaban enganchados a este mismo bucle: un clic dentro del panel «Municipios»
+   * —por ejemplo, una fila de la tabla— burbujea hasta el panel, dispara este handler y
+   * fuerza `fijar('completa')`, deshaciendo cualquier `colapsarHoja()` que acabara de
+   * correr. Era la causa real de que la hoja no se recogiera al tocar una fila (ronda 2,
+   * tarea 3) — no un problema de límites entre módulos, sino este bucle atrapando clics
+   * que no eran suyos.
    */
   for (const enlace of document.querySelectorAll<HTMLElement>('[data-modulo]')) {
-    if (enlace.getAttribute('role') === 'tab') continue;
+    const rol = enlace.getAttribute('role');
+    if (rol === 'tab' || rol === 'tabpanel') continue;
 
     enlace.addEventListener('click', (e) => {
       const id = enlace.dataset['modulo'];

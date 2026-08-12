@@ -6,6 +6,11 @@
  * mandato y el equipo para atenderlos. Se llega aquí de dos formas —el botón rojo
  * permanente del encabezado y la pestaña de la hoja— porque es lo que menos puede
  * costar encontrar.
+ *
+ * Compacto a propósito (ronda 2, tarea 2): la versión anterior no cabía en media
+ * pantalla de 390×844 sin desplazarse. Etiqueta y título van en una sola línea, las
+ * tarjetas con borde completo se cambiaron por separadores finos, y la nota de cierre
+ * se acortó — sin quitar ningún canal ni el aviso de que esto no es un registro.
  */
 ---
 
@@ -19,95 +24,105 @@
 
   <ul class="canales">
     <li>
-      <span class="etiqueta">Emergencia</span>
-      <a class="principal" href="tel:123">Línea 123</a>
+      <a class="principal" href="tel:123">
+        <span class="etiqueta">Emergencia</span> Línea 123
+      </a>
       <span class="ayuda">Atención inmediata en todo el país</span>
     </li>
     <li>
-      <span class="etiqueta">Cruz Roja Colombiana</span>
-      <a class="principal" href="https://wa.me/573212139525">WhatsApp +57 321 213 9525</a>
+      <a class="principal" href="https://wa.me/573212139525">
+        <span class="etiqueta">Cruz Roja</span> WhatsApp +57 321 213 9525
+      </a>
       <span class="ayuda">
-        Restablecimiento del Contacto Familiar ·
-        <a href="mailto:rcf@cruzrojacolombiana.org">rcf@cruzrojacolombiana.org</a>
+        RCF · <a href="mailto:rcf@cruzrojacolombiana.org">rcf@cruzrojacolombiana.org</a>
       </span>
     </li>
     <li>
-      <span class="etiqueta">Plataforma ciudadana</span>
-      <a class="principal" href="https://colombiatebusca.com">colombiatebusca.com</a>
+      <a class="principal" href="https://colombiatebusca.com">
+        <span class="etiqueta">Plataforma</span> colombiatebusca.com
+      </a>
       <span class="ayuda">Publicar y consultar reportes</span>
     </li>
   </ul>
 
   <p class="fragmenta">
-    Reportar en varios sitios a la vez <strong>fragmenta la búsqueda</strong>. Usa un canal
-    oficial y mantén ese caso actualizado.
+    Usa un solo canal oficial: reportar en varios <strong>fragmenta la búsqueda</strong>.
   </p>
 </section>
 
 <style>
   h2 {
-    margin: 0 0 0.4rem;
-    font-size: 1.25rem;
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
     color: var(--urgente);
   }
 
   .aviso {
-    margin: 0 0 1rem;
+    margin: 0 0 0.7rem;
     max-width: 58ch;
+    font-size: 0.92rem;
   }
 
   .canales {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    gap: 0.6rem;
   }
 
   .canales li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    background: var(--fondo);
-    border: 1px solid var(--urgente);
-    border-radius: var(--radio);
-    padding: 0.7rem 0.85rem;
+    padding: 0.4rem 0;
   }
 
-  .etiqueta {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--tinta-3);
+  .canales li + li {
+    border-top: 1px solid var(--borde);
   }
 
   /* Objetivo táctil generoso: alguien lo va a tocar con la mano temblando. */
   .principal {
-    display: inline-flex;
-    align-items: center;
-    min-height: 40px;
-    font-size: 1.02rem;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 0.4rem;
+    min-height: 44px;
+    font-size: 0.98rem;
     font-weight: 700;
     color: var(--tinta);
     text-decoration-color: var(--urgente);
     text-underline-offset: 3px;
   }
 
+  .etiqueta {
+    flex-shrink: 0;
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--urgente);
+  }
+
   .ayuda {
-    font-size: 0.81rem;
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 0.78rem;
     color: var(--tinta-2);
   }
 
   .fragmenta {
-    margin: 1rem 0 0;
-    font-size: 0.86rem;
+    margin: 0.6rem 0 0;
+    font-size: 0.82rem;
     color: var(--tinta-2);
     max-width: 60ch;
   }
 
   @media (min-width: 40rem) {
     .canales {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      column-gap: 1.2rem;
+    }
+
+    .canales li + li {
+      border-top: none;
     }
   }
 </style>

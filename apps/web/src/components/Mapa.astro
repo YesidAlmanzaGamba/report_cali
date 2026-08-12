@@ -98,13 +98,35 @@ const { leyenda } = Astro.props;
     <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
     <h3 id="detalle-nombre"></h3>
     <p id="detalle-depto" class="depto"></p>
-    <p class="mmi">
-      <span id="detalle-grado" class="grado-grande"></span>
-      <span id="detalle-valor" class="valor"></span>
-    </p>
-    <p id="detalle-label" class="label"></p>
+
+    <!-- Los dos bloques siempre están los dos; `data-modo` (puesto por mapa.ts) decide
+         cuál va arriba con `order`, para no perder información al cambiar de modo. -->
+    <div class="metricas" id="detalle-metricas" data-modo="sacudimiento">
+      <div class="bloque-mmi">
+        <p class="mmi">
+          <span id="detalle-grado" class="grado-grande"></span>
+          <span id="detalle-valor" class="valor"></span>
+        </p>
+        <p id="detalle-label" class="label"></p>
+        <p id="detalle-metodo" class="metodo"></p>
+      </div>
+
+      <div class="bloque-poblacion" id="detalle-poblacion" hidden>
+        <p id="detalle-pob-total" class="pob-total"></p>
+        <p id="detalle-pob-vulnerable" class="pob-vulnerable"></p>
+      </div>
+    </div>
+
     <p id="detalle-cobertura" class="cobertura"></p>
-    <p id="detalle-metodo" class="metodo"></p>
+
+    <!-- Leyenda de los puntos de incidentes: solo aparece con tipos presentes (tarea 1). -->
+    <div class="leyenda-incidentes" id="detalle-leyenda-incidentes" hidden>
+      <h4 class="slide-titulo">Puntos en el mapa</h4>
+      <ul id="leyenda-incidentes-lista"></ul>
+      <p class="nota-difuso">
+        Sólido: ubicación verificada. Difuso: sin verificar, agrupado a ~100 m.
+      </p>
+    </div>
 
     <!-- Este carrusel solo aparece cuando el mapa ya cargó (requiere JavaScript por
          definición: la ficha entera sigue oculta con `hidden` sin él), así que no hace
@@ -432,12 +454,14 @@ const { leyenda } = Astro.props;
   }
 
   /* ── Ficha del municipio ─────────────────────────────────────────────── */
+  /* `top` libra el conmutador de modo, que ancla en el mismo `right:0.6rem` y sin esto
+     la ficha lo tapa por completo en cuanto se abre un municipio (tarea 6). */
   .ficha {
     position: absolute;
     right: 0.6rem;
-    top: 0.6rem;
+    top: 3.9rem;
     width: min(19rem, calc(100% - 1.2rem));
-    max-height: calc(100% - 1.2rem);
+    max-height: calc(100% - 4.5rem);
     overflow-y: auto;
     background: color-mix(in srgb, var(--fondo) 96%, transparent);
     backdrop-filter: blur(6px);
@@ -456,6 +480,31 @@ const { leyenda } = Astro.props;
     margin: 0 0 0.7rem;
     color: var(--tinta-3);
     font-size: 0.83rem;
+  }
+
+  /* Los dos bloques de cifras (MMI y población) de la ficha; `order` decide cuál se ve
+     primero según el modo activo del mapa (tarea 4). */
+  .metricas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .bloque-mmi,
+  .bloque-poblacion {
+    order: 1;
+  }
+
+  .metricas[data-modo='expuesta'] .bloque-poblacion {
+    order: 0;
+  }
+
+  /* El bloque que no corresponde al modo activo se queda, pero discreto: sigue siendo
+     información real, no ruido, así que no desaparece — solo cede el primer plano. */
+  .metricas[data-modo='expuesta'] .bloque-mmi,
+  .metricas:not([data-modo='expuesta']) .bloque-poblacion {
+    font-size: 0.85em;
+    opacity: 0.72;
   }
 
   .mmi {
@@ -486,6 +535,64 @@ const { leyenda } = Astro.props;
   .metodo {
     margin: 0.5rem 0 0;
     font-size: 0.73rem;
+    color: var(--tinta-3);
+  }
+
+  .pob-total {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pob-vulnerable {
+    margin: 0.3rem 0 0;
+    font-size: 0.82rem;
+    color: var(--tinta-2);
+  }
+
+  .pob-vulnerable:empty {
+    display: none;
+  }
+
+  /* ── Leyenda de incidentes (tarea 1) ─────────────────────────────────── */
+  .leyenda-incidentes {
+    margin: 0.8rem 0 0;
+  }
+
+  .leyenda-incidentes ul {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.28rem;
+  }
+
+  /* Filas creadas por mapa.ts con createElement: sin el atributo de alcance de Astro,
+     así que los estilos tienen que ser :global para alcanzarlas (mismo motivo que
+     .leyenda-pob más arriba). */
+  .leyenda-incidentes :global(li) {
+    display: grid;
+    grid-template-columns: 0.9rem 1fr;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+  }
+
+  .leyenda-incidentes :global(.muestra) {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
+  }
+
+  .leyenda-incidentes :global(.desc) {
+    color: var(--tinta-2);
+  }
+
+  .nota-difuso {
+    margin: 0.45rem 0 0;
+    font-size: 0.7rem;
     color: var(--tinta-3);
   }
 
@@ -587,9 +694,9 @@ const { leyenda } = Astro.props;
     border-radius: var(--radio);
   }
 
-  :global(.cifra-grande.fresh) { border-left-color: #1f8a4c; }
-  :global(.cifra-grande.aging) { border-left-color: #b8860b; }
-  :global(.cifra-grande.stale) { border-left-color: #a52020; }
+  :global(.cifra-grande.fresh) { border-left-color: var(--fresco); }
+  :global(.cifra-grande.aging) { border-left-color: var(--envejece); }
+  :global(.cifra-grande.stale) { border-left-color: var(--obsoleto); }
 
   :global(.cifra-grande .n) {
     font-size: clamp(1.5rem, 8vw, 1.9rem);

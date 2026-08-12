@@ -98,9 +98,9 @@ const formatearNumero = (n: number) => n.toLocaleString('es-CO');
 
   /* La antigüedad se codifica también en el borde, no solo en el texto: quien recorre
      la lista con la vista ve de una cuáles cifras ya no son de fiar. */
-  .cifra--fresh { border-left-color: #1f8a4c; }
-  .cifra--aging { border-left-color: #b8860b; }
-  .cifra--stale { border-left-color: #a52020; }
+  .cifra--fresh { border-left-color: var(--fresco); }
+  .cifra--aging { border-left-color: var(--envejece); }
+  .cifra--stale { border-left-color: var(--obsoleto); }
 
   .valor {
     font-size: clamp(1.6rem, 4vw, 2.1rem);
