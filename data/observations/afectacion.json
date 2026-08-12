@@ -1,57 +1,381 @@
 {
   "meta": {
     "dataset": "observations/afectacion",
-    "generated_at": "2026-08-11T23:03:31.921Z",
+    "generated_at": "2026-08-12T02:52:28.200Z",
     "event_id": "us6000tjl2",
-    "record_count": 3,
+    "record_count": 29,
     "sources": [
       {
-        "name": "Infobae",
+        "name": "Infobae — Gobernación del Valle",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      {
+        "name": "Infobae — cifra de Asocapitales",
         "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
         "type": "press"
       }
     ]
   },
-  "content_hash": "9d7629379e8062cf8e05318a3749dea857c21781e4a99075e4ccc979176c9077",
+  "content_hash": "67b908542675736d27deb9f37704ecfb83b2af1860478768ad4b086b855e7121",
   "observations": [
+    {
+      "metric": "deaths_confirmed",
+      "value": 181,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Balance nacional del 11 de agosto. Convive con cifras más altas del día anterior: los conteos tempranos se corrigen."
+    },
     {
       "metric": "deaths_confirmed",
       "value": 234,
       "pcode": "CO",
       "source": {
-        "name": "Infobae (cifra de Asocapitales)",
+        "name": "Infobae — cifra de Asocapitales",
         "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
         "type": "press"
       },
       "observed_at": "2026-08-10T22:00:00-05:00",
-      "ingested_at": "2026-08-11T23:03:23.234Z",
-      "notes": "Balance nacional preliminar. Las cifras variaron entre 169, 224 y 234 según fuente y hora."
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Balance del 10 de agosto. Se conserva a propósito: muestra cómo variaron las cifras."
+    },
+    {
+      "metric": "injured",
+      "value": 2595,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "missing_reported",
+      "value": 195,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Si buscas a alguien, usa Cruz Roja RCF o la línea 123. Este sitio no recibe reportes."
     },
     {
       "metric": "buildings_collapsed",
-      "value": 16,
+      "value": 1136,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Viviendas destruidas. Aparte, 48 edificios colapsados."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 8357,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "schools_affected",
+      "value": 807,
+      "pcode": "CO",
+      "source": {
+        "name": "Infobae — balance presidencial",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 95,
       "pcode": "CO76001",
       "source": {
         "name": "Infobae",
-        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
         "type": "press"
       },
-      "observed_at": "2026-08-10T22:00:00-05:00",
-      "ingested_at": "2026-08-11T23:03:23.234Z",
-      "notes": "Estructuras colapsadas reportadas en Cali."
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "injured",
+      "value": 949,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "people_trapped",
+      "value": 239,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "people_rescued",
+      "value": 87,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "missing_reported",
+      "value": 180,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 56,
+      "pcode": "CO76001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
     },
     {
       "metric": "health_facilities_affected",
-      "value": 7,
+      "value": 10,
       "pcode": "CO76001",
       "source": {
         "name": "Infobae",
-        "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
         "type": "press"
       },
-      "observed_at": "2026-08-10T22:00:00-05:00",
-      "ingested_at": "2026-08-11T23:03:23.234Z",
-      "notes": "Clínicas afectadas en Cali."
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Hospitales inhabilitados."
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 66,
+      "pcode": "CO66001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Cifra preliminar; la más alta del país por municipio."
+    },
+    {
+      "metric": "missing_reported",
+      "value": 37,
+      "pcode": "CO66001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "people_trapped",
+      "value": 15,
+      "pcode": "CO66001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 66,
+      "pcode": "CO66001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Edificios destruidos completamente."
+    },
+    {
+      "metric": "buildings_partially_collapsed",
+      "value": 26,
+      "pcode": "CO66001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 5,
+      "pcode": "CO17001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "injured",
+      "value": 78,
+      "pcode": "CO17001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 17,
+      "pcode": "CO17001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "buildings_partially_collapsed",
+      "value": 19,
+      "pcode": "CO17001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "people_affected",
+      "value": 4000,
+      "pcode": "CO17001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Damnificados."
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 9,
+      "pcode": "CO27001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "injured",
+      "value": 103,
+      "pcode": "CO27001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "people_trapped",
+      "value": 6,
+      "pcode": "CO27001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "En una edificación del barrio Medrano."
+    },
+    {
+      "metric": "missing_reported",
+      "value": 5,
+      "pcode": "CO27001",
+      "source": {
+        "name": "Infobae",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z"
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 27,
+      "pcode": "CO76",
+      "source": {
+        "name": "Infobae — Gobernación del Valle",
+        "url": "https://www.infobae.com/colombia/2026/08/11/balance-de-las-zonas-mas-afectadas-por-el-terremoto-en-colombia-esta-es-la-situacion-de-las-ciudades-en-alerta-roja/",
+        "type": "press"
+      },
+      "observed_at": "2026-08-11T12:00:00-05:00",
+      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "notes": "Valle del Cauca sin contar Cali. Incluye tres niños en Calima El Darién."
     }
   ]
 }

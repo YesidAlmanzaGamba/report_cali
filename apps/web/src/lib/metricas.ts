@@ -10,12 +10,16 @@ import type { Metric, Observation, SourceType } from '@report-cali/ingest/schema
 export const ETIQUETAS: Record<Metric, string> = {
   deaths_confirmed: 'Fallecidos',
   missing_reported: 'Desaparecidos reportados',
+  people_trapped: 'Personas atrapadas',
   injured: 'Heridos',
+  people_rescued: 'Personas rescatadas',
   people_affected: 'Personas afectadas',
   people_displaced: 'Personas desplazadas',
   buildings_collapsed: 'Edificaciones colapsadas',
+  buildings_partially_collapsed: 'Colapso parcial',
   buildings_damaged: 'Viviendas averiadas',
   health_facilities_affected: 'Centros de salud afectados',
+  schools_affected: 'Centros educativos afectados',
   roads_blocked: 'Vías afectadas',
   shelters_open: 'Albergues abiertos',
   shelter_capacity: 'Capacidad de albergues',
@@ -23,15 +27,21 @@ export const ETIQUETAS: Record<Metric, string> = {
   water_service_affected: 'Afectación de acueducto',
 };
 
+// De lo más urgente a lo más logístico. «Atrapadas» va arriba porque mientras haya
+// búsqueda activa es la cifra que decide a dónde va el siguiente equipo.
 export const ORDEN_METRICAS: Metric[] = [
   'deaths_confirmed',
+  'people_trapped',
   'missing_reported',
   'injured',
+  'people_rescued',
   'people_affected',
   'people_displaced',
   'buildings_collapsed',
+  'buildings_partially_collapsed',
   'buildings_damaged',
   'health_facilities_affected',
+  'schools_affected',
   'roads_blocked',
   'shelters_open',
   'shelter_capacity',

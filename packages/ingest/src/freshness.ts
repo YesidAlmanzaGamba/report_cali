@@ -37,10 +37,16 @@ const THRESHOLDS: Record<Metric, Thresholds> = {
   roads_blocked: FAST,
   power_outage_users: FAST,
   water_service_affected: FAST,
+  // Mientras hay búsqueda activa, estas dos cambian por hora. Una cifra de atrapados
+  // de ayer no solo está vieja: puede mandar un equipo a un sitio ya despejado.
+  people_trapped: FAST,
+  people_rescued: FAST,
 
   buildings_collapsed: SLOW,
+  buildings_partially_collapsed: SLOW,
   buildings_damaged: SLOW,
   health_facilities_affected: SLOW,
+  schools_affected: SLOW,
 };
 
 const HOUR_MS = 3_600_000;
