@@ -17,6 +17,7 @@ Actualiza tu propia fila. No borres la del otro.
 | Rama | Agente | Qué trae | Estado |
 |---|---|---|---|
 | `datos/extraccion-y-centro-urbano` | `agente-datos` | Encuadre al casco urbano, modos de color, extracción de ubicaciones | `en curso` |
+| `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `lista para revisión` |
 
 **Estados:** `en curso` · `lista para revisión` · `en revisión` · `fusionada` · `descartada`
 
@@ -31,17 +32,18 @@ arreglarlo por su cuenta: quien escribió el código sabe mejor qué quería hac
 **En orden.** Las tres primeras son fallos reales que ya están en producción; las demás
 son mejoras. Todo vive en `apps/web/**`, que es tu columna.
 
-| # | Tarea | Por qué importa |
-|---|---|---|
-| **1** | Los puntos de incidentes tienen 6 colores y **ninguna leyenda** | Color sin explicación. Rompe nuestra propia regla |
-| **2** | «¿Buscas a un familiar?» ocupa la pantalla entera | Tapa el mapa para mostrar 3 enlaces |
-| **3** | La hoja no se recoge al tocar una fila de la tabla | El mapa vuela a un municipio que queda tapado |
-| **4** | La ficha muestra MMI aunque estés en modo «Gente expuesta» | El dato que miras no es el que pediste |
-| **5** | Carga inicial en 14,6 KB; el objetivo eran 12 KB | Es el compromiso central del proyecto |
-| **6** | El aviso de cambio de modo no está verificado a ojo | Lo escribí pero nunca lo vi funcionando |
-| **7** | Las secciones urbanas son líneas grises sin significado | Ocupan tinta sin informar |
+| # | Tarea | Por qué importa | Estado (`ui/ronda-2-correcciones`) |
+|---|---|---|---|
+| **1** | Los puntos de incidentes tienen 6 colores y **ninguna leyenda** | Color sin explicación. Rompe nuestra propia regla | ✅ hecho, probado con datos inyectados |
+| **2** | «¿Buscas a un familiar?» ocupa la pantalla entera | Tapa el mapa para mostrar 3 enlaces | ✅ hecho, 354 px medidos (< 422 px) |
+| **3** | La hoja no se recoge al tocar una fila de la tabla | El mapa vuela a un municipio que queda tapado | ✅ hecho — causa real distinta a la sospechada, ver nota abajo |
+| **4** | La ficha muestra MMI aunque estés en modo «Gente expuesta» | El dato que miras no es el que pediste | ✅ hecho, probado en vivo cambiando de modo con la ficha abierta |
+| **5** | Carga inicial en 14,6 KB; el objetivo eran 12 KB | Es el compromiso central del proyecto | ⚠️ 14,7 KB — ver nota abajo, no llega a 12 KB |
+| **6** | El aviso de cambio de modo no está verificado a ojo | Lo escribí pero nunca lo vi funcionando | ✅ funciona; además tapaba el conmutador, corregido |
+| **7** | Las secciones urbanas son líneas grises sin significado | Ocupan tinta sin informar | ⏳ solo opacidad más discreta; el mapa de calor queda pendiente (sin datos) |
 
-Detalle de cada una abajo.
+Detalle de cada una abajo. Notas de lo encontrado al implementar, al final del documento
+en **«Respuesta de `agente-ui`, ronda 2»**.
 
 ---
 
@@ -262,3 +264,51 @@ para que `agente-ui` no construya sobre algo que va a moverse.
   de framework rompería el presupuesto de carga; el segundo porque agregar un segundo
   runtime a CI y a la instalación de cada colaborador no se justifica para reglas que
   TypeScript resuelve igual, con el gazetteer que ya vive de este lado.
+
+---
+
+## Respuesta de `agente-ui`, ronda 2
+
+Rama `ui/ronda-2-correcciones`, fusionada desde `main` en `0b2f4e8` (fast-forward puro).
+Puerta completa en verde: `typecheck`, `test` (158 pruebas), `build`,
+`check-no-personal-data.sh`. Probado en navegador real, no solo leído.
+
+**Tarea 3 — la causa no era la que sospechabas.** No era un problema de límites entre
+`mapa.ts` y `hoja.ts` tocando el `dataset` desde fuera (aunque igual lo encapsulé,
+`hoja.ts` ahora exporta `colapsarHoja()`). La causa real: el bucle de `hoja.ts` que
+engancha enlaces `[data-modulo]` para abrir la hoja en un módulo (pensado para el botón
+del encabezado) excluye `role="tab"` pero **no excluía `role="tabpanel"`** — y los propios
+paneles llevan `data-modulo`. Un clic en una fila de la tabla burbujea hasta el panel
+`.modulo[data-modulo="municipios"]`, dispara ese mismo handler, y llama `fijar('completa')`
+justo después de que `colapsarHoja()` acababa de recoger la hoja — deshaciéndolo en el
+mismo tick. Lo reproduje a propósito (forzando `estado='completa'` con un `transform`
+inline residual antes del clic): sin la exclusión de `tabpanel`, el estado volvía a
+`completa` cada vez. Verificado ya arreglado: `estado` queda `asomada`, `transform`
+vacío, `aria-expanded` en `false`.
+
+**Tarea 5 — no llegó a 12 KB, y lo digo tal cual.** Quedó en **14,7 KB** gzip (antes:
+14,6 KB). Encontré y arreglé una duplicación real —`Cifras.astro` y `Mapa.astro`
+hardcodeaban los mismos tres hex de frescura en vez de usar `--fresco/--envejece/
+--obsoleto` de `tokens.css` (además no se adaptaban a modo oscuro, bug de paso)— pero el
+ahorro quedó compensado por el marcado nuevo que las tareas 1 y 4 piden explícitamente
+(leyenda de incidentes, bloque de población). No recorté ninguna de las dos para bajar el
+número: son las tareas 1 y 4 de esta misma lista. Si 12 KB sigue siendo la meta dura, hace
+falta una decisión de qué sacrificar, no un recorte de CSS.
+
+**Tarea 6 — confirmado un bug adicional, no solo el aviso.** El aviso sí funciona (se ve,
+se lee, se desvanece). Pero mientras probaba encontré que `.modos` y `.ficha` estaban
+**ambos anclados en `top:0.6rem; right:0.6rem`**: con una ficha abierta en pantalla ≥40rem,
+tapaba por completo el conmutador de modo (y de paso el aviso, que sale justo debajo).
+Corregido bajando el `top` de `.ficha` a `3.9rem` para que libre el conmutador.
+Screenshots del antes/después no quedaron guardados, pero el comportamiento se verificó en
+vivo con el mapa cargado y una ficha abierta en los dos modos.
+
+**Tarea 7 — parcial, a propósito.** Solo bajé la curva de opacidad de las secciones
+urbanas (aparecen más tarde, más discretas). El mapa de calor por conteo de incidentes
+sigue sin construirse: no hay ningún incidente curado en producción todavía, así que no
+hay nada que sombrear. Lo dejo anotado, no lo doy por hecho.
+
+**Sin cambios fuera de `apps/web/**`.** No toqué `curated/`, `packages/ingest/` ni
+`data/`. La leyenda de incidentes se probó interceptando `window.fetch` desde la consola
+del navegador con una colección de prueba en memoria — nunca se escribió en
+`curated/incidentes.json`.
