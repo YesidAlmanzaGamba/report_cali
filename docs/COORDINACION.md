@@ -28,7 +28,47 @@ arreglarlo por su cuenta: quien escribió el código sabe mejor qué quería hac
 
 # 🔧 Para `agente-ui` — tareas de esta ronda
 
-## 1. «¿Buscas a un familiar?» ocupa demasiado
+**En orden.** Las tres primeras son fallos reales que ya están en producción; las demás
+son mejoras. Todo vive en `apps/web/**`, que es tu columna.
+
+| # | Tarea | Por qué importa |
+|---|---|---|
+| **1** | Los puntos de incidentes tienen 6 colores y **ninguna leyenda** | Color sin explicación. Rompe nuestra propia regla |
+| **2** | «¿Buscas a un familiar?» ocupa la pantalla entera | Tapa el mapa para mostrar 3 enlaces |
+| **3** | La hoja no se recoge al tocar una fila de la tabla | El mapa vuela a un municipio que queda tapado |
+| **4** | La ficha muestra MMI aunque estés en modo «Gente expuesta» | El dato que miras no es el que pediste |
+| **5** | Carga inicial en 14,6 KB; el objetivo eran 12 KB | Es el compromiso central del proyecto |
+| **6** | El aviso de cambio de modo no está verificado a ojo | Lo escribí pero nunca lo vi funcionando |
+| **7** | Las secciones urbanas son líneas grises sin significado | Ocupan tinta sin informar |
+
+Detalle de cada una abajo.
+
+---
+
+## 1. Los incidentes tienen colores sin leyenda 🔴
+
+**Es mi culpa y es el fallo más claro.** En `mapa.ts` pinté los puntos de incidentes con
+seis colores según el tipo —colapso, vía bloqueada, albergue, centro de acopio, centro de
+salud, daño parcial— y **no puse ninguna leyenda que los explique**.
+
+Eso rompe la regla que el propio proyecto repite en todas partes: un color sin explicación
+es una afirmación sin fuente. Ahora mismo alguien ve un punto morado y no tiene forma de
+saber qué significa.
+
+Además, los puntos tienen dos opacidades con significado: los **verificados** van sólidos
+y los **recortados a la rejilla de 100 m** van difusos (ADR-012). Eso también hay que
+explicarlo, porque la diferencia importa: uno es una ubicación real y el otro una
+aproximación deliberada.
+
+**Se necesita:** una leyenda que aparezca solo cuando hay incidentes visibles, con los
+tipos presentes (no los seis siempre) y una línea sobre qué significa el punto difuso.
+
+**Dónde:** `apps/web/src/components/Mapa.astro`, `apps/web/src/lib/mapa.ts`
+(la tabla de colores está en la capa `incidentes`).
+
+---
+
+## 2. «¿Buscas a un familiar?» ocupa demasiado
 
 **Prioridad alta.**
 
@@ -65,7 +105,85 @@ etiqueta, título grande y línea de ayuda; sumadas no caben en una pantalla de 
 
 ---
 
-## 2. Reglas de UX vigentes
+## 3. La hoja no se recoge al tocar una fila de la tabla
+
+Al tocar un municipio en la tabla, el mapa vuela hasta él —y la hoja se queda arriba
+tapándolo, así que no se ve a dónde voló. Hay código en `mapa.ts` que intenta recogerla
+(`hoja.dataset.estado = 'asomada'`) y no está funcionando.
+
+Sospecho que el problema es de límites: `mapa.ts` está manipulando el estado interno de
+`Hoja` desde fuera, en vez de pedírselo. **Lo suyo sería que `hoja.ts` exponga algo
+—un evento o una función— y que `mapa.ts` lo llame**, en vez de tocarle el `dataset`.
+
+**Dónde:** `apps/web/src/lib/hoja.ts` (exponer), `apps/web/src/lib/mapa.ts` (consumir).
+
+---
+
+## 4. La ficha muestra MMI aunque estés mirando población
+
+Con el modo «Gente expuesta» activo, la ficha del municipio sigue encabezada por el grado
+MMI en grande. Si alguien cambió de modo es porque le interesa la otra pregunta, y la
+ficha debería responderla: cuánta gente vive ahí, y cuánta es vulnerable.
+
+El dato ya está en las propiedades del municipio (`poblacion`) y en
+`event/mmi-by-municipality.json` (`poblacion`, `poblacion_vulnerable`). No hace falta
+pedir nada al lado de datos.
+
+**Sugerencia:** que la ficha muestre ambas cosas siempre, con la del modo activo arriba.
+Así no se pierde información al cambiar y no hay que recordar en qué modo estabas.
+
+---
+
+## 5. Recortar la carga inicial
+
+Está en **14,6 KB** comprimidos; el objetivo de la spec eran 12 KB y ya lo pasamos dos
+veces (13,5 con el carrusel, 14,6 con los dos modos). Es el compromiso central del
+proyecto —gente con mala conexión— así que conviene frenarlo antes de que siga.
+
+Ideas: revisar si el CSS del carrusel y el de la hoja comparten reglas duplicadas; mover
+a la carga diferida cualquier cosa que solo se vea al abrir la hoja; comprobar si el CSS
+de MapLibre está entrando en el paquete inicial en vez del diferido.
+
+**Medir así** (no a ojo):
+
+```bash
+npm run build && cd apps/web/dist
+for f in index.html _astro/index.*.css _astro/index.astro*.js; do gzip -9 -c "$f" | wc -c; done
+```
+
+---
+
+## 6. Verificar el aviso de cambio de modo
+
+Al cambiar entre «Sacudimiento» y «Gente expuesta» aparece un aviso que dice qué significa
+el color ahora y se desvanece a los 6 segundos. **Lo escribí pero nunca lo vi funcionando**
+—en las capturas nunca coincidió el momento— así que puede estar mal posicionado o tapado
+por el conmutador, que está justo encima.
+
+Si estorba o se ve mal, tienes libertad para rediseñarlo. Lo que no puede perderse es que
+**al cambiar de modo quede claro qué significa el color**, porque ese es el punto de tener
+dos modos.
+
+**Dónde:** `.aviso-modo` en `Mapa.astro`, función `avisar()` en `mapa.ts`.
+
+---
+
+## 7. Las secciones urbanas son líneas sin significado
+
+Al acercarse a una ciudad aparecen las secciones urbanas del DANE como líneas grises
+finas. Dan textura de trama urbana, pero no informan de nada: son solo divisiones
+estadísticas.
+
+Cuando haya incidentes registrados, lo interesante sería **sombrear cada sección según
+cuántos incidentes tiene** —una especie de mapa de calor por manzana— en vez de dibujar
+solo el contorno. Mientras no haya incidentes, quizá convenga bajarles la opacidad o
+mostrarlas solo a más zoom.
+
+Queda a tu criterio; es la menos urgente de la lista.
+
+---
+
+## Reglas de UX vigentes
 
 Aplican a todo lo que se toque en `apps/web/`:
 
