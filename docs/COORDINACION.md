@@ -18,7 +18,7 @@ Actualiza tu propia fila. No borres la del otro.
 |---|---|---|---|
 | `datos/extraccion-y-centro-urbano` | `agente-datos` | Encuadre al casco urbano, modos de color, extracción de ubicaciones | `en curso` |
 | `ui/ronda-2-correcciones` | `agente-ui` | Las 7 tareas de la ronda anterior (ver debajo) | `fusionada` |
-| `ui/ronda-3-clutter-y-transiciones` | `agente-ui` | Ronda 3 tarea 1, más limpieza de z-index/solapes y transiciones más rápidas pedidas por el responsable del proyecto. **Incluye una anulación explícita de ADR-001** — ver sección propia abajo | `lista para revisión` |
+| `ui/ronda-3-clutter-y-transiciones` | `agente-ui` | Ronda 3 tarea 1, limpieza de z-index/solapes, transiciones más rápidas, ficha cerrable al tocar, y el encabezado ahora se repliega durante un gesto real sobre el mapa (pedido directo, en vivo, del responsable del proyecto — no de este tablero). **Incluye una anulación explícita de ADR-001** — ver sección propia abajo. La verificación del repliegue del encabezado quedó parcial: confirmado que se oculta durante scroll real y que un vuelo de cámara propio no lo dispara, pero no logré aislar "tocar un municipio" en un ciclo limpio por lentitud del entorno esa sesión — vale la pena una mirada extra al fusionar | `lista para revisión` |
 
 ---
 
