@@ -152,16 +152,20 @@ const { leyenda } = Astro.props;
   </details>
 
   <aside class="ficha" id="detalle" hidden>
-    <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
-    <h3 id="detalle-nombre"></h3>
-    <p id="detalle-depto" class="depto"></p>
+    <header class="ficha-cabecera">
+      <div class="identidad">
+        <h3 id="detalle-nombre"></h3>
+        <p id="detalle-depto" class="depto"></p>
+      </div>
 
+      <span id="detalle-grado" class="grado-grande" aria-hidden="true"></span>
+
+      <button type="button" id="cerrar-detalle" aria-label="Cerrar">×</button>
+    </header>
+
+    <div class="ficha-cuerpo">
     <div class="metricas" id="detalle-metricas" data-modo="sacudimiento">
       <div class="bloque-mmi">
-        <p class="mmi">
-          <span id="detalle-grado" class="grado-grande"></span>
-          <span id="detalle-valor" class="valor"></span>
-        </p>
         <p id="detalle-label" class="label"></p>
         <p id="detalle-metodo" class="metodo"></p>
       </div>
@@ -171,8 +175,6 @@ const { leyenda } = Astro.props;
         <p id="detalle-pob-vulnerable" class="pob-vulnerable"></p>
       </div>
     </div>
-
-    <p id="detalle-cobertura" class="cobertura"></p>
 
     <div class="leyenda-incidentes" id="detalle-leyenda-incidentes" hidden>
       <h4 class="slide-titulo">Puntos en el mapa</h4>
@@ -214,6 +216,9 @@ const { leyenda } = Astro.props;
         <button type="button" class="carrusel-flecha" data-carrusel-next aria-label="Siguiente diapositiva">›</button>
       </div>
     </div>
+    </div>
+
+    <div class="ficha-mas" aria-hidden="true"></div>
   </aside>
 </div>
 
@@ -583,19 +588,71 @@ const { leyenda } = Astro.props;
     backdrop-filter: blur(6px);
     border: 1px solid var(--borde);
     border-radius: var(--radio);
-    padding: 0.85rem 1rem 1rem;
+    /* El relleno pasa a la cabecera y al cuerpo: la cabecera es `sticky` y tiene que
+       poder llegar de borde a borde. */
+    padding: 0;
+    /* La barra de desplazamiento se deja **siempre a la vista**. En un panel que ocupa
+       media pantalla y suele tener más contenido del que cabe, una barra que solo
+       aparece al arrastrar es una pista que llega tarde: la persona ya decidió que no
+       había nada más. */
+    scrollbar-width: thin;
+    scrollbar-color: var(--tinta-3) transparent;
+  }
+
+  /* Chrome y Safari ignoran `scrollbar-color` en versiones viejas; esto les da la misma
+     barra visible. El `border` transparente con `background-clip` es lo que la deja
+     fina sin que el pulgar toque los bordes. */
+  .ficha::-webkit-scrollbar {
+    width: 10px;
+  }
+  .ficha::-webkit-scrollbar-thumb {
+    background: var(--tinta-3);
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 999px;
+  }
+  .ficha::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* ── Cabecera fija ────────────────────────────────────────────────────────
+     Lo único que no se va nunca al desplazar: **qué municipio es, qué tan fuerte
+     tembló, y cómo salir.** Antes el nombre, el grado y la × se iban con el
+     desplazamiento: se podía acabar leyendo cifras sin saber ya de qué municipio son, y
+     sin forma de cerrar sin volver arriba primero. */
+  .ficha-cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.7rem 0.5rem 0.6rem 0.9rem;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .identidad {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ficha-cuerpo {
+    padding: 0.8rem 0.9rem 1rem;
   }
 
   .ficha h3 {
-    margin: 0 0 0.1rem;
-    font-size: 1.1rem;
-    padding-right: 1.5rem;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
   }
 
+  /* Departamento y grado numérico en una sola línea: son las dos coordenadas que
+     sitúan la ficha —dónde y cuánto— y ninguna necesita un renglón propio. */
   .depto {
-    margin: 0 0 0.7rem;
+    margin: 0.1rem 0 0;
     color: var(--tinta-3);
-    font-size: 0.83rem;
+    font-size: 0.78rem;
   }
 
   /* Los dos bloques de cifras (MMI y población) de la ficha; `order` decide cuál se ve
@@ -623,29 +680,34 @@ const { leyenda } = Astro.props;
     opacity: 0.72;
   }
 
-  .mmi {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    margin: 0;
-  }
-
+  /* El grado va **al lado del nombre**, no debajo: en una ficha que ocupa media pantalla
+     un renglón entero para tres letras es caro, y puestos juntos se leen como lo que
+     son — «este municipio, este golpe». Los colores los pone `mapa.ts` desde la misma
+     rampa del USGS que pinta el mapa (ADR-009), así que la insignia y el polígono no
+     pueden desincronizarse. */
   .grado-grande {
-    font-size: 1.9rem;
-    font-weight: 700;
-    line-height: 1;
-    padding: 0.15em 0.4em;
+    flex-shrink: 0;
+    min-width: 2.4rem;
+    padding: 0.1em 0.35em;
     border-radius: 8px;
-  }
-
-  .valor {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
     font-variant-numeric: tabular-nums;
-    color: var(--tinta-2);
   }
 
+  .grado-grande:empty {
+    display: none;
+  }
+
+  /* En modo «Fuerza» esta línea es el titular de la ficha: el grado ya está arriba, y lo
+     que falta es qué significa en palabras. */
   .label {
-    margin: 0.55rem 0 0;
-    font-size: 0.88rem;
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
   }
 
   .metodo {
@@ -712,43 +774,51 @@ const { leyenda } = Astro.props;
     color: var(--tinta-3);
   }
 
-  /* «Sin cartografía» no es lo mismo que «sin daños». Lo decimos con todas las letras
-     y con peso visual, porque un mapa vacío se lee como lo segundo. */
-  .cobertura {
-    margin: 0.8rem 0 0;
-    padding: 0.55rem 0.7rem;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    line-height: 1.45;
-  }
+  /* Aquí vivía el aviso de «sin cartografía de incidentes». Se retiró a pedido del
+     responsable del proyecto, y la razón es buena: **saltaba en los 1.122 municipios**,
+     porque hoy no hay ni un incidente curado en producción. Un aviso que sale siempre
+     deja de informar y pasa a ser decorado — y este ocupaba, en rojo, el sitio donde
+     debería estar lo que sí cambia de un municipio a otro.
+     La regla que lo motivaba —«sin dato» no es «sin daño»— sigue siendo cierta y sigue
+     en `CLAUDE.md`. Su sitio es una vez en la leyenda o en «Sobre esto», no repetida en
+     cada ficha. Anotado en `docs/COORDINACION.md`. */
 
-  .cobertura:empty {
-    display: none;
-  }
-
-  .cobertura--con {
-    background: var(--fondo-3);
-    color: var(--tinta-2);
-  }
-
-  .cobertura--sin {
-    background: var(--urgente-fondo);
-    color: var(--tinta);
-    border-left: 3px solid var(--urgente);
-  }
-
+  /* Objetivo táctil de 44 px: se cierra con prisa y a veces con una sola mano. La `×`
+     es glifo, así que se centra con grid en vez de con `line-height`. */
   #cerrar-detalle {
-    position: absolute;
-    top: 0.3rem;
-    right: 0.4rem;
-    width: 34px;
-    height: 34px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: -0.3rem -0.2rem 0 0;
     background: none;
     border: none;
-    font-size: 1.4rem;
+    border-radius: 999px;
+    font-size: 1.5rem;
     line-height: 1;
     color: var(--tinta-3);
     cursor: pointer;
+  }
+
+  /* ── Pista de que hay más abajo ───────────────────────────────────────────
+     La barra de desplazamiento no basta: en móvil muchos navegadores la dibujan
+     superpuesta y solo mientras se arrastra. Este degradado es `sticky` al fondo del
+     panel, así que se queda pegado al borde mientras haya contenido por debajo, y
+     `mapa.ts` le quita `data-mas` al llegar al final para que no mienta. */
+  .ficha-mas {
+    position: sticky;
+    bottom: 0;
+    height: 2.2rem;
+    margin-top: -2.2rem;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, var(--fondo));
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+
+  .ficha[data-mas] .ficha-mas {
+    opacity: 1;
   }
 
   /* ── Carrusel: Impacto · Ayuda cercana ──────────────────────────────── */

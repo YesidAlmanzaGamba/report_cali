@@ -788,6 +788,20 @@ export async function iniciarMapa(): Promise<void> {
     );
   }
 
+  /**
+   * Enciende el degradado del borde inferior mientras quede contenido por debajo.
+   *
+   * La barra de desplazamiento se dejó siempre visible, pero no basta: en móvil muchos
+   * navegadores la dibujan superpuesta y solo mientras el dedo arrastra, así que la
+   * pista llega cuando la persona ya decidió que no había nada más. El degradado sí se
+   * ve sin tocar nada, y se apaga al llegar al final para no mentir.
+   */
+  function actualizarPistaDeMas(): void {
+    if (!panel) return;
+    const quedaAbajo = panel.scrollHeight - panel.scrollTop - panel.clientHeight > 4;
+    panel.toggleAttribute('data-mas', quedaAbajo);
+  }
+
   function cerrarFicha(): void {
     panel?.setAttribute('hidden', '');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
@@ -808,19 +822,24 @@ export async function iniciarMapa(): Promise<void> {
     const mmi = typeof props['mmi'] === 'number' ? props['mmi'] : null;
 
     set('detalle-nombre', String(props['name'] ?? ''));
-    set('detalle-depto', String(props['admin1_name'] ?? ''));
 
+    const departamento = String(props['admin1_name'] ?? '');
     const grado = document.getElementById('detalle-grado');
+
     if (mmi === null) {
-      set('detalle-grado', '—');
-      set('detalle-valor', 'sin cobertura del ShakeMap');
-      set('detalle-label', '');
+      // Sin insignia: `:empty` la esconde, y así la cabecera no reserva un hueco de
+      // color para un dato que no existe.
+      set('detalle-grado', '');
+      set('detalle-depto', [departamento, 'sin cobertura del ShakeMap'].filter(Boolean).join(' · '));
+      set('detalle-label', 'Sin medición de intensidad aquí');
       set('detalle-metodo', '');
       if (grado) grado.style.cssText = '';
     } else {
       const nivel = levelFor(mmi);
       set('detalle-grado', nivel.roman);
-      set('detalle-valor', `MMI ${mmi}`);
+      // Departamento y grado numérico en la misma línea: son las dos coordenadas que
+      // sitúan la ficha, y ninguna necesita un renglón propio.
+      set('detalle-depto', [departamento, `MMI ${mmi}`].filter(Boolean).join(' · '));
       set('detalle-label', nivel.label);
       set(
         'detalle-metodo',
@@ -841,9 +860,12 @@ export async function iniciarMapa(): Promise<void> {
     pintarCifras(pcode);
     void mostrarIncidentes(pcode);
     void mostrarSecciones(pcode);
-    pintarCobertura(pcode);
 
     panel?.removeAttribute('hidden');
+    // Cada municipio empieza por arriba. Sin esto, quien había bajado a leer las cifras
+    // de uno abría el siguiente ya desplazado, sin ver ni el nombre.
+    if (panel) panel.scrollTop = 0;
+    actualizarPistaDeMas();
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], props['pcode'] as string]);
   }
 
@@ -944,6 +966,17 @@ export async function iniciarMapa(): Promise<void> {
   });
 
   document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
+
+  panel?.addEventListener('scroll', actualizarPistaDeMas, { passive: true });
+
+  // El contenido cambia de alto sin que nadie desplace nada: las cifras del municipio
+  // llegan después de pintarlo y la leyenda de puntos aparece o no. Se observa
+  // `.ficha-cuerpo` y no la ficha: en celular la ficha mide media pantalla siempre, así
+  // que su caja nunca cambia y el observador no dispararía ni una vez.
+  const cuerpo = panel?.querySelector('.ficha-cuerpo');
+  if (cuerpo && 'ResizeObserver' in window) {
+    new ResizeObserver(actualizarPistaDeMas).observe(cuerpo);
+  }
 
   // En móvil la leyenda pasa a flujo normal dentro del marco, así que el alto del
   // contenedor cambia después de inicializar el mapa. MapLibre no se entera solo y
@@ -1155,25 +1188,20 @@ export async function iniciarMapa(): Promise<void> {
   }
 
   /**
-   * Dice si este municipio tiene cartografía de incidentes o no.
+   * Aquí estaba `pintarCobertura()`, que escribía en cada ficha si el municipio tenía
+   * cartografía de incidentes. Se retiró a pedido del responsable del proyecto.
    *
-   * Es la frase más importante de la ficha. Un mapa vacío se lee como «aquí no pasó
-   * nada», y en la mayoría de municipios lo que ocurre es que **nadie ha cartografiado
-   * todavía**. Confundir esas dos cosas en una emergencia manda equipos al lugar
-   * equivocado; decirlo explícitamente cuesta una línea.
+   * El motivo es bueno: **salía en los 1.122 municipios**, porque hoy no hay ni un
+   * incidente curado en producción. Un aviso que aparece siempre deja de informar —
+   * nadie lee la advertencia que sale en todas las pantallas— y encima ocupaba, en
+   * rojo, el sitio donde debería estar lo que sí cambia de un municipio a otro.
+   *
+   * La regla que lo motivaba sigue siendo cierta y sigue en `CLAUDE.md`: «sin dato» no
+   * es «sin daño», y confundirlas manda equipos al lugar equivocado. Lo que cambia es
+   * dónde se dice: **una vez**, en la leyenda o en «Sobre esto», y no repetida en cada
+   * ficha. Cuando haya incidentes curados, la leyenda de puntos —que sí aparece solo
+   * cuando hay algo que explicar— vuelve a cubrir el caso contrario.
    */
-  function pintarCobertura(pcode: string): void {
-    const el = document.getElementById('detalle-cobertura');
-    if (!el) return;
-
-    if (conIncidentes.has(pcode)) {
-      el.textContent = 'Puntos de incidentes registrados. Los no verificados aparecen agrupados a ~100 m.';
-      el.className = 'cobertura cobertura--con';
-    } else {
-      el.textContent = 'Sin cartografía de incidentes en este municipio. No significa que no haya daños: significa que nadie los ha registrado todavía.';
-      el.className = 'cobertura cobertura--sin';
-    }
-  }
 
   // Botón para volver a la vista general. Sin mapa base, alguien que se acercó a un
   // municipio pequeño puede perder por completo la referencia de dónde está.

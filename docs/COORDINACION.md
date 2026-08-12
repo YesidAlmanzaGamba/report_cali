@@ -579,6 +579,85 @@ instante. Queda anotado porque cuesta media hora cada vez que pasa.
 
 **Carga:** 14,91 → **14,97 KB** (+67 B).
 
+### Rediseño de la ficha del municipio
+
+Cuatro arreglos pedidos, y detrás de los cuatro la misma pregunta: **qué tiene que estar
+siempre a la vista en un panel de media pantalla.** La respuesta que guía todo lo demás:
+*de qué municipio hablamos, qué tan fuerte tembló, y cómo salir de aquí.*
+
+**Cabecera fija.** Nombre, departamento · MMI, insignia de grado y `×`, en
+`position: sticky`. Antes las cuatro cosas se iban con el desplazamiento: se podía acabar
+leyendo cifras sin saber ya de qué municipio son, y sin forma de cerrar sin volver arriba
+primero. Ahora no se va nada de eso.
+
+**El grado, al lado del nombre y no debajo.** En una ficha de media pantalla un renglón
+entero para tres letras es caro, y juntos se leen como lo que son: «este municipio, este
+golpe». De paso desaparece una duplicación — el `MMI 7` que iba en su propia línea ahora
+comparte renglón con el departamento (`Chocó · MMI 7`), que son las dos coordenadas que
+sitúan la ficha. La insignia lleva `aria-hidden`: el número ya está en el subtítulo y el
+significado en el cuerpo, así que un lector de pantalla no tiene que oír «VII MMI 7».
+
+**La `×` sube a 44 px.** Estaba en 34. Se cierra con prisa y a veces con una sola mano.
+
+**Fuera el aviso de «sin cartografía de incidentes».** Tenías razón en que no aporta:
+**salía en los 1.122 municipios**, porque hoy no hay ni un incidente curado en producción.
+Un aviso que aparece siempre deja de informar, y encima ocupaba en rojo el sitio donde
+debería estar lo que sí cambia de un municipio a otro.
+
+> **Deuda que esto deja, y conviene no perderla.** La regla que lo motivaba sigue en
+> `CLAUDE.md`: «sin dato» no es «sin daño», y confundirlas manda equipos al lugar
+> equivocado. Ahora mismo esa regla **no tiene ninguna expresión en la interfaz**. Su
+> sitio natural es decirlo **una vez** —en la leyenda o en «Sobre esto»— en vez de
+> repetirlo en cada ficha. No lo hice porque queda fuera de la ficha; queda pedido.
+
+**Barra de desplazamiento siempre visible**, con `scrollbar-width: thin` y
+`scrollbar-color`, más las reglas `::-webkit-scrollbar` para los motores que ignoran las
+primeras. Medido: reserva **12 px de ancho de diseño**, o sea que es una barra clásica
+siempre presente y no una superpuesta que aparece al arrastrar.
+
+**Y un degradado al borde inferior**, porque la barra sola no basta: en móvil muchos
+navegadores la dibujan superpuesta y solo mientras el dedo arrastra, así que la pista
+llega cuando la persona ya decidió que no había nada más. El degradado es `sticky` al
+fondo del panel y se apaga al llegar al final para no mentir. Lo enciende
+`actualizarPistaDeMas()`, enganchada al `scroll` y a un `ResizeObserver` sobre
+`.ficha-cuerpo` — sobre el cuerpo y no sobre la ficha, porque en celular la ficha mide
+media pantalla siempre y su caja no cambia nunca: el observador no dispararía ni una vez.
+
+**Arreglo de paso, no pedido:** la ficha se reinicia arriba al abrir otro municipio. Quien
+había bajado a leer las cifras de uno abría el siguiente ya desplazado, sin ver ni el
+nombre.
+
+Verificado con contenido real, forzando el alto a 300 px para reproducir el
+desbordamiento que en celular da la media pantalla: la cabecera se queda a 1 px del borde
+superior con `scrollTop` en 0, 120 y al final; título y `×` siguen visibles; `data-mas` es
+`true` arriba y `false` al final, con el degradado en opacidad 1 y 0.
+
+**Carga:** 14,97 → **15,10 KB** (+128 B).
+
+### Lo que encontré y NO toqué: el carrusel
+
+Al medir la ficha quedó a la vista algo que no estaba en el pedido y que creo que es el
+problema de diseño más serio que le queda:
+
+**«Ayuda cercana» —la línea 123 y el WhatsApp de la Cruz Roja— está escondida detrás de un
+gesto lateral.** En una ficha que ya se desplaza en vertical, un carrusel horizontal
+dentro obliga a descubrir un segundo gesto, en otro eje, para llegar a los dos teléfonos
+de emergencia. Es exactamente el argumento de ADR-001 aplicado a otro contenido: en una
+emergencia no se puede pedir que alguien aprenda un gesto para llegar a un teléfono.
+
+Además se ve feo por una razón mecánica: la pista del carrusel mide lo que el
+**diapositiva más alta**, así que con «Impacto reportado» vacío —el caso normal hoy—
+queda un hueco de ~200 px antes de los puntitos.
+
+**Lo que propongo:** apilar las dos secciones en vertical, una debajo de otra, y borrar el
+carrusel. Se gana que los teléfonos se alcanzan desplazando —el gesto que la ficha ya
+enseña con su barra visible—, se pierde el hueco, y **sale `carrusel.ts` del paquete
+inicial**, que ayuda a la tarea 2. Se pierde la compactación, que hoy no compacta nada
+porque una de las dos diapositivas está vacía.
+
+No lo hice porque borra trabajo probado de la ronda 2 y es una decisión de producto, no
+una corrección. Queda a decisión del responsable.
+
 ---
 
 # 🔧 Para `agente-ui` — tareas de esta ronda
