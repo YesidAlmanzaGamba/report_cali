@@ -8,17 +8,19 @@
  * primero. Es un enlace de verdad a `#buscas`, así que sin JavaScript baja a la
  * sección; con JavaScript abre la hoja en ese módulo.
  *
- * **Se oculta solo a los 10 s (con JavaScript).** Es una anulación explícita de
- * ADR-001, pedida por el responsable del proyecto después de que se le señalara la
- * contradicción — no un descuido. Sin JavaScript el botón se queda fijo, así que
+ * **El encabezado entero se repliega a los 10 s (con JavaScript) y no vuelve.** Es
+ * una anulación explícita de ADR-001, pedida y confirmada por el responsable del
+ * proyecto tras señalarle la contradicción. Sin JavaScript se queda fijo, así que
  * ADR-001 se sostiene igual que siempre para quien navega sin JS. Registrado en
- * `docs/COORDINACION.md` para que `agente-datos`, dueño de ADR-001, lo vea.
+ * `docs/COORDINACION.md` para que `agente-datos`, dueño de ese ADR, lo vea.
  *
- * **Todo el encabezado se repliega mientras se arrastra o se hace zoom en el mapa**
- * (ver `lib/encabezado.ts`, activado desde `mapa.ts` en `movestart`/`moveend`), y
- * vuelve en cuanto el gesto termina. Solo gestos reales del usuario lo ocultan — los
- * vuelos de cámara propios del sitio (tocar un municipio, «volver») no traen
- * `originalEvent` y no lo disparan.
+ * **Se probó primero un repliegue reactivo** —oculto mientras se arrastra o hace
+ * zoom en el mapa, de vuelta al soltar (`mapa.ts` en `movestart`/`moveend`)— y produjo
+ * un bucle de parpadeo real: `mapa.resize()` dispara sus propios eventos de
+ * movimiento, y el `ResizeObserver` que ya vigilaba el mapa volvía a llamarlo cada vez
+ * que el encabezado cambiaba de tamaño. Encontrado en vivo, por reporte directo, dos
+ * veces. Se reemplazó por esto: un solo temporizador, sin lógica reactiva con la que
+ * pueda entrar en bucle.
  */
 interface Props {
   magnitud: number;
@@ -54,12 +56,11 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
 
 <script>
   // Anulación explícita de ADR-001 — ver el docblock de arriba antes de tocar esto.
-  const boton = document.querySelector<HTMLAnchorElement>('.buscas');
-  if (boton) {
-    setTimeout(() => {
-      boton.hidden = true;
-    }, 10_000);
-  }
+  // Un solo temporizador para todo el encabezado: no vuelve a aparecer, así que no hay
+  // forma de que esto parpadee.
+  setTimeout(() => {
+    document.querySelector('.encabezado')?.setAttribute('data-oculto', '');
+  }, 10_000);
 </script>
 
 <style>
@@ -74,14 +75,13 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
     background: var(--fondo);
     border-bottom: 1px solid var(--borde);
     overflow: hidden;
-    transition: min-height 0.2s ease, padding-block 0.2s ease, opacity 0.15s ease,
-      border-color 0.2s ease;
+    transition: min-height 0.3s ease, padding-block 0.3s ease, opacity 0.25s ease,
+      border-color 0.3s ease;
   }
 
-  /* Se repliega a cero durante un gesto real sobre el mapa (arrastrar, pellizcar,
-     hacer zoom) para ganarle esa franja al mapa justo cuando se está mirando de cerca.
-     `min-height` en vez de `transform`: con transform el hueco se queda reservado en el
-     `display:flex` de `.disposicion` y el mapa no gana nada. */
+  /* Se repliega una sola vez a los 10 s y no vuelve — le da esa franja al mapa de
+     forma permanente. `min-height` en vez de `transform`: con transform el hueco se
+     queda reservado en el `display:flex` de `.disposicion` y el mapa no gana nada. */
   .encabezado[data-oculto] {
     min-height: 0;
     padding-block: 0;
@@ -145,13 +145,6 @@ const { magnitud, alerta, fechaLocal } = Astro.props;
 
   .buscas:hover {
     filter: brightness(1.08);
-  }
-
-  /* `display: inline-flex` de arriba gana sobre el `display:none` del navegador para
-     `[hidden]` si no se repite aquí explícitamente — misma prioridad de especificidad,
-     y esta regla va después. */
-  .buscas[hidden] {
-    display: none;
   }
 
   /* En pantallas muy angostas el texto largo del botón desplaza el título. */

@@ -24,7 +24,6 @@ import {
 } from './mmi';
 import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
 import { colapsarHoja } from './hoja';
-import { mostrarEncabezado, ocultarEncabezado } from './encabezado';
 
 interface MunicipioProps {
   pcode: string;
@@ -658,7 +657,6 @@ export async function iniciarMapa(): Promise<void> {
       boton.append(tipo, desc, meta);
       boton.addEventListener('click', () => {
         const [lon, lat] = f.geometry.coordinates;
-        vueloPropio = true;
         mapa.flyTo({ center: [lon, lat], zoom: 13, duration: prefiereMenosMovimiento ? 0 : 700 });
       });
 
@@ -787,7 +785,6 @@ export async function iniciarMapa(): Promise<void> {
       parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--asomada')) * 16 ||
       104;
 
-    vueloPropio = true;
     mapa.fitBounds(
       [
         [caja[0], caja[1]],
@@ -859,66 +856,15 @@ export async function iniciarMapa(): Promise<void> {
     mapa.getCanvas().style.cursor = '';
   });
 
-  /**
-   * El encabezado se repliega mientras la persona arrastra o hace zoom, para ganar
-   * esa franja justo cuando más se necesita, y vuelve en cuanto el mapa se asienta.
-   *
-   * La idea original era usar `e.originalEvent` para distinguir un gesto real de un
-   * vuelo de cámara que dispara el propio sitio (`acercarA()`, «volver»), tal como lo
-   * documenta MapLibre. **Comprobado en navegador y no funcionó**: en esta versión
-   * `originalEvent` llega vacío incluso para una rueda de mouse real (gesto de scroll
-   * disparado con eventos confiables, no sintéticos). En vez de confiar en un detalle de
-   * la librería que no se comportó como decía la documentación, se marca a mano cada
-   * vuelo propio con `vueloPropio` — determinista, no depende de qué tan fiel sea el
-   * evento que MapLibre decida adjuntar.
-   */
-  let vueloPropio = false;
-
-  /**
-   * Un scroll o arrastre continuo no es un solo `movestart`…`moveend`: MapLibre cierra
-   * ese par en cada pequeño paso (comprobado en navegador — varios pares por segundo
-   * durante un scroll sostenido). Mostrarlo de inmediato en cada `moveend` hacía que el
-   * encabezado parpadeara todo el tiempo que durara el gesto, en vez de quedarse
-   * replegado durante el gesto entero. Por eso `mostrarEncabezado()` se demora un poco:
-   * si llega un `movestart` nuevo antes de que se cumpla la espera, se cancela y sigue
-   * oculto.
-   */
-  let temporizadorMostrarEncabezado: ReturnType<typeof setTimeout> | undefined;
-
-  mapa.on('movestart', () => {
-    clearTimeout(temporizadorMostrarEncabezado);
-    if (!vueloPropio) ocultarEncabezado();
-  });
-  mapa.on('moveend', () => {
-    vueloPropio = false;
-    clearTimeout(temporizadorMostrarEncabezado);
-    temporizadorMostrarEncabezado = setTimeout(mostrarEncabezado, 350);
-  });
-
   document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
-
-  /**
-   * `mapa.resize()` también cuenta como vuelo propio: MapLibre dispara
-   * `movestart`/`move`/`moveend` dentro de su propio `resize()`, no solo cuando cambia
-   * el zoom o el centro. Sin marcarlo, quedaba un bucle de parpadeo real: el encabezado
-   * se oculta → `.zona-mapa` crece → el `ResizeObserver` llama a `mapa.resize()` → ese
-   * resize dispara su propio `movestart` → como no venía marcado, se interpretaba como
-   * gesto real y ocultaba el encabezado otra vez (ya oculto) → al mostrarlo pasados los
-   * 350ms, el contenedor volvía a cambiar de tamaño → mismo ciclo, sin parar. Encontrado
-   * en vivo por un reporte de pantalla parpadeando, no leyendo código.
-   */
-  function redimensionar(): void {
-    vueloPropio = true;
-    mapa.resize();
-  }
 
   // En móvil la leyenda pasa a flujo normal dentro del marco, así que el alto del
   // contenedor cambia después de inicializar el mapa. MapLibre no se entera solo y
   // el lienzo queda con el tamaño viejo — en blanco, en la práctica.
   if ('ResizeObserver' in window) {
-    new ResizeObserver(redimensionar).observe(contenedor);
+    new ResizeObserver(() => mapa.resize()).observe(contenedor);
   }
-  redimensionar();
+  mapa.resize();
 
   // La leyenda se abre sola solo donde sobra espacio.
   if (window.matchMedia('(min-width: 40rem)').matches) {
@@ -955,7 +901,6 @@ export async function iniciarMapa(): Promise<void> {
       vistaGeneral.extend([maxX, maxY]);
     }
 
-    vueloPropio = true;
     mapa.fitBounds(vistaGeneral, {
       padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
       duration: 0,
@@ -1157,7 +1102,6 @@ export async function iniciarMapa(): Promise<void> {
     }
 
     if (vistaGeneral) {
-      vueloPropio = true;
       mapa.fitBounds(vistaGeneral, {
         padding: { top: 24, right: 24, bottom: Math.round(alturaAsomada) + 16, left: 24 },
         duration: prefiereMenosMovimiento ? 0 : 450,
