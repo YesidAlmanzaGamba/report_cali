@@ -32,6 +32,7 @@ import {
   observacionesDeslizamiento,
   parsearDeslizamientos,
 } from './sources/deslizamientos.js';
+import { extraer } from './extraccion/reglas.js';
 import { fetchJson } from './http.js';
 import { recolectarNoticias } from './sources/noticias.js';
 import { fetchUngrdSeismic } from './sources/ungrd.js';
@@ -276,8 +277,40 @@ async function main(): Promise<void> {
       const conMunicipio = candidatos.filter((c) => c.pcode).length;
       const oficiales = candidatos.filter((c) => c.tipo === 'official').length;
 
-      return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) ${
-        written.changed ? '(escrito)' : '(sin cambios)'
+      // Sugerencias, no datos publicados: alguien las lee y las pasa a
+      // curated/incidentes.json. Un patrón que etiqueta mal un lugar manda un equipo al
+      // sitio equivocado, así que la máquina propone y la persona dispone.
+      const sugerencias = candidatos
+        .map((c) => {
+          const e = extraer(c.titulo);
+          if (!e) return undefined;
+          return {
+            ...e,
+            titulo: c.titulo,
+            enlace: c.enlace,
+            medio: c.medio,
+            tipo_fuente: c.tipo,
+            publicado: c.publicado,
+            ...(c.pcode ? { pcode: c.pcode, municipio: c.municipio } : {}),
+          };
+        })
+        .filter((s) => s !== undefined);
+
+      const escritas = await writeJson(DATA_DIR, 'fuentes/extraidos', {
+        generado: new Date().toISOString(),
+        nota:
+          'Sugerencias extraídas de titulares para revisión humana. NO son datos ' +
+          'publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.',
+        reglas: 'packages/ingest/src/extraccion/reglas.ts',
+        sugerencias,
+      });
+
+      const conLugar = sugerencias.filter((s) => s.lugar).length;
+
+      return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) · ${
+        sugerencias.length
+      } incidentes sugeridos, ${conLugar} con lugar ${
+        written.changed || escritas.changed ? '(escrito)' : '(sin cambios)'
       }`;
     });
 
