@@ -22,17 +22,26 @@ permissions:
 jobs:
   ingesta:
     runs-on: ubuntu-latest
+    # Un feed que acepta la conexión y no responde nunca puede colgar la corrida hasta el
+    # límite por defecto de GitHub, que son SEIS HORAS. Con el cron cada 30 minutos y el
+    # grupo de concurrencia serializando, una sola corrida colgada bloquea la ingesta el
+    # resto del día. `fetchWithRetry` ya pone tiempo límite por petición; esto es la red
+    # de seguridad del trabajo entero.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          # Astro exige ≥22.12 y con 22.11 el build falla sin decir por qué (ver
+          # «Trampas conocidas» en CLAUDE.md). Se fija el mínimo en vez de un `22` suelto.
+          node-version: '22.12'
           cache: npm
 
       - run: npm ci
 
       - name: Consultar fuentes
+        id: ingesta
         run: npm run ingest
 
       # Sube los datos al origen que sirve al sitio. Va ANTES del commit a propósito:
@@ -73,6 +82,45 @@ jobs:
           git add data/
           git commit -m "datos: actualización automática $(date -u '+%Y-%m-%d %H:%M UTC')"
 
-          # Otra corrida pudo haber hecho push mientras esta trabajaba.
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          # Otra corrida pudo haber hecho push mientras esta trabajaba, y también puede
+          # hacerlo entre el `pull` y el `push` de abajo — la ventana es pequeña pero el
+          # cron corre cada 30 minutos durante una emergencia, y perder una corrida de
+          # datos por una carrera es justo lo que no queremos. Tres intentos.
+          for intento in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "Publicado en el intento ${intento}."
+              exit 0
+            fi
+            echo "Push rechazado (intento ${intento}); el origen se movió. Reintentando…"
+            sleep $((intento * 5))
+          done
+
+          echo "No se pudo publicar tras 3 intentos." >&2
+          exit 1
+
+      # Deja el resultado a la vista en la pestaña del trabajo. Sin esto hay que abrir el
+      # log y leerlo entero para saber qué fuente se cayó, y las fuentes se caen a
+      # menudo: son servidores públicos bajo carga.
+      - name: Resumen
+        if: '!cancelled()'
+        run: |
+          {
+            echo "### Ingesta"
+            echo
+            if [ "${{ steps.ingesta.outcome }}" = "success" ]; then
+              echo "Consulta de fuentes: correcta."
+            else
+              echo "Consulta de fuentes: **con fallos** — revisa el paso «Consultar fuentes»."
+            fi
+            echo
+            if [ -f data/fuentes/candidatos.json ]; then
+              node -e '
+                const j = require("./data/fuentes/candidatos.json");
+                const c = j.candidatos ?? [];
+                const conMun = c.filter((x) => x.pcode).length;
+                console.log(`- Notas: **${c.length}** · con municipio: **${conMun}** (${Math.round((conMun / c.length) * 100)} %)`);
+                console.log(`- Feeds regionales: ${j.feeds_regionales ?? 0}` + ((j.feeds_caidos ?? []).length ? ` · **caídos: ${j.feeds_caidos.join(", ")}**` : " · todos respondieron"));
+              '
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

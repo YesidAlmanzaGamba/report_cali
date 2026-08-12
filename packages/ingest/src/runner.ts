@@ -44,6 +44,7 @@ import { CACHE_PATH, geocodificarPendientes, leerCache } from './sources/osm.js'
 import { extraer } from './extraccion/reglas.js';
 import { fetchJson } from './http.js';
 import { recolectarNoticias } from './sources/noticias.js';
+import { recolectarRegional } from './sources/prensa-regional.js';
 import { fetchUngrdSeismic } from './sources/ungrd.js';
 import {
   topologyToFeatures,
@@ -278,12 +279,45 @@ async function main(): Promise<void> {
       // Recoge ENLACES, no cifras. Lo que produce es una lista de candidatos para que
       // una persona los lea; sacar números de prosa automáticamente confunde totales con
       // parciales y publica cifras equivocadas. Ver sources/noticias.ts.
-      const { candidatos, consultas } = await recolectarNoticias(
-        mmiPorMunicipio.map((m) => ({
-          pcode: m.pcode,
-          name: m.name,
-          admin1_name: m.admin1_name,
-        })),
+      const refs = mmiPorMunicipio.map((m) => ({
+        pcode: m.pcode,
+        name: m.name,
+        admin1_name: m.admin1_name,
+      }));
+
+      /**
+       * Dos recolectores con destinos distintos y complementarios.
+       *
+       * Google Noticias agrega y da alcance; los feeds propios de los diarios de la zona
+       * dan **grano municipal**, que es lo que este mapa necesita y lo que la cobertura
+       * nacional no publica. Medido antes de tener los regionales: de 704 notas, solo 177
+       * traían municipio reconocible, y entre los medios más repetidos había prensa de
+       * Ecuador, Alemania y Francia.
+       *
+       * En paralelo porque son servidores distintos; dentro de cada uno, en serie.
+       */
+      // Desde el sismo. Si por lo que sea no hubo evento, una ventana de siete días: es
+      // preferible traer algo de más que arrastrar el archivo entero de ocho diarios.
+      const desdeSismo = event
+        ? new Date(event.originTime)
+        : new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+
+      const [{ candidatos: agregadas, consultas }, regional] = await Promise.all([
+        recolectarNoticias(refs),
+        recolectarRegional({ municipios: refs, desde: desdeSismo }).catch((error: unknown) => {
+          console.warn(`\n  (prensa regional no disponible: ${(error as Error).message})`);
+          return { generado: '', feeds_consultados: 0, feeds_caidos: [], notas: [] };
+        }),
+      ]);
+
+      // Las regionales van primero: vienen mejor atribuidas, así que si la misma nota
+      // llega por los dos caminos, gana la versión que sabe de qué municipio habla.
+      const porEnlace = new Map<string, (typeof agregadas)[number]>();
+      for (const n of regional.notas) porEnlace.set(n.enlace, n);
+      for (const c of agregadas) if (!porEnlace.has(c.enlace)) porEnlace.set(c.enlace, c);
+
+      const candidatos = [...porEnlace.values()].sort(
+        (a, b) => Date.parse(b.publicado) - Date.parse(a.publicado),
       );
 
       if (candidatos.length === 0) throw new Error('Ninguna consulta devolvió resultados');
@@ -291,6 +325,9 @@ async function main(): Promise<void> {
       const written = await writeJson(DATA_DIR, 'fuentes/candidatos', {
         generado: new Date().toISOString(),
         consultas,
+        feeds_regionales: regional.feeds_consultados,
+        feeds_caidos: regional.feeds_caidos,
+        notas_regionales: regional.notas.length,
         nota:
           'Enlaces recogidos automáticamente para revisión humana. Las cifras verificadas ' +
           'se registran en curated/observaciones.json.',
@@ -361,8 +398,10 @@ async function main(): Promise<void> {
         }));
 
       const conLugar = sugerencias.filter((s) => s.lugar).length;
+      const caidos =
+        regional.feeds_caidos.length > 0 ? `, ${regional.feeds_caidos.length} feeds caídos` : '';
 
-      return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) · ${
+      return `${candidatos.length} notas (${regional.notas.length} regionales${caidos}; ${conMunicipio} con municipio, ${oficiales} oficiales) · ${
         sugerencias.length
       } incidentes sugeridos, ${conLugar} con lugar ${
         written.changed || escritas.changed ? '(escrito)' : '(sin cambios)'

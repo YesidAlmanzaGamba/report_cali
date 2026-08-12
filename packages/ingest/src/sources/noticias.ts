@@ -67,15 +67,17 @@ export interface Candidato {
 // Parseo del feed
 // ─────────────────────────────────────────────────────────────────────────────
 
-function extraer(bloque: string, etiqueta: string): string {
+export function extraerEtiqueta(bloque: string, etiqueta: string): string {
   const m = bloque.match(
     new RegExp(`<${etiqueta}[^>]*>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?</${etiqueta}>`),
   );
   return (m?.[1] ?? '').trim();
 }
 
+const extraer = extraerEtiqueta;
+
 /** Entidades HTML que aparecen en los titulares de Google Noticias. */
-function limpiar(texto: string): string {
+export function limpiar(texto: string): string {
   return texto
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
@@ -172,18 +174,25 @@ export function nombresAmbiguos(municipios: MunicipioRef[]): Set<string> {
  * Etiquetar mal un reporte es peor que no etiquetarlo: manda a alguien a leer una nota
  * que no habla de su municipio, y en una emergencia el tiempo de lectura es caro.
  */
-export function municipioDe(
+export function municipiosEn(
   titulo: string,
   municipios: MunicipioRef[],
   ambiguos: Set<string> = nombresAmbiguos(municipios),
-): MunicipioRef | undefined {
+  /**
+   * Longitud mínima del nombre. Cinco por defecto — los nombres cortos coinciden con
+   * demasiadas cosas—, pero quien ya acotó la lista a un departamento puede bajarla:
+   * «Tadó» y «Sipí» son de cuatro letras, están entre los municipios más golpeados del
+   * Chocó, y con la lista restringida a ese departamento el riesgo de confusión
+   * desaparece. Ver `municipioDeNota` en `prensa-regional.ts`.
+   */
+  longitudMinima = 5,
+): MunicipioRef[] {
   const plano = sinTildes(titulo);
   const bajo = plano.toLowerCase();
-
-  let mejor: MunicipioRef | undefined;
+  const encontrados: MunicipioRef[] = [];
 
   for (const m of municipios) {
-    if (m.name.length < 5 && normalizar(m.name) !== 'cali') continue;
+    if (m.name.length < longitudMinima && normalizar(m.name) !== 'cali') continue;
     if (ambiguos.has(normalizar(m.name))) continue;
 
     const nombre = normalizar(m.name);
@@ -195,9 +204,21 @@ export function municipioDe(
     const primera = plano[inicio] ?? '';
     if (primera !== primera.toUpperCase()) continue;
 
-    if (!mejor || m.name.length > mejor.name.length) mejor = m;
+    encontrados.push(m);
   }
 
+  return encontrados;
+}
+
+export function municipioDe(
+  titulo: string,
+  municipios: MunicipioRef[],
+  ambiguos: Set<string> = nombresAmbiguos(municipios),
+): MunicipioRef | undefined {
+  let mejor: MunicipioRef | undefined;
+  for (const m of municipiosEn(titulo, municipios, ambiguos)) {
+    if (!mejor || m.name.length > mejor.name.length) mejor = m;
+  }
   return mejor;
 }
 

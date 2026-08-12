@@ -164,6 +164,91 @@ cuyo código empieza por cero no cruzan con la geometría.
 
 ---
 
+## Prensa regional — feeds propios de los diarios de la zona
+
+**Módulo:** `packages/ingest/src/sources/prensa-regional.ts` · **Verificado:** 2026-08-12
+
+**Por qué existe.** El recolector original consulta el RSS de Google Noticias, que agrega.
+Agregar sirve para enterarse de que hubo un terremoto y no sirve para saber qué pasó en
+Roldanillo. Medido sobre la recolección en producción: **704 notas y solo 177 (25 %) con
+municipio reconocible**, con Infobae de medio más frecuente y con El Universo (Ecuador),
+DW, France 24 y el Hoy Diario del Magdalena —a 900 km— entre los repetidos.
+
+La cobertura nacional habla del país; la regional habla de los municipios. «Restringen el
+ingreso al campus de la UTP» solo lo publica un diario de Pereira, y es exactamente el
+grano que este mapa necesita.
+
+### Feeds activos
+
+Se probaron uno a uno pidiendo el feed y comprobando que devolviera `<item>` con `pubDate`.
+
+| Medio | Departamentos | Feed |
+|---|---|---|
+| El País (Cali) | Valle del Cauca, Cauca | `elpais.com.co/arc/outboundfeeds/rss/` |
+| El Diario (Pereira) | Risaralda | `eldiario.com.co/feed/` |
+| Chocó 7 Días | Chocó | `choco7dias.com/feed/` |
+| Proclama del Cauca | Cauca, Valle del Cauca | `proclamadelcauca.com/feed/` |
+| El Nuevo Día (Ibagué) | Tolima | `elnuevodia.com.co/nuevodia/rss.xml` |
+| El Tiempo | nacional | `eltiempo.com/rss/colombia.xml` |
+
+Cubren los departamentos con más municipios sobre el umbral de daño: Valle del Cauca (42),
+Tolima (41), Chocó (25), Risaralda (14) y Cauca (9).
+
+### Probados y sin feed utilizable
+
+No hace falta volver a intentarlo a ciegas:
+
+- **La Patria (Manizales)** — `rss.xml` responde, pero es el feed de *clasificados*: la
+  primera entrada era «VENTA LOTES» de abril. No expone uno de noticias.
+- **La Crónica del Quindío**, **El Quindiano**, **El Colombiano** — `/feed`, `/rss` y
+  `/rss.xml` devuelven HTML. Quindío (12 municipios) y Antioquia (29) siguen dependiendo
+  de Google Noticias, donde ambos medios aparecen con frecuencia.
+- **UNGRD** (`portal.gestiondelriesgo.gov.co`) devuelve 403 al RSS; el **SGC** sirve una
+  página sin `<item>`. Lo oficial entra por las consultas `.gov.co` de Google Noticias.
+- Ninguno expone feeds por sección (`/category/<municipio>/feed`), así que no se puede
+  pedir «solo Pereira»: se filtra después de traer.
+
+### Dos medios que nos bloquean, y por qué no los saltamos
+
+**Diario Occidente** y **90 Minutos** (los dos de Cali) devuelven **403 a nuestro
+User-Agent** y 200 a `Mozilla/5.0` o a una petición sin identificar. Su WAF no rechaza el
+tráfico automático: rechaza al que se identifica como tal.
+
+Hacerse pasar por un navegador los saltaría. **No se hace.** `http.ts` se compromete a
+identificarse justo para que quien opera un servidor bajo carga pueda pedirnos que
+bajemos el ritmo o llamarnos; falsear el identificador convierte esa promesa en decorado.
+Están fuera de la lista activa —pedirles un 403 seguro cada 30 minutos tampoco tiene
+sentido— y anotados en `MEDIOS_QUE_NOS_BLOQUEAN`.
+
+**La salida no es técnica: es escribirle al medio y pedir permiso**, el mismo trámite
+pendiente con el `appname` de ReliefWeb. Mientras tanto Cali queda cubierta por El País,
+que es el medio con más notas de toda la recolección.
+
+### Cómo atribuye municipio
+
+De la señal más limpia a la más sucia, y se queda con la primera que acierta:
+
+1. **La ruta de la URL.** `…/noticias/risaralda/pereira/…` es la sección del propio
+   diario: ya clasificó la nota.
+2. **El titular.**
+3. **El resumen, y solo para municipios del departamento que el medio cubre.**
+
+Ese último límite salió de un error real: «El doble drama de **Sipí, Chocó**» quedó
+etiquetada como **Murillo (Tolima)** porque el resumen decía «el alcalde Jairo Antonio
+**Murillo**». Un resumen es prosa llena de apellidos, y los apellidos van en mayúscula
+igual que los municipios, así que la defensa de la mayúscula inicial no sirve ahí. Acotar
+al departamento del medio la reemplaza por una garantía editorial. Hay una prueba de
+regresión con ese titular exacto.
+
+En cada paso se prueba primero contra los municipios del propio departamento con la
+longitud mínima relajada a cuatro letras: es lo que hace visibles a **Tadó** y **Sipí**,
+de los más golpeados del Chocó, que la regla general de cinco letras descartaba siempre.
+
+**Se recogen enlaces, no cifras** — igual que el recolector de Google Noticias, y por el
+mismo motivo (ADR-003 y la nota de cabecera de `noticias.ts`).
+
+---
+
 ## Mapa base
 
 **OpenFreeMap** o **Protomaps** — teselas vectoriales sin token ni API key.
