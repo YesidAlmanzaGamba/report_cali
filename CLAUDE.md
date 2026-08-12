@@ -98,14 +98,40 @@ tareas, para que nadie pise a nadie.
 
 ### Reglas de convivencia
 
-1. **Solo `agente-datos` hace push a `main`.** `agente-ui` trabaja en ramas `ui/*` y
-   avisa cuando estén listas; `agente-datos` las trae, verifica y fusiona.
-2. **Nadie edita archivos fuera de su columna.** Si necesitas un cambio del otro lado,
-   pídelo en el mensaje de la rama en vez de hacerlo tú.
-3. **El contrato entre ambos son los archivos de `data/`** (ver abajo). Mientras esa
+1. **Escribe siempre en [`docs/COORDINACION.md`](docs/COORDINACION.md).** Es la regla que
+   sostiene a las demás. Anota ahí al empezar una rama, al dejarla lista para revisión, al
+   fusionarla y al descartarla; también las peticiones al otro agente y cualquier cambio
+   al contrato de datos.
+
+   No es burocracia: los dos agentes trabajan sin ver la conversación del otro, así que
+   **lo que no esté escrito ahí, para el otro no existe**. Una rama que nadie anunció es
+   una rama que nadie va a fusionar.
+
+2. **Solo `agente-datos` hace push a `main`.** `agente-ui` trabaja en ramas `ui/*` y lo
+   anota en el tablero; `agente-datos` las trae, verifica y fusiona.
+
+3. **Nadie edita archivos fuera de su columna.** Si necesitas un cambio del otro lado,
+   pídelo en el tablero en vez de hacerlo tú.
+
+   *Ya pasó una vez al revés:* `agente-datos` tocó `apps/web/src/lib/metricas.ts` al
+   agregar métricas nuevas, y la fusión con la rama de UI compiló mal. Git dijo «fusión
+   automática correcta» y el resultado no compilaba. Por eso la puerta de verificación se
+   corre **después** de fusionar, no solo sobre la rama.
+
+4. **El contrato entre ambos son los archivos de `data/`** (ver abajo). Mientras esa
    forma no cambie, los dos pueden avanzar sin bloquearse.
-4. **Si el contrato tiene que cambiar**, lo cambia `agente-datos` y lo anuncia aquí
-   mismo, en este archivo, antes de que `agente-ui` dependa de la forma nueva.
+
+5. **Si el contrato tiene que cambiar**, lo cambia `agente-datos`, lo anuncia en el
+   tablero **antes** de que `agente-ui` dependa de la forma nueva, y lo refleja aquí.
+
+### Umbrales duplicados: manténlos sincronizados
+
+`apps/web/src/lib/metricas.ts` repite los umbrales de frescura de
+`packages/ingest/src/freshness.ts`. La duplicación es deliberada —importar el paquete de
+ingesta arrastraría zod y módulos de Node al navegador— pero **los dos tienen que decir
+lo mismo**. Ambos están tipados como `Record<Metric, …>`, así que agregar una métrica
+rompe la compilación hasta que se actualicen los dos. Ese error es una función, no una
+molestia.
 
 ### Antes de pedir una fusión
 

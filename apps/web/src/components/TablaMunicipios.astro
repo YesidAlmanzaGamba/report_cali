@@ -35,6 +35,7 @@ const { municipios, total } = Astro.props;
           <th scope="col">Departamento</th>
           <th scope="col">MMI</th>
           <th scope="col">Grado</th>
+          <th scope="col">Severidad</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +52,7 @@ const { municipios, total } = Astro.props;
                     {m.mmi_roman}
                   </span>
                 </td>
+                <td class="severidad">{n.label}</td>
               </tr>
             );
           })
@@ -88,6 +90,14 @@ const { municipios, total } = Astro.props;
     border-radius: 999px;
     font-weight: 700;
     font-size: 0.82rem;
+  }
+
+  /* El romano y el color ya identifican el grado; esta columna es la razón por la
+     que ADR-009 puede seguir usando la paleta del USGS sin depender solo del color. */
+  .severidad {
+    color: var(--tinta-2);
+    font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .pie {

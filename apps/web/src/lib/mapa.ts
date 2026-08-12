@@ -13,10 +13,10 @@ import maplibregl, { type ExpressionSpecification, type StyleSpecification } fro
 // para que viaje en el mismo trozo que MapLibre y no en la carga inicial.
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { feature } from 'topojson-client';
-import type { FeatureCollection, Geometry } from 'geojson';
+import type { Feature, FeatureCollection, Geometry, Point } from 'geojson';
 
 import { levelFor, mmiColorStops } from './mmi';
-import { ETIQUETAS, TIPOS_FUENTE, ordenar } from './metricas';
+import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
 
 interface MunicipioProps {
   pcode: string;
@@ -36,6 +36,26 @@ interface MunicipioMmi {
 
 /** Lo que el mapa necesita de una observación. El tipo completo vive en el paquete de ingesta. */
 type ObservacionLigera = import('@report-cali/ingest/schema').Observation;
+
+/** Propiedades de un incidente publicado, ver `packages/ingest/src/incidentes.ts#aGeoJson`. */
+interface IncidenteProps {
+  tipo: string;
+  descripcion: string;
+  precision: 'exacta' | 'rejilla-100m';
+  fuente: string;
+  fuente_url: string;
+  fuente_tipo: string;
+  observado: string;
+}
+type ColeccionIncidentes = FeatureCollection<Point, IncidenteProps>;
+
+/** Solo estos dos tipos de incidente son "ayuda cercana"; el resto son daño y solo se
+ *  dibujan como puntos en el mapa, sin listarse en la ficha. */
+const TIPOS_AYUDA = new Set(['albergue', 'centro_acopio']);
+const ETIQUETAS_INCIDENTE: Record<string, string> = {
+  albergue: 'Albergue',
+  centro_acopio: 'Centro de acopio',
+};
 
 /**
  * Origen de los datos.
@@ -306,7 +326,7 @@ export async function iniciarMapa(): Promise<void> {
   }
 
   /**
-   * Pinta las cifras del municipio dentro de la ficha.
+   * Pinta las cifras del municipio como tarjetas grandes dentro del slide «Impacto».
    *
    * Se construye con `textContent` y `createElement`, nunca con `innerHTML`: el nombre de
    * la fuente y las notas vienen de un archivo que edita gente por pull request, y aunque
@@ -314,19 +334,23 @@ export async function iniciarMapa(): Promise<void> {
    */
   function pintarCifras(pcode: string): void {
     const contenedor = document.getElementById('detalle-cifras');
-    const lista = document.getElementById('detalle-lista');
-    if (!contenedor || !lista) return;
+    if (!contenedor) return;
 
     const cifras = ordenar(cifrasPorPcode.get(pcode) ?? []);
-    lista.replaceChildren();
+    contenedor.replaceChildren();
 
     if (cifras.length === 0) {
-      contenedor.setAttribute('hidden', '');
+      const p = document.createElement('p');
+      p.className = 'vacio';
+      p.textContent = 'Sin cifras registradas todavía para este municipio.';
+      contenedor.append(p);
       return;
     }
 
+    const ahora = new Date();
     for (const o of cifras) {
-      const li = document.createElement('li');
+      const tarjeta = document.createElement('div');
+      tarjeta.className = `cifra-grande ${frescuraDe(o, ahora)}`;
 
       const n = document.createElement('span');
       n.className = 'n';
@@ -346,12 +370,61 @@ export async function iniciarMapa(): Promise<void> {
       a.textContent = o.source.name;
       f.append(a);
 
-      q.append(f);
-      li.append(n, q);
-      lista.append(li);
+      tarjeta.append(n, q, f);
+      contenedor.append(tarjeta);
+    }
+  }
+
+  /**
+   * Pinta los puntos de ayuda (albergues, centros de acopio) del slide «Ayuda cercana».
+   *
+   * Solo lista lo que de verdad está cartografiado (`packages/ingest/src/incidentes.ts`);
+   * no hay teléfono en ese esquema, así que no se inventa uno. Cada punto lleva su fuente y
+   * dice si la ubicación es exacta o recortada a la rejilla de 100 m (ADR-012).
+   */
+  function pintarAyuda(features: Feature<Point, IncidenteProps>[]): void {
+    const contenedor = document.getElementById('detalle-ayuda');
+    if (!contenedor) return;
+
+    contenedor.replaceChildren();
+    const puntos = features.filter((f) => TIPOS_AYUDA.has(f.properties.tipo));
+
+    if (puntos.length === 0) {
+      const p = document.createElement('p');
+      p.className = 'vacio';
+      p.textContent =
+        'Sin albergues ni centros de acopio cartografiados en este municipio todavía. No significa que no los haya: significa que nadie los ha registrado aún.';
+      contenedor.append(p);
+      return;
     }
 
-    contenedor.removeAttribute('hidden');
+    for (const f of puntos) {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'punto-ayuda';
+
+      const tipo = document.createElement('span');
+      tipo.className = 'tipo';
+      tipo.textContent = ETIQUETAS_INCIDENTE[f.properties.tipo] ?? f.properties.tipo;
+
+      const desc = document.createElement('span');
+      desc.className = 'desc';
+      desc.textContent = f.properties.descripcion;
+
+      const meta = document.createElement('span');
+      meta.className = 'meta';
+      const precisionTexto =
+        f.properties.precision === 'exacta' ? 'ubicación verificada' : 'ubicación aproximada (~100 m)';
+      meta.textContent = `${f.properties.fuente} · ${precisionTexto}`;
+
+      boton.append(tipo, desc, meta);
+      boton.addEventListener('click', () => {
+        const [lon, lat] = f.geometry.coordinates;
+        mapa.flyTo({ center: [lon, lat], zoom: 13, duration: prefiereMenosMovimiento ? 0 : 700 });
+      });
+
+      contenedor.append(boton);
+    }
   }
 
   function mostrar(props: Record<string, unknown>): void {
@@ -506,7 +579,7 @@ export async function iniciarMapa(): Promise<void> {
     () => ({ municipios: [] as string[] }),
   );
   const conIncidentes = new Set(indiceIncidentes.municipios);
-  const incidentesCargados = new Map<string, unknown>();
+  const incidentesCargados = new Map<string, ColeccionIncidentes>();
 
   // ── Trama urbana ────────────────────────────────────────────────────────
   //
@@ -592,22 +665,25 @@ export async function iniciarMapa(): Promise<void> {
 
   async function mostrarIncidentes(pcode: string): Promise<void> {
     const fuente = mapa.getSource('incidentes') as maplibregl.GeoJSONSource | undefined;
-    if (!fuente) return;
 
     if (!conIncidentes.has(pcode)) {
-      fuente.setData({ type: 'FeatureCollection', features: [] });
+      fuente?.setData({ type: 'FeatureCollection', features: [] });
+      pintarAyuda([]);
       return;
     }
 
     if (!incidentesCargados.has(pcode)) {
       try {
-        incidentesCargados.set(pcode, await getJson(`incidentes/${pcode}.geojson`));
+        incidentesCargados.set(pcode, await getJson<ColeccionIncidentes>(`incidentes/${pcode}.geojson`));
       } catch {
+        pintarAyuda([]);
         return;
       }
     }
 
-    fuente.setData(incidentesCargados.get(pcode) as never);
+    const coleccion = incidentesCargados.get(pcode) as ColeccionIncidentes;
+    fuente?.setData(coleccion as never);
+    pintarAyuda(coleccion.features);
   }
 
   /**
