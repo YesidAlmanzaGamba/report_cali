@@ -44,6 +44,9 @@ packages/ingest/          Tubería de datos (Node + TypeScript)
   src/persist.ts          Escritura estable: solo escribe si el contenido cambió
   src/freshness.ts        Obsolescencia por métrica
   src/curated.ts          Cifras registradas a mano desde boletines
+  src/ayuda.ts            Centros de acopio y albergues (ubicación EXACTA, al revés que incidentes)
+  src/geocodificar.ts     Las revisiones que hacen publicable una coordenada automática
+  src/sources/osm.ts      Nominatim, con caché en disco
   src/export.ts           CSV con etiquetas HXL
   src/join/mmi.ts         Cruce intensidad × municipios
   src/sources/            usgs, codab, ungrd, noticias
@@ -162,7 +165,7 @@ Lo que `apps/web` puede dar por hecho. Los archivos se sirven desde
 | `event/mmi-by-municipality.json` | `{ generated_at, municipalities: [{ pcode, name, admin1_name, mmi, mmi_roman, method }] }` |
 | `event/aftershocks.geojson` | Puntos con `magnitude`, `depth_km`, `place`, `time` |
 | `observations/afectacion.json` | `{ meta, observations: Observation[] }` |
-| `ayuda/puntos.geojson` | Centros de acopio y albergues. Ubicación **exacta** (política contraria a la de incidentes) con `como_llegar` ya armado |
+| `ayuda/puntos.geojson` | Centros de acopio y albergues. Ubicación **exacta** (política contraria a la de incidentes) con `como_llegar` ya armado y `verificado` (persona vs. geocodificador) |
 | `fuentes/candidatos.json` | Notas de prensa para revisión humana |
 | `export/*.csv` | CSV con etiquetas HXL |
 
@@ -204,6 +207,12 @@ Cosas que ya costaron una tarde. No hace falta descubrirlas otra vez.
 - **Los datos abiertos de la UNGRD terminan en 2024.** No es un fallo del adaptador:
   publican con más de un año de rezago.
 - **La API de ReliefWeb exige un `appname` aprobado** por ellos. Trámite, no código.
+- **Geocodificar es fácil; geocodificar bien es rechazar.** Una dirección («Carrera 43
+  #6-120») devuelve la *vía*: un kilómetro de calle. Un barrio («Barranquillita») devuelve
+  el barrio. Y si el sitio no está mapeado, la tentación es buscar «el complejo que lo
+  contiene» — así se publicó la Ciudadela del Petronio a 2 km de donde era. La regla:
+  **se consulta el nombre tal cual y, si no aparece, no hay coordenada.** Las cuatro
+  revisiones están en `src/geocodificar.ts`.
 - **Los límites de `data/` están simplificados y no sirven para asignar municipio cerca
   de un borde.** La sede de la Cruz Roja de Caldas cae 549 m dentro del polígono de
   Villamaría; está en Manizales, y lo dicen la prensa, los directorios y su DIVIPOLA. El

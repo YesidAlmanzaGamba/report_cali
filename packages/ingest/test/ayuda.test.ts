@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { aGeoJson, enlaceBusqueda, enlaceMapa, publicar, type PuntoAyuda } from '../src/ayuda.js';
+import {
+  aGeoJson,
+  desdeGeocodificacion,
+  enlaceBusqueda,
+  enlaceMapa,
+  publicar,
+  type PuntoAyuda,
+} from '../src/ayuda.js';
 
 function punto(overrides: Partial<PuntoAyuda> = {}): PuntoAyuda {
   return {
@@ -99,5 +106,48 @@ describe('aGeoJson', () => {
 
   it('lleva la fuente, como todo dato publicado', () => {
     assert.equal(geo.features[0]?.properties['fuente_url'], 'https://ejemplo.co/nota');
+  });
+});
+
+describe('desdeGeocodificacion — no duplica lo que ya está curado', () => {
+  const sede = {
+    sede: 'Universidad de Caldas',
+    pcode: 'CO17001',
+    tipo: 'centro_acopio' as const,
+    titulo: 'Universidad de Caldas habilita centro de acopio',
+    enlace: 'https://ejemplo.co/n',
+    medio: 'La Patria',
+    publicado: '2026-08-11T15:00:00Z',
+    lon: -75.49389,
+    lat: 5.0556,
+  };
+
+  it('CASO REAL: «Universidad de Caldas» no se agrega si ya está el coliseo curado', () => {
+    // Están a 445 m, así que la distancia sola no lo atrapa; el nombre contenido sí.
+    const curado = punto({ nombre: 'Coliseo de la Universidad de Caldas' });
+    assert.equal(desdeGeocodificacion([sede], [curado]).length, 0);
+  });
+
+  it('sí lo agrega cuando no hay nada parecido', () => {
+    const otro = punto({ nombre: 'Coliseo Menor Ramón Marín Vargas', longitud: -70, latitud: 8 });
+    const [p] = desdeGeocodificacion([sede], [otro]);
+    assert.equal(p?.nombre, 'Universidad de Caldas');
+    assert.equal(p?.verificado, false, 'lo automático nunca se marca como verificado');
+    assert.ok(p?.como_llegar.includes('maps'));
+  });
+
+  it('descarta duplicados entre sí: el mismo acopio sale en cinco medios', () => {
+    const otroMedio = { ...sede, medio: 'El Tiempo', enlace: 'https://otro.co/n' };
+    assert.equal(desdeGeocodificacion([sede, otroMedio], []).length, 1);
+  });
+
+  it('descarta por distancia aunque el nombre no se parezca', () => {
+    const vecino = punto({ nombre: 'Otro sitio sin relación', longitud: -75.4939, latitud: 5.0556 });
+    assert.equal(desdeGeocodificacion([sede], [vecino]).length, 0);
+  });
+
+  it('lo curado gana: trae horario y qué necesitan, que el robot no sabe', () => {
+    const curado = punto({ nombre: 'Universidad de Caldas', horario: '8 a 18' });
+    assert.equal(desdeGeocodificacion([sede], [curado]).length, 0);
   });
 });

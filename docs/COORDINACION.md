@@ -433,6 +433,29 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 | 2026-08-12 | `event/mmi-by-municipality.json` | Se agrega `poblacion` por municipio (de `cod-ps-col`, HDX). Campo nuevo, nada se quita | Este aviso |
 | 2026-08-12 | `event/deslizamientos.json` + `.png` | Nuevos. Superposición de probabilidad de deslizamiento del USGS con sus esquinas | Ya en `main` |
 | 2026-08-12 | `ayuda/puntos.geojson` | **Nuevo.** Centros de acopio y albergues, ubicación exacta, con `como_llegar` ya armado | Este aviso — ver tarea 4 |
+| 2026-08-12 | `ayuda/puntos.geojson` | **Campo nuevo `verificado` (booleano).** Nada se quita | Este aviso — **léelo antes de dibujar la capa** |
+
+## `verificado`: dos clases de punto que no valen lo mismo
+
+Ahora hay puntos que **ubicó el robot**, no una persona. Los dos se publican y los dos
+traen `como_llegar`, pero no tienen la misma confianza:
+
+| | `verificado: true` | `verificado: false` |
+|---|---|---|
+| Quién lo ubicó | una persona, mirando el mapa | el geocodificador |
+| Suele traer | horario, `necesita`, dirección | solo el nombre y la fuente |
+| Qué puede fallar | poco | señalar otra sede del mismo campus |
+
+**Tienen que verse distintos.** Lo pediría como un marcador más tenue o con contorno
+punteado, y en la ficha una línea del tipo «ubicación aproximada, sin confirmar».
+
+No es una precaución teórica: se publicó un punto a **2 km** del sitio real —la Ciudadela
+del Petronio quedó en la Plaza de Toros— y desde el mapa se veía idéntico a los buenos.
+Ya está corregido y el automatismo tiene cuatro revisiones para que no se repita, pero
+quien va a manejar hasta allá merece saber cuál de las dos cosas está mirando.
+
+Hoy los 9 puntos son `verificado: true`; los automáticos aparecerán solos según entren
+titulares. Construye la capa contando con los dos casos desde ahora.
 
 ---
 

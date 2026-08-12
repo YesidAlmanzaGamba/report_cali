@@ -10,6 +10,7 @@
  * los datos que sí se pudieron traer.
  */
 import { readFile } from 'node:fs/promises';
+import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
 import type { FeatureCollection, Geometry } from 'geojson';
 
 import { loadCuratedObservations } from './curated.js';
@@ -32,7 +33,14 @@ import {
   observacionesDeslizamiento,
   parsearDeslizamientos,
 } from './sources/deslizamientos.js';
-import { aGeoJson as aGeoJsonAyuda, cargarAyuda, enlaceBusqueda, publicar } from './ayuda.js';
+import {
+  aGeoJson as aGeoJsonAyuda,
+  cargarAyuda,
+  desdeGeocodificacion,
+  enlaceBusqueda,
+  publicar,
+} from './ayuda.js';
+import { CACHE_PATH, geocodificarPendientes, leerCache } from './sources/osm.js';
 import { extraer } from './extraccion/reglas.js';
 import { fetchJson } from './http.js';
 import { recolectarNoticias } from './sources/noticias.js';
@@ -252,6 +260,20 @@ async function main(): Promise<void> {
   }
 
   if (mmiPorMunicipio.length > 0) {
+    // Se llena en el paso de prensa y se consume en los dos siguientes. Si el paso de
+    // prensa falla, queda vacío y los otros dos simplemente no hacen nada — que es el
+    // comportamiento correcto: sin titulares nuevos no hay sedes nuevas que ubicar.
+    let sedesSugeridas: {
+      sede: string;
+      pcode: string;
+      municipio: string;
+      tipo: 'centro_acopio' | 'albergue';
+      titulo: string;
+      enlace: string;
+      medio: string;
+      publicado: string;
+    }[] = [];
+
     await step('Notas de prensa y boletines', async () => {
       // Recoge ENLACES, no cifras. Lo que produce es una lista de candidatos para que
       // una persona los lea; sacar números de prosa automáticamente confunde totales con
@@ -321,6 +343,23 @@ async function main(): Promise<void> {
         sugerencias,
       });
 
+      // Solo las de ayuda se geocodifican. Un titular de colapso trae cifras, no lugares
+      // —está medido: de 108 sugerencias, las 4 con sede eran todas de acopio— así que
+      // pedirle al geocodificador que ubique un derrumbe es gastar consultas en nada.
+      sedesSugeridas = sugerencias
+        .filter((s) => s.sede !== undefined && s.pcode !== undefined && s.municipio !== undefined)
+        .filter((s) => s.tipo === 'centro_acopio' || s.tipo === 'albergue')
+        .map((s) => ({
+          sede: s.sede!,
+          pcode: s.pcode!,
+          municipio: s.municipio!,
+          tipo: s.tipo as 'centro_acopio' | 'albergue',
+          titulo: s.titulo,
+          enlace: s.enlace,
+          medio: s.medio,
+          publicado: s.publicado,
+        }));
+
       const conLugar = sugerencias.filter((s) => s.lugar).length;
 
       return `${candidatos.length} notas (${conMunicipio} con municipio, ${oficiales} oficiales) · ${
@@ -358,8 +397,67 @@ async function main(): Promise<void> {
       }`;
     });
 
+    await step('Geocodificación de sedes', async () => {
+      const cache = await leerCache();
+      if (sedesSugeridas.length === 0) {
+        return `sin sedes nuevas (${Object.keys(cache).length} en caché)`;
+      }
+
+      const municipios = await loadMunicipios();
+      const porPcode = new Map(municipios.features.map((f) => [f.properties.pcode, f]));
+
+      const pendientes = sedesSugeridas.map((s) => ({
+        nombre: s.sede,
+        municipio: s.municipio,
+        // La comprobación se hace contra el municipio que dice la fuente. Ojo: cerca de un
+        // borde los límites simplificados mienten (ver trampas en CLAUDE.md), pero aquí
+        // solo se usa para descartar homónimos de OTRA ciudad, que es una escala en la que
+        // la simplificación no alcanza a equivocarse.
+        dentroDelMunicipio: (lon: number, lat: number): boolean => {
+          const f = porPcode.get(s.pcode);
+          return f === undefined ? false : booleanPointInPolygon([lon, lat], f as never);
+        },
+      }));
+
+      const { cache: actualizada, resueltos, omitidos } = await geocodificarPendientes(
+        pendientes,
+        cache,
+      );
+
+      const written = await writeJson(DATA_DIR, CACHE_PATH, {
+        generado: new Date().toISOString(),
+        nota:
+          'Caché de geocodificación. Un nombre resuelto no cambia de sitio, así que se ' +
+          'consulta una vez. Borra una entrada para que se vuelva a resolver.',
+        entradas: actualizada,
+      });
+
+      const conteo = Object.values(actualizada).reduce<Record<string, number>>((acc, e) => {
+        acc[e.motivo] = (acc[e.motivo] ?? 0) + 1;
+        return acc;
+      }, {});
+
+      return `${resueltos} resueltos${omitidos > 0 ? `, ${omitidos} para la próxima` : ''} · ${JSON.stringify(
+        conteo,
+      )} ${written.changed ? '(escrito)' : '(sin cambios)'}`;
+    });
+
     await step('Puntos de ayuda', async () => {
-      const puntos = publicar(await cargarAyuda());
+      const curados = await cargarAyuda();
+      const cache = await leerCache();
+
+      const automaticos = desdeGeocodificacion(
+        sedesSugeridas
+          .map((s) => {
+            const v = cache[s.sede];
+            if (v?.motivo !== 'ok' || v.lon === undefined || v.lat === undefined) return undefined;
+            return { ...s, lon: v.lon, lat: v.lat };
+          })
+          .filter((s) => s !== undefined),
+        curados,
+      );
+
+      const puntos = [...publicar(curados), ...automaticos];
 
       // Un solo archivo nacional, no uno por municipio como los incidentes: los puntos
       // de ayuda son pocos y quien busca dónde donar no sabe todavía en qué municipio
@@ -371,9 +469,9 @@ async function main(): Promise<void> {
         return acc;
       }, {});
 
-      return `${puntos.length} puntos ${JSON.stringify(porTipo)} ${
-        written.changed ? '(escrito)' : '(sin cambios)'
-      }`;
+      return `${puntos.length} puntos (${automaticos.length} automáticos) ${JSON.stringify(
+        porTipo,
+      )} ${written.changed ? '(escrito)' : '(sin cambios)'}`;
     });
 
     await step('Exportación CSV/HXL', async () => {

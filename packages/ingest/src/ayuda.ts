@@ -21,6 +21,7 @@
 import { readFile } from 'node:fs/promises';
 import { z } from 'zod';
 
+import { nombreCoincide } from './geocodificar.js';
 import { AYUDA_FILE } from './paths.js';
 import { IsoDateTimeSchema, PcodeSchema, SourceSchema } from './schema.js';
 
@@ -116,13 +117,98 @@ export function enlaceBusqueda(consulta: string): string {
 export interface PuntoPublicado extends PuntoAyuda {
   /** Enlace «cómo llegar», precalculado para que la interfaz no arme URLs. */
   como_llegar: string;
+  /**
+   * `true` si una persona confirmó la ubicación; `false` si la ubicó el geocodificador.
+   *
+   * **Los dos se publican, pero no valen lo mismo y la interfaz tiene que distinguirlos.**
+   * Un punto automático pasó cuatro revisiones (ver `geocodificar.ts`) y aun así puede
+   * señalar la sede equivocada de un campus. Quien va a manejar hasta allá merece saber
+   * cuál de las dos cosas está mirando.
+   */
+  verificado: boolean;
 }
 
 /** Añade el enlace de navegación. Puro: sin red ni disco. */
 export function publicar(puntos: PuntoAyuda[]): PuntoPublicado[] {
   return puntos
     .filter((p) => p.activo)
-    .map((p) => ({ ...p, como_llegar: enlaceMapa(p.longitud, p.latitud) }));
+    .map((p) => ({ ...p, como_llegar: enlaceMapa(p.longitud, p.latitud), verificado: true }));
+}
+
+/** Distancia aproximada en metros. A escala de ciudad la aproximación plana sobra. */
+function distanciaM(lon1: number, lat1: number, lon2: number, lat2: number): number {
+  const m = 111320 * Math.cos((((lat1 + lat2) / 2) * Math.PI) / 180);
+  return Math.hypot((lon1 - lon2) * m, (lat1 - lat2) * 110540);
+}
+
+/** Lo que hace falta para construir un punto automático a partir de un titular. */
+export interface SedeGeocodificada {
+  sede: string;
+  pcode: string;
+  tipo: TipoAyuda;
+  titulo: string;
+  enlace: string;
+  medio: string;
+  publicado: string;
+  lon: number;
+  lat: number;
+}
+
+/**
+ * Convierte sedes geocodificadas en puntos publicables, **sin pisar los curados**.
+ *
+ * Si una persona ya registró esa sede a mano, gana el registro a mano: trae horario, qué
+ * necesitan y una ubicación confirmada, cosas que el geocodificador no puede saber. El
+ * automático solo llena huecos.
+ */
+export function desdeGeocodificacion(
+  sedes: SedeGeocodificada[],
+  yaCurados: PuntoAyuda[],
+): PuntoPublicado[] {
+  const salida: PuntoPublicado[] = [];
+
+  /**
+   * ¿Ya está este sitio? Se pregunta de dos maneras porque una sola no alcanza, y eso
+   * también se midió:
+   *
+   * - **Por nombre**, con `nombreCoincide`: «Universidad de Caldas» está contenida en
+   *   «Coliseo de la Universidad de Caldas», que es el punto curado. Es el mismo acopio
+   *   —la nota dice que funciona en el coliseo de la universidad— nombrado más corto.
+   * - **Por distancia**: dos nombres sin nada en común pueden ser el mismo sitio. 400 m
+   *   es la escala de un campus.
+   *
+   * El caso real quedó a 445 m: la distancia sola no lo habría atrapado, el nombre sí.
+   * Al revés pasa cuando la prensa le cambia el nombre al mismo edificio. Van las dos.
+   */
+  const yaEsta = (nombre: string, lon: number, lat: number, previos: PuntoAyuda[]): boolean =>
+    previos.some(
+      (p) =>
+        nombreCoincide(nombre, p.nombre) ||
+        nombreCoincide(p.nombre, nombre) ||
+        distanciaM(lon, lat, p.longitud, p.latitud) < 400,
+    );
+
+  for (const s of sedes) {
+    // Un mismo centro de acopio sale en cinco medios. Sin esto, cinco marcadores encima
+    // del mismo edificio. Se compara contra los curados y contra los ya aceptados aquí.
+    if (yaEsta(s.sede, s.lon, s.lat, [...yaCurados, ...salida])) continue;
+
+    salida.push({
+      tipo: s.tipo,
+      nombre: s.sede,
+      pcode: s.pcode,
+      longitud: s.lon,
+      latitud: s.lat,
+      source: { name: s.medio, url: s.enlace, type: 'press' },
+      observed_at: s.publicado,
+      notes: `Ubicado automáticamente desde el titular «${s.titulo.slice(0, 120)}». Nadie lo ha confirmado en el sitio.`,
+      activo: true,
+      como_llegar: enlaceMapa(s.lon, s.lat),
+      verificado: false,
+    });
+  }
+
+  return salida;
 }
 
 /** GeoJSON para el mapa. */
@@ -140,6 +226,7 @@ export function aGeoJson(puntos: PuntoPublicado[]): unknown {
         horario: p.horario ?? '',
         necesita: (p.necesita ?? []).join(', '),
         telefono: p.telefono ?? '',
+        verificado: p.verificado,
         como_llegar: p.como_llegar,
         fuente: p.source.name,
         fuente_url: p.source.url,
