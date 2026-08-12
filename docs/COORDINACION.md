@@ -927,6 +927,7 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 | 2026-08-12 | `event/deslizamientos.json` + `.png` | Nuevos. Superposición de probabilidad de deslizamiento del USGS con sus esquinas | Ya en `main` |
 | 2026-08-12 | `ayuda/puntos.geojson` | **Nuevo.** Centros de acopio y albergues, ubicación exacta, con `como_llegar` ya armado | Este aviso — ver tarea 4 |
 | 2026-08-12 | `ayuda/puntos.geojson` | **Campo nuevo `verificado` (booleano).** Nada se quita | Este aviso — **léelo antes de dibujar la capa** |
+| 2026-08-12 | `fuentes/cobertura.json` | **Nuevo.** Registro de cobertura periodística por municipio, y su reverso: de qué municipios golpeados no informa nadie | Este aviso — ver la sección de abajo |
 
 ## `verificado`: dos clases de punto que no valen lo mismo
 
@@ -949,6 +950,64 @@ quien va a manejar hasta allá merece saber cuál de las dos cosas está mirando
 
 Hoy los 9 puntos son `verificado: true`; los automáticos aparecerán solos según entren
 titulares. Construye la capa contando con los dos casos desde ahora.
+
+---
+
+## `fuentes/cobertura.json` — el mapa de lo que no sabemos
+
+Archivo nuevo, generado en cada corrida por `packages/ingest/src/cobertura.ts`.
+
+De frente responde «¿quién está informando de este municipio?». **El reverso es lo que
+justifica el archivo: dice de cuáles no informa nadie.** Un municipio golpeado sin una sola
+nota no es un municipio sin daños — es uno del que no sabemos. Es la misma distinción que
+sostiene `CLAUDE.md` («distinguir sin dato de sin daño»), y hasta ahora estaba implícita:
+se deducía mirando qué municipios *no* aparecían en `candidatos.json`. Implícito quiere
+decir que nadie la mira.
+
+**No se declara, se observa.** No hay tabla escrita a mano de «qué medio cubre qué
+municipio»: se cuenta lo que cada medio publicó de verdad. Una tabla a mano envejece el día
+que un diario cambia de sección; esto se corrige solo en la corrida siguiente.
+
+### Lo que dice la primera corrida, y no es cómodo
+
+| | |
+|---|---|
+| Municipios considerados (MMI ≥ 6, o con alguna nota) | **228** |
+| Con al menos una nota | **49** |
+| **Sin ninguna** | **179 — el 79 %** |
+| **Personas en esos municipios** | **5.612.642** |
+| Medios distintos | 79 |
+
+El hueco más grave no es un pueblo remoto:
+
+> **Cartago (Valle del Cauca) — MMI 8, empatado como el municipio más sacudido del país,
+> 142.255 habitantes — tiene cero notas.**
+
+Y detrás: Santa Rosa de Cabal (83.317), Calarcá (80.008), Circasia (31.051), La Virginia
+(29.382), Río Quito y Atrato en el Chocó. Por departamento, los huecos se concentran en
+Tolima (38), Valle del Cauca (32), Antioquia (27) y Chocó (22) — que es exactamente el
+mapa de dónde faltan feeds regionales: Tolima solo tiene El Nuevo Día, y Antioquia y
+Quindío no tienen ninguno porque sus diarios no exponen RSS.
+
+O sea que este archivo no solo mide la cobertura: **explica dónde hay que ir a buscar
+fuentes**, y convierte la siguiente decisión de ingesta en algo que se lee en una tabla en
+vez de intuirse.
+
+### Qué NO es
+
+No es una medida de daño ni un orden de prioridad para mandar recursos. Un municipio puede
+tener veinte notas por ser capital y otro ninguna por ser pequeño y estar incomunicado —
+y el segundo puede necesitar más ayuda. Es un mapa de **nuestra información**, no del
+desastre. El `nota` del propio archivo lo dice, y hay una prueba que verifica que lo diga.
+
+### Pendiente, sin construir
+
+- **Exportarlo a CSV con etiquetas HXL**, como los otros dos. «De qué municipios golpeados
+  no informa nadie» es justo lo que un coordinador humanitario querría cruzar con sus
+  propios datos, y `export.ts` ya tiene la maquinaria.
+- **Mostrarlo en la interfaz.** Encaja con la deuda que dejó quitar el aviso de «sin
+  cartografía» de la ficha: aquello se quitó por salir en los 1.122 municipios, pero aquí
+  la afirmación sí discrimina —179 de 228— y por municipio.
 
 ---
 

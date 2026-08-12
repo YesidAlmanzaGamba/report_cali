@@ -13,6 +13,7 @@ import { readFile } from 'node:fs/promises';
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
 import type { FeatureCollection, Geometry } from 'geojson';
 
+import { construirCobertura, type NotaCandidata } from './cobertura.js';
 import { loadCuratedObservations } from './curated.js';
 import { mmiToCsv, observacionesToCsv } from './export.js';
 import { aGeoJson, cargarIncidentes, porMunicipio, publicables } from './incidentes.js';
@@ -275,6 +276,11 @@ async function main(): Promise<void> {
       publicado: string;
     }[] = [];
 
+    // Se llena en el paso de prensa y lo consume el registro de cobertura. Si prensa
+    // falla queda vacío, y el registro sale con todos los municipios en cero — que es la
+    // respuesta correcta: sin notas recogidas, no sabemos nada de ninguno.
+    let notasRecogidas: NotaCandidata[] = [];
+
     await step('Notas de prensa y boletines', async () => {
       // Recoge ENLACES, no cifras. Lo que produce es una lista de candidatos para que
       // una persona los lea; sacar números de prosa automáticamente confunde totales con
@@ -321,6 +327,7 @@ async function main(): Promise<void> {
       );
 
       if (candidatos.length === 0) throw new Error('Ninguna consulta devolvió resultados');
+      notasRecogidas = candidatos;
 
       const written = await writeJson(DATA_DIR, 'fuentes/candidatos', {
         generado: new Date().toISOString(),
@@ -406,6 +413,29 @@ async function main(): Promise<void> {
       } incidentes sugeridos, ${conLugar} con lugar ${
         written.changed || escritas.changed ? '(escrito)' : '(sin cambios)'
       }`;
+    });
+
+    await step('Cobertura por municipio', async () => {
+      // De frente: quién está informando de cada municipio. Al revés —y es lo que
+      // justifica el archivo— de cuáles no hay nadie informando. Un municipio golpeado
+      // sin una sola nota no es un municipio sin daños: es uno del que no sabemos.
+      const cobertura = construirCobertura(
+        mmiPorMunicipio.map((m) => ({
+          pcode: m.pcode,
+          name: m.name,
+          admin1_name: m.admin1_name,
+          mmi: m.mmi,
+          poblacion: m.poblacion ?? null,
+        })),
+        notasRecogidas,
+      );
+
+      const written = await writeJson(DATA_DIR, 'fuentes/cobertura', cobertura);
+      const { con_notas, sin_notas, poblacion_sin_notas, medios_distintos } = cobertura.resumen;
+
+      return `${con_notas} con cobertura, ${sin_notas} sin ninguna (${poblacion_sin_notas.toLocaleString(
+        'es-CO',
+      )} personas) · ${medios_distintos} medios ${written.changed ? '(escrito)' : '(sin cambios)'}`;
     });
 
     await step('Incidentes por municipio', async () => {

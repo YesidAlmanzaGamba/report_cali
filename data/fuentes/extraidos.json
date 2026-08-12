@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-12T21:49:07.928Z",
+  "generado": "2026-08-12T22:17:43.114Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -155,9 +155,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Colombia: Refugios improvisados reciben a damnificados por el terremoto - france24.com",
+      "titulo": "Colombia: Refugios improvisados reciben a damnificados por el terremoto - France 24",
       "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX0lWeGZ2MVg0QVZabU1OSVFhU0NnaVpiUHRVQXNMQ3hmVU5maFNFNTJubFpEMTRqN0lCanZlT2pTVmFrWFVPMzF4R1NaTmJVaEM5M2xZX2x1bEZxc3VLNnJWOWN4ZmRBRWhlM0tnWW9QZ29IZHpPWEZLVTNuaU9UNzg3TllwWENYZUcyYzZHWlFXYU1FTFdma0l0bGZpX1daMUVUWVlKOGg0RUJucGFEcGVkdw?oc=5",
-      "medio": "france24.com",
+      "medio": "France 24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-12T02:14:48.000Z"
     },
@@ -277,9 +277,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - radioatacama.cl",
+      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - Radio Atacama",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWg1SVJpT1dKM0NuUVllenVzZ25YSHZJNU9Vc1VxN3RHUHBwOU81a1ZrMm82N29JTVNDa3ZPdTFwVWNpZUI3S1cwQlpON3c1UlU5cThOeGJRaXBqMXBGVkhzWFcwdlNFWFNWdXREczFtY0pZNmh5Z3ZTdUdDQ21QWVpjeFVhSzBPVjFRUnVqXzc?oc=5",
-      "medio": "radioatacama.cl",
+      "medio": "Radio Atacama",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T17:35:14.000Z"
     },
@@ -550,6 +550,14 @@
       "publicado": "2026-08-10T20:43:15.000Z"
     },
     {
+      "tipo": "via_bloqueada",
+      "titulo": "Pilas, conductores: estas son las principales vías bloqueadas por derrumbes que produjo el sismo | El Colombiano - El Colombiano",
+      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQWpqZGR1U3dlZnlQRTQyWGF6bHlqYnVWMll3aFVXaHpVRW0tWGNoSTB6cGRuZG5pQjk3MjFqci1uaGZXUUNiUHZSNk5tRm1oWmN2cjZlZXRxdk40Q0RYQVZsci1QTlpzMDJGR2l2RWsxam52T2hhU25sbHpwVWl2dzFkNklRY0pPcTJQbXE1Sm92UDhTbWY0akJ5bTFmTW5WSzVrNndPUGcxc1VV0gGyAUFVX3lxTE8yVmZDb2xwUkE1WDBDWjliV0VBRjVMUl9VcUxGSUtWM1Fkb0hhLTNIczNrc2J2NFRKRXZwM2lTYURSR3NoYUJqQm1NMmZkS3JvYkVrT1pzd1VjaVNzU3RJZl9CUS1QNEszN3p6ZHZublZBWjlrUlZqdVNMTjM3UjBrUUlQcVZQbHNqMDRPQlBzSnhjX3dxLWEzaEtFUDE1aWVxcEhhNHdtR2tsMjRxYlB3MlE?oc=5",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T20:14:30.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Fotos | En Buenaventura, sismo deja viviendas e instituciones educativas colapsadas - Canal 1 En vivo",
       "enlace": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPXzUxZjl3NXFiVjV6OHBlTlB0S0tHZ3A5ZldoZExPNElYTmZSV3c2LU1qX21LM3lHUzRZMk1KZzJRQVZPVUhzTkt2MkdDdnYwR1E2WmZWLTdkR0dYNE1lbU5nT3M1WkkySmRacURwN2xMTFU3bkxUeUt2dVMydFBfQWtCUUNwYXRDQlo3ZU53MnZ6cnpBV2JzbGUzWmhnZWZpY1VWTU54YnR3WERBYzJvZVh2dURPY3lYUXo3V19JMm5WZ1pP0gHKAUFVX3lxTE1IS0tOQlRnUXdQalY4VzcwTWdSMF9PT3BaTkd2aVI1NC1NeWZOWDBDN1RwN3BrSkRBeDBPTUVDRVZMdVJYekx2aE5BX3FQcHJ4OThueGwxWEJuSVdHU29rUWFuek03c0VFOEEwd3NXMnRKNHVaRkdGZDBFckhOM0VBdGFPaEZpRVlic3FCUGlrMmNDQmxuaGY0allMcUx1cXQwRjlYbFJIMGdiX1k1OEh2c2xmYm04Yjd5dFZEWmNFcDJNVlgzZ3FYVmc?oc=5",
@@ -569,9 +577,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "¿Cuántos edificios colapsaron en Cali?: Buscan sobrevivientes bajo los escombros - Noticias RCN",
+      "titulo": "¿Cuántos edificios colapsaron en Cali?: Buscan sobrevivientes bajo los escombros - noticiasrcn.com",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMkJUUEZnVXduVTZneFF1WHJhVzduaVVrNXRKT0xoRlA4QVo0V2hxUzFBTUJxWVZFM0s2Yy1FZmNzMlczYXR1VDNYcDM3Mk0wd3RFOEtrUUVtcl9BdHFSRXd6UFI2OWRWdk03b1ZlcmgtUW1YbUdaUDY5VUFUcUJOa3pPQWdzR1FUT1ZRVmRBRVhzVVhuN05SeWowRXNsaGNOZlRIZW1LX3oySTY5QVc2ZFRmWUh1cVZkUXNCdDhwSdIBvwFBVV95cUxQcTI0NWVGN2Z0emF0ZVN5am1Ubk1EM3Foek45eTJCbHYydC03UURGU0Vmb1NvbnFxR09Td0dRUHVjMWRnM3FpRWNOLTZZWHREX3Y1QksxYWd4enhqbzJuazNSMDVtRUdqNy1mT25jcU85RlRXTXU1WWN3TTc1NmJIQVRQc1Rfb05KaW9XTXRpWVF2WWd4X1pjRTNNdnc0MGhRVkVSVkZyM1ltYjdmQnQtcmJ2U1V2cWlzQ2pOTlRFMA?oc=5",
-      "medio": "Noticias RCN",
+      "medio": "noticiasrcn.com",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T19:51:20.000Z",
       "pcode": "CO76001",
@@ -639,9 +647,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - cambiocolombia.com",
+      "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPOXcxWUpRM2QzUUVCaHV0YkNPZjlWaUk5cE1vTXgtN3RNZkZBb013U3h4RDlWQkZNcFBUR096OG04VnhhVldiMDNnT3B1d3ZvbUFNblVTOVplcUZ5aTVVSElNVUZBUW9tcG5uR2JCU3VTTUR5OGFCclVKMm41SU1nYW9oTGs1Q1JhaFZ4bjN3Y1F6cnN6WGFUbHZRem1ORUlfQlp5TTgyNm1WTTk3NHhtdUFXRHBvcTJyU3lTSWU0N29mVWlfSHg4QkhSNUNhc2JoLXg5blVMWkl3Q29HTjA0aWxXNDNWY0c3R281RHJXT3dsalU4b2RzSVc2UzhJMG8wT0s0Uw?oc=5",
-      "medio": "cambiocolombia.com",
+      "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T17:52:48.000Z"
     },
@@ -735,14 +743,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Videos muestran la fuerza del terremoto en Colombia que ha dejado 70 fallecidos y edificios colapsados - expansion.mx",
-      "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOblVxeXN4bWN5R29wbHQzSzA5OXMxZzRHUTAwcnc1NzBaRDhzcW9XRF83eTdmQlVyNTJEWWlPemd1UzFsaFU1VlBrNlZBYWhpcWZ3RzN2RmtMY1RWVC0zNVNRb0laRnozZEJQRFFlT3FGOWVhbkRsV0FxTUpOOXF5emQ1cjJiVWpzYmVvT3lWQjZYVjZH0gGiAUFVX3lxTFBMa2hUY21FVUxzZ1o1bGVSajJoVXBobHJ0ckNwWmdmZUhHQ3RielU4anN6X09KZWRNUWVZc0tGRXhfU3M1X2lwaGl3X0hqRFBkbG8tX0JhYm5LUnN0dFRtaUJnbWYtUFkxQ1dMU1NhcGRHZ20tdXZrM2x4cmVBTUpia09tMms1WFBtUnh4TFZLYkgtXzJoR29DSEZrN0ZGaUNCZw?oc=5",
-      "medio": "expansion.mx",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T13:36:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 124 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
       "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVFNTQmlqdkx0Vm01N0JyR3c3a2g5VDRaX1hxNnVRb0JSQS1wTWt1WmZvOW9YdjhfV29Rdm9RamxEaTZyUVU2QVlhYklzdjBkV3ZvUFJuZnNqNjRyYmhJUFZpcFVVQ2xMcHlpSEg2ektydmJVeGxVZ2k0YW8wQjl3NlVZcEN6S2xrSTgwTDB5RnM5WkJTNmk5am5uc3VEeVNOVEE?oc=5",
       "medio": "Clarin.com",
@@ -819,17 +819,17 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lista de centros de acopio y albergues en la CDMX - El Universal",
+      "titulo": "Lista de centros de acopio y albergues en la CDMX - eluniversal.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVmNkcmVOb0lLclA4QWF5MldGOEFPbGQ3a3JOZGZDNzQ2RnlUTjUzWXMxeUJrd0FUVjY0RVRUV01fSmVub0x3RkY3OXpUbWJQOERXZVI1SlI4YktpUUtQQlRtWmZXQjJZb3ZPMFBCd25hV2tkUVhHdjZyemNESm4tbGR3UFhyMlRaZVF6UTdTUUV2djh60gGoAUFVX3lxTE5hUXc1QU5IYkk2NHA2RlF0dWJSdXMwS3lIWFY0TzhnRm1nVU9naXVvbV9rWTZtcmhYOUVQczNCVGh6aWY0QlhkQXZNZk1RbkhlUXRKTkZmWHFfa3ExU0RZQzg1OVltME9jQWVJeXNja0RMWnRuR0owM0N4UU9UZlBveEs4NXpzdG9EclVSbDU2UHAzT2pmZGg0dWtmV2tzYkQtbk1JZGdTQw?oc=5",
-      "medio": "El Universal",
+      "medio": "eluniversal.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Reportan 5 muertos en edificio colapsado de Iztapalapa - El Universal",
+      "titulo": "Reportan 5 muertos en edificio colapsado de Iztapalapa - eluniversal.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOc3VhMWJVOFlIX3lnOW1hMUpJZmo4OU1mRGNwM2Zxa0F5RDJSV0RnU1Y4cTdHMXlCMnEtR3FIQ1A0cC1acGV3SmliRk5tekhaemFSalF2STgzT3ROc1JMRWtuT2pmUjdYdDhpS2FEQ2hZbU9sMDg4QWJxY0J4Z3JVRGxYbmZXWE9qZW1YaGx1d0RrWGNoandYQVV6UmlHOHlBMkxF0gG3AUFVX3lxTE1mSVM0QlNvcnFjWHRiRmVkdEM1eG56cW4yTWFaVUp1ZTBEMm91ZzQ5all5QzRWU0diVUUzNmtyQ2J0R0JfWjEwOG5fbGtsV2t2cVRWME14a09xTGJVaHphNmNPbFJyeTByWURWby1WQW1YQ1NXV1g3VUxmRzhyYUJPYjdJOUFDVVJDTjFOZk5HcHdiRDh1M2ZJLTNLZUdGcnR3d1VETEpoTmNZd2tqQ2pkc1FPMnI1QQ?oc=5",
-      "medio": "El Universal",
+      "medio": "eluniversal.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
