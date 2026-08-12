@@ -36,6 +36,11 @@ const { leyenda } = Astro.props;
 
   <p class="aviso-modo" id="aviso-modo" role="status" hidden></p>
 
+  <!-- Se muestra solo si el evento trae modelo de deslizamiento. -->
+  <button type="button" id="capa-deslizamientos" class="capa" aria-pressed="false" hidden>
+    Deslizamientos
+  </button>
+
   <button type="button" id="volver-vista" class="volver" hidden>
     ← Ver toda la zona
   </button>
@@ -172,6 +177,30 @@ const { leyenda } = Astro.props;
   }
   :global(html:not(.js)) #mapa {
     height: auto;
+  }
+
+  /* Interruptor de capa. Debajo del conmutador de modo, alineado a la derecha. */
+  .capa {
+    position: absolute;
+    top: 4rem;
+    right: 0.6rem;
+    z-index: 6;
+    min-height: 36px;
+    padding: 0 0.75rem;
+    border: 1px solid var(--borde);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--fondo) 94%, transparent);
+    backdrop-filter: blur(6px);
+    color: var(--tinta-2);
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .capa[aria-pressed='true'] {
+    background: var(--tinta);
+    color: var(--fondo);
+    border-color: var(--tinta);
   }
 
   /* Sin mapa base, quien se acerca a un municipio pequeño pierde la referencia de

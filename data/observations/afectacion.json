@@ -1,9 +1,9 @@
 {
   "meta": {
     "dataset": "observations/afectacion",
-    "generated_at": "2026-08-12T02:52:28.200Z",
+    "generated_at": "2026-08-12T05:07:02.147Z",
     "event_id": "us6000tjl2",
-    "record_count": 29,
+    "record_count": 30,
     "sources": [
       {
         "name": "Infobae — Gobernación del Valle",
@@ -14,10 +14,15 @@
         "name": "Infobae — cifra de Asocapitales",
         "url": "https://www.infobae.com/colombia/2026/08/10/en-vivo-fuerte-temblor-de-74-se-sintio-en-colombia-cali-y-manizales-reportan-derrumbes-en-edificaciones/",
         "type": "press"
+      },
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
+        "type": "official"
       }
     ]
   },
-  "content_hash": "67b908542675736d27deb9f37704ecfb83b2af1860478768ad4b086b855e7121",
+  "content_hash": "fc9786c69cf5de24bfd77eadfca32303006a96cdc19c296895a506f4c49c004d",
   "observations": [
     {
       "metric": "deaths_confirmed",
@@ -29,7 +34,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Balance nacional del 11 de agosto. Convive con cifras más altas del día anterior: los conteos tempranos se corrigen."
     },
     {
@@ -42,7 +47,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-10T22:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Balance del 10 de agosto. Se conserva a propósito: muestra cómo variaron las cifras."
     },
     {
@@ -55,7 +60,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "missing_reported",
@@ -67,7 +72,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Si buscas a alguien, usa Cruz Roja RCF o la línea 123. Este sitio no recibe reportes."
     },
     {
@@ -80,7 +85,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Viviendas destruidas. Aparte, 48 edificios colapsados."
     },
     {
@@ -93,7 +98,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "schools_affected",
@@ -105,7 +110,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -117,7 +122,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "injured",
@@ -129,7 +134,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "people_trapped",
@@ -141,7 +146,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "people_rescued",
@@ -153,7 +158,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "missing_reported",
@@ -165,7 +170,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -177,7 +182,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "health_facilities_affected",
@@ -189,7 +194,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Hospitales inhabilitados."
     },
     {
@@ -202,7 +207,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Cifra preliminar; la más alta del país por municipio."
     },
     {
@@ -215,7 +220,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "people_trapped",
@@ -227,7 +232,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -239,7 +244,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Edificios destruidos completamente."
     },
     {
@@ -252,7 +257,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -264,7 +269,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "injured",
@@ -276,7 +281,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -288,7 +293,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "buildings_partially_collapsed",
@@ -300,7 +305,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "people_affected",
@@ -312,7 +317,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Damnificados."
     },
     {
@@ -325,7 +330,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "injured",
@@ -337,7 +342,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "people_trapped",
@@ -349,7 +354,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "En una edificación del barrio Medrano."
     },
     {
@@ -362,7 +367,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z"
+      "ingested_at": "2026-08-12T05:06:58.071Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -374,8 +379,21 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-12T02:52:25.698Z",
+      "ingested_at": "2026-08-12T05:06:58.071Z",
       "notes": "Valle del Cauca sin contar Cali. Incluye tres niños en Calima El Darién."
+    },
+    {
+      "metric": "people_affected",
+      "value": 4400,
+      "pcode": "CO",
+      "source": {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T05:03:41.281Z",
+      "ingested_at": "2026-08-12T05:06:58.070Z",
+      "notes": "Personas expuestas a deslizamiento según el modelo del USGS. Alerta: orange."
     }
   ]
 }
