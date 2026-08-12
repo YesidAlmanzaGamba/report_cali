@@ -692,7 +692,28 @@ export async function iniciarMapa(): Promise<void> {
     );
   }
 
+  /**
+   * Municipio con la ficha abierta ahora mismo, o `null`. Sirve para dos cosas: que
+   * tocar el mismo municipio dos veces la cierre en vez de repintarla, y que
+   * `mapa.on('click', ...)` sepa si un toque fuera de cualquier polígono debe cerrarla.
+   */
+  let pcodeAbierto: string | null = null;
+
+  function cerrarFicha(): void {
+    panel?.setAttribute('hidden', '');
+    mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
+    pcodeAbierto = null;
+  }
+
   function mostrar(props: Record<string, unknown>): void {
+    // Antes de mostrar cualquier cosa nueva, se repliegan las leyendas si están
+    // abiertas. Dos paneles flotantes a la vez (la ficha y una leyenda desplegada)
+    // se sienten como que la interfaz no sabe qué es lo importante ahora mismo.
+    document.getElementById('leyenda')?.removeAttribute('open');
+    document.getElementById('leyenda-poblacion')?.removeAttribute('open');
+
+    pcodeAbierto = String(props['pcode'] ?? '') || null;
+
     const mmi = typeof props['mmi'] === 'number' ? props['mmi'] : null;
 
     set('detalle-nombre', String(props['name'] ?? ''));
@@ -803,6 +824,13 @@ export async function iniciarMapa(): Promise<void> {
     const props = e.features?.[0]?.properties;
     if (!props) return;
 
+    // Tocar el municipio que ya está abierto lo cierra, en vez de repintar la misma
+    // ficha: es el gesto que se espera de un panel que se abrió al tocar.
+    if (props['pcode'] === pcodeAbierto) {
+      cerrarFicha();
+      return;
+    }
+
     mostrar(props);
 
     const f = municipios.features.find((x) => x.properties.pcode === props['pcode']);
@@ -812,6 +840,15 @@ export async function iniciarMapa(): Promise<void> {
     }
   });
 
+  // Tocar el mapa fuera de cualquier municipio también cierra la ficha — el otro gesto
+  // esperado. `queryRenderedFeatures` dice si el punto tocado cayó sobre un polígono;
+  // si cayó, el handler de arriba ya se encargó y este no debe hacer nada más.
+  mapa.on('click', (e) => {
+    if (!pcodeAbierto) return;
+    const tocoMunicipio = mapa.queryRenderedFeatures(e.point, { layers: ['municipios-relleno'] }).length > 0;
+    if (!tocoMunicipio) cerrarFicha();
+  });
+
   mapa.on('mouseenter', 'municipios-relleno', () => {
     mapa.getCanvas().style.cursor = 'pointer';
   });
@@ -819,10 +856,7 @@ export async function iniciarMapa(): Promise<void> {
     mapa.getCanvas().style.cursor = '';
   });
 
-  document.getElementById('cerrar-detalle')?.addEventListener('click', () => {
-    panel?.setAttribute('hidden', '');
-    mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
-  });
+  document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
 
   // En móvil la leyenda pasa a flujo normal dentro del marco, así que el alto del
   // contenedor cambia después de inicializar el mapa. MapLibre no se entera solo y
@@ -1059,8 +1093,7 @@ export async function iniciarMapa(): Promise<void> {
   const volver = document.getElementById('volver-vista');
   volver?.addEventListener('click', () => {
     volver.setAttribute('hidden', '');
-    document.getElementById('detalle')?.setAttribute('hidden', '');
-    mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
+    cerrarFicha();
     for (const capa of ['incidentes', 'secciones']) {
       (mapa.getSource(capa) as maplibregl.GeoJSONSource | undefined)?.setData({
         type: 'FeatureCollection',

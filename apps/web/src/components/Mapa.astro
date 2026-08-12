@@ -55,8 +55,11 @@ const { leyenda } = Astro.props;
   </button>
 
   <!-- Cerrada por defecto: en un celular, seis filas de leyenda tapan justo la parte
-       del mapa que la persona vino a mirar. En pantallas anchas la abre `mapa.ts`. -->
-  <details class="leyenda">
+       del mapa que la persona vino a mirar. En pantallas anchas la abre `mapa.ts`.
+       El `id` es lo que `aplicarModo()` usa para ocultarla en modo «Gente expuesta» —
+       sin él, las dos leyendas podían quedar montadas una sobre otra en el mismo
+       rincón. -->
+  <details class="leyenda" id="leyenda">
     <summary>
       <span>Intensidad (MMI)</span>
     </summary>
