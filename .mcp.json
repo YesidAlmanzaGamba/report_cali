@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "report-cali-fs": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "env": {}
+    }
+  }
+}

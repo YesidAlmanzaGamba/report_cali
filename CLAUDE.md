@@ -209,6 +209,14 @@ Cosas que ya costaron una tarde. No hace falta descubrirlas otra vez.
 
 ---
 
+## Memoria para agentes
+
+Este archivo es la memoria **legible**: reglas, contrato y trampas. Además hay un
+`.mcp.json` con un servidor de sistema de archivos para consultar el repositorio de forma
+estructurada. Detalle y cómo agregar el índice semántico: [`docs/MCP.md`](docs/MCP.md).
+
+---
+
 ## Comandos
 
 ```bash
