@@ -355,3 +355,54 @@ fotográfica (fase 6) van en specs aparte y después del mapa.
 superficie de abuso que un agregador de solo lectura no tiene. Publicar primero algo
 confiable y verificable es lo que le gana al proyecto los colaboradores que después
 sostienen la moderación. Al revés no funciona.
+
+---
+
+## ADR-014 — R2 queda sin habilitar: los datos viajan dentro del Worker
+
+**Estado:** aceptada · 2026-08-13
+
+**Contexto.** La arquitectura de `docs/DESPLIEGUE.md` preveía servir `data/` desde un
+bucket R2 para desacoplar la actualización de datos del despliegue del sitio. Con el sitio
+ya en vivo en Cloudflare (`report-cali.camiloalmanzis.workers.dev`) tocaba decidir si
+montarlo o no, y se midió antes de decidir.
+
+**Lo que se midió.**
+
+| | |
+|---|---|
+| Peticiones a activos estáticos en Workers | **gratis e ilimitadas**, también en el plan gratuito |
+| Invocaciones de código del Worker | **cero** — `wrangler.jsonc` no declara `main` |
+| Commits del cron | 18–20 al día |
+| Datos en vivo tras un commit | **~2–3 min** (compilar + desplegar) |
+| Tamaño de `data/` | 7,2 MB |
+
+**Decisión.** No se habilita R2. Los datos se publican como activos estáticos del propio
+Worker.
+
+**Por qué.** R2 no resuelve el problema por el que se estaba considerando. La
+preocupación era el volumen de visitas, y **el volumen de visitas no es un límite aquí**:
+sin `main`, todo el tráfico son activos estáticos, que no consumen el tope de 100.000
+peticiones diarias. R2 actúa sobre la ruta de *escritura*, no sobre la de lectura.
+
+Lo que compraría son unos dos minutos de latencia sobre datos que el cron solo refresca
+cada 30 minutos —una mejora de en torno al 10 % sobre una obsolescencia ya aceptada— y a
+cambio pide **una tarjeta de crédito** (Cloudflare la exige para habilitar R2), un
+`PUBLIC_DATA_URL`, un script de subida y una configuración de CORS. Son cuatro piezas
+más que pueden fallar en emergencia, por dos minutos.
+
+**Cuándo revisarlo.** Cualquiera de estas tres lo reabre:
+
+1. Se quiere frescura **por debajo del minuto** — el cron baja a 5 minutos, o entran
+   reportes de campo en vivo.
+2. `data/` pasa de unos **25–30 MB**, donde recompilar el paquete entero por un archivo
+   que cambió empieza a doler de verdad.
+3. Los despliegues empiezan a fallar o a encolarse, y las actualizaciones de datos se
+   quedan esperando detrás de una compilación rota.
+
+Hoy ninguna se cumple. El espejo en GitHub Pages ya da un segundo origen si un despliegue
+de Cloudflare falla.
+
+**Lo que NO cambia.** `scripts/upload-r2.sh` se queda en el repositorio, y la sección de
+R2 de `docs/DESPLIEGUE.md` también: la decisión es «todavía no», no «nunca». Cuando se
+cumpla alguna de las tres condiciones, está escrito cómo montarlo.

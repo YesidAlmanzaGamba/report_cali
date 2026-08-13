@@ -167,9 +167,15 @@ geoetiqueta EXIF y fuentes de prensa; **nunca scraping de redes** (ADR-002).
 
 ## Transversal, en cualquier momento
 
-- **Desacoplar los datos de la compilación** (R2). Es lo primero de la lista de despliegue
-  y sin ello el cron agota la cuota de compilaciones. Ver `DESPLIEGUE.md`.
-- **Espejo en GitHub Pages** para redundancia.
+- ~~**Desacoplar los datos de la compilación** (R2)~~ — **decidido que no, por ahora
+  (ADR-014).** El motivo que figuraba aquí era falso: «sin ello el cron agota la cuota de
+  compilaciones» no aplica, porque compilamos en GitHub Actions y no en Cloudflare, así
+  que la cuota de 500 compilaciones nunca entra en juego. Medido lo que R2 sí aportaría
+  —unos 2–3 min de latencia sobre datos que el cron refresca cada 30— no compensa la
+  tarjeta de crédito ni las cuatro piezas nuevas. ADR-014 lista las tres condiciones que
+  lo reabren.
+- ~~**Espejo en GitHub Pages** para redundancia~~ — **hecho.** En vivo y sirviendo como
+  segundo origen.
 - **Inglés** como segundo idioma, para socorristas internacionales y para HDX.
 - **Publicar el conjunto de datos en HDX** y archivarlo en Zenodo con DOI.
 - **Accesibilidad**: revisión con lector de pantalla; ya hay tabla, texto alternativo y

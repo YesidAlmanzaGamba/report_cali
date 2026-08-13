@@ -285,15 +285,32 @@ npm run boundaries -w @report-cali/ingest   # límites municipales; a mano, tard
 
 ---
 
-## Estado
+## Estado — v1.0.0 (2026-08-13)
 
-Fases 0 a 4 en producción, 279 pruebas. Pendiente: credenciales de Cloudflare y tres
-trámites que no son código — el `appname` de ReliefWeb, permiso a los dos diarios de Cali
-que nos bloquean por User-Agent, y avisar a la Alcaldía de Cartago de que su RSS sirve
-texto de relleno. El detalle está en [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Fases 0 a 4 en producción, **298 pruebas**. **Publicado en los dos orígenes:**
 
-**El techo del proyecto, medido:** de 228 municipios golpeados, **179 no tienen ni una
-nota de prensa** (`data/fuentes/cobertura.json`). No hay gaceta municipal legible por
-máquina — se comprobó. Por eso existe la recolección en campo
-([`docs/CAMPO.md`](docs/CAMPO.md)) y ADR-013: en un municipio de 7.000 habitantes, la
-emisora local y alguien parado ahí son las únicas fuentes que hay.
+| | |
+|---|---|
+| Cloudflare Workers | <https://report-cali.camiloalmanzis.workers.dev> |
+| GitHub Pages (espejo) | <https://yesidalmanzagamba.github.io/report_cali/> |
+
+**R2 no está habilitado, y es una decisión (ADR-014), no un pendiente.** Los datos viajan
+como activos estáticos del Worker. Sin `main` en `wrangler.jsonc` no hay invocaciones de
+código, así que el tráfico es gratis e ilimitado y el tope de 100.000 peticiones diarias
+no aplica. Las tres condiciones que reabren R2 están en el ADR.
+
+Pendiente, y nada de esto es código: el `appname` de ReliefWeb, permiso a los dos diarios
+de Cali que nos bloquean por User-Agent, y avisar a la Alcaldía de Cartago de que su RSS
+sirve texto de relleno. Detalle en [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
+**El techo del proyecto, y cómo se movió.** El registro de cobertura midió que de 228
+municipios golpeados, **179 no tenían ni una nota de prensa**
+(`data/fuentes/cobertura.json`). La conclusión de entonces —«no hay gaceta municipal
+legible por máquina»— **resultó falsa**: la había, y estaba detrás de una API compartida
+del MinTIC que los sitios municipales usan tras una cáscara de Angular
+(`src/sources/alcaldias.ts`). Hoy **103 municipios tienen boletín oficial y 13 cifras
+propias**, y para 54 de ellos es la única fuente que existe.
+
+Lo que sigue siendo cierto: en un municipio de 7.000 habitantes sin boletín, la emisora
+local y alguien parado ahí son las únicas fuentes que hay. Por eso existen la recolección
+en campo ([`docs/CAMPO.md`](docs/CAMPO.md)) y ADR-013.

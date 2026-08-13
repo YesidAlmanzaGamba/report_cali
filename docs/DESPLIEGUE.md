@@ -108,7 +108,25 @@ ignora `ingested_at`), así que no hay commits de ruido. La geometría —lo pes
 prácticamente no cambia. Las observaciones son JSON pequeño. Estimado: unos pocos MB al
 mes. No es un problema en años.
 
-### 2. Cloudflare R2 — la capa de servicio
+### 2. Cloudflare R2 — la capa de servicio · **NO habilitada (ADR-014)**
+
+> **Esto no está montado, y es una decisión, no un pendiente.** Hoy los datos se publican
+> como activos estáticos del propio Worker: el navegador los pide al mismo dominio del
+> sitio y el CDN los cachea igual.
+>
+> **Por qué no.** R2 se estaba considerando por el volumen de visitas, y el volumen de
+> visitas no es un límite aquí: `wrangler.jsonc` no declara `main`, así que todo el
+> tráfico son **activos estáticos, gratis e ilimitados**, y el tope de 100.000 peticiones
+> diarias —que aplica a invocaciones de código— nunca se toca. R2 mejora la ruta de
+> escritura, no la de lectura: ahorraría unos 2–3 minutos de latencia sobre datos que el
+> cron refresca cada 30 minutos, a cambio de una tarjeta de crédito y cuatro piezas más
+> que pueden fallar en emergencia.
+>
+> El razonamiento completo, con las cifras medidas y las **tres condiciones que lo
+> reabren**, está en ADR-014 de [`DECISIONS.md`](DECISIONS.md).
+>
+> Lo que sigue describe cómo montarlo **cuando haga falta**. `scripts/upload-r2.sh` se
+> queda en el repositorio por eso.
 
 Los datos que el navegador pide, servidos desde el CDN.
 

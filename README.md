@@ -12,6 +12,18 @@
 
 ---
 
+### En vivo
+
+| | |
+|---|---|
+| **Sitio** | <https://report-cali.camiloalmanzis.workers.dev> |
+| **Espejo** | <https://yesidalmanzagamba.github.io/report_cali/> |
+
+Dos orígenes con dueño distinto, a propósito: si uno tiene un incidente, el otro sigue
+sirviendo los mismos datos.
+
+---
+
 Mapa abierto y verificable de la afectación del terremoto de **magnitud 7.4** ocurrido el
 **10 de agosto de 2026 a las 07:34** (hora local), con epicentro a 5 km de
 **San José del Palmar, Chocó**, a ~110 km de profundidad.
