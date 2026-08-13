@@ -89,6 +89,25 @@ function iniciarUno(carrusel: HTMLElement): void {
     acercarCarrusel();
   });
 
+  /**
+   * Abrir por la cara que tenga algo que leer.
+   *
+   * Quien abre la ficha de un municipio no quiere «la cara 1»: quiere la información que
+   * hay. Y la que hay casi nunca es la primera — 94 de los 103 municipios con boletín no
+   * tienen ninguna cifra registrada, así que «Impacto reportado» les sale en blanco y la
+   * ficha parecía rota. Quien pinta el contenido sabe cuál tiene algo; se lo dice por
+   * aquí.
+   *
+   * Sin animación: no es una transición que la persona haya pedido, es el estado
+   * inicial. Animarlo se vería como un tic.
+   */
+  carrusel.addEventListener('ficha:cara', (e) => {
+    const indice = (e as CustomEvent<{ indice: number }>).detail?.indice ?? 0;
+    const objetivo = Math.min(slides.length - 1, Math.max(0, indice));
+    pista.scrollTo({ left: objetivo * pista.clientWidth, behavior: 'auto' });
+    sincronizar();
+  });
+
   // El scroll dispara muchos eventos por gesto; solo interesa el estado al final de
   // cada fotograma, no cada píxel.
   let pendiente = false;
