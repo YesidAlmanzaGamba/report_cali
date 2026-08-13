@@ -1,8 +1,28 @@
 {
-  "generado": "2026-08-13T15:30:42.398Z",
+  "generado": "2026-08-13T16:26:07.701Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "centro_acopio",
+      "sede": "Estadio Nemesio Camacho El Campín",
+      "titulo": "Solidaridad en acción: Fonseca estuvo en el Centro de Acopio del Estadio Nemesio Camacho El Campín en Bogotá",
+      "enlace": "https://www.elpais.com.co/colombia/solidaridad-en-accion-fonseca-estuvo-en-el-centro-de-acopio-del-estadio-nemesio-camacho-el-campin-en-bogota-1355.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-13T16:14:55.000Z",
+      "pcode": "CO44279",
+      "municipio": "Fonseca",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Estadio%20Nemesio%20Camacho%20El%20Camp%C3%ADn%2C%20Fonseca%2C%20Colombia"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Carlos Vives habilita centro de acopio en Bogotá para apoyar a damnificados por el terremoto - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQV3VLLVBYcGI1X1BPS3ZLdDlHOUw3cktPT2xHWHZTSXJTY08xTzVZUzBZZndsR2pwUjQ3QVFYeU81TzBBdGotZXl0STdEZk9zNzNtYnJTR2M3bnRxSGFOLTVMVHBDcFJ4YkZHMFdJaC03aFM0cXlJcDhMZGJLQzBZUGhsWGRGWnB1Zkw1NWg5ZldPTTJGSDRnNWhVQTJfQ1BHUHVLSWtOOXJ5MTFsWklON0s3VTVuR1pfeE5RY1hvTnJJSDZfUXfSAdoBQVVfeXFMUEpYcjZlQWtmbjM1OHZqWnJibHYwUVdtNE8zT3VyMUxrNEZFTEpjeGppMXF3cDFpbWJrQU4wSlEzRmRYZk9Hb2hRc01LblVsN3VReHFPR2h0RkQzZlc4Mlk4bktOeTVxTkladEM5Z0NSNEotMGpDRkNqeHVPSUhVWUExVkt4Qmo5eGpPbVlnMGtQTmhJOE5rQlFUazhXS0ZfSGlRUnZqZXUxTjVFQmZ0M0JyQkpqZFN5ZFdwNUphX2RRNVVRUl8xcTZmd0NuYVc4Sk5jLTdKUXU1cEE?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-13T15:56:15.000Z"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Consulte mapa de edificios colapsados o dañados por sismo en Colombia - El Nuevo Siglo",
@@ -36,6 +56,14 @@
       "publicado": "2026-08-13T12:56:15.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "‘En comunidad podemos ayudar’: Cauca habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZy04Y0lHY3dnZmxPT3VTRHhXM3VDaFJOc0dQdjhPbVBkaklBZzZIazAtRTF2elhIRDJKMnpLOWRUcFl2Q2lNdE8zMHF2cV9ZSjZzZ1M5QUdNeUJmVW5PbnItMXJzMUthTkNLTzhSTHhTMUxvLVludHJ3Q0VMOWFGaHlBMDFJWmFtS1V5NGQzUDA0TU45djdoYlFKdGIwbjFaczFxelZsc3luNnBmRzhKcTlsc2d4akRhT05TN25TSXktWlVEVHZuQdIB3AFBVV95cUxNMGtoRXdJZS1FNXhWRjhLTzUxNFl3R0JNQS1qWkNVbEN4elI3Z21sbkdyZjdnc0lCX3JhTm8wR2hSNlRsVjVMSmV4eEtUS0w0N2VzWlY5UU1aU0pkRlY5NEVwWTRRVF9XSTNaSEl6QXh6enl6RUtvVDVkUEU1Tnh0c2tpLThHOEhSb0JGcWE5a3RncFBuZTZWZDF0Ty11R0VWTVl4c0s0QXBnZ0hYd1hya280TTJFVmxCeHJOdUNzQVhwYjBOQVo0VnF1QUljU1RqaGF5aWJaSjB4bG9p?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-13T12:13:59.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -80,14 +108,6 @@
       "medio": "Noticias Caracol",
       "tipo_fuente": "press",
       "publicado": "2026-08-13T03:51:33.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Jorge Celedón habilita punto de acopio en Bogotá para damnificados por el reciente terremoto en Colombia - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUFc0bnE0eERRVXhRcGxTVERWR3RMbERobnAwMkxGZ3Rjclp1bm5KOXFlNXBzWVc5QWRwQlc4Vkh4ZHhyV2pwTFFsT2JMNDVhN2F0UW8yWXpkU2ViajdvMW1oc1ROYkJjVWMwR0pmYkU0UzBNYndHcmowekZ3N3RvNGlSSXpxVTVlYUdKelRtQmREN3I3WlBYbC0wcG83eGtrb210anhJalRSb0d4bktOcmk3a1dBb3VKTHhFMXdrV1dKZXpjd3NMOTUwY1JSYVVjWWtJdjVudHBzVmdOVW9xM3haNVHSAeoBQVVfeXFMTmFmOUlHZ19NWGFIaUFlOTlfdEhqUkhuQnYwU05oUXRMeGxraEpPdFA0TWVCY0xoZ3lQVm9hb2lnaDhkTXZFUXRaMGZqX0tUZU1EOXc3V19VU2gyNFNxVkhKUHlLXzVOdWtrUlVqd3BVWGNuald1b3E0SmFVY29yMWRFRXNRcGp4TndYZUVuZ2tkZTlOX3pHRnhGeV9zbUxTd255WnpxZkNvUTB4ZGg1ZGdCWDJpbGJ5eHU4U285bl8tUjdBVU1BbnFNRXNYNkZlRDNmc3AteE15d0Z6bjduS2ZOOV9JcnI2djNn?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-13T03:48:05.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -153,9 +173,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Alcaldía de Pasto habilita el centro de acopio para apoyar a damnificados por el terremoto en Colombia - Pasto.gov.co",
+      "titulo": "Alcaldía de Pasto habilita el centro de acopio para apoyar a damnificados por el terremoto en Colombia - pasto.gov.co",
       "enlace": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPYkpNblkwbjJQdi1jZnNYWVBjdXVSNTNYODQxVFE5U1VhbWo5ajJxREFIaFdVVkE0UVNadkE4ZnVYMWNXMzMyb21WWk15b0VyOFVOQnpWOTl0MHk0Q3Q1U2g0NjJucEhOLTR1NDRheGpsQVh5MG5ldTE0QUZidG00S0dUUk9tdTl5MlQzLU9pUUJScGlQQ0tPWTRoS2NNNC1IeXRZU252UlhGR3p3M25aZ1AzTnJ0NWU0S21DQXJKUktzc19XVGhSOVBsclNlVENwU2QxYzhoVmJHbjVXMko0WlpESXFEZ25xbmZhZHVkSzQ0QlIxMkRNQTg4NXhrRk1oSlRuX2lFVFhWbW5ZQklDVmtn?oc=5",
-      "medio": "Pasto.gov.co",
+      "medio": "pasto.gov.co",
       "tipo_fuente": "official",
       "publicado": "2026-08-12T20:48:42.000Z",
       "pcode": "CO52001",
@@ -197,10 +217,10 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "'Ayuda para hallar a mis tíos y a su hijo': familia de venezolanos, entre 238 desaparecidos en Cali, tras el terremoto; van 107 edificios colapsados - eltiempo.com",
+      "titulo": "'Ayuda para hallar a mis tíos y a su hijo': familia de venezolanos, entre 238 desaparecidos en Cali, tras el terremoto; van 107 edificios colapsados - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxONmRuUW9ROFRjOUtZOHZGVXc5OHotQTdveC1nZGp0c0NIUS04Slo3bEdrN25YQWo4TzgteF95cy10dE5MT3ZONXlGRUFYWWl3UVJTR3FHVWg4VHoyU0t2aHo5MU1jclRlMEpVaFBqVVJvS1lhMFlZWG1vZFpNaS1sT0dPWjRXYllOU0xSVmJhQXRDOUhpQUJLSDJUV2RlR284b210RXAzQjJRbktlVFdQajdFdHNuV182eDc5eEpyVFlySTM5cmxJSksxY2pWS2xNaG1GZzAxcHZTRE54Z3U0bU1mUWljVTdRZlJ3YnlxSzFzd3lBcTkycE91cndMSmNVWjB5a0RaYVBtV1ZrY2xIbDNOeURhOVRq0gGeAkFVX3lxTE5aV29jOWk1V0d3bEQwNnZlLXdveldCVFN5UGlfdnAzYy1qVUxCVmY4Nk1GOW5lYXFkcUN5NjhkMEc3S2tlcjNsbW5nZWRkRnpxanBRZHNuN09LeU5VMFBoRnVxTDM3djZxbnVNTEFjZVB0VlZMZUlEVC1VeHhRbXAzcUduUW9sbzlUVFo1M1dhajVWVk8ydDl0Q3lVWkppV0ZNc1llV2dscEpZWDB3bUxZSk83MjJCUlZ1eFR0SXFhTW0yTEJ0ZTRCYXc1cHIxTTVBYkNDSHJoV01LYzF2TFZpX1FiTTJ2RVNDaXNlSmdLZFV3S0NVVW0tOVBDaFZkeGNIUjlNUkQ5Uk9uUjhDTmotRFZ4YjM3T29HbUVScUE?oc=5",
-      "medio": "eltiempo.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
       "publicado": "2026-08-12T12:31:38.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
@@ -277,18 +297,18 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Abren centro de acopio por sismo en Colombia - mvsnoticias.com",
+      "titulo": "Abren centro de acopio por sismo en Colombia - MVS Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYkc2U19EbFBhcXNLVEhQcThWbjU4UmkwOGdEUGdONDBMRURFQXRZcWhWV2I3d2FLWkNzY2FVQ255QkhFN1ctckxDX292d3V3enNzRWJXbW5fS0RWNUdvbU5IWHUtOHREUm1QY1l0SVljanE0QXQ4Wm5oemloWFFSZ2RwQTQzVWRZSmdCNmIxMEFZZkF6RkV2Z3FMdXM5bzBuZEYw?oc=5",
-      "medio": "mvsnoticias.com",
+      "medio": "MVS Noticias",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T20:36:00.000Z"
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - eltiempo.com",
+      "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
-      "medio": "eltiempo.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
       "publicado": "2026-08-11T20:29:28.000Z"
     },
     {
@@ -311,9 +331,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Puntos de acopio en Bogotá: ¿Dónde llevar ayudas para los afectados por el terremoto? - newsroom.rcnradio.com",
+      "titulo": "Puntos de acopio en Bogotá: ¿Dónde llevar ayudas para los afectados por el terremoto? - Newsroom RCN Radio",
       "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNd0E3ZGNsOWNlMGFHaGk2RjlIYnNlQXlGM3lQMk03RlkyWnRvdFpLSFZEcWNpZGVtSmIzcmdoV29NYmItdUFwY0RUN3dUd1RfWnlfRll2WlN5VzV5Tkp5d1BDWHppRGxyWXdiNFREMl9hcElHbl9Jai1EallxMGEwRVpCakdsellrOGFyc1hzU0xHaFRRZEFWVVpwNWU5TGNncV9iQXVnbS0xcWY5S2hidHNoRE9xVVpFMF9hbXRB?oc=5",
-      "medio": "newsroom.rcnradio.com",
+      "medio": "Newsroom RCN Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T19:39:33.000Z"
     },
@@ -345,9 +365,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Cali: estos son los centros de acopio y albergues habilitados tras el terremoto de 7,4 en Colombia; conoce qué ayudas se necesitan - newsroom.rcnradio.com",
+      "titulo": "Cali: estos son los centros de acopio y albergues habilitados tras el terremoto de 7,4 en Colombia; conoce qué ayudas se necesitan - Newsroom RCN Radio",
       "enlace": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOTHNkTWxEeEZNd25IenF5QnB6WDJzYXc4cDFFdTM4dHFjUGN6NUNzMURXNVIyYWdDQ2E4WVhGTkR6SWJ2blhqUHdIZjVoWjV4TkR0UWhOYllTYWRQVmxpcC15RkU2d2VZSnhYLWtYQ0ZNWVVIVkVEOExIR1NiODhINE5YYUo4dFQzSklEX2Q3cTdab2lHM2I2LUhKcTdzMUozQnc4bDlXQThOWkJpLVZvaHlvTHdsOGphbGl2UTNSZVVZbHpCU1J5M2xydkpaSFgxM1didGF1MXlieVJoaGlEUFYzWmc0bEVxM21FbGdJTDdvQi1pb0lzdGZKdw?oc=5",
-      "medio": "newsroom.rcnradio.com",
+      "medio": "Newsroom RCN Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T16:41:05.000Z",
       "pcode": "CO76001",
@@ -355,9 +375,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Ibagué activa jornada solidaria con múltiples puntos de acopio para apoyar a afectados por sismo en Pereira - pulzo.com",
+      "titulo": "Ibagué activa jornada solidaria con múltiples puntos de acopio para apoyar a afectados por sismo en Pereira - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWh0QkhZWk5XUW5WbFJ2cmFmaDlrQ1BkQVVKUWFSS0t4OXNIdFNVOWZmQU1NX2IwcTlONXdZVUpJbkF1Q1Z6TjVmZE9KS0p1TURxalp1ZGdfNmd4cDFubnNSVEQ0a2VNZjJicXJ4RDVRdmM4emNKb0FMY244NkhTZGJMMS1IZTNrd1MwWU8zTlIxNGtEclNobEdkOWlJVlV3c0ttd2haSUxIQzUwZjh6UkktYzJrb2l0S2hYNWx6MG4xSFR6YVJiTGE5VUlGd0XSAdQBQVVfeXFMUG9lSEFaZVlJeXZGN0puSGtQMnliejJNUkROZEwzalJuUENaRlVnel9GSkJVdWxsLVdRM3VHVkJ1WVhONHR1SWZXUFNUaHdIQ1VLdTkyYnlDUzRHLW01ZEdKNU9kRkdnWEc4QlNLSDh1aC1feE9XRVRITDgwQlBqMkxCMGlIRlpXVjhPQ09uLS1mYmE4aXBqdmZoeWVfTmpxRFd5OU9LLUkzTExhZTJLOVl4UFdaU3hpNS1SQjl2ZnVKVllWWVctc283OVEwWm9qVC15TE4?oc=5",
-      "medio": "pulzo.com",
+      "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T16:26:11.000Z",
       "pcode": "CO66001",
@@ -380,6 +400,16 @@
       "publicado": "2026-08-11T15:54:58.000Z"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Belén de Umbría reporta 487 viviendas afectadas por el sismo",
+      "enlace": "https://www.eldiario.com.co/actualidad/belen-de-umbria-reporta-487-viviendas-afectadas-por-el-sismo/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T15:07:08.000Z",
+      "pcode": "CO66088",
+      "municipio": "Belén de Umbría"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Alcaldía de Bogotá confirmó puntos de acopio de donaciones para los damnificados del terremoto en toda Colombia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdS00MjdPT1RXVXhPdW9lNHhaaXFqNnRTdDJxRmVyUkdobzN5SF9ERi04andsYkhaTk5uei1yZjZ2cmdtMU9vTFY2RTFCMExkbEM1SDFfZFRjQkVPTnU1Qm5zc09RWUVZdklLZHlkeVdXbWFfQlBBWk9PWDd5eThvVUZiN2ZfZ3pWWmRJUW1OeWYyYjZCdjBsYTNyZEtPQ3Vxbm1Jcl9PYkQ3Nm94ank3UHhYWXppM2VhQkxCQklqd084RU9oQmNxNlZ3b3BKSkNsQmUxREJKZnhFR21yMkh3Q0pwRVVISjg2T1dSadIBhwJBVV95cUxNOXAwSWVFRWhhbFVUdXdNbHFyVmdVREVSNXNUZHVqOTlDOWtLajdyZ0JKbWRvLXJGTFJtR0NKQkpqSHdENzZMOWJlNHJXUjB0bExQM0hZWUpmMC14Y2pRMzRvS3lWTDZ4aWZiSlh2RV9MbVdfYUMzbVpKYTdZQnYtYkUyLVJyLWY1eWNmNXV6Rl9JV3lHZlExakRaT0N1OTZmMVpzbGNpVVAzQzVWc0N0Ul9pb1JDVDBMS1g1WUtqa2F6cGcwQVRkOTNwWldxeUpYd0hoUVpKVTJzUC14cExwOGtsWWpoaUhIdkREbW1oQTlVOUZ2QnY0TUVNblVSRmliREJGUGlWaw?oc=5",
@@ -389,17 +419,17 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Terremoto en Colombia: Santander se solidariza con damnificados y abre varios centros de acopio para enviar ayudas a regiones seriamente afectadas - eltiempo.com",
+      "titulo": "Terremoto en Colombia: Santander se solidariza con damnificados y abre varios centros de acopio para enviar ayudas a regiones seriamente afectadas - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPclI3S3Bpa0NYc0t5ZVRkM0pBaXRnVzRNd0pUaVkxVVBnTlAzNHBTdVdNcTZvNmtXeHROTjY1T2h5TU1NcmRWbjBoQ3I0NDNIQWtCdEtzMGpBeDJRN2VadjU5WVpyalhuLUI2ZndCN2xQV25Ld3FwNXNVQU5GT2pjejJwcmZwLUZZNWh0c2k4X2NaZWg3OTQ4N1F2WFJCc2laakt6ZHFDYmdIM1FlQXptVTlxdW9UOW9xME0wYkYyanJuWnJ1YUZuMnZrOURfbFB0a1h3UkYtVVczT25aNDVQdTdoQktwa0o2d0ZHak1tVXJRTDdLMjBGc01PSWF2X3p2TWlOVGFRU18xS213WXBFeEQ2RG5RQ0xsQnUyU1VZRWdJVVpfQlVFaNIBqAJBVV95cUxPclI3S3Bpa0NYc0t5ZVRkM0pBaXRnVzRNd0pUaVkxVVBnTlAzNHBTdVdNcTZvNmtXeHROTjY1T2h5TU1NcmRWbjBoQ3I0NDNIQWtCdEtzMGpBeDJRN2VadjU5WVpyalhuLUI2ZndCN2xQV25Ld3FwNXNVQU5GT2pjejJwcmZwLUZZNWh0c2k4X2NaZWg3OTQ4N1F2WFJCc2laakt6ZHFDYmdIM1FlQXptVTlxdW9UOW9xME0wYkYyanJuWnJ1YUZuMnZrOURfbFB0a1h3UkYtVVczT25aNDVQdTdoQktwa0o2d0ZHak1tVXJRTDdLMjBGc01PSWF2X3p2TWlOVGFRU18xS213WXBFeEQ2RG5RQ0xsQnUyU1VZRWdJVVpfQlVFaA?oc=5",
-      "medio": "eltiempo.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
       "publicado": "2026-08-11T13:42:36.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - N+",
+      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - nmas.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONXA3b20zek5LYVAwODBNNVR2V19vMFFVNnFqejZIbGRYVld6Z09LS3FQSVIzZ0lfZUx4bEd4ZnkzVGF5T3FYaE9aMnZNY3pMLVVKX0lPNDRqUVp2X0d4WWxwYVFCc195SUhzWFcyN1RZc19tZXo0UFU5RnVuM1EzR0lzazZmLWlMQ05ReTBhRGhfRVEwSl9pb3NKSUNIWjAybG5pSG9QNWtad1BJZEJ5YmpUN3FqT0dVMGM4TjFwVE0?oc=5",
-      "medio": "N+",
+      "medio": "nmas.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T12:18:06.000Z"
     },
@@ -415,9 +445,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - pulzo.com",
+      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
-      "medio": "pulzo.com",
+      "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T11:10:55.000Z",
       "pcode": "CO76001",
@@ -451,9 +481,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
+      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - nmas.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
-      "medio": "N+",
+      "medio": "nmas.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T06:13:17.000Z"
     },
@@ -492,14 +522,6 @@
       "publicado": "2026-08-11T03:56:31.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "El terremoto de 7,4 en Colombia deja 111 muertos y 61 edificios colapsados - americaeconomica.com",
-      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOd1IycUtqdldrWThaV3QwcmhseUNUeG9rSEhoQ1RFS1g4bEMzTVhwdGMtamtaQW5UWXFIVmhNWTRFejdYVy13MWljY0c0U25zMkV5aVZDUkxjNktoeWgzeTdsTTVsRWZ2RjZ6dnBMdllJajRRR293UlR1U0JhcDlpSXlWTjNvSDYwTDRXblZuNzZKTHBMU0Z1Y1NvRjJDcm8wSWZ5bHZkTTRSQlNUbzg4V3lPNUVBU05iNGhWXzZ2QlJTd9IBxwFBVV95cUxOM0M4Tl9nWlQwXzl0X1YyR2t0eTk2MFNSaWJCNXBtN09ScUdtSUhYRTVpT3otSzBPc2dRbUhMTnpFMnBHMVVBdTNkNmpfMDQwM0d3VTN3OG9DbDhHOEttWmFHLUtpWTZFcEM0WUk0SnVqMW1wUXo0Ti12RHN4ZlBTVHBKWGtiRlRFU0gydXhVbDNXVllTUUotRTJoS1pBeTVyWWpxNFctV2RTT09mTUNBNTZLZ01kSHBqZjBQQzlPMEpSWG0ybzNV?oc=5",
-      "medio": "americaeconomica.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T02:09:07.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "En imágenes: así se viven las evacuaciones, albergues y rescates tras el terremoto en Manizales - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQV1J1SVVjanVXMy1vX2x0OUw5aDg3NThDSzEyLW9PV29vUlY2QjBFYzduRC1KUmZjajRjSzduS1Z1UXJaR21ZX1Jjd2pfcmlhWlcyaVN2RHh0bFhBTVFnUklRU3lrNUNyNGRNc0ZLSk96eUM0TVpuTUVQYnBTQkhtdUswWENlNUJKY09CakZVbkRBQjZ6OWN6eXBURHUzSFFJcHN4ZVdjUnlTejE3UXA0dkJ4ODdoQ0NCWWc?oc=5",
@@ -533,10 +555,10 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "El rugido de la tierra mientras una veintena de edificaciones se desplomaban en Cali - eltiempo.com",
+      "titulo": "El rugido de la tierra mientras una veintena de edificaciones se desplomaban en Cali - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUlRERG1NVlRvRGk4bENUQ2xmck5IZGdRMW80T29tZEwwc0ZacHZXVHB5LUJ1Ti1pU1ZHcHoya3RjdDB1V3g4X0RvS2VCVG1laUFYcnE3dnhPZTB6MDVLMHFNcUVzWE8tSTJBS3JfN1k5REhiTEFkenBzeE5hbDlWZWlUMmJGZndVcnNUczZPbVQxV2tBb19QbVo0dUNqaTlNMDlaQ1Z6WEkzODUtZVpaVzg0V0xVS1Vacy0yZ0hWc21RMlNRMG9fX0NHc9IB0AFBVV95cUxNcmJOemtKeUd3QVdjLXNaWHUxbWgtdl9qckxoV2dwX281TWtLb01vYVRUXzhEQ3R2ZjhjcjhNZWhpTFJVdndqUURKeGFiRGw1TjlMQVNlVkgzbnZQYW5FRnN5b2JReF9jdDM3RFRsSS0zOTNMcWJXUkNWbllndm9LYXpqX2pJX1BrTEhqOHVSMERLY0dnQ2djS2V6VUM3SUVwdTNhTXBxeHMtRm5OQnAwWmdqeGRMbjB0SVBwN0stLWowUENNYWxDRGNqc1BvaHV3?oc=5",
-      "medio": "eltiempo.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
       "publicado": "2026-08-11T00:08:26.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
@@ -607,31 +629,21 @@
     },
     {
       "tipo": "via_bloqueada",
-      "titulo": "Pilas, conductores: estas son las principales vías bloqueadas por derrumbes que produjo el sismo | El Colombiano - elcolombiano.com",
+      "titulo": "Pilas, conductores: estas son las principales vías bloqueadas por derrumbes que produjo el sismo | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQWpqZGR1U3dlZnlQRTQyWGF6bHlqYnVWMll3aFVXaHpVRW0tWGNoSTB6cGRuZG5pQjk3MjFqci1uaGZXUUNiUHZSNk5tRm1oWmN2cjZlZXRxdk40Q0RYQVZsci1QTlpzMDJGR2l2RWsxam52T2hhU25sbHpwVWl2dzFkNklRY0pPcTJQbXE1Sm92UDhTbWY0akJ5bTFmTW5WSzVrNndPUGcxc1VV0gGyAUFVX3lxTE8yVmZDb2xwUkE1WDBDWjliV0VBRjVMUl9VcUxGSUtWM1Fkb0hhLTNIczNrc2J2NFRKRXZwM2lTYURSR3NoYUJqQm1NMmZkS3JvYkVrT1pzd1VjaVNzU3RJZl9CUS1QNEszN3p6ZHZublZBWjlrUlZqdVNMTjM3UjBrUUlQcVZQbHNqMDRPQlBzSnhjX3dxLWEzaEtFUDE1aWVxcEhhNHdtR2tsMjRxYlB3MlE?oc=5",
-      "medio": "elcolombiano.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
       "publicado": "2026-08-10T20:14:30.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Fotos | En Buenaventura, sismo deja viviendas e instituciones educativas colapsadas - canal1.com.co",
+      "titulo": "Fotos | En Buenaventura, sismo deja viviendas e instituciones educativas colapsadas - Canal 1 En vivo",
       "enlace": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPXzUxZjl3NXFiVjV6OHBlTlB0S0tHZ3A5ZldoZExPNElYTmZSV3c2LU1qX21LM3lHUzRZMk1KZzJRQVZPVUhzTkt2MkdDdnYwR1E2WmZWLTdkR0dYNE1lbU5nT3M1WkkySmRacURwN2xMTFU3bkxUeUt2dVMydFBfQWtCUUNwYXRDQlo3ZU53MnZ6cnpBV2JzbGUzWmhnZWZpY1VWTU54YnR3WERBYzJvZVh2dURPY3lYUXo3V19JMm5WZ1pP0gHKAUFVX3lxTE1IS0tOQlRnUXdQalY4VzcwTWdSMF9PT3BaTkd2aVI1NC1NeWZOWDBDN1RwN3BrSkRBeDBPTUVDRVZMdVJYekx2aE5BX3FQcHJ4OThueGwxWEJuSVdHU29rUWFuek03c0VFOEEwd3NXMnRKNHVaRkdGZDBFckhOM0VBdGFPaEZpRVlic3FCUGlrMmNDQmxuaGY0allMcUx1cXQwRjlYbFJIMGdiX1k1OEh2c2xmYm04Yjd5dFZEWmNFcDJNVlgzZ3FYVmc?oc=5",
-      "medio": "canal1.com.co",
+      "medio": "Canal 1 En vivo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T20:07:14.000Z",
       "pcode": "CO76109",
       "municipio": "Buenaventura"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "🔴 Edificio se derrumba frente a los espectadores aturdidos en Pereira durante el mortal terremoto de 7.4 Un edificio se derrumbó en el centro de Pereira, en el departamento colombiano de Risaralda, durante el terremoto de magnitud 7,4 que sacudió el país - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQVDYwUkx6aGpWSUFUcE90VXJJNDhlbmxJbmlicmV4bzJvQlBKbGZodTZfdy0yNWhEY1JtRTdRazVHX1NIZzRFTXI1SWxSRlBTd3BwMmxtc3hSV0pWbENHOEpsdFMydDkzbUYyMnZkTWE1NlkyZ3pSd2tEc1J6Z0EybkE5Q0dvcjZEbzVJZ25sWWtqc1lYa3NzVm1jaVRhVG5YME5iYlU1M0V1SHBOQVI3M0J4eWpjUTViNlNSNzRqTzBtVXBEWU1CTGhGUE15aXZ1eHZZX3RkbXQwRlU?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T19:55:50.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
@@ -643,10 +655,10 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Manizales reporta 4 muertos y más de 10 edificios colapsados tras el terremoto | El Colombiano - elcolombiano.com",
+      "titulo": "Manizales reporta 4 muertos y más de 10 edificios colapsados tras el terremoto | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQT2pxYkNRemdPR1oyXzhwTWVwNFhUaVRmVGJkd3VXNVBLYWVDd3YxNEdFNHBYYV9BNnY0Z1lJc1Z1anB3bzdXTXUzcWNjdzlnUWF3SjJhdVhiX3U3dlBsRWZMbUxuZEZ2dDNQVnQ4VHl2Q08zMklaTUotdmdja2R4cUhpcExya0RNVE1fWTJ6WGNrRERqbElYSmxRY25tNVViMmItbGxtOEJsV1hXazg5M2ctZFU5QXpyZ3gyZ2d2cFdwWVE0Q3fSAcsBQVVfeXFMTTdBQnVsT1NFM2czckwyUENmeXllTkxXSjA0dmQ5VmptYlNpV3JhM0lnN3JhbkthMlB6eUE4d09adWJBbldnWVJ2bGxFMDJKcGZYdDN4aHljZ3lmM2ZfVkI4LWhJZWdnQUJwWi1KcXZwSlJBRXB6T0o5LXpfNDg3aDFIV093aXZfMlJoWk4wSkcxLVlUSzBPV3lrYWYxb0ZHa1VtMUxreUxUU3BIWWUxSFpERk5qQTJfbXdWUHVNLXQ4REFrZTZXTTFNVjQ?oc=5",
-      "medio": "elcolombiano.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
       "publicado": "2026-08-10T19:51:41.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
@@ -713,9 +725,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: muertos y edificios colapsados; esto sabemos hasta el momento - grupoanimal.mx",
+      "titulo": "Terremoto en Colombia: muertos y edificios colapsados; esto sabemos hasta el momento - Grupo Animal",
       "enlace": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQb2ZlNThjN01tM2NfZUVrV2FWVHpXM25yVkVZanRqOEpMTkNzaVhRc3VmZDRHRU1lWm9XTHg3U2pLQjJBUlRxbkFWNGlVaWVZT3ZraVF6NXlnT0YtMHRLVHJjbEhNY2VwWG9KMGFvOXdHYy1XM0prSGtPX1hSckhiM2FRT2FYLVh4?oc=5",
-      "medio": "grupoanimal.mx",
+      "medio": "Grupo Animal",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T17:53:23.000Z"
     },
@@ -726,6 +738,24 @@
       "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T17:52:48.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Colombia: sube a 77 la cifra de personas muertas y hay decenas de edificios colapsados - LatinUS",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObS1Obl9CYXdMZE0tRm1GZUIwcmw5cHBMR2pINlFPbUN3QXY1Z29EcHF0RXBEVkxRa1o4OWo0V0ZWYTNVTjAxMkJpR0NfRHBoazY2cklnZzV6VmxHM2d6N1ZieWxVVElJYjF4cmhBa2FmTWRRaDhxR3poYm04c2tGdzVRSHZDZmFRVGl4dHQ5ZDBKMDdjamJBTlZ5NzVHLWoxZmhYU1BoQ1p2ckl5OFQ1RngxLXpDcm1LeFl0cE1rQ0VibVllU1VNeDVKTk1kSG0waVNyN1N5ZjTSAdgBQVVfeXFMTm0tTm5fQmF3TGRNLUZtRmVCMHJsOXBwTEdqSDZRT21Dd0F2NWdvRHBxdEVwRFZMUWtaODlqNFdGVmEzVU4wMTJCaUdDX0RwaGs2NnJJZ2c1elZsRzNnejdWYnlsVVRJSWIxeHJoQWthZk1kUWg4cUd6aGJtOHNrRnc1UUh2Q2ZhUVRpeHR0OWQwSjA3Y2piQU5WeTc1Ry1qMWZoWFNQaENadnJJeThUNUZ4MS16Q3JtS3hZdHBNa0NFYm1ZZVNVTXg1Sk5NZEhtMGlTcjdTeWY0?oc=5",
+      "medio": "LatinUS",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T17:28:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "40 personas fallecidas y 65 edificaciones colapsadas, según balance preliminar de la emergencia en Pereira.",
+      "enlace": "https://www.eldiario.com.co/actualidad/40-personas-fallecidas-y-65-edificaciones-colapsadas-segun-balance-preliminar-de-la-emergencia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T16:32:19.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -753,27 +783,11 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Edificios derrumbados y calles cubiertas de escombros: las imágenes del terremoto en Colombia - libertaddigital.com",
-      "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPdGZDT0FVLWZoVzY3WUVJazVjdnJGT05zMlFETzZSaWhLMmJ1ZFJqYTA3TUtBRUJkQjFGc2ctS0RkdmlQZ0hzUVJxTWZnblpvc29vMjZLN2xnaUF1anJaelNPd0xfclhFZWZac29TdXRCU3kxMDRFYlpNaE5XQy1fUzVVdDlHX1BHUmtKYTZjZDNFa1MyYmp0N1pxQlJnQ2hKb285SnVXQkg1cHk5eEw3UGNwY1hDam5hYTUwYkRGWmt3UFpEMU9qTHNfY2xmQnlIRzBTWm9VVlA0bkxjUXZQeDJidW5uVG82Q3JwWWhZdVZXaTVaMXJ4MkRnTG9TQUtYSnc?oc=5",
-      "medio": "libertaddigital.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T16:04:13.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Terremoto en Colombia: Reportan 18 muertos, cierres de 6 aeropuertos y 20 edificios colapsados - El Economista",
       "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPd2xjXzhqRFJoVENsWFBxYmFqT1BGeGtFUlI2OU1wU0JMc2hqTUkyTUFqVXRSMHpTVTc5UzJoODlYamJ6bXZCMm92cjVvVlFnbk5RWXVIZl8wMUZZNU9BU3JfTFU3ZHNtMzB3Mll2WThEdHZGNkE4bFhOZFJIeG1YTHRHbUc0RlZrSWh4TEJXaG15Uk1tblFRa2tTckdWbU5PMFBGVFU0ME9LcnFpVG5PSmoxZEs5NTN3Yk1XWWI3OS1NQnBPdjZfWVIxTHlhN003Vkxia1R2eHZGMzM1U3NtSi1TckhLN0HSAewBQVVfeXFMUDdCUTh3NVM1Y2VmaEo5UmtPSV8tVWVRcDFwMWx6Zk1ZQ1djNTBGd2hrUnFyclFNUU03SDdUWXVITDRwQTE2dEFRcWMzRTRhaENhc2JUOFA4TkpnR1ZmTFZyRm9vRXZENmtVaVVXbG9maHFqdXFPYmkwWlluTmlsZElhSUsyZUZVMlNSZnF5UWFTaDBQek9pZ0Q3WnV3TGVZWTlTS3o1bzVrRTRHWFh2QUV3dmRnTU5XTFo2RmpmeHpPRDJmZHdBX2xIcWdOdmVNOVlfQXJVcTlFZFQyWFhGbUZBTEE2SzN2VTRvbWQ?oc=5",
       "medio": "El Economista",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T15:23:56.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Edificios colapsados, pánico en las calles... los vídeos más impactantes del potente terremoto que ha azotado a Colombia - 20Minutos",
-      "enlace": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNR2cwLUdxTGtqcU1GVU90dGdSRnlWcl92cDBSNU5OVXFCd0VxTXhEQjIyRk54MWNULUI3YmwxU2hoTVdhQkh2OC1YOHZYeTQ4RHVuSXBJY0d5a3lzUUFQR096eWwyZHhNWmpNeGF2dkpjUDZZS195WTV0aFQxa2NBQ1hYbmw2aE4xem1CRHAwWjliXzNYTkM5c25XbUQ1VFpMMTRjV25KVXM5QlBZVmVNNjFvMEtfSGtiLXBlV0swWnFBU2plaEVYRjBSWFhobGRxUUpSbnoyYUNtS2hMVnVZOEtIbXhnWlpjRlZVUUY0bUJEbDg?oc=5",
-      "medio": "20Minutos",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T15:06:23.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -793,10 +807,10 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Atención en Cali: reportan 19 edificios colapsados con personas atrapadas | El Colombiano - elcolombiano.com",
+      "titulo": "Atención en Cali: reportan 19 edificios colapsados con personas atrapadas | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkduMVV4QkN3V0xraE92MXg1R0pjSkdoMm9DcGRqTGNPUUNwcHlQckpDUXpUenJabTh3NkVYNHZGRmw5QWQxZE1SOGI5cmlzQmN1bUJRNTJhdlR6MVdYR0NsTm5yXzF5VnhXWWN1eGJvWmloRW5LeGFYeDlJRzQzUHRzSFk3YlEyVHlYSnE1NXFIMG5oRFAyUGZnOERPeThySE5HdnF1aDQ0dE3SAbABQVVfeXFMT2w4c09tVlFzUE1aTFNaLXhqZmlvUUlUa0FnVElrbWFxUU1GakpzaFBpYzFDQVN2aEMwUVN0ajRQUERsU1hXazlMR2x6WC1NZGFMNHI1S3dxdFFEUzBTd0YwOVNkT1JFc3dIb3NZY1RMUUR6XzkzX3AyQVloaU51dGhpU1R2WHlWS0xwMXcyd2dPb29KMmI3bkNmLUN0ajdiaHpMWUJzU3kzdm05bHNhX0Q?oc=5",
-      "medio": "elcolombiano.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
       "publicado": "2026-08-10T14:31:54.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
@@ -829,10 +843,10 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Temblor en Colombia deja graves afectaciones en Manizales y Pereira: catedral y varios edificios afectados, escombros y heridos - eltiempo.com",
+      "titulo": "Temblor en Colombia deja graves afectaciones en Manizales y Pereira: catedral y varios edificios afectados, escombros y heridos - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQWENUZHRkUG50S1VKSGtnYnRFSEtianRleGM5Qi1KS0RTWmtONFRaazlxa3A2bUVTSDJQYURPcUFJWllON0wxeFhNSUUzMVFVZkV5anNjODNHd1pkdDBwaUpueWQ4Mmt3eXZBUkJwX3JVSHZVUnRkbWlXalhEVlpXZG1kZW52YVgtcHAwRVVqVzA1czB5RU43UUZpYUowc1dxdi12VU5qTVNOTlV4SXBGX252MHVDd2VmazZvd3hNSlJIbUFILXZIS3RmMDZEZzQzRnBiQVBnbGtiazlnck9FRm04c0ZyMWJKSF9fR2diZWVVWktMSXY2cnEtSW1TRjg0aUHSAYcCQVVfeXFMT2FuZ1d0NTBHM1pvVXJtd1ZobEdLZlZ4WTNEUGl3UjVISEUwcUlYZEJQMjFVVXRHSTNVRXVkVGcyOUphNmxmaHJyZ3BzOThGNzJyMTI4cVl6VEVqTjVYSWFZTGU5OGJ3eHhNc2FfVDNmcnROZk9SbkwyS0tMYVRoMEQ0NVR0Wmx0TXMzZGtFbHRvNmxhQ0dLUlZna0toS1BvbDQtdHI4VzMyYnR1M2hEeVUyb0Q4YURHYU8tLVpqSXZzYWxXVGlEb2g0aVMyNnlIUGI1RUYxYVBCblE0V2taRU0xNFBrWGdYU1lfZHZ0cGxXekRpTlFBdUstOERKa2ZXV0g2b3p4WXc?oc=5",
-      "medio": "eltiempo.com",
-      "tipo_fuente": "unverified",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
       "publicado": "2026-08-10T13:08:15.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
@@ -857,9 +871,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - codiceinformativo.com",
+      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - Códice Informativo",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ1JVbzJ6d25YYXNWdmtUUU9MRnEyMzJpQVRIUWpCTTRTNmxjOUVNaGUwbjBzVVZpUTFsdzN4WldRdzBELU12bG5kQWZzUk0tb1NXSVZHeWgzNWNNRU53TUdTUWNwTVlQMnhFZkVDUlhkRFBaSmtxRmY0Uk1uc1VXYk5SNlNYZHZCeG1qcXFmMDQzU2JMQVNiZHk4YzloMDZ6MFVyZTM2VlBnWThpU3lHTDFXLVRDVXdyQlV0ajI5OXgyaXd3VkJkYWhVNA?oc=5",
-      "medio": "codiceinformativo.com",
+      "medio": "Códice Informativo",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-29T07:00:00.000Z"
     },
@@ -889,9 +903,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Los albergues y centros de acopio habilitados por incendios forestales en Región de Valparaíso - latercera.com",
+      "titulo": "Los albergues y centros de acopio habilitados por incendios forestales en Región de Valparaíso - La Tercera",
       "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNUThOVmJFckRpeFlkSTVkVV9kTjd3SmhLZGpFWllWRWFqc09IU0xKV3NyRlZIei1kZzhKYVVXQmRmUXd3Y0t1VGV3a05rdnhta2VvbTlKcXVEbnlSc3pZX3dGQmlacEZ1SDZCSXVVWjdUUzJ5SmhQanlYUHZtQnkzOG5IdmdHMlRIQ0ZFbkRrbDVFVVlPQzAwdENENmlFUVJNc0NRLXdiMDhfSGw0RUsxdE0zV0ZTTGVXZnRJa2hpdE01XzFlWmpQSlV6dVNrS25zRENFOWU2XzdZZGFmVW13dlFuZUhlSVJ2TlpkX193d0ZqRTZMamFvTm5n0gGbAkFVX3lxTFB2V2E1d1Q5WmsyQzhZRmVqUnphcy1JMmJWUEhzTG5LM3BlRkR3a2EyeWthWnBaLUdhWGlVQWQ2NEpNbGFHOFZObGhzb3M0Rnh2akJMdjV1Ul91ZFY2LS1kemEtdHEyUHNNbFpIVWRMYXQwWFhvR19PYXQ2UklfMmhwZ0ZpYjhySGpJekdSZmk0bVk0WmVIa2tzeU0yY0VXS2pCa0FHVk12cXJUZXRMYWRZdDNqQzAyZ05IZWFETTE4Tk4wbGhGRmh1aFVWODFwUXZRZkRiZzdKM0Q1Z1F3bllwUi1BWkFoMTAwejF3RS1UR04yYzRVdU5QYzN1dXFaQ1ZKcDJOem5ld1B3OHRMNlM1MG80M0FSeFZuaVE?oc=5",
-      "medio": "latercera.com",
+      "medio": "La Tercera",
       "tipo_fuente": "unverified",
       "publicado": "2024-02-02T08:00:00.000Z",
       "pcode": "CO05856",
@@ -923,9 +937,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - Agencia Andina",
+      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - andina.pe",
       "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2dLdmRJZnB0bzctRnhqUVVqYWp4YXo0VFlOQmRhZ2UzZ3MtcW92SWFpTFpZbXhiQjVUVnVOX0NDY0dLYUctV0FLWG82LVNoNU5XclBqZkJseHp3cUp3d2dpMWJwMmw0S2ZLcWRVUVdyUlQ1bHgwbzNTLThnOVlCc1pfWTZZcnVaeXpDcGVfWW84THNyNkxTWU11cTJvcXhGM0xReFVGV0ZhLUQyRlA1WEZlLU5BZlNHTERj?oc=5",
-      "medio": "Agencia Andina",
+      "medio": "andina.pe",
       "tipo_fuente": "unverified",
       "publicado": "2012-07-15T07:00:00.000Z"
     }
