@@ -40,6 +40,8 @@ const primero = modulos[0]?.id ?? '';
 <section class="hoja" id="hoja" data-estado="asomada" aria-label="Información del evento">
   <button class="asa" type="button" aria-expanded="false" aria-controls="hoja-cuerpo">
     <span class="agarre" aria-hidden="true"></span>
+    {/* El resumen sigue existiendo para lectores de pantalla y para cuando no hay
+        cifras que poner en la tira; visualmente lo sustituye la tira. */}
     <span class="resumen">{resumen}</span>
     <span class="chevron" aria-hidden="true">⌃</span>
     <span class="sr-only">Mostrar u ocultar la información</span>
@@ -47,7 +49,7 @@ const primero = modulos[0]?.id ?? '';
 
   {
     cifrasClave.length > 0 && (
-      <ul class="tiras" aria-label="Cifras nacionales">
+      <ul class="tiras" id="tiras" aria-label="Cifras nacionales">
         {cifrasClave.map((c) => (
           <li title={`${c.fuente} · ${c.cuando.slice(0, 16).replace('T', ' ')}`}>
             <span class="tira-valor">{c.valor}</span>
@@ -171,6 +173,14 @@ const primero = modulos[0]?.id ?? '';
     transition: none;
   }
 
+  /**
+   * El asa NO ocupa toda la parte asomada.
+   *
+   * Llevaba `min-height: var(--asomada)`, así que el botón se comía la franja visible
+   * entera y empujaba la tira de cifras por debajo del borde: en el móvil se veía el
+   * asa, un hueco grande y nada más. Ahora mide lo que mide su contenido y la tira cabe
+   * dentro de la franja, que es donde tiene que estar.
+   */
   :global(html.js) .asa {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -178,8 +188,7 @@ const primero = modulos[0]?.id ?? '';
     align-items: center;
     gap: 0.5rem;
     width: 100%;
-    min-height: var(--asomada);
-    padding: 0.55rem 1.1rem 0.9rem;
+    padding: 0.5rem 1.1rem 0.15rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -205,6 +214,18 @@ const primero = modulos[0]?.id ?? '';
     font-weight: 650;
     font-size: 0.98rem;
     line-height: 1.3;
+  }
+
+  /* Con tira, el resumen sobra visualmente: repite la primera cifra y gasta un renglón
+     entero de una franja que se le quita al mapa. Sigue en el DOM para lectores de
+     pantalla y para cuando no hay cifras. */
+  :global(html.js) .hoja:has(.tiras) .resumen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   /**

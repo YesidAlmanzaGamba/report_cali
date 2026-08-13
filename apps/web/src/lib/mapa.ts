@@ -1767,26 +1767,56 @@ export async function iniciarMapa(): Promise<void> {
     source: 'info-municipal',
     paint: {
       /**
-       * El radio dice cuánto pasó, no cuánto se publicó. Los tramos están puestos sobre
-       * los datos reales: Cali (95 muertos) sale en el tope, Pereira (66) justo debajo,
-       * y un municipio con solo boletines se queda en el mínimo legible.
+       * El radio dice cuánto pasó, no cuánto se publicó — pero sin taparlo todo.
+       *
+       * La primera versión llevaba Cali a 21 px de radio: 42 px de diámetro sobre un
+       * mapa de 390 px de ancho, que borraba el municipio de debajo y buena parte de sus
+       * vecinos. La jerarquía se lee igual con la mitad de tamaño; lo que se recupera es
+       * el mapa. Cali 12, Pereira 9, un municipio con solo boletines 3.
+       *
+       * Además crecen con el zoom: a escala de país interesa distinguirlos sin que
+       * choquen, y de cerca ya hay sitio para que sean más fáciles de tocar.
        */
       'circle-radius': [
         'interpolate',
         ['linear'],
-        ['get', 'gravedad'],
-        0,
-        4,
-        50,
-        7,
-        200,
+        ['zoom'],
+        5,
+        [
+          'interpolate',
+          ['linear'],
+          ['get', 'gravedad'],
+          0,
+          3,
+          50,
+          4.5,
+          200,
+          6,
+          500,
+          8,
+          1000,
+          9.5,
+          2100,
+          12,
+        ],
         10,
-        500,
-        13,
-        1000,
-        16,
-        2100,
-        21,
+        [
+          'interpolate',
+          ['linear'],
+          ['get', 'gravedad'],
+          0,
+          5,
+          50,
+          7,
+          200,
+          9,
+          500,
+          12,
+          1000,
+          14,
+          2100,
+          17,
+        ],
       ],
       // Con muertos confirmados el punto se lee como urgente, no como «hay una nota».
       'circle-color': [
@@ -1802,6 +1832,23 @@ export async function iniciarMapa(): Promise<void> {
       'circle-opacity': 0.9,
     },
   });
+
+  /**
+   * Interruptor de los puntos de reporte.
+   *
+   * Son útiles y tapan: sobre la coropleta de intensidad, un punto de 12 px esconde el
+   * municipio que hay debajo. Quien esté leyendo el color del sacudimiento tiene que
+   * poder quitarlos de en medio sin recargar.
+   */
+  {
+    const boton = document.getElementById('capa-reportes');
+    boton?.removeAttribute('hidden');
+    boton?.addEventListener('click', () => {
+      const visible = mapa.getLayoutProperty('info-municipal', 'visibility') !== 'none';
+      mapa.setLayoutProperty('info-municipal', 'visibility', visible ? 'none' : 'visible');
+      boton.setAttribute('aria-pressed', visible ? 'false' : 'true');
+    });
+  }
 
   mapa.on('click', 'info-municipal', (e) => {
     const pcode = (e.features?.[0]?.properties as { pcode?: string } | undefined)?.pcode;
