@@ -1692,3 +1692,55 @@ geocodificar nombres propios y está sin construir — no lo des por hecho en el
   dejar de reintentar en la resolución de alias antes de meterlo al cron.
 - Revisar a mano `curated/cifras.sugeridas.json` y pasar a `curated/observaciones.json` lo
   que resista la lectura.
+
+---
+
+## agente-datos — 2026-08-13 · CRUCÉ A `apps/web`, con permiso del responsable
+
+**Aviso para `agente-ui`: he tocado tu columna.** No fue un descuido; el responsable lo
+autorizó explícitamente después de ver que en producción la ficha de casi cualquier
+municipio salía vacía. Lo que hice está acotado a **una cara nueva del carrusel** y no
+altera nada de lo que ya existía.
+
+### Por qué la ficha salía vacía (diagnóstico, por si sirve)
+
+No era un fallo de despliegue —eso se verificó: el push llegó, el sitio se reconstruyó, y
+los datos en vivo son los nuevos—. La ficha estaba vacía porque **los datos que alimenta
+no existen**:
+
+- `incidentes/index.json` en vivo: `municipios: []`, `total: 0`. `curated/incidentes.json`
+  sigue en `[]`, así que **no hay ni un punto de incidente en todo el mapa**.
+- `observations/afectacion.json`: 30 observaciones, pero solo **4 municipios** tienen cifra
+  propia (Cali, Pereira, Manizales, Quibdó). En los otros 1.118, «Impacto reportado» está
+  vacío porque no hay nada.
+
+O sea: la interfaz estaba representando fielmente un conjunto de datos casi vacío.
+
+### Qué añadí
+
+- `apps/web/src/components/Mapa.astro` — una `<section class="carrusel-slide">` nueva,
+  «Qué dice la alcaldía», con `#detalle-alcaldia`, más sus estilos (`.alcaldia-*`). El
+  carrusel descubre las caras con `querySelectorAll('[data-carrusel-slide]')`, así que no
+  hubo que tocar `carrusel.ts`.
+- `apps/web/src/lib/mapa.ts` — carga opcional de `fuentes/alcaldias.json`, índice por
+  pcode, y `pintarAlcaldia(pcode)` llamada junto a `pintarCobertura`/`pintarCifras`.
+
+Construido con `createElement`/`textContent`, **nunca `innerHTML`**: el título y el resumen
+los escribe un funcionario en un editor web y llegan por API sin pasar por revisión
+nuestra. Mismo criterio que ya usabas para las cifras curadas, y aquí con más motivo.
+
+Distingue `Document` (acto administrativo: decreto de calamidad) de `Article` (boletín),
+con una marca discreta. Un decreto es un hecho; un boletín es una narración.
+
+### Verificación, y lo que NO pude verificar
+
+Comprobado: `tsc --noEmit -p apps/web/tsconfig.json` **limpio**, y la cara nueva renderizada
+a 390 px con datos reales (Aranzazu, Caldas, 9 publicaciones).
+
+**No pude correr `astro check` ni `npm run build`**: el Node del sistema es 22.11.0 y Astro
+exige ≥ 22.12 (la trampa documentada en `CLAUDE.md`). Lo verifica CI. Si algo del build
+falla, es mío y lo arreglo yo — no lo heredes.
+
+**Sigue siendo tuyo el diseño.** Si la cara nueva no encaja con lo que estás haciendo,
+cámbiala sin consultarme: el contrato que importa es que lea `fuentes/alcaldias.json` y
+que el texto no entre por `innerHTML`.
