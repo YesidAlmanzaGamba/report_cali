@@ -664,6 +664,64 @@
         "type": "official"
       },
       "observed_at": "2026-08-10T23:02:59.283Z"
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 265,
+      "pcode": "CO",
+      "source": {
+        "name": "El Colombiano — balance de la UNGRD",
+        "url": "https://www.elcolombiano.com/colombia/cifra-muertos-heridos-desaparecidos-por-terremoto-colombia-MK39884181",
+        "type": "press"
+      },
+      "observed_at": "2026-08-12T14:47:00-05:00",
+      "notes": "Balance del presidente De la Espriella con cifras de la UNGRD, 12 de agosto 14:47. Sustituye al de 181 del día anterior."
+    },
+    {
+      "metric": "injured",
+      "value": 3494,
+      "pcode": "CO",
+      "source": {
+        "name": "El Colombiano — balance de la UNGRD",
+        "url": "https://www.elcolombiano.com/colombia/cifra-muertos-heridos-desaparecidos-por-terremoto-colombia-MK39884181",
+        "type": "press"
+      },
+      "observed_at": "2026-08-12T14:47:00-05:00"
+    },
+    {
+      "metric": "missing_reported",
+      "value": 496,
+      "pcode": "CO",
+      "source": {
+        "name": "El Colombiano — balance de la UNGRD",
+        "url": "https://www.elcolombiano.com/colombia/cifra-muertos-heridos-desaparecidos-por-terremoto-colombia-MK39884181",
+        "type": "press"
+      },
+      "observed_at": "2026-08-12T14:47:00-05:00"
+    },
+    {
+      "metric": "people_affected",
+      "value": 53816,
+      "pcode": "CO",
+      "source": {
+        "name": "El Colombiano — balance de la UNGRD",
+        "url": "https://www.elcolombiano.com/colombia/cifra-muertos-heridos-desaparecidos-por-terremoto-colombia-MK39884181",
+        "type": "press"
+      },
+      "observed_at": "2026-08-12T14:47:00-05:00",
+      "notes": "La UNGRD dice «más de 53.816»; se registra el piso. Son PERSONAS, no viviendas."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 257,
+      "pcode": "CO",
+      "source": {
+        "name": "El Colombiano — estructuras colapsadas, cifra de Asocapitales",
+        "url": "https://www.elcolombiano.com/colombia/cifra-muertos-heridos-desaparecidos-por-terremoto-colombia-MK39884181",
+        "type": "press"
+      },
+      "observed_at": "2026-08-12T14:47:00-05:00",
+      "notes": "Cifra de Asocapitales citada en el mismo artículo, no de la UNGRD."
     }
   ]
 }

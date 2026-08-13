@@ -1301,6 +1301,32 @@ export async function iniciarMapa(): Promise<void> {
    */
   let animacionRecorrido: number | null = null;
 
+  /**
+   * Siguiente cara del carrusel, dando la vuelta al llegar al final.
+   *
+   * Se salta las caras vacías: enseñar «Sin cifras registradas todavía» durante tres
+   * segundos no es información, es ruido con temporizador.
+   */
+  function pasarACaraSiguiente(): void {
+    const carrusel = document.querySelector<HTMLElement>('.ficha [data-carrusel]');
+    const pista = carrusel?.querySelector<HTMLElement>('[data-carrusel-pista]');
+    if (!carrusel || !pista || pista.clientWidth === 0) return;
+
+    const caras = [...carrusel.querySelectorAll<HTMLElement>('[data-carrusel-slide]')];
+    const actual = Math.round(pista.scrollLeft / pista.clientWidth);
+
+    const tieneAlgo = (cara: HTMLElement): boolean => !cara.querySelector('.vacio');
+
+    for (let salto = 1; salto <= caras.length; salto += 1) {
+      const i = (actual + salto) % caras.length;
+      const cara = caras[i];
+      if (cara && (tieneAlgo(cara) || salto === caras.length)) {
+        carrusel.dispatchEvent(new CustomEvent('ficha:cara', { detail: { indice: i } }));
+        return;
+      }
+    }
+  }
+
   function detenerRecorrido(): void {
     if (animacionRecorrido !== null) {
       cancelAnimationFrame(animacionRecorrido);
@@ -1339,8 +1365,12 @@ export async function iniciarMapa(): Promise<void> {
           }
         }
         if (panel.scrollTop >= sobrante - 1) {
+          // Al terminar de leer una cara se pasa a la siguiente y se vuelve arriba, en
+          // vez de repetir la misma en bucle: el recorrido acaba enseñando la ficha
+          // entera —impacto, alcaldía y ayuda— sin que nadie tenga que deslizar.
           esperaHasta = ahora + ESPERA_FINAL;
           panel.scrollTop = 0;
+          pasarACaraSiguiente();
         }
       }
 
@@ -1667,7 +1697,7 @@ export async function iniciarMapa(): Promise<void> {
    */
   const puntosInfo: Feature<
     Point,
-    { pcode: string; notas: number; cifras: number; total: number }
+    { pcode: string; notas: number; cifras: number; total: number; gravedad: number }
   >[] = [];
 
   /**
@@ -1679,6 +1709,34 @@ export async function iniciarMapa(): Promise<void> {
    */
   const conAlgoQueContar = new Set([...alcaldiaPorPcode.keys(), ...cifrasPorPcode.keys()]);
 
+  /**
+   * Cuánto pesa lo ocurrido en un municipio, para que el punto lo refleje.
+   *
+   * El tamaño lo daba antes el **número de publicaciones**, que mide cuánto se ha escrito
+   * y no cuánto ha pasado: Cali, con 95 fallecidos, salía igual que un municipio con dos
+   * boletines y ningún daño reportado. Ahora manda el daño.
+   *
+   * Las vidas pesan más que todo lo demás por un orden de magnitud, a propósito. Debajo,
+   * los derrumbes; después la gente afectada y las viviendas, divididas porque se cuentan
+   * por miles donde los muertos se cuentan por decenas.
+   */
+  function gravedadDe(pcode: string): number {
+    const obs = cifrasPorPcode.get(pcode) ?? [];
+    const max = (metric: string): number => {
+      let m = 0;
+      for (const o of obs) if (o.metric === metric && o.value > m) m = o.value;
+      return m;
+    };
+    return (
+      max('deaths_confirmed') * 10 +
+      max('missing_reported') * 5 +
+      max('buildings_collapsed') * 2 +
+      max('injured') / 10 +
+      max('people_affected') / 100 +
+      max('buildings_damaged') / 50
+    );
+  }
+
   for (const pcode of conAlgoQueContar) {
     const ancla = anclaPorPcode.get(pcode);
     if (!ancla) continue;
@@ -1688,7 +1746,13 @@ export async function iniciarMapa(): Promise<void> {
     puntosInfo.push({
       type: 'Feature',
       geometry: { type: 'Point', coordinates: ancla },
-      properties: { pcode, notas, cifras, total: notas + cifras },
+      properties: {
+        pcode,
+        notas,
+        cifras,
+        total: notas + cifras,
+        gravedad: Math.round(gravedadDe(pcode)),
+      },
     });
   }
 
@@ -1702,10 +1766,37 @@ export async function iniciarMapa(): Promise<void> {
     type: 'circle',
     source: 'info-municipal',
     paint: {
-      // Crece un poco donde hay más que leer, sin llegar a ser un mapa de calor.
-      'circle-radius': ['interpolate', ['linear'], ['get', 'total'], 1, 4.5, 10, 8],
-      // Con cifras registradas es un dato duro; sin ellas, solo relato.
-      'circle-color': ['case', ['>', ['get', 'cifras'], 0], '#1b4d8f', '#5c7fb0'],
+      /**
+       * El radio dice cuánto pasó, no cuánto se publicó. Los tramos están puestos sobre
+       * los datos reales: Cali (95 muertos) sale en el tope, Pereira (66) justo debajo,
+       * y un municipio con solo boletines se queda en el mínimo legible.
+       */
+      'circle-radius': [
+        'interpolate',
+        ['linear'],
+        ['get', 'gravedad'],
+        0,
+        4,
+        50,
+        7,
+        200,
+        10,
+        500,
+        13,
+        1000,
+        16,
+        2100,
+        21,
+      ],
+      // Con muertos confirmados el punto se lee como urgente, no como «hay una nota».
+      'circle-color': [
+        'case',
+        ['>', ['get', 'gravedad'], 300],
+        '#8c1d18',
+        ['>', ['get', 'cifras'], 0],
+        '#1b4d8f',
+        '#5c7fb0',
+      ],
       'circle-stroke-color': '#fff',
       'circle-stroke-width': 1.5,
       'circle-opacity': 0.9,

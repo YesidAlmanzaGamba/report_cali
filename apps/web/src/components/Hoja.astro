@@ -18,13 +18,22 @@ interface Modulo {
   etiqueta: string;
 }
 
+interface CifraClave {
+  valor: string;
+  etiqueta: string;
+  fuente: string;
+  cuando: string;
+}
+
 interface Props {
   /** Línea que se lee sin abrir la hoja. Debe ser la cifra que más importa. */
   resumen: string;
+  /** Tira horizontal de cifras nacionales, visible sin desplegar la hoja. */
+  cifrasClave?: CifraClave[];
   modulos: Modulo[];
 }
 
-const { resumen, modulos } = Astro.props;
+const { resumen, cifrasClave = [], modulos } = Astro.props;
 const primero = modulos[0]?.id ?? '';
 ---
 
@@ -35,6 +44,19 @@ const primero = modulos[0]?.id ?? '';
     <span class="chevron" aria-hidden="true">⌃</span>
     <span class="sr-only">Mostrar u ocultar la información</span>
   </button>
+
+  {
+    cifrasClave.length > 0 && (
+      <ul class="tiras" aria-label="Cifras nacionales">
+        {cifrasClave.map((c) => (
+          <li title={`${c.fuente} · ${c.cuando.slice(0, 16).replace('T', ' ')}`}>
+            <span class="tira-valor">{c.valor}</span>
+            <span class="tira-etiqueta">{c.etiqueta}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
   <div class="cuerpo" id="hoja-cuerpo">
     <div class="conmutador" role="tablist" aria-label="Módulos">
@@ -183,6 +205,60 @@ const primero = modulos[0]?.id ?? '';
     font-weight: 650;
     font-size: 0.98rem;
     line-height: 1.3;
+  }
+
+  /**
+   * Tira de cifras nacionales. Va FUERA del botón a propósito: una lista con
+   * desplazamiento lateral dentro de un `<button>` es marcado inválido y además el gesto
+   * de deslizar acabaría abriendo la hoja.
+   */
+  .tiras {
+    display: flex;
+    gap: 0.55rem;
+    margin: 0.5rem 0 0;
+    padding: 0 0 0.15rem;
+    list-style: none;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    /* El navegador se queda el gesto horizontal; así no compite con el arrastre de la
+       hoja ni con el desplazamiento vertical de la página. */
+    touch-action: pan-x;
+    scrollbar-width: none;
+  }
+
+  .tiras::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tiras li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--fondo-2);
+    line-height: 1.15;
+  }
+
+  /* La primera cifra es la que más pesa; se lee antes que las demás. */
+  .tiras li:first-child .tira-valor {
+    color: var(--urgente);
+  }
+
+  .tira-valor {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tira-etiqueta {
+    display: block;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--tinta-3);
+    white-space: nowrap;
   }
 
   .chevron {

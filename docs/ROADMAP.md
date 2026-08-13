@@ -183,3 +183,25 @@ geoetiqueta EXIF y fuentes de prensa; **nunca scraping de redes** (ADR-002).
 - Scraping de redes sociales (ADR-002).
 - Depender de un proveedor externo de teselas (ADR-010).
 - Cambiar la escala de color del USGS por una más bonita (ADR-009).
+
+## Pendiente — separar exposición modelada de afectación reportada
+
+`packages/ingest/src/sources/deslizamientos.ts:111` publica la población expuesta a
+deslizamiento del **modelo** del USGS bajo `metric: 'people_affected'`, a nivel `CO`, con
+`observed_at` = hora de actualización del evento. Como esa hora se refresca en cada
+corrida, esa observación gana siempre cualquier orden por recencia.
+
+Consecuencia real, vista en producción: la tira de cifras del encabezado mostraba
+**«4.400 personas afectadas»** cuando el balance vigente de la UNGRD decía **53.816**.
+Una estimación de exposición y un conteo de damnificados no son la misma cantidad y no
+deberían compartir métrica.
+
+**Arreglo:** métrica propia (`people_exposed_landslide` o similar) en `METRICS`. Es un
+cambio al contrato de datos: hay que actualizar `packages/ingest/src/freshness.ts` y
+`apps/web/src/lib/metricas.ts` a la vez —están tipados como `Record<Metric, …>` justo
+para que el compilador lo exija— y anunciarlo en `COORDINACION.md`.
+
+**Mientras tanto:** `people_affected` está excluida de la tira del encabezado
+(`apps/web/src/pages/index.astro`), con el motivo escrito ahí. Sigue apareciendo en el
+módulo «Cifras», donde cada observación se muestra con su fuente y su nota, así que ahí no
+engaña.

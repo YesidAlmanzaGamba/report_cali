@@ -55,15 +55,62 @@ const fechaLocal = new Intl.DateTimeFormat('es-CO', {
 }).format(new Date(evento.originTime));
 
 /**
- * Lo único que se lee sin abrir la hoja, así que tiene que ser la cifra que más importa.
- * Si hay un balance nacional, ese; si no, el alcance del sacudimiento.
+ * La MÁS RECIENTE de cada métrica, no la primera que aparezca.
+ *
+ * Antes se cogía la primera del archivo, y el archivo conserva a propósito los balances
+ * viejos para que se vea cómo se corrigen: el encabezado llegó a mostrar 181 fallecidos
+ * cuando el balance vigente de la UNGRD ya decía 265. En un mapa de emergencia, la cifra
+ * de portada tiene que ser la última, no la que estuviera de primeras en un JSON.
  */
-const nacional = afectacion.observations.find(
-  (o) => o.pcode === 'CO' && o.metric === 'deaths_confirmed',
-);
+const ultimaNacional = (metric: string) =>
+  afectacion.observations
+    .filter((o) => o.pcode === 'CO' && o.metric === metric)
+    .sort((a, b) => b.observed_at.localeCompare(a.observed_at))[0];
+
+const nacional = ultimaNacional('deaths_confirmed');
 const resumen = nacional
   ? `${nacional.value.toLocaleString('es-CO')} ${ETIQUETAS[nacional.metric].toLowerCase()} · ${municipios.length.toLocaleString('es-CO')} municipios afectados`
   : `${municipios.length.toLocaleString('es-CO')} municipios con sacudimiento registrado`;
+
+/**
+ * Las cifras que se leen sin abrir la hoja, en una tira horizontal.
+ *
+ * Orden por lo que se busca primero en una emergencia: muertos, desaparecidos, heridos,
+ * y después el daño material. Solo entran las que existen — una tira con huecos «—» no
+ * informa de nada.
+ */
+/**
+ * `people_affected` NO entra aquí, y no es un olvido.
+ *
+ * El modelo de deslizamientos del USGS escribe su población expuesta con esa misma
+ * métrica y con la hora de actualización del evento, así que siempre gana el «más
+ * reciente»: la tira mostraba «4.400 personas afectadas» cuando el balance de la UNGRD
+ * dice 53.816. Exposición modelada y afectados reportados no son lo mismo y no deberían
+ * compartir métrica — el arreglo de fondo es separarlas en `packages/ingest`, y está
+ * anotado en ROADMAP. Hasta entonces, mejor no enseñar la cifra que enseñar la mala.
+ */
+const CLAVE = [
+  'deaths_confirmed',
+  'missing_reported',
+  'injured',
+  'buildings_collapsed',
+] as const;
+
+const cifrasClave = CLAVE.map((metric) => ultimaNacional(metric))
+  .filter((o): o is NonNullable<typeof o> => Boolean(o))
+  .map((o) => ({
+    valor: o.value.toLocaleString('es-CO'),
+    etiqueta: ETIQUETAS[o.metric],
+    fuente: o.source.name,
+    cuando: o.observed_at,
+  }));
+
+cifrasClave.push({
+  valor: municipios.length.toLocaleString('es-CO'),
+  etiqueta: 'Municipios afectados',
+  fuente: 'Cruce del ShakeMap del USGS con los 1.122 municipios',
+  cuando: mmiData.generated_at ?? evento.originTime,
+});
 
 const modulos = [
   { id: 'cifras', etiqueta: 'Cifras' },
@@ -86,7 +133,7 @@ const modulos = [
     </main>
   </div>
 
-  <Hoja resumen={resumen} modulos={modulos}>
+  <Hoja resumen={resumen} cifrasClave={cifrasClave} modulos={modulos}>
     <Fragment slot="cifras">
       <Cifras observaciones={afectacion.observations} municipios={nombres} ahora={ahora} />
     </Fragment>
