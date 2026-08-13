@@ -168,6 +168,7 @@ Lo que `apps/web` puede dar por hecho. Los archivos se sirven desde
 | `ayuda/puntos.geojson` | Centros de acopio y albergues. Ubicación **exacta** (política contraria a la de incidentes) con `como_llegar` ya armado y `verificado` (persona vs. geocodificador) |
 | `fuentes/candidatos.json` | Notas de prensa para revisión humana |
 | `fuentes/cobertura.json` | Qué medios informan de cada municipio golpeado — y **de cuáles no informa nadie**. `resumen.poblacion_sin_notas` es la gente de la que no sabemos nada |
+| `secciones/index.json` + `secciones/{pcode}.topojson` | Trama urbana del DANE, **los 1.121 municipios con suelo urbano**. El índice trae `bbox` (encuadrar) y **`ancla`** (dónde colocar el nombre: mediana de los centroides de las secciones). **Para etiquetar usa `ancla`** — el centro del `bbox` cae entre poblados en el 54 % de los municipios. Los topojson se piden de uno en uno al tocar: mediana 1,5 KB comprimidos, Bogotá 164 KB |
 | `export/*.csv` | CSV con etiquetas HXL. `cobertura-por-municipio.csv` trae `sin_cobertura`: filtrarla da los municipios golpeados de los que no informa nadie |
 
 **`Observation`** es el primitivo central (`packages/ingest/src/schema.ts`):

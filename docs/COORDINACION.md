@@ -1156,6 +1156,64 @@ en las noticias y cree que el mapa muestra eso).
 
 ---
 
+## Peticiones 1 y 3, hechas — y la 3 te la entrego distinta de como la pediste
+
+El responsable aprobó el crecimiento del repositorio, así que **`data/secciones/` cubre
+ahora los 1.122 municipios**: 1.121 tienen suelo urbano cartografiado y uno no tiene
+ninguno. Ya puedes tocar cualquier municipio y ver su casco.
+
+### El `bbox` que pediste no resolvía lo que querías resolver
+
+Lo pediste para anclar los nombres al casco en vez del centro geométrico, por el caso de
+Quibdó a 37,4 km. Lo generé, lo medí, y **no sirve para eso**:
+
+> De los 1.121 municipios, **605 (el 54 %) tienen el suelo urbano repartido en más de
+> 15 km** — corregimientos y caseríos sueltos por el término. Ahí el centro de la caja cae
+> **entre** poblados, en el monte. La mediana de la diagonal urbana del país es 16,5 km, y
+> Cumaribo llega a 413.
+
+Habría cambiado el error de Quibdó por otro parecido en la mitad del país, y tú te habrías
+enterado al verlo en pantalla. Así que probé tres reglas contra ocho cabeceras de
+coordenada conocida:
+
+| regla | error medio al pueblo |
+|---|---|
+| centro del `bbox` | 11,2 km |
+| centro de la sección más grande | 7,9 km |
+| **mediana de los centroides de las secciones** | **3,1 km** |
+
+La «sección más grande» parecía la respuesta obvia —era mi primera implementación— y en
+las ciudades grandes es **peor que el bbox**: en Cali erraba 14,2 km, porque el polígono
+de mayor área es un ensanche periférico de baja densidad, no el centro. La mediana gana
+porque cae donde está la *masa* de secciones, que es el casco, y unos pocos caseríos
+sueltos no la mueven — la misma propiedad por la que una mediana resiste atípicos.
+
+**Así que `secciones/index.json` trae los dos campos:**
+
+```json
+{ "pcode": "CO11001", "secciones": 2843,
+  "bbox": [-74.3644, 3.8891, -74.0007, 4.8331],   // para encuadrar
+  "ancla": [-74.1087, 4.6212] }                    // para poner el NOMBRE
+```
+
+**Usa `ancla` para las etiquetas, no el centro del `bbox`.** Comprobado: Quibdó 1,3 km,
+Cartago 0,6 km, Cali 3,5 km, Ibagué 3,5 km de sus cabeceras reales.
+
+### Lo que esto te cuesta, medido, para que decidas si lo quieres tal cual
+
+- **El índice pasa a 32,7 KB comprimidos** y se pide dentro de `iniciarMapa()`, o sea en
+  el trozo diferido junto a MapLibre (279 KB), no en la ruta bloqueante. Ya le bajé la
+  precisión de las coordenadas de 6 a 4 decimales —11 m, de sobra para un texto de 80 px—
+  y eso solo se ahorró 5,7 KB: el peso es tener 1.121 entradas, no los decimales.
+- **El archivo por municipio no cambia de coste**, que era tu argumento y es correcto: se
+  piden de uno en uno al tocar. Mediana **1,5 KB comprimidos**. Pero ojo con los extremos,
+  que ahora incluyen ciudades que antes no estaban: **Bogotá 164 KB**, Medellín 79 KB,
+  Cali 62 KB, Barranquilla 45 KB. Bogotá con 2.843 secciones es el nuevo peor caso y sobre
+  3G malo es más de tres segundos. Si te estorba, dímelo y le subo la simplificación solo
+  a los que pasen de cierto umbral.
+
+---
+
 ## Respuesta de `agente-datos` a la ronda 4: fusionada, y me corregiste un error mío
 
 Fusionada en `main`. Puerta completa en verde **sobre el árbol ya fusionado**, no sobre tu
@@ -1312,6 +1370,7 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 | 2026-08-12 | `ayuda/puntos.geojson` | **Campo nuevo `verificado` (booleano).** Nada se quita | Este aviso — **léelo antes de dibujar la capa** |
 | 2026-08-12 | `fuentes/cobertura.json` | **Nuevo.** Registro de cobertura periodística por municipio, y su reverso: de qué municipios golpeados no informa nadie | Este aviso — ver la sección de abajo |
 | 2026-08-12 | **todos los que llevan `source`** | **`source.url` pasa a ser opcional** y aparece `source.detalle`. Solo las fuentes `unverified` pueden omitir la URL (ADR-013). Nada se quita | Este aviso — **léelo antes de tocar cómo se pinta una fuente** |
+| 2026-08-12 | `secciones/index.json` + `secciones/*.topojson` | **De 111 a 1.121 municipios.** El índice gana `bbox` (encuadrar) y **`ancla`** (dónde va el NOMBRE). Nada se quita | Este aviso — **usa `ancla`, no el centro del `bbox`**, ver la sección de arriba |
 
 ## `verificado`: dos clases de punto que no valen lo mismo
 
