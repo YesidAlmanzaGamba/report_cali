@@ -342,10 +342,13 @@ const primero = modulos[0]?.id ?? '';
     overflow: hidden;
   }
 
+  /* El aire de arriba separa los módulos de la tira de cifras, que va justo encima.
+     Sin él los botones quedaban pegados a los números y, en la franja asomada, asomaban
+     por debajo de la tira como si fueran parte de ella. */
   :global(html.js) .conmutador {
     display: flex;
     gap: 0.25rem;
-    padding: 0 1rem 0.6rem;
+    padding: 0.85rem 1rem 0.6rem;
     overflow-x: auto;
     scrollbar-width: none;
     border-bottom: 1px solid var(--borde);
