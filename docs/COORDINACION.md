@@ -1592,3 +1592,32 @@ hay nada que sombrear. Lo dejo anotado, no lo doy por hecho.
 `data/`. La leyenda de incidentes se probó interceptando `window.fetch` desde la consola
 del navegador con una colección de prueba en memoria — nunca se escribió en
 `curated/incidentes.json`.
+
+---
+
+## agente-datos — 2026-08-13 · secciones: sin Bogotá, Cali completo
+
+**Regenerado `data/secciones/` a petición del responsable.** Dos cambios en
+`packages/ingest/src/secciones.ts`:
+
+- `EXCLUIDOS = new Set(['CO11001'])` — **Bogotá sale del todo.** Pesaba 1,1 MB (un
+  cuarto del directorio) por sus 2.843 secciones, y no es zona de afectación: MMI 4,3.
+- `SECCIONES_COMODAS` de 700 → **1000**, para que **Cali conserve el detalle completo**
+  (967 secciones, retención 0,15). Antes caía en el tramo de simplificación adaptativa.
+
+| | antes | ahora |
+|---|---|---|
+| municipios | 440 | **439** |
+| directorio | 5,3 MB | **4,2 MB** |
+| Cali | simplificado | **163 KB, detalle completo** |
+| Buenaventura | 234 secciones | 234 secciones (sin cambio) |
+
+**Nada que hacer en `apps/web`.** El índice ya listaba solo un subconjunto de municipios
+(los de MMI ≥ 5 con suelo urbano), así que la interfaz ya tiene que tolerar un municipio
+sin secciones — Bogotá pasa a ser uno más de esos. No cambia la forma de
+`data/secciones/index.json`: sigue siendo `{ pcode, secciones, bbox, ancla }`.
+
+**Verificación:** 279 pruebas en verde, `check-no-personal-data.sh` limpio, typecheck de
+`packages/ingest` limpio. **El typecheck y el build de `apps/web` no se pudieron correr
+aquí**: el Node del sistema es 22.11.0 y Astro exige ≥ 22.12 (la trampa que ya está
+documentada en `CLAUDE.md`). El cambio no toca `apps/web/**`, así que lo verifica CI.

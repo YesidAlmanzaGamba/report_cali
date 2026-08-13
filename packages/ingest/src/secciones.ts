@@ -50,8 +50,24 @@ const RETENCION = 0.15;
  * municipio con el triple de manzanas conserva un tercio de los puntos por manzana. El
  * suelo se pone en 0,04 para que la trama no se convierta en polígonos irreconocibles.
  */
-const SECCIONES_COMODAS = 700;
+const SECCIONES_COMODAS = 1000;
 const RETENCION_MINIMA = 0.04;
+
+/**
+ * Municipios que se excluyen aunque pasen el umbral, por decisión explícita.
+ *
+ * **Bogotá** (2.843 secciones, 108 KB comprimidos) era el archivo más pesado con
+ * diferencia — el doble que el siguiente— y está a más de 700 km del epicentro. Su MMI
+ * de 5,7 viene de la magnitud del sismo, no de estar en la zona de daño: allí no hay
+ * edificaciones colapsadas que cartografiar.
+ *
+ * **Lo que se pierde, dicho de frente:** Bogotá sí tiene centros de acopio —el Campín y
+ * el Palacio de los Deportes—, así que sus marcadores quedan sobre un polígono liso, sin
+ * trama alrededor. Se acepta porque la pregunta que resuelve un punto de acopio es «¿a
+ * dónde llevo esto?», y eso lo responden la dirección y el enlace de «Cómo llegar», no el
+ * dibujo de las manzanas. Si algún día estorba, quitar el pcode de esta lista lo devuelve.
+ */
+const EXCLUIDOS = new Set(['CO11001']);
 
 function retencionPara(secciones: number): number {
   if (secciones <= SECCIONES_COMODAS) return RETENCION;
@@ -211,14 +227,15 @@ async function main(): Promise<void> {
   for (const i of await cargarIncidentes().catch(() => [])) conAlgoQueMostrar.add(i.pcode);
 
   const objetivo = mmi.municipalities.filter(
-    (m) => m.mmi >= umbral || conAlgoQueMostrar.has(m.pcode),
+    (m) => !EXCLUIDOS.has(m.pcode) && (m.mmi >= umbral || conAlgoQueMostrar.has(m.pcode)),
   );
   const pcodes = new Set(objetivo.map((m) => m.pcode));
 
   const porAyuda = objetivo.filter((m) => m.mmi < umbral).length;
   console.log(
     `· ${objetivo.length} municipios: MMI ≥ ${umbral}` +
-      (porAyuda > 0 ? `, más ${porAyuda} por tener ayuda o incidentes` : ''),
+      (porAyuda > 0 ? `, más ${porAyuda} por tener ayuda o incidentes` : '') +
+      (EXCLUIDOS.size > 0 ? `, menos ${EXCLUIDOS.size} excluidos a mano` : ''),
   );
   console.log(
     zipPath ? `· Usando zip local: ${zipPath}` : '· Descargando secciones urbanas (48 MB)…',
