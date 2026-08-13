@@ -1,0 +1,85 @@
+/**
+ * Nombres de municipio sobre el mapa.
+ *
+ * **Dónde acaba este archivo, medido y no supuesto.** Lo importa `lib/etiquetas.ts`, que
+ * solo entra por importación dinámica desde `cargar-mapa.ts`, así que la intuición dice que
+ * viaja diferido. **No.** Astro sube el CSS de todo el grafo de módulos de la página —las
+ * importaciones dinámicas incluidas— a la carga inicial, y como este archivo es pequeño
+ * además lo **incrusta en un `<style>` dentro de `index.html`** en vez de enlazarlo.
+ *
+ * Medido: `index.html` pasa de 7.310 a 7.638 B comprimidos, o sea **+331 B en la ruta
+ * bloqueante**. Por eso está escrito corto. Si crece, se nota.
+ *
+ * (Ese mismo detalle es lo que tenía `maplibre-gl.css` metiendo 9.946 B comprimidos en la
+ * ruta bloqueante bajo un comentario que aseguraba lo contrario. Ver `lib/mapa.ts`.)
+ *
+ * **El tema sale de `tokens.css` y no de JavaScript.** Los marcadores se cuelgan dentro del
+ * documento, así que las propiedades personalizadas de `:root` heredan hasta aquí. Es una
+ * ventaja concreta de rotular con HTML en vez de con una capa `symbol`, donde el color
+ * habría que recalcularlo a mano al cambiar de tema.
+ */
+.etiqueta-mapa {
+  /* Un toque sobre el nombre tiene que atravesar y abrir el municipio de debajo. Es lo que
+     hace que la etiqueta sea «tocable» sin escribir ni un manejador. */
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+
+  /* Obligatorio, no decorativo: `maplibre-gl.css` le pone
+     `font: 12px/20px Helvetica Neue, Arial, …` a `.maplibregl-map`, y los marcadores viven
+     dentro. Sin esto los nombres saldrían en Arial mientras el resto del sitio usa la pila
+     del sistema. */
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Suelo de 12 px: esto se lee en la calle, con prisa y a pleno sol. */
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--tinta-2);
+
+  /* Halo, no cápsula. Una cápsula translúcida garantiza contraste pero taparía ~11 % de la
+     coropleta, que es la razón de ser del mapa (ADR-005). El halo solo tapa el contorno del
+     glifo. Es el mismo recurso que `text-halo-color` en una capa de símbolos. */
+  text-shadow:
+    0 0 2px var(--fondo),
+    0 0 2px var(--fondo),
+    1px 1px 1px var(--fondo),
+    -1px -1px 1px var(--fondo),
+    1px -1px 1px var(--fondo),
+    -1px 1px 1px var(--fondo);
+
+  z-index: 1;
+  animation: etiqueta-entra 0.18s ease-out;
+}
+
+/* Ciudades principales: capitales de departamento y las grandes. Más cuerpo, más peso y la
+   tinta primaria en vez de la secundaria — el mismo par que usa el resto de la interfaz. */
+.etiqueta-mapa[data-nivel='principal'] {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--tinta);
+}
+
+/* El municipio abierto: gana siempre, y se ve que gana. */
+.etiqueta-mapa[data-nivel='abierto'] {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tinta);
+  z-index: 2;
+}
+
+@keyframes etiqueta-entra {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etiqueta-mapa {
+    animation: none;
+  }
+}

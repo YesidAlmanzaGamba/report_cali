@@ -8,10 +8,24 @@
  * teselas sobre una conexión mala, y funciona igual dentro de una red degradada.
  */
 import maplibregl, { type ExpressionSpecification, type StyleSpecification } from 'maplibre-gl';
-// Sin esta hoja de estilos el lienzo no queda posicionado y los controles se
-// dibujan como texto suelto encima del mapa. Va aquí, dentro del módulo diferido,
-// para que viaje en el mismo trozo que MapLibre y no en la carga inicial.
-import 'maplibre-gl/dist/maplibre-gl.css';
+/**
+ * La hoja de estilos de MapLibre, como URL y NO como `import` normal.
+ *
+ * Sin ella el lienzo no queda posicionado y los controles se dibujan como texto suelto
+ * encima del mapa, así que hace falta — pero solo cuando el mapa existe.
+ *
+ * **Aquí había un `import 'maplibre-gl/dist/maplibre-gl.css'` con un comentario que decía
+ * que «viaja en el mismo trozo que MapLibre y no en la carga inicial». Era falso.** Astro
+ * sube el CSS de todo el grafo de módulos de la página —importaciones dinámicas incluidas—
+ * a un `<link>` que bloquea el pintado. Medido en `dist/index.html`: eran **9.946 B
+ * comprimidos bloqueando**, el 63 % de todo el CSS de la página, en el sitio cuyo
+ * compromiso central es pesar poco sobre una conexión mala. Y la receta de medición del
+ * tablero solo miraba `index.*.css`, así que llevaba rondas sin verlo.
+ *
+ * Con `?url` Vite emite el archivo y **no** inyecta el `<link>`; lo pide `cargarHoja()` en
+ * tiempo de ejecución. `?url` respeta `base`, así que el espejo de GitHub Pages sigue bien.
+ */
+import urlHojaMapLibre from 'maplibre-gl/dist/maplibre-gl.css?url';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, Geometry, Point } from 'geojson';
 
@@ -24,6 +38,7 @@ import {
 } from './mmi';
 import { ETIQUETAS, TIPOS_FUENTE, frescuraDe, ordenar } from './metricas';
 import { colapsarHoja } from './hoja';
+import { crearEtiquetas, type GestorEtiquetas, type PropsEtiqueta } from './etiquetas';
 
 interface MunicipioProps {
   pcode: string;
@@ -114,6 +129,19 @@ const prefiereMenosMovimiento =
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/**
+ * El tema, como consulta viva y no como una lectura suelta.
+ *
+ * Se guarda la `MediaQueryList` en vez de solo `.matches` para poder escuchar el cambio:
+ * los colores del mapa se fijan en JavaScript (no son CSS, van dentro del lienzo), así que
+ * sin escuchar, cambiar el tema del sistema con la página abierta dejaba el fondo del mapa
+ * en claro debajo de una interfaz oscura.
+ */
+const modoOscuro =
+  typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-color-scheme: dark)')
+    : ({ matches: false, addEventListener: () => {} } as unknown as MediaQueryList);
+
 const DATA =
   (import.meta.env['PUBLIC_DATA_URL'] as string | undefined)?.replace(/\/$/, '') ??
   // `BASE_URL` ya trae la barra final. En el espejo de GitHub Pages vale
@@ -161,9 +189,44 @@ function bboxDe(geometry: Geometry): [number, number, number, number] {
   return [minX, minY, maxX, maxY];
 }
 
+/**
+ * Pide una hoja de estilos y espera a que esté aplicada.
+ *
+ * Se resuelve con `load`, con `error` **o** al vencer un plazo, y nunca rechaza: una hoja
+ * que no llega tiene que degradar a un mapa feo, jamás a ningún mapa. El plazo existe
+ * porque en una conexión a medias `load` puede no llegar nunca y el mapa se quedaría sin
+ * construir esperándolo.
+ */
+async function cargarHoja(url: string): Promise<void> {
+  if (document.querySelector(`link[rel="stylesheet"][href="${url}"]`)) return;
+
+  await new Promise<void>((resolve) => {
+    const enlace = document.createElement('link');
+    enlace.rel = 'stylesheet';
+    enlace.href = url;
+
+    let resuelto = false;
+    const terminar = (): void => {
+      if (resuelto) return;
+      resuelto = true;
+      resolve();
+    };
+
+    enlace.addEventListener('load', terminar, { once: true });
+    enlace.addEventListener('error', terminar, { once: true });
+    setTimeout(terminar, 3000);
+
+    document.head.append(enlace);
+  });
+}
+
+/** El color del fondo del mapa. Un solo sitio, porque ahora lo piden dos. */
+function fondoDelMapa(oscuro: boolean): string {
+  return oscuro ? '#0c0e12' : '#eef0f4';
+}
+
 /** Estilo mínimo: solo un fondo. Las capas de datos se añaden al cargar. */
 function estiloBase(): StyleSpecification {
-  const oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
   return {
     version: 8,
     sources: {},
@@ -171,15 +234,36 @@ function estiloBase(): StyleSpecification {
       {
         id: 'fondo',
         type: 'background',
-        paint: { 'background-color': oscuro ? '#0c0e12' : '#eef0f4' },
+        paint: { 'background-color': fondoDelMapa(modoOscuro.matches) },
       },
     ],
   };
 }
 
+/**
+ * Tinta legible para la trama urbana sobre lo que hay debajo.
+ *
+ * **La decisión no es del tema de la página, es de lo que tapa.** Donde hay MMI, debajo
+ * del casco hay un color del USGS que es **el mismo en modo claro y en oscuro** (ADR-009),
+ * así que mirar `prefers-color-scheme` daría negro sobre amarillo brillante en modo claro
+ * y blanco sobre el mismo amarillo en oscuro — mal las dos veces. `levelFor().ink` ya
+ * resuelve exactamente esta pregunta para la insignia de grado de la ficha, y se reutiliza
+ * para que las dos no puedan discrepar.
+ *
+ * Sin MMI el municipio se pinta con `fill-opacity: 0.25`, así que lo que se ve es el fondo
+ * del mapa: ahí sí manda el tema.
+ */
+function tintaSobreMunicipio(mmi: number | null, oscuro: boolean): string {
+  if (mmi === null) return oscuro ? '#eef0f3' : '#14161a';
+  return levelFor(mmi).ink;
+}
+
 export async function iniciarMapa(): Promise<void> {
   const contenedor = document.getElementById('mapa');
   if (!contenedor) return;
+
+  // Se arranca ya, sin esperarla, para que descargue a la vez que los datos de abajo.
+  const hojaMapLibre = cargarHoja(urlHojaMapLibre);
 
   let municipiosTopo: unknown;
   let departamentosTopo: unknown;
@@ -230,6 +314,11 @@ export async function iniciarMapa(): Promise<void> {
       poblacion_vulnerable: datos?.poblacion_vulnerable ?? null,
     });
   }
+
+  // Se pidió antes de los datos y se espera aquí: para cuando los seis `fetch` terminan,
+  // la hoja ya viajó en paralelo con ellos, así que esperarla cuesta ~0. Lo que no puede
+  // pasar es construir el mapa sin ella.
+  await hojaMapLibre;
 
   const mapa = new maplibregl.Map({
     container: contenedor,
@@ -442,7 +531,10 @@ export async function iniciarMapa(): Promise<void> {
   }
 
   ajustarControlesSuperiores();
-  window.addEventListener('resize', ajustarControlesSuperiores);
+  window.addEventListener('resize', () => {
+    ajustarControlesSuperiores();
+    etiquetas?.programar();
+  });
 
   // ── Modos de color ──────────────────────────────────────────────────────
   //
@@ -790,6 +882,13 @@ export async function iniciarMapa(): Promise<void> {
   let pcodeAbierto: string | null = null;
 
   /**
+   * Los nombres de municipio sobre el mapa. Se construyen más abajo, cuando ya existen las
+   * capas que no deben tapar, así que hasta entonces las funciones de aquí arriba lo tocan
+   * con `?.`.
+   */
+  let etiquetas: GestorEtiquetas | undefined;
+
+  /**
    * Marca el documento mientras hay una ficha abierta.
    *
    * Va en `<html>` y no en `.marco` porque la hoja inferior es un componente aparte, que
@@ -816,6 +915,10 @@ export async function iniciarMapa(): Promise<void> {
 
     // La fila de arriba acaba de cambiar de alto y `--ficha-top` manda sobre lo de abajo.
     ajustarControlesSuperiores();
+
+    // Abrir o cerrar la ficha cambia qué parte del mapa está tapada sin mover la cámara,
+    // así que no hay `moveend` que dispare la recolocación de los nombres. Aquí sí.
+    etiquetas?.programar();
   }
 
   /**
@@ -899,6 +1002,10 @@ export async function iniciarMapa(): Promise<void> {
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
     pcodeAbierto = null;
     marcarFichaAbierta(false);
+    // Cerrar la ficha por cualquier vía retira también la trama y los incidentes: eran del
+    // municipio que se acaba de cerrar. Antes solo lo hacía «← Ver todo».
+    limpiarCapasDeMunicipio();
+    etiquetas?.fijarAbierto(null);
   }
 
   function mostrar(props: Record<string, unknown>): void {
@@ -953,6 +1060,9 @@ export async function iniciarMapa(): Promise<void> {
     pintarCifras(pcode);
     void mostrarIncidentes(pcode);
     void mostrarSecciones(pcode);
+    // Sin punto: `acercarA()` lo afina con el centro del casco en cuanto vuela. Se marca
+    // aquí igual para el caso en que la ficha se abra sin mover la cámara.
+    etiquetas?.fijarAbierto(pcode);
 
     panel?.removeAttribute('hidden');
     // Cada municipio empieza por arriba. Sin esto, quien había bajado a leer las cifras
@@ -986,6 +1096,20 @@ export async function iniciarMapa(): Promise<void> {
     const urbano = await bboxUrbano(pcode);
     const caja = urbano ?? bboxDe(feature.geometry);
     if (!Number.isFinite(caja[0])) return;
+
+    /**
+     * El nombre del municipio abierto se cuelga del centro del encuadre, no de su punto
+     * representativo.
+     *
+     * Con el casco llenando la pantalla, el punto representativo del municipio entero
+     * —que es rural y mucho más grande— puede quedar fuera de cuadro, así que el nombre
+     * del municipio que se está mirando sería justo el que desaparece. El centro de esta
+     * caja está en pantalla por construcción: es donde la cámara acaba de volar.
+     */
+    etiquetas?.fijarAbierto(pcode, [(caja[0] + caja[2]) / 2, (caja[1] + caja[3]) / 2]);
+    // Se apagan durante el vuelo: si no, cruzan la pantalla deslizándose y pueden acabar
+    // detrás de la ficha. `moveend` las vuelve a colocar al aterrizar.
+    etiquetas?.apagar();
 
     mapa.fitBounds(
       [
@@ -1163,20 +1287,79 @@ export async function iniciarMapa(): Promise<void> {
     data: { type: 'FeatureCollection', features: [] },
   });
 
-  mapa.addLayer({
-    id: 'secciones',
-    type: 'line',
-    source: 'secciones',
-    paint: {
-      'line-color': '#00000055',
-      'line-width': 0.6,
-      // Aparecen al acercarse. A escala nacional serían una maraña ilegible que
-      // taparía justo la coropleta de intensidad. Mientras no cartografían nada más que
-      // la trama administrativa (sin incidentes que resaltar por sección todavía), se
-      // mantienen discretas incluso de cerca — más zoom para aparecer, tope más bajo.
-      'line-opacity': ['interpolate', ['linear'], ['zoom'], 10, 0, 13, 0.4],
+  /**
+   * ⚠️ **El alfa se expresa en UN solo sitio: la propiedad `*-opacity`.** Los colores van
+   * en hex opaco.
+   *
+   * Esto no es estilo, es la corrección de un fallo que dejó la capa invisible durante
+   * rondas. Estaba así: `line-color: '#00000055'` (alfa 0x55/255 = 0,33) **y** además
+   * `line-opacity` con tope 0,4. MapLibre los **multiplica**:
+   *
+   *     0,33 × 0,4 = 0,133 de opacidad efectiva, sobre una línea de 0,6 px
+   *
+   * o sea un pelo por debajo del píxel que el antialiasing convertía en una mancha gris.
+   * La rampa de zoom se agregó después sin quitarle el alfa al color.
+   *
+   * Las capas hermanas usan la convención contraria —`municipios-borde` es `#00000022` sin
+   * `line-opacity`, `departamentos-borde` es `#00000066`— y también es válida. Lo que no
+   * vale es **las dos a la vez**. Aquí hace falta rampa por zoom, así que el alfa vive en
+   * la opacidad y el color queda opaco.
+   *
+   * ⚠️ **El orden importa y es posicional, no declarativo.** Las dos capas van con
+   * `beforeId: 'municipios-borde'`, así que quedan por encima del ráster de deslizamientos
+   * (que se inserta más arriba en este archivo) y por debajo de los límites, del epicentro
+   * y de las réplicas. Sin mapa base (ADR-010) los límites son el esqueleto del mapa y no
+   * se pueden velar; un relleno sobre el anillo del epicentro lo lavaría. Si algún día se
+   * mueve uno de los dos bloques, esto se rompe en silencio.
+   */
+  mapa.addLayer(
+    {
+      id: 'secciones-relleno',
+      type: 'fill',
+      source: 'secciones',
+      paint: {
+        // Se fija por municipio en `mostrarSecciones()`; este es solo el valor de arranque.
+        'fill-color': tintaSobreMunicipio(null, modoOscuro.matches),
+        /**
+         * La **masa** del casco: lo que se ve de un vistazo y lo que contesta a «no se
+         * puede ver». Un contorno de manzanas no dice «aquí está lo construido»; un salto
+         * de luminosidad en el borde del casco, sí.
+         *
+         * 0 por debajo de z8 —a escala regional un casco son unos pocos píxeles—, pico de
+         * 0,16 entre z9,5 y z13 (la banda por la que pasa la cámara, y donde aterriza
+         * `acercarA` cuando el municipio **no** tiene casco: `maxZoom: 11`), y baja a 0,10
+         * en z13. Al llenar el casco la pantalla, un velo sobre *todo* ya no es una pista
+         * de forma: solo le cuesta fidelidad a la coropleta, así que el relleno se retira
+         * y toman el relevo las líneas.
+         *
+         * 0,16 mueve la luminosidad del color del USGS sin tocarle el tono, así que las
+         * bandas de intensidad siguen distinguiéndose (ADR-009).
+         */
+        'fill-opacity': ['interpolate', ['linear'], ['zoom'], 8, 0, 9.5, 0.16, 13, 0.1],
+      },
     },
-  });
+    'municipios-borde',
+  );
+
+  mapa.addLayer(
+    {
+      id: 'secciones-borde',
+      type: 'line',
+      source: 'secciones',
+      // Las 967 secciones de Cali producen miters astillados a 2 px de ancho.
+      layout: { 'line-join': 'round' },
+      paint: {
+        'line-color': tintaSobreMunicipio(null, modoOscuro.matches),
+        // 1,4 px en z13 y 2 px en z15, que es donde de verdad aterriza `acercarA`
+        // (`maxZoom: 14` con casco) y donde alguien hace pinza para ver un barrio.
+        'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.8, 13, 1.4, 15, 2],
+        // Opacidad efectiva, ahora que el color es opaco. Contra los 0,133 de antes:
+        // **6× la opacidad y 2,3× el ancho** al mismo zoom.
+        'line-opacity': ['interpolate', ['linear'], ['zoom'], 10.5, 0, 12, 0.55, 14, 0.8],
+      },
+    },
+    'municipios-borde',
+  );
 
   /** Carga (y cachea) las secciones urbanas de un municipio. */
   async function cargarSecciones(
@@ -1196,13 +1379,72 @@ export async function iniciarMapa(): Promise<void> {
     return seccionesCargadas.get(pcode) as FeatureCollection<Geometry, unknown> | undefined;
   }
 
+  /**
+   * Fija la tinta de la trama según el MMI del municipio abierto.
+   *
+   * Se guarda el último pcode para poder recalcularla si cambia el tema sin que haya
+   * cambiado el municipio.
+   */
+  let pcodeTrama: string | null = null;
+
+  function pintarTrama(): void {
+    const mmi = pcodeTrama ? porPcode.get(pcodeTrama)?.mmi ?? null : null;
+    const tinta = tintaSobreMunicipio(mmi, modoOscuro.matches);
+    mapa.setPaintProperty('secciones-relleno', 'fill-color', tinta);
+    mapa.setPaintProperty('secciones-borde', 'line-color', tinta);
+  }
+
   async function mostrarSecciones(pcode: string): Promise<void> {
     const fuente = mapa.getSource('secciones') as maplibregl.GeoJSONSource | undefined;
     if (!fuente) return;
 
+    pcodeTrama = pcode;
+    pintarTrama();
+
     const secciones = await cargarSecciones(pcode);
     fuente.setData((secciones ?? { type: 'FeatureCollection', features: [] }) as never);
   }
+
+  /**
+   * Vacía lo que solo tiene sentido con un municipio abierto.
+   *
+   * Vivía suelto dentro del botón «← Ver todo», así que **cerrar la ficha de cualquier
+   * otra forma dejaba la trama y los incidentes del municipio anterior pintados encima del
+   * mapa**: tocar el mismo municipio otra vez, o tocar fuera de todo polígono. Se notaba
+   * poco mientras la trama era invisible; ahora que se ve 6× más y además tiene relleno,
+   * se notaría mucho. Lo llaman los dos sitios para que no puedan volver a discrepar.
+   */
+  function limpiarCapasDeMunicipio(): void {
+    for (const capa of ['incidentes', 'secciones']) {
+      (mapa.getSource(capa) as maplibregl.GeoJSONSource | undefined)?.setData({
+        type: 'FeatureCollection',
+        features: [],
+      });
+    }
+    pcodeTrama = null;
+  }
+
+  // El tema no es CSS aquí dentro: los colores del lienzo se fijan en JavaScript, así que
+  // hay que repintarlos a mano cuando cambia. Sin esto, cambiar el tema del sistema con la
+  // página abierta dejaba el fondo del mapa en claro bajo una interfaz oscura.
+  modoOscuro.addEventListener('change', () => {
+    mapa.setPaintProperty('fondo', 'background-color', fondoDelMapa(modoOscuro.matches));
+    pintarTrama();
+  });
+
+  // ── Nombres de municipio ────────────────────────────────────────────────
+  //
+  // Se crean aquí, ya con todas las capas puestas. Los nombres son lo que permite ubicarse
+  // a quien no se sabe la geografía de memoria: sin mapa base (ADR-010) el país es un
+  // mosaico de polígonos de colores y nada dice cuál es cuál.
+  etiquetas = crearEtiquetas({
+    mapa,
+    municipios: municipios.features as unknown as {
+      geometry: Geometry;
+      properties: PropsEtiqueta;
+    }[],
+  });
+  etiquetas.programar();
 
   mapa.addSource('incidentes', {
     type: 'geojson',
@@ -1315,12 +1557,7 @@ export async function iniciarMapa(): Promise<void> {
   volver?.addEventListener('click', () => {
     volver.setAttribute('hidden', '');
     cerrarFicha();
-    for (const capa of ['incidentes', 'secciones']) {
-      (mapa.getSource(capa) as maplibregl.GeoJSONSource | undefined)?.setData({
-        type: 'FeatureCollection',
-        features: [],
-      });
-    }
+    etiquetas?.apagar();
 
     if (vistaGeneral) {
       mapa.fitBounds(vistaGeneral, {
@@ -1349,5 +1586,18 @@ export async function iniciarMapa(): Promise<void> {
       // En móvil la hoja tapa el mapa; se recoge para que se vea a dónde voló.
       colapsarHoja();
     });
+  }
+
+  /**
+   * Asa para verificar desde la consola, **solo en desarrollo**.
+   *
+   * La regla de este proyecto es que un cambio de interfaz no está verificado hasta que se
+   * mide el rectángulo en el navegador. Para las capas eso significa preguntarle al
+   * renderizador (`queryRenderedFeatures`) y no a la fuente de datos, y sin un asa no hay
+   * forma de preguntárselo. `import.meta.env.DEV` la elimina de la compilación de
+   * producción.
+   */
+  if (import.meta.env.DEV) {
+    (window as unknown as { __mapa?: maplibregl.Map }).__mapa = mapa;
   }
 }
