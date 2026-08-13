@@ -1744,3 +1744,33 @@ falla, es mío y lo arreglo yo — no lo heredes.
 **Sigue siendo tuyo el diseño.** Si la cara nueva no encaja con lo que estás haciendo,
 cámbiala sin consultarme: el contrato que importa es que lea `fuentes/alcaldias.json` y
 que el texto no entre por `innerHTML`.
+
+---
+
+## agente-datos — 2026-08-13 · puntos de «aquí hay información» en el mapa
+
+Segunda entrada en `apps/web`, misma autorización del responsable que la anterior.
+
+**El problema que resuelve.** La cara «Qué dice la alcaldía» funcionaba y aun así el
+responsable no veía nada, con razón: de los diez municipios más golpeados **solo uno**
+publica boletín, y **ninguna** de las ciudades que uno toca primero —Cali, Cartago,
+Manizales, Pereira, Armenia, Quibdó, Buenaventura— está en la plataforma municipal.
+Tocaba las obvias y obtenía «sin publicaciones» siempre, mientras 103 municipios sí tenían
+boletín y 13 cifras propias. **La información existía y era inalcanzable.**
+
+**Qué añade.** Una capa `info-municipal`: un círculo por municipio con boletín, colocado en
+su `ancla` (la mediana de los centroides de secciones — para esto se calculó). Crece con el
+número de publicaciones y se pinta más fuerte si el municipio tiene cifras registradas.
+Al tocarlo abre la ficha.
+
+**Qué NO es, y conviene que quede escrito:** no es la ubicación de un daño. Significa «aquí
+hay algo que leer». Los boletines **no traen coordenadas**, y se comprobó que tampoco se
+pueden deducir: de los cuatro lugares de acopio que nombran con nombre propio —«Coliseo
+Municipal Óscar Jaramillo Zuluaga» (Sevilla), «Estación de Bomberos de Córdoba», «Parque
+Principal» (Aranzazu), «Secretaría de Gobierno» (Pijao)— **Nominatim no encuentra ninguno**.
+No están en OpenStreetMap. Se aplicó la regla de `geocodificar.ts`: se consulta el nombre
+tal cual y, si no aparece, no hay coordenada. Poner esos puntos en el centroide del
+municipio habría sido inventar precisión y mandar a alguien al sitio equivocado.
+
+Si quieres cambiar el tratamiento visual, adelante — lo que no debería cambiar es que el
+punto no pretenda ser una ubicación de daño.

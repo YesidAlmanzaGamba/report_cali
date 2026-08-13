@@ -93,6 +93,12 @@ interface CoberturaMunicipio {
  * acto administrativo (un decreto de calamidad), `Article` es un boletín o informe de
  * afectación. Un decreto es un hecho; un boletín es una narración.
  */
+/** Una fila de `secciones/index.json`. `ancla` es dónde va el nombre del municipio. */
+interface MunicipioSecciones {
+  pcode: string;
+  ancla?: [number, number];
+}
+
 interface PublicacionAlcaldia {
   pcode: string;
   municipio: string;
@@ -1410,11 +1416,23 @@ export async function iniciarMapa(): Promise<void> {
   // dibujan al acercarse, para que un incidente se lea «en esta parte de la ciudad» y
   // no solo «en Cali». No traen nombre de barrio —el MGN solo publica códigos—; el
   // nombre lo aporta el reporte, en el campo `barrio` del incidente.
-  const indiceSecciones = await getJson<{ municipios: { pcode: string }[] }>(
+  const indiceSecciones = await getJson<{ municipios: MunicipioSecciones[] }>(
     'secciones/index.json',
-  ).catch(() => ({ municipios: [] as { pcode: string }[] }));
+  ).catch(() => ({ municipios: [] as MunicipioSecciones[] }));
 
   const conSecciones = new Set(indiceSecciones.municipios.map((m) => m.pcode));
+
+  /**
+   * Dónde colocar algo que se refiere a TODO el municipio.
+   *
+   * `ancla` es la mediana de los centroides de las secciones urbanas, que es donde está
+   * la gente. El centro del bbox no sirve: en el 54 % de los municipios el suelo urbano
+   * está repartido en más de 15 km y la caja cae entre poblados.
+   */
+  const anclaPorPcode = new Map<string, [number, number]>();
+  for (const m of indiceSecciones.municipios) {
+    if (m.ancla) anclaPorPcode.set(m.pcode, m.ancla);
+  }
   const seccionesCargadas = new Map<string, unknown>();
 
   mapa.addSource('secciones', {
@@ -1580,6 +1598,71 @@ export async function iniciarMapa(): Promise<void> {
     }[],
   });
   etiquetas.programar();
+
+  /**
+   * Dónde hay información, que no es lo mismo que dónde hay daño.
+   *
+   * Sin esto, la información recogida era invisible: de los diez municipios más
+   * golpeados solo uno publica boletín, y ninguna de las ciudades que uno toca primero
+   * —Cali, Cartago, Manizales, Pereira, Armenia, Quibdó, Buenaventura— está en la
+   * plataforma municipal. Quien abría el mapa tocaba las obvias y no encontraba nada,
+   * mientras 103 municipios sí tenían boletín y 13 cifras propias.
+   *
+   * El punto va en el `ancla` del municipio y significa «aquí hay algo que leer». **No
+   * es la ubicación de un daño**: esos datos no traen coordenada, y ninguno de los
+   * lugares que nombran los boletines —«Coliseo Municipal Óscar Jaramillo Zuluaga»,
+   * «Estación de Bomberos de Córdoba»— está en OpenStreetMap. Fingir precisión ahí
+   * mandaría a un equipo al sitio equivocado.
+   */
+  const puntosInfo: Feature<Point, { pcode: string; notas: number; cifras: number }>[] = [];
+  for (const [pcode, publicaciones] of alcaldiaPorPcode) {
+    const ancla = anclaPorPcode.get(pcode);
+    if (!ancla) continue;
+    puntosInfo.push({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: ancla },
+      properties: {
+        pcode,
+        notas: publicaciones.length,
+        cifras: (cifrasPorPcode.get(pcode) ?? []).length,
+      },
+    });
+  }
+
+  mapa.addSource('info-municipal', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: puntosInfo },
+  });
+
+  mapa.addLayer({
+    id: 'info-municipal',
+    type: 'circle',
+    source: 'info-municipal',
+    paint: {
+      // Crece un poco donde hay más que leer, sin llegar a ser un mapa de calor.
+      'circle-radius': ['interpolate', ['linear'], ['get', 'notas'], 1, 4.5, 9, 8],
+      // Con cifras registradas es un dato duro; sin ellas, solo relato.
+      'circle-color': ['case', ['>', ['get', 'cifras'], 0], '#1b4d8f', '#5c7fb0'],
+      'circle-stroke-color': '#fff',
+      'circle-stroke-width': 1.5,
+      'circle-opacity': 0.9,
+    },
+  });
+
+  mapa.on('click', 'info-municipal', (e) => {
+    const pcode = (e.features?.[0]?.properties as { pcode?: string } | undefined)?.pcode;
+    if (!pcode) return;
+    const f = municipios.features.find((x) => x.properties.pcode === pcode);
+    if (!f) return;
+    mostrar(f.properties as unknown as Record<string, unknown>);
+    acercarA(f);
+  });
+  mapa.on('mouseenter', 'info-municipal', () => {
+    mapa.getCanvas().style.cursor = 'pointer';
+  });
+  mapa.on('mouseleave', 'info-municipal', () => {
+    mapa.getCanvas().style.cursor = '';
+  });
 
   mapa.addSource('incidentes', {
     type: 'geojson',
