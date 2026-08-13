@@ -34,8 +34,11 @@
      que existiera la tira, porque la tira sustituye al renglón de resumen en vez de
      sumarse a él. Cada rem de aquí sale del mapa. */
   --encabezado: 3.25rem;
-  --asomada: 5.25rem;
   --seguro-abajo: env(safe-area-inset-bottom, 0px);
+  /* La franja tiene que sumar el hueco seguro de abajo. Sin sumarlo, en un móvil con
+     barra de navegación del navegador la tira de cifras queda medio tapada por ella:
+     se veían los números cortados por el borde inferior. */
+  --asomada: calc(5rem + var(--seguro-abajo));
 }
 
 @media (prefers-color-scheme: dark) {

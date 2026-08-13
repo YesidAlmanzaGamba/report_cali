@@ -1357,12 +1357,10 @@ export async function iniciarMapa(): Promise<void> {
 
       if (ahora >= esperaHasta) {
         if (anterior !== null) {
+          // `scrollTop` admite decimales. Antes se acumulaba y solo se movía al llegar
+          // a un píxel entero, que a 22 px/s es un tirón cada 45 ms — se veía a saltos.
           restante += (VELOCIDAD * (ahora - anterior)) / 1000;
-          const entero = Math.floor(restante);
-          if (entero >= 1) {
-            restante -= entero;
-            panel.scrollTop += entero;
-          }
+          panel.scrollTop = restante;
         }
         if (panel.scrollTop >= sobrante - 1) {
           // Al terminar de leer una cara se pasa a la siguiente y se vuelve arriba, en
@@ -1370,6 +1368,7 @@ export async function iniciarMapa(): Promise<void> {
           // entera —impacto, alcaldía y ayuda— sin que nadie tenga que deslizar.
           esperaHasta = ahora + ESPERA_FINAL;
           panel.scrollTop = 0;
+          restante = 0;
           pasarACaraSiguiente();
         }
       }

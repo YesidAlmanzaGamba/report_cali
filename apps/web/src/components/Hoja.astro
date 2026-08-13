@@ -49,14 +49,16 @@ const primero = modulos[0]?.id ?? '';
 
   {
     cifrasClave.length > 0 && (
-      <ul class="tiras" id="tiras" aria-label="Cifras nacionales">
-        {cifrasClave.map((c) => (
-          <li title={`${c.fuente} · ${c.cuando.slice(0, 16).replace('T', ' ')}`}>
-            <span class="tira-valor">{c.valor}</span>
-            <span class="tira-etiqueta">{c.etiqueta}</span>
-          </li>
-        ))}
-      </ul>
+      <div class="tiras-marco" id="tiras-marco">
+        <ul class="tiras" id="tiras" aria-label="Cifras nacionales">
+          {cifrasClave.map((c) => (
+            <li title={`${c.fuente} · ${c.cuando.slice(0, 16).replace('T', ' ')}`}>
+              <span class="tira-valor">{c.valor}</span>
+              <span class="tira-etiqueta">{c.etiqueta}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 
@@ -182,13 +184,9 @@ const primero = modulos[0]?.id ?? '';
    * dentro de la franja, que es donde tiene que estar.
    */
   :global(html.js) .asa {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: 'agarre agarre' 'resumen chevron';
-    align-items: center;
-    gap: 0.5rem;
+    display: block;
     width: 100%;
-    padding: 0.5rem 1.1rem 0.15rem;
+    padding: 0.45rem 1.1rem 0.1rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -233,27 +231,61 @@ const primero = modulos[0]?.id ?? '';
    * desplazamiento lateral dentro de un `<button>` es marcado inválido y además el gesto
    * de deslizar acabaría abriendo la hoja.
    */
-  .tiras {
-    display: flex;
-    gap: 0.55rem;
+  /**
+   * El movimiento va por `transform`, no por `scrollLeft`.
+   *
+   * `scrollLeft` redondea a píxeles enteros: a 16 px/s eso es un salto cada cuatro
+   * fotogramas, que es exactamente la sensación «a pasos» que se veía. Un `translateX`
+   * lo interpola el compositor con precisión subpíxel y sin tocar el hilo principal.
+   *
+   * El marco es quien desplaza a mano; la lista de dentro es la que se anima. Al primer
+   * gesto se cancela la animación y el marco se queda como una lista normal.
+   */
+  .tiras-marco {
     margin: 0.5rem 0 0;
-    padding: 0 0 0.15rem;
-    list-style: none;
     overflow-x: auto;
-    scroll-snap-type: x proximity;
     /* El navegador se queda el gesto horizontal; así no compite con el arrastre de la
        hoja ni con el desplazamiento vertical de la página. */
     touch-action: pan-x;
     scrollbar-width: none;
   }
 
-  .tiras::-webkit-scrollbar {
+  .tiras-marco::-webkit-scrollbar {
     display: none;
+  }
+
+  .tiras {
+    display: flex;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0 0 0.15rem;
+    list-style: none;
+    width: max-content;
+  }
+
+  :global(html.js) .tiras[data-desfile] {
+    animation: desfile-cifras var(--desfile-duracion, 30s) linear infinite;
+  }
+
+  @keyframes desfile-cifras {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* La mitad, porque las cifras están duplicadas: al llegar ahí la copia está justo
+         donde estaba el original y el reinicio no se ve. */
+      transform: translateX(calc(-50% - 0.275rem));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.js) .tiras[data-desfile] {
+      animation: none;
+    }
   }
 
   .tiras li {
     flex: 0 0 auto;
-    scroll-snap-align: start;
     padding: 0.3rem 0.6rem;
     border: 1px solid var(--borde);
     border-radius: 8px;
@@ -280,6 +312,15 @@ const primero = modulos[0]?.id ?? '';
     letter-spacing: 0.04em;
     color: var(--tinta-3);
     white-space: nowrap;
+  }
+
+  /* Fuera del flujo: como fila propia del asa se llevaba un renglón entero de la franja
+     asomada para dibujar una flechita. Va flotando arriba a la derecha. */
+  :global(html.js) .hoja:has(.tiras) .chevron {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.1rem;
+    z-index: 1;
   }
 
   .chevron {
