@@ -207,6 +207,11 @@ const { leyenda } = Astro.props;
           <div id="detalle-cifras" class="cifras-grandes"></div>
         </section>
 
+        <section class="carrusel-slide" data-carrusel-slide aria-label="Qué dice la alcaldía">
+          <h4 class="slide-titulo">Qué dice la alcaldía</h4>
+          <div id="detalle-alcaldia" class="alcaldia"></div>
+        </section>
+
         <section class="carrusel-slide" data-carrusel-slide aria-label="Ayuda cercana">
           <h4 class="slide-titulo">Ayuda cercana</h4>
           <ul class="canales-fijos">
@@ -960,6 +965,68 @@ const { leyenda } = Astro.props;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    color: var(--tinta-3);
+  }
+
+  .alcaldia-notas {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .alcaldia-notas li {
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--borde);
+  }
+
+  .alcaldia-titulo {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--tinta);
+  }
+
+  .alcaldia-meta {
+    margin: 0.2rem 0 0;
+    font-size: 0.72rem;
+    color: var(--tinta-3);
+  }
+
+  /* Un acto administrativo es un hecho oficial; un boletín, una narración. */
+  .alcaldia-tipo {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.05rem 0.3rem;
+    border-radius: 3px;
+    border: 1px solid currentcolor;
+  }
+
+  .alcaldia-tipo[data-tipo='acto'] {
+    color: var(--acento);
+  }
+
+  .alcaldia-tipo[data-tipo='boletin'] {
+    color: var(--tinta-3);
+  }
+
+  .alcaldia-resumen {
+    margin: 0.25rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    color: var(--tinta-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .alcaldia-mas {
+    margin: 0.6rem 0 0;
+    font-size: 0.72rem;
     color: var(--tinta-3);
   }
 

@@ -86,6 +86,23 @@ interface CoberturaMunicipio {
   medios: { nombre: string; notas: number }[];
 }
 
+/**
+ * Una publicación de `fuentes/alcaldias.json`: un acto o boletín de la propia alcaldía.
+ *
+ * `tipo` viene de la plataforma del MinTIC y vale la pena distinguirlo: `Document` es un
+ * acto administrativo (un decreto de calamidad), `Article` es un boletín o informe de
+ * afectación. Un decreto es un hecho; un boletín es una narración.
+ */
+interface PublicacionAlcaldia {
+  pcode: string;
+  municipio: string;
+  titulo: string;
+  tipo: string;
+  url: string;
+  publicado: string;
+  resumen: string;
+}
+
 /** Solo estos dos tipos de incidente son "ayuda cercana"; el resto son daño y solo se
  *  dibujan como puntos en el mapa, sin listarse como tarjetas en la ficha. */
 const TIPOS_AYUDA = new Set(['albergue', 'centro_acopio']);
@@ -751,6 +768,81 @@ export async function iniciarMapa(): Promise<void> {
       .join(' · ');
   }
 
+  /**
+   * Qué ha publicado la alcaldía de este municipio desde el sismo.
+   *
+   * Se construye con `createElement` y `textContent`, nunca `innerHTML`: el título y el
+   * resumen los escribe un funcionario municipal en un editor web y llegan por API sin
+   * pasar por revisión nuestra. Mismo criterio que las cifras curadas, y aquí con más
+   * motivo.
+   *
+   * El vacío también informa: si un municipio golpeado no ha publicado nada, decirlo es
+   * mejor que dejar la cara en blanco. Pero solo se dice donde significa algo — en un
+   * municipio que apenas tembló, callar.
+   */
+  function pintarAlcaldia(pcode: string): void {
+    const contenedor = document.getElementById('detalle-alcaldia');
+    if (!contenedor) return;
+
+    contenedor.replaceChildren();
+    const publicaciones = alcaldiaPorPcode.get(pcode) ?? [];
+
+    if (publicaciones.length === 0) {
+      const p = document.createElement('p');
+      p.className = 'vacio';
+      p.textContent = coberturaPorPcode.has(pcode)
+        ? 'La alcaldía no ha publicado nada sobre el sismo en su portal.'
+        : 'Sin publicaciones de la alcaldía.';
+      contenedor.append(p);
+      return;
+    }
+
+    const ahora = new Date();
+    const lista = document.createElement('ul');
+    lista.className = 'alcaldia-notas';
+
+    for (const pub of publicaciones.slice(0, 6)) {
+      const li = document.createElement('li');
+
+      const enlace = document.createElement('a');
+      enlace.href = pub.url;
+      enlace.rel = 'noopener';
+      enlace.target = '_blank';
+      enlace.className = 'alcaldia-titulo';
+      enlace.textContent = pub.titulo;
+      li.append(enlace);
+
+      const meta = document.createElement('p');
+      meta.className = 'alcaldia-meta';
+
+      // Un decreto es un acto oficial; conviene que se vea distinto de un boletín.
+      const marca = document.createElement('span');
+      marca.className = 'alcaldia-tipo';
+      marca.dataset['tipo'] = pub.tipo === 'Document' ? 'acto' : 'boletin';
+      marca.textContent = pub.tipo === 'Document' ? 'Acto oficial' : 'Boletín';
+      meta.append(marca, document.createTextNode(` · ${haceCuanto(pub.publicado, ahora)}`));
+      li.append(meta);
+
+      if (pub.resumen) {
+        const r = document.createElement('p');
+        r.className = 'alcaldia-resumen';
+        r.textContent = pub.resumen;
+        li.append(r);
+      }
+
+      lista.append(li);
+    }
+
+    contenedor.append(lista);
+
+    if (publicaciones.length > 6) {
+      const mas = document.createElement('p');
+      mas.className = 'alcaldia-mas';
+      mas.textContent = `y ${publicaciones.length - 6} publicaciones más en el portal municipal.`;
+      contenedor.append(mas);
+    }
+  }
+
   function pintarCifras(pcode: string): void {
     const contenedor = document.getElementById('detalle-cifras');
     if (!contenedor) return;
@@ -1077,6 +1169,7 @@ export async function iniciarMapa(): Promise<void> {
     const pcode = String(props['pcode'] ?? '');
     pintarCobertura(pcode);
     pintarCifras(pcode);
+    pintarAlcaldia(pcode);
     void mostrarIncidentes(pcode);
     void mostrarSecciones(pcode);
     // Sin punto: `acercarA()` lo afina con el centro del casco en cuanto vuela. Se marca
@@ -1287,6 +1380,29 @@ export async function iniciarMapa(): Promise<void> {
     'fuentes/cobertura.json',
   ).catch(() => ({ municipios: [] as CoberturaMunicipio[] }));
   const coberturaPorPcode = new Map(cobertura.municipios.map((m) => [m.pcode, m]));
+
+  /**
+   * Lo que ha publicado la propia alcaldía desde el sismo.
+   *
+   * Para 54 de estos municipios es la **única** fuente que existe: no tienen ni una nota
+   * de prensa. Por eso esta cara de la ficha importa más de lo que su tamaño sugiere.
+   *
+   * Opcional a propósito: si el archivo no está, la ficha funciona igual.
+   */
+  const alcaldias = await getJson<{ publicaciones: PublicacionAlcaldia[] }>(
+    'fuentes/alcaldias.json',
+  ).catch(() => ({ publicaciones: [] as PublicacionAlcaldia[] }));
+
+  const alcaldiaPorPcode = new Map<string, PublicacionAlcaldia[]>();
+  for (const p of alcaldias.publicaciones) {
+    const lista = alcaldiaPorPcode.get(p.pcode);
+    if (lista) lista.push(p);
+    else alcaldiaPorPcode.set(p.pcode, [p]);
+  }
+  // Más reciente primero: en emergencia lo último es lo que se necesita.
+  for (const lista of alcaldiaPorPcode.values()) {
+    lista.sort((a, b) => b.publicado.localeCompare(a.publicado));
+  }
 
   // ── Trama urbana ────────────────────────────────────────────────────────
   //
