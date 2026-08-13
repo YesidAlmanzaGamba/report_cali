@@ -37,8 +37,31 @@ Al terminar tendrás una URL pública tipo `https://report-cali.TU-CUENTA.worker
 
 Este token es lo que le permite a GitHub publicar en tu cuenta de Cloudflare.
 
+> ### ⚠️ Hay DOS sitios donde crear tokens. Solo uno sirve.
+>
+> Cloudflare tiene dos tipos de token y el panel empuja hacia el que **no** funciona:
+>
+> | | Dónde | ¿Sirve para desplegar? |
+> |---|---|---|
+> | **User API token** | **My Profile → API Tokens** | **Sí. Es el que hay que usar.** |
+> | Account API token | Manage Account → Account API Tokens | **No.** |
+>
+> **Por qué el de cuenta no sirve, aunque Cloudflare lo recomiende para CI/CD:**
+> `wrangler` autentica llamando al endpoint `/memberships`, y un token de cuenta **no
+> puede recibir ese permiso** — solo tiene ámbitos *Account* y *Zone*, sin sección
+> *User*. El despliegue falla con
+> `A request to the Cloudflare API (/memberships) failed … [code: 10001]`.
+>
+> No es un error de configuración tuyo y no se arregla añadiendo permisos: es una
+> incompatibilidad conocida y **sin resolver** de la propia herramienta
+> ([workers-sdk#9129](https://github.com/cloudflare/workers-sdk/issues/9129)).
+>
+> Si el panel te ofrece «crear un Account API token», **ignóralo** y ve a My Profile.
+
 1. Arriba a la derecha, haz clic en el **ícono de tu perfil** → **My Profile**.
-2. En el menú izquierdo, **API Tokens**.
+   La URL queda en `dash.cloudflare.com/profile/api-tokens`; si dudas, pégala directa.
+2. En el menú izquierdo, **API Tokens**. Comprueba que la cabecera dice **API Tokens**
+   a secas y **no** «Account API Tokens».
 3. Botón azul **Create Token**.
 4. En la lista de plantillas, busca **«Edit Cloudflare Workers»** y haz clic en
    **Use template**.
@@ -52,6 +75,23 @@ Este token es lo que le permite a GitHub publicar en tu cuenta de Cloudflare.
 >
 > Ventaja extra: ya incluye el permiso de R2, así que no hay que volver aquí para la
 > Parte C.
+
+> **¿No aparece la plantilla?** Algunas cuentas no la listan. Entonces **Create Custom
+> Token** y marca exactamente esto — son los permisos que la plantilla concede:
+>
+> | Ámbito | Permiso | Nivel |
+> |---|---|---|
+> | Account | **Workers Scripts** | Edit |
+> | Account | **Account Settings** | Read |
+> | Account | **Workers KV Storage** | Edit |
+> | Account | **Workers R2 Storage** | Edit |
+> | Zone | **Workers Routes** | Edit |
+> | User | **User Details** | Read |
+>
+> La última fila es la que más se olvida y **es la que hace fallar el despliegue con
+> `code: 10001`**: sin `User Details · Read`, `wrangler` no puede resolver a quién
+> pertenece el token. Es también, exactamente, el permiso que un Account API token no
+> puede tener — por eso aquel no sirve.
 
 5. En el formulario, deja los permisos como vienen y ajusta solo los recursos:
 
@@ -191,6 +231,7 @@ corre `wrangler whoami`, que muestra a qué cuenta pertenece el token y qué per
 | Síntoma | Causa casi siempre | Solución |
 |---|---|---|
 | Falla al publicar y el log menciona **`subdomain`** | La cuenta nunca ha publicado un Worker y **falta elegir el subdominio `workers.dev`** | Cloudflare → **Workers & Pages** → **Overview**. Te pedirá elegir un subdominio una sola vez. Es la causa más común en cuentas nuevas |
+| **`code: 10001`** «A request to the Cloudflare API (`/memberships`) failed» | El token es **de cuenta** (Account API token), no de usuario. `wrangler` autentica contra `/memberships` y un token de cuenta no puede tener ese permiso | Bórralo y crea uno **de usuario** en **My Profile → API Tokens** (paso A2). No se arregla añadiendo permisos: es una limitación conocida, [workers-sdk#9129](https://github.com/cloudflare/workers-sdk/issues/9129) |
 | **`code: 10502`** «Too many authentication failures» | Cloudflare **bloqueó temporalmente** la autenticación por intentos fallidos repetidos | **Espera 15–30 minutos.** Durante el bloqueo, hasta un token correcto falla; reintentar solo alarga el bloqueo |
 | **`code: 10000`** «Authentication error» sobre `/accounts/…/workers/services/…` | O al token le faltan permisos, **o el Account ID es de otra cuenta distinta a la del token** | El paso *Verificar credenciales* ahora compara ambos y avisa si no coinciden |
 | El Worker responde **«Hello world»** | Existe el Worker de ejemplo del panel, pero nuestro sitio nunca se subió porque el despliegue falla | Arregla el despliegue; el primer `wrangler deploy` correcto lo reemplaza |
