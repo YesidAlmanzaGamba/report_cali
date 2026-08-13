@@ -734,53 +734,11 @@ export async function iniciarMapa(): Promise<void> {
   }
 
   /**
-   * Quién está informando de este municipio — o que no informa nadie.
-   *
-   * Las dos ramas dicen cosas distintas, y por eso esto se puede publicar donde el aviso
-   * anterior no se podía: aquel salía idéntico en los 1.122 municipios y dejó de
-   * informar. Si el municipio no está en el registro (apenas tembló y nadie lo mencionó),
-   * el bloque no aparece: callar es mejor que decir una obviedad.
-   */
-  function pintarCobertura(pcode: string): void {
-    const bloque = document.getElementById('detalle-cobertura');
-    const texto = document.getElementById('cobertura-texto');
-    const medios = document.getElementById('cobertura-medios');
-    if (!bloque || !texto || !medios) return;
-
-    const dato = coberturaPorPcode.get(pcode);
-    if (!dato) {
-      bloque.setAttribute('hidden', '');
-      return;
-    }
-
-    bloque.removeAttribute('hidden');
-
-    if (dato.notas === 0) {
-      bloque.dataset['estado'] = 'sin';
-      texto.textContent =
-        'Ningún medio ha publicado sobre este municipio desde el sismo. Que no haya reportes no significa que no haya daños: significa que no tenemos información de aquí.';
-      medios.textContent = '';
-      return;
-    }
-
-    bloque.dataset['estado'] = 'con';
-    const plural = dato.notas === 1 ? 'nota' : 'notas';
-    texto.textContent = `${dato.notas} ${plural} recogidas${
-      dato.ultima ? `, la más reciente ${haceCuanto(dato.ultima)}` : ''
-    }.`;
-    medios.textContent = dato.medios
-      .slice(0, 4)
-      .map((m) => `${m.nombre} (${m.notas})`)
-      .join(' · ');
-  }
-
-  /**
    * Qué ha publicado la alcaldía de este municipio desde el sismo.
    *
    * Se construye con `createElement` y `textContent`, nunca `innerHTML`: el título y el
    * resumen los escribe un funcionario municipal en un editor web y llegan por API sin
-   * pasar por revisión nuestra. Mismo criterio que las cifras curadas, y aquí con más
-   * motivo.
+   * pasar por revisión nuestra.
    *
    * El vacío también informa: si un municipio golpeado no ha publicado nada, decirlo es
    * mejor que dejar la cara en blanco. Pero solo se dice donde significa algo — en un
@@ -847,6 +805,29 @@ export async function iniciarMapa(): Promise<void> {
       mas.textContent = `y ${publicaciones.length - 6} publicaciones más en el portal municipal.`;
       contenedor.append(mas);
     }
+  }
+
+  /**
+   * Abre la ficha por la primera cara que tenga contenido.
+   *
+   * «Impacto reportado» es la cara 1 y está vacía en 94 de los 103 municipios que tienen
+   * boletín: casi ninguno tiene cifras registradas todavía. El resultado era que tocar un
+   * punto del mapa abría una ficha en blanco, con la información real a un gesto lateral
+   * que nadie tenía por qué adivinar.
+   *
+   * El orden de preferencia es el orden de las caras, así que basta con quedarse con la
+   * primera que no esté vacía. Si ninguna lo está, se queda en la primera.
+   */
+  function abrirPorLaCaraConAlgo(pcode: string): void {
+    const carrusel = document.querySelector<HTMLElement>('.ficha [data-carrusel]');
+    if (!carrusel) return;
+
+    const tieneCifras = (cifrasPorPcode.get(pcode) ?? []).length > 0;
+    const tieneAlcaldia = (alcaldiaPorPcode.get(pcode) ?? []).length > 0;
+
+    // Mismo orden que el marcado: Impacto · Alcaldía · Ayuda.
+    const indice = tieneCifras ? 0 : tieneAlcaldia ? 1 : 0;
+    carrusel.dispatchEvent(new CustomEvent('ficha:cara', { detail: { indice } }));
   }
 
   function pintarCifras(pcode: string): void {
@@ -1115,6 +1096,7 @@ export async function iniciarMapa(): Promise<void> {
   }
 
   function cerrarFicha(): void {
+    detenerRecorrido();
     panel?.setAttribute('hidden', '');
     mapa.setFilter('municipio-seleccionado', ['==', ['get', 'pcode'], '']);
     pcodeAbierto = null;
@@ -1173,9 +1155,10 @@ export async function iniciarMapa(): Promise<void> {
     document.getElementById('detalle-metricas')?.setAttribute('data-modo', modoActual);
 
     const pcode = String(props['pcode'] ?? '');
-    pintarCobertura(pcode);
     pintarCifras(pcode);
     pintarAlcaldia(pcode);
+    abrirPorLaCaraConAlgo(pcode);
+    iniciarRecorrido();
     void mostrarIncidentes(pcode);
     void mostrarSecciones(pcode);
     // Sin punto: `acercarA()` lo afina con el centro del casco en cuanto vuela. Se marca
@@ -1303,6 +1286,74 @@ export async function iniciarMapa(): Promise<void> {
   document.getElementById('cerrar-detalle')?.addEventListener('click', cerrarFicha);
 
   panel?.addEventListener('scroll', actualizarPistaDeMas, { passive: true });
+
+  /**
+   * Recorrido automático del contenido de la ficha, en bucle.
+   *
+   * Pedido expresamente. Va despacio (~22 px/s, la velocidad de lectura tranquila de una
+   * lista) y **se rinde ante la persona**: al primer gesto —rueda, dedo, teclado, foco—
+   * se detiene y no vuelve a arrancar hasta que se abra otra ficha. Un texto que se mueve
+   * mientras alguien intenta leerlo es peor que un texto quieto, y en una emergencia esa
+   * persona puede estar leyendo una dirección.
+   *
+   * No arranca si el sistema pide menos movimiento, ni si el contenido cabe entero: ahí
+   * no habría nada que recorrer.
+   */
+  let animacionRecorrido: number | null = null;
+
+  function detenerRecorrido(): void {
+    if (animacionRecorrido !== null) {
+      cancelAnimationFrame(animacionRecorrido);
+      animacionRecorrido = null;
+    }
+  }
+
+  function iniciarRecorrido(): void {
+    detenerRecorrido();
+    if (!panel) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const VELOCIDAD = 22; // px por segundo
+    const ESPERA_ARRANQUE = 2500; // deja leer el encabezado antes de moverse
+    const ESPERA_FINAL = 3000; // y deja leer el final antes de volver arriba
+
+    let anterior: number | null = null;
+    let esperaHasta = performance.now() + ESPERA_ARRANQUE;
+    let restante = 0;
+
+    const paso = (ahora: number): void => {
+      const sobrante = panel.scrollHeight - panel.clientHeight;
+      if (sobrante <= 8) {
+        animacionRecorrido = requestAnimationFrame(paso);
+        anterior = ahora;
+        return;
+      }
+
+      if (ahora >= esperaHasta) {
+        if (anterior !== null) {
+          restante += (VELOCIDAD * (ahora - anterior)) / 1000;
+          const entero = Math.floor(restante);
+          if (entero >= 1) {
+            restante -= entero;
+            panel.scrollTop += entero;
+          }
+        }
+        if (panel.scrollTop >= sobrante - 1) {
+          esperaHasta = ahora + ESPERA_FINAL;
+          panel.scrollTop = 0;
+        }
+      }
+
+      anterior = ahora;
+      animacionRecorrido = requestAnimationFrame(paso);
+    };
+
+    animacionRecorrido = requestAnimationFrame(paso);
+  }
+
+  for (const evento of ['wheel', 'touchstart', 'pointerdown', 'keydown', 'focusin'] as const) {
+    panel?.addEventListener(evento, detenerRecorrido, { passive: true });
+  }
 
   // El contenido cambia de alto sin que nadie desplace nada: las cifras del municipio
   // llegan después de pintarlo y la leyenda de puntos aparece o no. Se observa
@@ -1614,18 +1665,30 @@ export async function iniciarMapa(): Promise<void> {
    * «Estación de Bomberos de Córdoba»— está en OpenStreetMap. Fingir precisión ahí
    * mandaría a un equipo al sitio equivocado.
    */
-  const puntosInfo: Feature<Point, { pcode: string; notas: number; cifras: number }>[] = [];
-  for (const [pcode, publicaciones] of alcaldiaPorPcode) {
+  const puntosInfo: Feature<
+    Point,
+    { pcode: string; notas: number; cifras: number; total: number }
+  >[] = [];
+
+  /**
+   * Un municipio entra si tiene boletín **o** cifras propias. Las dos condiciones, no
+   * solo la primera: Cali, Pereira, Manizales y Quibdó son los municipios con más datos
+   * de todo el mapa y no publican en la plataforma municipal —tienen sitio propio—, así
+   * que al listar solo por boletín quedaban fuera justo los cuatro que más información
+   * tienen. Era un error, y se veía: el mapa no marcaba las cuatro ciudades grandes.
+   */
+  const conAlgoQueContar = new Set([...alcaldiaPorPcode.keys(), ...cifrasPorPcode.keys()]);
+
+  for (const pcode of conAlgoQueContar) {
     const ancla = anclaPorPcode.get(pcode);
     if (!ancla) continue;
+    const notas = (alcaldiaPorPcode.get(pcode) ?? []).length;
+    const cifras = (cifrasPorPcode.get(pcode) ?? []).length;
+    if (notas === 0 && cifras === 0) continue;
     puntosInfo.push({
       type: 'Feature',
       geometry: { type: 'Point', coordinates: ancla },
-      properties: {
-        pcode,
-        notas: publicaciones.length,
-        cifras: (cifrasPorPcode.get(pcode) ?? []).length,
-      },
+      properties: { pcode, notas, cifras, total: notas + cifras },
     });
   }
 
@@ -1640,7 +1703,7 @@ export async function iniciarMapa(): Promise<void> {
     source: 'info-municipal',
     paint: {
       // Crece un poco donde hay más que leer, sin llegar a ser un mapa de calor.
-      'circle-radius': ['interpolate', ['linear'], ['get', 'notas'], 1, 4.5, 9, 8],
+      'circle-radius': ['interpolate', ['linear'], ['get', 'total'], 1, 4.5, 10, 8],
       // Con cifras registradas es un dato duro; sin ellas, solo relato.
       'circle-color': ['case', ['>', ['get', 'cifras'], 0], '#1b4d8f', '#5c7fb0'],
       'circle-stroke-color': '#fff',
