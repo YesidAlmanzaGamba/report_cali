@@ -1,9 +1,9 @@
 {
   "meta": {
     "dataset": "observations/afectacion",
-    "generated_at": "2026-08-13T00:51:29.831Z",
+    "generated_at": "2026-08-13T03:16:05.137Z",
     "event_id": "us6000tjl2",
-    "record_count": 30,
+    "record_count": 57,
     "sources": [
       {
         "name": "Infobae — Gobernación del Valle",
@@ -16,13 +16,58 @@
         "type": "press"
       },
       {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Istmina — balance oficial",
+        "url": "https://istminachoco.micolombiadigital.gov.co/noticias/alcalde-de-istmina-entrega-balance-preliminar-de-afectaciones",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Medio San Juan — balance oficial",
+        "url": "https://mediosanjuanchoco.micolombiadigital.gov.co/noticias/reporte-preliminar-de-emergencias--sismo",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Lloró — balance oficial",
+        "url": "https://llorochoco.micolombiadigital.gov.co/noticias/la-alcaldia-de-lloro-continua-atendiendo-las-afectaciones",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Cértegui — balance oficial",
+        "url": "https://certeguichoco.micolombiadigital.gov.co/noticias/informacion-oficial-sobre-situacion-tras-el-sismo-en",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Montenegro — balance oficial",
+        "url": "https://montenegroquindio.micolombiadigital.gov.co/noticias/gobierno-de-montenegro-sigue-liderando-el-analisis-del",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Pijao — balance oficial",
+        "url": "https://pijaoquindio.micolombiadigital.gov.co/noticias/seguimos-atendiendo-la-emergencia-en-pijao",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Aranzazu — balance oficial",
+        "url": "https://aranzazucaldas.micolombiadigital.gov.co/noticias/la-alcaldia-de-aranzazu-emite-reporte-preliminar-de",
+        "type": "official"
+      },
+      {
+        "name": "Alcaldía de Guadalajara de Buga — balance oficial",
+        "url": "https://guadalajaradebugavalledelcauca.micolombiadigital.gov.co/noticias/la-alcaldia-de-buga-presenta-el-balance-oficial-preliminar",
+        "type": "official"
+      },
+      {
         "name": "USGS",
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
         "type": "official"
       }
     ]
   },
-  "content_hash": "aaabeb354c3e81fbce0c01e06ee18aaa304f96f0d8ef45853a93b1b548a32248",
+  "content_hash": "99b52f319633f7bbfdd982c26b83fedfa7fa5c693f8647fb0442bc0600303c41",
   "observations": [
     {
       "metric": "deaths_confirmed",
@@ -34,7 +79,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Balance nacional del 11 de agosto. Convive con cifras más altas del día anterior: los conteos tempranos se corrigen."
     },
     {
@@ -47,7 +92,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-10T22:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Balance del 10 de agosto. Se conserva a propósito: muestra cómo variaron las cifras."
     },
     {
@@ -60,7 +105,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "missing_reported",
@@ -72,7 +117,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Si buscas a alguien, usa Cruz Roja RCF o la línea 123. Este sitio no recibe reportes."
     },
     {
@@ -85,7 +130,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Viviendas destruidas. Aparte, 48 edificios colapsados."
     },
     {
@@ -98,7 +143,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "schools_affected",
@@ -110,7 +155,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -122,7 +167,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "injured",
@@ -134,7 +179,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_trapped",
@@ -146,7 +191,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_rescued",
@@ -158,7 +203,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "missing_reported",
@@ -170,7 +215,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -182,7 +227,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "health_facilities_affected",
@@ -194,7 +239,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Hospitales inhabilitados."
     },
     {
@@ -207,7 +252,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Cifra preliminar; la más alta del país por municipio."
     },
     {
@@ -220,7 +265,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_trapped",
@@ -232,7 +277,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -244,7 +289,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Edificios destruidos completamente."
     },
     {
@@ -257,7 +302,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -269,7 +314,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "injured",
@@ -281,7 +326,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "buildings_collapsed",
@@ -293,7 +338,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "buildings_partially_collapsed",
@@ -305,7 +350,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_affected",
@@ -317,7 +362,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Damnificados."
     },
     {
@@ -330,7 +375,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "injured",
@@ -342,7 +387,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_trapped",
@@ -354,7 +399,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "En una edificación del barrio Medrano."
     },
     {
@@ -367,7 +412,7 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z"
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "deaths_confirmed",
@@ -379,8 +424,346 @@
         "type": "press"
       },
       "observed_at": "2026-08-11T12:00:00-05:00",
-      "ingested_at": "2026-08-13T00:51:27.624Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
       "notes": "Valle del Cauca sin contar Cali. Incluye tres niños en Calima El Darién."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 1960,
+      "pcode": "CO27073",
+      "source": {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:29:44.463Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 43,
+      "pcode": "CO27073",
+      "source": {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:29:44.463Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Viviendas destruidas."
+    },
+    {
+      "metric": "people_affected",
+      "value": 7840,
+      "pcode": "CO27073",
+      "source": {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:29:44.463Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "injured",
+      "value": 10,
+      "pcode": "CO27073",
+      "source": {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:29:44.463Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "schools_affected",
+      "value": 6,
+      "pcode": "CO27073",
+      "source": {
+        "name": "Alcaldía de Bagadó — balance oficial",
+        "url": "https://bagadochoco.micolombiadigital.gov.co/noticias/alcaldia-municipal-de-bagado-reporta-afectaciones-tras",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:29:44.463Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 552,
+      "pcode": "CO27361",
+      "source": {
+        "name": "Alcaldía de Istmina — balance oficial",
+        "url": "https://istminachoco.micolombiadigital.gov.co/noticias/alcalde-de-istmina-entrega-balance-preliminar-de-afectaciones",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T01:31:12.720Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "injured",
+      "value": 70,
+      "pcode": "CO27361",
+      "source": {
+        "name": "Alcaldía de Istmina — balance oficial",
+        "url": "https://istminachoco.micolombiadigital.gov.co/noticias/alcalde-de-istmina-entrega-balance-preliminar-de-afectaciones",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T01:31:12.720Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Entre ellas dos integrantes de la Policía Nacional."
+    },
+    {
+      "metric": "people_affected",
+      "value": 3000,
+      "pcode": "CO27361",
+      "source": {
+        "name": "Alcaldía de Istmina — balance oficial",
+        "url": "https://istminachoco.micolombiadigital.gov.co/noticias/alcalde-de-istmina-entrega-balance-preliminar-de-afectaciones",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T01:31:12.720Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "La alcaldía escribe «aproximadamente 3.000»."
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 0,
+      "pcode": "CO27361",
+      "source": {
+        "name": "Alcaldía de Istmina — balance oficial",
+        "url": "https://istminachoco.micolombiadigital.gov.co/noticias/alcalde-de-istmina-entrega-balance-preliminar-de-afectaciones",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T01:31:12.720Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 3,
+      "pcode": "CO27450",
+      "source": {
+        "name": "Alcaldía de Medio San Juan — balance oficial",
+        "url": "https://mediosanjuanchoco.micolombiadigital.gov.co/noticias/reporte-preliminar-de-emergencias--sismo",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T12:29:30.057Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Viviendas totalmente destruidas."
+    },
+    {
+      "metric": "buildings_partially_collapsed",
+      "value": 15,
+      "pcode": "CO27450",
+      "source": {
+        "name": "Alcaldía de Medio San Juan — balance oficial",
+        "url": "https://mediosanjuanchoco.micolombiadigital.gov.co/noticias/reporte-preliminar-de-emergencias--sismo",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T12:29:30.057Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Parcialmente destruidas e inhabitables."
+    },
+    {
+      "metric": "people_affected",
+      "value": 390,
+      "pcode": "CO27450",
+      "source": {
+        "name": "Alcaldía de Medio San Juan — balance oficial",
+        "url": "https://mediosanjuanchoco.micolombiadigital.gov.co/noticias/reporte-preliminar-de-emergencias--sismo",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T12:29:30.057Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "health_facilities_affected",
+      "value": 1,
+      "pcode": "CO27450",
+      "source": {
+        "name": "Alcaldía de Medio San Juan — balance oficial",
+        "url": "https://mediosanjuanchoco.micolombiadigital.gov.co/noticias/reporte-preliminar-de-emergencias--sismo",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T12:29:30.057Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Afectaciones en la farmacia del Hospital."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 140,
+      "pcode": "CO27413",
+      "source": {
+        "name": "Alcaldía de Lloró — balance oficial",
+        "url": "https://llorochoco.micolombiadigital.gov.co/noticias/la-alcaldia-de-lloro-continua-atendiendo-las-afectaciones",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T16:15:26.157Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "La alcaldía escribe «aproximadamente 140». De ellas, 4 con afectación grave."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 35,
+      "pcode": "CO27160",
+      "source": {
+        "name": "Alcaldía de Cértegui — balance oficial",
+        "url": "https://certeguichoco.micolombiadigital.gov.co/noticias/informacion-oficial-sobre-situacion-tras-el-sismo-en",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T19:47:55.130Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "deaths_confirmed",
+      "value": 0,
+      "pcode": "CO27160",
+      "source": {
+        "name": "Alcaldía de Cértegui — balance oficial",
+        "url": "https://certeguichoco.micolombiadigital.gov.co/noticias/informacion-oficial-sobre-situacion-tras-el-sismo-en",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T19:47:55.130Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "injured",
+      "value": 0,
+      "pcode": "CO27160",
+      "source": {
+        "name": "Alcaldía de Cértegui — balance oficial",
+        "url": "https://certeguichoco.micolombiadigital.gov.co/noticias/informacion-oficial-sobre-situacion-tras-el-sismo-en",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T19:47:55.130Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 1000,
+      "pcode": "CO63470",
+      "source": {
+        "name": "Alcaldía de Montenegro — balance oficial",
+        "url": "https://montenegroquindio.micolombiadigital.gov.co/noticias/gobierno-de-montenegro-sigue-liderando-el-analisis-del",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T23:20:23.230Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "La alcaldía escribe «más de 1.000»; se registra el piso."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 73,
+      "pcode": "CO63548",
+      "source": {
+        "name": "Alcaldía de Pijao — balance oficial",
+        "url": "https://pijaoquindio.micolombiadigital.gov.co/noticias/seguimos-atendiendo-la-emergencia-en-pijao",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T02:14:00.143Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Predios afectados: 48 urbanos y 25 rurales."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 7,
+      "pcode": "CO63548",
+      "source": {
+        "name": "Alcaldía de Pijao — balance oficial",
+        "url": "https://pijaoquindio.micolombiadigital.gov.co/noticias/seguimos-atendiendo-la-emergencia-en-pijao",
+        "type": "official"
+      },
+      "observed_at": "2026-08-12T02:14:00.143Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Predios con colapso total, inhabitables."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 1,
+      "pcode": "CO17050",
+      "source": {
+        "name": "Alcaldía de Aranzazu — balance oficial",
+        "url": "https://aranzazucaldas.micolombiadigital.gov.co/noticias/la-alcaldia-de-aranzazu-emite-reporte-preliminar-de",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T19:11:57.143Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 100,
+      "pcode": "CO17050",
+      "source": {
+        "name": "Alcaldía de Aranzazu — balance oficial",
+        "url": "https://aranzazucaldas.micolombiadigital.gov.co/noticias/la-alcaldia-de-aranzazu-emite-reporte-preliminar-de",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T19:11:57.143Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "La alcaldía escribe «cerca de 100», con diversos niveles de afectación estructural."
+    },
+    {
+      "metric": "schools_affected",
+      "value": 13,
+      "pcode": "CO17050",
+      "source": {
+        "name": "Alcaldía de Aranzazu — balance oficial",
+        "url": "https://aranzazucaldas.micolombiadigital.gov.co/noticias/la-alcaldia-de-aranzazu-emite-reporte-preliminar-de",
+        "type": "official"
+      },
+      "observed_at": "2026-08-11T19:11:57.143Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Sedes educativas con averías."
+    },
+    {
+      "metric": "buildings_damaged",
+      "value": 66,
+      "pcode": "CO76111",
+      "source": {
+        "name": "Alcaldía de Guadalajara de Buga — balance oficial",
+        "url": "https://guadalajaradebugavalledelcauca.micolombiadigital.gov.co/noticias/la-alcaldia-de-buga-presenta-el-balance-oficial-preliminar",
+        "type": "official"
+      },
+      "observed_at": "2026-08-10T23:02:59.283Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "Averiadas: 18 urbanas y 48 rurales."
+    },
+    {
+      "metric": "buildings_collapsed",
+      "value": 11,
+      "pcode": "CO76111",
+      "source": {
+        "name": "Alcaldía de Guadalajara de Buga — balance oficial",
+        "url": "https://guadalajaradebugavalledelcauca.micolombiadigital.gov.co/noticias/la-alcaldia-de-buga-presenta-el-balance-oficial-preliminar",
+        "type": "official"
+      },
+      "observed_at": "2026-08-10T23:02:59.283Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
+    },
+    {
+      "metric": "schools_affected",
+      "value": 8,
+      "pcode": "CO76111",
+      "source": {
+        "name": "Alcaldía de Guadalajara de Buga — balance oficial",
+        "url": "https://guadalajaradebugavalledelcauca.micolombiadigital.gov.co/noticias/la-alcaldia-de-buga-presenta-el-balance-oficial-preliminar",
+        "type": "official"
+      },
+      "observed_at": "2026-08-10T23:02:59.283Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z",
+      "notes": "3 urbanas y 5 rurales."
+    },
+    {
+      "metric": "health_facilities_affected",
+      "value": 5,
+      "pcode": "CO76111",
+      "source": {
+        "name": "Alcaldía de Guadalajara de Buga — balance oficial",
+        "url": "https://guadalajaradebugavalledelcauca.micolombiadigital.gov.co/noticias/la-alcaldia-de-buga-presenta-el-balance-oficial-preliminar",
+        "type": "official"
+      },
+      "observed_at": "2026-08-10T23:02:59.283Z",
+      "ingested_at": "2026-08-13T03:16:03.518Z"
     },
     {
       "metric": "people_affected",
@@ -391,8 +774,8 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2",
         "type": "official"
       },
-      "observed_at": "2026-08-13T00:50:20.021Z",
-      "ingested_at": "2026-08-13T00:51:27.623Z",
+      "observed_at": "2026-08-13T03:15:38.385Z",
+      "ingested_at": "2026-08-13T03:16:03.517Z",
       "notes": "Personas expuestas a deslizamiento según el modelo del USGS. Alerta: orange."
     }
   ]
