@@ -167,6 +167,7 @@ Lo que `apps/web` puede dar por hecho. Los archivos se sirven desde
 | `observations/afectacion.json` | `{ meta, observations: Observation[] }` |
 | `ayuda/puntos.geojson` | Centros de acopio y albergues. Ubicación **exacta** (política contraria a la de incidentes) con `como_llegar` ya armado y `verificado` (persona vs. geocodificador) |
 | `fuentes/candidatos.json` | Notas de prensa para revisión humana |
+| `fuentes/alcaldias.json` | Actos y boletines **oficiales** publicados por cada alcaldía desde el sismo: `{ pcode, municipio, departamento, titulo, tipo, url, publicado, resumen }`. Es la fuente que llega a los municipios pequeños donde no hay prensa |
 | `fuentes/cobertura.json` | Qué medios informan de cada municipio golpeado — y **de cuáles no informa nadie**. `resumen.poblacion_sin_notas` es la gente de la que no sabemos nada |
 | `secciones/index.json` + `secciones/{pcode}.topojson` | Trama urbana del DANE, **440 municipios: MMI ≥ 5, más los que tengan ayuda o incidentes**. El índice trae `bbox` (encuadrar) y **`ancla`** (dónde colocar el nombre: mediana de los centroides de las secciones). **Para etiquetar usa `ancla`** — el centro del `bbox` cae entre poblados en el 54 % de los municipios. Los topojson van **sin propiedades** (el MGN solo publica códigos y la interfaz no los lee) y se piden de uno en uno al tocar: mediana 1,0 KB comprimidos, Bogotá 108 KB |
 | `export/*.csv` | CSV con etiquetas HXL. `cobertura-por-municipio.csv` trae `sin_cobertura`: filtrarla da los municipios golpeados de los que no informa nadie |
@@ -225,6 +226,14 @@ Cosas que ya costaron una tarde. No hace falta descubrirlas otra vez.
   Villamaría; está en Manizales, y lo dicen la prensa, los directorios y su DIVIPOLA. El
   límite ahí es el río Chinchiná, y simplificar un río que serpentea le corta las curvas.
   Para el pcode manda la fuente, no el punto en polígono.
+- **Los sitios de las alcaldías no tienen HTML que leer: son aplicaciones Angular.**
+  `www.<municipio>-<departamento>.gov.co` le devuelve a `curl` una cáscara de 2.905 bytes
+  titulada «Territoriales», idéntica en todos. Por eso el rastreo por HTML no encontraba
+  nada y el patrón `/rss` no se generalizaba. El contenido está detrás de una API pública
+  compartida del MinTIC — **MiColombiaDigital** — con un alias por municipio que se deriva
+  del nombre (`Roldanillo` + `Valle del Cauca` → `roldanillovalledelcauca`). Está en
+  `src/sources/alcaldias.ts`. **Los avisos de notificación personal de esa API traen
+  nombre y cédula: hay un filtro ADR-001 que debe correr antes que cualquier otro.**
 - **Hay un municipio llamado Colombia** (Huila) y otro llamado **Risaralda** (Caldas).
   Al reconocer municipios en titulares hay que descartar los nombres que coinciden con el
   país o con un departamento.

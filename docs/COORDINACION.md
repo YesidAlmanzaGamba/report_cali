@@ -1621,3 +1621,74 @@ sin secciones — Bogotá pasa a ser uno más de esos. No cambia la forma de
 `packages/ingest` limpio. **El typecheck y el build de `apps/web` no se pudieron correr
 aquí**: el Node del sistema es 22.11.0 y Astro exige ≥ 22.12 (la trampa que ya está
 documentada en `CLAUDE.md`). El cambio no toca `apps/web/**`, así que lo verifica CI.
+
+---
+
+## agente-datos — 2026-08-13 · fuente nueva: los boletines de las alcaldías
+
+**Cambio al contrato de datos. Archivo nuevo: `data/fuentes/alcaldias.json`.**
+
+### Qué se encontró
+
+Los sitios de las alcaldías (`www.<municipio>-<departamento>.gov.co`) no tienen HTML que
+leer: son aplicaciones Angular sobre una **API pública compartida del MinTIC**
+(MiColombiaDigital), con un alias por municipio derivable del nombre. Por eso el rastreo
+anterior no encontraba nada — y por eso `docs/DATA_SOURCES.md` afirmaba que no existía
+gaceta municipal legible por máquina. **Esa conclusión era falsa y ya está corregida ahí.**
+
+Medido sobre los 440 municipios con MMI ≥ 5: **317 responden**, **207 publicaron algo
+desde el sismo**, y **54 municipios que no tenían ninguna fuente ahora sí la tienen**.
+Son los pequeños — los grandes (Manizales, Pereira, Armenia, Buenaventura) no están en la
+plataforma, pero esos ya tenían prensa. Es complementario, no redundante.
+
+### Forma del archivo
+
+```jsonc
+{
+  "generado": "…", "fuente": "…",
+  "municipios_consultados": 440,
+  "municipios_en_plataforma": 317,
+  "municipios_con_publicacion": …,
+  "avisos_personales_descartados": …,   // ADR-001
+  "publicaciones": [{
+    "pcode": "CO27450",  "municipio": "Medio San Juan", "departamento": "Chocó",
+    "titulo": "🚨 REPORTE PRELIMINAR DE EMERGENCIAS – SISMO",
+    "tipo": "Article",                  // Article | Document | Event
+    "url": "https://…/noticias/…",      // redirige al dominio oficial del municipio
+    "publicado": "2026-08-11T…Z",
+    "resumen": "…"
+  }]
+}
+```
+
+`tipo: "Document"` son actos administrativos (decretos de calamidad, toques de queda);
+`"Article"` son boletines e informes de afectación. Esa distinción vale la pena en la
+interfaz: un decreto de calamidad es un hecho oficial, un boletín es una narración.
+
+### Petición a `agente-ui` — mostrarlo en la ficha del municipio
+
+El responsable pidió expresamente que esto se represente en el mapa. Lo concreto:
+
+1. **En la ficha de cada municipio, una cara nueva: «Qué dice la alcaldía».** Lista de
+   `publicaciones` filtrada por `pcode`, más reciente primero, con título, fecha relativa
+   (`haceCuanto`) y enlace. Es la única información que existe para muchos de estos
+   municipios: para 54 de ellos, es *toda* la información que existe.
+2. **Distinguir `official` de prensa.** Estos son actos de la propia alcaldía y en ADR-003
+   son un escalón distinto de la prensa. No mezclarlos en la misma lista sin marca.
+3. **Los municipios sin ninguna fuente siguen siendo el dato importante.** Si un municipio
+   no tiene ni prensa ni boletín, la ficha debe decirlo explícitamente en vez de quedarse
+   vacía — «sin información publicada», no un hueco.
+
+**No hay coordenadas en esta fuente**, así que no da puntos en el mapa todavía: da texto
+por municipio. Los puntos (edificios colapsados, centros de salud, acopios) exigen
+geocodificar nombres propios y está sin construir — no lo des por hecho en el diseño.
+
+### Lo que sigue del lado de datos
+
+- Decidir si entra al cron. Son ~400 peticiones por corrida; hoy es un comando a mano
+  (`npm run alcaldias -w @report-cali/ingest`).
+- Los subdominios inexistentes devuelven **500**, y `fetchWithRetry` reintenta los 5xx:
+  cada municipio ausente cuesta el doble de peticiones y un segundo de espera. Hay que
+  dejar de reintentar en la resolución de alias antes de meterlo al cron.
+- Revisar a mano `curated/cifras.sugeridas.json` y pasar a `curated/observaciones.json` lo
+  que resista la lectura.

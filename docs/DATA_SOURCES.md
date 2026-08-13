@@ -215,9 +215,74 @@ anterior al sismo). El resto da 404, 403 o ni resuelve el dominio. La variante
 golpeados en `/rss`, `/publicaciones/rss` y `/feed`: Tolima da 403; Chocó y Cundinamarca
 responden con cero entradas; Risaralda, Caldas, Quindío, Cauca y Antioquia dan 404.
 
-**Conclusión para el mapa:** no existe una gaceta municipal legible por máquina. Las
-cifras oficiales de un municipio como Cartago solo entran por `curated/observaciones.json`,
-leídas por una persona. Es la conclusión honesta, no la que esperábamos.
+**Conclusión para el mapa:** ~~no existe una gaceta municipal legible por máquina~~ —
+**esto resultó falso y está corregido abajo.** Sí existe; estaba buscándose mal. Lo que
+sigue siendo cierto de este apartado: el patrón `/rss` no se generaliza, la gaceta de
+Cartago sirve relleno, y ninguna gobernación salvo el Valle publica feed.
+
+## Alcaldías — MiColombiaDigital, la API que sí existía
+
+**Corrige la conclusión de arriba.** Se buscaba HTML y RSS en los sitios municipales, y no
+hay ni lo uno ni lo otro: `www.<municipio>-<departamento>.gov.co` devuelve a `curl` una
+cáscara de 2.905 bytes titulada «Territoriales», idéntica en todos ellos. **Son
+aplicaciones Angular.** El contenido nunca estuvo en el HTML.
+
+Mirando qué pide el navegador aparece la fuente real: todos cuelgan de una plataforma
+compartida del MinTIC con **API REST pública por municipio**.
+
+```
+https://<alias>.micolombiadigital.gov.co/api/v1/contents?orderBy=recent&pageSize=25
+https://<alias>.micolombiadigital.gov.co/api/v1/contents/<contentID>   ← cuerpo completo
+```
+
+El `alias` se deriva del nombre: `Roldanillo` + `Valle del Cauca` → `roldanillovalledelcauca`.
+La URL `https://<alias>.micolombiadigital.gov.co/noticias/<slug>` **redirige al dominio
+oficial del municipio** —comprobado en el navegador, con la nota renderizada—, así que es
+citable y además derivable, que el dominio propio no lo es.
+
+### Lo que rinde, medido sobre los 440 municipios con MMI ≥ 5
+
+| | |
+|---|---|
+| responden en la plataforma | **317** |
+| publicaron algo desde el sismo | **207** |
+| publicaciones recogidas | **1.127** |
+| hablan del sismo | 203, en **98 municipios** |
+| **municipios que no tenían ninguna fuente y ahora sí** | **54** |
+
+**La distribución es complementaria a la prensa, no redundante.** Las que fallan son las
+ciudades grandes —Manizales, Pereira, Armenia, Buenaventura, Quibdó, Cartago— que tienen
+sitio propio *y* cobertura de prensa. Las que responden son los municipios pequeños, que
+es exactamente donde no llegaba nadie. Ataca el hueco que medía `cobertura.json`.
+
+Y no es relleno institucional. Medio San Juan (Chocó, MMI 7) publicó un EDAN completo:
+«78 familias damnificadas, 390 personas damnificadas, 3 viviendas totalmente destruidas,
+15 viviendas parcialmente destruidas e inhabitables, afectaciones en la farmacia del
+Hospital y en la Casa de Víctimas». Lloró, 140 viviendas. Bagadó, 240 familias. Istmina
+publicó sus cuatro líneas de emergencia. Son municipios a un paso del epicentro sobre los
+que no había absolutamente nada.
+
+### La trampa seria: ADR-001
+
+Entre las 1.127 publicaciones hay **55 avisos administrativos con nombre propio** —«Aviso
+de Publicación de Edicto - Pedro Chala Calderón», «NOTIFICACION POR AVISO COBRO
+PERSUASIVO»—. Son notificaciones a personas concretas por multas y cobros: nada que ver
+con el sismo, y datos personales de ciudadanos identificables. `esAvisoPersonal()` los
+descarta **antes que cualquier otro filtro**, y vuelve a comprobarlo sobre el cuerpo, que
+a veces trae el nombre que el titular no traía.
+
+### Lo que no hace
+
+**No publica cifras**, por el mismo motivo que `prensa-regional.ts`: sacar números de prosa
+con patrones confunde totales con parciales. Las propone en `curated/cifras.sugeridas.json`
+(sin versionar) para que una persona las registre a mano. Y **no extrae fallecidos ni
+heridos en ningún caso**: esas dos solo entran desde boletín oficial, leídas por una
+persona.
+
+**Tampoco da coordenadas.** Los textos nombran lugares —«Puente Mariano Ospina», «farmacia
+del Hospital», corregimientos como Suruco o Paimadó— pero ninguno trae coordenada. Pasar
+de ahí a un punto en el mapa exige geocodificar por nombre exacto con las revisiones de
+`geocodificar.ts`, y para los que no aparezcan, no hay coordenada. Eso está sin construir.
 
 ### Dos trampas del feed oficial, medidas
 

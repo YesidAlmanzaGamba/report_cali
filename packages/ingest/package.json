@@ -16,7 +16,8 @@
     "secciones": "node --max-old-space-size=8192 --import tsx src/secciones.ts",
     "test": "tsx --test test/**/*.test.ts",
     "test:watch": "tsx --test --watch test/**/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "alcaldias": "node --import tsx src/alcaldias-cli.ts"
   },
   "dependencies": {
     "@turf/boolean-point-in-polygon": "^7.1.0",
