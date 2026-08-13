@@ -214,34 +214,56 @@ function recorrerTira(): void {
   if (!tira) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const PASO = 3200; // ms por cifra: da tiempo a leer número y etiqueta
-  let indice = 0;
-  let vivo = true;
+  const originales = [...tira.children] as HTMLElement[];
+  if (originales.length === 0) return;
 
-  const detener = (): void => {
-    vivo = false;
-    window.clearInterval(reloj);
+  /**
+   * Se duplican las cifras para que el bucle no tenga costura.
+   *
+   * La versión anterior saltaba de una cifra a la siguiente cada 3,2 s con
+   * `scrollTo({behavior:'smooth'})`, y al llegar al final volvía al principio de golpe.
+   * Eso es exactamente lo que se siente «a pasos»: cinco tirones y un salto. Con la
+   * lista repetida se puede desplazar de forma continua y, al pasar de la primera
+   * copia, devolver el scroll al principio sin animación — la segunda copia está en el
+   * mismo sitio, así que el ojo no ve el corte.
+   */
+  for (const nodo of originales) {
+    const copia = nodo.cloneNode(true) as HTMLElement;
+    copia.setAttribute('aria-hidden', 'true');
+    tira.append(copia);
+  }
+
+  const marco = document.getElementById('tiras-marco');
+  if (!marco) return;
+
+  const VELOCIDAD = 16; // px por segundo; a esta escala se lee sin marear
+
+  /** La animación es en `%`, así que la duración es lo que fija la velocidad real. */
+  const acompasar = (): void => {
+    const unaVuelta = tira.scrollWidth / 2;
+    if (unaVuelta <= marco.clientWidth) {
+      // Cabe entero: no hay nada que desfilar.
+      tira.removeAttribute('data-desfile');
+      return;
+    }
+    tira.style.setProperty('--desfile-duracion', `${Math.round(unaVuelta / VELOCIDAD)}s`);
+    tira.setAttribute('data-desfile', '');
   };
 
-  const reloj = window.setInterval(() => {
-    if (!vivo) return;
-    // Si no sobra nada que desplazar, no hay bucle que hacer.
-    const sobrante = tira.scrollWidth - tira.clientWidth;
-    if (sobrante <= 4) return;
+  acompasar();
+  // Las fuentes pueden llegar tarde y cambiar el ancho; entonces la duración calculada
+  // ya no corresponde a 16 px/s.
+  if ('ResizeObserver' in window) new ResizeObserver(acompasar).observe(tira);
 
-    const fichas = [...tira.children] as HTMLElement[];
-    indice = (indice + 1) % fichas.length;
-    const destino = fichas[indice];
-    if (!destino) return;
-
-    // Al dar la vuelta se vuelve al principio de golpe; avanzar es suave.
-    tira.scrollTo({
-      left: indice === 0 ? 0 : destino.offsetLeft - tira.offsetLeft,
-      behavior: indice === 0 ? 'auto' : 'smooth',
-    });
-  }, PASO);
+  const detener = (): void => {
+    tira.removeAttribute('data-desfile');
+    tira.style.removeProperty('--desfile-duracion');
+    // Se quitan las copias: si alguien va a desplazar a mano, que no vea cada cifra dos
+    // veces.
+    for (const nodo of [...tira.children].slice(originales.length)) nodo.remove();
+  };
 
   for (const evento of ['pointerdown', 'wheel', 'touchstart', 'keydown'] as const) {
-    tira.addEventListener(evento, detener, { passive: true, once: true });
+    marco.addEventListener(evento, detener, { passive: true, once: true });
   }
 }
