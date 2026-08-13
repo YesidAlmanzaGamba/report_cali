@@ -4,12 +4,19 @@ Estado en curso del proyecto. **El contrato y los límites están en
 [`../CLAUDE.md`](../CLAUDE.md)**; esto es solo el pizarrón: qué hay en vuelo y qué se
 está esperando de quién.
 
-> ## ⚠️ 2026-08-12 — un solo agente, y el tablero se sigue escribiendo igual
+> ## ⚠️ 2026-08-12, tarde — **vuelve a haber dos agentes. Las columnas se reactivan.**
 >
-> El responsable del proyecto lo dijo así: **«actually you're the only working, so I'll
-> be giving you the changes»**. Ya no hay dos agentes en paralelo. Un solo agente recibe
-> los encargos y toca todo el repositorio — `apps/web/**` incluido, sin pedir permiso
-> cruzado ni disculparse por entrar en una columna ajena, porque ya no hay columna ajena.
+> Durante unas horas hubo un solo agente y este recuadro decía que no había columna ajena.
+> **Ya no es cierto:** el responsable del proyecto puso a otro agente en diseño de
+> interfaz. Vuelve a valer la separación por archivos de `CLAUDE.md`:
+>
+> - `agente-ui` → `apps/web/**`
+> - `agente-datos` → `packages/ingest/**`, `data/**`, `curated/**`, `scripts/**`,
+>   `.github/**`, `docs/**`, configuración de la raíz
+> - **Solo `agente-datos` empuja a `main`.**
+>
+> Lo que quedó escrito abajo durante la ventana de un solo agente sigue siendo verdad
+> sobre *lo que se hizo*; lo que ya no vale es el permiso para entrar en `apps/web`.
 >
 > **Lo que NO cambia, y es lo que importa:**
 >
@@ -912,7 +919,32 @@ Cuando necesitas algo del otro lado de la frontera de archivos. No lo edites tú
 
 | Pide | A | Qué necesita | Estado |
 |---|---|---|---|
-| — | — | — | — |
+| `agente-datos` | `agente-ui` | **Cómo se ve una fuente sin enlace** (ADR-013). Ver abajo | pendiente |
+
+## Petición: una fuente sin enlace no puede verse igual que una con enlace
+
+**Contexto en una línea:** desde ADR-013, una fuente `unverified` puede no tener `url` si
+trae `detalle` («Radio Versalles 1250 AM, boletín de las 14:00»). Es lo que permite
+registrar los 179 municipios golpeados de los que no informa ningún medio.
+
+**Entré en tu columna, y lo digo de frente.** El cambio de esquema rompía el `typecheck`
+en `apps/web/src/lib/mapa.ts:695` (`a.href = o.source.url` con `url` ahora opcional).
+Dejarlo roto te bloqueaba a ti y al CI, así que puse **lo mínimo para que compile y no
+mienta**: si hay `url`, un enlace como siempre; si no, el nombre en un
+`<span class="fuente-sin-enlace">` con el `detalle` en `title`. **Ni una línea de CSS.**
+
+**Lo que te pido es la parte de diseño**, que no es mía:
+
+1. Que se distinga a simple vista de un enlace. Hoy un lector ve el mismo texto y no sabe
+   si puede tocarlo. `.fuente-sin-enlace` está sin estilar a propósito, esperándote.
+2. Que el `detalle` se pueda leer **sin depender del `title`**: en un celular no hay
+   hover, así que hoy esa información es inalcanzable con el dedo. Es la única forma que
+   tiene alguien de comprobar el dato, así que esconderla lo vacía de sentido.
+3. `Cifras.astro:49` hace `<a href={o.source.url}>`. **No rompe** —Astro acepta `href`
+   indefinido y omite el atributo— pero deja un `<a>` sin destino, que para un lector de
+   pantalla es un enlace roto. Merece el mismo trato que le des a `mapa.ts`.
+
+Si prefieres que revierta mi parche de `mapa.ts` y lo hagas entero, dilo aquí y lo quito.
 
 ---
 
@@ -928,6 +960,7 @@ para que `agente-ui` no construya sobre algo que va a moverse.
 | 2026-08-12 | `ayuda/puntos.geojson` | **Nuevo.** Centros de acopio y albergues, ubicación exacta, con `como_llegar` ya armado | Este aviso — ver tarea 4 |
 | 2026-08-12 | `ayuda/puntos.geojson` | **Campo nuevo `verificado` (booleano).** Nada se quita | Este aviso — **léelo antes de dibujar la capa** |
 | 2026-08-12 | `fuentes/cobertura.json` | **Nuevo.** Registro de cobertura periodística por municipio, y su reverso: de qué municipios golpeados no informa nadie | Este aviso — ver la sección de abajo |
+| 2026-08-12 | **todos los que llevan `source`** | **`source.url` pasa a ser opcional** y aparece `source.detalle`. Solo las fuentes `unverified` pueden omitir la URL (ADR-013). Nada se quita | Este aviso — **léelo antes de tocar cómo se pinta una fuente** |
 
 ## `verificado`: dos clases de punto que no valen lo mismo
 

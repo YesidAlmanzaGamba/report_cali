@@ -64,7 +64,7 @@ apps/web/          Astro + MapLibre GL
 docs/              DATA_SOURCES.md, DECISIONS.md, specs/
 ```
 
-Una GitHub Action corre cada 15 minutos, ejecuta los adaptadores y hace commit de `data/`
+Una GitHub Action corre cada 30 minutos, ejecuta los adaptadores y hace commit de `data/`
 solo si el contenido cambió. Cada revisión de cada cifra queda como un `git diff`: esa es
 la auditoría de procedencia, gratis.
 
@@ -139,7 +139,7 @@ ellos el flujo compila, avisa y no falla.
 > republican el sitio. Las peticiones a activos estáticos en Workers son gratis e
 > ilimitadas.
 
-`.github/workflows/ingesta.yml` vuelve a consultar las fuentes cada 15 minutos y hace
+`.github/workflows/ingesta.yml` vuelve a consultar las fuentes cada 30 minutos y hace
 commit en `data/` **solo si el contenido cambió**, lo que a su vez dispara un despliegue.
 
 > **Falta un ajuste manual para que el cron pueda publicar.**

@@ -30,3 +30,13 @@ apps/web/public/data/
 # OJO: data/ SÍ se versiona a propósito — el historial de git es nuestra
 # trazabilidad de procedencia. Solo se ignora el área de trabajo temporal.
 packages/ingest/.tmp/
+
+# Salida de `npm run campo`: sugerencias SIN revisar.
+#
+# No se versiona a propósito, y el motivo importa. Es el borrador de quien captura en la
+# calle: puede traer una coordenada mal pegada, un municipio equivocado o una foto que
+# todavía nadie miró. Lo que se publica es lo que una persona movió a
+# curated/incidentes.json a mano, y ese commit es el acto de publicación (ADR-004).
+# Versionar el borrador borraría esa distinción — y con ella la garantía de que nada
+# llega al mapa sin que alguien lo haya leído.
+curated/incidentes.sugeridos.json

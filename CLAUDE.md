@@ -177,7 +177,12 @@ Lo que `apps/web` puede dar por hecho. Los archivos se sirven desde
   metric: 'deaths_confirmed' | 'injured' | 'missing_reported' | 'buildings_collapsed' | …,
   value: number,
   pcode: string,        // 'CO' país · 'CO76' departamento · 'CO76001' municipio
-  source: { name, url, type: 'official' | 'humanitarian' | 'press' | 'unverified' },
+  source: {
+    name,
+    url?,        // opcional SOLO si type === 'unverified' (ADR-013)
+    detalle?,    // obligatorio si no hay url: «Radio Versalles, boletín de las 14:00»
+    type: 'official' | 'humanitarian' | 'press' | 'unverified'
+  },
   observed_at: string,  // cuándo la FUENTE dice que era cierto
   ingested_at: string,  // cuándo lo trajimos
   notes?: string
@@ -242,6 +247,7 @@ npm run typecheck
 npm run dev           # http://localhost:4321
 npm run build
 npm run ingest        # descarga real; revisa `git diff data/` después
+npm run campo -- ruta/al.csv   # recolección en campo → curated/incidentes.sugeridos.json
 npm run boundaries -w @report-cali/ingest   # límites municipales; a mano, tarda
 ```
 
@@ -249,6 +255,13 @@ npm run boundaries -w @report-cali/ingest   # límites municipales; a mano, tard
 
 ## Estado
 
-Fases 0 a 4 en producción. Pendiente: puntos de incidentes por municipio (agregados a
-100 m, ADR-012), credenciales de Cloudflare, y solicitar el `appname` de ReliefWeb.
-El detalle está en [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Fases 0 a 4 en producción, 279 pruebas. Pendiente: credenciales de Cloudflare y tres
+trámites que no son código — el `appname` de ReliefWeb, permiso a los dos diarios de Cali
+que nos bloquean por User-Agent, y avisar a la Alcaldía de Cartago de que su RSS sirve
+texto de relleno. El detalle está en [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
+**El techo del proyecto, medido:** de 228 municipios golpeados, **179 no tienen ni una
+nota de prensa** (`data/fuentes/cobertura.json`). No hay gaceta municipal legible por
+máquina — se comprobó. Por eso existe la recolección en campo
+([`docs/CAMPO.md`](docs/CAMPO.md)) y ADR-013: en un municipio de 7.000 habitantes, la
+emisora local y alguien parado ahí son las únicas fuentes que hay.

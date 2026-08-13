@@ -1,6 +1,6 @@
 name: Ingesta de datos
 
-# Cada 15 minutos. Solo hace commit si el contenido cambió de verdad: el hash que
+# Cada 30 minutos. Solo hace commit si el contenido cambió de verdad: el hash que
 # calcula `writeDataset` ignora `ingested_at`, así que una corrida sin novedades no
 # ensucia el historial. Ese historial ES la trazabilidad de procedencia (ADR-004).
 on:

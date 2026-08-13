@@ -1,5 +1,5 @@
 /**
- * Pipeline de ingesta. Lo corre el cron cada 15 minutos.
+ * Pipeline de ingesta. Lo corre el cron cada 30 minutos.
  *
  *   npm run ingest
  *
@@ -407,6 +407,25 @@ async function main(): Promise<void> {
       const conLugar = sugerencias.filter((s) => s.lugar).length;
       const caidos =
         regional.feeds_caidos.length > 0 ? `, ${regional.feeds_caidos.length} feeds caídos` : '';
+
+      /**
+       * Aviso cuando se cae la mitad o más de la prensa regional.
+       *
+       * No falla el paso a propósito: Google Noticias sigue trayendo cientos de notas, así
+       * que la corrida es útil y tumbarla sería peor. Pero **sin aviso, una caída masiva
+       * pasa inadvertida**: el total de notas apenas se mueve y lo que desaparece en
+       * silencio es justo el grano municipal, que es lo que estos feeds aportan y lo que
+       * la cobertura nacional no publica.
+       */
+      if (regional.feeds_consultados > 0 && regional.feeds_caidos.length * 2 >= regional.feeds_consultados) {
+        console.warn(
+          `\n  ⚠ SE CAYÓ LA MITAD O MÁS DE LA PRENSA REGIONAL ` +
+            `(${regional.feeds_caidos.length}/${regional.feeds_consultados}): ` +
+            `${regional.feeds_caidos.join(', ')}.\n` +
+            `    La corrida sigue con lo de Google Noticias, pero se pierde el detalle por ` +
+            `municipio. Si se repite, comprueba si nos están bloqueando (ver DATA_SOURCES.md).`,
+        );
+      }
 
       return `${candidatos.length} notas (${regional.notas.length} regionales${caidos}; ${conMunicipio} con municipio, ${oficiales} oficiales) · ${
         sugerencias.length

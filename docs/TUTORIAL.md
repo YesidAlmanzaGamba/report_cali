@@ -80,7 +80,7 @@ Este token es lo que le permite a GitHub publicar en tu cuenta de Cloudflare.
 
 ## A4. Dar permiso de escritura a las Actions
 
-Sin esto, el robot que actualiza los datos cada 15 minutos los descarga bien pero no
+Sin esto, el robot que actualiza los datos cada 30 minutos los descarga bien pero no
 puede guardarlos. Falla en silencio, que es lo peor que puede pasar.
 
 1. Sigues en **Settings**. Menú izquierdo: **Actions** → **General**.
@@ -132,7 +132,7 @@ En el siguiente push se publica en
 # Parte C — Que los datos no gasten compilaciones
 
 **Esto es lo que evita que el despliegue se rompa solo.** Cloudflare da un número
-limitado de compilaciones al mes; el robot de datos corre cada 15 minutos, y si cada
+limitado de compilaciones al mes; el robot de datos corre cada 30 minutos, y si cada
 actualización dispara una compilación, la cuota se agota justo cuando los datos importan.
 La solución es servir los datos desde un almacén aparte (R2), donde además **sacar datos
 no tiene ningún costo**.

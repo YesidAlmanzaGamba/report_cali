@@ -44,7 +44,7 @@ Repositorio GitHub  ─── sistema de registro (el historial ES la trazabilid
    │                          (pocas veces: ~5–20 al mes)
    │
    └── cron de ingesta   ──┬─→  sube los datos a R2   ──→  CDN  (sin desplegar)
-       (cada 15 min)       │    (frecuente, gratis)
+       (cada 30 min)       │    (frecuente, gratis)
                            └─→  commit en data/  ──→  archivo auditable
 ```
 

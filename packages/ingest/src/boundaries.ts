@@ -4,7 +4,7 @@
  *   npm run boundaries              # descarga desde HDX (117 MB)
  *   npm run boundaries -- --zip ./col.zip   # usa un zip ya descargado
  *
- * Los límites municipales no cambian durante un desastre. Bajar 117 MB cada 15 minutos
+ * Los límites municipales no cambian durante un desastre. Bajar 117 MB cada 30 minutos
  * para reconstruir una geometría idéntica sería maltratar un servicio público que en este
  * momento está bajo carga.
  *

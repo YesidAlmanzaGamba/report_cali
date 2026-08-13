@@ -11,6 +11,7 @@
   },
   "scripts": {
     "fetch": "tsx src/runner.ts",
+    "campo": "tsx src/campo-cli.ts",
     "boundaries": "node --max-old-space-size=8192 --import tsx src/boundaries.ts",
     "secciones": "node --max-old-space-size=8192 --import tsx src/secciones.ts",
     "test": "tsx --test test/**/*.test.ts",

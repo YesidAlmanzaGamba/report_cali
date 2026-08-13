@@ -133,6 +133,51 @@ siendo desinformación aunque haya nacido con buena intención.
 
 **Consecuencias.** Más trabajo por adaptador y una interfaz más cargada. Vale la pena.
 
+**Precisión posterior:** «fuente y hora» no quiere decir «URL». La URL obligatoria fue una
+suposición de implementación que dejaba fuera a la radio, y está acotada en **ADR-013**.
+
+---
+
+## ADR-013 — Una fuente puede no tener enlace, si dice cómo comprobarla
+
+**Estado:** aceptada · 2026-08-12
+
+**Contexto.** El registro de cobertura (`data/fuentes/cobertura.json`) midió el techo del
+proyecto: de **228 municipios golpeados, 179 no tienen ni una nota de prensa** — 5,6
+millones de personas. Cartago, con MMI 8 y 142.255 habitantes, tiene cero.
+
+Se buscaron gacetas oficiales para taparlo y no existen en forma legible por máquina: el
+portal de Cartago sirve texto de relleno de 2020, el patrón `/rss` no se generaliza a los
+municipios, y de las nueve gobernaciones de los departamentos golpeados solo el Valle
+publica feed.
+
+Lo que sí llega a un municipio de 7.000 habitantes es **su emisora local**, y alguien
+oyéndola. Pero `SourceSchema` exigía `url: z.string().url()`, así que un boletín de radio
+—o la observación de alguien parado en el sitio— se rechazaba antes de llegar a ninguna
+parte. La regla escrita para garantizar procedencia estaba impidiendo registrar la única
+procedencia disponible.
+
+**Decisión.** `url` deja de ser obligatorio **solo para `type: 'unverified'`**, y a cambio
+esa fuente debe traer `detalle` (10–200 caracteres) que diga cómo comprobarla: qué
+emisora, qué programa y a qué hora, o quién observó y dónde.
+
+`official`, `humanitarian` y `press` **siguen exigiendo URL**. Hay pruebas para los tres.
+
+**Por qué.** Un boletín de radio con emisora, programa y hora es procedencia comprobable
+—alguien puede llamar a la emisora— y es más de lo que ofrecen bastantes URL de prensa,
+que además se caen. Lo que ADR-003 protege es que el dato sea **rastreable hasta alguien
+que responda por él**, no que exista un `https://`.
+
+**Consecuencias.**
+
+- La puerta queda abierta solo para el escalón de menor confianza, y la interfaz ya
+  degrada visualmente lo `unverified`. Un dato de radio nunca se verá como uno oficial.
+- La interfaz tiene que saber pintar una fuente sin enlace. El mínimo para que no mienta
+  —nombre en texto plano, `detalle` como `title`— está puesto en `mapa.ts`; **el
+  tratamiento visual queda pedido a `agente-ui` en `docs/COORDINACION.md`**.
+- Es la puerta por la que entran los municipios que hoy no existen en el mapa. Si alguien
+  la cierra «por consistencia con ADR-003», vuelve a dejar 179 municipios en blanco.
+
 ---
 
 ## ADR-004 — Estático primero, sin base de datos en la ruta de lectura
@@ -140,7 +185,7 @@ siendo desinformación aunque haya nacido con buena intención.
 **Estado:** aceptada · 2026-08-11
 
 **Decisión.** La ruta de lectura son archivos estáticos servidos por CDN. Una GitHub
-Action corre cada 15 minutos, ejecuta los adaptadores y hace commit de `data/` solo si
+Action corre cada 30 minutos, ejecuta los adaptadores y hace commit de `data/` solo si
 cambió el contenido.
 
 **Por qué.** Un sitio de desastre recibe su pico de tráfico exactamente cuando más

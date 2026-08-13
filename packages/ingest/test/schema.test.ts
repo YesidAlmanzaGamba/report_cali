@@ -26,6 +26,47 @@ describe('ObservationSchema', () => {
     assert.equal(ObservationSchema.safeParse(sinUrl).success, false);
   });
 
+  /**
+   * ADR-013. La puerta para fuentes sin enlace tiene que ser **estrecha**: si se abriera
+   * para cualquier tipo, la prensa podría publicarse sin enlace y ADR-003 quedaría en nada.
+   */
+  describe('fuentes sin URL (ADR-013)', () => {
+    for (const type of ['official', 'humanitarian', 'press'] as const) {
+      it(`sigue exigiendo URL a una fuente ${type}`, () => {
+        const sinUrl = {
+          ...valid,
+          source: { name: 'Emisora', type, detalle: 'Boletín de las 14:00 del 12 de agosto' },
+        };
+        assert.equal(ObservationSchema.safeParse(sinUrl).success, false);
+      });
+    }
+
+    it('acepta una fuente unverified sin URL si dice cómo comprobarla', () => {
+      const radio = {
+        ...valid,
+        source: {
+          name: 'Radio Versalles 1250 AM',
+          type: 'unverified' as const,
+          detalle: 'Boletín de las 14:00 del 12 de agosto de 2026',
+        },
+      };
+      assert.equal(ObservationSchema.safeParse(radio).success, true);
+    });
+
+    it('rechaza una unverified sin URL y sin detalle — sería un número sin procedencia', () => {
+      const pelada = { ...valid, source: { name: 'Alguien', type: 'unverified' as const } };
+      assert.equal(ObservationSchema.safeParse(pelada).success, false);
+    });
+
+    it('exige que el detalle diga algo, no una palabra suelta', () => {
+      const flojo = {
+        ...valid,
+        source: { name: 'Radio', type: 'unverified' as const, detalle: 'radio' },
+      };
+      assert.equal(ObservationSchema.safeParse(flojo).success, false);
+    });
+  });
+
   it('rechaza fechas sin zona horaria', () => {
     // Colombia reporta en hora local y las fuentes internacionales en UTC.
     // Una fecha sin zona es un error silencioso de 5 horas.

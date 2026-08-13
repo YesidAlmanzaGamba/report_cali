@@ -691,11 +691,30 @@ export async function iniciarMapa(): Promise<void> {
       f.className = 'f';
       f.textContent = `${TIPOS_FUENTE[o.source.type]} · `;
 
-      const a = document.createElement('a');
-      a.href = o.source.url;
-      a.rel = 'noopener';
-      a.textContent = o.source.name;
-      f.append(a);
+      /**
+       * Una fuente puede no tener enlace: desde ADR-013, las `unverified` pueden omitir
+       * `url` a cambio de un `detalle` que diga cómo comprobarlas — «Radio Versalles,
+       * boletín de las 14:00». Es lo que permite registrar los municipios pequeños,
+       * donde la emisora local es la única fuente que existe.
+       *
+       * Esto es lo mínimo para que compile y no mienta: con enlace, un enlace; sin
+       * enlace, el nombre en texto plano y el `detalle` como `title`. **El tratamiento
+       * visual de la fuente sin enlace está pedido a `agente-ui` en COORDINACION.md** —
+       * un enlace y un texto plano no deberían verse igual, y esa decisión es suya.
+       */
+      if (o.source.url) {
+        const a = document.createElement('a');
+        a.href = o.source.url;
+        a.rel = 'noopener';
+        a.textContent = o.source.name;
+        f.append(a);
+      } else {
+        const s = document.createElement('span');
+        s.className = 'fuente-sin-enlace';
+        s.textContent = o.source.name;
+        if (o.source.detalle) s.title = o.source.detalle;
+        f.append(s);
+      }
 
       tarjeta.append(n, q, f);
       contenedor.append(tarjeta);

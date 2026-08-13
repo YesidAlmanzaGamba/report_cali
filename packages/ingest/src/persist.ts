@@ -5,7 +5,7 @@
  *    ruidosamente y dejamos intacto el archivo anterior. Una cifra vieja y marcada como
  *    vieja hace mucho menos daño que una cifra corrupta presentada como fresca.
  *
- * 2. **Escritura estable.** El cron corre cada 15 minutos. Si `ingested_at` entrara al
+ * 2. **Escritura estable.** El cron corre cada 30 minutos. Si `ingested_at` entrara al
  *    archivo sin más, cada corrida produciría un diff y el historial de git — que es
  *    justamente nuestra trazabilidad de procedencia (ADR-004) — quedaría ahogado en
  *    ~96 commits diarios de ruido. Por eso comparamos un hash del contenido

@@ -2,9 +2,33 @@
 
 Qué sigue, en qué orden y por qué. Cada fase termina en algo desplegable.
 
-**Estado actual — fase 2 completa.** Mapa de intensidad por municipio, 1.122 municipios
-cruzados contra el ShakeMap del USGS, tabla y resumen generados en compilación, panel de
-búsqueda de personas enrutando a los canales oficiales. 77 pruebas, CI en verde.
+**Estado actual — fases 0 a 4 en producción** (2026-08-12). Mapa de intensidad por
+municipio sobre los 1.122 municipios, dos modos de color, capa de deslizamientos, tabla y
+resumen generados en compilación, panel de búsqueda de personas, recolector de prensa
+—Google Noticias más seis diarios regionales y la gaceta del Valle—, registro de cobertura
+por municipio, puntos de ayuda, exportación CSV/HXL e incidentes con rejilla de 100 m.
+**279 pruebas**, CI en verde. Sitio en vivo en GitHub Pages.
+
+> **Este archivo se quedó atrás y se corrigió el 2026-08-12.** Decía «fase 2 completa» y
+> listaba como pendientes cosas que llevaban días entregadas — la exportación HXL, el
+> espejo de Pages, el desacople a R2 — y decía que las decisiones de privacidad
+> «quedarían como ADR-012» cuando ADR-012 ya estaba aceptado. Un roadmap que miente sobre
+> el presente es peor que no tenerlo: manda a construir lo que ya existe.
+
+### El techo que apareció al medir, y lo que cambia
+
+El registro de cobertura (`data/fuentes/cobertura.json`) midió algo que no estaba en
+ninguna fase: **de 228 municipios golpeados, 179 no tienen ni una nota de prensa** — 5,6
+millones de personas. Cartago, con MMI 8 y 142.255 habitantes, tiene cero.
+
+Se buscaron gacetas oficiales para taparlo y **no existen en forma legible por máquina**.
+Ninguna mejora del raspado crea fuentes donde no las hay.
+
+Por eso la fase 6 (evidencia fotográfica) **se adelantó en parte y se redujo**: entró la
+recolección de campo por hoja de cálculo (`npm run campo`, `docs/CAMPO.md`) y ADR-013 para
+que la radio local pueda ser fuente. Sin fotos publicadas, sin moderación y sin base de
+datos — solo el punto, que es lo que hacía falta para que los municipios pequeños existan
+en el mapa.
 
 ---
 
@@ -34,14 +58,22 @@ el 2026-08-11, **ninguna de las dos sirve hoy**:
 - ✅ **Sección «Cifras reportadas»** con procedencia, tipo de fuente y antigüedad, que
   degrada visualmente lo viejo.
 
+- ✅ **Exportación CSV / HXL.** Tres archivos en `data/export/`: observaciones, MMI por
+  municipio y cobertura por municipio, todos con la segunda fila de etiquetas HXL de OCHA.
+- ✅ **Cifras dentro de la ficha del municipio**, al tocarlo en el mapa, con su fuente y
+  su antigüedad.
+
 ### Lo que falta
 
-- ⬜ **Exportación CSV / GeoJSON / HXL.** Convierte el sitio en herramienta de trabajo: un
-  coordinador se lleva la tabla a su propio análisis. HXL es el estándar de etiquetado de
-  OCHA y hace que los datos entren directo a ese ecosistema.
-- ⬜ **Cifras dentro de la ficha del municipio**, al tocarlo en el mapa.
 - ⬜ **Solicitar el `appname` a ReliefWeb** en
   <https://apidoc.reliefweb.int/parameters#appname> — trámite, no código.
+- ⬜ **Pedir permiso a Diario Occidente y 90 Minutos**, los dos de Cali, que devuelven 403
+  a nuestro User-Agent y 200 a un navegador. No se falsea el identificador (ver
+  `DATA_SOURCES.md`); la salida es escribirles. Mismo tipo de trámite que el de ReliefWeb.
+- ⬜ **Escribir a la Alcaldía de Cartago**: su feed existe pero sirve texto de relleno de
+  2020 en vez de su sala de prensa. Es el municipio más golpeado sin cobertura, y
+  arreglarlo cuesta un correo, no código.
+- ⬜ **Exportación GeoJSON** de incidentes y puntos de ayuda como descarga directa.
 
 ---
 

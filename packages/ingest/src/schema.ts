@@ -24,13 +24,55 @@ export const SOURCE_PRIORITY: Record<SourceType, number> = {
   unverified: 0,
 };
 
-export const SourceSchema = z.object({
-  /** Nombre visible en la interfaz. Ej: "UNGRD", "USGS", "Cruz Roja Colombiana". */
-  name: z.string().min(1),
-  /** Enlace donde una persona puede comprobar el dato por su cuenta. Obligatorio. */
-  url: z.string().url(),
-  type: SourceTypeSchema,
-});
+/**
+ * De dónde salió un dato.
+ *
+ * ## Por qué `url` dejó de ser obligatorio para un solo tipo de fuente
+ *
+ * ADR-003 exige que toda cifra lleve **fuente y hora**. No dice URL: el `url` obligatorio
+ * daba por hecho que toda fuente es una página web, y eso deja fuera justo a los
+ * municipios que más falta hacen.
+ *
+ * Medido en `data/fuentes/cobertura.json`: de 228 municipios golpeados, **179 no tienen
+ * ni una nota de prensa**. Cartago —MMI 8, 142.255 habitantes— tiene cero. Se probaron
+ * las gacetas oficiales y no hay ninguna legible por máquina: el portal de Cartago sirve
+ * texto de relleno de 2020 y de nueve gobernaciones solo el Valle publica feed.
+ *
+ * Lo que sí llega a un municipio de 7.000 habitantes es **la emisora local**, y alguien
+ * oyéndola. Un boletín de radio no tiene URL, así que con el esquema anterior una
+ * observación de Versalles se rechazaba antes de llegar a ninguna parte.
+ *
+ * **La puerta que se abre es estrecha y está etiquetada.** Solo `unverified` puede
+ * omitir `url`, y a cambio tiene que traer `detalle`: qué emisora, qué programa, a qué
+ * hora, o quién observó y dónde. Eso es procedencia comprobable por otra vía —alguien
+ * puede llamar a la emisora— y es más de lo que ofrecen muchas URL de prensa.
+ *
+ * `official`, `humanitarian` y `press` **siguen exigiendo URL**, que es la propiedad que
+ * ADR-003 protege de verdad. Registrado como ADR-013.
+ */
+export const SourceSchema = z
+  .object({
+    /** Nombre visible en la interfaz. Ej: "UNGRD", "USGS", "Cruz Roja Colombiana". */
+    name: z.string().min(1),
+    /**
+     * Enlace donde una persona puede comprobar el dato por su cuenta.
+     * Obligatorio salvo para `unverified` — ver el bloque de arriba.
+     */
+    url: z.string().url().optional(),
+    type: SourceTypeSchema,
+    /**
+     * Cómo comprobar el dato cuando no hay enlace. Ej: «Radio Versalles 1250 AM,
+     * boletín de las 14:00 del 12 de agosto» u «observación propia en el sitio».
+     * Obligatorio si no hay `url`.
+     */
+    detalle: z.string().min(10).max(200).optional(),
+  })
+  .refine((s) => s.url !== undefined || (s.type === 'unverified' && s.detalle !== undefined), {
+    message:
+      'Una fuente necesita `url`. Solo `type: "unverified"` puede omitirla, y entonces ' +
+      '`detalle` es obligatorio: emisora y hora de la emisión, o quién observó y dónde.',
+    path: ['url'],
+  });
 export type Source = z.infer<typeof SourceSchema>;
 
 /**

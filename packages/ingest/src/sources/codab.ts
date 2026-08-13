@@ -5,7 +5,7 @@
  * (`CO05002`) equivalen a DIVIPOLA, así que sirven de llave tanto con datos
  * nacionales como con el resto del ecosistema humanitario.
  *
- * **Esto NO corre en el cron de 15 minutos.** Los límites municipales no cambian durante
+ * **Esto NO corre en el cron de 30 minutos.** Los límites municipales no cambian durante
  * un desastre, y la descarga son 117 MB. Se ejecuta a mano con `npm run boundaries`
  * cuando haga falta actualizarlos.
  *

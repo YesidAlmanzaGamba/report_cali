@@ -10,9 +10,16 @@
 import { fetchJson } from '../http.js';
 import { EVENT_ID, type Source } from '../schema.js';
 
+/**
+ * Página del evento en el USGS. Se declara aparte de `USGS_SOURCE` porque `Source.url`
+ * pasó a ser opcional —solo las fuentes `unverified` pueden omitirlo, ver ADR-013— y
+ * desde el tipo ya no se puede afirmar que esta la tiene. La constante sí.
+ */
+export const USGS_EVENT_PAGE = `https://earthquake.usgs.gov/earthquakes/eventpage/${EVENT_ID}`;
+
 export const USGS_SOURCE: Source = {
   name: 'USGS',
-  url: `https://earthquake.usgs.gov/earthquakes/eventpage/${EVENT_ID}`,
+  url: USGS_EVENT_PAGE,
   type: 'official',
 };
 
@@ -103,7 +110,7 @@ export function parseEvent(raw: unknown): EarthquakeEvent {
     alert: typeof properties.alert === 'string' ? properties.alert : null,
     originTime: new Date(expectNumber(properties.time, 'properties.time')).toISOString(),
     updatedAt: new Date(expectNumber(properties.updated, 'properties.updated')).toISOString(),
-    url: typeof properties.url === 'string' ? properties.url : USGS_SOURCE.url,
+    url: typeof properties.url === 'string' ? properties.url : USGS_EVENT_PAGE,
     shakemapBaseUrl,
     maxMmi: maxMmi !== null && Number.isFinite(maxMmi) ? maxMmi : null,
   };

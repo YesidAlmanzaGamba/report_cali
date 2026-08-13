@@ -121,7 +121,7 @@ describe('writeDataset', () => {
       const primera = await writeDataset({ ...args, observations: [observation()] });
       assert.equal(primera.changed, true);
 
-      // Corrida siguiente del cron, 15 minutos después: mismo dato, otra hora de ingesta.
+      // Corrida siguiente del cron, 30 minutos después: mismo dato, otra hora de ingesta.
       const segunda = await writeDataset({
         ...args,
         observations: [observation({ ingested_at: '2026-08-11T14:27:03Z' })],
