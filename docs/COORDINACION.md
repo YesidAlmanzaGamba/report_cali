@@ -48,6 +48,7 @@ fusionarlo y al descartarlo. Lo que no esté anotado aquí, para el siguiente no
 | `datos/puntos-de-ayuda` | `agente-datos` | `data/ayuda/puntos.geojson` + sedes en la extracción. Ver tarea 4 | `fusionada` |
 | `ui/ronda-3-clutter-y-transiciones` | `agente-ui` | Ronda 3 tarea 1, más limpieza de z-index/solapes y transiciones más rápidas pedidas por el responsable del proyecto. **Incluye una anulación explícita de ADR-001** — ver sección propia abajo | `fusionada` — revisada, ver respuesta abajo |
 | `ui/ronda-3-clutter-y-transiciones` (2.ª tanda) | `agente-ui` | Ficha cerrable al tocar (el mismo municipio o fuera de todo polígono), leyendas que se repliegan al abrir la ficha, `id` en la leyenda de MMI. Más dos intentos de repliegue del encabezado | `fusionada parcialmente` — **el repliegue del encabezado no entró**, ver abajo |
+| `ui/ronda-4-trama-urbana-y-nombres` | `agente-ui` | Trama urbana visible (relleno + líneas, tinta según lo que tapa), nombres de municipio sobre el mapa con colisión, `maplibre-gl.css` fuera de la ruta bloqueante (−9.711 B), y el arreglo de la trama que se quedaba pegada al cerrar la ficha. **Trae una petición cruzada: regenerar `secciones/` para los 1.122 municipios** | `fusionada` — revisada, ver respuesta abajo |
 
 ---
 
@@ -723,6 +724,248 @@ en la primera y `›` desactivada en la última.
 
 ---
 
+# 🔧 Ronda 4 — trama urbana visible y nombres de ciudad
+
+Rama `ui/ronda-4-trama-urbana-y-nombres`. Encargo del responsable del proyecto: **que la
+trama urbana se vea al tocar un municipio** («no es posible verlo en la aplicación», pidió
+más grosor de línea), **que haya zonas urbanas en todos los municipios**, y **nombres para
+ubicarse, con las ciudades principales destacadas**, «porque la gente no conoce la
+geografía». La capa de puntos de ayuda queda explícitamente para después.
+
+Puerta completa en verde tras los cambios: `typecheck` 0 errores, `test` 242/242, `build`,
+`check-no-personal-data.sh`. Sin errores ni avisos de consola. Sin JavaScript la tabla sigue
+servida en el HTML (27 filas con nombre de municipio), así que la página sigue sirviendo.
+
+## Por qué no se veía: cuatro causas, y la peor no era el grosor
+
+La capa era una sola línea con `line-color: '#00000055'` **y además** `line-opacity` con
+tope 0,4. MapLibre los **multiplica**, así que la opacidad efectiva máxima era
+`0,33 × 0,4 = 0,133` sobre una línea de 0,6 px. La rampa de zoom se agregó en algún momento
+sin quitarle el alfa al color.
+
+**Pero lo que de verdad lo hacía invisible es otra cosa, y solo salió midiendo en vivo:** la
+rampa era `interpolate(zoom, 10 → 0, 13 → 0,4)` y **`acercarA()` aterriza en z10,13** al
+tocar un municipio grande (el casco de Cali es tan ancho que `fitBounds` no pasa de ahí).
+Evaluado a ese zoom:
+
+> opacidad efectiva de las líneas al tocar un municipio = **0,0058**. Cero coma cincuenta y
+> ocho por ciento.
+
+O sea que no estaba tenue: **no estaba**. La captura del antes es un polígono amarillo plano
+sin una sola marca. Las dos capturas, mismo encuadre, están en el material de la sesión.
+
+Además: el color estaba fijo en negro, así que en modo oscuro eran líneas negras sobre un
+fondo `#0c0e12`; y al no haber relleno, nada daba la lectura de «aquí está lo construido».
+
+## Qué quedó
+
+**Dos capas en vez de una**, las dos con `beforeId: 'municipios-borde'` para no velar el
+epicentro, las réplicas ni los límites (que sin mapa base son el esqueleto del mapa):
+
+- **`secciones-relleno`** — la *masa* del casco, que es lo que se ve de un vistazo:
+  `fill-opacity: interpolate(zoom, 8 → 0, 9.5 → 0.16, 13 → 0.10)`. El pico cubre la banda
+  por la que pasa la cámara; a z13 baja, porque con el casco llenando la pantalla un velo
+  sobre *todo* ya no informa de una forma y solo le cuesta fidelidad a la coropleta.
+- **`secciones-borde`** — la trama de manzanas: `line-width: 0.8 → 1.4 → 2 px` (z11/13/15),
+  `line-opacity: 0 → 0.55 → 0.8` (z10,5/12/14), `line-join: round` (las 967 secciones de
+  Cali astillaban los miters a 2 px). Medido a z14: **1,7 px y 0,8 de opacidad, o sea 6× la
+  opacidad y 2,8× el ancho** de antes.
+
+**La regla que evita la recaída, escrita en el código:** el alfa se expresa en **un solo
+sitio**. Aquí hace falta rampa por zoom, así que vive en `*-opacity` y los colores van en
+hex opaco. El comentario lleva la aritmética `0x55/255 × 0,4 = 0,133` para que se vea qué
+pasó.
+
+**La tinta la decide lo que hay debajo, no el tema de la página.** Donde hay MMI, debajo del
+casco hay un color del USGS que es **el mismo en claro y en oscuro** (ADR-009), así que
+mirar `prefers-color-scheme` daría negro sobre amarillo brillante en un tema y blanco sobre
+el mismo amarillo en el otro. `tintaSobreMunicipio()` reutiliza `levelFor().ink`, que ya
+resuelve esa pregunta para la insignia de grado de la ficha, así que las dos no pueden
+discrepar. Sin MMI el polígono es casi transparente y ahí sí manda el tema. Verificado: con
+Cali abierta (MMI 6,7) la tinta sale `#1a1a1a`.
+
+De paso, un fallo latente: `estiloBase()` leía el tema **una sola vez**, así que cambiar el
+tema del sistema con la página abierta dejaba el fondo del mapa en claro bajo una interfaz
+oscura. Ahora hay un `change` sobre la consulta que repinta fondo y trama.
+
+## Nombres de municipio: marcadores HTML, no una capa de símbolos
+
+Lo cartográficamente normal sería `type: 'symbol'` con `text-field`. **No se puede:** una
+capa de símbolos no dibuja nada sin una URL de `glyphs`, el estilo de este mapa no tiene
+ninguna, y ADR-010 prohíbe depender de un proveedor externo. Autoalojar glifos serían
+cientos de kilobytes y una herramienta de compilación nueva. Con marcadores HTML no hace
+falta ninguna dependencia, **el tema sale gratis de `tokens.css`** (las propiedades
+personalizadas heredan hasta dentro del marcador) y el texto es texto.
+
+Todo sale de datos que ya estaban en memoria por el cruce de `mapa.ts` — **ni un `fetch`
+nuevo**.
+
+**No hay nombres de barrio y no los va a haber por esta vía:** las secciones del DANE solo
+publican códigos (`secu_ccnct`, `setu_ccnct`). Poner «Sector 1808» sería peor que no poner
+nada. Se rotula el municipio.
+
+**Capital de departamento ⇔ `pcode === admin1_pcode + '001'`.** Comprobado contra los datos:
+la cumplen exactamente 33 municipios y hay 33 departamentos. Un solo falso positivo, y va
+por nombre y no por umbral de población: **`CO25001` Agua de Dios**, porque la capital de
+Cundinamarca es Bogotá, que es entidad aparte. Un mínimo de población habría sido más corto y
+habría tirado cuatro capitales de verdad (Puerto Carreño 21.160, Inírida 36.587, Mitú 40.675,
+Leticia 56.015).
+
+**Importancia = `log10(población) + 1,2 si es capital + escalón si MMI ≥ 6.** El escalón no
+es un detalle: con un premio lineal por MMI, **Barranquilla (MMI 4,5, a 800 km) le ganaba a
+Quibdó**, que es la capital del departamento del epicentro, en un mapa de un terremoto. Con
+el escalón el orden que sale en pantalla es Manizales, Pereira, Cali, Armenia, Quibdó,
+Ibagué, Bogotá, Medellín — verificado, es exactamente el que aparece.
+
+**La colisión hay que escribirla a mano** (los marcadores HTML no la traen). Pase voraz sobre
+la lista ya ordenada, en tres fases separadas para que un pase cueste **un solo** recálculo
+de diseño: se leen los rectángulos de los paneles una vez, se decide con aritmética
+(`project()` es una multiplicación de matrices) y se escribe al final. El texto se mide con
+`measureText` sobre una fuente leída de una sonda **una vez por nivel**, nunca con
+`getBoundingClientRect()` por etiqueta. Medido: **0,097 ms por pase**, 40× por debajo del
+presupuesto de 4 ms.
+
+**Los obstáculos se leen, no se adivinan.** En vez de restar `altoTapadoAbajo()` se leen los
+rectángulos de `#controles-superiores`, `#detalle`, las dos leyendas, `#hoja` y el control de
+zoom, y se siembran en la lista de ocupados: así un mismo test resuelve etiqueta-contra-panel
+y etiqueta-contra-etiqueta. Cubre además la ficha de **escritorio**, que vive arriba a la
+derecha y a la que `altoTapadoAbajo()` no protege. Un rectángulo de tamaño cero cubre de una
+vez `hidden`, `display:none` y replegado.
+
+**Trampa de coordenadas que costó tenerla presente:** `project()` devuelve píxeles relativos
+al contenedor y `getBoundingClientRect()` relativos a la ventana, y entre medias está el
+encabezado. Se resta el origen del contenedor.
+
+**El ancla tiene que estar dentro del polígono, y no es estético.** Las etiquetas son
+`pointer-events: none`, así que **un toque sobre el nombre atraviesa y abre el municipio de
+debajo** — que es la respuesta a «¿debería poder tocarse?», gratis. Si el ancla cayera fuera,
+tocar el nombre abriría el vecino. Por eso no vale el centro de la caja envolvente:
+`puntoRepresentativo()` toma el anillo de mayor área, lo corta por su latitud media y
+devuelve el centro del tramo interior más largo, que por paridad está dentro por
+construcción. **Verificado tocando el texto «Cali»: abre Cali.**
+
+**Fuera del árbol de accesibilidad, y no por descuido.** `Marker.addTo()` pone
+`role="button"` y `aria-label="Map marker"` —en inglés— a todo elemento que no los traiga,
+así que sin `aria-hidden` + `role="presentation"` un lector de pantalla encontraría hasta
+catorce botones falsos en inglés. Ocultarlas es además lo correcto: duplican la tabla de
+municipios, que ya lista todos con su intensidad, se recorre con el teclado y funciona sin
+JavaScript.
+
+## Dos fallos encontrados midiendo, ninguno pedido
+
+1. **La trama se quedaba pegada al cerrar la ficha.** El vaciado de las fuentes vivía suelto
+   dentro del botón «← Ver todo», así que cerrar por cualquier otra vía —la `×`, tocar el
+   mismo municipio otra vez, tocar fuera de todo polígono— dejaba la trama y los incidentes
+   del municipio anterior pintados encima del mapa. Se notaba poco mientras la trama era
+   invisible; con relleno y 6× más opacidad se notaría mucho. Ahora lo hace
+   `limpiarCapasDeMunicipio()`, llamado desde `cerrarFicha()`, que es por donde pasan todos.
+   Verificado con el renderizador y no con la fuente: a z14, con Cali abierta, 131 secciones
+   pintadas; al cerrar, **0**, sin mover la cámara.
+2. **Una etiqueta se salía del mapa.** Comprobar el ancla contra `getBounds()` no basta: un
+   ancla justo dentro del borde deja el nombre medio fuera. Con Cali abierta, «Candelaria»
+   tenía el ancla dentro y la caja fuera. Ahora se exige que **el rectángulo entero** quepa
+   en el contenedor. Es justo la clase de fallo que la comprobación de abajo existe para
+   cazar, y la cazó.
+
+## Y el hallazgo que más pesa: `maplibre-gl.css` bloqueaba el pintado
+
+**El proyecto llevaba rondas midiéndose mal la carga inicial, por 9,9 KB.** En
+`dist/index.html` había **dos** hojas de estilo bloqueantes, y la receta del tablero solo
+mira `index.*.css`, así que nunca vio la segunda:
+
+| | gzip | qué es |
+|---|---|---|
+| `_astro/index.*.css` | 5.627 B | nuestros estilos |
+| `_astro/mapa.*.css` | **9.946 B** | `maplibre-gl.css` puro (0 `astro-cid`) |
+
+El comentario en `mapa.ts` aseguraba que ese `import` «viaja en el mismo trozo que MapLibre y
+no en la carga inicial». **Era falso:** Astro sube el CSS de todo el grafo de módulos de la
+página —importaciones dinámicas incluidas— a un `<link>` en `<head>`. Así que «estamos 3 KB
+por encima de 12» era en realidad «estamos 13 KB por encima, y 9,9 de ellos son una hoja que
+nadie contaba».
+
+Arreglado con `?url`: Vite emite el archivo y **no** inyecta el `<link>`; lo pide
+`cargarHoja()` justo antes de construir el mapa, se arranca la petición **antes** del
+`Promise.all` de datos para que descargue en paralelo, y se resuelve con `load`, con `error`
+o al vencer un plazo de 3 s — una hoja que no llega tiene que degradar a un mapa feo, nunca a
+ningún mapa. Comprobado que `?url` respeta `base`: con `PUBLIC_BASE=/report_cali/` la URL
+sale `/report_cali/_astro/maplibre-gl.…css`, así que el espejo de GitHub Pages sigue bien.
+
+| | gzip bloqueante |
+|---|---|
+| al empezar la ronda (medido de verdad) | 25.742 B — **25,14 KB** |
+| **ahora** | 16.031 B — **15,66 KB** |
+
+**−9.711 B, un 37,7 % menos**, con todo lo de esta ronda dentro. Sigue por encima de los
+12 KB de la spec, pero ahora el número dice la verdad y el resto ya no es un misterio: son
+`index.html` (7.638) + nuestro CSS (5.627) + el script de arranque (2.766).
+
+Nota de dónde acaba el CSS nuevo: `etiquetas.css` es pequeño, así que Astro **lo incrusta en
+un `<style>` dentro de `index.html`** en vez de enlazarlo. Cuesta **+331 B** comprimidos y
+está anotado en su cabecera para que nadie lo dé por diferido.
+
+## Cómo se verificó, y qué no se pudo verificar
+
+Comprobación pegable en la consola que lee todas las etiquetas y todos los paneles visibles y
+devuelve `{total, nombres, fueraDelMapa, tapadas, solapadas, ariaExpuestas}`. Corrida en
+cuatro estados —vista inicial, **Cali abierta con la ficha ocupando la mitad de abajo**, z10
+general, y después de «← Ver todo»—, con el mismo resultado en los cuatro:
+
+| | resultado |
+|---|---|
+| `fueraDelMapa` | `[]` |
+| `tapadas` | `[]` — incluido el estado con la ficha tapando 423 px de 847 |
+| `solapadas` | `[]` |
+| `ariaExpuestas` | `0` |
+| reparto con ficha abierta | mapa 423 px / ficha 423 px de 847 — mitad y mitad |
+| trama pintada, Cali z10 | 967 secciones según `queryRenderedFeatures` |
+| color calculado de la etiqueta | `rgb(20,22,26)` = `--tinta`, y `800 13px system-ui` |
+
+Ese último dato importa: `maplibre-gl.css` le pone `font: … Helvetica Neue, Arial` a
+`.maplibregl-map` y los marcadores viven dentro, así que sin el `font-family` propio los
+nombres habrían salido en Arial. Se verificó que sale `system-ui`.
+
+**Dos cosas que no se pudieron verificar como manda el tablero, y lo digo en vez de
+apuntarlas como hechas:**
+
+1. **No se pudo medir a 390 px de ancho.** Windows no deja que una ventana baje de ~517 px,
+   así que el ancho de CSS más estrecho alcanzable fue **502 px**. Sigue dentro de la rama
+   móvil del proyecto (`≤ 40rem` = 640 px), así que las reglas de celular sí se ejercitaron
+   —el reparto mitad y mitad, los controles, la ficha pegada abajo—, pero **390 px en sí no
+   se midió**. Lo que queda sin comprobar es la densidad de colisión en 112 px menos de
+   ancho: con menos sitio, la colisión descarta más nombres, que es degradación y no fallo,
+   pero conviene mirarlo en un teléfono real.
+2. **El modo oscuro no se pudo emular a nivel de sistema** desde este entorno. Sí se verificó
+   la parte que se podía: las etiquetas se recolorean **solo con CSS** al sustituir los
+   tokens por los del bloque oscuro de `tokens.css` (el color calculado cambia sin tocar
+   JavaScript), y la tinta de la trama sale de `levelFor().ink`, que no depende del tema. Lo
+   que falta por ver a ojo es el caso «municipio sin MMI en modo oscuro», que es la rama que
+   hoy **no se puede dar** porque los 111 municipios con casco tienen todos MMI ≥ 6,5. Esa
+   rama despierta justo cuando entre la petición cruzada de arriba.
+
+## Limitación conocida del anclaje, medida
+
+El ancla es el punto representativo del **municipio**, no la cabecera, porque no hay
+coordenada de cabecera en los datos. Medida la distancia del ancla al centro del casco:
+
+| | km al casco | ¿dentro del casco? |
+|---|---|---|
+| Cali | 3,3 | sí |
+| Manizales | 4,2 | sí |
+| Pereira | 4,9 | sí |
+| Armenia | 6,1 | sí |
+| Ibagué | 6,2 | sí |
+| **Quibdó** | **37,4** | **no** |
+
+Quibdó es un municipio enorme y su centro geométrico no es el pueblo. El nombre sigue
+**dentro del polígono de Quibdó** —así que tocarlo abre Quibdó, que es lo que protege el
+algoritmo—, pero no está sobre la ciudad. A zoom nacional 37 km son unos pocos píxeles; de
+cerca sería engañoso. El **municipio abierto ya no tiene este problema**: usa el centro del
+casco, que `acercarA()` ya calcula. Para el resto hace falta el `bbox` en
+`secciones/index.json` que se pide arriba.
+
+---
+
 # 🔧 Para `agente-ui` — tareas de esta ronda
 
 **En orden.** Las tres primeras son fallos reales que ya están en producción; las demás
@@ -913,38 +1156,146 @@ en las noticias y cree que el mapa muestra eso).
 
 ---
 
+## Respuesta de `agente-datos` a la ronda 4: fusionada, y me corregiste un error mío
+
+Fusionada en `main`. Puerta completa en verde **sobre el árbol ya fusionado**, no sobre tu
+rama: `typecheck` 0 errores, **279 pruebas**, `build`, `check-no-personal-data.sh`.
+
+`mapa.ts` lo tocamos los dos y `git` fusionó solo. Como eso ya nos mintió una vez, lo
+comprobé a mano: en `cerrarFicha()` conviven las tres líneas —`marcarFichaAbierta(false)`
+(mío), `limpiarCapasDeMunicipio()` y `etiquetas?.fijarAbierto(null)` (tuyos)— y el bloque
+de cobertura sigue pintándose. Verificado en vivo con Cartago abierto: el aviso «ningún
+medio ha publicado» sale, `data-ficha` se pone y se quita, y las ocho etiquetas vuelven al
+cerrar.
+
+### Lo de `maplibre-gl.css` es un hallazgo tuyo que corrige un error mío, y hay que decirlo
+
+**Todas las cifras de carga que reporté en esta sesión estaban mal**, y por tu causa
+—en el buen sentido— ahora sé por qué. Vengo diciendo «15,10 KB», «15,43 KB», «seguimos
+3 KB por encima de los 12» usando la receta del tablero, que globa `index.*.css`. Nunca vio
+`mapa.*.css`. El bloqueante real era ~25 KB: **estábamos 13 KB por encima, no 3**.
+
+No es un matiz. Sobre el 3G malo que este proyecto pone como caso real, son ~9,9 KB extra
+antes del primer pintado, y llevábamos rondas optimizando contra un número inventado.
+Recortar 134 B por quitar dos listeners, como hice ayer, mientras 9.946 B pasaban sin
+contarse, es exactamente el tipo de trabajo que se siente productivo y no lo es.
+
+Las dos trampas ya están en «Trampas conocidas» de `CLAUDE.md`, con la receta correcta
+—leer del `index.html` construido qué se enlaza de verdad— y con la de los comentarios HTML
+que te quedaba pendiente de la ronda anterior. **Petición 2: hecha.**
+
+### Dos cosas que te fui a discutir y resultó que las tenías bien
+
+Las anoto porque la conclusión es que mis comprobaciones estaban mal, no tu trabajo:
+
+1. **Creí que las etiquetas quedaban expuestas al lector de pantalla.** Mi prueba contaba
+   elementos con `aria-label`, y MapLibre deja el suyo puesto. Pero llevan
+   `aria-hidden="true"`, que las saca del árbol de accesibilidad entero: el `aria-label`
+   sobrante es inerte. Tu `ariaExpuestas: 0` es correcto.
+2. **Creí ver dos hojas bloqueantes en el navegador.** Son dos en el DOM porque
+   `cargarHoja()` inyecta la segunda en tiempo de ejecución — que es justo tu arreglo.
+   En el `index.html` construido hay **una**, medido. Tu número es el bueno.
+
+### Sobre lo que no pudiste verificar
+
+Lo de los 390 px lo puedo cubrir yo: Windows no deja encoger la ventana, pero un `iframe`
+de 390 px sí evalúa las media queries a ese ancho, y es como vengo midiendo la ficha toda
+la sesión. Si quieres te lo mido en la próxima; dilo aquí.
+
+Y un aviso que te ahorra media hora, porque me ha pasado tres veces: **en pestaña ocluida
+no hay fotogramas**, así que las transiciones se congelan, `requestAnimationFrame` no corre
+y `moveend` no dispara. Justo ahora leí «0 etiquetas» después de «← Ver todo» y parecía un
+fallo de la fusión: eran ocho, y aparecieron en cuanto forcé un fotograma con una captura.
+Sospecha de eso antes que del código.
+
+### Peticiones 1 y 3: pendientes, y la 1 necesita una decisión del responsable
+
+**Regenerar `secciones/` para los 1.122 municipios** no lo hago por mi cuenta porque no es
+un cambio de código: `data/` pasa de ~2,0 MB a ~13 MB **versionados para siempre**, y el
+historial de git es el mecanismo de procedencia del proyecto (ADR-004). Tienes razón en que
+el coste en tiempo de ejecución no cambia y en que la geometría es estática, así que
+técnicamente es un crecimiento único y limpio. Es una decisión de repositorio, no de
+interfaz ni de datos, y la tiene que tomar el responsable. **Queda planteada con tu
+argumento y con este.**
+
+El `bbox` por municipio (petición 3) sale gratis en la misma corrida, así que lo natural es
+hacer las dos a la vez si se aprueba la primera.
+
+---
+
 ## Peticiones cruzadas
 
 Cuando necesitas algo del otro lado de la frontera de archivos. No lo edites tú.
 
 | Pide | A | Qué necesita | Estado |
 |---|---|---|---|
-| `agente-datos` | `agente-ui` | **Cómo se ve una fuente sin enlace** (ADR-013). Ver abajo | pendiente |
+| `agente-datos` | `agente-ui` | **Cómo se ve una fuente sin enlace, y sobre todo cómo se lee el `detalle` en un celular** (ADR-013). Ver la sección propia abajo | pendiente |
 
-## Petición: una fuente sin enlace no puede verse igual que una con enlace
+| `agente-ui` | `agente-datos` | **Regenerar `data/secciones/` para los 1.122 municipios**: `npm run secciones -w @report-cali/ingest -- --mmi 0`. Hoy hay **111** (el generador filtró a MMI ≥ 6,5), así que **tocar cualquiera de los otros 1.011 no muestra ningún casco urbano**. Lo pidió el responsable del proyecto con estas palabras: «es necesario buscar en cada mapa las zonas urbanas de los municipios». Son 30.520 secciones y `data/secciones/` pasa de ~2,0 MB a ~13 MB, pero **el coste en tiempo de ejecución no cambia** —los archivos se piden de uno en uno al tocar— y la geometría urbana es estática, así que es un crecimiento único y no ruido del cron. **La interfaz ya funciona bien con y sin esto**: `cargarSecciones()` devuelve `undefined` para los que faltan y las dos capas nuevas no pintan nada | pendiente |
+| `agente-ui` | `agente-datos` | **Dos trampas de Astro para «Trampas conocidas» de `CLAUDE.md`** (es tu columna). (1) **Astro sube el CSS de todo el grafo de módulos de la página a la carga inicial, incluidas las importaciones dinámicas** — si es grande lo enlaza con un `<link>` bloqueante, si es pequeño lo incrusta en un `<style>`. Un `import './x.css'` dentro de un módulo diferido **no** viaja diferido: así estuvo `maplibre-gl.css` metiendo 9.946 B en la ruta bloqueante bajo un comentario que aseguraba lo contrario. La salida es `?url` + inyección en tiempo de ejecución. (2) **La receta de medición de carga del tablero estaba incompleta**: globa solo `index.*.css`, así que no veía la segunda hoja. Hay que medir `grep -o 'rel="stylesheet"' dist/index.html` **y** todos los `dist/_astro/*.css` que salgan ahí. Sigue pendiente de la ronda anterior la de que **Astro no borra los comentarios HTML** | pendiente |
+| `agente-ui` | `agente-datos` | **Un `bbox` por municipio en `data/secciones/index.json`** (4 números por entrada, ~111 entradas hoy). Con eso los nombres del mapa se podrían anclar al **casco** en vez del centro geométrico del municipio. Medido: para Cali, Manizales, Pereira, Ibagué y Armenia el ancla actual cae dentro del casco (3–6 km del centro), pero **para Quibdó cae a 37,4 km** — el municipio es enorme y su centro geométrico no es el pueblo. Hoy no se puede arreglar sin bajar los 111 topojson. No es urgente: a zoom nacional 37 km son unos pocos píxeles, y el municipio abierto ya usa el centro del casco | pendiente, no urgente |
 
-**Contexto en una línea:** desde ADR-013, una fuente `unverified` puede no tener `url` si
-trae `detalle` («Radio Versalles 1250 AM, boletín de las 14:00»). Es lo que permite
-registrar los 179 municipios golpeados de los que no informa ningún medio.
+---
 
-**Entré en tu columna, y lo digo de frente.** El cambio de esquema rompía el `typecheck`
-en `apps/web/src/lib/mapa.ts:695` (`a.href = o.source.url` con `url` ahora opcional).
-Dejarlo roto te bloqueaba a ti y al CI, así que puse **lo mínimo para que compile y no
-mienta**: si hay `url`, un enlace como siempre; si no, el nombre en un
-`<span class="fuente-sin-enlace">` con el `detalle` en `title`. **Ni una línea de CSS.**
+## Petición a `agente-ui`: el `detalle` de una fuente hay que poder leerlo con el dedo
 
-**Lo que te pido es la parte de diseño**, que no es mía:
+**Es la petición más urgente de las cuatro**, porque sin ella una función nueva queda
+inservible justo en el dispositivo para el que se diseñó el proyecto entero.
 
-1. Que se distinga a simple vista de un enlace. Hoy un lector ve el mismo texto y no sabe
-   si puede tocarlo. `.fuente-sin-enlace` está sin estilar a propósito, esperándote.
-2. Que el `detalle` se pueda leer **sin depender del `title`**: en un celular no hay
-   hover, así que hoy esa información es inalcanzable con el dedo. Es la única forma que
-   tiene alguien de comprobar el dato, así que esconderla lo vacía de sentido.
-3. `Cifras.astro:49` hace `<a href={o.source.url}>`. **No rompe** —Astro acepta `href`
-   indefinido y omite el atributo— pero deja un `<a>` sin destino, que para un lector de
-   pantalla es un enlace roto. Merece el mismo trato que le des a `mapa.ts`.
+**Contexto.** Desde **ADR-013**, una fuente `unverified` puede no tener `url` si trae
+`detalle` — «Radio Versalles 1250 AM, boletín de las 14:00 del 12 de agosto». Es lo que
+permite registrar los **179 municipios golpeados de los que no informa ningún medio**, y
+lo que hace que la emisora local pueda entrar al mapa. Sin eso, Versalles y Cartago
+siguen en blanco.
 
-Si prefieres que revierta mi parche de `mapa.ts` y lo hagas entero, dilo aquí y lo quito.
+### El problema, en una frase
+
+**El `detalle` hoy solo se alcanza por el atributo `title`, y en un celular no hay hover.**
+
+O sea que en el dispositivo que `CLAUDE.md` pone como usuario primario —«socorristas y
+organizaciones locales en un celular con mala conexión»— esa información **no existe**.
+Y no es un adorno: es *lo único* que hace comprobable el dato. Una fuente sin enlace cuya
+procedencia no se puede leer es exactamente el «número pelado» que ADR-003 prohíbe.
+
+Es el mismo error de forma que ya mediste tú en la ronda 3 con `#buscas`: algo que está en
+el marcado y no está en la pantalla. `grep` dice que existe; solo el rectángulo dice que
+se ve.
+
+### Qué pido, en orden de importancia
+
+1. **Que el `detalle` se pueda leer tocando**, no pasando el ratón. Un `<details>`, una
+   línea secundaria bajo el nombre, un toque que lo despliega — lo que encaje con la
+   ficha. La forma es tuya; lo que no puede quedarse es un `title` como único acceso.
+2. **Que una fuente sin enlace se distinga de un enlace a simple vista.** Hoy se ven
+   iguales y quien lee no sabe si puede tocarla. `.fuente-sin-enlace` está **sin una sola
+   regla de CSS a propósito**, esperándote.
+3. **`Cifras.astro:49`** hace `<a href={o.source.url}>`. No rompe —Astro omite el atributo
+   si es indefinido— pero deja un `<a>` sin destino, que para un lector de pantalla es un
+   enlace roto. Merece el mismo trato que le des a `mapa.ts`.
+
+### Lo que ya hice, y por qué entré en tu columna
+
+El cambio de esquema rompía el `typecheck` en `apps/web/src/lib/mapa.ts` (`a.href =
+o.source.url`, con `url` ahora opcional). Dejarlo roto te bloqueaba a ti **y al CI**, así
+que puse lo mínimo para que compile y no mienta: con `url`, un enlace como siempre; sin
+`url`, el nombre en un `<span class="fuente-sin-enlace">` y el `detalle` en `title`.
+**Ni una línea de CSS**, para no pisarte el diseño.
+
+Si prefieres revertir mi parche y hacerlo entero desde cero, dilo aquí y lo quito.
+
+### Cómo probarlo sin esperar datos de campo
+
+No hace falta que llegue una observación de radio. En la consola, sobre una ficha abierta:
+
+```js
+// Simula una fuente sin enlace como las que produce `npm run campo`.
+const f = document.querySelector('#detalle-cifras .f');
+f.innerHTML = 'NO VERIFICADA · <span class="fuente-sin-enlace"
+  title="Radio Versalles 1250 AM, boletín de las 14:00 del 12 de agosto">Radio Versalles</span>';
+```
+
+Y la comprobación que importa, con tus propias reglas: **a 390 px, ¿se puede llegar al
+detalle con el dedo y sin teclado?** Si la respuesta es no, todavía no está.
 
 ---
 

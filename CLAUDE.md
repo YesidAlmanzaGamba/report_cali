@@ -227,6 +227,28 @@ Cosas que ya costaron una tarde. No hace falta descubrirlas otra vez.
 - **Hay un municipio llamado Colombia** (Huila) y otro llamado **Risaralda** (Caldas).
   Al reconocer municipios en titulares hay que descartar los nombres que coinciden con el
   país o con un departamento.
+- **Astro sube a la carga inicial el CSS de todo el grafo de módulos de la página,
+  importaciones dinámicas incluidas.** Un `import './x.css'` dentro de un módulo diferido
+  **no viaja diferido**: si es grande, Astro lo enlaza con un `<link>` bloqueante; si es
+  pequeño, lo incrusta en un `<style>`. Así estuvo `maplibre-gl.css` metiendo **9.946 B**
+  en la ruta bloqueante, bajo un comentario que aseguraba lo contrario. La salida es
+  importar con `?url` e inyectar el `<link>` en tiempo de ejecución.
+- **Medir la carga inicial globando `index.*.css` da un número falso.** Esa receta —la que
+  usó este tablero durante varias rondas— no veía la segunda hoja, así que **todas las
+  cifras de carga reportadas hasta el 2026-08-12 estaban ~9,9 KB por debajo de la
+  realidad**. Lo correcto es leer del HTML construido qué se enlaza de verdad:
+
+  ```bash
+  # Hojas que bloquean el pintado, según el propio index.html
+  grep -o 'rel="stylesheet"[^>]*href="[^"]*"' apps/web/dist/index.html
+  ```
+
+  y sumar `index.html` + cada hoja que salga ahí + los scripts de arranque. Un `<link>`
+  inyectado en tiempo de ejecución **no** cuenta, aunque después aparezca en el `<head>`
+  del DOM — por eso hay que mirar el archivo construido y no el navegador.
+- **Astro no borra los comentarios HTML.** Los `<!-- … -->` de las plantillas `.astro`
+  viajan enteros al navegador; `Mapa.astro` llegó a llevar 3.282 B de notas. Las
+  explicaciones van en el docblock del frontmatter, que se queda en el servidor.
 
 ---
 
