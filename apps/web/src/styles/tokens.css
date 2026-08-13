@@ -29,12 +29,12 @@
   --ancho: 66rem;
 
   /* Medidas de la interfaz móvil.
-     `--asomada` es cuánto de la hoja queda a la vista sin tocarla: el asa, la cifra
-     principal y la tira de cifras nacionales. Sube de 6,5 a 9,25 rem porque esa tira
-     —fallecidos, desaparecidos, heridos, colapsos— es justo lo que se venía a mirar, y
-     antes exigía desplegar la hoja para verlo. */
+     `--asomada` es cuánto de la hoja queda a la vista sin tocarla: el asa y la tira de
+     cifras nacionales, nada más. Son 5,25 rem — menos que los 6,5 que había antes de
+     que existiera la tira, porque la tira sustituye al renglón de resumen en vez de
+     sumarse a él. Cada rem de aquí sale del mapa. */
   --encabezado: 3.25rem;
-  --asomada: 9.25rem;
+  --asomada: 5.25rem;
   --seguro-abajo: env(safe-area-inset-bottom, 0px);
 }
 

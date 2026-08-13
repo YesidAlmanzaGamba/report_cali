@@ -194,4 +194,54 @@ export function iniciarHoja(): void {
   // El alto de la hoja se mide en píxeles al arrastrar; si la ventana cambia de
   // tamaño, esos píxeles ya no corresponden al anclaje.
   window.addEventListener('resize', () => fijar(estadoActual()));
+
+  recorrerTira();
+}
+
+/**
+ * La tira de cifras nacionales avanza sola, en bucle.
+ *
+ * Es la única franja que se ve sin desplegar la hoja, y no cabe entera: sin movimiento,
+ * las últimas cifras —heridos, colapsos— no existían para quien no supiera que se puede
+ * deslizar ahí.
+ *
+ * Se detiene al primer gesto y no vuelve. Quien está mirando una cifra concreta no
+ * quiere que se le mueva: en el momento en que alguien toca, el automatismo ha dejado
+ * de ser útil y pasa a estorbar.
+ */
+function recorrerTira(): void {
+  const tira = document.getElementById('tiras');
+  if (!tira) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const PASO = 3200; // ms por cifra: da tiempo a leer número y etiqueta
+  let indice = 0;
+  let vivo = true;
+
+  const detener = (): void => {
+    vivo = false;
+    window.clearInterval(reloj);
+  };
+
+  const reloj = window.setInterval(() => {
+    if (!vivo) return;
+    // Si no sobra nada que desplazar, no hay bucle que hacer.
+    const sobrante = tira.scrollWidth - tira.clientWidth;
+    if (sobrante <= 4) return;
+
+    const fichas = [...tira.children] as HTMLElement[];
+    indice = (indice + 1) % fichas.length;
+    const destino = fichas[indice];
+    if (!destino) return;
+
+    // Al dar la vuelta se vuelve al principio de golpe; avanzar es suave.
+    tira.scrollTo({
+      left: indice === 0 ? 0 : destino.offsetLeft - tira.offsetLeft,
+      behavior: indice === 0 ? 'auto' : 'smooth',
+    });
+  }, PASO);
+
+  for (const evento of ['pointerdown', 'wheel', 'touchstart', 'keydown'] as const) {
+    tira.addEventListener(evento, detener, { passive: true, once: true });
+  }
 }
