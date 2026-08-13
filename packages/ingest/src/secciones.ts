@@ -2,14 +2,33 @@
  * Construye la geometría urbana por municipio. Se ejecuta a mano, NO en el cron.
  *
  *   npm run secciones -w @report-cali/ingest
- *   npm run secciones -w @report-cali/ingest -- --zip ./urb.zip --mmi 6.5
+ *   npm run secciones -w @report-cali/ingest -- --zip ./urb.zip --mmi 5
  *
- * Son 48 MB de descarga y la geografía urbana no cambia por un terremoto. Solo se
- * incluyen los municipios que de verdad se sacudieron: traer las 30.520 secciones del
- * país metería en el repositorio la geometría de ciudades donde no pasó nada.
+ * Son 48 MB de descarga y la geografía urbana no cambia por un terremoto, así que esto
+ * se corre una vez y se versiona.
+ *
+ * ## Qué se guarda y qué no
+ *
+ * **Umbral por defecto: MMI ≥ 5** («fuerte»: lo siente casi todo el mundo y se mueven
+ * los objetos). Debajo de eso el sismo no dejó nada que un mapa de situación pueda
+ * mostrar, y la trama urbana de una ciudad donde no pasó nada es peso muerto.
+ *
+ * El recorrido de este umbral vale la pena contarlo, porque los dos extremos estuvieron
+ * mal. Empezó en **6,5** y dejaba 111 municipios: tocar cualquiera de los otros 1.011 no
+ * mostraba ningún casco, que fue lo que reportó `agente-ui`. Se regeneró con **0**, los
+ * 1.122, y entonces sobraba lo contrario — Barranquilla, Cartagena y Cúcuta, a cientos
+ * de kilómetros, ocupaban 506 KB entre las tres. En 5 caben los 440 municipios donde
+ * de verdad se sintió, **incluidas Bogotá (5,7) y Medellín (5,8)**, que están lejos pero
+ * concentran centros de acopio.
+ *
+ * Y se guarda igualmente, sin importar el MMI, **cualquier municipio con puntos de ayuda
+ * o incidentes registrados**: si el mapa muestra algo ahí, la trama tiene que estar. Eso
+ * evita que un centro de acopio en un municipio poco sacudido se quede sin contexto.
  */
 import { readFile } from 'node:fs/promises';
 
+import { cargarAyuda } from './ayuda.js';
+import { cargarIncidentes } from './incidentes.js';
 import { DATA_DIR } from './paths.js';
 import { writeJson, writeTopoJson } from './persist.js';
 import { simplifyPreservingTopology } from './sources/codab.js';
@@ -17,6 +36,27 @@ import { SECCIONES_SOURCE, fetchSecciones } from './sources/secciones.js';
 
 /** Detalle suficiente para reconocer la trama urbana sin engordar el archivo. */
 const RETENCION = 0.15;
+
+/**
+ * A partir de cuántas secciones se empieza a simplificar más fuerte, y hasta dónde.
+ *
+ * El coste de esta capa lo paga quien **toca** el municipio, uno a uno, así que lo que
+ * importa no es el total sino el peor archivo. Con retención uniforme los extremos se
+ * disparaban: **Bogotá 790 KB** (2.843 secciones) y Medellín 337 KB, contra una mediana
+ * de 6 KB. Sobre el 3G malo que este proyecto pone como caso real, Bogotá eran más de
+ * tres segundos de espera después de tocar.
+ *
+ * La retención baja en proporción a las secciones, así que el detalle se reparte: un
+ * municipio con el triple de manzanas conserva un tercio de los puntos por manzana. El
+ * suelo se pone en 0,04 para que la trama no se convierta en polígonos irreconocibles.
+ */
+const SECCIONES_COMODAS = 700;
+const RETENCION_MINIMA = 0.04;
+
+function retencionPara(secciones: number): number {
+  if (secciones <= SECCIONES_COMODAS) return RETENCION;
+  return Math.max(RETENCION_MINIMA, (RETENCION * SECCIONES_COMODAS) / secciones);
+}
 
 /**
  * Caja envolvente del suelo urbano de un municipio: `[oeste, sur, este, norte]`.
@@ -154,17 +194,32 @@ function argumento(bandera: string): string | undefined {
 }
 
 async function main(): Promise<void> {
-  const umbral = Number(argumento('--mmi') ?? 6.5);
+  const umbral = Number(argumento('--mmi') ?? 5);
   const zipPath = argumento('--zip');
 
   const mmi = JSON.parse(
     await readFile(`${DATA_DIR}/event/mmi-by-municipality.json`, 'utf8'),
   ) as { municipalities: { pcode: string; name: string; mmi: number }[] };
 
-  const objetivo = mmi.municipalities.filter((m) => m.mmi >= umbral);
+  /**
+   * Municipios donde el mapa muestra algo aunque hayan temblado poco. Si hay un centro de
+   * acopio en un municipio, su trama urbana tiene que estar: un punto sin contexto en un
+   * polígono liso no le dice a nadie a dónde ir.
+   */
+  const conAlgoQueMostrar = new Set<string>();
+  for (const p of await cargarAyuda().catch(() => [])) conAlgoQueMostrar.add(p.pcode);
+  for (const i of await cargarIncidentes().catch(() => [])) conAlgoQueMostrar.add(i.pcode);
+
+  const objetivo = mmi.municipalities.filter(
+    (m) => m.mmi >= umbral || conAlgoQueMostrar.has(m.pcode),
+  );
   const pcodes = new Set(objetivo.map((m) => m.pcode));
 
-  console.log(`· ${objetivo.length} municipios con MMI ≥ ${umbral}`);
+  const porAyuda = objetivo.filter((m) => m.mmi < umbral).length;
+  console.log(
+    `· ${objetivo.length} municipios: MMI ≥ ${umbral}` +
+      (porAyuda > 0 ? `, más ${porAyuda} por tener ayuda o incidentes` : ''),
+  );
   console.log(
     zipPath ? `· Usando zip local: ${zipPath}` : '· Descargando secciones urbanas (48 MB)…',
   );
@@ -187,7 +242,29 @@ async function main(): Promise<void> {
     // Los dos se toman ANTES de simplificar: interesa dónde está el casco, no su detalle.
     const bbox = cajaDe(coleccion);
     const ancla = anclaDe(coleccion);
-    const topo = simplifyPreservingTopology(coleccion, RETENCION);
+    const topo = simplifyPreservingTopology(
+      coleccion,
+      retencionPara(coleccion.features.length),
+    );
+
+    /**
+     * Fuera las propiedades de cada sección: **el 45 % del archivo de Bogotá eran los
+     * atributos, no la geometría.**
+     *
+     * El DANE trae `codigo`, `sector`, `pcode` y `area_m2` por sección. La interfaz no lee
+     * ninguno —dibuja relleno y borde, y su tipo es `FeatureCollection<Geometry, unknown>`—
+     * y no puede: el MGN **no publica nombres de barrio**, solo códigos, así que rotular
+     * «Sector 1808» sería peor que no rotular nada. `pcode` además es redundante, porque el
+     * archivo entero es de un municipio.
+     *
+     * Bogotá: 694 KB → 384 KB sin tocar un solo vértice. Es mejor palanca que simplificar,
+     * porque no cuesta fidelidad: lo que se borra no se dibujaba.
+     */
+    for (const objeto of Object.values(topo.objects as Record<string, unknown>)) {
+      const geometrias = (objeto as { geometries?: { properties?: unknown }[] }).geometries ?? [];
+      for (const g of geometrias) delete g.properties;
+    }
+
     const resultado = await writeTopoJson(DATA_DIR, `secciones/${pcode}`, topo);
 
     if (resultado.changed) escritos++;

@@ -1199,18 +1199,49 @@ sueltos no la mueven — la misma propiedad por la que una mediana resiste atíp
 **Usa `ancla` para las etiquetas, no el centro del `bbox`.** Comprobado: Quibdó 1,3 km,
 Cartago 0,6 km, Cali 3,5 km, Ibagué 3,5 km de sus cabeceras reales.
 
-### Lo que esto te cuesta, medido, para que decidas si lo quieres tal cual
+### Corrección en caliente: **son 440 municipios, no 1.121**
 
-- **El índice pasa a 32,7 KB comprimidos** y se pide dentro de `iniciarMapa()`, o sea en
-  el trozo diferido junto a MapLibre (279 KB), no en la ruta bloqueante. Ya le bajé la
-  precisión de las coordenadas de 6 a 4 decimales —11 m, de sobra para un texto de 80 px—
-  y eso solo se ahorró 5,7 KB: el peso es tener 1.121 entradas, no los decimales.
-- **El archivo por municipio no cambia de coste**, que era tu argumento y es correcto: se
-  piden de uno en uno al tocar. Mediana **1,5 KB comprimidos**. Pero ojo con los extremos,
-  que ahora incluyen ciudades que antes no estaban: **Bogotá 164 KB**, Medellín 79 KB,
-  Cali 62 KB, Barranquilla 45 KB. Bogotá con 2.843 secciones es el nuevo peor caso y sobre
-  3G malo es más de tres segundos. Si te estorba, dímelo y le subo la simplificación solo
-  a los que pasen de cierto umbral.
+Generé primero los 1.122 y el responsable, viendo el resultado, pidió lo contrario: quitar
+los que no están afectados y aligerar Bogotá y Medellín. Tenía razón — con todos dentro,
+Barranquilla, Cartagena y Cúcuta, a cientos de kilómetros, ocupaban 506 KB entre las tres.
+
+**Umbral nuevo: MMI ≥ 5** («fuerte»: lo siente casi todo el mundo). Son **440 municipios**,
+y entran igualmente los que tengan puntos de ayuda o incidentes aunque hayan temblado poco
+— si el mapa muestra algo ahí, la trama tiene que estar. Bogotá (5,7) y Medellín (5,8)
+siguen dentro; están lejos pero concentran centros de acopio.
+
+Tocar uno de los 682 que quedan fuera sigue sin mostrar casco, como antes. La diferencia
+es que ahora son municipios donde el sismo apenas se sintió, no municipios golpeados.
+
+### Y el peso: lo que de verdad sobraba no era el detalle, eran los atributos
+
+Empecé simplificando más fuerte a los grandes (retención proporcional a las secciones, con
+suelo en 0,04). Bogotá bajó de 790 KB a 693 — **un 12 %**, cuando la retención había caído
+casi cuatro veces. El motivo es estructural: 2.843 polígonos necesitan un mínimo de puntos
+cada uno, así que simplificar toca fondo enseguida.
+
+Lo que sobraba estaba en otro sitio. Cada sección del DANE traía `codigo`, `sector`,
+`pcode` y `area_m2`: **el 45 % del archivo de Bogotá eran atributos, no geometría.** La
+interfaz no lee ninguno —dibuja relleno y borde, y su tipo es
+`FeatureCollection<Geometry, unknown>`— y tú mismo anotaste que el MGN no publica nombres
+de barrio, solo códigos. Se borran en el generador.
+
+| | antes | ahora |
+|---|---|---|
+| `data/` completo | 16 MB | **7,3 MB** |
+| Bogotá | 164 KB gzip | **108 KB** |
+| Medellín | 79 KB | **58 KB** |
+| Cali | 62 KB | **46 KB** |
+| índice | 32,7 KB | **13,0 KB** |
+| mediana por municipio | 1,5 KB | **1,0 KB** |
+
+Verificado en el navegador con Manizales abierto: la trama de manzanas se dibuja igual.
+Lo que se borró no se dibujaba.
+
+**Bogotá sigue siendo el peor caso con 108 KB** y no baja más sin quitarle secciones, que
+abriría huecos en la mancha urbana. Si te estorba en uso real, dímelo y lo miramos; me
+parece que 108 KB al tocar **una** ciudad, contra los 222 KB de `municipios.topojson` que
+ya descarga todo el mundo al entrar, no es donde está el problema.
 
 ---
 
