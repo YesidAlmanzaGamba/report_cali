@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-14T20:54:12.327Z",
+  "generado": "2026-08-14T21:18:31.758Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -130,6 +130,16 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Comienza la demolición de edificios colapsados en Manizales, Colombia - Telemundo",
+      "enlace": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQWTZUUnZwMkdvY19ZUlh3MmRKcElzNDlMa01qTTd0M2w2R1ByUHg5NUlwUENoYlBEeVhHWUNRMWRTeXpwOFU2R3U1UnlDc29ERVBJOFVKT3R5cXRUOVFYaHVXMkJxYlp2SUprbXVtQTg3VzNNVVBhS1BMaWZLRm9acVZTUk1JMEpQdUZ6U0lodFRzeHl1SndIU0JaMzFCbnR0TEFBVWxrS0ZNX2dUNFRSWHBVZ3BGaURzN2lqbm1BNWRRY2wxMExGVi1FdmhrcjU4RjBKakZSek5lUEQtSHVXMDg2OTBkWGh0VFZvSTNtdEpSTTA?oc=5",
+      "medio": "Telemundo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T06:45:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
       "tipo": "albergue",
       "sede": "Coliseo Mayor de Pereira",
       "titulo": "Habilitan el Coliseo Mayor de Pereira como albergue para los damnificados por el terremoto - Telemundo",
@@ -186,14 +196,6 @@
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-08-13T20:53:44.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Terremoto en Chocó: cumpleaños de una niña de 3 años conmovió en un albergue de damnificados - Noticias Caracol",
-      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNTkxjYTdTczF4a0RCNlM0ZGZJcWJWcVRVM2U4dno0Ti1KWkJIbU1RM3EtdjY5LTVRNmJxZHhNNW1DelBWeTEwclZDbDV4eF9ubEdwbHFsMmZ6dTYxSUxYTjVuWEFoOHBJNW9mX2Rvc243QU5nbTZmVVk1STZsQWhDSm5ZQk1mQzA0c0hIQlVodWlqUVc5blVRWEU2WjhPdGNmNDVjd2Yzc0Q5YlVIZ3BUUGpfaC1vdWRFbHFYREZxd3h0VmxGaHU2MHJuQ1Vyc1FmWkllQllWc2VwZXVOWEZjaNIB4AFBVV95cUxNTkxjYTdTczF4a0RCNlM0ZGZJcWJWcVRVM2U4dno0Ti1KWkJIbU1RM3EtdjY5LTVRNmJxZHhNNW1DelBWeTEwclZDbDV4eF9ubEdwbHFsMmZ6dTYxSUxYTjVuWEFoOHBJNW9mX2Rvc243QU5nbTZmVVk1STZsQWhDSm5ZQk1mQzA0c0hIQlVodWlqUVc5blVRWEU2WjhPdGNmNDVjd2Yzc0Q5YlVIZ3BUUGpfaC1vdWRFbHFYREZxd3h0VmxGaHU2MHJuQ1Vyc1FmWkllQllWc2VwZXVOWEZjaA?oc=5",
-      "medio": "Noticias Caracol",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-13T20:51:26.000Z"
     },
     {
       "tipo": "albergue",
@@ -449,14 +451,6 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de Acopio para Damnificados de Colombia en México y Qué Llevar: Ubicación y Horario - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZkoxbFNQbkFBeEVuY1MxeGgtT2FHRlNldHNyZ2s4a0lIdVdWNDdzb0t5LVJQcGtSYTBwSnlQckFKNVFVc3VHWTFxS2JSQXFZbkE4Z2VBMWNDUkZ2SnRnVmE4amUtRGZxVEF2YU1BWkEzREpKSU5USWFYV3VDMmt0MUpNRGJncDdhRzVpaVctempjVHlESjdBcHpsVXM4Y3A3anNsVkNRUTBpLWQ5ekszdjV6dWUwUDdiQWtLN0xqMA?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T23:07:03.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
       "titulo": "‘Todos Somos Valle’: Activado centro de acopio de ayudas en La Licorera para los damnificados de terremoto",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
       "medio": "Gobernación del Valle del Cauca",
@@ -509,9 +503,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - radioatacama.cl",
+      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - Radio Atacama",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWg1SVJpT1dKM0NuUVllenVzZ25YSHZJNU9Vc1VxN3RHUHBwOU81a1ZrMm82N29JTVNDa3ZPdTFwVWNpZUI3S1cwQlpON3c1UlU5cThOeGJRaXBqMXBGVkhzWFcwdlNFWFNWdXREczFtY0pZNmh5Z3ZTdUdDQ21QWVpjeFVhSzBPVjFRUnVqXzc?oc=5",
-      "medio": "radioatacama.cl",
+      "medio": "Radio Atacama",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T17:35:14.000Z"
     },
@@ -558,16 +552,6 @@
       "medio": "laopinion.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T15:29:01.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "\"Caos completo\": cómo vivió el terremoto Manizales, una ciudad entre edificios derrumbados y fachadas rotas - La Prensa - Noticias de Nicaragua y el mundo",
-      "enlace": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlBIMy00YnQxbTZ2T204Zks4SXdJbFJURHlmMFh2NkYwdGttdk16S0h2aHhKanJsNnNtbE5qQ3NwMnNJdHZVME5uOXpwaURIOFpObTQ1RkpPUGFuTHRENzBTU0pLcUgzWTZnOVE1OGlIeUNuRE1PQXBsT3M4YWxpdzZfd2pOd3NFcXBvc0I4b19MMG9iNERMbTVDenlQZS1LNnkxZWI5b1o1RUp0WUdVTWhjR05DMzJHUkkzVDRib1ItQWtYQkEyZktKQWt0Rk1obFEzcVA1QlRQZHNSaXBpVHRGeF95YmFxckd5dHp0YWJuWG1DaHA5UQ?oc=5",
-      "medio": "La Prensa - Noticias de Nicaragua y el mundo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T15:27:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
     },
@@ -791,9 +775,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "26 edificios colapsados en Cali tras terremoto, dice alcalde de la ciudad - cnnespanol.cnn.com",
+      "titulo": "26 edificios colapsados en Cali tras terremoto, dice alcalde de la ciudad - CNN en Español",
       "enlace": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZVJqU1NTeGRubDR2WVd6clFyM1ZfRkdKZmVnaWpBcTVCVVYtM2lsMC1HS01JOTN6SVM0Tk1NeGJnRXhWT0VYM0pWS3BiZU5qQjVtRk9CWl91cXVQR0paUkg4ZkRzSUlJZTNvMXdTaXpYQWVzZ1F4QThicU1iT1ZoNTBMZGFIeGxYT1E?oc=5",
-      "medio": "cnnespanol.cnn.com",
+      "medio": "CNN en Español",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T18:07:14.000Z",
       "pcode": "CO76001",
@@ -806,6 +790,14 @@
       "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T17:52:48.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Colombia: sube a 77 la cifra de personas muertas y hay decenas de edificios colapsados - LatinUS",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxObS1Obl9CYXdMZE0tRm1GZUIwcmw5cHBMR2pINlFPbUN3QXY1Z29EcHF0RXBEVkxRa1o4OWo0V0ZWYTNVTjAxMkJpR0NfRHBoazY2cklnZzV6VmxHM2d6N1ZieWxVVElJYjF4cmhBa2FmTWRRaDhxR3poYm04c2tGdzVRSHZDZmFRVGl4dHQ5ZDBKMDdjamJBTlZ5NzVHLWoxZmhYU1BoQ1p2ckl5OFQ1RngxLXpDcm1LeFl0cE1rQ0VibVllU1VNeDVKTk1kSG0waVNyN1N5ZjTSAdgBQVVfeXFMTm0tTm5fQmF3TGRNLUZtRmVCMHJsOXBwTEdqSDZRT21Dd0F2NWdvRHBxdEVwRFZMUWtaODlqNFdGVmEzVU4wMTJCaUdDX0RwaGs2NnJJZ2c1elZsRzNnejdWYnlsVVRJSWIxeHJoQWthZk1kUWg4cUd6aGJtOHNrRnc1UUh2Q2ZhUVRpeHR0OWQwSjA3Y2piQU5WeTc1Ry1qMWZoWFNQaENadnJJeThUNUZ4MS16Q3JtS3hZdHBNa0NFYm1ZZVNVTXg1Sk5NZEhtMGlTcjdTeWY0?oc=5",
+      "medio": "LatinUS",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T17:28:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -824,6 +816,14 @@
       "medio": "EL PAÍS",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T16:18:17.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto de 7.4 en Colombia deja al menos 21 muertos, edificios colapsados y aeropuertos afectados - Diario Libre",
+      "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYlJlYXVxLTZGM0NDV2tMTTd4ZGRISE1VTGhfWFhKSXY2Mm41azY3X0w2VG44VnRfWFl5QW1RSUdZVkV6MXRoZzQwUS1VM3QtNDY5ZWZNTi1UVC1vb284aUpUbllvbTlNQTBscU9pREpGU1dzWWw1TEF1UHJoNGd6TDJDV0R0bHlXWC1URTVDdzI3cF9XWjRLS2lXLUtQVEpnRENlNW9OTE1LeFZGS21FVi1UYzTSAboBQVVfeXFMTTNKcG1CRkFZMVp0bUppbkZlajlVdWJTQTN5Zm1YNktjdndjMHZBeFhYS1drV0F5alprMVFEQUpVLVhTeXhiaUl5bEZFaWhsVjhMZi1WdmJ3NXJwS2xVdU9UWU5BX21renRoWkpod0NsR255M0lUSFRaOHFKSTQzbUF6Z3dmU254U1Z5czVCdTQ1Y3NxcWpCUXg1NDJsaERyN1RxUHliYXNSWS1Lc1owQjlfRW1vODZ5czVB?oc=5",
+      "medio": "Diario Libre",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T15:09:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -883,9 +883,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - codiceinformativo.com",
+      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - Códice Informativo",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ1JVbzJ6d25YYXNWdmtUUU9MRnEyMzJpQVRIUWpCTTRTNmxjOUVNaGUwbjBzVVZpUTFsdzN4WldRdzBELU12bG5kQWZzUk0tb1NXSVZHeWgzNWNNRU53TUdTUWNwTVlQMnhFZkVDUlhkRFBaSmtxRmY0Uk1uc1VXYk5SNlNYZHZCeG1qcXFmMDQzU2JMQVNiZHk4YzloMDZ6MFVyZTM2VlBnWThpU3lHTDFXLVRDVXdyQlV0ajI5OXgyaXd3VkJkYWhVNA?oc=5",
-      "medio": "codiceinformativo.com",
+      "medio": "Códice Informativo",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-29T07:00:00.000Z"
     },
@@ -895,6 +895,14 @@
       "enlace": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aeHItM3lBZEY1YXlCOXhPTUF0Y0gybkNXdWgtX0JQUEJWbktFNFFsLXA4MHdPYlJPMmI5TVhwYWRiMHhRX0FGNjFaTTdRTExkcEJIVl82aG56N2ViVmlqeGtWVkNreXFsYk9UVQ?oc=5",
       "medio": "El Diario Venezuela",
       "tipo_fuente": "unverified",
+      "publicado": "2026-06-25T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "En Bogotá habilitan punto de acopio para recibir ayudas para los venezolanos damnificados por los recientes terremotos - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPcFNtbGd5aktENmhpbF81Q0l4M29XWjZxZVoyc0JUQWgwWjFibTFpbmduSmJ6UE9ZeC0wZ21KZlFmeWh4VzBTbEVmdlE1QTIwSlM4ajloQU56SHQ3U3dfbHU1U3ZEWTZSNEJ1enV4bzRrcWJrQXh2TzVjYWRXX2t5OTNEanB6TkdPdVZyZEwyMGpkTnRDamdJX3NwdlVRT2w5YVRSek9nQmViNDAtTUEtbkJBX3BuUXM0N0hmQXNwMlVKeGtfdzYyZ1VkWENPcWRYNGo4MXFmM040SWNWMkR3bVVrSlRMYXBMdWZxcFlxcm92U195MHfSAZACQVVfeXFMTzdRQXlXQTB6Y0NjQm5pQ29ueW1iS2FmU19JLW9jZU1XNWlGMXdhZnJHd3JzZWY5QWZieUxnR0pWa1lFakJlWlpLSndoUF83amVTZU8xUW93ZGFQbEJPd2RFdmpOSERYV3BYVmgwRng0dEJXWnRVYlY0NDU0NUkyUkxFeE5tempGNXRhZGRBVHdpdWV2MDBRVEcwMjAwbFB4bHdrcy1xSjBjQjk2WEc0VHdFc0NJN1dzdExkdDJTS1ZVYTUzZUs4YVFNMjFOWWhneVozR2RJa1BfNzc2Z0cwNHdQUGI0SzNDRTRxcUktUlJtN3NhdmRBbUVZTkd5Q012WUFzUTVhRThISWhqdDhEdks?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
       "publicado": "2026-06-25T07:00:00.000Z"
     },
     {
@@ -935,9 +943,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lista de centros de acopio y albergues en la CDMX - El Universal",
+      "titulo": "Lista de centros de acopio y albergues en la CDMX - eluniversal.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVmNkcmVOb0lLclA4QWF5MldGOEFPbGQ3a3JOZGZDNzQ2RnlUTjUzWXMxeUJrd0FUVjY0RVRUV01fSmVub0x3RkY3OXpUbWJQOERXZVI1SlI4YktpUUtQQlRtWmZXQjJZb3ZPMFBCd25hV2tkUVhHdjZyemNESm4tbGR3UFhyMlRaZVF6UTdTUUV2djh60gGoAUFVX3lxTE5hUXc1QU5IYkk2NHA2RlF0dWJSdXMwS3lIWFY0TzhnRm1nVU9naXVvbV9rWTZtcmhYOUVQczNCVGh6aWY0QlhkQXZNZk1RbkhlUXRKTkZmWHFfa3ExU0RZQzg1OVltME9jQWVJeXNja0RMWnRuR0owM0N4UU9UZlBveEs4NXpzdG9EclVSbDU2UHAzT2pmZGg0dWtmV2tzYkQtbk1JZGdTQw?oc=5",
-      "medio": "El Universal",
+      "medio": "eluniversal.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
@@ -956,6 +964,14 @@
       "medio": "El Universo",
       "tipo_fuente": "unverified",
       "publicado": "2022-02-01T08:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Más de 400 mascotas no tienen alimento; refugio de Quito está a punto de colapsar - El Universo",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMndrMHlTdEtxWHJjR294bVMtbzFnMjFOTGlfenV0OEdjak5rM1dkY0dFaXd1UkFLNzJjRi1LaWRSSTNmemJyNGFiLTRTcDE3eE84ZEIyMm1sM0tYTlRRaVRVd2pRakV4X3kyNGFzWmp3Mkh1bE5zNDdDZjJONVBrVUFZVDFvNUp0VWM5RFRXV3ZNMjF2bTN5MXFOVmhpUVh3NERGajM1Q3NEUjNSZllvanpFSkJYQ2NYVThlYklqWHlLa0FkMHVvMHBB0gHeAUFVX3lxTE1qTDBnaTVUWUQtOXFaZGFhcDdhc3hrTlpEQk5wNGVpWG02UW83SnoyLVBMTm52OEt1NE1JcGRDVlpSVnZyRXBfTkRfcW92cllILTRVbFBLdWxDZzE5bkFsTlJ4RjVpYUxiUU85N1BzclcwWmlUWDJqRWdXNmRYV0lzRlJQdERmc0JDXzRfUEtoaW9JS0VPTTNub1Z1czRxckhURGlhakZsZDdRQlM3cURsZUI2UXJPWklEUTAzdTFJTzQ3cDFLMGo0dU9XR3pYeGl5QVRER3U3SEZWcVRtQQ?oc=5",
+      "medio": "El Universo",
+      "tipo_fuente": "unverified",
+      "publicado": "2021-09-30T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
