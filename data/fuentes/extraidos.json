@@ -1,8 +1,28 @@
 {
-  "generado": "2026-08-14T23:44:58.820Z",
+  "generado": "2026-08-15T00:47:22.568Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Detectan señales de vida en edificios colapsados tras sismo en Colombia - Periódico AM",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOVmZ0UWtxZ2FZeXpsc0NUQ2FwQmtRM3B4Nk1uSHk4OFBocEg1VE5yZ1hpLU9xR0FfM1ZiVm9oX1dzVTdHcXNPMUMxUlhPWlk4Q3ZYMldLSkYxQ281QlFVWWdOeGxvTHdqdVFWZjU3dFVHZ0hNLThHX0RkYWpZSXZHN2dVa2pLVHVGemJVMEx6X3IxbnFBMUdOQldneUlUXzJ4QjIweG85OWFBczRqbXlwZGQ4bXVHVHdIZF9LNkU1WmY?oc=5",
+      "medio": "Periódico AM",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-15T00:21:38.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "sede": "Coliseo Mayor",
+      "titulo": "Coliseo Mayor y Parque del Oso en Pereira, albergues clave para afectados por el terremoto en Risaralda - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUmhUOEJNcXdIeU5sQi1TbEYxb1QxQm5QeFh0c1ZnTFJaR19RQjJBa1U0WEZLdml0Z3lxLUZUTXF0V2xNMDdBTTd6cVNLZ3F6bWZfS2pKb2d3dEJTRXlLOXpUU25VUWJwTzZEd1VIdExDQVkyb0JBN192a1lIcWI0TU42TWRXOHF2NlU3RHhfeV9HaW4xejZob3FfTWxrZFdEUS1VTkgxaFNWQnNYMm42Tjd1eGNHdXhCUTFBams2X2FfbWc2eW5mOHR4b1FRMHPSAdQBQVVfeXFMUEdUcDZaRVZUakJza3Y3YVVfaEF6Z2FDNGlxWnRRckVkMXBHc3VPX1VKVUM3cGZ3YXZXZEtFZnRYOWEzZG1vTDNfcHk3MXVpanFMUVhwNEFKTmFod2JPRTBYQ0ZjaTRIbzhQVFd2dHgwTDBuc082bUVyQy1KQXROdWxaTWRZRjVhcDE2eWs0YnlzcUNQMGNrRlpXNE9kQUEta0x2YTFMeGtZczdtaWI4UTVVbU1sVDEwMFhkNlJUVTMtV2tTd01xU0hjVEo5aGJPZGpkQWo?oc=5",
+      "medio": "Pulzo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-15T00:15:21.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%2C%20Pereira%2C%20Colombia"
+    },
     {
       "tipo": "albergue",
       "titulo": "Emergencia en Chocó | Tras inundación del albergue en Quibdó, habilitan nuevos refugios e internet Starlink: estos son los puntos establecidos",
@@ -140,14 +160,6 @@
       "medio": "El Nuevo Día",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T13:18:47.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "La historia detrás de la moto que se hizo viral ofreciendo albergue a damnificados del terremoto - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOemRvQzZsR1VwSm9lWUNZRzFNNjhScmR3dk9mZTF3REg5OHVKZ1JhUlFEeGVMNnhESEd1MXQ1blBFMWpFMm1mSGYtY3RPeGpPWnBXMXBYRlczcHVVejBQakJia2ZsSjRKX0VFaDNnQ09QRXRoeUJTYjQ4NlJkcFl3X0hiTDFuT3pwbnBNWThpQlpKd9IBkgFBVV95cUxOd25fMnZVT25CSUIzcks0SnpsNFpGcXdYc0twb3F5RE44TU9wd3AwSVRXMjMwQ1IzZ3JPWkhhZGlxMHhMNEQ4Wmt6aENfVndSc2NvWEVWM01nTFFMY2tZZXV2MkJuQ0FEMGx2ZXpWOXcxR3FjbDZobXNUZXh0bmJYdWphV3l4TUJvMWZ4d0dfeEFOdw?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-14T12:58:21.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -427,10 +439,10 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "En un solo día se triplicaron damnificados y número de casas afectadas por terremoto en Manizales - Blu Radio",
+      "titulo": "En un solo día se triplicaron damnificados y número de casas afectadas por terremoto en Manizales - bluradio.com",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVGNySjN2M3Rhd2JHXzFGTEJTZzJWU3pROXRhR2pDek03Zkk1R0pSMnFtX0Jna0FqV2tPVkhXVGVfT1FNZ3otVmRzOGhTTk9oSVBMUC1rYnVMWmxrZ25kSkdBRFUwOWdCRDNmTmdxdnV6TXQ0dERtQUVtUGQyNHdtWW1yVUI3Y3dzc3IxazRWVlVaUGpUcExvbmpocWZXUGpaNXVyS0lfLW82Tk9OYnZiV0ZEYTNlNXdVbFBvWWFQTU11RkNybDlmTWRHUURpa3dPMjdobUpyV3ZfZDJYS0040gHsAUFVX3lxTFB5SzNsaDdKTmM2bEJORFNOd2VJUFZBeDAzTEdZSUJiQ3pOT2x3VmJwNXJQYWxuRXVpSHgyTjR0am9USThSY0p3cEM0aXBsTFFQVHFFVjZOLWNlQnRWWk9zdFhkNHZJYlBuc1J4LUE1b1lSMS04aTFXNHJPb1ZPZ1luS2dqb0FiUXhTTEE3c1hTcmFhbXJMcVZsUHZTMG5YN0pjVEE3WVdnWGtHVGprMW5KOS03RFpaYWZiUE9YZ1h3bHhEdUpGZ2l6VGdzb3RndG9lWHIySnU1Ry1KODZqdU8yQjJPbnRWdzk2MGIt?oc=5",
-      "medio": "Blu Radio",
-      "tipo_fuente": "press",
+      "medio": "bluradio.com",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-12T14:30:58.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
@@ -481,10 +493,10 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de acopio en Bogotá: así podrá donar y ayudar a damnificados por terremoto - Blu Radio",
+      "titulo": "Centros de acopio en Bogotá: así podrá donar y ayudar a damnificados por terremoto - bluradio.com",
       "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObDZnRFdBdlZtR3BQNFFPN21vTnI2YU9ramtWZUJyNTRwMGxWSHdyeHlEcjIzLXFXakg1blZvYllwY2tSSDZuLWZIamVIMWhreXlYWU1YcV9ValRteERUU01JYi10WWNsdFNYb2xWcUpxUzFrd0JWTmd3LXlELVZWNlBXTmZGdndtRWdJaDJqTk5zdzB4Q3g4Vkg2N3NhZnZ1Vmh5cFFETmR6eVFURmVsQmdIS09QLVBOY2k2SENaYm1IZGlzbXfSAdMBQVVfeXFMUGRUMjhVUHJtM1FWR2k1bmUwSkFGNmJYcjcwNXloZ1dGYzFQWVl6VG1MYnBrZmxSREo5eVExUzR0VmJkcWMtTnFUd2lRclFlYkppcHBVSVRvZXNzLWJYSGgtbWdjYXlyd0pWZnlldkhta09VeTNDRkxoZmVYOGZQWE1UWUQ1OFgtOHQ3a3NuUDlIZzhibWdjdWF0NXdEQjlTSlViNW8tVXEzczBadGZaQW5GcjI4akY4RlFzbjdueXY2Q3UzV1VMT3QtRTNNRXktcm0wUQ?oc=5",
-      "medio": "Blu Radio",
-      "tipo_fuente": "press",
+      "medio": "bluradio.com",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-11T23:10:20.000Z"
     },
     {
@@ -584,16 +596,6 @@
       "publicado": "2026-08-11T15:54:58.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Manizales, una ciudad entre edificios derrumbados y fachadas rotas por el potente terremoto en Colombia - laopinion.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeG5IOEpWV0J2aVlySHJhdzJiSUxrSVRycG1JM2JRMXoxVHNud3BCU0cyVmlXdkd6TU1Sb1NyYXdWVnozZU84TlZBYkU3VXlaQVpIc0xlc2hmQVVTZU9ua3BNNHdGYmI1WEVqQXd2MURJOXFPVjNTaHVzRy1SaV9Ea1lUTkJ0MWgtbV9QdWo4eDN1NFFjV2Fna3poTllsRHhfNGxEQTU2NXlUSm14UmNQdE1FZElwRVN4bFRUTUQ0VWJFQzB1Rno3WEtQM2x1Z2pva3Zz?oc=5",
-      "medio": "laopinion.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T15:29:01.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Belén de Umbría reporta 487 viviendas afectadas por el sismo",
       "enlace": "https://www.eldiario.com.co/actualidad/belen-de-umbria-reporta-487-viviendas-afectadas-por-el-sismo/",
@@ -613,9 +615,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
+      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - rpp.pe",
       "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
-      "medio": "RPP Noticias",
+      "medio": "rpp.pe",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T14:35:40.000Z"
     },
@@ -849,9 +851,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan edificios colapsados en Cali y suspenden operaciones en aeropuertos - latinus.us",
+      "titulo": "Terremoto en Colombia: reportan edificios colapsados en Cali y suspenden operaciones en aeropuertos - LatinUS",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOczZ3ZGxjWkpwcTFPXzFFLUxWc0Y3TDc4SVRVeUJ0dlVRcnYxbm9DQTB2VlNFM3daYm91WDNzLVdmb3lFOWFtZ1lhS2dqWWxGejZyWVUyQmVlcmk2N045aS1NVGZoZTlaZ0dTT2FfWWV1cHQtbXVDVGpaQ2ZsbTA5aWJaWHRRQ29KSGg4b0ZZUnFRLURERzRhNTNfMVFYa2w4UXZ5M2hmRjMtNkE3ZV9ITUw2RzJfc3J1UE9GbGE0WFpoQnZqZTgxWEpxY0tnME9WU1RYTVh0WS05dk3SAdsBQVVfeXFMTnM2d2RsY1pKcHExT18xRS1MVnNGN0w3OElUVXlCdHZVUXJ2MW5vQ0EwdlZTRTN3WmJvdVgzcy1XZm95RTlhbWdZYUtnallsRno2cllVMkJlZXJpNjdOOWktTVRmaGU5WmdHU09hX1lldXB0LW11Q1RqWkNmbG0wOWliWlh0UUNvSkhoOG9GWVJxUS1EREc0YTUzXzFRWGtsOFF2eTNoZkYzLTZBN2VfSE1MNkcyX3NydVBPRmxhNFhaaEJ2amU4MVhKcWNLZzBPVlNUWE1YdFktOXZN?oc=5",
-      "medio": "latinus.us",
+      "medio": "LatinUS",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T14:14:00.000Z",
       "pcode": "CO76001",
@@ -921,9 +923,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Gobierno activa refugios temporales - radiomundial.com.ve",
+      "titulo": "Gobierno activa refugios temporales - Yvke Mundial",
       "enlace": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB6c2h2T2xLbG5YNzFvaXhreTNaMV81dWxPLW5ZXzlUWk1pbExsdDhwaGNQcjFGMUVkSl9wODViOVNQVnY5dVZBVnlCUlo5dERoSEZMeXpEcUN5Ym5UMkxETUw0dWI5cHJMYmdxT2h6djNFMW1ST2VLVWNISmRZdw?oc=5",
-      "medio": "radiomundial.com.ve",
+      "medio": "Yvke Mundial",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-25T07:00:00.000Z"
     },
