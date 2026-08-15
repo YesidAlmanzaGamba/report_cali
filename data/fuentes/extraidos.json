@@ -1,8 +1,24 @@
 {
-  "generado": "2026-08-15T16:14:45.383Z",
+  "generado": "2026-08-15T16:47:46.981Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "🚨LO ÚLTIMO | Tragedia en Indonesia: terremoto deja decenas de muertos y edificios colapsados 👇 - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNOWVCbGNnZDRXSFIyUXdJZGlMNjNHTExlREtlMzB5cnJSTWd5ajR3dE54OUVQZU51QzNfOWN4MjZ6TVBOVnI0VXdHeUZKcEpmQ2pFRE01WnRfOVBQOFkxaWhVcUVQN0F5WTVOcHUwZnFycDNoRDkza1BsdUlPbXFONjEzdWJsYko4WDByTXpSdnJGTzVfQjZPdWZtWk5FT1QwNl9EbVlteEZ2Q1pPalpHaE1xb1pLd19aWnptQjNHVW1mbnUzSGx0YVNCM0NOMWdPZWh5TGRjRmZlTXo4VXRjemJLaU90QQ?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-15T15:39:32.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
+      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
+      "medio": "Bogota.gov.co",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-15T14:21:42.000Z"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Videos: así fue el terremoto que dejó destrucción en Indonesia; edificios colapsados y momentos de pánico",
@@ -12,18 +28,10 @@
       "publicado": "2026-08-15T12:35:59.000Z"
     },
     {
-      "tipo": "centro_salud_afectado",
-      "titulo": "De la Espriella anuncia recursos para recuperar hospitales afectados por el terremoto en el Valle - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSEdxY19hUzJnUEU1QW93Tk0xVUpvUVpNM2NBMUp0TWI3Rl9JWGpqRF9TQjROYTNlVnhUVDFkMS1iVTJPVy01VnJUdVZoc0tTUEc4MUxqUHhzNTQ2UkEzVjh4VlNKbFdXVTM4aHpVT1hNcVN5TXFsYVBCTTk0el9leHJ5cGg4NG9vSzZPYXhyOUUxNkNheElsaUN5TE1TNUlYamxGREJKbFRlbjA5aHA4bE9aNUZRWk9iMXlZa0RCa3dWdFVIUzJvQ3B2MFJWY0dQTXVBcE9B0gHWAUFVX3lxTE02U1hSYVRKTFZNTTdnTnVfUkI0MnI1RHhYLVk4QklvZkxJUldDdDB6akZBbVRTZExrQVZRMExzQ3hzWC1NQkVrRXM5aFJHN21ybHJjOUZCUlpZcW03cExCTGNGY0pEUTcwd09seWdDbmd6U0VmYTBpcWx0UHk0dFVfbnhRUzE3QmQwRXFrUHFBWHJQd0dFbGkxWUVRZWtUVEphY2VwLWhGdkhmeXEwVmRZcGRvMHRUc0hYUldGb3pEaV9xWVBQRHJESlhCZkQtU0RzcDZEZ3c?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-15T10:31:29.000Z"
-    },
-    {
       "tipo": "centro_acopio",
-      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - elnuevodia.com",
+      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
-      "medio": "elnuevodia.com",
+      "medio": "El Nuevo Día",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T01:17:00.000Z"
     },
@@ -115,9 +123,29 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Yahoo",
-      "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOU0JxcllUbHVTWElJZ0VvcU9ZQlczUzdZYUVxc1lHcFhrM1dZQTNpaXR3QzBVUDdicjhveTN5Z2E3SDFZT2V3a3pJODhBc25CUzNVd3NveGlNbHQzMnBGZXlSak00dmdpaDdQV0c1aTN1cWoyT19ncXBtUzZOS2kwNVE5NjM5cjZyNHB5STc0WW9JLXhCQXc?oc=5",
-      "medio": "Yahoo",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Laredo Morning Times",
+      "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTUxOMDluZGozd2hkaEI5RW1WVVg2bFE0c3FSN3RFUWllZE1mbGF6RzBDcWlWckpCMGliQ0VpU2lUUzM2ODB0V08ySzNXRkN1M1piY1BTOVVJdk9DMHZCYXF0S2RhNGlXRWl2dXdKQXpRMnFLQ2ExejVqaWVlVV9FRXlzRV9VdHhGVE5tWDBPZnVOU0hpamlmV1NRVmpGc053YXF3SA?oc=5",
+      "medio": "Laredo Morning Times",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T15:48:44.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Seattle Post-Intelligencer",
+      "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaDNFVjVDOXFtdWxQR1hYMTduWDVFWi1MTGE1MGdadkhMTWIxakJUZHhva25EZVE3TVMtU3lmM1gwSmtvaFJ6a0dqckZhQmh6cVoybWpEc01JUlk1Ni10blE1OWh6blR2bFFwZWdlY0pQNk9uWlExRTdmdlh1Z1pOS3Z4XzY2UC1iLUtrMTlQZDg5UTNTS3c?oc=5",
+      "medio": "Seattle Post-Intelligencer",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T15:27:44.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
+      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
+      "medio": "Reading Eagle",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T15:24:20.000Z",
       "pcode": "CO54385",
@@ -126,7 +154,7 @@
     {
       "tipo": "edificacion_danada",
       "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQm1ibWhiTjVWU1BBakg0amhFZkR4WTVtUU9hZnhRV1h0eTBxVzVOSGQ4TXp4WWdlNXAtaVZnRXFiQUEyQzhsSzByMEcwanpYelItRHVRMGs5WGZ0dVQyTTVkUkl4NkFhTWVNZUFycTNwM1NIZG1mcUtLOHR5RVdjMG5GZ3dYdVlKR0VPOU9McFk1Mjltb2pKRTBTSnNVcmJpdEI3XzdmcHlTRERZYnFTOVVtWVFHRnp3b2ZmRVMtLU9tTFXSAcgBQVVfeXFMTlg3UVlaSXlGUHpJN21tUDRacWVpT3Z4RTZMemtLWGJCSHZISjQ4aWMwYnhEWi1TMW0xNHVDaHJxblBXOFJXZmJiTHU4ODhVMkduaExpek1MWmtrTm9PUFBmenR1ZmdxclE3blhoR2Z3QzlyWllfbENUdVZYX2tueVhCNmR2c2pXSDZWZ1VWNkpCbVktaDN2MGplTG1XNzVfU2sxRUlfYkJWQ2t0VXFkOFc3ZkVnQk9LWkVHN3NLZFRoeVplZ1FtZUU?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWDdRWVpJeUZQekk3bW1QNFpxZWlPdnhFNkx6a0tYYkJIdkhKNDhpYzBieERaLVMxbTE0dUNocnFuUFc4UldmYmJMdTg4OFUyR25oTGl6TUxaa2tOb09QUGZ6dHVmZ3FyUTduWGhHZndDOXJaWV9sQ1R1Vlhfa255WEI2ZHZzaldINlZnVVY2SkJtWS1oM3YwamVMbVc3NV9TazFFSV9iQlZDa3RVcWQ4VzdmRWdCT0taRUc3c0tkVGh5WmVnUW1lRdIByAFBVV95cUxOWDdRWVpJeUZQekk3bW1QNFpxZWlPdnhFNkx6a0tYYkJIdkhKNDhpYzBieERaLVMxbTE0dUNocnFuUFc4UldmYmJMdTg4OFUyR25oTGl6TUxaa2tOb09QUGZ6dHVmZ3FyUTduWGhHZndDOXJaWV9sQ1R1Vlhfa255WEI2ZHZzaldINlZnVVY2SkJtWS1oM3YwamVMbVc3NV9TazFFSV9iQlZDa3RVcWQ4VzdmRWdCT0taRUc3c0tkVGh5WmVnUW1lRQ?oc=5",
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T14:25:32.000Z"
@@ -263,9 +291,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Voluntariado en Bogotá: los puntos de acopio que reciben ayuda para damnificados por terremoto - Noticias Caracol",
+      "titulo": "Voluntariado en Bogotá: los puntos de acopio que reciben ayuda para damnificados por terremoto - noticiascaracol.com",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQZ3dBWVM0NHRDSUwzNHdZWWFkczhQc19rT0lDT3JxU2ZfV1RLVnJvdzdZSjhNWmd3TDJOTUJEUFkxcXBtZFcxZ2Mya2VuOXVVdUgxVjdCRHFyWlRDY0s3MEJwb1lRNkJCb3Ffby11U2dleDZxRVJXa2hFWnU5aVFUMGQ3aWF2MXVzUG4tQTc0NFhqeDVlYjZ5bXU4bjZSLUtpTDhEdzV6R2VBRjJZdHRLaVNUamV5bkFMa1dKNFVhdWVBYlJLblRfN2JwaUlCb2hFZXJjUzhLWkJobUMtWGxn0gHsAUFVX3lxTFBja2dUTm5ud3FDczFla3Z5Z3AyQWplQl9iaXJOT2lDUElXZEdXWjR6QTliQ1lsd0pxM1Bfd0tENnUzTkpOS05CRWpNQTZwRHR1WWZ6WFp1ekpZNmZXMXNfSVc5ZUlYR0JaUUMzcWN0YXdDSkt3VlZWU2lZNkp5NkZ6UGkwY3RtUjE3M2Q4OGRMcXQzSGtQbjJmUWlVN2JoLXctZ3hMYUNkc2NidG02TGtpa3U1Yy1XSEx3aDJqNjJJOHBST3NOLU5GMEs5U2oya1FzYVIxUFFlRFNTdE1ZaXdNRDdhaHJ6YXZtR3hp?oc=5",
-      "medio": "Noticias Caracol",
+      "medio": "noticiascaracol.com",
       "tipo_fuente": "press",
       "publicado": "2026-08-13T18:26:32.000Z"
     },
@@ -308,14 +336,6 @@
       "publicado": "2026-08-13T16:33:07.000Z",
       "pcode": "CO25754",
       "municipio": "Soacha"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
-      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
-      "medio": "Bogota.gov.co",
-      "tipo_fuente": "official",
-      "publicado": "2026-08-13T16:03:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -469,6 +489,14 @@
     },
     {
       "tipo": "centro_acopio",
+      "titulo": "Centros de Acopio para Damnificados de Colombia en México y Qué Llevar: Ubicación y Horario - N+",
+      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZkoxbFNQbkFBeEVuY1MxeGgtT2FHRlNldHNyZ2s4a0lIdVdWNDdzb0t5LVJQcGtSYTBwSnlQckFKNVFVc3VHWTFxS2JSQXFZbkE4Z2VBMWNDUkZ2SnRnVmE4amUtRGZxVEF2YU1BWkEzREpKSU5USWFYV3VDMmt0MUpNRGJncDdhRzVpaVctempjVHlESjdBcHpsVXM4Y3A3anNsVkNRUTBpLWQ5ekszdjV6dWUwUDdiQWtLN0xqMA?oc=5",
+      "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T23:07:03.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
       "titulo": "‘Todos Somos Valle’: Activado centro de acopio de ayudas en La Licorera para los damnificados de terremoto",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
       "medio": "Gobernación del Valle del Cauca",
@@ -564,26 +592,6 @@
       "publicado": "2026-08-11T15:54:58.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Manizales, una ciudad entre edificios derrumbados y fachadas rotas por el potente terremoto en Colombia - laopinion.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeG5IOEpWV0J2aVlySHJhdzJiSUxrSVRycG1JM2JRMXoxVHNud3BCU0cyVmlXdkd6TU1Sb1NyYXdWVnozZU84TlZBYkU3VXlaQVpIc0xlc2hmQVVTZU9ua3BNNHdGYmI1WEVqQXd2MURJOXFPVjNTaHVzRy1SaV9Ea1lUTkJ0MWgtbV9QdWo4eDN1NFFjV2Fna3poTllsRHhfNGxEQTU2NXlUSm14UmNQdE1FZElwRVN4bFRUTUQ0VWJFQzB1Rno3WEtQM2x1Z2pva3Zz?oc=5",
-      "medio": "laopinion.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T15:29:01.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "\"Caos completo\": cómo vivió el terremoto Manizales, una ciudad entre edificios derrumbados y fachadas rotas - La Prensa - Noticias de Nicaragua y el mundo",
-      "enlace": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlBIMy00YnQxbTZ2T204Zks4SXdJbFJURHlmMFh2NkYwdGttdk16S0h2aHhKanJsNnNtbE5qQ3NwMnNJdHZVME5uOXpwaURIOFpObTQ1RkpPUGFuTHRENzBTU0pLcUgzWTZnOVE1OGlIeUNuRE1PQXBsT3M4YWxpdzZfd2pOd3NFcXBvc0I4b19MMG9iNERMbTVDenlQZS1LNnkxZWI5b1o1RUp0WUdVTWhjR05DMzJHUkkzVDRib1ItQWtYQkEyZktKQWt0Rk1obFEzcVA1QlRQZHNSaXBpVHRGeF95YmFxckd5dHp0YWJuWG1DaHA5UQ?oc=5",
-      "medio": "La Prensa - Noticias de Nicaragua y el mundo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T15:27:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Alcaldía de Bogotá confirmó puntos de acopio de donaciones para los damnificados del terremoto en toda Colombia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdS00MjdPT1RXVXhPdW9lNHhaaXFqNnRTdDJxRmVyUkdobzN5SF9ERi04andsYkhaTk5uei1yZjZ2cmdtMU9vTFY2RTFCMExkbEM1SDFfZFRjQkVPTnU1Qm5zc09RWUVZdklLZHlkeVdXbWFfQlBBWk9PWDd5eThvVUZiN2ZfZ3pWWmRJUW1OeWYyYjZCdjBsYTNyZEtPQ3Vxbm1Jcl9PYkQ3Nm94ank3UHhYWXppM2VhQkxCQklqd084RU9oQmNxNlZ3b3BKSkNsQmUxREJKZnhFR21yMkh3Q0pwRVVISjg2T1dSadIBhwJBVV95cUxNOXAwSWVFRWhhbFVUdXdNbHFyVmdVREVSNXNUZHVqOTlDOWtLajdyZ0JKbWRvLXJGTFJtR0NKQkpqSHdENzZMOWJlNHJXUjB0bExQM0hZWUpmMC14Y2pRMzRvS3lWTDZ4aWZiSlh2RV9MbVdfYUMzbVpKYTdZQnYtYkUyLVJyLWY1eWNmNXV6Rl9JV3lHZlExakRaT0N1OTZmMVpzbGNpVVAzQzVWc0N0Ul9pb1JDVDBMS1g1WUtqa2F6cGcwQVRkOTNwWldxeUpYd0hoUVpKVTJzUC14cExwOGtsWWpoaUhIdkREbW1oQTlVOUZ2QnY0TUVNblVSRmliREJGUGlWaw?oc=5",
@@ -593,9 +601,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - rpp.pe",
+      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
-      "medio": "rpp.pe",
+      "medio": "RPP Noticias",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T14:35:40.000Z"
     },
@@ -658,6 +666,16 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T01:18:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "\"Caos completo\": cómo vivió el terremoto Manizales, una ciudad entre edificios derrumbados y fachadas rotas - BBC",
+      "enlace": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1qbERSTHRmVVhpa0Z5SC16bzRXZFlfeHZwZzRvaWhoLVNyQWlmWUN6OE9PeEFfdjhjVEtGaUFmTFgzVU5nbEkyRVhFN1k5dWVsLUVyRlRLenl5eFnSAWBBVV95cUxOLTFDT1VwRUFqVEpQR3NpREJKMTAybXpVYkI1YUlVRFJ0WU5OdHZlSXZzSzl1OVVoTExjaFVabUg0NTVMUWMzN01odUh6UFd5dkFOaC1pZHkxREVmRkZjS1U?oc=5",
+      "medio": "BBC",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T01:15:30.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
     },
@@ -759,9 +777,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Más de 60 edificios colapsados y 18 vías afectadas por terremoto en Colombia: balance de daños - Noticias Caracol",
+      "titulo": "Más de 60 edificios colapsados y 18 vías afectadas por terremoto en Colombia: balance de daños - noticiascaracol.com",
       "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOc2dZZGl2aDNyWnpNTGgyeVZ5Zk0tckZmaldmVG1ON0VZY0hVYmxzLS1mVlZVclNOVDY5d2RGbUgxbVZqQXlzQ09LdlV6XzNwZXVEelNCbVRGQVJWeG1UZkg1YzI1NVJUbEtZUm1NUU5sd0pmU29QcnZBRGZ3anhzMUJwSEdaemRCYVlTT1lMU3YwQUJ6MFNmclV6ZFlWemQtMHBYMlZpRkZvcGJ3T2RMQmdxWmJIbTl2cVFWb0x1eVl5T3ktd2pCNkV1cHRicEJZcDRQbFB30gHjAUFVX3lxTE5ZM3FPY3JhQTZHVnkxN0JOZDFYSklqTkFXNzZLcUp2b3BCYURJNlFXWjctUW43OXltcDZCTkNwTTRRQ2laajVNYUpaOUthRlNJMlJSZVhPcjVrU3VIWVBOR2hCdkZERVZycmhnRzdTckZxNU5McnZzRlFyX2lCdExPbXQxY19BdUF1dnFmY2xuQThHSUZnWDdJUVJXZDNxYmEzdkFMMjdrY2dqTU53cmFoTTFoT0JMcEJ6dEU2a2szejVvaWNpakkzMG1CdkFHMkQzUXY2YXhJdURGRl80VFdrd1pZ?oc=5",
-      "medio": "Noticias Caracol",
+      "medio": "noticiascaracol.com",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T19:26:25.000Z"
     },
@@ -818,14 +836,6 @@
       "medio": "EL PAÍS",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T16:18:17.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Edificios derrumbados y calles cubiertas de escombros: las imágenes del terremoto en Colombia - Libertad Digital",
-      "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPdGZDT0FVLWZoVzY3WUVJazVjdnJGT05zMlFETzZSaWhLMmJ1ZFJqYTA3TUtBRUJkQjFGc2ctS0RkdmlQZ0hzUVJxTWZnblpvc29vMjZLN2xnaUF1anJaelNPd0xfclhFZWZac29TdXRCU3kxMDRFYlpNaE5XQy1fUzVVdDlHX1BHUmtKYTZjZDNFa1MyYmp0N1pxQlJnQ2hKb285SnVXQkg1cHk5eEw3UGNwY1hDam5hYTUwYkRGWmt3UFpEMU9qTHNfY2xmQnlIRzBTWm9VVlA0bkxjUXZQeDJidW5uVG82Q3JwWWhZdVZXaTVaMXJ4MkRnTG9TQUtYSnc?oc=5",
-      "medio": "Libertad Digital",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T16:04:13.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -914,6 +924,14 @@
       "medio": "Yvke Mundial",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-25T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Gobierno CDMX Anuncia Rescate de Animales del Refugio Franciscano; Confirma Maltrato y Crueldad - N+",
+      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd3FlZFY4S1BWcXlMbkkzeHZPYjM2RDRQMnM1cFZjYlJPSl8ySTBROHI5LWhNd0FJNTV5OWhiY0pTNmJPOVBrQTNQVmR4bloxOWZldjU4WVlRck4tSnRjS2hUVFNyZmFmQ2lGYTlPUllvcFNIRThMX0lUeGx1ZFAzakNqRDIydXlxUHhfZDZMU1R1d3dweE5hWlNSLWREM3dURUNzbnZRR29aWUxIM0V4TTNjd0hvUm1ManVVVGNYOW9LdjNHeVNLRFQwOXNiM283YzZpag?oc=5",
+      "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-01-07T08:00:00.000Z"
     },
     {
       "tipo": "albergue",
