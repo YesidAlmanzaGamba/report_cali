@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-16T04:06:51.082Z",
+  "generado": "2026-08-16T04:58:11.388Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 225,
-    "con_notas": 49,
-    "sin_notas": 176,
-    "poblacion_sin_notas": 5190380,
-    "medios_distintos": 103
+    "municipios_considerados": 227,
+    "con_notas": 55,
+    "sin_notas": 172,
+    "poblacion_sin_notas": 5017136,
+    "medios_distintos": 104
   },
   "municipios": [
     {
@@ -25,7 +25,7 @@
       "departamento": "Caldas",
       "mmi": 8,
       "poblacion": 469600,
-      "notas": 45,
+      "notas": 44,
       "ultima": "2026-08-15T16:14:46.000Z",
       "medios": [
         {
@@ -34,17 +34,12 @@
           "ultima": "2026-08-15T16:14:46.000Z"
         },
         {
-          "nombre": "Infobae",
-          "notas": 3,
-          "ultima": "2026-08-13T18:24:28.000Z"
-        },
-        {
           "nombre": "Blu Radio",
           "notas": 3,
           "ultima": "2026-08-13T14:29:46.000Z"
         },
         {
-          "nombre": "eltiempo.com",
+          "nombre": "El Tiempo",
           "notas": 3,
           "ultima": "2026-08-13T12:39:21.000Z"
         },
@@ -57,6 +52,11 @@
           "nombre": "Caracol Radio",
           "notas": 3,
           "ultima": "2026-08-11T22:08:46.000Z"
+        },
+        {
+          "nombre": "Univision",
+          "notas": 2,
+          "ultima": "2026-08-14T04:24:00.000Z"
         },
         {
           "nombre": "alerta.com.co",
@@ -74,14 +74,14 @@
           "ultima": "2026-08-14T06:45:00.000Z"
         },
         {
-          "nombre": "Univision",
-          "notas": 1,
-          "ultima": "2026-08-14T04:24:00.000Z"
-        },
-        {
           "nombre": "City Tv",
           "notas": 1,
           "ultima": "2026-08-13T15:56:32.000Z"
+        },
+        {
+          "nombre": "Infobae",
+          "notas": 1,
+          "ultima": "2026-08-13T14:52:40.000Z"
         },
         {
           "nombre": "724 | noticias",
@@ -99,7 +99,7 @@
           "ultima": "2026-08-12T01:30:44.000Z"
         },
         {
-          "nombre": "elespectador.com",
+          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-12T00:43:00.000Z"
         },
@@ -205,7 +205,7 @@
           "ultima": "2026-08-11T01:56:01.000Z"
         },
         {
-          "nombre": "eltiempo.com",
+          "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2018-10-21T07:00:00.000Z"
         }
@@ -218,12 +218,17 @@
       "mmi": 7.9,
       "poblacion": 500806,
       "notas": 68,
-      "ultima": "2026-08-16T03:30:13.000Z",
+      "ultima": "2026-08-16T04:44:18.000Z",
       "medios": [
         {
           "nombre": "Pulzo",
-          "notas": 18,
+          "notas": 17,
           "ultima": "2026-08-16T02:30:35.000Z"
+        },
+        {
+          "nombre": "El Tiempo",
+          "notas": 4,
+          "ultima": "2026-08-16T04:44:18.000Z"
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
@@ -241,6 +246,11 @@
           "ultima": "2026-08-14T01:31:48.000Z"
         },
         {
+          "nombre": "Vanguardia",
+          "notas": 3,
+          "ultima": "2026-08-13T15:42:00.000Z"
+        },
+        {
           "nombre": "Revista Semana",
           "notas": 3,
           "ultima": "2026-08-13T13:18:51.000Z"
@@ -251,11 +261,6 @@
           "ultima": "2026-08-13T13:00:50.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 2,
-          "ultima": "2026-08-16T03:30:13.000Z"
-        },
-        {
           "nombre": "El Olfato",
           "notas": 2,
           "ultima": "2026-08-14T00:01:11.000Z"
@@ -264,16 +269,6 @@
           "nombre": "Blu Radio",
           "notas": 2,
           "ultima": "2026-08-13T20:37:01.000Z"
-        },
-        {
-          "nombre": "eltiempo.com",
-          "notas": 2,
-          "ultima": "2026-08-13T16:09:27.000Z"
-        },
-        {
-          "nombre": "Vanguardia",
-          "notas": 2,
-          "ultima": "2026-08-13T15:42:00.000Z"
         },
         {
           "nombre": "El Colombiano",
@@ -296,7 +291,7 @@
           "ultima": "2026-08-14T15:55:19.000Z"
         },
         {
-          "nombre": "Guaviare Estéreo 92.7 FM",
+          "nombre": "guaviareestereo.com",
           "notas": 1,
           "ultima": "2026-08-14T15:38:40.000Z"
         },
@@ -311,7 +306,7 @@
           "ultima": "2026-08-14T05:37:00.000Z"
         },
         {
-          "nombre": "ELHERALDO.CO",
+          "nombre": "elheraldo.co",
           "notas": 1,
           "ultima": "2026-08-13T22:14:36.000Z"
         },
@@ -321,7 +316,7 @@
           "ultima": "2026-08-13T21:59:01.000Z"
         },
         {
-          "nombre": "elespectador.com",
+          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-13T18:54:00.000Z"
         },
@@ -403,11 +398,11 @@
       "departamento": "Chocó",
       "mmi": 7.8,
       "poblacion": 134417,
-      "notas": 17,
-      "ultima": "2026-08-14T21:25:38.000Z",
+      "notas": 18,
+      "ultima": "2026-08-15T02:08:23.000Z",
       "medios": [
         {
-          "nombre": "eltiempo.com",
+          "nombre": "El Tiempo",
           "notas": 2,
           "ultima": "2026-08-13T23:22:15.000Z"
         },
@@ -420,6 +415,11 @@
           "nombre": "Revista Semana",
           "notas": 2,
           "ultima": "2026-08-11T00:35:35.000Z"
+        },
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T02:08:23.000Z"
         },
         {
           "nombre": "Noticiero 90 Minutos",
@@ -447,7 +447,7 @@
           "ultima": "2026-08-13T17:54:43.000Z"
         },
         {
-          "nombre": "ELHERALDO.CO",
+          "nombre": "elheraldo.co",
           "notas": 1,
           "ultima": "2026-08-13T15:46:10.000Z"
         },
@@ -457,7 +457,7 @@
           "ultima": "2026-08-12T21:36:51.000Z"
         },
         {
-          "nombre": "ecosdelcombeima.com",
+          "nombre": "Ecos del Combeima",
           "notas": 1,
           "ultima": "2026-08-12T19:56:04.000Z"
         },
@@ -472,7 +472,7 @@
           "ultima": "2026-08-11T13:04:00.000Z"
         },
         {
-          "nombre": "Canal 1 En vivo",
+          "nombre": "canal1.com.co",
           "notas": 1,
           "ultima": "2026-08-10T22:35:27.000Z"
         }
@@ -484,7 +484,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 5511,
-      "notas": 4,
+      "notas": 5,
       "ultima": "2026-07-05T07:00:00.000Z",
       "medios": [
         {
@@ -506,6 +506,11 @@
           "nombre": "elpais.com.co",
           "notas": 1,
           "ultima": "2018-10-05T23:20:55.000Z"
+        },
+        {
+          "nombre": "Noticias Caracol",
+          "notas": 1,
+          "ultima": "2018-10-05T07:00:00.000Z"
         }
       ]
     },
@@ -567,11 +572,11 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 322388,
-      "notas": 27,
-      "ultima": "2026-08-15T22:46:48.000Z",
+      "notas": 28,
+      "ultima": "2026-08-15T23:01:40.000Z",
       "medios": [
         {
-          "nombre": "eltiempo.com",
+          "nombre": "El Tiempo",
           "notas": 2,
           "ultima": "2026-08-14T21:37:22.000Z"
         },
@@ -589,6 +594,11 @@
           "nombre": "El Colombiano",
           "notas": 2,
           "ultima": "2026-08-12T16:40:07.000Z"
+        },
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T23:01:40.000Z"
         },
         {
           "nombre": "elcontraste.co",
@@ -646,7 +656,7 @@
           "ultima": "2026-08-13T02:52:55.000Z"
         },
         {
-          "nombre": "Futbolred",
+          "nombre": "futbolred.com",
           "notas": 1,
           "ultima": "2026-08-13T01:22:00.000Z"
         },
@@ -666,7 +676,7 @@
           "ultima": "2026-08-12T18:03:00.000Z"
         },
         {
-          "nombre": "elespectador.com",
+          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-11T19:16:00.000Z"
         },
@@ -727,7 +737,7 @@
           "ultima": "2026-08-16T02:15:56.000Z"
         },
         {
-          "nombre": "Canal 1 En vivo",
+          "nombre": "canal1.com.co",
           "notas": 1,
           "ultima": "2026-08-11T03:01:33.000Z"
         },
@@ -945,9 +955,14 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
       "poblacion": 12251,
-      "notas": 1,
-      "ultima": "2026-08-13T22:13:22.000Z",
+      "notas": 2,
+      "ultima": "2026-08-15T17:35:43.000Z",
       "medios": [
+        {
+          "nombre": "elheraldo.co",
+          "notas": 1,
+          "ultima": "2026-08-15T17:35:43.000Z"
+        },
         {
           "nombre": "elpais.com.co",
           "notas": 1,
@@ -1180,8 +1195,15 @@
       "departamento": "Chocó",
       "mmi": 7,
       "poblacion": 31989,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-15T02:43:22.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T02:43:22.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO66383",
@@ -1234,8 +1256,15 @@
       "departamento": "Chocó",
       "mmi": 7,
       "poblacion": 18546,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-15T01:16:50.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T01:16:50.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO27810",
@@ -1399,8 +1428,15 @@
       "departamento": "Chocó",
       "mmi": 6.9,
       "poblacion": 5167,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-15T03:41:39.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T03:41:39.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76828",
@@ -1543,12 +1579,17 @@
       "mmi": 6.7,
       "poblacion": 2337182,
       "notas": 65,
-      "ultima": "2026-08-16T02:37:05.000Z",
+      "ultima": "2026-08-16T04:43:39.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
           "notas": 25,
           "ultima": "2026-08-16T02:17:49.000Z"
+        },
+        {
+          "nombre": "El Tiempo",
+          "notas": 5,
+          "ultima": "2026-08-16T04:43:39.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1571,19 +1612,9 @@
           "ultima": "2026-08-14T15:31:04.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 2,
-          "ultima": "2026-08-16T02:37:05.000Z"
-        },
-        {
           "nombre": "facebook.com",
           "notas": 2,
           "ultima": "2026-08-14T21:12:16.000Z"
-        },
-        {
-          "nombre": "Revista Semana",
-          "notas": 2,
-          "ultima": "2026-08-14T17:51:28.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -1591,17 +1622,12 @@
           "ultima": "2026-08-14T16:55:48.000Z"
         },
         {
-          "nombre": "eltiempo.com",
-          "notas": 2,
-          "ultima": "2026-08-14T11:34:25.000Z"
-        },
-        {
           "nombre": "EL PAÍS",
           "notas": 2,
           "ultima": "2026-08-10T20:28:12.000Z"
         },
         {
-          "nombre": "ELHERALDO.CO",
+          "nombre": "elheraldo.co",
           "notas": 1,
           "ultima": "2026-08-15T19:23:08.000Z"
         },
@@ -1611,7 +1637,12 @@
           "ultima": "2026-08-15T14:53:29.000Z"
         },
         {
-          "nombre": "El Universo",
+          "nombre": "Revista Semana",
+          "notas": 1,
+          "ultima": "2026-08-14T17:51:28.000Z"
+        },
+        {
+          "nombre": "eluniverso.com",
           "notas": 1,
           "ultima": "2026-08-14T12:23:00.000Z"
         },
@@ -1661,7 +1692,7 @@
           "ultima": "2026-08-10T14:14:00.000Z"
         },
         {
-          "nombre": "newsroom.rcnradio.com",
+          "nombre": "Newsroom RCN Radio",
           "notas": 1,
           "ultima": "2026-08-10T07:00:00.000Z"
         }
@@ -2320,8 +2351,15 @@
       "departamento": "Cauca",
       "mmi": 6.2,
       "poblacion": 117542,
-      "notas": 0,
-      "medios": []
+      "notas": 2,
+      "ultima": "2026-08-14T20:30:49.000Z",
+      "medios": [
+        {
+          "nombre": "Proclama del Cauca",
+          "notas": 2,
+          "ultima": "2026-08-14T20:30:49.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO73854",
@@ -2807,18 +2845,13 @@
       "departamento": "Antioquia",
       "mmi": 5.8,
       "poblacion": 2745464,
-      "notas": 3,
+      "notas": 2,
       "ultima": "2026-08-16T03:22:30.000Z",
       "medios": [
         {
           "nombre": "La FM",
           "notas": 1,
           "ultima": "2026-08-16T03:22:30.000Z"
-        },
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-08-15T22:40:08.000Z"
         },
         {
           "nombre": "El Colombiano",
@@ -2869,12 +2902,12 @@
       "ultima": "2026-08-15T22:28:09.000Z",
       "medios": [
         {
-          "nombre": "ELHERALDO.CO",
+          "nombre": "elheraldo.co",
           "notas": 1,
           "ultima": "2026-08-15T22:28:09.000Z"
         },
         {
-          "nombre": "Canal 1 En vivo",
+          "nombre": "canal1.com.co",
           "notas": 1,
           "ultima": "2026-08-14T16:21:04.000Z"
         },
@@ -2891,7 +2924,7 @@
       "departamento": "Antioquia",
       "mmi": 5.4,
       "poblacion": 13055,
-      "notas": 2,
+      "notas": 3,
       "ultima": "2026-08-14T23:22:03.000Z",
       "medios": [
         {
@@ -2903,6 +2936,11 @@
           "nombre": "Pulzo",
           "notas": 1,
           "ultima": "2026-08-14T21:23:17.000Z"
+        },
+        {
+          "nombre": "eluniverso.com",
+          "notas": 1,
+          "ultima": "2023-03-19T07:00:00.000Z"
         }
       ]
     },
@@ -2932,7 +2970,7 @@
       "ultima": "2018-10-05T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "Canal 1 En vivo",
+          "nombre": "canal1.com.co",
           "notas": 1,
           "ultima": "2018-10-05T07:00:00.000Z"
         }
@@ -2951,6 +2989,22 @@
           "nombre": "NTN24",
           "notas": 1,
           "ultima": "2026-08-13T19:01:43.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO25513",
+      "nombre": "Pacho",
+      "departamento": "Cundinamarca",
+      "mmi": 5,
+      "poblacion": 29625,
+      "notas": 1,
+      "ultima": "2026-08-15T20:52:57.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-08-15T20:52:57.000Z"
         }
       ]
     },
@@ -2992,7 +3046,7 @@
       "departamento": "Atlántico",
       "mmi": 4.5,
       "poblacion": 1355306,
-      "notas": 10,
+      "notas": 9,
       "ultima": "2026-08-15T21:07:20.000Z",
       "medios": [
         {
@@ -3011,14 +3065,9 @@
           "ultima": "2026-08-15T19:15:00.000Z"
         },
         {
-          "nombre": "ELHERALDO.CO",
+          "nombre": "elheraldo.co",
           "notas": 1,
           "ultima": "2026-08-15T18:30:39.000Z"
-        },
-        {
-          "nombre": "Agencia de Periodismo Investigativo",
-          "notas": 1,
-          "ultima": "2026-08-15T16:48:02.000Z"
         },
         {
           "nombre": "AS Colombia",
@@ -3141,9 +3190,25 @@
       "ultima": "2026-08-13T21:30:00.000Z",
       "medios": [
         {
-          "nombre": "elespectador.com",
+          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-13T21:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO52699",
+      "nombre": "Santacruz",
+      "departamento": "Nariño",
+      "mmi": 3.9,
+      "poblacion": 11117,
+      "notas": 1,
+      "ultima": "2026-08-14T21:02:04.000Z",
+      "medios": [
+        {
+          "nombre": "Proclama del Cauca",
+          "notas": 1,
+          "ultima": "2026-08-14T21:02:04.000Z"
         }
       ]
     },
