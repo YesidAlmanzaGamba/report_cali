@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-16T21:13:33.353Z",
+  "generado": "2026-08-16T21:41:54.232Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -32,6 +32,16 @@
       "publicado": "2026-08-16T19:30:00.000Z",
       "pcode": "CO08001",
       "municipio": "Barranquilla"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -84,6 +94,16 @@
       "medio": "Newsroom RCN Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T08:18:12.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -152,6 +172,16 @@
       "publicado": "2026-08-15T15:39:32.000Z"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Norwalk Hour",
+      "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPd3hTdEVtc0RHTVJlTU1YZTNwMG9xQURtWFgzMFN0b0FtWUoyenBPanZQbGNsTjE4SGhVVG56X0VXNUNWelR6WDBvWUZ5Sll1d05JRzIyb3hqWWsxV0lHT1p4SXNXQlJmSXZIRkNUQ3NPLTZUc3RXcHM4bGVSZDFWN0dXWnRtSFNfMkdleURzcmhSZzE4elRWcElZdWRnWHphcVE?oc=5",
+      "medio": "Norwalk Hour",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-15T05:06:52.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
@@ -210,16 +240,6 @@
       "municipio": "La Unión"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Chicago Tribune",
-      "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMVo3NnNXSUJRbXVReXRIMGIyYXh3bjZnOFpqeDktaVBCRUowY2EwdmU0NEhfWW5ianNoTXQ2Nld3UlBOV1BYUjhMM1cwc1p6djUwSE82U3N0cGJQeXVGdmNJQjB4d1NzaUlIRWZwbVN0bHNOTUltWS1UYTNvaTZ4NlNFZjZubkFrYkRwal8wNkZFVDNEX3dIRnFmeUs5TlpsSVAzSUJ2eWFfSi1OTHd1SloxZ2pzR1BWby1EWmkzYTktSmJwY2JCcy1YSW5OYkhQMzNNTnhobkxjUQ?oc=5",
-      "medio": "Chicago Tribune",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T16:24:20.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Video | Jhonny Rivera convirtió su hotel en albergue tras el sismo - Canal 1 En vivo",
       "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQa0h6ckFyVnVNVVdxTFd1TEdoOGg3N3FCMUJrZWRMZV9QYkZMZ1JLY0ZrTkRsZFd5Y0tRYXFRQnlYYzdJOVZGY3pEVy1QYWQyM3o0eUdWX2c1Ylp0ZzZyQVBEbmdpVnI3ZHd1MzRwYy1rYk1PSGJJbW5RR2ZkeDRQdUo2bGRoRWtHd2RHNzJ4UHdHMWVrVFNhSkpEMFMtczVGR3ZDelpPTzdURDdjTFZBctIBtgFBVV95cUxOVms5MGp1OVVNODFkdURBUXdvdmRQeEpka1ZtbVNjODNrWmYwTEtxT0p4R3A0ODUyOW8tSlozY1ZwdnZIUjVZSEpQQ00zdHRGQnFDdEZ6S2dfejZOZnI3TnpYa3lZQXlKbnNDcG5rY1BXYUJNYkNEUW8wU1o2eTEzOG10RlRxcmFjbkdxR2FhUnhFbVFjeTdNVENPRnpkQnB1UDVpamx3c0pRd19KaXZYcWw4TDhnQQ?oc=5",
@@ -236,6 +256,16 @@
       "medio": "Seattle Post-Intelligencer",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T15:27:44.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
+      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
+      "medio": "Reading Eagle",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T15:24:20.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
     },
@@ -343,6 +373,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Así es el hotel de Jhonny Rivera en Pereira que se convirtió en albergue por el terremoto - Las2orillas",
+      "enlace": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUTlXSmVibHJpdnFmd1hjX1ZpbEdlQkRmbGFsVm9NeUs4LW11andSRVl5Z1lMYmthTWVzM0dMWE5pTW5QaTNlYVpGUFFIZE1iUDEwZ2xYdjBCMVVBTUo5ZUtrWF9YN3NDc2VtR01kcUlscnZURDE4SlM0bmZCZnNSMjdSMnVGVGI5NkN1VWltLUM1cFZ5S29LYjZkLWpmdDY0UGVfM0FZdGNDNUtEYUZHSEw0TmtQY0w4?oc=5",
+      "medio": "Las2orillas",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T21:11:23.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Terremoto en Colombia afecta a refugios de animales: ¿cómo ayudar a las fundaciones? - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRGtEaXJUMHd0QVJ5RzlOaXg0R0l5Zi1WdmVrX2FacnRlQkpmWnZsSkRqU2hKR2VBWEZhR2FDNkRqZlRYdnNLOG5zcGVLaUdxMGdCTlpnU1gxbGVFM1FVLXdvQzZ6RFhpTXp4ZXlZTEpvX1h0azJZQWp4a2VkZWtQVVVManhwY3YwWlp5S1lZNFY0dTdfdEhEMXR3cGh0VXRrZTZ5dWxaM3dCQzRwVjJMZlVaR2VwZzlzNkVHM2wtN0ROaHVydnJz0gHMAUFVX3lxTE5CTTIxQTFUeVdTbFhCdmt6a1VyWWluNXZfalFqV2NSYUF0dGllZjZkM2ttSVhxTEZzeUhTdTZ5cWxXWldnbHZyQzV1N2E5RTAtQlpzUHFLQk9sZ2RXUndPdHJrLVRxUy1KVTEtWTVjSWZBYThiblhWNjFzQmZOT2huXzNEb2JzRlptdG0wdDZyUVhNbG05Ty1EVkg0bnBjbGU1UmNrX0t6NDFPLTNnYVRBcmFualh3TkJCWnRhbm41MjNLejh5ZWVuWE9JSw?oc=5",
       "medio": "El Tiempo",
@@ -427,9 +467,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Cali y Pereira reportan casi 200 edificaciones colapsadas, luego del terremoto del lunes - larepublica.co",
+      "titulo": "Cali y Pereira reportan casi 200 edificaciones colapsadas, luego del terremoto del lunes - LaRepublica.co",
       "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbDdyaXJBSkhERmsyWDVfaEZwQVlSYzRBenFBVlBlNm14LTliSnBmc1JTLWpGMk9yeS1LWFNXNWlIV2ZSaVBKTjZRUmc4YWJxYWdUQkJ3d3JMYkVpUXpxX05DNWNTd2xhWTR5YmJWanhUeGdWOUdwazgyVV95Nml2cS1pRzBzTXk1Y2FYVGo1V1JxdDdLRGI5Z1Q0NEE2bkVNNTdOVFE2Qm11XzNNMDh0eVVoWW5ld2hCNkZER0ZLUmlOQ1hwX2lYZkFERTFnWlM3dHNGbEtMR1lYZ1hCeDJHeDBwT2VmZy1v0gHoAUFVX3lxTE9fOWkzcm9ocnJCM0VwaFpTbmRMNjE4OU12N3hQcGh3dkJGMEVlREVMNWVnMlpmWGZ1Rnc5T2tfY000V3ZWY2ZfV1UyTllqYlpHakVQblVLMmJ5TUxHckRLTnBMaVZuUkFZQnRhX04tM3Z1YWdUV2hlSV9lTl9pa2ZtODJJeTZJZEozQTBzTGEtUnBvZHEwdHRsdjF5djBEQncwWFV4aHBtTFliVkU1aGYtaTFVTnR0U3RzTVhhMU9XSFBUaGprYzJUTndUZ0RJX3hoRGF1enVBdkloWTBrd2VuS0txZ1FWUVM?oc=5",
-      "medio": "larepublica.co",
+      "medio": "LaRepublica.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T05:01:08.000Z",
       "pcode": "CO66001",
@@ -634,14 +674,6 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T15:07:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
-      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
-      "medio": "RPP Noticias",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T14:35:40.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -856,14 +888,6 @@
       "medio": "El Diario Venezuela",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-25T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Centros de Acopio para Afectados por Inundaciones en Veracruz: ¿Dónde Están y Qué Puedo Llevar? - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdGl3Umo3QzRRdWNhNEo3TnBkbXpoSm92RzBYN2hWelFFQU56X0pGdkxhZ1RIWkNLVmNPc0NhbktaUTlfLXdNMEdTejFYNXpYWHlxLV82eVIxZnVYempGeGtudlVzZWh0VEJyaGRjbVBKSE1WQWo0U2FENVlwdXhocVlmaFpqc21sX20zYmtDd1BWNnZQZC1Val9RSWcwR0xsaThERkpscUttbV9PenM5c1o2UlZPWHZUMW9NTlFQNndPTjhZQUFHc2xQOWJ6NDJ4SmR1Vmdn?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2025-10-13T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
