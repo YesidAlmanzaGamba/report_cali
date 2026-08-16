@@ -1,17 +1,29 @@
 {
-  "generado": "2026-08-16T19:41:37.933Z",
+  "generado": "2026-08-16T20:13:59.008Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
     {
+      "tipo": "centro_salud_afectado",
+      "sede": "Hospital Benkos Biohó",
+      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - EL INFORMADOR - Santa Marta, Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUmUyZnR4Vkg1WjdDMk1UeE1LcXNRN1ZDMXFZR0xtZzNLWmQ5eWE0Szk2eXhNZzZMNUY0ODhab2t1b01ZSDFCQVlRTFhyOFBHQUhlb1IxdnlDZVFoTDd4NXMwUm9lUXNPRUpXT1VWUGtRcU92RGZQWGRTOWdqLWxoWF9mQzFVRFY5dHRnbWtLY2pnZy1IWnIydXdNekRYcDBUc0NvMWF5OWVHdGdBZ05hNXhQTkhqSm9wbGlVd0FHbXVxQmdtQi1ld2tYbE5RQ25sNVdkZ2pLQnRSVDdualJWY0praEM3U1lwWGVFY1hMb0tBdw?oc=5",
+      "medio": "EL INFORMADOR - Santa Marta, Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-16T20:05:32.000Z",
+      "pcode": "CO76109",
+      "municipio": "Buenaventura",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
+    },
+    {
       "tipo": "centro_acopio",
-      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
-      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
-      "medio": "El Diario (Pereira)",
+      "titulo": "30 toneladas de ayudas han salido del centro de acopio de la Gobernación del Atlántico para afectados por el terremoto: campaña busca llegar a las 50",
+      "enlace": "https://www.eltiempo.com/colombia/barranquilla/30-toneladas-de-ayudas-han-salido-del-centro-de-acopio-de-la-gobernacion-del-atlantico-para-afectados-por-el-terremoto-campana-busca-llegar-a-las-3578771",
+      "medio": "El Tiempo",
       "tipo_fuente": "press",
-      "publicado": "2026-08-16T16:00:15.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
+      "publicado": "2026-08-16T19:30:00.000Z",
+      "pcode": "CO08001",
+      "municipio": "Barranquilla"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -64,16 +76,6 @@
       "medio": "Newsroom RCN Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T08:18:12.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
-      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-16T03:18:20.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -142,16 +144,6 @@
       "publicado": "2026-08-15T15:39:32.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Norwalk Hour",
-      "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPd3hTdEVtc0RHTVJlTU1YZTNwMG9xQURtWFgzMFN0b0FtWUoyenBPanZQbGNsTjE4SGhVVG56X0VXNUNWelR6WDBvWUZ5Sll1d05JRzIyb3hqWWsxV0lHT1p4SXNXQlJmSXZIRkNUQ3NPLTZUc3RXcHM4bGVSZDFWN0dXWnRtSFNfMkdleURzcmhSZzE4elRWcElZdWRnWHphcVE?oc=5",
-      "medio": "Norwalk Hour",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-15T05:06:52.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
@@ -180,6 +172,16 @@
       "publicado": "2026-08-14T21:46:31.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Así operan los albergues para los damnificados del terremoto en Cali - El Espectador",
+      "enlace": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQUFLUURON0xXM1NLeUFNWXZnbWNHSzIzX1JhTUV3akh0c2V3UGVQMVdfNmxxZlFGWm1ES0I5Qm52SzZNMU5SOGpsR2VBN3JReV9xbnpSMzVKVHlVb0p4dnRxZjdmcGVtVS0tMjF3cG5zdmxTNElYMkhSRUN5eHpidlNfUV9uQVFqaVJQSGtNMNIBowFBVV95cUxOZXJyLVd6UTBGUURhbGJGU0luLWR4akx0VTdwRjhKWGwtSzdHODhfSy1LYkdrN2lYdkRXaUtaNDF1Mk5UdXluQm92SDM0MEFnWEx4aEh3dkdYWnV1dmVMclRWQVZ5cjBmd0hSUEEzQ25seTJ1QklHNG9FR3lYdkNTaXlDTmppM1dQekV4eEhvcDRBM3ExUE96QVZOendLRWs3N1pR?oc=5",
+      "medio": "El Espectador",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-14T21:09:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_danada",
@@ -684,6 +686,16 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T01:18:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "\"Caos completo\": cómo vivió el terremoto Manizales, una ciudad entre edificios derrumbados y fachadas rotas - bbc.com",
+      "enlace": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1qbERSTHRmVVhpa0Z5SC16bzRXZFlfeHZwZzRvaWhoLVNyQWlmWUN6OE9PeEFfdjhjVEtGaUFmTFgzVU5nbEkyRVhFN1k5dWVsLUVyRlRLenl5eFnSAWBBVV95cUxOLTFDT1VwRUFqVEpQR3NpREJKMTAybXpVYkI1YUlVRFJ0WU5OdHZlSXZzSzl1OVVoTExjaFVabUg0NTVMUWMzN01odUh6UFd5dkFOaC1pZHkxREVmRkZjS1U?oc=5",
+      "medio": "bbc.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T01:15:30.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
     },
