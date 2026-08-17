@@ -1,8 +1,18 @@
 {
-  "generado": "2026-08-17T17:20:13.719Z",
+  "generado": "2026-08-17T17:53:25.351Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "El Escondite de la Cruz Roja que hoy sirve de refugio para la reconstrucción de Roldanillo",
+      "enlace": "https://www.elpais.com.co/colombia/el-escondite-de-la-cruz-roja-que-hoy-sirve-de-refugio-para-la-reconstruccion-de-roldanillo-1704.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T17:20:04.000Z",
+      "pcode": "CO76622",
+      "municipio": "Roldanillo"
+    },
     {
       "tipo": "centro_acopio",
       "titulo": "Kits, alimentos y carpas, así funciona el corazón logístico del centro de acopio del Valle para atención humanitaria",
@@ -81,14 +91,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lluvias agravan emergencia tras terremoto de 7,4: albergues y viviendas resultan afectados - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQbWgza1ZDU2NmV3I4bTE5M2g3ZUV5a29waG1QTlFrZG52bGJ2REtweFhZZVFQWUM4UUVRZzB2WHYxNDZTMDIzYkt4MEVQOGcwdWVxZGg3bDY5NnJrcUlWeEdGVFR6VVExUE5lYm9HNEJtYXU3R3lwWU1zekZoc0VvT0hBLVBkaGdBb1hucjJuQ1ZvQmZFRF9yWjRjMGZxZGdoT3RwTkRJMWJDSVBHR1A4Ulp3amd2M3EteU5wYkRyQXR1X1R5dDdVOTJwQXFVTHc1bXJWXzFjVFIydnhPSXdyNHczT3FLcmIwd2c?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T15:07:35.000Z"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Confirman que 194 personas siguen en albergues tras terremoto en Cali; Alcaldía evalúa edificaciones afectadas",
       "enlace": "https://www.elpais.com.co/cali/confirman-que-194-personas-siguen-en-albergues-tras-terremoto-en-cali-alcaldia-evalua-edificaciones-afectadas-1759.html",
       "medio": "El País (Cali)",
@@ -135,9 +137,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - KienyKe",
+      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - kienyke.com",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSnpfMHdLd3JPRDYtb3JIQ0FJUTNRcm5qVm43VkdzaVlsRklEaU5ONnMxSmpReUFXcVZuSzl0QVJtcEVpNGdSVVl3NTNWcTlMWkNPeUxyQV9vb0I5U3pITHZPZllKTW5MYWU0TGlTbEJfVnpmZEJsQk5zNjJYMkcwdi1yWEhVZWg1TkVCWEZwRHY?oc=5",
-      "medio": "KienyKe",
+      "medio": "kienyke.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
@@ -220,16 +222,6 @@
       "municipio": "Versalles"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "¿Qué debe hacer si su vivienda fue evacuada por riesgo de colapso?Alcaldía de Cali hace un llamado a los ciudadanos",
-      "enlace": "https://www.elpais.com.co/cali/que-debe-hacer-si-su-vivienda-fue-evacuada-por-riesgo-de-colapsoalcaldia-de-cali-hace-un-llamado-a-los-ciudadanos-1512.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-16T02:04:12.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Familias de Bogotá activan centros de acopio solidarios para afectados por terremoto - teleSUR",
       "enlace": "https://news.google.com/rss/articles/CBMidkFVX3lxTE10SmEwV19rTEFRQ0tHZGNJLXR2WmxtTXkxRnQ3ak9xbzNEdVh5S1o0ZUFaOFJucFpiZzcxVEpnc0lmUjFlNG5heXdldUVSRUFrb1E0UW5WWFdYX0I1ME1TdUpMSTBKTFFzQXJlSGNuZkJwbmlaX0E?oc=5",
@@ -265,9 +257,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - elnuevodia.com",
+      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
-      "medio": "elnuevodia.com",
+      "medio": "El Nuevo Día",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T01:17:00.000Z"
     },
@@ -343,9 +335,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Seattle Post-Intelligencer",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - seattlepi.com",
       "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaDNFVjVDOXFtdWxQR1hYMTduWDVFWi1MTGE1MGdadkhMTWIxakJUZHhva25EZVE3TVMtU3lmM1gwSmtvaFJ6a0dqckZhQmh6cVoybWpEc01JUlk1Ni10blE1OWh6blR2bFFwZWdlY0pQNk9uWlExRTdmdlh1Z1pOS3Z4XzY2UC1iLUtrMTlQZDg5UTNTS3c?oc=5",
-      "medio": "Seattle Post-Intelligencer",
+      "medio": "seattlepi.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T15:27:44.000Z",
       "pcode": "CO54385",
@@ -567,14 +559,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Los albergues, un oasis para las familias que perdieron todo por el terremoto en Colombia - Visión 360",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTUVjUXljTmdYOEd3NEN5OC1sV01DNERFQWxzYkp0eXVPdjdHYlA5bEhCVmxXN2sxeUpseGpTTFViQ1V2SGJqOUNnV3NsWVBSOW84eGs3cEc0VzZfTnNmNkxCU3pDcHZPU1ppR0JjcW5KcVE4THg4bEpoMzhrV2N2T2hhSnhXbDdkeEJUaUVSMk1wUm12aW4xcEVZVFU4Wlh6UjluZXFCVjNBbGwxUmxLRWU3WlBqdEs4MjlRc0JUemFySWNpbUczdWJmVmZXZ1lldEJ0dmVn0gHbAUFVX3lxTE5RcVpRWFFoX05wMVFqeGd4QTVwaWVDMDRBMWNZMnNEM2luUmMyY19CODQ4ZHdpbVA3LTUwQVlVSFhzRFJiak1IcWpESGEwZi1hcjhWTUZZcF9VemU4Smt6QzNMdEQ3U0JsTGc2ak5Salh3NXNTTXRTdGViMVdRbE9hRktSMWw0eXlJTkpWdG44eWdyVHNSYmpmNkhjbVJKdVVwSnBzT1lPNGN6ME1QQkFEUHo4Ulg2VHVkdklBbVpIb09OZEtZZnNzTGh5SU5aUEh5TFc2VV94OEpnUQ?oc=5",
-      "medio": "Visión 360",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T20:34:21.000Z"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
       "medio": "vanguardia.com.mx",
@@ -583,9 +567,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - noticiasrcn.com",
+      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - Noticias RCN",
       "enlace": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOFZTM1FRZDJNVDFvZ0FWSWZzT2FQLU1OaXA2eEN2MGhDNndaci1NRUQ3Y2REeFBSM04zMTAwNWlvVzJZQ2lIVG1hSjdXZHo0XzJGbVRzdS1mOFQxOVZDbVlfYThpajBMWk9xQnBaR2R4RzZhQzhxd2FicVFpdjlmQVB3MHBITmZQbFA1cjRfbnEtb29aa1p1YWhJdU1VNEFwZmhIMXBwQ1Vzb3dWclFySUQxWGdBWHRnRVhLT2NSMk83SjN5WUFseUloQmRNM2xs0gHQAUFVX3lxTE1hY0pRQTM0V2J4cUZRNlNTZi1VbHhTa2x4YV9qUkxDYXAwLXd2XzlQbnljMFBIVzNaY0ZXY2JOc1Rtd1pWVENsbklYSDlyb1U3cWJIS2dxSnpKVHlJRDdqd3lTbzRtME9UTm1mNldVRHVMQnRHSTE3R3B3bGxFYUF6cWpwWnJFRVAzZ2JDNTkwa1gtV0pxdzNpdFJNT3hmMGxlRXJBZFo1ZVdyTlJub25PVW9POUJmSFpPQ3N4RkJyYjlSRE1LU0J6NGhoV1U4SGE?oc=5",
-      "medio": "noticiasrcn.com",
+      "medio": "Noticias RCN",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T17:28:45.000Z",
       "pcode": "CO76109",
@@ -691,9 +675,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - Radio Atacama",
+      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - radioatacama.cl",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWg1SVJpT1dKM0NuUVllenVzZ25YSHZJNU9Vc1VxN3RHUHBwOU81a1ZrMm82N29JTVNDa3ZPdTFwVWNpZUI3S1cwQlpON3c1UlU5cThOeGJRaXBqMXBGVkhzWFcwdlNFWFNWdXREczFtY0pZNmh5Z3ZTdUdDQ21QWVpjeFVhSzBPVjFRUnVqXzc?oc=5",
-      "medio": "Radio Atacama",
+      "medio": "radioatacama.cl",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T17:35:14.000Z"
     },
@@ -825,9 +809,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Diferentes ciudades de Colombia han habilitado centros de acopio para recibir ayudas luego del sismo - Colombia.com",
+      "titulo": "Diferentes ciudades de Colombia han habilitado centros de acopio para recibir ayudas luego del sismo - colombia.com",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPbDJOaklaMXJEWkNGY051R0hYcmNFeThqTkFKX0E3WGx1ekRUbm4xTjRIOGZBT3JVeGxieXRtOUR5QzZ3eGFwYW44SjV3UHlLY0JXSXBObVFnRGRUejhxankwRXN0Yld5MXRkWlFodjBYSkVEeFpxd0dxOTExZk96Rl9ra01PZlprdGlVeF9yOXdIVTVZdjl4aUlWLXIwUlZIbldLc1kxMnJVeUZMeVFhb29QbTVIbVFzQlV2YTlxMGd4cmE0emtFOTNMMFU2WFViZHVoc1lhbUM?oc=5",
-      "medio": "Colombia.com",
+      "medio": "colombia.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T22:08:49.000Z"
     },
