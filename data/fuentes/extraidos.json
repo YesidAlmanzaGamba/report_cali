@@ -1,15 +1,33 @@
 {
-  "generado": "2026-08-17T18:27:13.061Z",
+  "generado": "2026-08-17T19:07:59.818Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
     {
       "tipo": "centro_acopio",
+      "titulo": "Centro de acopio en Bogotá despachó 933 toneladas de ayuda humanitaria a zonas afectadas por el terremoto",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/centro-de-acopio-en-bogota-despacho-933-toneladas-de-ayuda-humanitaria-a-zonas-afectadas-por-el-terremoto-3578909",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T18:56:20.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Manizales mantiene atención a damnificados por el sismo: 241 personas permanecen en albergue - 724 | noticias",
+      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1NIbXdnREVhN3NhbVdtMmQyZUJNVnBza21CTXk1Q2RUR3BsaFFkZEhWSXlnc3V6bFRlOVBBcDFhcm5ORmNwWHV6TkFleHVCb0hNMXhKc2hvMGJYNFVFN1VYeHFHMTFUOHNvOE55LTQ0R2NFd3l1UUJ1SjFNbzB6RElTV09idUd2MjNXY09Vcm5sc1d1NG1nZjV3cnZUQ2tsV3BxcGFQd0JMQWc?oc=5",
+      "medio": "724 | noticias",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-17T18:26:25.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
+      "tipo": "centro_acopio",
       "titulo": "Estos son los puntos de acopio que siguen recibiendo ayudas para los damnificados del terremoto en Bogotá - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUVBrMHpGZC1XZnlHR25sRHRhazVQM0dsVklocE1YdEJHYVhQdXFkUWdMZEhEaDJqT1NuY1ZRU1J3RGV3ZmxlQlRWN3h6clo3N283RlczUjJNYllhWDN3cll4RXVCWWRRaGJuSV9oUW5KZjdsNGZkRWctVDQwTkxKajhaLUpSdW9kcms4YVBJbDd2c09CX2ZmbUhEUXo5VTMycmExX3l2LVhLQXZkOVhOVFZrM09uLTJ6dmd3MF9wN3drOTd6ZWZmakUzVHVnNkYtRTFZZVJVUGhjNkl0N3lHeXFkc04?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUVBrMHpGZC1XZnlHR25sRHRhazVQM0dsVklocE1YdEJHYVhQdXFkUWdMZEhEaDJqT1NuY1ZRU1J3RGV3ZmxlQlRWN3h6clo3N283RlczUjJNYllhWDN3cll4RXVCWWRRaGJuSV9oUW5KZjdsNGZkRWctVDQwTkxKajhaLUpSdW9kcms4YVBJbDd2c09CX2ZmbUhEUXo5VTMycmExX3l2LVhLQXZkOVhOVFZrM09uLTJ6dmd3MF9wN3drOTd6ZWZmakUzVHVnNkYtRTFZZVJVUGhjNkl0N3lHeXFkc07SAf8BQVVfeXFMUHNUZjJxY3hHR3FMZWlKdUxsV3B5ZE9VNUxuSGhHZkNqOTd1TWc1VEJrenJYT3k0cmtlcGIxQ2phM1ZZNWFRd0tnWGU0bmFZaVJENjVMV1hWSWRWbFNQQ01MR3Y3OXk3eVFJTlRyWFFiRms4elVGVlRRUlZ3b1pkcjBxUnRhNWNWN1c2YlU4b0w3ckJlZWVFdlNEdlB5ZDJDcXp5ZDlhN0RJZV9qU2RTRnVQNExuclE4T0hvUkExYXpuVjRrWGd2R0QzMEFLSzFZanNRd2UxVUswMEFJTnVfcHI2NWZDME5SUnR1WTZLVUlDNnM0eVpIQjlRRUtrOWhj?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
-      "publicado": "2026-08-17T17:56:36.000Z"
+      "publicado": "2026-08-17T17:57:44.000Z"
     },
     {
       "tipo": "albergue",
@@ -174,16 +192,6 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
-      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-16T16:00:15.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Días después del terremoto, Colombia enfrenta una realidad difícil: miles de viviendas quedaron averiadas - TU BARCO - Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1vcWZNdE1fTFVscW03TkZiQXFvX0R0a1hIUXJkRzJBYzNMZXhNWWdqY2pQRUtLUUpSaUZpSkxyd3JKcXdhM1MyUFVuNmpYalJWU01uV1JMallaeEhoN3hKckladlFMcUZuQjVSVUU2OWJJNjVCUXg0S3I2TQ?oc=5",
@@ -210,24 +218,6 @@
       "municipio": "Fundación"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Colombia: Familias de Bogotá activan centros de acopio en casas para afectados por sismo Cientos de familias de Bogotá (Colombia) activaron en sus viviendas centros de acopio temporales para ayudar con la recolección y distribución de alimentos e insu - instagram.com",
-      "enlace": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1sLVBzMXRJWkZyRDJGc2J1TVlfZnNkMzdiRWoxODk0cHZFOEhyYzVOVHl0bVR6X0gtNGZod3pORXFKMW9hOG96Mi0yZVNMN2poa0E?oc=5",
-      "medio": "instagram.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-16T14:23:15.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
-      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-16T03:18:20.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "En Versalles, Gobernación trabajará por la reconstrucción de 700 viviendas afectadas y apoyará a emprendedores tras sismo",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90236/en-versalles-gobernacion-trabajara-por-la-reconstruccion-de-700-viviendas-afectadas-y-apoyara-a-emprendedores-tras-sismo/",
@@ -239,9 +229,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Familias de Bogotá activan centros de acopio solidarios para afectados por terremoto - telesurtv.net",
+      "titulo": "Familias de Bogotá activan centros de acopio solidarios para afectados por terremoto - teleSUR",
       "enlace": "https://news.google.com/rss/articles/CBMidkFVX3lxTE10SmEwV19rTEFRQ0tHZGNJLXR2WmxtTXkxRnQ3ak9xbzNEdVh5S1o0ZUFaOFJucFpiZzcxVEpnc0lmUjFlNG5heXdldUVSRUFrb1E0UW5WWFdYX0I1ME1TdUpMSTBKTFFzQXJlSGNuZkJwbmlaX0E?oc=5",
-      "medio": "telesurtv.net",
+      "medio": "teleSUR",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T00:03:24.000Z"
     },
@@ -273,9 +263,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
+      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - elnuevodia.com",
       "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
-      "medio": "El Nuevo Día",
+      "medio": "elnuevodia.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T01:17:00.000Z"
     },
@@ -565,16 +555,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Jhonny Rivera dispuso su hotel en Pereira como albergue y centro de ayuda para damnificados por el terremoto - Publimetro Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNV3JuQlFmX29GXzNFY2s3QlBsM3ZWLW1fNXhmaEhTd2Q4dTBHQjJJQlRPV0JTTGlBZ05xVVJiZXVzVHdyWTRfRl9YZUlYNlpZeTJUUDcxcnJyaEZqTUdmU2RhaWVlVTZ1UVlROTQtMHNyWTV4eTF6X1ctb2tkVE5mVC1oY2JjRDcwalcxUFU4d3BwMmFVbnA0Z0tFUThQbHVnejRUajBsWmZjNVJOUUtTcDRfMVB6dVZyQ1NYeHJHSkx3cFpJU0lJWXk0bDhDZWV5VW5Mdy1DS0JrUnBlNDFXazk1LWVrYkhZbjBtN3k2Y21FdE9S?oc=5",
-      "medio": "Publimetro Colombia",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-12T20:51:03.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
       "medio": "vanguardia.com.mx",
@@ -583,9 +563,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - noticiasrcn.com",
+      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - Noticias RCN",
       "enlace": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOFZTM1FRZDJNVDFvZ0FWSWZzT2FQLU1OaXA2eEN2MGhDNndaci1NRUQ3Y2REeFBSM04zMTAwNWlvVzJZQ2lIVG1hSjdXZHo0XzJGbVRzdS1mOFQxOVZDbVlfYThpajBMWk9xQnBaR2R4RzZhQzhxd2FicVFpdjlmQVB3MHBITmZQbFA1cjRfbnEtb29aa1p1YWhJdU1VNEFwZmhIMXBwQ1Vzb3dWclFySUQxWGdBWHRnRVhLT2NSMk83SjN5WUFseUloQmRNM2xs0gHQAUFVX3lxTE1hY0pRQTM0V2J4cUZRNlNTZi1VbHhTa2x4YV9qUkxDYXAwLXd2XzlQbnljMFBIVzNaY0ZXY2JOc1Rtd1pWVENsbklYSDlyb1U3cWJIS2dxSnpKVHlJRDdqd3lTbzRtME9UTm1mNldVRHVMQnRHSTE3R3B3bGxFYUF6cWpwWnJFRVAzZ2JDNTkwa1gtV0pxdzNpdFJNT3hmMGxlRXJBZFo1ZVdyTlJub25PVW9POUJmSFpPQ3N4RkJyYjlSRE1LU0J6NGhoV1U4SGE?oc=5",
-      "medio": "noticiasrcn.com",
+      "medio": "Noticias RCN",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T17:28:45.000Z",
       "pcode": "CO76109",
@@ -670,14 +650,6 @@
       "publicado": "2026-08-11T20:22:00.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Así es el antes y después de los edificios afectados por el sismo de 7,4 en Colombia: más de 100 edificaciones colapsaron - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQc1o1Y29yZ3RJSEZVTDNkeEZnYTVzSFB1S1hoSGdUZGt4QllFWW5RamUwNGdRdXFqeFZkVWNYS2FCREltblFWbEViY2Z3R3BOLUtLTEZVV1UwN29NOU9zU1BWUWFid0d4WnhnY2g3UFB2Z3l3R0xSNHZCT2JnVlc1aVRoYU5RZ2NFVTJrRFl1QVFmVTZLdUJtS0Zsb2hLaEhXU2RNSVNEVDd3d2cycWhUUlpUZFh5TzhmMGQ0d1JwZzhIMjB2R0ZzT09rWTdZY1FaeFRCR2dxN21CM09fTGltdHVYU25HZVhCQktncmkyVzg3UDFGX2Zn?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T20:22:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Banco de Alimentos de Bucaramanga habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQW13TEdNdzZCbVA5T29BR3RvMDdWMEVtdlRCSDhzV2lJVFBTQjl4azAtTTNLSXlfY0hHUTk4ZnllRF9iZ29IRnRTc3k3UEZENjZMVWFMSTVyYmdEV3dtUlcyLUpqaDB0Q0FtTWhwNElOeDZ4TGRMcUI3YjlwRnE1UjJnYWtOOEh5V29tTFZMcWpZOXYtNkRkM1JyM0VmNzVlTVRBbVFPd1J1OFFZT1hRNFVQWFFrYldmVkJFOFVzcDhoYUg2VDl2WNIB3AFBVV95cUxOMTdZYnF0NFNkcFZPT25yVm9aSkxuMFRBWUpqRWY2Y3I2QWF3QzRGaUQxdkcyYzNvTXBlRmpQMFF3b1AyTGVILTVwYllueTZVdWI3eVktLTQwcGw2MHJ6R0JycE9HbW42MTBmM20wWW50VHdiM3NEQXJEX3luUE02XzJzS3NQUzNIcWk4aTVlOG9uYk9iMzVHVUVKZVVkYjBTWFByVkd3ZktfRFBNMHNrYWRSaXQwSWlFWnFzRGdQeFV5ek8yT3FDd2EwVkFSY0syWE40cjZjU2FtV08t?oc=5",
@@ -699,9 +671,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - radioatacama.cl",
+      "titulo": "69 muertos y edificios colapsados tras terremoto en Colombia - Radio Atacama",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWWg1SVJpT1dKM0NuUVllenVzZ25YSHZJNU9Vc1VxN3RHUHBwOU81a1ZrMm82N29JTVNDa3ZPdTFwVWNpZUI3S1cwQlpON3c1UlU5cThOeGJRaXBqMXBGVkhzWFcwdlNFWFNWdXREczFtY0pZNmh5Z3ZTdUdDQ21QWVpjeFVhSzBPVjFRUnVqXzc?oc=5",
-      "medio": "radioatacama.cl",
+      "medio": "Radio Atacama",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T17:35:14.000Z"
     },
@@ -751,9 +723,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - N+",
+      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - nmas.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONXA3b20zek5LYVAwODBNNVR2V19vMFFVNnFqejZIbGRYVld6Z09LS3FQSVIzZ0lfZUx4bEd4ZnkzVGF5T3FYaE9aMnZNY3pMLVVKX0lPNDRqUVp2X0d4WWxwYVFCc195SUhzWFcyN1RZc19tZXo0UFU5RnVuM1EzR0lzazZmLWlMQ05ReTBhRGhfRVEwSl9pb3NKSUNIWjAybG5pSG9QNWtad1BJZEJ5YmpUN3FqT0dVMGM4TjFwVE0?oc=5",
-      "medio": "N+",
+      "medio": "nmas.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T12:18:06.000Z"
     },
@@ -927,9 +899,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Integrantes de selecciones de boxeo afectados por los sismos están en refugios en Caracas y La Guaira - diariovea.com.ve",
+      "titulo": "Integrantes de selecciones de boxeo afectados por los sismos están en refugios en Caracas y La Guaira - DiarioVea",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQV1h3dFJBVk01MXRWLVlZMmJPSnpVV2Rhajdhc1FHUnZ1bHRmSDVIczNtWmd1Tm9NLTdiSGtzOWhJbC1Rbk5NMUNvSklUSURib0w2NG1rbmpZMi1iWlVZYXJ0b25kZUJzejdNbkt1aUZ1UGd3Wkc0THhSVUlHTGtYSU5SalR6UGVOQ1kzS1htQ2FSa0dNWXZqWXNRbkVRbGRrMjhfaXNnZVdkb3lOVWxFZzVkdkF3bDk2bFNBYUhNMG5rVEFoQ2JwUENWdzVmVlp6dGJwdVIzY0w?oc=5",
-      "medio": "diariovea.com.ve",
+      "medio": "DiarioVea",
       "tipo_fuente": "unverified",
       "publicado": "2026-07-05T07:00:00.000Z"
     },
@@ -953,17 +925,17 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de Acopio para Afectados por Inundaciones en Veracruz: ¿Dónde Están y Qué Puedo Llevar? - N+",
+      "titulo": "Centros de Acopio para Afectados por Inundaciones en Veracruz: ¿Dónde Están y Qué Puedo Llevar? - nmas.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdGl3Umo3QzRRdWNhNEo3TnBkbXpoSm92RzBYN2hWelFFQU56X0pGdkxhZ1RIWkNLVmNPc0NhbktaUTlfLXdNMEdTejFYNXpYWHlxLV82eVIxZnVYempGeGtudlVzZWh0VEJyaGRjbVBKSE1WQWo0U2FENVlwdXhocVlmaFpqc21sX20zYmtDd1BWNnZQZC1Val9RSWcwR0xsaThERkpscUttbV9PenM5c1o2UlZPWHZUMW9NTlFQNndPTjhZQUFHc2xQOWJ6NDJ4SmR1Vmdn?oc=5",
-      "medio": "N+",
+      "medio": "nmas.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2025-10-13T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
-      "titulo": "Carlos Rivera Ofrece su Casa Tras Incendio en Tlaxcala: Servirá como Refugio y Centro de Acopio - N+",
+      "titulo": "Carlos Rivera Ofrece su Casa Tras Incendio en Tlaxcala: Servirá como Refugio y Centro de Acopio - nmas.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPOEdfU2Z4aG83bEhvZnZ6U2RfYkxfYk9WM3dmalV5WjNSdmRySHFlUDJ2TVVpeUZ3TzRrODdKb015cmNvYnZfOEZvMXRqaHU3RVoxRHZWMktnTGlWRlJ0RVZHdnlvRDc0RWdGUERsbEU2Ukl2MGxhdmdfaTdRNXJzMzlRcm9aS09NRWhsd1NLb2NqdXlGLWZCZ284THZHcVVxRFVMMEJ4cVdpU3VOVTh0eTNiaWExOXpXV1BYSEcya3labU1VYmhzTXZBcnUyajg2bmhlSTJ3ZDZ4VGlpTDQ3RGVLd3hhdw?oc=5",
-      "medio": "N+",
+      "medio": "nmas.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2025-04-16T07:00:00.000Z",
       "pcode": "CO41615",
@@ -979,9 +951,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Los albergues y centros de acopio habilitados por incendios forestales en Región de Valparaíso - latercera.com",
+      "titulo": "Los albergues y centros de acopio habilitados por incendios forestales en Región de Valparaíso - La Tercera",
       "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNUThOVmJFckRpeFlkSTVkVV9kTjd3SmhLZGpFWllWRWFqc09IU0xKV3NyRlZIei1kZzhKYVVXQmRmUXd3Y0t1VGV3a05rdnhta2VvbTlKcXVEbnlSc3pZX3dGQmlacEZ1SDZCSXVVWjdUUzJ5SmhQanlYUHZtQnkzOG5IdmdHMlRIQ0ZFbkRrbDVFVVlPQzAwdENENmlFUVJNc0NRLXdiMDhfSGw0RUsxdE0zV0ZTTGVXZnRJa2hpdE01XzFlWmpQSlV6dVNrS25zRENFOWU2XzdZZGFmVW13dlFuZUhlSVJ2TlpkX193d0ZqRTZMamFvTm5n0gGbAkFVX3lxTFB2V2E1d1Q5WmsyQzhZRmVqUnphcy1JMmJWUEhzTG5LM3BlRkR3a2EyeWthWnBaLUdhWGlVQWQ2NEpNbGFHOFZObGhzb3M0Rnh2akJMdjV1Ul91ZFY2LS1kemEtdHEyUHNNbFpIVWRMYXQwWFhvR19PYXQ2UklfMmhwZ0ZpYjhySGpJekdSZmk0bVk0WmVIa2tzeU0yY0VXS2pCa0FHVk12cXJUZXRMYWRZdDNqQzAyZ05IZWFETTE4Tk4wbGhGRmh1aFVWODFwUXZRZkRiZzdKM0Q1Z1F3bllwUi1BWkFoMTAwejF3RS1UR04yYzRVdU5QYzN1dXFaQ1ZKcDJOem5ld1B3OHRMNlM1MG80M0FSeFZuaVE?oc=5",
-      "medio": "latercera.com",
+      "medio": "La Tercera",
       "tipo_fuente": "unverified",
       "publicado": "2024-02-02T08:00:00.000Z",
       "pcode": "CO05856",
