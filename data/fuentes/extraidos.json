@@ -1,8 +1,18 @@
 {
-  "generado": "2026-08-17T19:49:33.577Z",
+  "generado": "2026-08-17T20:17:42.319Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Ocho días luego del terremoto de 7.4 las lluvias afectaron seriamente albergues en Pereira: dicen que no se ha recibido apoyo con censo y ayudas",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/ocho-dias-luego-del-terremoto-de-7-4-las-lluvias-afectaron-seriamente-albergues-en-pereira-dicen-que-no-se-ha-recibido-apoyo-con-censo-y-ayudas-3578911",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T19:45:54.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
     {
       "tipo": "centro_acopio",
       "titulo": "¡Histórico! Centro de acopio de El Campín despachó 933 toneladas de ayuda humanitaria a zonas afectadas por el terremoto",
@@ -10,6 +20,14 @@
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-08-17T19:07:12.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "¿Iba a llevar ayudas para los damnificados? Bogotá suspendió temporalmente sus seis puntos de acopio - Publimetro Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOaVQxdi16T2Jvd19OSS1DeG1fdjNsSm9KWF9hVG9TTnlSSHRvN3ZnSHE5T3lSV2hNN0FvTXhybGtGaUVaMzhNYk1GQTZBTTJWRlRkc2dBc1llSmlET3gteHdISnZoUi1fcDU2OVFFelVIbWVuVDd6TllJWC1BazlqSFJDRGJoazZRVE15Ujc5SEpwYXZ4V2xzcWV0RVh0T1hRVnlXVXdTMGpUMXAyS3RZRFVvaWllaEFRcWluejREcTloeG5aVHd3SVM1b2VDbF9VQmpHby1jYmNuLUU?oc=5",
+      "medio": "Publimetro Colombia",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T18:58:39.000Z"
     },
     {
       "tipo": "albergue",
@@ -210,6 +228,16 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Días después del terremoto, Colombia enfrenta una realidad difícil: miles de viviendas quedaron averiadas - TU BARCO - Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1vcWZNdE1fTFVscW03TkZiQXFvX0R0a1hIUXJkRzJBYzNMZXhNWWdqY2pQRUtLUUpSaUZpSkxyd3JKcXdhM1MyUFVuNmpYalJWU01uV1JMallaeEhoN3hKckladlFMcUZuQjVSVUU2OWJJNjVCUXg0S3I2TQ?oc=5",
@@ -234,6 +262,16 @@
       "publicado": "2026-08-16T14:24:18.000Z",
       "pcode": "CO47288",
       "municipio": "Fundación"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -554,14 +592,6 @@
       "publicado": "2026-08-13T03:39:00.000Z"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "¡Ayuda a los animales damnificados por el terremoto! Corferias habilitado como centro de acopio para donaciones de insumos y alimentos: 13 al 17 de agosto - Bogota.gov.co",
-      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbzVmLXFoRzF1WGhGeXRrMlJZU25nSlptY19LX19oNDgwOTZONTVjRTcwNUltbGZMeXhqVHlJQnM0R1BXRjU3ckFTUWg5ZXlLb2Zqdnl6X0lKLW5rYUk0SEs0UC1aRGlibDRtYldOVG44R3dmY0RyZk1NVzF6SlREb1VVV2U3QS1RWmFpQ1c0TnpRWVF1MmgtNmItRHBfbVA1ajA1TE96d18zMUk?oc=5",
-      "medio": "Bogota.gov.co",
-      "tipo_fuente": "official",
-      "publicado": "2026-08-12T22:05:00.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
@@ -571,9 +601,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - Noticias RCN",
+      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - noticiasrcn.com",
       "enlace": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOFZTM1FRZDJNVDFvZ0FWSWZzT2FQLU1OaXA2eEN2MGhDNndaci1NRUQ3Y2REeFBSM04zMTAwNWlvVzJZQ2lIVG1hSjdXZHo0XzJGbVRzdS1mOFQxOVZDbVlfYThpajBMWk9xQnBaR2R4RzZhQzhxd2FicVFpdjlmQVB3MHBITmZQbFA1cjRfbnEtb29aa1p1YWhJdU1VNEFwZmhIMXBwQ1Vzb3dWclFySUQxWGdBWHRnRVhLT2NSMk83SjN5WUFseUloQmRNM2xs0gHQAUFVX3lxTE1hY0pRQTM0V2J4cUZRNlNTZi1VbHhTa2x4YV9qUkxDYXAwLXd2XzlQbnljMFBIVzNaY0ZXY2JOc1Rtd1pWVENsbklYSDlyb1U3cWJIS2dxSnpKVHlJRDdqd3lTbzRtME9UTm1mNldVRHVMQnRHSTE3R3B3bGxFYUF6cWpwWnJFRVAzZ2JDNTkwa1gtV0pxdzNpdFJNT3hmMGxlRXJBZFo1ZVdyTlJub25PVW9POUJmSFpPQ3N4RkJyYjlSRE1LU0J6NGhoV1U4SGE?oc=5",
-      "medio": "Noticias RCN",
+      "medio": "noticiasrcn.com",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T17:28:45.000Z",
       "pcode": "CO76109",
