@@ -1,8 +1,18 @@
 {
-  "generado": "2026-08-18T22:48:19.151Z",
+  "generado": "2026-08-18T23:15:17.488Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Damnificados de Altos de Santa Elena, solicitan ayudas para sus centros de acopio: “Nos alimentamos con la comida que nos traen”",
+      "enlace": "https://www.elpais.com.co/cali/damnificados-de-altos-de-santa-elena-solicitan-ayudas-para-sus-centros-de-acopio-nos-alimentamos-con-la-comida-que-nos-traen-1847.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-18T22:45:47.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "centro_acopio",
       "titulo": "Centro de acopio en el Quindío refleja la solidaridad con los damnificados por el terremoto - Caracol Radio",
@@ -31,9 +41,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Nuevo reporte: Terremoto en Colombia deja más de 211.000 damnificados en ciudades capitales en donde 3.010 viviendas colapsaron - Publimetro Colombia",
+      "titulo": "Nuevo reporte: Terremoto en Colombia deja más de 211.000 damnificados en ciudades capitales en donde 3.010 viviendas colapsaron - publimetro.co",
       "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNX1JaY3VVZUp0dUlPUWczOVNzNmw5MzBiMXNhUWp5UEJZb0dXdmJjTGFtRnpvZmRnQU15VFU0cDlvYXVSZGZZM1gxajJTZW5OUXg4ajdNdUd0SjhXc0trQTdRaUlXXzBEWlBlU3NqTF81WXJCNGoxOFc5VU9lc1VEdHBLTlVRQXpVT0lKQnZaSlg2ejNEUTZIYWxzMGJ2RXc0VXpjblR4aHI5S3h6M2xkcURlTFk5YlYxQm1SYXJHWkE3QTNYR1hzbnJlSmszUjRocDlvN3dDaGp1ZGstZi05MkQwOGNmY1JUU2ZhdVNZQjJ0ckJnZnpxVFpBWmZLajBR?oc=5",
-      "medio": "Publimetro Colombia",
+      "medio": "publimetro.co",
       "tipo_fuente": "press",
       "publicado": "2026-08-18T20:18:23.000Z"
     },
@@ -177,9 +187,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lluvias inundan albergues de damnificados en Pereira: ciudadanos reclaman más ayudas tras terremoto - Pulzo",
+      "titulo": "Lluvias inundan albergues de damnificados en Pereira: ciudadanos reclaman más ayudas tras terremoto - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWURBcGtYVVJab0FPQ0FJbWpaa0d4cG55dnZudWpTUHNpWTJZZ21VanI3YjFkMl83ZVdhSF8zaTdPcVlwZ20wN0t6NjlzOHliR3d0NXdQcGM4ejFodFBkYlcxeXNFMnJOZE1WZTRPN2JhQnVXTzZkcEg0VUpGSjJPYW5uRFZzNlBvNGxKU2hwN1Nxdk5xanMycm1NNkJ3ZUpNaDU1TWNtUFBpUdIBrwFBVV95cUxPMW9LWWlGTEJNM2tsZTR4T2lpOUY2RFFmcWUydzdha2dQRm9sa3FVWUkwb0tBNEF5Nm9IZnBkX2hIZk1PR1lLQ2hFOGt3cldiUG1OVVlhRGJtNGt1b3BzbUxZdUpMRW1DMVFTaU9YMEstSlg2eDdUVng0d2ZZTHljQVlvaHFlRTFXemptcnBSdU1kU3dldndOR3pBUFJkVnE0empaaDVVa25zMlpSdnln?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T21:15:31.000Z",
       "pcode": "CO66001",
@@ -263,9 +273,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
+      "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQTJNVUlhaGlmbzJsTzg0NkJGZHJ3NzduUG9FUU5QV0xvS1p5UXMtN2dNZVM3ajZTQUVhTlVCNmtVMHdubVVkR1FfWDl3MzJtXzNOcC1KNVdIbEF3cFlMUTN6eXVMTmZMT1RkeFZiWGlvRFFkd2I1STlXVmhsNUxmSGpMcnJtX2pzTG1oUUd1b0xHNzBTb2JpSm9YcHQyb0VtU0lPZtIBqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUQ?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T04:32:43.000Z",
       "pcode": "CO66001",
@@ -283,9 +293,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia deja 287 muertos y más de 150.000 viviendas afectadas, según nuevo balance - Pulzo",
+      "titulo": "Terremoto en Colombia deja 287 muertos y más de 150.000 viviendas afectadas, según nuevo balance - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWktuT3ZMN3NsMlpQdFpVVTBwb0d0UWNzNFZYaFNock1nRElXQ2FZUjRTeVA3aVczOVluQ3J1cks2YVgwRkFnc1owRHNRZVhmenNzdDJjTGUzY3hBd09QbFpqeExSTU96T2hSdHZmNG5HVGxJbnR6d3BrNkl2RXVZOXIyM2xmbXYwRGxRMFdZTnBXdWl6SnF6NHpBVDVYMVXSAaQBQVVfeXFMUEk4UHJ3WHJKb1VOckV3dUowaTVOZ0l3THhaeDFyeUduWVFHZUpueGt1R2dVd0hoNGNwYUhLbTNzWkRTNUktTTM5cmpsUTRCdllqbGEyQVY3RGtCSnI2UVVuQkRMUjUtS3JXZTFScDQ4b0ZaVFU4RERwaldIWWFpMlNoSXRmdW50Y0VkbW43SHEtcDBLX0VLNTRKcUpIRTFzcFdtcjY?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T01:38:28.000Z"
     },
@@ -302,9 +312,9 @@
     {
       "tipo": "centro_salud_afectado",
       "sede": "Hospital Benkos Biohó",
-      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - elinformador.com.co",
+      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - EL INFORMADOR - Santa Marta, Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUmUyZnR4Vkg1WjdDMk1UeE1LcXNRN1ZDMXFZR0xtZzNLWmQ5eWE0Szk2eXhNZzZMNUY0ODhab2t1b01ZSDFCQVlRTFhyOFBHQUhlb1IxdnlDZVFoTDd4NXMwUm9lUXNPRUpXT1VWUGtRcU92RGZQWGRTOWdqLWxoWF9mQzFVRFY5dHRnbWtLY2pnZy1IWnIydXdNekRYcDBUc0NvMWF5OWVHdGdBZ05hNXhQTkhqSm9wbGlVd0FHbXVxQmdtQi1ld2tYbE5RQ25sNVdkZ2pLQnRSVDdualJWY0praEM3U1lwWGVFY1hMb0tBdw?oc=5",
-      "medio": "elinformador.com.co",
+      "medio": "EL INFORMADOR - Santa Marta, Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T20:05:32.000Z",
       "pcode": "CO76109",
@@ -339,10 +349,10 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Bogotá mantiene cuatro puntos de acopio oficiales para damnificados por el terremoto - El Espectador",
+      "titulo": "Bogotá mantiene cuatro puntos de acopio oficiales para damnificados por el terremoto - elespectador.com",
       "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQS1NRllGMEQ0X09rb3lxTW1uQ2NLYkdtSTIyYk9FM3VDeEQ0TEpFbk1xNksyaFhYS1RmZkJVbzBfSkgtZjNTdlQ5VVFWdXp5U3k3c25aM0pXWGItd0ZnWlV2c2I0cTlDZGhSN3V2RlBRWWVSdkx3SEJkV2NUMDFOZ0pmb1JNVzVOSTFLTzRwQV9VNlpCNXljbVgxZjA3Sl9KcWJfUmQ1VjB3aFZBSXU3R0NzVWlhSkcxY19OTWln0gHSAUFVX3lxTFBvOEZjWktaT21PNWNGd3dNV1dIS3g3VG9lOTRqaVEtdnhGRHRzQ1owRnlRVm1YZHR2c3hoSjNHTDVWRXB3UWF2b1lIMjBrN25LY0JzMHdadm9GZFhGV0RsT1BmenlXRGpOZzEtRExLM1ota1BUaGhQeVFkSk5GSDV0b3FmbWtHRjRfX2NBaHNuNGhfUnN5V0QyemtORXNlZU41bUdUVl91UG5WNnJ4UHF2WkZuYS1VbTFNWlpnRVJzRHVuS2wtcnJRWkltS0F4cnRjZw?oc=5",
-      "medio": "El Espectador",
-      "tipo_fuente": "press",
+      "medio": "elespectador.com",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-15T20:01:00.000Z"
     },
     {
@@ -364,9 +374,9 @@
     {
       "tipo": "albergue",
       "sede": "Coliseo Mayor",
-      "titulo": "Coliseo Mayor y Parque del Oso en Pereira, albergues clave para afectados por el terremoto en Risaralda - Pulzo",
+      "titulo": "Coliseo Mayor y Parque del Oso en Pereira, albergues clave para afectados por el terremoto en Risaralda - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUmhUOEJNcXdIeU5sQi1TbEYxb1QxQm5QeFh0c1ZnTFJaR19RQjJBa1U0WEZLdml0Z3lxLUZUTXF0V2xNMDdBTTd6cVNLZ3F6bWZfS2pKb2d3dEJTRXlLOXpUU25VUWJwTzZEd1VIdExDQVkyb0JBN192a1lIcWI0TU42TWRXOHF2NlU3RHhfeV9HaW4xejZob3FfTWxrZFdEUS1VTkgxaFNWQnNYMm42Tjd1eGNHdXhCUTFBams2X2FfbWc2eW5mOHR4b1FRMHPSAdQBQVVfeXFMUEdUcDZaRVZUakJza3Y3YVVfaEF6Z2FDNGlxWnRRckVkMXBHc3VPX1VKVUM3cGZ3YXZXZEtFZnRYOWEzZG1vTDNfcHk3MXVpanFMUVhwNEFKTmFod2JPRTBYQ0ZjaTRIbzhQVFd2dHgwTDBuc082bUVyQy1KQXROdWxaTWRZRjVhcDE2eWs0YnlzcUNQMGNrRlpXNE9kQUEta0x2YTFMeGtZczdtaWI4UTVVbU1sVDEwMFhkNlJUVTMtV2tTd01xU0hjVEo5aGJPZGpkQWo?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T00:15:21.000Z",
       "pcode": "CO66001",
@@ -385,9 +395,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - AP News",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - apnews.com",
       "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVVI3TzJ1OEJ1eW95Znp2Z3ZpS0R0bTRWOEJrZGotY0JVazZzbU0tSGM0bEdmVXVFN3prdHZqWEhRWDRIZko4cHVjY3Zod0FxUnZTWTJTeFdnVGNHaGIxTEZmWlZSckZuMjlkUHhSN1lVcVJlRWpHLWJiRVgxTUwxVWd6VEs4aTIzdzVLUWNkaTZ0M2ZzNUdleGJpY3R0d2RiYXdZRW5Tenk4X2VFN0lSRG9oZ3Q?oc=5",
-      "medio": "AP News",
+      "medio": "apnews.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T21:46:00.000Z",
       "pcode": "CO54385",
@@ -443,9 +453,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - Pulzo",
+      "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQm1ibWhiTjVWU1BBakg0amhFZkR4WTVtUU9hZnhRV1h0eTBxVzVOSGQ4TXp4WWdlNXAtaVZnRXFiQUEyQzhsSzByMEcwanpYelItRHVRMGs5WGZ0dVQyTTVkUkl4NkFhTWVNZUFycTNwM1NIZG1mcUtLOHR5RVdjMG5GZ3dYdVlKR0VPOU9McFk1Mjltb2pKRTBTSnNVcmJpdEI3XzdmcHlTRERZYnFTOVVtWVFHRnp3b2ZmRVMtLU9tTFXSAcgBQVVfeXFMTlg3UVlaSXlGUHpJN21tUDRacWVpT3Z4RTZMemtLWGJCSHZISjQ4aWMwYnhEWi1TMW0xNHVDaHJxblBXOFJXZmJiTHU4ODhVMkduaExpek1MWmtrTm9PUFBmenR1ZmdxclE3blhoR2Z3QzlyWllfbENUdVZYX2tueVhCNmR2c2pXSDZWZ1VWNkpCbVktaDN2MGplTG1XNzVfU2sxRUlfYkJWQ2t0VXFkOFc3ZkVnQk9LWkVHN3NLZFRoeVplZ1FtZUU?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T14:25:32.000Z"
     },
@@ -555,9 +565,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Leonardo Castro habilita centro de acopio en Bogotá para apoyar a afectados por el terremoto en Pereira - Pulzo",
+      "titulo": "Leonardo Castro habilita centro de acopio en Bogotá para apoyar a afectados por el terremoto en Pereira - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPd0hKcmJ2dzg5Zlp0SVlvRVY3ZlRMZjdETnpqZkhtOV96a29RUHBtUHpkYkhPU3NtWi1nU3hLXzNneTk2S1ZWelViWDY3XzJ0V3YyWWxnRXJLT1JUOW9Hd01SNkJCMUx4MnpNQTlZM0xtSXBMdmw1VTlIU3dZdzJ6Ymt3RU81NlhCVUxDODNKcHdjWk5mUGNQUDFBd2RqVm1sMUlxZ2hwX3RyQ1FNQjlRc1M5dG05Qlhla1FTdjVmeGdqc1NoR1BjMHV2cmlvVkVTUVFFbHhKejI5ZEk00gHiAUFVX3lxTE93U3JqdVlHLVpoVTVIbkhHeWk3NzlqMWhNUHNYbDFyNTR4bGs1UVB4TlRwVm9SSFV5a2FJUFVzNTNPTGs0YU9VZWlWR18yeXc5cXhrbXBsVm84cko3NFNMYVpTVE5hbWFVSE5RMFFQNDBkTGh6aU1xUkVUR3NtMTY1WDNmSEhFVVg0UnZ0QVpOMnk1YjdaYnZwd3lfOHVKWUNwQjVRWWVKcXhxZHBmcUV6S2tSRFJCYmt5dnZGZy1mTW9OV3lfaml0S2pjMFFHYjNucG9xU0tkNS1xNzgxVjJibmc?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T17:58:44.000Z",
       "pcode": "CO66001",
@@ -565,9 +575,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Leonardo Castro habilita centro de acopio en Bogotá para apoyar afectados por el terremoto en Pereira - Pulzo",
+      "titulo": "Leonardo Castro habilita centro de acopio en Bogotá para apoyar afectados por el terremoto en Pereira - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQWDZPcXRjbkJEeDZZemZQOWlWV1VoTWNlVS1MSEJUbWs2YjIxVldPVmw5dXdSTVVodkNoNk9Tay1TRFJDeVJPN1VzeWNEeU0xeTBFZV8wNDJQUl9ha1ZHdDUtb2RXcUxLTEJoVmRENWI0MjBpRmFseUZyUFdadUlOaGpJT1M1NWZMRzEyNzAxZGdhYU1pcnlmdXVYb29RSklHUlFKWFpPSmQ0a2NHclphbVV0c19MWkNSODZjdlFUdW5maVZTZlplTDh0dEd2VUJLNHNMVTdfRURxd9IB3wFBVV95cUxQQ29JVTlSS3RpUzNqa05xQVdlTzNUNlhKZGEtbTIxbTAycjhkMzlGV3hBU0pJenFQUDBDM2pCeVR2RzIzSFlxekNXSFdzZTdNVW5famItTVROWGVrM2FNNWdmcnRnNURRXzBXYno2SnpNYTBBU1lRampreDFaUWFOTzJad0w0WU1WOEllY2twZThBMG9wc3ZHWTZVSXRBajJzUHhZZ21ObGljU19CZTNYazN0RTVZTWJIRHhQODNNVEx1RU5pMkplZFBoRDUzd2FNSVRvazBtc1pvcEt3d0Iw?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T17:55:41.000Z",
       "pcode": "CO66001",
@@ -575,9 +585,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - radionacional.co",
+      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - Radio Nacional de Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMmdTLTY3Xy1INzdpZmp6MHdPWEhOVEN0cUxyS3lRdW5PbEJ1SHNwejd3TlI5NXUwb043RTNjMGV1UjllSjl4d0FGbGl4clRzZlVmX2pOR3FETUQ1MFRUdVN0TTRvVFlENEpfNzZkcE5rUmRhRGZGS1RmZU1Ucmh4TkZUVm9UUl9kckZKU2JsaHgzeUNySzdlQXdvZ1JrUzJ0a21wMTYtVEZuME5meVpSZC0yUmhzRjM5bW5FSWIyS1ZDRHM?oc=5",
-      "medio": "radionacional.co",
+      "medio": "Radio Nacional de Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T16:01:15.000Z"
     },
@@ -797,9 +807,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
+      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - pulzo.com",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
-      "medio": "Pulzo",
+      "medio": "pulzo.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T11:10:55.000Z",
       "pcode": "CO76001",
@@ -881,9 +891,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
+      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - clarin.com",
       "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVFNTQmlqdkx0Vm01N0JyR3c3a2g5VDRaX1hxNnVRb0JSQS1wTWt1WmZvOW9YdjhfV29Rdm9RamxEaTZyUVU2QVlhYklzdjBkV3ZvUFJuZnNqNjRyYmhJUFZpcFVVQ2xMcHlpSEg2ektydmJVeGxVZ2k0YW8wQjl3NlVZcEN6S2xrSTgwTDB5RnM5WkJTNmk5am5uc3VEeVNOVEE?oc=5",
-      "medio": "Clarin.com",
+      "medio": "clarin.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -1001,25 +1011,25 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "¿Buscas Albergues en Puebla? Aquí te contamos dónde encontrar ayuda - conexionmigrante.com",
+      "titulo": "¿Buscas Albergues en Puebla? Aquí te contamos dónde encontrar ayuda - Conexión Migrante",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMGdpc2c0T2Ria2tKVXpWd0ZxWmdxTUVyN3FjODhnTDhYS0xVQjdDRTVDTk5WUkRhM2QycVFZZk1meXVfbEhJV05Tc0kxSDNKVjJEbFJEUmdPOWczcFhMTHRmZDB1d2UwYTlINEx5YTNlWHBiRGJET1lTblN5LW4tV2tXRDIwZHRpVjY3MEpEZW1GRm9B?oc=5",
-      "medio": "conexionmigrante.com",
+      "medio": "Conexión Migrante",
       "tipo_fuente": "unverified",
       "publicado": "2024-09-29T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
-      "titulo": "Conoce estos 4 albergues para migrantes en Puebla - conexionmigrante.com",
+      "titulo": "Conoce estos 4 albergues para migrantes en Puebla - Conexión Migrante",
       "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRFhiSS1vWVRDYm41NUE2dGc1bHdUOGZ4Z2xMTW9idmNJczFDRFVicE8xLWdtY3l1SDJlOHdVaVpWOUNlTDk0Y181NzJYbWc5QzNDWnlYQk13OEh6aDItemxHQ2ZHbU4wSnhIYWl6bS0zaGNQQVZiTEhVUnlhSFo0dWczZVRmRjlFNTU2ak1XSnRZUG80cWxn?oc=5",
-      "medio": "conexionmigrante.com",
+      "medio": "Conexión Migrante",
       "tipo_fuente": "unverified",
       "publicado": "2023-10-16T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
-      "titulo": "Lista de centros de acopio y albergues en la CDMX - eluniversal.com.mx",
+      "titulo": "Lista de centros de acopio y albergues en la CDMX - El Universal",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVmNkcmVOb0lLclA4QWF5MldGOEFPbGQ3a3JOZGZDNzQ2RnlUTjUzWXMxeUJrd0FUVjY0RVRUV01fSmVub0x3RkY3OXpUbWJQOERXZVI1SlI4YktpUUtQQlRtWmZXQjJZb3ZPMFBCd25hV2tkUVhHdjZyemNESm4tbGR3UFhyMlRaZVF6UTdTUUV2djh60gGoAUFVX3lxTE5hUXc1QU5IYkk2NHA2RlF0dWJSdXMwS3lIWFY0TzhnRm1nVU9naXVvbV9rWTZtcmhYOUVQczNCVGh6aWY0QlhkQXZNZk1RbkhlUXRKTkZmWHFfa3ExU0RZQzg1OVltME9jQWVJeXNja0RMWnRuR0owM0N4UU9UZlBveEs4NXpzdG9EclVSbDU2UHAzT2pmZGg0dWtmV2tzYkQtbk1JZGdTQw?oc=5",
-      "medio": "eluniversal.com.mx",
+      "medio": "El Universal",
       "tipo_fuente": "unverified",
       "publicado": "2023-03-15T07:00:00.000Z"
     },
