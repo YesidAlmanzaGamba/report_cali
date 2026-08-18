@@ -1,8 +1,16 @@
 {
-  "generado": "2026-08-18T17:21:49.822Z",
+  "generado": "2026-08-18T17:51:47.250Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Esta semana llegan materiales para recuperar 600 casas afectadas por el terremoto en Bolívar: “No estamos derrotados”, Gobernadora",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90255/esta-semana-llegan-materiales-para-recuperar-600-casas-afectadas-por-el-terremoto-en-bolivar-no-estamos-derrotados-gobernadora/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T17:46:04.000Z"
+    },
     {
       "tipo": "centro_acopio",
       "titulo": "“Gracias por amar al Valle y las víctimas de este terremoto”: Gobernadora a voluntarios del centro de acopio",
@@ -22,16 +30,6 @@
       "publicado": "2026-08-18T15:49:30.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Tragedia de desalojados y quienes salieron vivos de edificaciones colapsadas por terremoto en Cali: &#039;Salvé a mi familia y en minutos se cayó mi casa&#039;",
-      "enlace": "https://www.eltiempo.com/colombia/cali/tragedia-de-desalojados-y-quienes-salieron-vivos-de-edificaciones-colapsadas-por-terremoto-en-cali-salve-a-mi-familia-y-en-minutos-se-cayo-mi-casa-3579032",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-18T14:58:22.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
@@ -262,14 +260,24 @@
     {
       "tipo": "centro_salud_afectado",
       "sede": "Hospital Benkos Biohó",
-      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - EL INFORMADOR - Santa Marta, Colombia",
+      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - elinformador.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUmUyZnR4Vkg1WjdDMk1UeE1LcXNRN1ZDMXFZR0xtZzNLWmQ5eWE0Szk2eXhNZzZMNUY0ODhab2t1b01ZSDFCQVlRTFhyOFBHQUhlb1IxdnlDZVFoTDd4NXMwUm9lUXNPRUpXT1VWUGtRcU92RGZQWGRTOWdqLWxoWF9mQzFVRFY5dHRnbWtLY2pnZy1IWnIydXdNekRYcDBUc0NvMWF5OWVHdGdBZ05hNXhQTkhqSm9wbGlVd0FHbXVxQmdtQi1ld2tYbE5RQ25sNVdkZ2pLQnRSVDdualJWY0praEM3U1lwWGVFY1hMb0tBdw?oc=5",
-      "medio": "EL INFORMADOR - Santa Marta, Colombia",
+      "medio": "elinformador.com.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T20:05:32.000Z",
       "pcode": "CO76109",
       "municipio": "Buenaventura",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -286,6 +294,16 @@
       "medio": "Portafolio.co",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T14:44:17.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -393,9 +411,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Chicago Tribune",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - chicagotribune.com",
       "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMVo3NnNXSUJRbXVReXRIMGIyYXh3bjZnOFpqeDktaVBCRUowY2EwdmU0NEhfWW5ianNoTXQ2Nld3UlBOV1BYUjhMM1cwc1p6djUwSE82U3N0cGJQeXVGdmNJQjB4d1NzaUlIRWZwbVN0bHNOTUltWS1UYTNvaTZ4NlNFZjZubkFrYkRwal8wNkZFVDNEX3dIRnFmeUs5TlpsSVAzSUJ2eWFfSi1OTHd1SloxZ2pzR1BWby1EWmkzYTktSmJwY2JCcy1YSW5OYkhQMzNNTnhobkxjUQ?oc=5",
-      "medio": "Chicago Tribune",
+      "medio": "chicagotribune.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T16:24:20.000Z",
       "pcode": "CO54385",
@@ -637,9 +655,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Centros de acopio en México para apoyar a Colombia tras sismo: aquí te decimos qué y dónde puedes llevar tu do - milenio.com",
+      "titulo": "Centros de acopio en México para apoyar a Colombia tras sismo: aquí te decimos qué y dónde puedes llevar tu do - MILENIO",
       "enlace": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPY3hkTVZRXzFnRmJ1bDlxRW9HNXYzV2l5ZTBKN1RMclI2SDJaa0QxTDQ1Q0lOUjVMVVRpckZPTTJNMzAweWZZU2szYmNXYzFYOU0xc01ORDNKZnBhQ2pWUW5Udk9Ub2R2YlNJMEp1bHZxOXBFN21IMzFoWUkydExPYkxSSHJKalFZOUVIWEdpOEhZTHh6b242QUt2MEdzWXFUSmlSQzlKY9IBpwFBVV95cUxNdmtnR1FXNHRsTUlrVUpISzI2SkZXaHB2c2k1VlBnaUVlbS1oQzJkV0FqbmI3NjdEOGdESlRWZkZvTUZSV0tKdlM5bHFYZTZDMlhPaEEzTEM5YnNjSUhiR0dqeVNWVWNJQlRVRElFcERqc05HTXFTR0M3SnFXNFBJOXVFQjBhbkFFV1MwTHh0OXMzN3FMd2p6NW1JLWV4SDNPbXNhYlBQNA?oc=5",
-      "medio": "milenio.com",
+      "medio": "MILENIO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-12T02:37:00.000Z"
     },
@@ -735,9 +753,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - hoydiariodelmagdalena.com.co",
+      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - Hoy Diario del Magdalena",
       "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQTUxJTnYtQ2tWc3c0YzlyeXBuTjBDUi1tbjVYZlJQRXFLeUREN0pnZHRnX1pzek1Ebm5VU0FhbXl6cTlNcGo1R20wNHJzWHR1WVVXTENRMloxRmJrR2EzcndhTkl4TC15Y2phLV96STY3Qk5LQjlpVjR2bmJVTzBvYzhjR0tsT0xvbGFabmdEV3FFc0JYYVpBblZoUFVtSEYxSlFTMmJUWlZIa2ZxcW1pWjRKVmdkN2MtVk8tQnM2cXdkLVpuakt4NkVGMUJlY19zczl0MElZMlItbFh5WC1oZjhSNW9MQTdrd1ZqZXB3Ui0?oc=5",
-      "medio": "hoydiariodelmagdalena.com.co",
+      "medio": "Hoy Diario del Magdalena",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T16:02:00.000Z"
     },
