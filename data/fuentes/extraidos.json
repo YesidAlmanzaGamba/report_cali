@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-19T09:57:09.212Z",
+  "generado": "2026-08-19T10:24:23.948Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -24,12 +24,14 @@
       "municipio": "Dosquebradas"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "#DOMINGA | Un potente sismo de magnitud 7.4 sacudió a Colombia y desnudó la falta de alertas sísmicas públicas y de cultura de prevención en el país. El desastre dejó más de 260 fallecidos, 140 edificios colapsados y daños cuya reconstrucción costará h - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZFlLZjFVTUR0VVJfdlpkXzhpcEpDT2ZGOW5rY20zRXFOemxudFFOeVdJY3FBdk5EdlpyNC12dkpSZVlJa2Y5bi1jbndsUlUzcTBQcnpTVTJ4bjFpTVRKUjBMZ3I3M296RUp1dUdJUnNWNUN5MUZ2RW53TU1senNUTWl6QTZOSXJQQ2xSbGlYVnpPWlBSZldDbl9MNVE1akVpNUlucjg5THpFbHhUVlUwcmNaOXB2UUJjWE1USU11Y0R4RzNjaDZJZUpDNHJCaXNKMjJzZXlSV1phVzhQU19iLUdSY2M0QWpG?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-19T03:33:46.000Z"
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "albergue",
@@ -69,6 +71,14 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-18T22:44:43.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "#DOMINGA | Un potente sismo de magnitud 7.4 sacudió a Colombia y desnudó la falta de alertas sísmicas públicas y de cultura de prevención en el país. El desastre dejó más de 260 fallecidos, 140 edificios colapsados y daños cuya reconstrucción costará h - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZFlLZjFVTUR0VVJfdlpkXzhpcEpDT2ZGOW5rY20zRXFOemxudFFOeVdJY3FBdk5EdlpyNC12dkpSZVlJa2Y5bi1jbndsUlUzcTBQcnpTVTJ4bjFpTVRKUjBMZ3I3M296RUp1dUdJUnNWNUN5MUZ2RW53TU1senNUTWl6QTZOSXJQQ2xSbGlYVnpPWlBSZldDbl9MNVE1akVpNUlucjg5THpFbHhUVlUwcmNaOXB2UUJjWE1USU11Y0R4RzNjaDZJZUpDNHJCaXNKMjJzZXlSV1phVzhQU19iLUdSY2M0QWpG?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-18T22:00:58.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -355,6 +365,16 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Días después del terremoto, Colombia enfrenta una realidad difícil: miles de viviendas quedaron averiadas - tubarco.news",
       "enlace": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1vcWZNdE1fTFVscW03TkZiQXFvX0R0a1hIUXJkRzJBYzNMZXhNWWdqY2pQRUtLUUpSaUZpSkxyd3JKcXdhM1MyUFVuNmpYalJWU01uV1JMallaeEhoN3hKckladlFMcUZuQjVSVUU2OWJJNjVCUXg0S3I2TQ?oc=5",
@@ -369,6 +389,16 @@
       "medio": "Portafolio.co",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T14:44:17.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -912,9 +942,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - Clarin.com",
+      "titulo": "Un fuerte terremoto de magnitud 7.4 sacudió a Colombia: hay al menos 111 muertos y decenas de edificios colapsados con personas atrapadas - clarin.com",
       "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVFNTQmlqdkx0Vm01N0JyR3c3a2g5VDRaX1hxNnVRb0JSQS1wTWt1WmZvOW9YdjhfV29Rdm9RamxEaTZyUVU2QVlhYklzdjBkV3ZvUFJuZnNqNjRyYmhJUFZpcFVVQ2xMcHlpSEg2ektydmJVeGxVZ2k0YW8wQjl3NlVZcEN6S2xrSTgwTDB5RnM5WkJTNmk5am5uc3VEeVNOVEE?oc=5",
-      "medio": "Clarin.com",
+      "medio": "clarin.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -1080,9 +1110,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - andina.pe",
+      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - Agencia Andina",
       "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2dLdmRJZnB0bzctRnhqUVVqYWp4YXo0VFlOQmRhZ2UzZ3MtcW92SWFpTFpZbXhiQjVUVnVOX0NDY0dLYUctV0FLWG82LVNoNU5XclBqZkJseHp3cUp3d2dpMWJwMmw0S2ZLcWRVUVdyUlQ1bHgwbzNTLThnOVlCc1pfWTZZcnVaeXpDcGVfWW84THNyNkxTWU11cTJvcXhGM0xReFVGV0ZhLUQyRlA1WEZlLU5BZlNHTERj?oc=5",
-      "medio": "andina.pe",
+      "medio": "Agencia Andina",
       "tipo_fuente": "unverified",
       "publicado": "2012-07-15T07:00:00.000Z"
     }
