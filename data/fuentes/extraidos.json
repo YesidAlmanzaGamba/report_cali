@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-19T11:18:43.611Z",
+  "generado": "2026-08-19T11:48:20.258Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -20,6 +20,16 @@
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T05:05:29.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
     },
@@ -208,9 +218,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Fuertes lluvias en Pereira deterioran las condiciones de los albergues de los damnificados tras el terremoto - ntn24.com",
+      "titulo": "Fuertes lluvias en Pereira deterioran las condiciones de los albergues de los damnificados tras el terremoto - NTN24",
       "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOSDJwNFhKVFlXVElLQktlWUQydVVrT3JfdENGX2JVeTBJUXM4dHVSa1JGTVlrZ2xPMF9JLThMSTF5TlhvRndSMFVRTmFkQ2l6eV9iYm0yT0ppV3NYQUY4VE1WVDBQVmRPZVdjbWk2bTBUSUtONW5SenJfWjJlQjZCeGwzay16TzI5TXN0amtrSDJiOV9hZjVRcEVodTU2Sm9KMkVmLWloRnF1bFVvUlRMQTlqSENETG11Yi01WlNtbVJhQzgwMHpuWGVDNmd0UkhxeVFTWjQtVDluUG53TW9BNUE2c016NzhfN1FTT0pn0gHuAUFVX3lxTE0wVXpTeUp3NUFUUkhJbFE5cVVIeWVrc0E0dUVycU4ybnFLRUdrbGZxTjM5UHJBbWFrLXRnelZJUENEeTEwZzhpSjBtd0VNVGtxUjZPT3lsN0ZCekliNkl2X1RrMUdPY2FrVExROWtzeERjOFo3ZzcwSGlpVHRUX1c2eHJpa0gtRy04V3VkcE5GYmdablFDNVM4bTg0Q0lQa3I4eDlvTG5NYnVfQUliaXN3b1djOU5yMjlEMDFFUkYwbm9kbG9oeXd0UXVoSllfYVJ2ZWtjbnA1UU91RXFmdkhtdmFIal9DOUYxN0RlMWc?oc=5",
-      "medio": "ntn24.com",
+      "medio": "NTN24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T22:22:15.000Z",
       "pcode": "CO66001",
@@ -355,10 +365,20 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
-      "titulo": "Días después del terremoto, Colombia enfrenta una realidad difícil: miles de viviendas quedaron averiadas - tubarco.news",
+      "titulo": "Días después del terremoto, Colombia enfrenta una realidad difícil: miles de viviendas quedaron averiadas - TU BARCO - Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1vcWZNdE1fTFVscW03TkZiQXFvX0R0a1hIUXJkRzJBYzNMZXhNWWdqY2pQRUtLUUpSaUZpSkxyd3JKcXdhM1MyUFVuNmpYalJWU01uV1JMallaeEhoN3hKckladlFMcUZuQjVSVUU2OWJJNjVCUXg0S3I2TQ?oc=5",
-      "medio": "tubarco.news",
+      "medio": "TU BARCO - Noticias",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T15:18:56.000Z"
     },
@@ -369,6 +389,16 @@
       "medio": "Portafolio.co",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T14:44:17.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -473,16 +503,6 @@
       "publicado": "2026-08-14T16:21:04.000Z",
       "pcode": "CO41615",
       "municipio": "Rivera"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Seattle Post-Intelligencer",
-      "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaDNFVjVDOXFtdWxQR1hYMTduWDVFWi1MTGE1MGdadkhMTWIxakJUZHhva25EZVE3TVMtU3lmM1gwSmtvaFJ6a0dqckZhQmh6cVoybWpEc01JUlk1Ni10blE1OWh6blR2bFFwZWdlY0pQNk9uWlExRTdmdlh1Z1pOS3Z4XzY2UC1iLUtrMTlQZDg5UTNTS3c?oc=5",
-      "medio": "Seattle Post-Intelligencer",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T15:27:44.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -606,9 +626,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Parque Olaya Herrera se convierte en refugio principal para damnificados en Pereira tras terremoto - ntn24.com",
+      "titulo": "Parque Olaya Herrera se convierte en refugio principal para damnificados en Pereira tras terremoto - NTN24",
       "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPalB5QV9NOURBSGVUVE5ldm9VLUtCejJSQi1oR05kelMwMFBFX09fc1pVODJKTFY1M1dYWGVYODJUdklkSXZiRHNIWTg2MVo5RTgyZXBMSE5NVUVQaG5mWUppX2NtNDJKT25rWmZHb0E3SDUyQXZQd29nd0FEOXhFcnVIMFVOMFctZ3BaTXJrTm45a2ZpbExLSzdZWHA4UVZnelpBNVJ0VnhicF8wbDBrSDRNTXpFY0ZOQkVnazRwNjVzZmVzYVUzWFRXWExzV09rX01GSG5nbGRrcmlUNjNCUNIB4AFBVV95cUxOMW5aeFp6ZHNFMFNXSDQycElSVDFNYk5ZQlN3ZFFiWVRuSUNSN0NUQmZqS0d1TG5WaDZoeHFuamg4Mzl5c3FXUG50c1loTHBmd3NzVVRyMk5LVWxsb0ZQcjRQckpXQVlOVTI1aGM0dGh5UnB1emRHZ1F0RHpPQWdoOVlCcnprWW91elNyTGNmWDJ0dzlyVmNUTTFZZ09uYUh0SjR3dUtmc3ljSnhDbEt1NFJ0bWgzYkVSNlVVTTVOZzRLZWlVUHE1dXVnVXB5SThILXJPM2gzS19HcnV2VVVCcA?oc=5",
-      "medio": "ntn24.com",
+      "medio": "NTN24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T19:01:43.000Z",
       "pcode": "CO52490",
@@ -698,9 +718,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - Noticias RCN",
+      "titulo": "Afectaciones en Buenaventura por el terremoto: 12 fallecidos y miles de viviendas afectadas - noticiasrcn.com",
       "enlace": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOOFZTM1FRZDJNVDFvZ0FWSWZzT2FQLU1OaXA2eEN2MGhDNndaci1NRUQ3Y2REeFBSM04zMTAwNWlvVzJZQ2lIVG1hSjdXZHo0XzJGbVRzdS1mOFQxOVZDbVlfYThpajBMWk9xQnBaR2R4RzZhQzhxd2FicVFpdjlmQVB3MHBITmZQbFA1cjRfbnEtb29aa1p1YWhJdU1VNEFwZmhIMXBwQ1Vzb3dWclFySUQxWGdBWHRnRVhLT2NSMk83SjN5WUFseUloQmRNM2xs0gHQAUFVX3lxTE1hY0pRQTM0V2J4cUZRNlNTZi1VbHhTa2x4YV9qUkxDYXAwLXd2XzlQbnljMFBIVzNaY0ZXY2JOc1Rtd1pWVENsbklYSDlyb1U3cWJIS2dxSnpKVHlJRDdqd3lTbzRtME9UTm1mNldVRHVMQnRHSTE3R3B3bGxFYUF6cWpwWnJFRVAzZ2JDNTkwa1gtV0pxdzNpdFJNT3hmMGxlRXJBZFo1ZVdyTlJub25PVW9POUJmSFpPQ3N4RkJyYjlSRE1LU0J6NGhoV1U4SGE?oc=5",
-      "medio": "Noticias RCN",
+      "medio": "noticiasrcn.com",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T17:28:45.000Z",
       "pcode": "CO76109",
@@ -859,6 +879,14 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Tragedia en Colombia: por el terremoto hay al menos 132 muertos y 61 edificios colapsados - Revista Gerente - Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOR3JMVkdNN281VXFtdUZpNkM5TG52RGlHa284UElOb0VTLTBTNmtLYkpJWTFEUDNpcXhwQ1Y3TmZBMXVtbm5ock5SSHJMUTYxcVNPdGktVHdOTm0zV0h6d0pZcGJiMUQ5a294bTFHeHU0Zzh2ZnBMcjA5NU9BT182REFSMTVhTXR4Z2xJZndDdkZYTjg4YUJIWWVXVGFsYklZVDl4dU5PbnVwc0U0MGxRZUxMUXNrT09xTVZ2Zg?oc=5",
+      "medio": "Revista Gerente - Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T05:22:34.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Los fondos serán utilizados para proporcionar refugio, alimentos y protección a las personas afectadas, además de financiar evaluaciones sobre los daños provocados por el sismo - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPZHFId2U1XzRFVDFucXZxdVg2M3ItRTdTRFhCN3o3MWhJaG1tUjBxa1hjY1lRZFFiUXd4QzNVSjFld2h4YXFOS2FWeVdodURjeEVNNkFRTUNfSWJaUUU3YVFWOUdpVk9zS0ZCekFGS2VYLV9SMS1yTFJEeGp2REYyVUlyOTctaGoxMXRLQUgyZ3RMelhlc0FUdWNOUFFOQjB6TzJzZVhfUkpscGRpVm40Y0pMMy1zdzd6UWc0X1Q5b1d1TENXaTk5TVNYUzJrUVVUOEEzdlVMMDBPWkgwUVoxZEpHSTJpTlJiVjFR?oc=5",
@@ -881,6 +909,16 @@
       "medio": "Forbes Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T20:47:41.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "El sismo se sintió con fuerza en Bogotá, donde provocó grietas en edificios, y en Panamá, aunque allí no generó daños. Sin embargo, en ciudades como Pereira, Manizales y Cali el panorama fue devastador: decenas de edificaciones colapsaron, dejando ví - instagram.com",
+      "enlace": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE92dlhnSlUycUsxdlZoMERmV2VVS1dseTVJUy1XMng1bldlVzkyLWJhQklYM0FYeThRdGlCRUc2R1lnVDZtU2syRHU0Z04wSWRHQ2hHSGo5RkEtVE1VSDJzS253?oc=5",
+      "medio": "instagram.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T20:39:05.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
     },
     {
       "tipo": "centro_acopio",
@@ -919,14 +957,6 @@
       "titulo": "Así se ven desde el aire los edificios derrumbados y las labores de rescate tras el seísmo de Colombia - Cadena SER",
       "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQLUNNcGowZlBzdm9zZTItdzI3REZiS2lQNjJkM21aaE51c3VZaHVKUWxWaklsdmdKTy13U1k5b2J5bUQxb09LQWE4MXJKcjBPTUtCMzNuSmhpdmREeHVQa0lBb3FoNlFMZjdud0hLeWN5b1NzSXNwSHFObmVOcmpfaGtlb240cS1qOVpYQjJMM21WVktHOG04eXdRZENqNUhCUENvcnpTMzVDQnc3dUNoVUh4MDFYSWtVYlFYN044azM4Rk53bUJ3c1VMVzlwQ280WkViYVZMcG9mYU5WVzdYc19ZMTFfeDYtSnRQWdIBgAJBVV95cUxOVDVsMktNWDUzbmFJdWowRFhlWGVzUU5JZ0RWcWN4UHFGR0dlT2Z3NzlQRFVySUliQVdBYk5kd0dHR2lRUGRUNDA1SFhSZE1iREF6cW5ydUZJUXZINXFieWNBeXpjWC1yMUpvZGlvcFBlRUtKZFltNk85dkE1NEoxTndWaWc3UEkwOFJQbmtCMUhpWUJZQk9mX3Frd1BXLUpmQU9CREhwWDZ0ejUyLTZZLTJyOGJDX1liN3puX0h4T3BmVXdFcGJmQjZYaDZQUkJ1YXhEWnlDQ3lZVUVMTHdMZnUwaV9yUVdGM1NiWC1KVll1ZE04Uk1WaGQ2eE5QX19x?oc=5",
       "medio": "Cadena SER",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
-      "medio": "facebook.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -1062,17 +1092,17 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "¿Buscas Albergues en Puebla? Aquí te contamos dónde encontrar ayuda - conexionmigrante.com",
+      "titulo": "¿Buscas Albergues en Puebla? Aquí te contamos dónde encontrar ayuda - Conexión Migrante",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMGdpc2c0T2Ria2tKVXpWd0ZxWmdxTUVyN3FjODhnTDhYS0xVQjdDRTVDTk5WUkRhM2QycVFZZk1meXVfbEhJV05Tc0kxSDNKVjJEbFJEUmdPOWczcFhMTHRmZDB1d2UwYTlINEx5YTNlWHBiRGJET1lTblN5LW4tV2tXRDIwZHRpVjY3MEpEZW1GRm9B?oc=5",
-      "medio": "conexionmigrante.com",
+      "medio": "Conexión Migrante",
       "tipo_fuente": "unverified",
       "publicado": "2024-09-29T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
-      "titulo": "Conoce estos 4 albergues para migrantes en Puebla - conexionmigrante.com",
+      "titulo": "Conoce estos 4 albergues para migrantes en Puebla - Conexión Migrante",
       "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRFhiSS1vWVRDYm41NUE2dGc1bHdUOGZ4Z2xMTW9idmNJczFDRFVicE8xLWdtY3l1SDJlOHdVaVpWOUNlTDk0Y181NzJYbWc5QzNDWnlYQk13OEh6aDItemxHQ2ZHbU4wSnhIYWl6bS0zaGNQQVZiTEhVUnlhSFo0dWczZVRmRjlFNTU2ak1XSnRZUG80cWxn?oc=5",
-      "medio": "conexionmigrante.com",
+      "medio": "Conexión Migrante",
       "tipo_fuente": "unverified",
       "publicado": "2023-10-16T07:00:00.000Z"
     },
