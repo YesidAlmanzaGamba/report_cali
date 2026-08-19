@@ -1,8 +1,24 @@
 {
-  "generado": "2026-08-19T03:24:40.388Z",
+  "generado": "2026-08-19T04:05:47.335Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "#DOMINGA | Un potente sismo de magnitud 7.4 sacudió a Colombia y desnudó la falta de alertas sísmicas públicas y de cultura de prevención en el país. El desastre dejó más de 260 fallecidos, 140 edificios colapsados y daños cuya reconstrucción costará h - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZFlLZjFVTUR0VVJfdlpkXzhpcEpDT2ZGOW5rY20zRXFOemxudFFOeVdJY3FBdk5EdlpyNC12dkpSZVlJa2Y5bi1jbndsUlUzcTBQcnpTVTJ4bjFpTVRKUjBMZ3I3M296RUp1dUdJUnNWNUN5MUZ2RW53TU1senNUTWl6QTZOSXJQQ2xSbGlYVnpPWlBSZldDbl9MNVE1akVpNUlucjg5THpFbHhUVlUwcmNaOXB2UUJjWE1USU11Y0R4RzNjaDZJZUpDNHJCaXNKMjJzZXlSV1phVzhQU19iLUdSY2M0QWpG?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-19T03:33:46.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "La vida que sigue después de perderlo todo: los rostros de los damnificados que duermen en albergues y salen a trabajar",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/la-vida-que-sigue-despues-de-perderlo-todo-los-rostros-de-los-damnificados-que-duermen-en-albergues-y-salen-a-trabajar-3579262",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T03:28:48.000Z"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Héroes con uniforme rescatan la esperanza entre las ruinas: perrita Wendy sobrevivió atrapada 96 horas y un gato se refugió en casa a punto de colapso",
@@ -211,6 +227,16 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "albergue",
+      "titulo": "Ocho días luego del terremoto de 7.4 las lluvias afectaron seriamente albergues en Pereira: dicen que no se ha recibido apoyo con censo y ayudas - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMipwJBVV95cUxNVUlwd3ZXSEN2QnJnSGtmenRTQ2R0am5vM0tmcWx4NHdyRDRMZnRlLTFzNHhxRDVSRkJDa2p3RWxtMW95RU4xWDlKcFNEQ0Z3SUlJN2E2V0R4UmNWWHdmTWhQcXlKMFluMktqQnJ0bWd4VUhrNmxnYWE3QWxhQ0FEclRHaEItUkxCOVAwY0JOMU00NmhnOFRkaFZvZ0ExbFlQcUdWeEF0YnBxWUM2N21wdmstRHdGQUMtUFZnVEVFNG01VGdIa1NoV3hRZW5MQkcwdlUyRmsxaGE1dlBva1VraGdfbXBFSFBIaXZOTXl2aThBYTJUVDdZNTV3dml4bGJtZFRCNS16ZkRhSTY3eGFTekFodFYwU2FxRHZVNUloMGl0bThNVldF0gGsAkFVX3lxTE01VW14bjNSYjhqSXNfY2ROaW1GZ0tZYnpRYzlNZGpEX09LLVpiYldxNnZEQlJzRHJDb210RmR2TkZla0I5UVAyRW96ZUZnSUF3blVEVURWd0ZaN1lpamVFcWtQbVBURFpCT2JILWxzeGdsUFY4Y1JpQVg1cjdXVFRiN1RZWEJlYi1BWXBZa0Z1ZjBaLVhwOVdkbXpoc3gtSzJnc0dsaXd0dEpIN0kzeGNEYnBvSGJCZ0ZNYzN0RU51OG1XQ2VFWWoyZFI1elNWMXVNaFNKU0dhN0R2SWVIRFFjTUI5VUVoMllmWFlUWnViWEhGVldKcVNfc1pzSVQ5RWJtekRpXzgtRVBPZHVObDA3ajJNYTFBeEFKV1BNcXBoVTQ3dnRjd2I3Uk1XVA?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T19:45:54.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Estos son los puntos de acopio que siguen recibiendo ayudas para los damnificados del terremoto en Bogotá - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUVBrMHpGZC1XZnlHR25sRHRhazVQM0dsVklocE1YdEJHYVhQdXFkUWdMZEhEaDJqT1NuY1ZRU1J3RGV3ZmxlQlRWN3h6clo3N283RlczUjJNYllhWDN3cll4RXVCWWRRaGJuSV9oUW5KZjdsNGZkRWctVDQwTkxKajhaLUpSdW9kcms4YVBJbDd2c09CX2ZmbUhEUXo5VTMycmExX3l2LVhLQXZkOVhOVFZrM09uLTJ6dmd3MF9wN3drOTd6ZWZmakUzVHVnNkYtRTFZZVJVUGhjNkl0N3lHeXFkc07SAf8BQVVfeXFMUHNUZjJxY3hHR3FMZWlKdUxsV3B5ZE9VNUxuSGhHZkNqOTd1TWc1VEJrenJYT3k0cmtlcGIxQ2phM1ZZNWFRd0tnWGU0bmFZaVJENjVMV1hWSWRWbFNQQ01MR3Y3OXk3eVFJTlRyWFFiRms4elVGVlRRUlZ3b1pkcjBxUnRhNWNWN1c2YlU4b0w3ckJlZWVFdlNEdlB5ZDJDcXp5ZDlhN0RJZV9qU2RTRnVQNExuclE4T0hvUkExYXpuVjRrWGd2R0QzMEFLSzFZanNRd2UxVUswMEFJTnVfcHI2NWZDME5SUnR1WTZLVUlDNnM0eVpIQjlRRUtrOWhj?oc=5",
@@ -220,9 +246,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Manizales mantiene atención a damnificados por el sismo: 241 personas permanecen en albergue - 724 | noticias",
+      "titulo": "Manizales mantiene atención a damnificados por el sismo: 241 personas permanecen en albergue - 724noticias.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1NIbXdnREVhN3NhbVdtMmQyZUJNVnBza21CTXk1Q2RUR3BsaFFkZEhWSXlnc3V6bFRlOVBBcDFhcm5ORmNwWHV6TkFleHVCb0hNMXhKc2hvMGJYNFVFN1VYeHFHMTFUOHNvOE55LTQ0R2NFd3l1UUJ1SjFNbzB6RElTV09idUd2MjNXY09Vcm5sc1d1NG1nZjV3cnZUQ2tsV3BxcGFQd0JMQWc?oc=5",
-      "medio": "724 | noticias",
+      "medio": "724noticias.com.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T18:26:25.000Z",
       "pcode": "CO17001",
@@ -316,9 +342,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - kienyke.com",
+      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - KienyKe",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSnpfMHdLd3JPRDYtb3JIQ0FJUTNRcm5qVm43VkdzaVlsRklEaU5ONnMxSmpReUFXcVZuSzl0QVJtcEVpNGdSVVl3NTNWcTlMWkNPeUxyQV9vb0I5U3pITHZPZllKTW5MYWU0TGlTbEJfVnpmZEJsQk5zNjJYMkcwdi1yWEhVZWg1TkVCWEZwRHY?oc=5",
-      "medio": "kienyke.com",
+      "medio": "KienyKe",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
@@ -327,14 +353,24 @@
     {
       "tipo": "centro_salud_afectado",
       "sede": "Hospital Benkos Biohó",
-      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - EL INFORMADOR - Santa Marta, Colombia",
+      "titulo": "Buque Hospital Benkos Biohó inicia atención médica a afectados por el sismo en Buenaventura - elinformador.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUmUyZnR4Vkg1WjdDMk1UeE1LcXNRN1ZDMXFZR0xtZzNLWmQ5eWE0Szk2eXhNZzZMNUY0ODhab2t1b01ZSDFCQVlRTFhyOFBHQUhlb1IxdnlDZVFoTDd4NXMwUm9lUXNPRUpXT1VWUGtRcU92RGZQWGRTOWdqLWxoWF9mQzFVRFY5dHRnbWtLY2pnZy1IWnIydXdNekRYcDBUc0NvMWF5OWVHdGdBZ05hNXhQTkhqSm9wbGlVd0FHbXVxQmdtQi1ld2tYbE5RQ25sNVdkZ2pLQnRSVDdualJWY0praEM3U1lwWGVFY1hMb0tBdw?oc=5",
-      "medio": "EL INFORMADOR - Santa Marta, Colombia",
+      "medio": "elinformador.com.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T20:05:32.000Z",
       "pcode": "CO76109",
       "municipio": "Buenaventura",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Hospital%20Benkos%20Bioh%C3%B3%2C%20Buenaventura%2C%20Colombia"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -351,6 +387,16 @@
       "medio": "Portafolio.co",
       "tipo_fuente": "press",
       "publicado": "2026-08-16T14:44:17.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de los puntos de acopio de ayudas humanitarias de la Alcaldía",
+      "enlace": "https://www.eldiario.com.co/actualidad/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-los-puntos-de-acopio-de-ayudas-humanitarias-de-la-alcaldia/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T03:18:20.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -420,9 +466,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - newstimes.com",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - News-Times",
       "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORTN4Rkd2V0Z2SVZNVWxZWnNUV0YzanpYdHFvNl9VX3Z3YXVGNGk0UlBUUEM3WmdodndZSk5ZMXZBQjB6NG45Njh1bXdpX2FEcm1qVUd0TG4wTUJERHpLZnFOVnhPNlpUdGVnOHdiY0VDMWtCbHpTMnU1d2ctSHVkMU9hcmhvVXROdTJMWV9ucWFLT25RQ3FSczlWMXFNZFV4V1d5Qg?oc=5",
-      "medio": "newstimes.com",
+      "medio": "News-Times",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T20:27:45.000Z",
       "pcode": "CO54385",
@@ -857,14 +903,6 @@
       "publicado": "2026-08-10T20:47:41.000Z"
     },
     {
-      "tipo": "centro_salud_afectado",
-      "titulo": "Sismo deja un muerto y dos heridos en Antioquia: 364 viviendas, 61 colegios y 7 hospitales afectados - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT0tHX0dYSEQtTDFqaFN0QWJ3U19ZSU1NRUFUc2U1RHFhcENYQVpPWW56eXJ1Z2RkZ0tFQ2hRY2tIVTJmazRSMC01QVoxWUY5dktsR05pSEdkeTZxODBubHF4Y2NoR005VXpfZ1A0b0tmQW5ud2R1UF9uQnU1NFVTdXQtRVdUdldOQW9IZEExcExKVzZKU0k3MG5ndGk4MGFNNnpKNEh4aDVmc1J4UURpazBpSGJCNFV5aXNBQXFtcTE5RDNUYTdkWF9KeVdtZ9IB4gFBVV95cUxNZzRHVmRwWXgzMTRjRTZkakg5eWZKSHF5SndnTExZTnpwaEp6ME02aUQ0NjBHelZHcC1PMkpPd0hZVUJJSk0xempTcm0zZXppZk85ZERfRHNRd21FVmQ5YUFqSjVfVGt4aHBpemM0TDNnQXoyUkFLb01jLWRxNU90b09famxPSEpFbWlnX2tIOU5XM0RoV1hGNmNvMWRiQ200S0oyTTdmQnNvNjBIMHBSOGhqZEV0d1hvWFJHZy1WUmxQc2kxNzR6eUVsaXVIUjh5TGRkMkszcV8zempoNFBiUjBR?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T19:34:40.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPOXcxWUpRM2QzUUVCaHV0YkNPZjlWaUk5cE1vTXgtN3RNZkZBb013U3h4RDlWQkZNcFBUR096OG04VnhhVldiMDNnT3B1d3ZvbUFNblVTOVplcUZ5aTVVSElNVUZBUW9tcG5uR2JCU3VTTUR5OGFCclVKMm41SU1nYW9oTGs1Q1JhaFZ4bjN3Y1F6cnN6WGFUbHZRem1ORUlfQlp5TTgyNm1WTTk3NHhtdUFXRHBvcTJyU3lTSWU0N29mVWlfSHg4QkhSNUNhc2JoLXg5blVMWkl3Q29HTjA0aWxXNDNWY0c3R281RHJXT3dsalU4b2RzSVc2UzhJMG8wT0s0Uw?oc=5",
@@ -989,6 +1027,14 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "centro_salud_afectado",
+      "titulo": "Sismo deja un muerto y dos heridos en Antioquia: 364 viviendas, 61 colegios y 7 hospitales afectados - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOT0tHX0dYSEQtTDFqaFN0QWJ3U19ZSU1NRUFUc2U1RHFhcENYQVpPWW56eXJ1Z2RkZ0tFQ2hRY2tIVTJmazRSMC01QVoxWUY5dktsR05pSEdkeTZxODBubHF4Y2NoR005VXpfZ1A0b0tmQW5ud2R1UF9uQnU1NFVTdXQtRVdUdldOQW9IZEExcExKVzZKU0k3MG5ndGk4MGFNNnpKNEh4aDVmc1J4UURpazBpSGJCNFV5aXNBQXFtcTE5RDNUYTdkWF9KeVdtZ9IB4gFBVV95cUxNZzRHVmRwWXgzMTRjRTZkakg5eWZKSHF5SndnTExZTnpwaEp6ME02aUQ0NjBHelZHcC1PMkpPd0hZVUJJSk0xempTcm0zZXppZk85ZERfRHNRd21FVmQ5YUFqSjVfVGt4aHBpemM0TDNnQXoyUkFLb01jLWRxNU90b09famxPSEpFbWlnX2tIOU5XM0RoV1hGNmNvMWRiQ200S0oyTTdmQnNvNjBIMHBSOGhqZEV0d1hvWFJHZy1WUmxQc2kxNzR6eUVsaXVIUjh5TGRkMkszcV8zempoNFBiUjBR?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "via_bloqueada",
