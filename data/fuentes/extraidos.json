@@ -1,8 +1,26 @@
 {
-  "generado": "2026-08-20T18:27:35.615Z",
+  "generado": "2026-08-20T19:10:35.657Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Terremoto en Colombia: Reconstruir la vida desde los albergues - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRC11R3FmdWstdE9hRFpFZklaOG8wd1EyOWJmOWlubm9LMGhucTM0dTNva2pZc0dVMExQUklZOXBQY2R2ejdMa1ZESmpzV2ZQb0UwZkthVEJwdmhtUXFoeEdzei1sbkdsbkFjWHY0TVJJNFdGZkdtQkxXdzZqUlR1bHBlVERLSXhYV2xQR3R4Wlp6NGFUN05zUjhHM09CdlphdWEyUmFDVQ?oc=5",
+      "medio": "France 24",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-20T17:30:07.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Las lluvias agravan la situación de los damnificados del sismo en albergues de Pereira - Yahoo",
+      "enlace": "https://news.google.com/rss/articles/CBMingFBVV95cUxNamZSYnJCcWZOUGczNDlJd3c4ZjFEazdtLWZfemRJekFuT0Y5d3pDdWpoTDZpdVA2M1V2UzZZSW1tMGxUOG94UE9WZFlfSzhPTHF4QjBhazl4Qkl1dHlnbjd4TTBfYkVHaDEycy01Vks0RWtxRm14d3hTN3NLa21ha0M5N2s3TTZjR0pvUG5IVFpXQnk0QmpRVS1SVWdNQQ?oc=5",
+      "medio": "Yahoo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-20T15:51:50.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
     {
       "tipo": "albergue",
       "titulo": "Jhonny Rivera brindó refugio en su finca a adultos mayores afectados por el terremoto en Colombia: “Qué felicidad poder ayudarlos” - Infobae",
@@ -12,16 +30,6 @@
       "publicado": "2026-08-20T15:37:00.000Z",
       "pcode": "CO41615",
       "municipio": "Rivera"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Las lluvias agravan la situación de los damnificados del sismo en albergues de Pereira - France 24",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNdkM4YTY5RV9vcFdJWENQa0RsZUZIajA1SV9kRE1BdlRfcVVuMXFuc2xIdVpTZzBVR2R5RXdpdkZJSk0xd3RQRER1WUhVQjg4R0JxZl9rbHJCak02cVo1cGhUVlliYWlBd0lPTTAzTUhzZVQxdUJvRWZaYzk1aVZDTkFvaF9WQTYxQ3pDeERPMlNvOWctQ0xkbW5kN241U0RTR1JxX3o5bmw5X0ttMTBjbU4yX2s2eTlPRGtsblFtNjhmVXdWdGZ2a2cyQU11ajQ?oc=5",
-      "medio": "France 24",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-20T15:36:05.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
@@ -168,16 +176,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Bomberos de Cali extraen pipetas de gas del interior de un edificio que está en grave riesgo de colapso",
-      "enlace": "https://www.elpais.com.co/cali/bomberos-de-cali-extraen-pipetas-de-gas-del-interior-de-un-edificio-que-esta-en-grave-riesgo-de-colapso-1912.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-19T18:01:12.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
       "tipo": "albergue",
       "titulo": "500 damnificados siguen en albergues tras terremoto en Pereira - Noticias RCN",
       "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMU9lYXZYMVlkQTNwMjV5UUNkamZLNUNNdVpmSENrZmIyY0FVTHNfMVYtTU9Id2R0WC13R01NTTFkb19JTDgtQnRUZWxVT2JYU191YlVBbG5rMENkd1NNcTFPOHd3a2owNFdEbVdJSEVaQTlKeWhRTDZpOE9fSzhJMW80WUdOQl9YUVh1dkRfME1EcER3MUI0RmR1UklnTW9kR2RrUkQzNVl5cknSAasBQVVfeXFMTmJycVo2UW5PR2xVXy01NEtDb2JzY3lyakV4U05TRm5TU2dHQ3pWU255Tzh0bXc5dnFxNkgtX2hQeERiY0VTTG9rYmdKSXkyTEQ5dk9UT3pjV3FON29LbWwwa0tjR3NyS3hfM2txbGprQnA2d1M3M21SbmlzdUE2ZTdDTlVHTEszeVFwQlNvTTNndE1yRXB6YUZocmw1VUVIa255R0o2MkoyZGk4?oc=5",
@@ -194,16 +192,6 @@
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T05:05:29.000Z",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-19T05:00:51.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
     },
@@ -464,6 +452,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUdIBqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUQ?oc=5",
+      "medio": "Pulzo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-17T04:32:43.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Terremoto en Manizales: 5.241 damnificados, 203 personas en albergues y 1.153 viviendas con afectación total - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTkUwem55MWxPdzVjaHdOS2dMTnZqWmwtNFpzWjJQMC1NaXBFNE1CN1ZPTHVVUk5VMjB0a1c3OVFMSEpWWm8yMlhoQXdlTzF1aGs1RWVBM292LUhJa1lDRHdtT040ZFRuZ3dQSjgxYkFrSEtCNy10enRrLUNkMEpnNFZPWGVfaUhhU19GN0hmZHpfYkg1Rlk5S0RONU8zOXpOSm15UkJsRVZnNDVEU3lORVBaZ05PaFZhVTRBbGx1MA?oc=5",
       "medio": "La Patria",
@@ -571,16 +569,6 @@
       "publicado": "2026-08-14T21:46:00.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Así operan los albergues para los damnificados del terremoto en Cali - El Espectador",
-      "enlace": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQUFLUURON0xXM1NLeUFNWXZnbWNHSzIzX1JhTUV3akh0c2V3UGVQMVdfNmxxZlFGWm1ES0I5Qm52SzZNMU5SOGpsR2VBN3JReV9xbnpSMzVKVHlVb0p4dnRxZjdmcGVtVS0tMjF3cG5zdmxTNElYMkhSRUN5eHpidlNfUV9uQVFqaVJQSGtNMNIBowFBVV95cUxOZXJyLVd6UTBGUURhbGJGU0luLWR4akx0VTdwRjhKWGwtSzdHODhfSy1LYkdrN2lYdkRXaUtaNDF1Mk5UdXluQm92SDM0MEFnWEx4aEh3dkdYWnV1dmVMclRWQVZ5cjBmd0hSUEEzQ25seTJ1QklHNG9FR3lYdkNTaXlDTmppM1dQekV4eEhvcDRBM3ExUE96QVZOendLRWs3N1pR?oc=5",
-      "medio": "El Espectador",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-14T21:09:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -739,16 +727,6 @@
       "publicado": "2026-08-13T19:49:53.000Z",
       "pcode": "CO27001",
       "municipio": "Quibdó"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Parque Olaya Herrera se convierte en refugio principal para damnificados en Pereira tras terremoto - NTN24",
-      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPalB5QV9NOURBSGVUVE5ldm9VLUtCejJSQi1oR05kelMwMFBFX09fc1pVODJKTFY1M1dYWGVYODJUdklkSXZiRHNIWTg2MVo5RTgyZXBMSE5NVUVQaG5mWUppX2NtNDJKT25rWmZHb0E3SDUyQXZQd29nd0FEOXhFcnVIMFVOMFctZ3BaTXJrTm45a2ZpbExLSzdZWHA4UVZnelpBNVJ0VnhicF8wbDBrSDRNTXpFY0ZOQkVnazRwNjVzZmVzYVUzWFRXWExzV09rX01GSG5nbGRrcmlUNjNCUNIB4AFBVV95cUxOMW5aeFp6ZHNFMFNXSDQycElSVDFNYk5ZQlN3ZFFiWVRuSUNSN0NUQmZqS0d1TG5WaDZoeHFuamg4Mzl5c3FXUG50c1loTHBmd3NzVVRyMk5LVWxsb0ZQcjRQckpXQVlOVTI1aGM0dGh5UnB1emRHZ1F0RHpPQWdoOVlCcnprWW91elNyTGNmWDJ0dzlyVmNUTTFZZ09uYUh0SjR3dUtmc3ljSnhDbEt1NFJ0bWgzYkVSNlVVTTVOZzRLZWlVUHE1dXVnVXB5SThILXJPM2gzS19HcnV2VVVCcA?oc=5",
-      "medio": "NTN24",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T19:01:43.000Z",
-      "pcode": "CO52490",
-      "municipio": "Olaya Herrera"
     },
     {
       "tipo": "edificacion_danada",
@@ -1025,6 +1003,16 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Un edificio de tres pisos colapsó en la ciudad de Pereira durante el fuerte terremoto de 7,4 que sacudió este lunes a Colombia. Decenas de personas presenciaron como se derrumbaba el inmueble. Las autoridades han informado de decenas de muertos y h - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOTnNDc00tNFl1VzJYQnNUZ2c3V05xb1UwVVE4SVdhR0kwR1loYUZGMElxWnVweGJOYXA1MGdEZTJwNjE2N2dsa1MwZE1CVzFnc1plU3Eta1BzRjVoT2ZhekNpVHJkWDI0VENaZXBTWUFPX2dZRXZIYnZXZmNkY2V2VWpNVlBOSWt1MkZndHZTRkdxMkV3WmR1aDNKb1pyb3JQVFdOQkVHalVPWW5sUGlSNHptR054YUxjcDBoVU9rWVhjOS1KTmJwRjVycGRYb0Z0TUFEaGpvdDVEQWhONzBIUQ?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPOXcxWUpRM2QzUUVCaHV0YkNPZjlWaUk5cE1vTXgtN3RNZkZBb013U3h4RDlWQkZNcFBUR096OG04VnhhVldiMDNnT3B1d3ZvbUFNblVTOVplcUZ5aTVVSElNVUZBUW9tcG5uR2JCU3VTTUR5OGFCclVKMm41SU1nYW9oTGs1Q1JhaFZ4bjN3Y1F6cnN6WGFUbHZRem1ORUlfQlp5TTgyNm1WTTk3NHhtdUFXRHBvcTJyU3lTSWU0N29mVWlfSHg4QkhSNUNhc2JoLXg5blVMWkl3Q29HTjA0aWxXNDNWY0c3R281RHJXT3dsalU4b2RzSVc2UzhJMG8wT0s0Uw?oc=5",
@@ -1071,16 +1059,6 @@
       "medio": "ELHERALDO.CO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Un edificio de tres pisos colapsó en la ciudad de Pereira durante el fuerte terremoto de 7,4 que sacudió este lunes a Colombia. Decenas de personas presenciaron como se derrumbaba el inmueble. Las autoridades han informado de decenas de muertos y h - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOTnNDc00tNFl1VzJYQnNUZ2c3V05xb1UwVVE4SVdhR0kwR1loYUZGMElxWnVweGJOYXA1MGdEZTJwNjE2N2dsa1MwZE1CVzFnc1plU3Eta1BzRjVoT2ZhekNpVHJkWDI0VENaZXBTWUFPX2dZRXZIYnZXZmNkY2V2VWpNVlBOSWt1MkZndHZTRkdxMkV3WmR1aDNKb1pyb3JQVFdOQkVHalVPWW5sUGlSNHptR054YUxjcDBoVU9rWVhjOS1KTmJwRjVycGRYb0Z0TUFEaGpvdDVEQWhONzBIUQ?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_salud_afectado",
