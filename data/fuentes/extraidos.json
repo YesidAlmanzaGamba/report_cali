@@ -1,8 +1,20 @@
 {
-  "generado": "2026-08-20T09:06:18.241Z",
+  "generado": "2026-08-20T09:58:43.874Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "sede": "Universidad del Valle",
+      "titulo": "Alejandro Eder, alcalde de Cali, anunció peritaje técnico con la Universidad del Valle a edificios nuevos que colapsaron tras fuerte terremoto de 7,4",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/alejandro-eder-alcalde-de-cali-anuncio-peritaje-tecnico-con-la-universidad-del-valle-a-edificios-nuevos-que-colapsaron-tras-fuerte-terremoto-de-7-3579584",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T09:15:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20del%20Valle%2C%20Cali%2C%20Colombia"
+    },
     {
       "tipo": "centro_acopio",
       "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
@@ -128,6 +140,16 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "albergue",
+      "titulo": "500 damnificados siguen en albergues tras terremoto en Pereira - Noticias RCN",
+      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYnJxWjZRbk9HbFVfLTU0S0NvYnNjeXJqRXhTTlNGblNTZ0dDelZTbnlPOHRtdzl2cXE2SC1faFB4RGJjRVNMb2tiZ0pJeTJMRDl2T1RPemNXcU43b0ttbDBrS2NHc3JLeF8za3FsamtCcDZ3UzczbVJuaXN1QTZlN0NOVUdMSzN5UXBCU29NM2d0TXJFcHphRmhybDVVRUhrbnlHSjYySjJkaTjSAasBQVVfeXFMTmJycVo2UW5PR2xVXy01NEtDb2JzY3lyakV4U05TRm5TU2dHQ3pWU255Tzh0bXc5dnFxNkgtX2hQeERiY0VTTG9rYmdKSXkyTEQ5dk9UT3pjV3FON29LbWwwa0tjR3NyS3hfM2txbGprQnA2d1M3M21SbmlzdUE2ZTdDTlVHTEszeVFwQlNvTTNndE1yRXB6YUZocmw1VUVIa255R0o2MkoyZGk4?oc=5",
+      "medio": "Noticias RCN",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T14:31:44.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "¿Su vivienda resultó afectada por el terremoto? Así puede usar las cesantías para repararla",
       "enlace": "https://www.elpais.com.co/economia/su-vivienda-resulto-afectada-por-el-terremoto-asi-puede-usar-las-cesantias-para-repararla-1947.html",
@@ -150,6 +172,16 @@
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T05:05:29.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
     },
@@ -427,6 +459,16 @@
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
+      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-16T16:00:15.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -783,6 +825,18 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "centro_acopio",
+      "sede": "Universidad de Caldas",
+      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaklOOG5iaE04el91aXlHNENHQ2prOFFRNWctLUM3SExjcmFKMVVlUmhCYU41amtRdjdFcHhRcjFpbFNLNUs0UGs2YnB3UDZocjdldUZCeUtCTnBGWnJfVW80Rkd2cmVwSjdLVFpqTTU0R2pYanZvWTRMZGlaZldJSUlnam5Gdkt3ZmU4cjJieHRQMjE3bDBEMzVDLV9XZEE3TDIxY0NDdUVHTGFrR0dUSFVRMWdLSDAyS0dlYVo2eDg?oc=5",
+      "medio": "La Patria",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T02:42:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20de%20Caldas%2C%20Manizales%2C%20Colombia"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "🇨🇴 Una muestra de la tragedia El colapso del edificio Torres del Limonar en Cali se volvió uno de los símbolos de los graves daños del terremoto que golpeó a Colombia este lunes 10 de agosto. Decenas de estructuras colapsaron en Cali y otras ciudades d - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZHJERnJIVkFzNVUxTkVnRmFPZDJWYTFfQ0NWQjU1TEd6bzBKdlhvU2V2aGdGWm5kVzAzZERSYzJnc3JSWFlCSFI0aUl2Tnc4MWJ3Smc1cml1dG55Vzc3NmZXS3VqUG5hUXFQQUoxdTh2aVl0c2FyRVg4cTB3X2xpSW9ZOFdlNDNHWjVzdHRIa3FvaFFMVkxTaml3M0NwVmRGem9SejRiV1RUYUV1djdLX0hTN09tbFQ1LV94LTJNX3Jhd0UwNkFpQXZCZzNZaWhsVlFxQzVNdTc1T2c?oc=5",
@@ -975,18 +1029,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "centro_acopio",
-      "sede": "Coliseo Mayor de Manizales",
-      "titulo": "El Coliseo Mayor de Manizales recibe a los primeros damnificados tras el sismo: historias y centros de acopio - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOGNjSHB3ZlNnLXZkRm55dWJEblQ5OHc2TEF5bGQxZ2NtNGs3N2QyWmF4M1dUYzloYldNemNTV2FvNlFUalBlMk5jRDNpclJzcWdXM2xGMW03OHBEdnlfQ1Z6ZE53b2xXVGV0Q3JNX29rc0Q2VXQxX2NVSm03dkNQbEFnTW1VVVZvQW5EUzAxLWZ6UUZZMmJqNGlBV3MwOUk3bllmYmNqRklWV3RUeHhJTGkxTkJoRzhjcFB0cC02V2o?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
-    },
-    {
       "tipo": "albergue",
       "titulo": "En imágenes: así se viven las evacuaciones, albergues y rescates tras el terremoto en Manizales - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQV1J1SVVjanVXMy1vX2x0OUw5aDg3NThDSzEyLW9PV29vUlY2QjBFYzduRC1KUmZjajRjSzduS1Z1UXJaR21ZX1Jjd2pfcmlhWlcyaVN2RHh0bFhBTVFnUklRU3lrNUNyNGRNc0ZLSk96eUM0TVpuTUVQYnBTQkhtdUswWENlNUJKY09CakZVbkRBQjZ6OWN6eXBURHUzSFFJcHN4ZVdjUnlTejE3UXA0dkJ4ODdoQ0NCWWc?oc=5",
@@ -997,14 +1039,16 @@
       "municipio": "Manizales"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Temblor en Colombia deja graves afectaciones en Manizales y Pereira: catedral y varios edificios afectados, escombros y heridos - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQWENUZHRkUG50S1VKSGtnYnRFSEtianRleGM5Qi1KS0RTWmtONFRaazlxa3A2bUVTSDJQYURPcUFJWllON0wxeFhNSUUzMVFVZkV5anNjODNHd1pkdDBwaUpueWQ4Mmt3eXZBUkJwX3JVSHZVUnRkbWlXalhEVlpXZG1kZW52YVgtcHAwRVVqVzA1czB5RU43UUZpYUowc1dxdi12VU5qTVNOTlV4SXBGX252MHVDd2VmazZvd3hNSlJIbUFILXZIS3RmMDZEZzQzRnBiQVBnbGtiazlnck9FRm04c0ZyMWJKSF9fR2diZWVVWktMSXY2cnEtSW1TRjg0aUHSAYcCQVVfeXFMT2FuZ1d0NTBHM1pvVXJtd1ZobEdLZlZ4WTNEUGl3UjVISEUwcUlYZEJQMjFVVXRHSTNVRXVkVGcyOUphNmxmaHJyZ3BzOThGNzJyMTI4cVl6VEVqTjVYSWFZTGU5OGJ3eHhNc2FfVDNmcnROZk9SbkwyS0tMYVRoMEQ0NVR0Wmx0TXMzZGtFbHRvNmxhQ0dLUlZna0toS1BvbDQtdHI4VzMyYnR1M2hEeVUyb0Q4YURHYU8tLVpqSXZzYWxXVGlEb2g0aVMyNnlIUGI1RUYxYVBCblE0V2taRU0xNFBrWGdYU1lfZHZ0cGxXekRpTlFBdUstOERKa2ZXV0g2b3p4WXc?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
+      "tipo": "centro_acopio",
+      "sede": "Coliseo Mayor de Manizales",
+      "titulo": "El Coliseo Mayor de Manizales recibe a los primeros damnificados tras el sismo: historias y centros de acopio - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOGNjSHB3ZlNnLXZkRm55dWJEblQ5OHc2TEF5bGQxZ2NtNGs3N2QyWmF4M1dUYzloYldNemNTV2FvNlFUalBlMk5jRDNpclJzcWdXM2xGMW03OHBEdnlfQ1Z6ZE53b2xXVGV0Q3JNX29rc0Q2VXQxX2NVSm03dkNQbEFnTW1VVVZvQW5EUzAxLWZ6UUZZMmJqNGlBV3MwOUk3bllmYmNqRklWV3RUeHhJTGkxTkJoRzhjcFB0cC02V2o?oc=5",
+      "medio": "La Patria",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
-      "municipio": "Manizales"
+      "municipio": "Manizales",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
     },
     {
       "tipo": "centro_acopio",
