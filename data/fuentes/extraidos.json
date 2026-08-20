@@ -1,8 +1,28 @@
 {
-  "generado": "2026-08-20T12:31:39.899Z",
+  "generado": "2026-08-20T13:40:08.820Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La vida entre grietas: las familias que siguen viviendo en casas al borde del colapso tras el terremoto en Buenaventura",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/la-vida-entre-grietas-las-familias-que-siguen-viviendo-en-casas-al-borde-del-colapso-tras-el-terremoto-en-buenaventura-3579577",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T13:09:11.000Z",
+      "pcode": "CO76109",
+      "municipio": "Buenaventura"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Santa Marta mantiene abiertos sus centros de acopio para apoyar a los damnificados por el terremoto - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYmRDRkFIRHJ4MUthN1l2SDVEWmdWbWs5d1Foak9RMUc5ZTNTMGd0N2I1dVdrRDV3bFExWi1rTTFHRVlvUlhUdEFYVTdRSTVEN0MyTEV2TThDb0FUZldyaDRUcWZtRWFiUWZhbHBCTGpYclR6eXNDUHU3c0pDeE5xZENuUHZ5ZmVqcDZXQlNrRjFSVU9JQ0J5WEV1VExhcjRBOVpQUGVkbTJvMFpDa0JTZUtYUUx1cjlXNWdRd3UtSWJYRmNvdENpd3hvMkh4U03SAeMBQVVfeXFMT3haa3B1T0h0bW9ud013dTdSbWo0YjY4OWdzc1UtUVEzRERNRHVXNjNmQ0xtWUFQWGg0NXZLVnMwY2xheVFXUDdBeW9HZ2d0bmk2cGl1ZHJPSUhyUl9LbURPNEdqMm5ucDJkRFFCanhIaEg0UnE1Tll6WVVndkhuaTdkR1d6UTdzTXE1R19yUkdoekdDUUN2RTN1TUlETTFyQ1lSRmhiRjNYWktRSDVGVkVVOGpqYktINVI3X05lMGNta3d6M1lBdmRZaUV0VWlVR0pVMmViQkREVnFuOWw2TmxvTVU?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T12:50:06.000Z",
+      "pcode": "CO47001",
+      "municipio": "Santa Marta"
+    },
     {
       "tipo": "albergue",
       "titulo": "Las autoridades de Pereira piden a damnificados del Parque Olaya aceptar reubicación en albergues - Caracol Radio",
@@ -12,18 +32,6 @@
       "publicado": "2026-08-20T11:54:34.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "sede": "Universidad del Valle",
-      "titulo": "Alejandro Eder, alcalde de Cali, anunció peritaje técnico con la Universidad del Valle a edificios nuevos que colapsaron tras fuerte terremoto de 7,4",
-      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/alejandro-eder-alcalde-de-cali-anuncio-peritaje-tecnico-con-la-universidad-del-valle-a-edificios-nuevos-que-colapsaron-tras-fuerte-terremoto-de-7-3579584",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-20T09:15:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20del%20Valle%2C%20Cali%2C%20Colombia"
     },
     {
       "tipo": "centro_acopio",
@@ -434,14 +442,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Lluvias agravan emergencia tras terremoto de 7,4: albergues y viviendas resultan afectados - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUWw3RVgwRnBOTkRrbENpdE52QmtTRU9DemhrRlV1UGgwMFpEVDJ0ZnNOMFZiOGQxM2ZBQm1RbEw3dXFOSjJoY3hmSGExWmRMY0xDQ1NVLUJQRFREZGwtdDNYV3MwcGdpbEQ5bzZORi1ublFxNDZ6QTY5b05LNC0zSEk4Mmt1Z3lfb0ctTU5JeWlxWVhFdG5GMmZPWkVBbmVGdU1vSmtBNnBWYUpjUDlkcjEyblotWm9LTVVrXzBnU1pnU3FqSW9qTWt5WEw0ckU?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T15:07:35.000Z"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQTJNVUlhaGlmbzJsTzg0NkJGZHJ3NzduUG9FUU5QV0xvS1p5UXMtN2dNZVM3ajZTQUVhTlVCNmtVMHdubVVkR1FfWDl3MzJtXzNOcC1KNVdIbEF3cFlMUTN6eXVMTmZMT1RkeFZiWGlvRFFkd2I1STlXVmhsNUxmSGpMcnJtX2pzTG1oUUd1b0xHNzBTb2JpSm9YcHQyb0VtU0lPZtIBqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUQ?oc=5",
       "medio": "Pulzo",
@@ -477,16 +477,6 @@
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Sociedad de Mejoras de Pereira asumirá coordinación de puntos de acopio de ayudas humanitarias",
-      "enlace": "https://www.eldiario.com.co/sin-categoria/sociedad-de-mejoras-de-pereira-asumira-coordinacion-de-puntos-de-acopio-de-ayudas-humanitarias/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-16T16:00:15.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
@@ -865,16 +855,6 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20de%20Caldas%2C%20Manizales%2C%20Colombia"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "🇨🇴 Una muestra de la tragedia El colapso del edificio Torres del Limonar en Cali se volvió uno de los símbolos de los graves daños del terremoto que golpeó a Colombia este lunes 10 de agosto. Decenas de estructuras colapsaron en Cali y otras ciudades d - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZHJERnJIVkFzNVUxTkVnRmFPZDJWYTFfQ0NWQjU1TEd6bzBKdlhvU2V2aGdGWm5kVzAzZERSYzJnc3JSWFlCSFI0aUl2Tnc4MWJ3Smc1cml1dG55Vzc3NmZXS3VqUG5hUXFQQUoxdTh2aVl0c2FyRVg4cTB3X2xpSW9ZOFdlNDNHWjVzdHRIa3FvaFFMVkxTaml3M0NwVmRGem9SejRiV1RUYUV1djdLX0hTN09tbFQ1LV94LTJNX3Jhd0UwNkFpQXZCZzNZaWhsVlFxQzVNdTc1T2c?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T22:29:57.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "‘Todos Somos Valle’: Activado centro de acopio de ayudas en La Licorera para los damnificados de terremoto",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90177/todos-somos-valle-activado-centro-de-acopio-de-ayudas-en-la-licorera-para-los-damnificados-de-terremoto/",
@@ -941,6 +921,16 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "🇨🇴 Una muestra de la tragedia El colapso del edificio Torres del Limonar en Cali se volvió uno de los símbolos de los graves daños del terremoto que golpeó a Colombia este lunes 10 de agosto. Decenas de estructuras colapsaron en Cali y otras ciudades d - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZHJERnJIVkFzNVUxTkVnRmFPZDJWYTFfQ0NWQjU1TEd6bzBKdlhvU2V2aGdGWm5kVzAzZERSYzJnc3JSWFlCSFI0aUl2Tnc4MWJ3Smc1cml1dG55Vzc3NmZXS3VqUG5hUXFQQUoxdTh2aVl0c2FyRVg4cTB3X2xpSW9ZOFdlNDNHWjVzdHRIa3FvaFFMVkxTaml3M0NwVmRGem9SejRiV1RUYUV1djdLX0hTN09tbFQ1LV94LTJNX3Jhd0UwNkFpQXZCZzNZaWhsVlFxQzVNdTc1T2c?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1013,14 +1003,6 @@
       "medio": "Forbes Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T20:47:41.000Z"
-    },
-    {
-      "tipo": "via_bloqueada",
-      "titulo": "Más de 130 muertos, 570 heridos, viviendas y vías dañadas y aeropuertos cerrados, las dramáticas cifras que deja hasta ahora el terremoto en Colombia - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOUGR6Y1BuZ1A2Q0xfbmZXWWZUSDdiMzMwLW9rMXFtdVRCaktSMEtIN3VDVlpveUg3Y1RYdWVrQzVCRTJ6QUlwN0Rpanpsd2N1Y3NYS0JEQXU2Sm10cVlUaldScVB5Wnc2Y0FiS2xMYWlXZXpfeVAwMi1HbkFJR2tWdlNpUkh6SktIZ2hua0prUVdkTGw0YkVObm1RUnM1UVM3TTdCVnluaFBUSk9QSEVjQmJiRUpDRUpvZENaZmFlQUR0ajBsNXJCUHFfaEtURXREVkNTR2liNGI3T0EyRXk1MHNfYkZqZmF6RXR0M3ZCVkhXZldvMHI2clp3bjlhWjZrb0xXdWp2c1BzcERlcmZwOVNDR20tZmxDT2hR0gG2AkFVX3lxTE1OZm9zbU9fMmdwWjFZZHM2dFJjQjhnWHhjbHBrWnBGOHYyOUl5QVRWRlZpUjhPdF9TcEViREl2M1B5TGhIVU1IUkd5RHBvVklZTnZkZmtleWZHT2RRdGpkTU1Zd1BCcVpMNGhQclk1LUFtS0JzTk5wSmRoVUxuejA0SHk5c1c2UjQxeGZVXzNqU3owaTZXU2wxVUhtaXh3dU9FSEtwRkNtSENrRENGQUczTW5QTXdXQ0VMUWc2TmtmczJWb3lhZkhZenFxb3kwZ3c3d2JZREtxM3dra1lheDBOLVo3blVGQW1fYVczZjEtdFBmWDQyQl9MeG93VkxLb3BNMHdRbTI5VW5zcVY4WnZqV3RMb3ZTdWg4WUNvRUFJTFRnekh5ekFucjlaVHQ3WFJVdlZCQUE?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1111,6 +1093,16 @@
       "medio": "DiarioVea",
       "tipo_fuente": "unverified",
       "publicado": "2026-07-05T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "La Patria Manizales. . Manizales ha recaudado 7 toneladas de ayuda para los afectados del terremoto en Venezuela La iniciativa es liderada por un grupo de venezolanos radicados en Manizales. Una mujer prestó su casa para que fuera centro de acopio. O - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQVhFRE1tZm5yci16ODhrXy1Db2pNUWxaQUFIQjVfVjlKSmUyaUhTN2tpQlVLb3hmTVY1MzFoMG1CMkNMT1BSdVVVSWRWMWRiSjUwNzV5Q29wcHpTbEtGend5N3lTWU50MTBPMjMxNWZpTmNfNkNhZ1dIdkNMTDZjZXhvLUJEbnhKTjRjT3hXaV8ybk9MMjlXWDFmOXhJNEk3N0JBQnJ4aWNjeXhSenFiNkx1NEJzVEVNcmZINUpwY2RnUFBuNm45V05JVjZScUhPSTg1RlNXTkZHR1BPRnpsaVV6cw?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-07-02T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
     },
     {
       "tipo": "albergue",
