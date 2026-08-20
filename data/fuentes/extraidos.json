@@ -1,8 +1,28 @@
 {
-  "generado": "2026-08-20T15:05:30.216Z",
+  "generado": "2026-08-20T15:57:45.451Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Las lluvias agravan la situación de los damnificados del sismo en albergues de Pereira - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNdkM4YTY5RV9vcFdJWENQa0RsZUZIajA1SV9kRE1BdlRfcVVuMXFuc2xIdVpTZzBVR2R5RXdpdkZJSk0xd3RQRER1WUhVQjg4R0JxZl9rbHJCak02cVo1cGhUVlliYWlBd0lPTTAzTUhzZVQxdUJvRWZaYzk1aVZDTkFvaF9WQTYxQ3pDeERPMlNvOWctQ0xkbW5kN241U0RTR1JxX3o5bmw5X0ttMTBjbU4yX2s2eTlPRGtsblFtNjhmVXdWdGZ2a2cyQU11ajQ?oc=5",
+      "medio": "France 24",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-20T15:36:05.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La desgarradora carta que rescatistas de Cali encontraron en un edificio colapsado tras el devastador terremoto: &#039;Inmensamente feliz de contribuir&#039;",
+      "enlace": "https://www.eltiempo.com/colombia/cali/rescatistas-hallan-en-cali-la-carta-de-una-victima-mortal-del-terremoto-de-magnitud-7-4-inmensamente-feliz-de-contribuir-con-mi-familia-y-hogar-3579619",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T15:02:49.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "albergue",
       "titulo": "Jhonny Rivera brindó refugio en su finca a adultos mayores afectados por el terremoto en Colombia: “Qué felicidad poder ayudarlos” - Infobae",
@@ -365,7 +385,7 @@
     {
       "tipo": "albergue",
       "titulo": "Lluvias inundan albergues de damnificados en Pereira: ciudadanos reclaman más ayudas tras terremoto - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWURBcGtYVVJab0FPQ0FJbWpaa0d4cG55dnZudWpTUHNpWTJZZ21VanI3YjFkMl83ZVdhSF8zaTdPcVlwZ20wN0t6NjlzOHliR3d0NXdQcGM4ejFodFBkYlcxeXNFMnJOZE1WZTRPN2JhQnVXTzZkcEg0VUpGSjJPYW5uRFZzNlBvNGxKU2hwN1Nxdk5xanMycm1NNkJ3ZUpNaDU1TWNtUFBpUdIBrwFBVV95cUxPMW9LWWlGTEJNM2tsZTR4T2lpOUY2RFFmcWUydzdha2dQRm9sa3FVWUkwb0tBNEF5Nm9IZnBkX2hIZk1PR1lLQ2hFOGt3cldiUG1OVVlhRGJtNGt1b3BzbUxZdUpMRW1DMVFTaU9YMEstSlg2eDdUVng0d2ZZTHljQVlvaHFlRTFXemptcnBSdU1kU3dldndOR3pBUFJkVnE0empaaDVVa25zMlpSdnln?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWURBcGtYVVJab0FPQ0FJbWpaa0d4cG55dnZudWpTUHNpWTJZZ21VanI3YjFkMl83ZVdhSF8zaTdPcVlwZ20wN0t6NjlzOHliR3d0NXdQcGM4ejFodFBkYlcxeXNFMnJOZE1WZTRPN2JhQnVXTzZkcEg0VUpGSjJPYW5uRFZzNlBvNGxKU2hwN1Nxdk5xanMycm1NNkJ3ZUpNaDU1TWNtUFBpUQ?oc=5",
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T21:15:31.000Z",
@@ -381,14 +401,6 @@
       "publicado": "2026-08-17T19:45:54.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Estos son los puntos de acopio que siguen recibiendo ayudas para los damnificados del terremoto en Bogotá - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUVBrMHpGZC1XZnlHR25sRHRhazVQM0dsVklocE1YdEJHYVhQdXFkUWdMZEhEaDJqT1NuY1ZRU1J3RGV3ZmxlQlRWN3h6clo3N283RlczUjJNYllhWDN3cll4RXVCWWRRaGJuSV9oUW5KZjdsNGZkRWctVDQwTkxKajhaLUpSdW9kcms4YVBJbDd2c09CX2ZmbUhEUXo5VTMycmExX3l2LVhLQXZkOVhOVFZrM09uLTJ6dmd3MF9wN3drOTd6ZWZmakUzVHVnNkYtRTFZZVJVUGhjNkl0N3lHeXFkc07SAf8BQVVfeXFMUHNUZjJxY3hHR3FMZWlKdUxsV3B5ZE9VNUxuSGhHZkNqOTd1TWc1VEJrenJYT3k0cmtlcGIxQ2phM1ZZNWFRd0tnWGU0bmFZaVJENjVMV1hWSWRWbFNQQ01MR3Y3OXk3eVFJTlRyWFFiRms4elVGVlRRUlZ3b1pkcjBxUnRhNWNWN1c2YlU4b0w3ckJlZWVFdlNEdlB5ZDJDcXp5ZDlhN0RJZV9qU2RTRnVQNExuclE4T0hvUkExYXpuVjRrWGd2R0QzMEFLSzFZanNRd2UxVUswMEFJTnVfcHI2NWZDME5SUnR1WTZLVUlDNnM0eVpIQjlRRUtrOWhj?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-17T18:47:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -479,14 +491,6 @@
       "publicado": "2026-08-17T01:38:28.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia deja 287 muertos y más de 150.000 viviendas afectadas, según nuevo balance - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWktuT3ZMN3NsMlpQdFpVVTBwb0d0UWNzNFZYaFNock1nRElXQ2FZUjRTeVA3aVczOVluQ3J1cks2YVgwRkFnc1owRHNRZVhmenNzdDJjTGUzY3hBd09QbFpqeExSTU96T2hSdHZmNG5HVGxJbnR6d3BrNkl2RXVZOXIyM2xmbXYwRGxRMFdZTnBXdWl6SnF6NHpBVDVYMVXSAaQBQVVfeXFMUEk4UHJ3WHJKb1VOckV3dUowaTVOZ0l3THhaeDFyeUduWVFHZUpueGt1R2dVd0hoNGNwYUhLbTNzWkRTNUktTTM5cmpsUTRCdllqbGEyQVY3RGtCSnI2UVVuQkRMUjUtS3JXZTFScDQ4b0ZaVFU4RERwaldIWWFpMlNoSXRmdW50Y0VkbW43SHEtcDBLX0VLNTRKcUpIRTFzcFdtcjY?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T01:38:28.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - KienyKe",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSnpfMHdLd3JPRDYtb3JIQ0FJUTNRcm5qVm43VkdzaVlsRklEaU5ONnMxSmpReUFXcVZuSzl0QVJtcEVpNGdSVVl3NTNWcTlMWkNPeUxyQV9vb0I5U3pITHZPZllKTW5MYWU0TGlTbEJfVnpmZEJsQk5zNjJYMkcwdi1yWEhVZWg1TkVCWEZwRHY?oc=5",
@@ -550,7 +554,7 @@
       "tipo": "albergue",
       "sede": "Coliseo Mayor",
       "titulo": "Coliseo Mayor y Parque del Oso en Pereira, albergues clave para afectados por el terremoto en Risaralda - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUmhUOEJNcXdIeU5sQi1TbEYxb1QxQm5QeFh0c1ZnTFJaR19RQjJBa1U0WEZLdml0Z3lxLUZUTXF0V2xNMDdBTTd6cVNLZ3F6bWZfS2pKb2d3dEJTRXlLOXpUU25VUWJwTzZEd1VIdExDQVkyb0JBN192a1lIcWI0TU42TWRXOHF2NlU3RHhfeV9HaW4xejZob3FfTWxrZFdEUS1VTkgxaFNWQnNYMm42Tjd1eGNHdXhCUTFBams2X2FfbWc2eW5mOHR4b1FRMHPSAdQBQVVfeXFMUEdUcDZaRVZUakJza3Y3YVVfaEF6Z2FDNGlxWnRRckVkMXBHc3VPX1VKVUM3cGZ3YXZXZEtFZnRYOWEzZG1vTDNfcHk3MXVpanFMUVhwNEFKTmFod2JPRTBYQ0ZjaTRIbzhQVFd2dHgwTDBuc082bUVyQy1KQXROdWxaTWRZRjVhcDE2eWs0YnlzcUNQMGNrRlpXNE9kQUEta0x2YTFMeGtZczdtaWI4UTVVbU1sVDEwMFhkNlJUVTMtV2tTd01xU0hjVEo5aGJPZGpkQWo?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUmhUOEJNcXdIeU5sQi1TbEYxb1QxQm5QeFh0c1ZnTFJaR19RQjJBa1U0WEZLdml0Z3lxLUZUTXF0V2xNMDdBTTd6cVNLZ3F6bWZfS2pKb2d3dEJTRXlLOXpUU25VUWJwTzZEd1VIdExDQVkyb0JBN192a1lIcWI0TU42TWRXOHF2NlU3RHhfeV9HaW4xejZob3FfTWxrZFdEUS1VTkgxaFNWQnNYMm42Tjd1eGNHdXhCUTFBams2X2FfbWc2eW5mOHR4b1FRMHM?oc=5",
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T00:15:21.000Z",
@@ -577,16 +581,6 @@
       "publicado": "2026-08-14T21:46:00.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Así operan los albergues para los damnificados del terremoto en Cali - El Espectador",
-      "enlace": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQUFLUURON0xXM1NLeUFNWXZnbWNHSzIzX1JhTUV3akh0c2V3UGVQMVdfNmxxZlFGWm1ES0I5Qm52SzZNMU5SOGpsR2VBN3JReV9xbnpSMzVKVHlVb0p4dnRxZjdmcGVtVS0tMjF3cG5zdmxTNElYMkhSRUN5eHpidlNfUV9uQVFqaVJQSGtNMNIBowFBVV95cUxOZXJyLVd6UTBGUURhbGJGU0luLWR4akx0VTdwRjhKWGwtSzdHODhfSy1LYkdrN2lYdkRXaUtaNDF1Mk5UdXluQm92SDM0MEFnWEx4aEh3dkdYWnV1dmVMclRWQVZ5cjBmd0hSUEEzQ25seTJ1QklHNG9FR3lYdkNTaXlDTmppM1dQekV4eEhvcDRBM3ExUE96QVZOendLRWs3N1pR?oc=5",
-      "medio": "El Espectador",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-14T21:09:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1150,11 +1144,13 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - Agencia Andina",
-      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2dLdmRJZnB0bzctRnhqUVVqYWp4YXo0VFlOQmRhZ2UzZ3MtcW92SWFpTFpZbXhiQjVUVnVOX0NDY0dLYUctV0FLWG82LVNoNU5XclBqZkJseHp3cUp3d2dpMWJwMmw0S2ZLcWRVUVdyUlQ1bHgwbzNTLThnOVlCc1pfWTZZcnVaeXpDcGVfWW84THNyNkxTWU11cTJvcXhGM0xReFVGV0ZhLUQyRlA1WEZlLU5BZlNHTERj?oc=5",
-      "medio": "Agencia Andina",
-      "tipo_fuente": "unverified",
-      "publicado": "2012-07-15T07:00:00.000Z"
+      "titulo": "La vida en los albergues después de la avalancha en Mocoa, Putumayo - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQektHNnhLWU12dUFsX1dxdFlNeDlnN20wTFZmbzdUbFRyVUFPSFBVU2lkOVZQQUFUX1Q5OWFtQzRhMVBadk9kRGJlLU4td1NYNldidi1RNDc2bXhiVTZ0YVQwZXhRVEtkaGV3WkE3V3BhM3c4WTNTQVJIc2d5M2JMRmtDUzI1X1hJR2c4WkRIUEtaXzd6T3FoSm9ZZ0hQcWVaa2IyNFpwZ0tCcTRpX1dxd3N0TFFkdlNFQ3lBRk1UY07SAcYBQVVfeXFMTkRJWkJpMnFUakNiZ1VDYmhveEp5YUtfZWx0a09JT1hUdm9GY0NPVXR3Nm5saTRSRmVzOHoxZ2lXMGpPR0xvRG5oZjFmRVJlcThxUmtHMmFLR0Rzdk9RdDlwQ1V6M0M3dGFMeDNvS1A4c2Y4WWNUYi1GdGR5QmYtWnlkbmdqaUVZOFZqY2swMU1CbHY4eDdXZmtWTVJ4amFsOUNvT092bTd6NkxoaW1VdTU2anB1NXM2UGlkUEJfLTI1UGVyNUJn?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2017-04-03T07:00:00.000Z",
+      "pcode": "CO86001",
+      "municipio": "Mocoa"
     }
   ]
 }
