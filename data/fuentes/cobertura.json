@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-21T05:56:46.996Z",
+  "generado": "2026-08-21T06:36:08.782Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 234,
-    "con_notas": 56,
-    "sin_notas": 178,
-    "poblacion_sin_notas": 5758910,
-    "medios_distintos": 132
+    "municipios_considerados": 235,
+    "con_notas": 58,
+    "sin_notas": 177,
+    "poblacion_sin_notas": 5752388,
+    "medios_distintos": 134
   },
   "municipios": [
     {
@@ -156,13 +156,18 @@
       "departamento": "Risaralda",
       "mmi": 7.9,
       "poblacion": 235337,
-      "notas": 19,
+      "notas": 23,
       "ultima": "2026-08-21T05:09:13.000Z",
       "medios": [
         {
           "nombre": "Pulzo",
           "notas": 5,
           "ultima": "2026-08-21T05:09:13.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 3,
+          "ultima": "2026-08-21T05:00:10.000Z"
         },
         {
           "nombre": "Alcaldía de Dosquebradas",
@@ -218,6 +223,11 @@
           "nombre": "facebook.com",
           "notas": 1,
           "ultima": "2026-08-11T21:00:22.000Z"
+        },
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2018-10-21T07:00:00.000Z"
         }
       ]
     },
@@ -227,9 +237,14 @@
       "departamento": "Risaralda",
       "mmi": 7.9,
       "poblacion": 500806,
-      "notas": 80,
-      "ultima": "2026-08-21T03:31:37.000Z",
+      "notas": 107,
+      "ultima": "2026-08-21T05:00:49.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 28,
+          "ultima": "2026-08-21T05:00:49.000Z"
+        },
         {
           "nombre": "Pulzo",
           "notas": 10,
@@ -449,11 +464,6 @@
           "nombre": "Vanguardia",
           "notas": 1,
           "ultima": "2026-08-10T07:00:00.000Z"
-        },
-        {
-          "nombre": "El Colombiano",
-          "notas": 1,
-          "ultima": "2026-08-10T07:00:00.000Z"
         }
       ]
     },
@@ -639,7 +649,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 5511,
-      "notas": 4,
+      "notas": 5,
       "ultima": "2026-07-05T07:00:00.000Z",
       "medios": [
         {
@@ -649,6 +659,11 @@
         },
         {
           "nombre": "zeta.com.pa",
+          "notas": 1,
+          "ultima": "2026-07-05T07:00:00.000Z"
+        },
+        {
+          "nombre": "La Prensa Panamá",
           "notas": 1,
           "ultima": "2026-07-05T07:00:00.000Z"
         },
@@ -732,7 +747,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 322388,
-      "notas": 53,
+      "notas": 52,
       "ultima": "2026-08-21T03:15:55.000Z",
       "medios": [
         {
@@ -896,11 +911,6 @@
           "ultima": "2026-08-13T02:52:55.000Z"
         },
         {
-          "nombre": "Vanguardia",
-          "notas": 1,
-          "ultima": "2026-08-11T07:00:00.000Z"
-        },
-        {
           "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
@@ -964,8 +974,15 @@
       "departamento": "Risaralda",
       "mmi": 7.6,
       "poblacion": 6522,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-17T15:09:33.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-17T15:09:33.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO17174",
@@ -1740,8 +1757,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.7,
       "poblacion": 2337182,
-      "notas": 55,
-      "ultima": "2026-08-21T03:01:00.000Z",
+      "notas": 57,
+      "ultima": "2026-08-21T05:57:18.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
@@ -1755,8 +1772,8 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 4,
-          "ultima": "2026-08-21T03:01:00.000Z"
+          "notas": 5,
+          "ultima": "2026-08-21T05:57:18.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -1812,6 +1829,11 @@
           "nombre": "La Patria",
           "notas": 1,
           "ultima": "2026-08-19T21:29:30.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-17T13:23:37.000Z"
         },
         {
           "nombre": "KienyKe",
@@ -2994,14 +3016,9 @@
       "departamento": "Antioquia",
       "mmi": 5.8,
       "poblacion": 2745464,
-      "notas": 4,
-      "ultima": "2026-08-20T22:32:22.000Z",
+      "notas": 3,
+      "ultima": "2026-08-20T19:13:38.000Z",
       "medios": [
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-08-20T22:32:22.000Z"
-        },
         {
           "nombre": "La FM",
           "notas": 1,
@@ -3243,12 +3260,12 @@
       "mmi": 4.5,
       "poblacion": 1355306,
       "notas": 5,
-      "ultima": "2026-08-21T02:42:25.000Z",
+      "ultima": "2026-08-21T01:42:01.000Z",
       "medios": [
         {
           "nombre": "Zona Cero",
           "notas": 1,
-          "ultima": "2026-08-21T02:42:25.000Z"
+          "ultima": "2026-08-21T01:42:01.000Z"
         },
         {
           "nombre": "Caracol Radio",
@@ -3330,14 +3347,35 @@
       ]
     },
     {
+      "pcode": "CO47288",
+      "nombre": "Fundación",
+      "departamento": "Magdalena",
+      "mmi": 4.2,
+      "poblacion": 73744,
+      "notas": 1,
+      "ultima": "2026-08-17T16:31:58.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-17T16:31:58.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO47001",
       "nombre": "Santa Marta",
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 2,
+      "notas": 4,
       "ultima": "2026-08-20T12:50:06.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 2,
+          "ultima": "2026-08-19T13:13:55.000Z"
+        },
         {
           "nombre": "Caracol Radio",
           "notas": 1,

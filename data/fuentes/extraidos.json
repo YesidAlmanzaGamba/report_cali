@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-21T05:56:46.993Z",
+  "generado": "2026-08-21T06:36:08.778Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -18,16 +18,6 @@
       "medio": "Bogota.gov.co",
       "tipo_fuente": "official",
       "publicado": "2026-08-21T01:29:16.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Cómo está Antioquia tras el terremoto? Más de 3.300 viviendas resultaron afectadas; Suroeste y Oriente, las subregiones más golpeadas",
-      "enlace": "https://www.eltiempo.com/colombia/medellin/como-esta-antioquia-tras-el-terremoto-mas-de-3-300-viviendas-resultaron-afectadas-suroeste-y-oriente-las-subregiones-mas-golpeadas-3579544",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-20T22:32:22.000Z",
-      "pcode": "CO05001",
-      "municipio": "Medellín"
     },
     {
       "tipo": "edificacion_danada",
@@ -208,6 +198,16 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "centro_acopio",
