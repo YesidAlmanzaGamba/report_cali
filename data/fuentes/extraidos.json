@@ -1,8 +1,16 @@
 {
-  "generado": "2026-08-21T13:39:12.828Z",
+  "generado": "2026-08-21T14:26:29.540Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "¿El seguro de vivienda cubre los carros afectados por el terremoto? Esto explican las aseguradoras - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ3hheHItbngyNkZ3RklQaV9vUFJwVTBCRlpheU5Xc1V4MkNwVVhRTHNNc0E1M0VrLXkwbF8tbTFXLWJyUzlxeWp3bnN6d29fTVFNX18yVzZHbnh2RTQ3dW5LcF9kVDFfX1NyWE9keTlJY1lNeUpUQktaREtKZ3VSRlllS1ZlSlhRV2RIMHllcjFLU0N1eVF0WQ?oc=5",
+      "medio": "Pulzo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-21T13:55:11.000Z"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Impactantes imágenes: Al menos tres heridos y una treintena de edificios afectados tras terremoto en Perú",
@@ -72,6 +80,14 @@
       "municipio": "Rivera"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Así son las marcas que dejan bomberos y rescatistas en edificios afectados: sus significados pueden ayudar a salvar vidas - Newsroom RCN Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPLUZDRHZFUkVOZWtiM0paQjdreDRUY3ZnZG1Jbm9IUGR1MWU4ZFd1RkR2aDZ0eFEtRWtLTnZmZkxsaGdUOGl1ZV96QkVSZ2NMMDhvRVlkSlc1Mzd5TU1sZU9sN1V0SlFsSlc1MlZRelhYYkhyOXhsOXVqdlVYWmpPVUdXeDRGVEV1ZEdwTjFJc1RnWk9rWURObXgxYjJ3NEJZdzFLZm9Pc1ZsMmhhTjhNV0VPQ2w0b21JdEs3X08zVVRFYi1kN2NFQnFWZjJDRUdsVVVQdlVvU3dSZXNnYU9YOFZhN1d2OXp3Sm5Pblh3Zko?oc=5",
+      "medio": "Newsroom RCN Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T14:28:08.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Las autoridades de Pereira piden a damnificados del Parque Olaya aceptar reubicación en albergues - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbk9Hdlg0NEJLV1d6NUF4ekZ5SF8zZmR4ZlI0djFmLUdnVjlGZFNFVDcweEFKTjhkN3RIdzRiSmFFU2tta2oyQmJLeFBqVEp2TGxDRk1BYzhSMFkzYnNuUkIxbWtKM3p4cWVOclJSdmVGQmJ5T3VUX0E4TXJZMUt5SFUtTmltUno1Smd1dzhIcEpETzZUZnBfLV9oT0hkZDBOZGhIM3UyTHFXQnhzNzgzODFXZVVrWm1kXzJRUWhnd2N2dWxSUlR6VHZEb3LSAeABQVVfeXFMT29LYmk5NjcxYk55VU9udW1mTmJBNldIZEt2MXlzX1NaNFBNNlRUYjFLN1NyS3VlMFM5Z2JPV08tU3M2WUxEa2VhSUJhLWYta21ySzgxZ0FoNGdmNWRaME5RN2N3OVhlTEFuekVZSDVRcEkxcWgzVl9YUTBHdzV0OHdiNjRwSXRyZV9UdEV5QU5ONWFpeElqaDE4dEtzVWp1UGd5V2NudVR3bXJpTGF3SlRJSnA1OFJldVYwWk5fYXdHejZ4aG4zQlNJTFMtQ3VYQ0FsbFVKczVpSGhBNnh2Unc?oc=5",
@@ -90,16 +106,6 @@
       "publicado": "2026-08-20T02:45:22.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Más de 50 familias damnificadas permanecen en el albergue de Armenia tras el terremoto - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMjlQN0xPLTc2Y0tKdmR0bU1pVno0YVM2d2xDaVJsSXZqTVRmaVB5dmNYSmNFbVJUR29KY1ZmUUptUmVkalhmaklkWkVvckk0NjZNVWxsUl9GdjBBNlNrSFdJeTdJdXVmbFJLUm4tSldnaVhqd3lFWVNINU9tLWpHSk5idzl5Vi02YUNXS0RlSElCSHRReDRiZnllR2Y2MWpEdGpLQTJNbFNQeWRNT3BFQUtWSF9EWEtudldOaFV30gHSAUFVX3lxTE93c1ExRVhQQldwS2pLYjMxVEdsQllvTjVVMWVod1YyOHI5V3R4YWZiUTVQalFjdVpTZWJ6a0FPUlJPX282VU8wM0hmR3RNTDdza1ZKNTBQcEU3RnQ4TGVJaXZTLXQxVGdwNDRIV0U1TEVERzVwb3lRSzNBVF9lU2FPSG51b3o1NjZVYkI4QWJHclRBcVREWTJ2VFRDWmZKMDROOUxETklsaUc4WUN5NFlWN3RzeGxIX1VRakFPTzA5UEtQOWhCaFBnWTRWaEhtUTFqUQ?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-20T00:19:56.000Z",
-      "pcode": "CO63001",
-      "municipio": "Armenia"
     },
     {
       "tipo": "edificacion_danada",
@@ -300,6 +306,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Fuerte aguacero golpea albergue de damnificados en Pereira: la ayuda es urgente - Revista Semana",
+      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPN2xjcWZqcHViLVpSSk5mQk5KLUh6NWJuYzUyUXVrWFN0WElwdXA1UlJkdlZoZlpGcm5hWkpjU0pXWlkxMnVqQ3lkUTZzMWJCWVl3eU0zbGk4S3RqOWctamZBbGs1c2x1OG9QTC1HZ085UW1ibE9yYXBkS3VwSGlkRDNaQ2d1d3h5WlpMZ3V2QkduN1N3NVZFdjVSaFJFb2NWd2RMLXRJU0x4aXlzR19mQzc1c2ZBMEw5QWo3Yk00akhxUkJmekhhdlpVc1g1UdIB0wFBVV95cUxNcDFJU1VkdjlGUFI1ZmFha3RKY2V3Q0pjTWp0c0xOMnZBM29wMzVkN2dSM3dyNld5MVJxdndGSVB0aEFDSExieGQyaGNOYUtWRDN3V25RU2Y3d3cwUXRJWXFPcDBTWTIyS3RZYVB1cHBLZzRlRi1NN0hYX09iOFlPQXgtWDRkRS1BNWVDVG15YTllRkFqdEk0QUZ2SnVnbzNLWU51OG5adVYwM0U5SVFHRVZKelBDMTZxV2ZhNWExRnhJMzA4c0lxTDhxNElYdThzZU9v?oc=5",
+      "medio": "Revista Semana",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-18T13:42:41.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "“La Alcaldía está pagando subsidios de arrendamiento el primer mes y hay un albergue también”: alcalde de Manizales - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNWEZwUF8yYlNuNWFocW9MNXM3WFdnTUhmNy1wbGdBWWdyakdXTndGOU1OakxXVXprQjFwaWpabFlHeWRxQWh5Wi1mMVI2UEhGck1GbVcyYWFtNDRzaVhCcEJqd3BXUVA1WHcwQ1pIT0gza3NHdjAwV0hyVVJLT1k5SjVOamZVRTRPdnp6Rk1zTW1wNGtJUnRRNWpPNGt1aDJWcVk5dS14OFFOMkRXem9qVnRGNnZwQWZOZHM0Sk5XYTZ0U0xPb0t5SjhUcENBb3ExTzBwSHlHbTNJWVVueDBPN1U5LW1wTW_SAecBQVVfeXFMT1pfbnBNQktiZjhKTnQydERnTEViME03OEllRERCN3IzcVY2NUZnYkNHWGREZkZRdFdYdllwalVNNFdjOXpUTG41X1RhdGZtTVpTVmVyUXNsbFpHNmE5eGEtRXJhWEh0OVpQaFFMVlZMeUhmMEJWWkxVRzM1TGRIMlQ1MGl5dXV6MWZXSmwwOUdYWGcwZXVTX0d2ZlFlNVdrbUZiQy0yMEl4a1dDYVlSRkx0bEZrOWJZTHo5UUpjQU4wdVFFeHhfZGRJeUFXSTZjTVJuZV9relN3SzBkQ1R1bW5rMUhYUENR?oc=5",
       "medio": "La FM",
@@ -307,16 +323,6 @@
       "publicado": "2026-08-18T13:42:19.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Fuerte aguacero golpea albergue de damnificados en Pereira: la ayuda es urgente - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNcDFJU1VkdjlGUFI1ZmFha3RKY2V3Q0pjTWp0c0xOMnZBM29wMzVkN2dSM3dyNld5MVJxdndGSVB0aEFDSExieGQyaGNOYUtWRDN3V25RU2Y3d3cwUXRJWXFPcDBTWTIyS3RZYVB1cHBLZzRlRi1NN0hYX09iOFlPQXgtWDRkRS1BNWVDVG15YTllRkFqdEk0QUZ2SnVnbzNLWU51OG5adVYwM0U5SVFHRVZKelBDMTZxV2ZhNWExRnhJMzA4c0lxTDhxNElYdThzZU9v0gHTAUFVX3lxTE1wMUlTVWR2OUZQUjVmYWFrdEpjZXdDSmNNanRzTE4ydkEzb3AzNWQ3Z1Izd3I2V3kxUnF2d0ZJUHRoQUNITGJ4ZDJoY05hS1ZEM3dXblFTZjd3dzBRdElZcU9wMFNZMjJLdFlhUHVwcEtnNGVGLU03SFhfT2I4WU9BeC1YNGRFLUE1ZUNUbXlhOWVGQWp0STRBRnZKdWdvM0tZTnU4blp1VjAzRTlJUUdFVkp6UEMxNnFXZmE1YTFGeEkzMDhzSXFMOHE0SVh1OHNlT28?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-18T13:16:27.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_salud_afectado",
@@ -579,6 +585,16 @@
       "publicado": "2026-08-14T16:38:00.000Z",
       "pcode": "CO76400",
       "municipio": "La Unión"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Chicago Tribune",
+      "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMVo3NnNXSUJRbXVReXRIMGIyYXh3bjZnOFpqeDktaVBCRUowY2EwdmU0NEhfWW5ianNoTXQ2Nld3UlBOV1BYUjhMM1cwc1p6djUwSE82U3N0cGJQeXVGdmNJQjB4d1NzaUlIRWZwbVN0bHNOTUltWS1UYTNvaTZ4NlNFZjZubkFrYkRwal8wNkZFVDNEX3dIRnFmeUs5TlpsSVAzSUJ2eWFfSi1OTHd1SloxZ2pzR1BWby1EWmkzYTktSmJwY2JCcy1YSW5OYkhQMzNNTnhobkxjUQ?oc=5",
+      "medio": "Chicago Tribune",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T16:24:20.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
     },
     {
       "tipo": "albergue",
@@ -987,14 +1003,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia deja 111 muertos y más de 1,500 viviendas afectadas: balance oficial - debate.com.mx",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPRk1KdXJZTGRJd21YdE84NUZyUlU0MDI5LUpLWXJENFQxdkllTmh2R3hFU25HRGQ3WjNnRGpZM2tQQ2wyVS1YZFNmcHdnZnhycEJheS1xejVWbEhJeF9NMzUyTGFKeDM4R1l1OHhlMXVzeXAwUVk5cnRqNVY5UE96Z3Y4ZnVzemVJWGhhc29Kbng3akdLZFpwY0JxMXBGNVNTcjMxSTlxRlR6OEpiTVJaWUNSd3BVX3VuX2pXdDcyWXNtLU9xc0tjZTQ2N3hyWUZkTFJlMkR3?oc=5",
-      "medio": "debate.com.mx",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T23:13:01.000Z"
     },
     {
       "tipo": "centro_acopio",
