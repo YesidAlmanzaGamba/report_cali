@@ -1,8 +1,16 @@
 {
-  "generado": "2026-08-21T16:29:04.411Z",
+  "generado": "2026-08-21T17:02:24.473Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Asistente virtual gratuito para damnificados por el terremoto en Colombia ayudaría a encontrar albergues y realizar trámites - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMihgJBVV95cUxOeVUxYjIyQnRNM0VBUXdQbEppQ0ozTklMclBuMXh6TS1zUXNhQy1PdXRqVTJoVWFvR0p1bWp5aUtkWURtWC0xY2xqeXZTNklGc2s3TWQtVHVuWEpWZlJRN1ROOUtxYmpLeG5UY0lWSnZSSGVmS1N6UFF0QnJhTDlQenVaMmFJZnRUTy1JMG5OQm9GNzdCT1hrMTFVdkI4N0FlV0RxZHctUFNiS3BpV3owZTBiSy1ieFRCVzdpS19tNDF5Wk1lbTlUdk9yc0pYNkxLZTkwRy1XNjZtTnRUOEdXMVdNWnFPZVVWclpxOVhnUHBsR2tiR3cyaEJ3ZjA3dFNGLXI2OWlB0gGLAkFVX3lxTFA3R3Y3ak1vc19BMjBzYkVKZGRDUWVxWkNLa2Jnb3ZRRGhraG5NRlB6S3NaZG1lWXZmVnFTdGNKcDFSRTBFSmowU3p3dTRUUUluYnl1UnFfd1dTT3otdWtCdjRZS1EwRVhMWGtTb1JFbGktWHBxbGVvU3Z0aUJjWW9HUklZaExiWV9TOFRwVEc4dmV2dExVRzEyeUlPRjJvOHBHNXFuUEU4M2Rmd0RROURWZGV6N29xUkFMUFd5aXh5VU5jUEFnZmRRX1lRU0RCUVBaazFFM3BsRnM2a0N1RGdJd3lpcTlTNVRLNVlaeUYyWXBVbHRzSER2WHJxVlhRckp5c293MVNXZUREZw?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-21T16:43:51.000Z"
+    },
     {
       "tipo": "albergue",
       "titulo": "¿Cómo ayudar a los damnificados después del terremoto? Experto explica qué deben tener los albergues y qué donar",
@@ -96,6 +104,14 @@
       "medio": "France 24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-20T17:30:07.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Así son las marcas que dejan bomberos y rescatistas en edificios afectados: sus significados pueden ayudar a salvar vidas - Newsroom RCN Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPLUZDRHZFUkVOZWtiM0paQjdreDRUY3ZnZG1Jbm9IUGR1MWU4ZFd1RkR2aDZ0eFEtRWtLTnZmZkxsaGdUOGl1ZV96QkVSZ2NMMDhvRVlkSlc1Mzd5TU1sZU9sN1V0SlFsSlc1MlZRelhYYkhyOXhsOXVqdlVYWmpPVUdXeDRGVEV1ZEdwTjFJc1RnWk9rWURObXgxYjJ3NEJZdzFLZm9Pc1ZsMmhhTjhNV0VPQ2w0b21JdEs3X08zVVRFYi1kN2NFQnFWZjJDRUdsVVVQdlVvU3dSZXNnYU9YOFZhN1d2OXp3Sm5Pblh3Zko?oc=5",
+      "medio": "Newsroom RCN Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-20T15:46:32.000Z"
     },
     {
       "tipo": "albergue",
@@ -222,16 +238,6 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-19T05:00:51.000Z",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
     },
     {
       "tipo": "centro_acopio",
@@ -510,9 +516,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - KienyKe",
+      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - kienyke.com",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSnpfMHdLd3JPRDYtb3JIQ0FJUTNRcm5qVm43VkdzaVlsRklEaU5ONnMxSmpReUFXcVZuSzl0QVJtcEVpNGdSVVl3NTNWcTlMWkNPeUxyQV9vb0I5U3pITHZPZllKTW5MYWU0TGlTbEJfVnpmZEJsQk5zNjJYMkcwdi1yWEhVZWg1TkVCWEZwRHY?oc=5",
-      "medio": "KienyKe",
+      "medio": "kienyke.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
@@ -559,6 +565,16 @@
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T15:39:32.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Huron Daily Tribune",
+      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZl85MEdxREkyZ0RYUHhySFhxUGxQVzBBWDdjejJOQUQxZ2ZvUWthQTJGdnZhdkdGNnNLbDlPbkRTNGlaRGtLOFk4VXY3M09ERHVVb0lTS2RJSHpBc0EzMVdFTEVzcEh6T29OWnUzTkdYV1pXM3NLV00zM3ZfRG4ydU9QQkUxTE1FUXppTmRxcHhBVEFOSUNUN2hmRFBnNlZ0akljUlI2UmkwbE0?oc=5",
+      "medio": "Huron Daily Tribune",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-15T10:39:06.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
     },
     {
       "tipo": "centro_acopio",
@@ -1007,14 +1023,6 @@
       "municipio": "Manizales"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSWY1ZWVJektxOVM2MkxNQXNKdGRIQ0JDamhSVDItbG9QSlR0UXdXbGt3UXBMZzlwdzFETWxYNlNvVjFTVWFTVkYwUUZIRXduREt5MHlhMHc1OGxMMzNwWGNldTNuYW9QZ25nWTVHa1VpOGFwV2F0RzJ5MVhDMVJwc0hQWE1qQzJ6Tm05a3duNlFaX1psTFBjUUlyWWFTX0dGNzZkeHN1OEx3MXZsaHYwYnVlTVdmV3lsc0JqbTVobzFoTzJOV1hQQ9IByAFBVV95cUxORWlDdHctN1N0SFNrNXE4MzR6cGJEbWhUVGJ5SFdUbTJ0eVpPZmMxaTc4SG95ZUxNUkVTaTlEdzdJZ1Q5bE8xbzJYZGo0OEc4cDBlSGZkOE92czlCdVd3dHFTdm9OUGdvMVNCazRYMlowQjN0dXVkcmdFLVFyVTVmU1I1OWtIdkdFZkNTb2xlS28wWkhDM0w3X1lTZThQektfekZkUkx5c2lWVmxfdWtsb0FXZVVrYkVEMW5SZGhTWGNnZ1J2eF9hYw?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Banco de Alimentos de Bucaramanga habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQW13TEdNdzZCbVA5T29BR3RvMDdWMEVtdlRCSDhzV2lJVFBTQjl4azAtTTNLSXlfY0hHUTk4ZnllRF9iZ29IRnRTc3k3UEZENjZMVWFMSTVyYmdEV3dtUlcyLUpqaDB0Q0FtTWhwNElOeDZ4TGRMcUI3YjlwRnE1UjJnYWtOOEh5V29tTFZMcWpZOXYtNkRkM1JyM0VmNzVlTVRBbVFPd1J1OFFZT1hRNFVQWFFrYldmVkJFOFVzcDhoYUg2VDl2WNIB3AFBVV95cUxOMTdZYnF0NFNkcFZPT25yVm9aSkxuMFRBWUpqRWY2Y3I2QWF3QzRGaUQxdkcyYzNvTXBlRmpQMFF3b1AyTGVILTVwYllueTZVdWI3eVktLTQwcGw2MHJ6R0JycE9HbW42MTBmM20wWW50VHdiM3NEQXJEX3luUE02XzJzS3NQUzNIcWk4aTVlOG9uYk9iMzVHVUVKZVVkYjBTWFByVkd3ZktfRFBNMHNrYWRSaXQwSWlFWnFzRGdQeFV5ek8yT3FDd2EwVkFSY0syWE40cjZjU2FtV08t?oc=5",
@@ -1023,6 +1031,14 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO68001",
       "municipio": "Bucaramanga"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSWY1ZWVJektxOVM2MkxNQXNKdGRIQ0JDamhSVDItbG9QSlR0UXdXbGt3UXBMZzlwdzFETWxYNlNvVjFTVWFTVkYwUUZIRXduREt5MHlhMHc1OGxMMzNwWGNldTNuYW9QZ25nWTVHa1VpOGFwV2F0RzJ5MVhDMVJwc0hQWE1qQzJ6Tm05a3duNlFaX1psTFBjUUlyWWFTX0dGNzZkeHN1OEx3MXZsaHYwYnVlTVdmV3lsc0JqbTVobzFoTzJOV1hQQ9IByAFBVV95cUxORWlDdHctN1N0SFNrNXE4MzR6cGJEbWhUVGJ5SFdUbTJ0eVpPZmMxaTc4SG95ZUxNUkVTaTlEdzdJZ1Q5bE8xbzJYZGo0OEc4cDBlSGZkOE92czlCdVd3dHFTdm9OUGdvMVNCazRYMlowQjN0dXVkcmdFLVFyVTVmU1I1OWtIdkdFZkNTb2xlS28wWkhDM0w3X1lTZThQektfekZkUkx5c2lWVmxfdWtsb0FXZVVrYkVEMW5SZGhTWGNnZ1J2eF9hYw?oc=5",
+      "medio": "La FM",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -1143,14 +1159,6 @@
       "municipio": "Manizales"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - Códice Informativo",
-      "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ1JVbzJ6d25YYXNWdmtUUU9MRnEyMzJpQVRIUWpCTTRTNmxjOUVNaGUwbjBzVVZpUTFsdzN4WldRdzBELU12bG5kQWZzUk0tb1NXSVZHeWgzNWNNRU53TUdTUWNwTVlQMnhFZkVDUlhkRFBaSmtxRmY0Uk1uc1VXYk5SNlNYZHZCeG1qcXFmMDQzU2JMQVNiZHk4YzloMDZ6MFVyZTM2VlBnWThpU3lHTDFXLVRDVXdyQlV0ajI5OXgyaXd3VkJkYWhVNA?oc=5",
-      "medio": "Códice Informativo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-06-29T07:00:00.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "La Alcaldía de Caracas habilitó cuatro refugios de emergencia tras los terremotos - El Diario Venezuela",
       "enlace": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aeHItM3lBZEY1YXlCOXhPTUF0Y0gybkNXdWgtX0JQUEJWbktFNFFsLXA4MHdPYlJPMmI5TVhwYWRiMHhRX0FGNjFaTTdRTExkcEJIVl82aG56N2ViVmlqeGtWVkNreXFsYk9UVQ?oc=5",
@@ -1160,21 +1168,19 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Carlos Rivera Ofrece su Casa Tras Incendio en Tlaxcala: Servirá como Refugio y Centro de Acopio - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPOEdfU2Z4aG83bEhvZnZ6U2RfYkxfYk9WM3dmalV5WjNSdmRySHFlUDJ2TVVpeUZ3TzRrODdKb015cmNvYnZfOEZvMXRqaHU3RVoxRHZWMktnTGlWRlJ0RVZHdnlvRDc0RWdGUERsbEU2Ukl2MGxhdmdfaTdRNXJzMzlRcm9aS09NRWhsd1NLb2NqdXlGLWZCZ284THZHcVVxRFVMMEJ4cVdpU3VOVTh0eTNiaWExOXpXV1BYSEcya3labU1VYmhzTXZBcnUyajg2bmhlSTJ3ZDZ4VGlpTDQ3RGVLd3hhdw?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2025-04-16T07:00:00.000Z",
-      "pcode": "CO41615",
-      "municipio": "Rivera"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Conoce estos 4 albergues para migrantes en Puebla - Conexión Migrante",
       "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRFhiSS1vWVRDYm41NUE2dGc1bHdUOGZ4Z2xMTW9idmNJczFDRFVicE8xLWdtY3l1SDJlOHdVaVpWOUNlTDk0Y181NzJYbWc5QzNDWnlYQk13OEh6aDItemxHQ2ZHbU4wSnhIYWl6bS0zaGNQQVZiTEhVUnlhSFo0dWczZVRmRjlFNTU2ak1XSnRZUG80cWxn?oc=5",
       "medio": "Conexión Migrante",
       "tipo_fuente": "unverified",
       "publicado": "2023-10-16T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - Agencia Andina",
+      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2dLdmRJZnB0bzctRnhqUVVqYWp4YXo0VFlOQmRhZ2UzZ3MtcW92SWFpTFpZbXhiQjVUVnVOX0NDY0dLYUctV0FLWG82LVNoNU5XclBqZkJseHp3cUp3d2dpMWJwMmw0S2ZLcWRVUVdyUlQ1bHgwbzNTLThnOVlCc1pfWTZZcnVaeXpDcGVfWW84THNyNkxTWU11cTJvcXhGM0xReFVGV0ZhLUQyRlA1WEZlLU5BZlNHTERj?oc=5",
+      "medio": "Agencia Andina",
+      "tipo_fuente": "unverified",
+      "publicado": "2012-07-15T07:00:00.000Z"
     }
   ]
 }
