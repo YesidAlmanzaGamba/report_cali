@@ -1,9 +1,11 @@
 {
-  "generado": "2026-08-21T08:30:36.475Z",
+  "generado": "2026-08-21T09:28:40.533Z",
   "consultas": 17,
   "feeds_regionales": 7,
-  "feeds_caidos": [],
-  "notas_regionales": 193,
+  "feeds_caidos": [
+    "El Diario (Pereira)"
+  ],
+  "notas_regionales": 121,
   "nota": "Enlaces recogidos automáticamente para revisión humana. Las cifras verificadas se registran en curated/observaciones.json.",
   "candidatos": [
     {
@@ -11,7 +13,7 @@
       "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/terremoto-en-colombia-hoy-viernes-21-de-agosto-ultimas-noticias-balance-de-la-emergencia-y-nuevos-temblores-en-el-pais-3579889",
       "medio": "El Tiempo",
       "tipo": "press",
-      "publicado": "2026-08-21T08:01:00.000Z",
+      "publicado": "2026-08-21T09:01:00.000Z",
       "fuente_feed": "https://www.eltiempo.com/rss/colombia.xml"
     },
     {
@@ -23,16 +25,6 @@
       "fuente_feed": "https://www.eltiempo.com/rss/colombia.xml",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "titulo": "Tránsito de Dosquebradas reactiva la atención",
-      "enlace": "https://www.eldiario.com.co/general/transito-de-dosquebradas-reactiva-la-atencion/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T07:25:59.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
     },
     {
       "titulo": "Postobón entrega 318.000 litros de agua por emergencia - abceconomia.co",
@@ -77,62 +69,6 @@
       "publicado": "2026-08-21T05:06:23.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
-    },
-    {
-      "titulo": "Sepelios sin cortejo fúnebre en el San Camilo debido al terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/sepelios-sin-cortejo-funebre-en-el-san-camilo-debido-al-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:49.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Emergencia del terremoto obliga a que escenarios deportivos de Pereira continúen cerrados",
-      "enlace": "https://www.eldiario.com.co/deportes/emergencia-del-terremoto-obliga-a-que-escenarios-deportivos-de-pereira-continuen-cerrados/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:33.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Lo que no puede ocurrir",
-      "enlace": "https://www.eldiario.com.co/editorial/lo-que-no-puede-ocurrir/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:23.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Pereira también se reconstruye desde la cultura",
-      "enlace": "https://www.eldiario.com.co/opinion/pereira-tambien-se-reconstruye-desde-la-cultura/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:22.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "En Dosquebradas piden no bajar la guardia con las ayudas",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/en-dosquebradas-piden-no-bajar-la-guardia-con-las-ayudas/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:10.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
-    },
-    {
-      "titulo": "Solo queda una mujer en “la calle del encuentro”",
-      "enlace": "https://www.eldiario.com.co/opinion/solo-queda-una-mujer-en-la-calle-del-encuentro/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-21T05:00:08.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "Revelan nuevo balance oficial de víctimas y daños materiales tras el terremoto en Colombia - Colombia.com",
@@ -216,8 +152,8 @@
       "publicado": "2026-08-21T02:18:17.000Z"
     },
     {
-      "titulo": "Se realizó acuerdo con aseguradoras para agilizar pagos a damnificados por terremoto según De la Espriella - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcG10ajZicWx3ek1jWXNySWNkNmJwd204RWFvSzh2eUswRmllRWJQZGhLOGVDQkhhQ1BPNUdkN0NyRXRSeHdoVGQtNnAyS0J0STJqNmRfWWtnSmtJQUFXLXctNzVfZDNJQ092VHg5Z2paZjQzNE1qOWFyRWFQeXluZEV6R0xlSktDMDlMTUdQQ0ZfUzh2dlZlaHBjWUlFZVhBT1ZVcFJ0YVdGbDh6bXAxdTJsYjlfa084Wlk4cEhYVQ?oc=5",
+      "titulo": "Anuncian acuerdo con aseguradoras para agilizar pagos a damnificados por terremoto según De la Espriella - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQXdJVm1TemNpZFhKbUcwTWdJb0g0bVNNVUNHSWJpWmNXeTdrSnBDUTFBZHdydkFyeDVacnBiRzFnY0NOUG1WU1ZES2k1MDZCVVplVDlyWWtINW8wTjVhd2lQTzVqeTJ1TDdSekNLUlcyYlZDX3l1cTFnclg2QTdqLUh6NkJHd1VXT1gwVlU2R3FCNlNwQVg5V3pScXNFRnVCZS1JaHBKV0R5YlI2bkk2M0ZmS0w5Q3BSZ1Y3Tkp4NDY?oc=5",
       "medio": "La Patria",
       "tipo": "unverified",
       "publicado": "2026-08-21T02:13:13.000Z"
@@ -511,14 +447,6 @@
       "municipio": "Buenaventura"
     },
     {
-      "titulo": "Fuerte terremoto sacudió Perú este jueves: IGP reportó magnitud 7,2",
-      "enlace": "https://www.eldiario.com.co/noticias/internacionales/fuerte-terremoto-sacudio-peru-este-jueves-igp-reporto-magnitud-72/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T21:28:30.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "Conectividad en el Valle se recupera tras el terremoto: MinTIC anuncia prioridades para afectados - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQYWVja0FhWXhJUnA2Y0s2VW5nZkhMXzdyY1NxREVGTUk5NVJXbGNIWVpNYlBTRjZlX2VpajRsSldlTWFBMjVTcnZzb1lxdFlFUVlOaGl5Yk43b1M2VDY1T3JEREVPUk5BVkw3blhwZy05cVVfMnhNUGFDalp2OG5PTTgxdDNyekFCNFVQTmVYUkVxUzcwMGJmeDdfazl1U1Z4Mkw5aVRVN01RVm1vUVlBbDRtRzdxRUZ3MHZaRW5LdUg5TVNIU3pVVHF0VdIB3wFBVV95cUxOVE5aY1R4S3Z1OGI4YnQ4alJGczFvVDBrRlFuazNEWGZ3M1NBSVFvMXdoTjVoUUJXUUdVR2JzUVUwYURlNDZfMUZHZHZfRU0zOGNQYWpjdnRRQkNiVnNFR0RBYjFDaGJENU1wbktJQ01rRC05M21vU2Z4V2RCSXo5Vnd4eTFiOERZNW54TGpJcnE2ckFPbW15NUZXOVdlMXFIZ0Q4and4eWFBWk9HdG9raXplTndvcGJDLTZvQVIybVZYUktUTy1QNm94RXVsUjh2N21kUUhQblNIeXNNWHJZ?oc=5",
       "medio": "Caracol Radio",
@@ -612,21 +540,20 @@
       "municipio": "Buenaventura"
     },
     {
+      "titulo": "Revelan videos de falsos damnificados del terremoto en el parque Olaya Herrera de Pereira - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdTNMY3pvVmNucWpzNkdrNWFWTEk4Q0YwOE8wN3ZxTlpUZ0Q3Y1FXeVBWdmVHU3p0LW93VmJUMFVnUG9WdGdiZlRvRTZmeS1JOS01cElUWG5ZdUd0NWZMLTZZcWdsbWdrX2VQQTRRcXBtNmZ0cmdOSFRudFJWNjJiVnNrMGhlblRITHVrOE1XSHJyMWNqRGViWDlyNFE5TkV0TWpOcW5IeER5bjk1UzIzSXI3WHU4TWwxdFdUbW5ZSnNBUGUxdlh3a29QOEQ3Z1HSAeoBQVVfeXFMTVEzaTNHNUxweEUyZG5fZ3U1M2NOUjBCbFRpY2NpejVoNG1MLWJDX29pcmk5S2NLYlB4TmhCU2VFeGFfSml3bTdINTlmMENxZV9Ka283dkNSWHI5aTkwRXNjcC1CSHhRV3JQSzdXd1NiZ0FBQUhPdUt5bmEzbGRGdTJRTkNpRmFneFE2cmxnYmtzMEMxbDQyaDZCOWQ0Qmo0dGdkYndlMThLU01lMWV0MlRra1pfMVlHMVF4Qm8xelJvUHBCTWp3OW40NDRwT3VOX3QtNkpFVjdBQmhROU5VeWlzNmdBWFVpdVN3?oc=5",
+      "medio": "Infobae",
+      "tipo": "press",
+      "publicado": "2026-08-20T20:33:00.000Z",
+      "pcode": "CO52490",
+      "municipio": "Olaya Herrera"
+    },
+    {
       "titulo": "Juanda Caribe y Mariana Zapata entregaron ayudas a los damnificados del terremoto en el Chocó: así documentaron su experiencia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOYkN4eWY0M1ZweEhBUW9KZzhxVEdXYUVvYnZhNXA5TkRSZDQxaDFwS0d3b1pRb2tvbm15Ty1hclV0LS1UUHc2S3dkaUJXTWZkd2VJUjZCaG5FYzZvZFMtLWZkYkNDQXF6VkVmRE1vQTBtT2V4aDBlQ3NZR295YUxJU04tQ3ZwMXlFem8xeGF3SXpnamo1YUFvT2Q0LW9wUXZCMEMtZU9EWHUwUmRHN21OM3MteXB4aC1Sd2dxeml2M083el92Yi1rNnVqUGJFb0hqRU1adkhPeVp5WC1YQkVfTGZwcjRfdDNXOU9PMDFiM3VPSG1hTjBSYWtzWkprczTSAZoCQVVfeXFMTXBUTHo3ZjRSc1p5eEI2WUxIVVYwMjNHWXFkbFkwUWZzNkdWM193dHBoVEpsVG5mOG1qSjlCYm1NM0wzdlNTcE9VMDRNcUFiTnZxYUFwU2EwR2FFa09OOHk5MGtxLTU0eUJOTVNLdEIzTngycmlueGlPZ2hlcUxBMlZoei1sbXBkazNrRDEycURsaklHYmdyTmdiSTJmTHBMZGk0N1FlWUZWTjBZVXY2cl9uNXBhX3ZBdVNVRk5oVHBCSVRDeWJwSHhSb0phNEgyajdfem10YkNDQVAtSTVKNHc0Q0dGRmtjblpOSjZYSFNIVFhQMWNTTmJITXEyTnNRQnk3VXk1bDFGTHlaYkZxaEhKbElRano4QXhR?oc=5",
       "medio": "Infobae",
       "tipo": "press",
       "publicado": "2026-08-20T20:25:00.000Z"
-    },
-    {
-      "titulo": "Morales habilitó un espacio temporal para los carniceros tras sismo",
-      "enlace": "https://proclamadelpacifico.com/morales-habilito-un-espacio-temporal-para-los-carniceros-tras-sismo/",
-      "medio": "Proclama del Cauca",
-      "tipo": "press",
-      "publicado": "2026-08-20T20:22:04.000Z",
-      "fuente_feed": "https://www.proclamadelcauca.com/feed/",
-      "pcode": "CO19473",
-      "municipio": "Morales"
     },
     {
       "titulo": "Dilian Francisca Toro elogia solidaridad de los vallecaucanos en municipios afectados por el terremoto: “Me llena de felicidad”",
@@ -686,15 +613,6 @@
       "municipio": "Ibagué"
     },
     {
-      "titulo": "Revelan videos de falsos damnificados del terremoto en el parque Olaya Herrera de Pereira - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdTNMY3pvVmNucWpzNkdrNWFWTEk4Q0YwOE8wN3ZxTlpUZ0Q3Y1FXeVBWdmVHU3p0LW93VmJUMFVnUG9WdGdiZlRvRTZmeS1JOS01cElUWG5ZdUd0NWZMLTZZcWdsbWdrX2VQQTRRcXBtNmZ0cmdOSFRudFJWNjJiVnNrMGhlblRITHVrOE1XSHJyMWNqRGViWDlyNFE5TkV0TWpOcW5IeER5bjk1UzIzSXI3WHU4TWwxdFdUbW5ZSnNBUGUxdlh3a29QOEQ3Z1HSAeoBQVVfeXFMTVEzaTNHNUxweEUyZG5fZ3U1M2NOUjBCbFRpY2NpejVoNG1MLWJDX29pcmk5S2NLYlB4TmhCU2VFeGFfSml3bTdINTlmMENxZV9Ka283dkNSWHI5aTkwRXNjcC1CSHhRV3JQSzdXd1NiZ0FBQUhPdUt5bmEzbGRGdTJRTkNpRmFneFE2cmxnYmtzMEMxbDQyaDZCOWQ0Qmo0dGdkYndlMThLU01lMWV0MlRra1pfMVlHMVF4Qm8xelJvUHBCTWp3OW40NDRwT3VOX3QtNkpFVjdBQmhROU5VeWlzNmdBWFVpdVN3?oc=5",
-      "medio": "Infobae",
-      "tipo": "press",
-      "publicado": "2026-08-20T19:47:55.000Z",
-      "pcode": "CO52490",
-      "municipio": "Olaya Herrera"
-    },
-    {
       "titulo": "Saquean ayuda humanitaria destinada a damnificados por el terremoto en Buenaventura - Diario La Libertad",
       "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQTkxuS1JDZnFRMldVYWZ6VHhjc3VZYUpYdnZ3ZDBCRHZvWTYtRGxwRlZNZWNnUnNQLUlVaGc5Nko2RThmV2drdU0zTlhpVmRyQl8xT0xuMHBybTNxakVDdHJCZW43YThXWEY1MDRKZ0xGdS04UUVydnF2c3RUdkhmMXZ0emJTdzBSRDE2NFlkU004TDc0a19qSlZVcG1EVDE0bmlGSmNZaWNzb0NlQWZGYmtJeWEzeGxLQ2Z2bzFLNXltUQ?oc=5",
       "medio": "Diario La Libertad",
@@ -719,15 +637,6 @@
       "publicado": "2026-08-20T19:14:02.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
-    },
-    {
-      "titulo": "“Todos dijimos sí”: Sofía Castro y otros artistas cantarán en Medellín por los damnificados del terremoto - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN2tXSERCT29aaTBjRU5DMGRmdmZpQmdHTEhBcGdaT0xDb1RqUlJtNTRWQjV4UDRlVUJybG9HQmJXY01QQy1CUWFaTlFPRml3RFE1YV9tMXJBRnZ2MnFBRWx2SE0wOFE4SFpQVnViN08zMVozXzZVZ0U0NkVybjkzalRTblZ1ZXl3dXFwclJuU2JlWUg5RW55eGl4QkdSQ0wzc0t1NEVVNWJnd2FoWFg1UFNkVjBlUdIBtgFBVV95cUxNdG02NUUwVXFTWi1ZUGJoYWhEb2ZiZVd2RG5hS3MyblNXX0RhV0taaUhJNFJxN0g0dl96YU9EdjUzeGl3Z0pSWlQwS05Rc25GeGlfMnlGTmV2cEVMZlhBNVZXc0E1MUllVHFfTmF4dTBMaEpCTzBTYXBncnQyUGpWcGJZbkdPR2lneVVIcDlkdjBkVnZXWllSMDNzNi0za2d3T3VpcUFfTE1rak04VlVmaV9HVXpJdw?oc=5",
-      "medio": "La FM",
-      "tipo": "press",
-      "publicado": "2026-08-20T19:13:38.000Z",
-      "pcode": "CO05001",
-      "municipio": "Medellín"
     },
     {
       "titulo": "Expedición y renovación de pasaportes se realiza con normalidad",
@@ -896,6 +805,13 @@
       "publicado": "2026-08-20T17:30:07.000Z"
     },
     {
+      "titulo": "Así funcionará el subsidio de arrendamiento para los afectados por terremoto: Ungrd destinó $100.000 millones - ELHERALDO.CO",
+      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQSUNFdWRCN1FNckgyTXFZQmNLeHIxNV9rUHRyMjlVVkdtbDU1N1hhbzRtSEJ1LXA4d2d0cEJUTFJkY2dDRWxIMmwyT0MzMUREckxtdDFzZlFFVmhSQUR6dDZVTXF5TS02V1BTM3BlRUdaQ0ZfSjFRZnBlak5oeVIwNFpvcGhVZW1FVkZIcGdzSmhBaTNXRW5FRUhuTE9rU2d1Nml1WW8tR2lIZm90eVpEbVFQQ3lUZHQ3YXRkUDVHTl9uUlNPQk1lY1kzVlFzbko0ZS1PbUtUOXgyanp0UUFVeXE0VlZ5dEHSAYICQVVfeXFMTWFSbVYwbko5U2JFalZaN1AyZHJPclpkMTNPWEJKTWJxckFoN0JSNGZMRjVQUnlxYUVaOTdPcTllc1ByTFNISnhNM3JrQUlQWE05TGx5TXRRNUF0UVI5Z0pOSGZ3bWZOSHlIQklzM2tzRXJ2MUJlY3FnZWNRY2h3YnN4YTJ2ZVhOdFFKY2I2SldIemVaVHByRFNmMTRzUkkySUEwdDVQeTkxREJIbjhaQkVaYlZiRjFQWGFfOTJXYWZZeEpfakphRjlZRDJFRHRLaDh1bTh4MnRwblRSeS15MFJsaEl2WEhTMVhmQmM3VGE5OWEtV2w2SWUzZGJmenJickt3?oc=5",
+      "medio": "ELHERALDO.CO",
+      "tipo": "unverified",
+      "publicado": "2026-08-20T17:28:02.000Z"
+    },
+    {
       "titulo": "80 toneladas de ayudas humanitarias llegaron de China para apoyar a afectados por el terremoto en el Valle",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90284/80-toneladas-de-ayudas-humanitarias-llegaron-de-china-para-apoyar-a-afectados-por-el-terremoto-en-el-valle/",
       "medio": "Gobernación del Valle del Cauca",
@@ -945,13 +861,6 @@
       "publicado": "2026-08-20T16:29:02.000Z",
       "pcode": "CO76109",
       "municipio": "Buenaventura"
-    },
-    {
-      "titulo": "Gobierno de EE. UU. envía más ayudas a Colombia: portavoz del Departamento de Estado brinda detalles - NTN24",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOUnJLdlhxUmpYRURqSHhnTGNzMVpIOXNWbFhPNV9tNnVPb1NnVE5Ic2c2TnN0bjRmcmNOLXBPQWhTQmFRd29KRzlTamZFd1JkZFZHWEFFZ1F1YnFLTHZVRU85Z3BZWkMyVGFTbC1jS1NBbm0zWjR6WVVyZS1oMEFuZHl0SVpJLXlpcHZhTkxQcDF0cnMydjVOMjZ3RE8yMkNDWHppUmVhTlhxWGcxZnRIQkdWVHRkMERWaktxUDdIQ2tBRHRiXzF2RVFuaDEzS1FzcnY4ZlF5QjBMOEVLNGpR0gHfAUFVX3lxTE5BYk9jMk0yQjFTelNpQXBMeUZhTHFNdEkzVnhza3VXUUIzeFdZcVNURGpQSDlpODZuamRMdWxHTWJ4WE9UMWFOVVVjRVBrdjBNYXBNanA0Wm9KT2cxWGpISTY4UDNyc2N3cXIxYjNTT1ltNURydl9mUHlfNnBFb0ppMnI2bkpwN1V3bDFsREE3WjNlWGNRVVhaUHgzYXVCdnJXMGRXbjY0U3pJWHg4Um5xeU5yaG9wbExZM09VQWtpeDNUVHhCT2UwWDc3Tk5xdGVYdkdDdmNhRC0zRmRSbFk?oc=5",
-      "medio": "NTN24",
-      "tipo": "unverified",
-      "publicado": "2026-08-20T16:22:09.000Z"
     },
     {
       "titulo": "“Salir junto a mi hijo de entre los escombros me enseñó a vivir con más intensidad”: Juan David, el padre del bebé Salomón, rescatados en Torres del Limonar",
@@ -1122,13 +1031,6 @@
       "publicado": "2026-08-20T13:50:42.000Z",
       "pcode": "CO76109",
       "municipio": "Buenaventura"
-    },
-    {
-      "titulo": "El salvavidas tras el sismo: cómo acceder a los 12 meses de gracia y frenar el cobro de créditos bancarios - CiudadRegion",
-      "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQllIOUw5T0RUZE9Qa3BkMGxzVXM4SENWUnlPZ1NyRU5SQkRHLUlLWFZVUVhVZlh4VGZzTi1DNUVLTHB4azV1RGdlMHBXblhRakhUcHQxVmZVTTZLWHZPZTJQY00ybDBPYmprQ1lrZ0FBNm9NcWFubGpweFlKbWhJUGp5Q2R6S1V6NXBjMTl2U2tJQldYV3hN?oc=5",
-      "medio": "CiudadRegion",
-      "tipo": "unverified",
-      "publicado": "2026-08-20T13:33:13.000Z"
     },
     {
       "titulo": "EN VIVO | Terremoto en Colombia: 348 centros de salud y 3.483 centros educativos se encuentra afectados - ELHERALDO.CO",
@@ -1311,98 +1213,6 @@
       "publicado": "2026-08-20T05:04:50.000Z"
     },
     {
-      "titulo": "Pereira y Risaralda: La hora de la solidaridad y la reconstrucción",
-      "enlace": "https://www.eldiario.com.co/opinion/pereira-y-risaralda-la-hora-de-la-solidaridad-y-la-reconstruccion/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:03:42.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Reconstruir a Pereira",
-      "enlace": "https://www.eldiario.com.co/opinion/reconstruir-a-pereira/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:03:22.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "El San Jorge, libra la batalla por la salud de los risaraldenses",
-      "enlace": "https://www.eldiario.com.co/actualidad/el-san-jorge-libra-la-batalla-por-la-salud-de-los-risaraldenses/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:55.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "El puño en alto. Testimonio de liderazgo, resiliencia y vida",
-      "enlace": "https://www.eldiario.com.co/opinion/el-puno-en-alto-testimonio-de-liderazgo-resiliencia-y-vida/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:41.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Volver a empezar",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/volver-a-empezar/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:23.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "ESE Salud Pereira sigue atendiendo a pacientes, pese a la emergencia",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/ese-salud-pereira-sigue-atendiendo-a-pacientes-pese-a-la-emergencia/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:20.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Reconstrucción con transparencia",
-      "enlace": "https://www.eldiario.com.co/opinion/reconstruccion-con-transparencia/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:16.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Un pico y placa necesario",
-      "enlace": "https://www.eldiario.com.co/editorial/un-pico-y-placa-necesario-2/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:12.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "En riesgo la cosecha cafetera de Risaralda",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/en-riesgo-la-cosecha-cafetera-de-risaralda/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:12.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Código de construcción en Colombia, tema en Suiza",
-      "enlace": "https://www.eldiario.com.co/actualidad/codigo-de-construccion-en-colombia-tema-en-suiza/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-20T05:00:03.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "Terremoto en Colombia deja 314 muertos y más de 4.400 heridos: 262 personas siguen desaparecidas - El Periodista",
       "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQX0x4WTVicU9FYThacmRvcHdEd3JwTVI1eE1Da3hDNVc2Q1ZJeTQza1BvTW5nVVBqT2Q3N1NWVXJMbVRqQ2tqLTlWeG5zUVlCMmhvT0NJN21mUVI1akxQeWNTbnVIQWJ0YWhaa3FXWWl6V0ZLMTZyeDctdUNKQlFGMnIzZ3JNZnpPX1hSMFphNGNESzVCZE9Ob3g1Qlg2VjZHS19BMG13WFJMdk9oWlMtV2hjNklQMG9fZi1IVW1nX3hpQW1fN3E1U2wyRTk?oc=5",
       "medio": "El Periodista",
@@ -1479,7 +1289,7 @@
     },
     {
       "titulo": "Subsidio de arriendo para damnificados por terremoto en Colombia: quiénes califican y cómo acceder - MARCA",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbG9mQjNmMFJLOVFVc1NISTBMUXU3OHZVdDdPWlM5Y0M1enZQLWs2YnR0cG9IX2lhT18tUTl2Y2FaaGJhSzhyTmEzaFRGNGhmek9CYVRpSjNTUU0yRlJGXzRqREFLbmNZVWREVVh4dEtVNjE4UFo1TUdxMFB3ZFBUbjY1aHY4WDkzOWdHeVRzQWtlWXRmOEdHZmdNOUNvSEVQVHpQUVRkaFNZS2ZoalBxRnBwN0NNWlnSAbcBQVVfeXFMTmdSeHJGSkwweE1mTkZPQXZlTVJVYmQxWnZBeTU4bDdJcGxhY0lQYmZhencteGxoZEJkYXAzX0VsTk5jNGkxQnFETWQ1cVdHd2RqNVRNU0FFTEVvMjRHYUE0cFM5LS15QktvUTF0Ul9TWktCc2UzSW1RRXNPVHZscVdzeWVObHFaMDh0eWMtcmQzYVVrUk9hZ0tMcy05bWswY042MU1XMElnRXF3Nm1hRlk3cURjajNj?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZ1J4ckZKTDB4TWZORk9BdmVNUlViZDFadkF5NThsN0lwbGFjSVBiZmF6dy14bGhkQmRhcDNfRWxOTmM0aTFCcURNZDVxV0d3ZGo1VE1TQUVMRW8yNEdhQTRwUzktLXlCS29RMXRSX1NaS0JzZTNJbVFFc09UdmxxV3N5ZU5scVowOHR5Yy1yZDNhVWtST2FnS0xzLTltazBjTjYxTVcwSWdFcXc2bWFGWTdxRGNqM2PSAbcBQVVfeXFMTmdSeHJGSkwweE1mTkZPQXZlTVJVYmQxWnZBeTU4bDdJcGxhY0lQYmZhencteGxoZEJkYXAzX0VsTk5jNGkxQnFETWQ1cVdHd2RqNVRNU0FFTEVvMjRHYUE0cFM5LS15QktvUTF0Ul9TWktCc2UzSW1RRXNPVHZscVdzeWVObHFaMDh0eWMtcmQzYVVrUk9hZ0tMcy05bWswY042MU1XMElnRXF3Nm1hRlk3cURjajNj?oc=5",
       "medio": "MARCA",
       "tipo": "unverified",
       "publicado": "2026-08-20T02:08:42.000Z"
@@ -1523,14 +1333,6 @@
       "medio": "Pulzo",
       "tipo": "unverified",
       "publicado": "2026-08-20T01:23:59.000Z"
-    },
-    {
-      "titulo": "A la espera de atención: el olvido histórico de las comunidades del San Juan se agrava con el terremoto",
-      "enlace": "https://choco7dias.com/a-la-espera-de-atencion-el-olvido-historico-de-las-comunidades-del-san-juan-se-agrava-con-el-terremoto/",
-      "medio": "Chocó 7 Días",
-      "tipo": "press",
-      "publicado": "2026-08-20T01:18:07.000Z",
-      "fuente_feed": "https://choco7dias.com/feed/"
     },
     {
       "titulo": "Diez días después del terremoto, el balance sigue aumentando: ya son 319 fallecidos - Colombia.com",
@@ -1660,16 +1462,6 @@
       "municipio": "Cali"
     },
     {
-      "titulo": "Atienden caída de árboles y derrumbes en vías rurales de Pereira",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/atienden-caida-de-arboles-y-derrumbes-en-vias-rurales-de-pereira/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T22:09:30.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "titulo": "(Video) Colombia recibe 80 toneladas de ayuda humanitaria de China para damnificados del terremoto - 新华网",
       "enlace": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5VdndsS3lmOVZ1U0d2d3E4WE5qNXl3cXFDQmZUWExoV0w5THdUcEtmLUZ4eUFOTE83cU5ROWJjU1p0ZlRQUV9vbXpwRzMxSHdKclBjeXNlLXZWTVBVT2tVTURlSEwzelZVVnRrYmp3aGpMSXNrelk5VmRkbzM?oc=5",
       "medio": "新华网",
@@ -1759,14 +1551,6 @@
       "fuente_feed": "https://www.valledelcauca.gov.co/rss"
     },
     {
-      "titulo": "¿Su vivienda sufrió daños por el terremoto? Trabajadores pueden usar sus cesantías para repararla",
-      "enlace": "https://www.eldiario.com.co/seccion-d/de-interes/su-vivienda-sufrio-danos-por-el-terremoto-trabajadores-pueden-usar-sus-cesantias-para-repararla/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T20:43:13.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "Terremoto en Colombia: las ayudas del sector privado superan el billón de pesos. Presidente De La Espriella agradece ola de solidaridad - Revista Semana",
       "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQR1JkOWxfTnNqcC1UQWNHdFQ1Z2xJcTV2SjF5YUVOV2lsN0EyU29zSThoelpFY2RtRU4wdkstbkpYMFdQS054SmRfeHRHVGdxbjBkcnZ3VjMxNkhId0JuQUE4aVhtY1VVSlctWEF3bk1lMjU2T2E2VzlTSE9GdVhCT2hLR09QOHVRNjhBMHdRQmJGR1doYXBTNUw4Q1lrZnZZbHI5X2VLUE9lQVRYTGRTMEotNWdvSGg0YTc1cG5JUGZTWXVCQ3l6aC16UlFLUDJLT0VKWnJFUnNiaEFfQVlsdENvd0J4amdOaGdyeDIwZkowaXY2dm5OdWZMZmlYQk1SNlHSAYcCQVVfeXFMTVQ2UnVnUE1KUHh2dHMtQWtyQTJNZkJieHZwMGtBWW5rREtRVWxMUE9WRVItMkIzbzVuRzRucmN2VDRUMmd1MDYzX1p6RjVHcVIxRU5Wam5INXM1cV8yekpBMms5Z2c1N1g2TGY3Mms3MmtHU2g1d2puQzEwVDNEYVMxSXV5RjJlU2FSNm5PcWIyWEtrbEJ5OWl6X01VX21ra1l6MkQ3b0Nld0pIeVAzaEx3TGZMQ3hRWXdWUHZKQmplRThOckgwS0NUUkNtWVNIX0ktRlVuUDUzTVBPbU1aNFl3bzVUcmI0dWY1OWNhY29nZmkyVzcxUERqanl3RnlFNE1meDV3dW8?oc=5",
       "medio": "Revista Semana",
@@ -1781,22 +1565,6 @@
       "publicado": "2026-08-19T20:23:51.000Z",
       "pcode": "CO05313",
       "municipio": "Granada"
-    },
-    {
-      "titulo": "Dimayor tomó decisión sobre la Liga BetPlay tras el terremoto: habrá cambios en la Copa",
-      "enlace": "https://www.eldiario.com.co/deportes/dimayor-tomo-decision-sobre-la-liga-betplay-tras-el-terremoto-habra-cambios-en-la-copa/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T20:12:14.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Icfes aplaza las pruebas Saber Pro y TyT por emergencia del terremoto: esta es la nueva fecha",
-      "enlace": "https://www.eldiario.com.co/actualidad/icfes-aplaza-las-pruebas-saber-pro-y-tyt-por-emergencia-del-terremoto-esta-es-la-nueva-fecha/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T20:02:11.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "Aumenta cifra de fallecidos a 319 tras el terremoto en medio de la nueva fase de recolección | El Colombiano - El Colombiano",
@@ -1850,27 +1618,11 @@
       "municipio": "Pereira"
     },
     {
-      "titulo": "Terremoto en Colombia",
-      "enlace": "https://proclamadelpacifico.com/terremoto-en-colombia-lecciones-y-solidaridad/",
-      "medio": "Proclama del Cauca",
-      "tipo": "press",
-      "publicado": "2026-08-19T18:42:34.000Z",
-      "fuente_feed": "https://www.proclamadelcauca.com/feed/"
-    },
-    {
       "titulo": "China hace entrega de generosa donación para ayudar a los damnificados del terremoto en Colombia - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOaFZXUGRtVGVyZk9tcW1nNVVEck9CTW9Pd1k0MUpmcndLNUZvbVRfeGZaTktwbmh0WG91cHdjSjk2RHRaNjlDbFA2V1FNaVZ5RzNjYVJMX0FfYS1NN0VfcmhDZXpnZ1NWMkV3M1JKWEo2U1hibjRiUUtCeU9ESHRQQWNmNUNVV0tpMGhVYUpVNm43d9IBkgFBVV95cUxQeVZZQlBpVWVvbjROcWlVNnZ4d19vUE56UlRQYUI4OVkwZ2hxZkpHNFctOXp6N1RNWFlMaS1vdDJ2ZElNZk9PSHAzOTJwMjdzNEdBVXR2V0tLdkpVNmFwakZzTVJEYlpJWDZwZXpGd2IwMllVYjdlckJRVlJMaHZubWZnRjEwZnBxT3JKQWl2Y1Nfdw?oc=5",
       "medio": "La FM",
       "tipo": "press",
       "publicado": "2026-08-19T18:36:22.000Z"
-    },
-    {
-      "titulo": "Aprender de terremotos y reconstrucciones",
-      "enlace": "https://proclamadelpacifico.com/aprender-de-terremotos-y-reconstrucciones/",
-      "medio": "Proclama del Cauca",
-      "tipo": "press",
-      "publicado": "2026-08-19T18:14:02.000Z",
-      "fuente_feed": "https://www.proclamadelcauca.com/feed/"
     },
     {
       "titulo": "El Valle lo reconstruimos juntos: unión de esfuerzos para la recuperación tras el sismo",
@@ -1898,16 +1650,6 @@
       "fuente_feed": "https://www.valledelcauca.gov.co/rss"
     },
     {
-      "titulo": "Lo balearon frente a su casa",
-      "enlace": "https://www.eldiario.com.co/judicial/lo-balearon-frente-a-su-casa/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T16:53:05.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
-    },
-    {
       "titulo": "‘Todos somos Valle’: 25 toneladas de ayudas humanitarias llegaron a Caicedonia y Sevilla gracias a cooperación internacional",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90267/todos-somos-valle-25-toneladas-de-ayudas-humanitarias-llegaron-a-caicedonia-y-sevilla-gracias-a-cooperacion-internacional/",
       "medio": "Gobernación del Valle del Cauca",
@@ -1931,24 +1673,6 @@
       "medio": "RTVC Noticias",
       "tipo": "unverified",
       "publicado": "2026-08-19T16:23:46.000Z"
-    },
-    {
-      "titulo": "Reconstrucción tras el terremoto podría tardar seis años: Pereira necesitaría hasta $12 billones",
-      "enlace": "https://www.eldiario.com.co/seccion-d/de-interes/reconstruccion-tras-el-terremoto-podria-tardar-seis-anos-pereira-necesitaria-hasta-12-billones/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T16:20:45.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Abelardo de la Espriella anuncia alivios bancarios para damnificados por el terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/abelardo-de-la-espriella-anuncia-alivios-bancarios-para-damnificados-por-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T16:14:02.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "Abelardo de la Espriella anuncia alivios bancarios para damnificados por el terremoto - El Diario - Noticias Pereira, Colombia y el Mundo",
@@ -2007,12 +1731,11 @@
       "municipio": "El Santuario"
     },
     {
-      "titulo": "La pobreza del Pacífico pone a prueba a De la Espriella",
-      "enlace": "https://proclamadelpacifico.com/la-pobreza-del-pacifico-pone-a-prueba-a-de-la-espriella/",
-      "medio": "Proclama del Cauca",
+      "titulo": "BTS se unió a la campaña de ayuda por los damnificados del terremoto en Colombia: la empresa Hybe anunció una donación de $300.000 dólares - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNMVJLOHJwbG1Ha1lpUjZqVG13TzBPSXBTbDhRd1EyUFMwM0pGamVkQmFobHhIV2VSWDhncFo3bmw0RFpmUkJtYngzRms5WDhHTGZ2VEhPejBvTTBWd3F3dTJnSXFUVmw0RGdDbXhyY2ljdWM4TDJzR25oY0tURTlqWTAzX1d1LVZDbXREV0NrZ0F2aEF1UzV3bkpSYzZZV3o5aFVKM1JPVU9ZcTFiR1ZnWU9MbU1SQzV2NUxDUzV2MF9rLU5xUG80Z1RucURJd0VlX19aRHNuRk1Ib0IzZUxFaEsxOC11U0VGY2pWMXdhRkIzMnBoY3RwQmFJY1TSAZcCQVVfeXFMT1dwRU5kZVpvdURGRE1ZOUMtR0ZaMzhPTldkd2t5S1NQWFhWZVEzTnF5Wld5ejlXaWpFcDBUWHdYYmJzSzVzWFYxR1VTQ1JVOHlHakNHcGRVS2tIWXJiX0RUdm94a0h2WGFvQkk4bGxqRUd1Rm9BUlBURVJmVE53WkpxcFZ5eGZ3djVzdV9JWkY5Rm5tLXZTZzlMQU83RkYtdTFJbE9wcVh0M3drblNZWEpQWGZTZ1ptWjhpV25LdGM0TzRjOXpyVFpiVjZPQU5vcGw0U09YcEZkRTc0U25TVjFPdTcxNW9yQzhtbzUxNVl6cGs0Q3VhT051RVlud1FkRk0yRWlKelNFcFlNdk56dmN4c3ltZEQ0?oc=5",
+      "medio": "Infobae",
       "tipo": "press",
-      "publicado": "2026-08-19T15:35:56.000Z",
-      "fuente_feed": "https://www.proclamadelcauca.com/feed/"
+      "publicado": "2026-08-19T15:27:51.000Z"
     },
     {
       "titulo": "Buenaventura: Mientras el puerto sigue su ritmo, sus habitantes piden ayuda para reconstruir sus vidas tras el terremoto - Publimetro Colombia",
@@ -2036,26 +1759,6 @@
       "medio": "SinEmbargo",
       "tipo": "unverified",
       "publicado": "2026-08-19T14:50:25.000Z"
-    },
-    {
-      "titulo": "Buenos Aires enfrenta daños por terremoto en Cauca",
-      "enlace": "https://proclamadelpacifico.com/buenos-aires-enfrenta-danos-por-terremoto-en-cauca/",
-      "medio": "Proclama del Cauca",
-      "tipo": "press",
-      "publicado": "2026-08-19T14:44:53.000Z",
-      "fuente_feed": "https://www.proclamadelcauca.com/feed/",
-      "pcode": "CO19110",
-      "municipio": "Buenos Aires"
-    },
-    {
-      "titulo": "David Vélez dona $100.000 millones y pone al Chocó en el centro de su ayuda para reconstruir tras el terremoto",
-      "enlace": "https://choco7dias.com/david-velez-dona-100-000-millones-y-pone-al-choco-en-el-centro-de-su-ayuda-para-reconstruir-tras-el-terremoto/",
-      "medio": "Chocó 7 Días",
-      "tipo": "press",
-      "publicado": "2026-08-19T14:37:19.000Z",
-      "fuente_feed": "https://choco7dias.com/feed/",
-      "pcode": "CO68861",
-      "municipio": "Vélez"
     },
     {
       "titulo": "Terremoto en Colombia: Balance detallado de los municipios más afectados por el sismo - canaltrece.com.co",
@@ -2104,37 +1807,11 @@
       "publicado": "2026-08-19T13:28:50.000Z"
     },
     {
-      "titulo": "¿Tiene créditos y fue afectado por el terremoto? Bancos anuncian alivios de hasta 12 meses",
-      "enlace": "https://www.eldiario.com.co/noticias/economia/tiene-creditos-y-fue-afectado-por-el-terremoto-bancos-anuncian-alivios-de-hasta-12-meses/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T13:20:30.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Minvivienda pide disculpas por viaje a Santa Marta en plena emergencia por terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/minvivienda-pide-disculpas-por-viaje-a-santa-marta-en-plena-emergencia-por-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T13:13:55.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO47001",
-      "municipio": "Santa Marta"
-    },
-    {
       "titulo": "¿A cuánto asciende la cifra de fallecidos por el terremoto en Colombia? - extra.ec",
       "enlace": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ2VLQ3pvdnRaU2FLYWpscXBqV3F0VW1lUEFCb25TeTB2UnVHTjdHcFJxaGVmRElOZFZ4Tk1MTm14Y2xZd3Z0M1FzZ01HYk9HcTBXTGd3aXhINzZjck5oVVJfNlNYbHhGMnhLTHhmanNwM1R0endMcVl3M0pMYUdoaHBjaUtHODVxTVJDeVYwNVBsQjkzVjZXZ090RktaTGM?oc=5",
       "medio": "extra.ec",
       "tipo": "unverified",
       "publicado": "2026-08-19T13:11:30.000Z"
-    },
-    {
-      "titulo": "¿Petro puede participar en la réplica a De la Espriella? Esto dice el Estatuto de la Oposición",
-      "enlace": "https://www.eldiario.com.co/noticias/colombia/petro-puede-participar-en-la-replica-a-de-la-espriella-esto-dice-el-estatuto-de-la-oposicion/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T13:10:46.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "Colombia recibe 77,6 toneladas de ayuda humanitaria donada por China por el terremoto - Noticias Caracol",
@@ -2209,34 +1886,6 @@
       "publicado": "2026-08-19T06:11:06.000Z"
     },
     {
-      "titulo": "Aeropuerto Internacional Matecaña completa 10 días sin vuelos comerciales: el impacto económico crece en Pereira",
-      "enlace": "https://www.eldiario.com.co/noticias/economia/aeropuerto-internacional-matecana-completa-10-dias-sin-vuelos-comerciales-el-impacto-economico-crece-en-pereira/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T06:06:43.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Aeropuerto de Pereira: ¿cuándo podría volver a funcionar?",
-      "enlace": "https://www.eldiario.com.co/noticias/economia/aeropuerto-de-pereira-cuando-podria-volver-a-funcionar/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T06:04:28.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "¿Perdió su casa en el terremoto? Así puede solicitar por segunda vez un subsidio de vivienda",
-      "enlace": "https://www.eldiario.com.co/actualidad/perdio-su-casa-en-el-terremoto-asi-puede-solicitar-por-segunda-vez-un-subsidio-de-vivienda/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:35:32.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "Jóvenes de Armenia mantienen red comunitaria de ayuda para damnificados del terremoto - El Quindiano",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTlRTUjBfOXZZR0VDMGJIQktVVk14MUE5VVZYZVhUd1FFN3hkQnBNZERzR3lrcmpHcFJ1Tl9uLTVPQXhYTVJJREo4Nm9SUEFQN1N3Q0JZcFJfNHh5T3BSYjd3T2FRUGthd0xaOVRldFU0UDdBTmRYN0xodjR3a2dyaTViZUlfaUdZLWJzYVJPR0s1cUJmdWR2WmhsbHJsYU9hLXM2emxYZUEwRzlNOExoM04zVS1yLW1Sb1JzbFNfdmpGYnc?oc=5",
       "medio": "El Quindiano",
@@ -2253,88 +1902,6 @@
       "publicado": "2026-08-19T05:15:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "titulo": "En un terremoto la experiencia no se improvisa",
-      "enlace": "https://www.eldiario.com.co/opinion/en-un-terremoto-la-experiencia-no-se-improvisa/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:53.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:51.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
-    },
-    {
-      "titulo": "Cuando tiembla la ilusión",
-      "enlace": "https://www.eldiario.com.co/opinion/cuando-tiembla-la-ilusion/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:49.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Miscelánea",
-      "enlace": "https://www.eldiario.com.co/opinion/miscelanea-355/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:47.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Hallan sin vida a pareja mexicana en el Hotel Dibeni",
-      "enlace": "https://www.eldiario.com.co/judicial/hallan-sin-vida-a-pareja-mexicana-en-el-hotel-dibeni/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:38.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Recuperar con responsabilidad",
-      "enlace": "https://www.eldiario.com.co/editorial/recuperar-con-responsabilidad/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:38.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "A un milímetro de la muerte",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/a-un-milimetro-de-la-muerte/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:25.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "El civismo no está solo en ayudas humanitarias, hay que cambiar",
-      "enlace": "https://www.eldiario.com.co/opinion/el-civismo-no-esta-solo-en-ayudas-humanitarias-hay-que-cambiar/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T05:00:25.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Hospitales heridos, pero de pie",
-      "enlace": "https://www.eldiario.com.co/actualidad/hospitales-heridos-pero-de-pie/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-19T04:56:43.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "titulo": "China dona 77,6 toneladas de ayuda humanitaria a Colombia para atender a damnificados por el terremoto - - emisoraatlantico.com.co",
@@ -2395,14 +1962,6 @@
       "medio": "Hora 13 Noticias",
       "tipo": "unverified",
       "publicado": "2026-08-19T00:19:44.000Z"
-    },
-    {
-      "titulo": "Bogotá envió 30 ingenieros y arquitectos a Chocó para ayudar a evaluar daños estructurales tras el terremoto",
-      "enlace": "https://choco7dias.com/bogota-envio-30-ingenieros-y-arquitectos-a-choco-para-ayudar-a-evaluar-danos-estructurales-tras-el-terremoto/",
-      "medio": "Chocó 7 Días",
-      "tipo": "press",
-      "publicado": "2026-08-19T00:12:43.000Z",
-      "fuente_feed": "https://choco7dias.com/feed/"
     },
     {
       "titulo": "Las voces de los sobrevivientes al fuerte terremoto que sacudió hace una semana a Pereira - El Tiempo",
@@ -2549,16 +2108,6 @@
       "publicado": "2026-08-18T21:23:59.000Z"
     },
     {
-      "titulo": "Tigo desmontará torre afectada por el terremoto en el centro de Pereira",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/tigo-desmontara-torre-afectada-por-el-terremoto-en-el-centro-de-pereira/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T21:22:13.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "titulo": "Unidos en la tragedia: uniformados de la Policía de Pereira apoyan a damnificados y capturan a 18 personas - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLWxfVDRVc0djZEdYUG5USC1VQzFwWmtqSUNEcmJkWkJjdjNBY08wcWoyZlRuUTRENERINEFCcXVBY2h4VjZQeW1RZVJxNFdHV1VreFNDQzRZOHhUSEhVb2ttUzBIYTdYemh1NS1hTFh6bEFKak9adVJEVWo5aFlCODJzS3dadmZkM1pQOXdFZ01LQW9fVDBqcXA3dDRpdTVtX0pueEkwOENSODBVY0E3UGxvVXNUdWd4NGRzTk5pQQ?oc=5",
       "medio": "La Patria",
@@ -2602,16 +2151,6 @@
       "medio": "Publimetro Colombia",
       "tipo": "press",
       "publicado": "2026-08-18T20:18:23.000Z"
-    },
-    {
-      "titulo": "Familia de víctima del terremoto agradeció a Bomberos Pereira por labores de rescate",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/familia-de-victima-del-terremoto-agradecio-a-bomberos-pereira-por-labores-de-rescate/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T20:17:02.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "titulo": "🔴 EN VIVO | Van 304 fallecidos, 4.548 heridos y 426 desaparecidos tras el terremoto en Colombia - alerta.com.co",
@@ -2662,21 +2201,6 @@
       "fuente_feed": "https://www.valledelcauca.gov.co/rss",
       "pcode": "CO76400",
       "municipio": "La Unión"
-    },
-    {
-      "titulo": "Recuperan cinco cuerpos entre los restos de una torre del Hospital Universitario del Valle",
-      "enlace": "https://www.eldiario.com.co/noticias/colombia/recuperan-cinco-cuerpos-entre-los-restos-de-una-torre-del-hospital-universitario-del-valle/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T19:09:46.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Sismo en Colombia: Cáritas busca llegar “hasta el último rincón” y no abandonar a las víctimas - El Observador de la Actualidad",
-      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPWU5ibWI1MWVoTFhsS0R1X1JPSndaR0lfdjNTcXFMNE16ejBuQ2tiVTNNYlVFbnY0dnFWVS10d0p1SlRhd1FwMUFJZXAzdTJZTzM5MDVPSnROYlAxWmdmS2dpcWpJX1pOVGZfdUVxMHhsNWtmWi1tV1ZSckYzWDNlTFJaNnRZSFR5UFBJVUlNVTB0Z0Z4LWJUY0ZCdWpMTTZMcUh3dHhfZENCTFhSdDVkYXZuNFFyV1lPUG1jazZhSnlVNHY0UkI5a1Btd24?oc=5",
-      "medio": "El Observador de la Actualidad",
-      "tipo": "unverified",
-      "publicado": "2026-08-18T18:48:25.000Z"
     },
     {
       "titulo": "Pereira inicia su reconstrucción tras el terremoto: 120 mil afectados y daños que superan los $10 billones; terminaría en cinco años - El Tiempo",
@@ -2942,14 +2466,6 @@
       "publicado": "2026-08-18T14:06:40.000Z"
     },
     {
-      "titulo": "MinSalud alerta por riesgo de enfermedades tras el terremoto: estas son las principales amenazas",
-      "enlace": "https://www.eldiario.com.co/seccion-d/de-interes/minsalud-alerta-por-riesgo-de-enfermedades-tras-el-terremoto-estas-son-las-principales-amenazas/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T13:50:13.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "“Ha mejorado mucho la relación”: Embajador de China destacó gestión para envío de ayudas a Colombia - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTWdWMVZ1Q1FCTk8xQ2lKX1Q2U2x6LXlPcDZDZ1Boa1ZhUHdIWnlUS25FTjNoX09KekV3S05nQmw1dm1RY2pTOVUxRmtiOEdDM2MteFBJemlvX1hHMWtUbU9sdlR5NUd0bXFUYnBlS001bk42bkpPeFd2N2twelBDRnc1aDdKcUNCa1lXalJpRXp6YWdKVWswZ3lpNkRNcHFPQU5YZzJfN2pOM013U281aXJOdk4tV2NBcE4tRVJHUjJ5Ujd2SDNXRS1lSdIB3wFBVV95cUxOSDhwaTJmc2cxcGo2eUlyLWxPbFJSMlJSdHY5VHAwY3RfM1prTHMxSHk2SmdBR29PWHVOT3lKZEtpd0RHck1aUGFRMVJCR2ZuTkNQUEppWlNqTzdIRE1iVGhYc1EzODBMbjRqY1BOdnJaR21LejdJanUzSnFhWE1na2hRYURQWS1CZ3dRb3VMZHhPazdQa2RhLVJhTkZtVVA3QnE1a2YwWVpfN09ONndqMmdZUWZ4VlJwaWsyajF1bU80MHRTYkhVQnV6aWlMbWxZMGYyM0thdjZtU2FPU0h3?oc=5",
       "medio": "Caracol Radio",
@@ -2966,35 +2482,11 @@
       "municipio": "Manizales"
     },
     {
-      "titulo": "Terremoto en Colombia: más de 120 mil familias afectadas, según balance de De la Espriella",
-      "enlace": "https://www.eldiario.com.co/noticias/colombia/terremoto-en-colombia-mas-de-120-mil-familias-afectadas-segun-balance-de-de-la-espriella/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T13:38:55.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Shakira moviliza US$1,25 millones para recuperar la educación en Chocó tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/shakira-moviliza-us125-millones-para-recuperar-la-educacion-en-choco-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T13:24:13.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "Ya pasó una semana desde el terremoto en Colombia: van 325 réplicas, 294 fallecidos, 3.935 heridos y 320 desaparecidos | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWEliZmxYXzc0TUY4ZnFydzhzaTJkWU5hWjVxYy1Kclk5eG9JbENkX09lR01xc29McjZRc1V1dG5KbEMyNEx4VjVkOGljSnhfN0ppMDZfck9ISDFscUFzZ21HSHFfU0ZRQnVmZng1WDZwMkNTT0w4b3pYV2dndzgxUVppelRFR0k1NHhzNThjbUhUQ1NiMjZjUl9reDJTcFZoQWU1VG1VQUxpdU16UWfSAbMBQVVfeXFMUDJDM0MwSEdObjJVQlRia0d2TWRoQk1OdEROYjhtcERSbW5jYk9BOE1zS2VMVkwxNW03WU0zMVRwd1ZHUTdTZUl6SmQxdTlFVThfaHgydnFqYnRUbHJrNHkySDMxRGJfWXlVUFE1ZEdTblhZU1RVQkZzcHhSc21tdXJWelpQOVNKU1BkU3lVaDQyTWV5anYxNXIwVTdMak01NFROMjBVSGJsSS1tWHhuY1pJQkU?oc=5",
       "medio": "El Colombiano",
       "tipo": "press",
       "publicado": "2026-08-18T13:21:08.000Z"
-    },
-    {
-      "titulo": "Gobierno anuncia plan nacional para reconstruir las zonas golpeadas por el terremoto",
-      "enlace": "https://www.eldiario.com.co/noticias/colombia/gobierno-anuncia-plan-nacional-para-reconstruir-las-zonas-golpeadas-por-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T13:19:39.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "Fuerte aguacero golpea albergue de damnificados en Pereira: la ayuda es urgente - Revista Semana",
@@ -3127,50 +2619,6 @@
       "medio": "El Confidencial",
       "tipo": "unverified",
       "publicado": "2026-08-18T05:19:00.000Z"
-    },
-    {
-      "titulo": "Presencia pereirana en Gobierno Nacional da esperanza para ir recuperando al departamento tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/presencia-pereirana-en-gobierno-nacional-da-esperanza-para-ir-recuperando-al-departamento-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T05:00:45.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "El día en que todo cambió",
-      "enlace": "https://www.eldiario.com.co/opinion/el-dia-en-que-todo-cambio/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T05:00:36.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Mejores instituciones menos dolor",
-      "enlace": "https://www.eldiario.com.co/opinion/mejores-instituciones-menos-dolor/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T05:00:21.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "La vida de los pobres importa",
-      "enlace": "https://www.eldiario.com.co/opinion/la-vida-de-los-pobres-importa/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T05:00:17.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
-      "titulo": "Pereira tardaría hasta 5 años en recuperarse del terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/pereira-tardaria-hasta-5-anos-en-recuperarse-del-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-18T03:52:26.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "titulo": "Terremoto en Colombia: Cifras de muertos dadas por Abelardo de la Espriella y Medicina Legal no coinciden y ya hay críticas en redes sociales - Infobae",
@@ -3325,15 +2773,6 @@
       "municipio": "Quibdó"
     },
     {
-      "titulo": "Guarne moviliza 21 toneladas de ayuda humanitaria para las familias damnificadas por el terremoto - MiOriente",
-      "enlace": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQUdKa3l2ZVpuUnlYOGwxR29rNEdTNGIwWWgwRjE2OGJ4RXFMeHVMdzZIZkp5WXhVaHFscjVsWUtjenYyUVQyOXNDeXBXWm9pWlV5NVNQaG9FLVJFWlVIUVpqeUtoMFVacWlyTWFEY0xIOS10ME96NXdmZTBDRzJMRQ?oc=5",
-      "medio": "MiOriente",
-      "tipo": "unverified",
-      "publicado": "2026-08-17T23:13:16.000Z",
-      "pcode": "CO05318",
-      "municipio": "Guarne"
-    },
-    {
       "titulo": "Shakira sorprendió al llegar a Quibdó para visitar colegios afectados por el terremoto - Publimetro Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOLTdiOENxaVd1LVdvY0gwVDlYSUR6cWpXcDNackhPSFhhcElWWTZ6U0pZZUczTkNxMGlma0dzUUJldlU4SnNwb1NMeHZadXNlbzRDc0pad21ScE9QUVhZZ1pfdDc5SHBQejdkVHdRbnpVc1NCb2R6NGR3cDJBelh5dTZ4QnZGaVFmaUt1Y0ZfVGNBbU1VRlk3aExFR041WVEyT2lVUTFCa2RGcDdtVW5MOF9qdElOajZ2N3hxUnFzOERBazBmcWhaNlJaUlJqWFZEOWN2N2FyNA?oc=5",
       "medio": "Publimetro Colombia",
@@ -3370,6 +2809,15 @@
       "municipio": "Quibdó"
     },
     {
+      "titulo": "Panorama en Pereira y Dosquebradas tras el sismo: afectaciones y evaluación de daños - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNb0V6OUxwSWdraVBRdkVLSklDWDZ6ZXI5SWUzUzZzb3hxZmR6YU9tQ3NnRDcwR09rVVk4MndDMGkzTmpvUGNUakN3ZEZLUHUtUkZsTDhoTnRlTWVwcnhKQ0xhUEtmRW9wYmRqSF9DT0ZFbmF0bnU5Wk01c20zbTNpSkhDTzdKRjZzN0M3Y2ZHNDVsS3pyWElscHBOQ1VJVG9UVGEwcEZaOXllTE5DQUxFd0lOVmVkdGNicXlMdmdjS0NkdHd4UEt1dF9SeUFNTktIcE5CRWk5Y2w0cDU3M2hCakZ3TnRvQQ?oc=5",
+      "medio": "City Tv",
+      "tipo": "unverified",
+      "publicado": "2026-08-17T22:48:05.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
+    },
+    {
       "titulo": "Shakira y Howard Buffett llegaron a Quibdó para apoyar a damnificados por el terremoto | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdU9Rbnk3b3RVVGpkMlBfYmYtb2JQbXRyc3pUb0ZVYk5oQnpHelRRLThOYjdEQnQ4bGVGWnpKNWZhZmFvZ2FKRFZibVFoT2ZSVHpMZWU4YnBMMklBVE1lSm9tYUFtTUc1ejItLWI2SW50aXY5MzZ6QVJON3RHNmN3a3FhdmdEYTBLVHQtS3JwNWtYaFJhTGFTSnAxenVjc09UbUJVSHNIcUl5dXNON1pvQkw3WdIBuAFBVV95cUxPcXZYSlhWZkFxN1pCMnRfUDRnUHNnbjUyODRUZFd4Tl9rWmZxcmpieTJBMW1waEJ3ZG9xTF9iUmRWVkdvWGlCNmtnZ1JGRlVNamlrYXF0RDVEMUV6REdtcGpqTkozbzR2b3Fhc3M5T1JmcmY4ZWk3VjFpSXJxUmdHQ1Q5am5KcUhTLXRnSnpHejVVSVRxSHU2emtYX1YycWYtcUNJSTB4MVI3bXp2QUFWb0hYOUY2aUNi?oc=5",
       "medio": "El Colombiano",
@@ -3386,6 +2834,15 @@
       "publicado": "2026-08-17T22:39:50.000Z",
       "pcode": "CO47001",
       "municipio": "Santa Marta"
+    },
+    {
+      "titulo": "Afectaciones y llamado de auxilio en Manizales y Caldas a una semana del terremoto - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZ2hTa0c2T0RpSFAtaWUtajRuSEUtdHI4a3docEtXX0FiREM0ZGVRV1NUSkFFQ1VBdjQtUVNqbGdCS1ZFWkE5cDlMR1N3NTVBdlZfTWRMc1RnYnQzem05aU1QSHU0TVJLWlBkRjdEZVZwaGZnaXhIT055aEpQalpHanBhMzZFWHZVQ1N2YmY5SXhITlZRcVRXNnJxNzRfZXIzM2tFd0tXcl92dHk1OXNXbzZFX00wZ0djWU5CMy1RZWFwd2dONWlOSGMyNkVkbW5DcTZ0ZXNrYU9KNlplRjlnVk5n?oc=5",
+      "medio": "City Tv",
+      "tipo": "unverified",
+      "publicado": "2026-08-17T22:31:46.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
     },
     {
       "titulo": "De la Espriella es criticado tras entregar balones con logo de su partido a damnificados de terremoto - apnoticias.pe",
@@ -3427,16 +2884,6 @@
       "municipio": "Quibdó"
     },
     {
-      "titulo": "Casetas comunales de Pereira serán habilitadas como alojamientos para familias damnificadas",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/casetas-comunales-de-pereira-seran-habilitadas-como-alojamientos-para-familias-damnificadas/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T22:15:16.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "titulo": "Shakira llegó a Quibdó a visitar a damnificados - hoy diario del magdalena",
       "enlace": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWVJvdENHV3UxTG91T25URHhaSFgtT280OU1RUU1SR2ZHQnQzNElzbm42RVpHODRLd3V0VzRyXzQ5OUFZemItZ1JBaWFldWtMbVlhcnhPZzF6d2FmUnZWU1Q1T2hzT2x0T0RJaGEwbnFQMWFqZzVJc0hCTjI4TEY3bi02TXR5MlBLYXdwci04RTY3VXYwMk1QLVM4V0xUUUJ3X2NXTkozbWNwbkI2R1FmbzZDTkQ5MGR5?oc=5",
       "medio": "hoy diario del magdalena",
@@ -3476,14 +2923,11 @@
       "publicado": "2026-08-17T21:47:00.000Z"
     },
     {
-      "titulo": "Pereira no volverá a clases presenciales hasta revisar la seguridad de los colegios",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/pereira-no-volvera-a-clases-presenciales-hasta-revisar-la-seguridad-de-los-colegios/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T21:41:08.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
+      "titulo": "Devastación en Chocó tras terremoto: 13 fallecidos, miles de damnificados y clamor por ayuda - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOTlJDTE5IZVJ1VkNOdC1mMzVmV3g3ZFNqTzA1TmZIbWZFcG44YVZUaGV4czhCeVFzVFpsOHJkOWtFdDczMHV1VXNueE90cmlKUjVhNUx4WjlTanYxZXRXanFlZDZYd1NiWWhseDlsUHJjdDR0WFZodkhjYTZTRHpGWkZZdl9KeGJaOW5JMlZpdmxVOTVnejlEclVUekRfS1luWE9hRGpIUGhXem9PUFFPQWFUTUxRdk5QOVZnZm12bDlxQ283LWJSVjV3SzN2czJON1VZaFc2QWw1STR4NG5TOGV4cl8xVUdUc0l5RVFubw?oc=5",
+      "medio": "City Tv",
+      "tipo": "unverified",
+      "publicado": "2026-08-17T21:36:17.000Z"
     },
     {
       "titulo": "Shakira llegó a Quibdó para visitar colegios afectados por el terremoto que sacudió a Colombia - Noticias Caracol",
@@ -3605,16 +3049,6 @@
       "municipio": "Pereira"
     },
     {
-      "titulo": "MinVivienda responde por viaje a Santa Marta en plena emergencia: críticas llegarán al Congreso",
-      "enlace": "https://www.eldiario.com.co/noticias/colombia/minvivienda-responde-por-viaje-a-santa-marta-en-plena-emergencia-criticas-llegaran-al-congreso/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T19:20:01.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO47001",
-      "municipio": "Santa Marta"
-    },
-    {
       "titulo": "Fuertes lluvias en Pereira agravan la situación de damnificados por terremoto en Colombia - HolaNews",
       "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYkVWX19PUlBTeVUwZndlaWZTai1GaU9VZTdwbndUa3NBNEVWTFloOVVvSDRFS3ZKZW1HN1VQb0hIOWdESGM2QUh1X0tSckFxSUd1YzNsTmZDdldhcEVyemRzX0d6cEtfVmlzQmh3N0VZWUZyT3FGRE5ZMm51S0tic01WNFJPU2I3Zms3ZjdXTzh0eFltN1NiMk5ETG5rRGtvVG5waUZaTDVRQnhjVUNkSA?oc=5",
       "medio": "HolaNews",
@@ -3640,41 +3074,11 @@
       "municipio": "Buenaventura"
     },
     {
-      "titulo": "150 internos fueron trasladados tras daños en la cárcel La 40 de Pereira",
-      "enlace": "https://www.eldiario.com.co/actualidad/150-internos-fueron-trasladados-tras-danos-en-la-carcel-la-40-de-pereira/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T18:53:01.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Aeropuerto Matecaña avanza en reparaciones para recuperar plenamente su terminal",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/aeropuerto-matecana-avanza-en-reparaciones-para-recuperar-plenamente-su-terminal/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T18:46:26.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "titulo": "Presidente de Colombia reparte balones entre damnificados y desata críticas tras terremoto - Infonogales",
       "enlace": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRmotNkJQWGdRdmtyczVFN1JQa0gxR09KLXhnSDU3Rk8wWWxoT3ozUXNfdndkNm5PNkw3dzBDWE9SNFlQTHdSZG9Wcm9vTjN3R0wtSDh4dWNDMkJqbjZFQVI5LXpQeGxZM25taVRMc1pKa0N0SDI3YmdvekNqeFQ3R3lyTUIta1QteC1aWm02VzRvUXdoekluS3J5S21QZzRBWkVFOU84TzJfOFZST3BOWXRMYUxidw?oc=5",
       "medio": "Infonogales",
       "tipo": "unverified",
       "publicado": "2026-08-17T18:44:46.000Z"
-    },
-    {
-      "titulo": "Ilumina Pereira entrega ayudas a familias afectadas por el sismo y anuncia apoyo para más de 80.000 personas",
-      "enlace": "https://www.eldiario.com.co/actualidad/ilumina-pereira-entrega-ayudas-a-familias-afectadas-por-el-sismo-y-anuncia-apoyo-para-mas-de-80-000-personas/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T18:43:43.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "titulo": "Abelardo de la Espriella genera polémica por entregar balones a los damnificados del terremoto en Buenavent... - Ecuavisa",
@@ -3691,6 +3095,15 @@
       "publicado": "2026-08-17T18:26:25.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
+    },
+    {
+      "titulo": "Guarne moviliza 21 toneladas de ayuda humanitaria para las familias damnificadas por el terremoto - MiOriente",
+      "enlace": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNQUdKa3l2ZVpuUnlYOGwxR29rNEdTNGIwWWgwRjE2OGJ4RXFMeHVMdzZIZkp5WXhVaHFscjVsWUtjenYyUVQyOXNDeXBXWm9pWlV5NVNQaG9FLVJFWlVIUVpqeUtoMFVacWlyTWFEY0xIOS10ME96NXdmZTBDRzJMRQ?oc=5",
+      "medio": "MiOriente",
+      "tipo": "unverified",
+      "publicado": "2026-08-17T17:39:52.000Z",
+      "pcode": "CO05318",
+      "municipio": "Guarne"
     },
     {
       "titulo": "Sheinbaum confirma víctimas mexicanas por sismo en Colombia - Cadena Politica",
@@ -3860,16 +3273,6 @@
       "fuente_feed": "https://www.valledelcauca.gov.co/rss"
     },
     {
-      "titulo": "Fundación María Luisa de Moreno reporta 12 mil ayudas entregadas tras el terremoto",
-      "enlace": "https://www.eldiario.com.co/actualidad/fundacion-maria-luisa-de-moreno-reporta-12-mil-ayudas-entregadas-tras-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T16:31:58.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO47288",
-      "municipio": "Fundación"
-    },
-    {
       "titulo": "Cuatro horas después del sismo, lo mataron - Q'hubo Pereira",
       "enlace": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOakQzSWltcU91RTR0ek56d0luQVNuOUkwYUY0aHhFWEtXTnBkN28xUkFmUUtLT0dGb2dJeGUxUElSLU84elBFelUwVm9SX2tKZUFLRzdQbjNRUHBmcGxjMGVRelUtVGhWVmNlX2QtQlRJS09DZjJnTGZzYzVDd003RkMwYw?oc=5",
       "medio": "Q'hubo Pereira",
@@ -3877,14 +3280,6 @@
       "publicado": "2026-08-17T16:13:01.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "titulo": "Cuatro horas después del sismo, lo mataron",
-      "enlace": "https://www.eldiario.com.co/judicial/cuatro-horas-despues-del-sismo-lo-mataron/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T16:12:08.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
     },
     {
       "titulo": "El tigre criticado por entregar balones a damnificados del terremoto - elnorte.com.co",
@@ -3899,16 +3294,6 @@
       "medio": "La FM",
       "tipo": "press",
       "publicado": "2026-08-17T15:51:24.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "titulo": "Pereira, siete días después: la tierra dejó de temblar, pero el dolor no",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/pereira-siete-dias-despues-la-tierra-dejo-de-temblar-pero-el-dolor-no/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T15:19:43.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
       "pcode": "CO66001",
       "municipio": "Pereira"
     },
@@ -3945,31 +3330,11 @@
       "publicado": "2026-08-17T15:12:47.000Z"
     },
     {
-      "titulo": "El terremoto golpeó duro al campo de Balboa",
-      "enlace": "https://www.eldiario.com.co/noticias/risaralda/el-terremoto-golpeo-duro-al-campo-de-balboa/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T15:09:33.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66075",
-      "municipio": "Balboa"
-    },
-    {
       "titulo": "Empresas ponen el hombro para los damnificados; ya van $8.817 millones en donaciones | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNN3dKX2IxMkNRUm10TloyQjJBbFRqcl94Z0I1THpET0ZRbXVPQVRoblU1dkZqOUFQMlc1NUt2Vms2UkFUOWJqRGJEQXFmTzNQYllib0lkQVRrMWpubGN2LUx3cHpTTFQtbHB6c1BEU3JSNTlBR3pHb01nTzM2ZlFkM1hGOG96aElZS29ibnY0dzE0bmYzT3hTbdIBngFBVV95cUxPVGJPT18wRVZuT3dLOURpV281MUtpS0w0X3FBak1Nc0xCeDlPbTREeXdrNnBINmRCUndKMXlsYzBUS2RqZVdIWW1JdXJlZjl6anQxSW9aTUFuZ2lid0FQeDFBOWlWc19TUFpoc1UtcHhpRlBrZzJOMTFGM2NpNy0tYU9ZQmdQSnVWOEhVVnhRSk9ZTnRpcHhNTmsxR29SQQ?oc=5",
       "medio": "El Colombiano",
       "tipo": "press",
       "publicado": "2026-08-17T14:56:51.000Z"
-    },
-    {
-      "titulo": "Los rostros que ha dejado el terremoto",
-      "enlace": "https://www.eldiario.com.co/judicial/los-rostros-que-ha-dejado-el-terremoto/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T14:49:34.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "titulo": "Solidaridad en Guarne permitió enviar 21 toneladas de asistencia humanitaria para damnificados del terremoto - IFM Noticias",
@@ -4009,14 +3374,6 @@
       "publicado": "2026-08-17T13:41:10.000Z"
     },
     {
-      "titulo": "Bogotá deja de recibir ayudas para damnificados del terremoto: esta es la razón",
-      "enlace": "https://www.eldiario.com.co/actualidad/bogota-deja-de-recibir-ayudas-para-damnificados-del-terremoto-esta-es-la-razon/",
-      "medio": "El Diario (Pereira)",
-      "tipo": "press",
-      "publicado": "2026-08-17T13:38:58.000Z",
-      "fuente_feed": "https://www.eldiario.com.co/feed/"
-    },
-    {
       "titulo": "David Vélez donará $100.000 millones a afectados por el terremoto en Colombia - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYnJoSlA0Vk9SOWM0VHFFUXRsamRRN3R6SXZfejg4ckxRYTVUMFVUVG42WHlmb0d4eTdDal9XdFl1VUd6dmQxQU9UZGJnMlZOUVBtV1dIZWJNYlU2Q08zelFUaXBlVmlkb0tTaG1aYXJJT2pxMmZCbDVpZFdQVkN2Y29oZndnQzgyRG1paEJWZGlpbk9SUWVNQU5WMEVqbDBZeWxSMDdvQndJX3BsZURrZElLTU9qbEFZY2fSAb8BQVVfeXFMTTNjUkVwc25FX3NlMk9sU1k2N0NfRDdjNkV2X29ndFI4clBabm1UNGlkd3BxTmZvNzhGV0F5TWljbHFlZkRia09VdkNNVmQ4RHItWm9yWnNQZko0eHJFX0RqeWRfN01KVWVHdWFiTVZEdXFDcFhZUXdkY1RMOEdFNFdSSnc3RTRZMGhXVEh0TFJxVmlUeVY3czM5UTRkaVZWaWdWRThhbkRTQzFCNHlGRHJIamN5bTZETUVUWG01Q00?oc=5",
       "medio": "Portafolio.co",
@@ -4047,15 +3404,6 @@
       "medio": "France 24",
       "tipo": "unverified",
       "publicado": "2026-08-17T11:29:13.000Z"
-    },
-    {
-      "titulo": "Viviana y Jerónimo, madre e hijo que sobrevivieron al colapso de su apartamento en Dosquebradas - elpais.com.co",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQVXBnX29hX3BfM2laUXVOcWVIQlk1aUZ3UnprcjBoQTN3NHAxaFJBQU9XX0FPRlFvSUM2RFREX19aQVBBdmFtTk5PX0RnSnBzenpBOFl3YUQxYWVOcmJzV3RuekhlQU5lS19FQVVRT3JhaHlBRWo3cEVUalNqS2tzall5NEpNZEEybzdaMFJzeWlWclZxVW1rUndLTzgyNTV0ZGl4UWVFdTlxbzBuYW1iRDNTdmxDdHV5VGkwVDY4VU95cFFLTlh2OFdKakNPRWFaSm55UlNR0gHbAUFVX3lxTE1zeUFLa2U1NHFJUGNvRVdfQ3p5bmYzOU5DdUZSMENhekxDTHdxbnlxZEk5RHcwd2NfX3lJZVFMaXMyTkR6T1VPT2N2QWw5ODYyTkRSc1g3YjVyc0tMZnFtME1FS2VMblpXdVkwY0wxYmRpekVPWDJLQXZLeDhWcmpGMC1hSjlJWWgwX0U0R1l3MnlLN2k4cDlSbng3YXYxS2pCZThlVUFVa2R5TW00azJNTjk1dFJhUk5CSXd6T20yckFQSmRVNGVhOEhsNUpmbXRIVHdRSy0xMWdoYw?oc=5",
-      "medio": "elpais.com.co",
-      "tipo": "unverified",
-      "publicado": "2026-08-17T10:13:00.000Z",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
     },
     {
       "titulo": "Colombia se centra en buscar cuerpos una semana después del terremoto sin esperanza de encontrar supervivientes - RTVE.es",
@@ -4841,13 +4189,6 @@
       "medio": "facebook.com",
       "tipo": "unverified",
       "publicado": "2026-08-15T15:39:32.000Z"
-    },
-    {
-      "titulo": "Van 294 muertos y 3.935 heridos por terremoto en Colombia - elnorte.com.co",
-      "enlace": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbUttMTlHdWNmNUJQWWhHOFNESndIZ1hwMjRmU2RYVGR1NTh3cHZFOG1KT0VDM1JmRGYycGxURXY5R1g1aUVkNGY4U1lidF9tSE9uQ1VRSlQwVm5tRUZXRWNmb3IwUHpHMGRzWTFTMDN1QnlTNnFVNF9NMk5HRlUteXh1N1hGWkVfQ282Z3g5ZGZ3QQ?oc=5",
-      "medio": "elnorte.com.co",
-      "tipo": "unverified",
-      "publicado": "2026-08-15T15:28:16.000Z"
     },
     {
       "titulo": "Balance oficial de la UNGRD este 15 de agosto tras terremoto de 7,4 en Colombia: 294 fallecidos, 3.935 heridos y 320 desaparecidos - El Tiempo",
@@ -5793,15 +5134,6 @@
       "publicado": "2026-08-13T22:36:03.000Z"
     },
     {
-      "titulo": "“Varios alimentos están empezando a escasear acá en Pereira”: afectados por terremoto de 7,4 - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQTIyT2xybmR2eFdUclIzVHFsQjFKVV9vbDBMVk9iTWVBdThVaDNsWTNpX0hWNDFveDl0c09zbHkydkpVeXVDV0k0Mmk5Zlp4ajdVZWo3NnVVaFhDeFJNTzhVeDRfUlE5bzdaSHdoZFRzcHRsU2x1T0ZHenZ3Qkw2ZU1vX3ZhQWt3NWx3UVZBblZVbDlwNC1RVWJmRXVrMHNxV1JOdGpRa2hJTWxzRXY4MlYyd01rMllxSDljX29ZQ1VMc3hIOGtFS014cXZRM2fSAeoBQVVfeXFMTk9fNmZVbnFBcEZQbW41YnBZUVRheWVBY09TdHFVSjJhVlBSaUtHcWhjMTRsVFJjeEZPX1FkOTdGQVhoLTF1dVFweDBtNXVsWndnNENLYXVLMTN3bHQ2WFpSUTFDQTVyQXNjNUxkLUMwVWYwWjlPX25wRGc5Zml4aTF6WnNjZE16VVdpbVZwU2N4T1lmcnpiYlIwRy1reUxfcE9HSWU1M3BvQWU2aXhiRmxnOTJTTS1oRWIwNmVZV19ZWUpGSmctSE53UWx2UktwMmZUeFFkSlN0MUtJN3J3eThPQnJLdDZhQnRB?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo": "unverified",
-      "publicado": "2026-08-13T22:14:36.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "titulo": "Gobernación del Valle solicita agilizar identificación de niños fallecidos durante terremoto",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90215/gobernacion-del-valle-solicita-agilizar-identificacion-de-ninos-fallecidos-durante-terremoto/",
       "medio": "Gobernación del Valle del Cauca",
@@ -6024,13 +5356,6 @@
       "publicado": "2026-08-13T18:35:43.000Z"
     },
     {
-      "titulo": "Guía para damnificados: dónde y cómo solicitar las ayudas del Gobierno tras el terremoto - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOclh4Tjd2akF1QUFDZE5MQkNObVYybFdONk01UkwtdW1rTXpTSk5Ka2pLYmVjZ19LWU1QbVR4UXhjbDA5ZVlTU0FlRjZNR3pTMVBiNnZMUEFKMUpaREJiOVNOZ3RTUEJERl9ydTlpNkdTOEFTdU8xSzVFZlJMaHdfMWY1N296bmlIUW5hMHNhdGRqWEZCZGtUX2tDZlN0Ml9EVGRMTHJ0eFpOYzZxWmhUbUhWMGVnTjJROFRZZ2d6WG1TNkxzbDFFeW9UczXSAecBQVVfeXFMUFFWVlB2bkxhNzVPcVBEeHdkMXMyV1U4RWtDbGNacms2eUdGS29hQUg2bzlQUEVlZjVjbFJDRlo2cUdrUnJ1SC1OR0ZQSWt3QUNFWnBpcEpRNkpIVFFMMnpoWkNNTVZKQnk3bHBTMUFYY3JNZm42UWV3OENsdVlkZnhVSy1NYUlhTlRZbTVkblI0QUZMeUlla0FjTHlQV1AxbGdVNzVEU0VqbUdqemlONkh6TWdVcktSa1pkMm1vWENUdlA1NXI4N3Y5SUZ3NnZlcWlVYUY2T0d3NEVlMFpvenU3V1VLYTkw?oc=5",
-      "medio": "Infobae",
-      "tipo": "press",
-      "publicado": "2026-08-13T18:33:00.000Z"
-    },
-    {
       "titulo": "Por nuevo temblor, ordenaron evacuar edificaciones en Cali y Manizales: son varios los sismos este jueves 13 de agosto en Colombia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNM1NQSFJJLWQ0Q09uVVVqQlEwekhCRC1OUEd4X0xpdmYwVjhzUHY2eFRLaDNUS1JITFh0aUhqMnhjdHVMUWsxQ3hVUEt6VEE4eUM2WlZ2dW5CRHBTOFpfUVFlU1lGa0lyWEtJYnB1RmJUTm45cUVvamZnLV9OblFaRDR3RTVVdnAwV1lwMTZNWFdQY25YVnROSnZlNXk5VkRmUXFxWm5rV0Z0cnJndkxPU29jYWxMOFRpNGEzSUJSU29kcHc5UDhPcHZRcjJCYUliNmJtRHk2d1pRdXhvYVNjZG1BS3Njc25zbElUNElaMUFValBCcDBMSXVac1ZtYmNINEVz0gGeAkFVX3lxTE50QV93dGRwNS05OWhMMGpJNnBNdmg5ek9aSWtPdHNqSTZaRGdQNkJZUllWb2k4WWpOUTUzTkFjTEJSUVc1Q3RrSUR1QjN1Q2FBWl9HZFJJY2RTdjJnZWNRZm4tcU5uZHlNbFdOQ0FsdTMwZk9FVjY1aEpUWWQ0dGxOUU1vdWE5VHZ6OU1NRE5lbVFGZjJfaXlWUTN6MUtWOVBfYjJPZTVhalpDUnhvS041ME8xQllxeFpBaXFtTGtfOFIzcVk5TnBIa1lFZmpCZ184WUlLVnRWdEI4SE5QN0ZDbU1Sd0gyeC1Id3pvXy1FNzJjd2E2a2NITVdFeG5UcUhMQmo5RDV2VFRuaU1fczFsWTc1VV9YNmFGVjlTMVE?oc=5",
       "medio": "Infobae",
@@ -6072,6 +5397,13 @@
       "municipio": "Dosquebradas"
     },
     {
+      "titulo": "Terremoto en Colombia deja 273 muertos y más de 97.000 afectados - teleSUR",
+      "enlace": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1jSkUwcDhfYkNoY1B4TkpDbVB3TmlXd19McVF3eXRTTGpMSTktOVY0Z3JKbkVFaUhheDB5NTdUekNSOUZReWVudTBnX1dQU1pJT2l6RXU0bm54TzdfdkxpN0JSdzBXeDZPYUVhbmxXVVRPVUtGMTNCWFFB?oc=5",
+      "medio": "teleSUR",
+      "tipo": "unverified",
+      "publicado": "2026-08-13T17:51:54.000Z"
+    },
+    {
       "titulo": "Gobierno Departamental y Nacional y unirán esfuerzos para recuperar hospital de Roldanillo",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90209/gobierno-departamental-y-nacional-y-uniran-esfuerzos-para-recuperar-hospital-de-roldanillo/",
       "medio": "Gobernación del Valle del Cauca",
@@ -6097,13 +5429,6 @@
       "medio": "Pulzo",
       "tipo": "unverified",
       "publicado": "2026-08-13T17:34:38.000Z"
-    },
-    {
-      "titulo": "Sube a 273 la cifra de muertos y a 377 la de desaparecidos tras el terremoto en Colombia - LaSexta",
-      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORUNYdHpDTDV3aFdKRnNwU19wRWRITkV6Q0U1ekFRaFZ3bUE5U2cxWTlUTjBRN3p6NlM2cVU2ZmxXcEJRU3RDZ2t1a1NhRDNjRmVEUE1sT3g3cEwzYVRkLUpERVRXdXBjb1lJYzNlbTlpUkpGWlEyY295YkVQaDU5OHhpNEdTa0NjcWpBTmJ2X3ZLU25DTl9MZ1o2RjVTSHA4SkxOeEx4WmtDeTFXRWJvVTk1SlNWRDA3WTFjdDdCRmJ6cEdmNy1pT1dZTXctanFiZDhDSnh4dzQwbkRO0gHcAUFVX3lxTE5OcU9BR1NUZlNtNXU4SmpqNG9fbWFmblU3anEtbGdyMk0zdE9OMVFDbUZCM3MtYkNwX0xtdUdva2U3bzRKYVBJYjhZM0VNcmNJUzJvcktPU0puaFJwbVM2REFnUVFDZG9ZdHlVa0NScWRySk55TXdKNy1ubUQ5UjFfRGpNSFJCS1g5RDc4a1Y4LTZrUzlGdXM1RHRrbDdwcl8wUHlIZ1RQczQyUE1NaUpteEdoazZUb1VzZ1dHZ1o1UXR5eEhlenA4ZkpPQlF3RHRDUkR5eEt2clUwbTQ?oc=5",
-      "medio": "LaSexta",
-      "tipo": "unverified",
-      "publicado": "2026-08-13T17:32:58.000Z"
     },
     {
       "titulo": "Tres días después del terremoto en Colombia, la UNGRD entrega nuevo balance y revela cómo satélites rastrean los daños - Publimetro Colombia",
@@ -6471,6 +5796,13 @@
       "publicado": "2026-08-13T08:21:49.000Z"
     },
     {
+      "titulo": "El terremoto de Colombia deja ya 265 fallecidos y miles de heridos - Expansión",
+      "enlace": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdGlXVk8yV29oa0p4YlI4T0h2YTZCcUhJb1cwQnp2S3dNX0UyZzM1bkRORW1xTDdlU0M3eTl5Z1AzUWtzbHZueHAxYlJRMEd6SmFfekRkeF9ISGpFZXp1Wlp3YjFKenNaU1UwRUh2UUlvc3pLUGk1eHNjMFV2ek5vU9IBgAFBVV95cUxQbFRoNjVNdUVGZ1pNMXhrRF9TandmNFFHNGgwUExCaVRmc0owQVhIMWRBeUJyZFVGTU1Za0FqS1RJU3RuazdxRG9SMVdpV3h1a0R1V0p0VXQxSVlqUmYtazl4cE5kU1VvY2ZFXzJYZG5EdnRlMlNaRDhnc0k1WUVlUA?oc=5",
+      "medio": "Expansión",
+      "tipo": "unverified",
+      "publicado": "2026-08-13T08:18:37.000Z"
+    },
+    {
       "titulo": "Se elevan a 281 las víctimas mortales del terremoto en Colombia, informa De la Espriella - France 24",
       "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOVDlfMVRTVUl6NEdkTUVrcGJYNW9GSnM2dlNfam1HM0pvTjE5STV6azJKNk9mQ04zNkxDUHVUREszT29FWDdhbGZxRmFuQ2R3U1dzNUdKTFlqbThOeFdwYzNuMDBRYWdSUXFpOFV2UjVBQzdXX2tjdzFIVG0xNTl3YkVjQTNGOXZpX1VUQXNUbVpRdjhzQnB1a2hFb0M3VWZzaDlkb0xEdHhiUkFVUm1jRG91MzF1aEY5a2k3ektfS244M3BtZ3RPWlYyYmhxOEN0QnN1c1ZHam1HQjJJYnpGQTdBNVA0STEyNDBOSThadVRWZklKOERoYWFxU3ctZ3A1?oc=5",
       "medio": "France 24",
@@ -6478,10 +5810,24 @@
       "publicado": "2026-08-13T07:46:56.000Z"
     },
     {
+      "titulo": "Terremoto en Colombia: el impacto del sismo en los hospitales tiene la atención \"desbordada\" - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQT2Y1ZTN4Q1NrYWo5RlBISXlTaDJsX3lvSXZ4TW1WdGpmaE1lVzJqUDRVQnhJa01TSG5yTThtUHhkck9UTzhNTFZiOEgzQmVQNzc5cG9yZGp1YjUxZnZOcXZTeHRCZm5DQ2M1ZzJBb0M5Z0NRQnlTcWx0WVZkSVN1R2pVTUwwcEtJS3FoWk9iVi10VVBWUXpsaEdnc3FRRnN2TlhSWld3M3NZSzh1aXdSZVFCc1pYQk5Ld0FScDRkQkU0RlZWeHhaaGhnX1BmSFp4bzNmR3dySjFjQTRwQktMVkVlYUlWUQ?oc=5",
+      "medio": "France 24",
+      "tipo": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z"
+    },
+    {
       "titulo": "‘Colombia, un solo corazón’, la estrategia para canalizar ayudas para los afectados por el terremoto - ELHERALDO.CO",
       "enlace": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOS21wTmVIS29XVE8tQWVhUlR6eHJRUUlZLTR5dWlHcURBelU4ZHV1eUk1NlI0RlpEbUtEU3ROMW9FUlZiYWJEeWVuMkFhVVJtaldxOHp6QWdkTUl6X3BTQUdwSXZJVzlUUGNtbzFzRG9CXzY3a3BrVTROd242MjFQeEllY3pLQWRGcHBkVG9OUUhJczcyMGtUSmxzUzFqMUgtQktIVHFoZXJOeE10MDNFUUk4SFNMNDN2dUJReVQtbmNCMHg4U0NzT3JiZW5wcTRxaTkyYm85TW5Xd9IB9AFBVV95cUxQcVpZb19Tc2RIRWxBMEtwNDRLRWltdXlISk1qbjA4UW9fUGRzSkdpejZTSmRWZWxHRnZHdVV4NGl6cjIwb1FLRDlXYnhHOGk4RE5FSmRPYzJMazNoaDdqUWVYUEFORkRhNjJkTkNXS2MwS2RORnllckJQNnlWcnlxQUR1RWxha2RSTkFoaTV4RlI3azd2cE1PWVMwdHVfZG5pcVd0WHBDMjc2cFlaZmR0NkVDNWhXVk5XV1ZqM1czVk1fbjRmNU1aVXhCOENRWjVzNFdNbTlHNndQbS0tTEVGSmlMRzByV25GQXZzbkJMcm9qTFR1?oc=5",
       "medio": "ELHERALDO.CO",
       "tipo": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z"
+    },
+    {
+      "titulo": "Guía para damnificados: dónde y cómo solicitar las ayudas del Gobierno tras el terremoto - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOclh4Tjd2akF1QUFDZE5MQkNObVYybFdONk01UkwtdW1rTXpTSk5Ka2pLYmVjZ19LWU1QbVR4UXhjbDA5ZVlTU0FlRjZNR3pTMVBiNnZMUEFKMUpaREJiOVNOZ3RTUEJERl9ydTlpNkdTOEFTdU8xSzVFZlJMaHdfMWY1N296bmlIUW5hMHNhdGRqWEZCZGtUX2tDZlN0Ml9EVGRMTHJ0eFpOYzZxWmhUbUhWMGVnTjJROFRZZ2d6WG1TNkxzbDFFeW9UczXSAecBQVVfeXFMUFFWVlB2bkxhNzVPcVBEeHdkMXMyV1U4RWtDbGNacms2eUdGS29hQUg2bzlQUEVlZjVjbFJDRlo2cUdrUnJ1SC1OR0ZQSWt3QUNFWnBpcEpRNkpIVFFMMnpoWkNNTVZKQnk3bHBTMUFYY3JNZm42UWV3OENsdVlkZnhVSy1NYUlhTlRZbTVkblI0QUZMeUlla0FjTHlQV1AxbGdVNzVEU0VqbUdqemlONkh6TWdVcktSa1pkMm1vWENUdlA1NXI4N3Y5SUZ3NnZlcWlVYUY2T0d3NEVlMFpvenU3V1VLYTkw?oc=5",
+      "medio": "Infobae",
+      "tipo": "press",
       "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
@@ -6558,13 +5904,6 @@
       "publicado": "2026-08-13T01:58:24.000Z"
     },
     {
-      "titulo": "De la Espriella declara emergencia económica por terremoto, que deja 265 muertos en Colombia - teleSUR",
-      "enlace": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFR2FEeUtjaHkyNkcwSlNwU3ZXWU9zTC1YaGpUMzIyRHhNUEw1a3JlS2l2RnhYQWJaTmd6cXFSSF9RTnh0WnBmYTZsaHFGUE4zMnNKU2NyNEVvcFRaT1ZaUWZWc19pSHctbXhkbG8tZEdRRXg5?oc=5",
-      "medio": "teleSUR",
-      "tipo": "unverified",
-      "publicado": "2026-08-13T01:14:26.000Z"
-    },
-    {
       "titulo": "Terremoto en Manizales: a siete se eleva la cifra de fallecidos en Caldas - alerta.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOa1BZeXdRc2NzcVRJczJaNWxUdDZ6aWNNSkt3VkVfX1Fxa3lGd1I1SzJwdjc3UXVGTGZReVBvRmc4TXkwNDRwczFIS2tlUVNBQ1JKemxfYkc3M0xCTnQ3QjhXWDBBQnh3YUdoZi16dVdFTC10cTBpTlFNdGN5bG1mem1kdWxYTDdOOERBX0lteDVJbzBMUkc0LdIBmAFBVV95cUxQd2l6Y3A5OVZVbEJ3RzVITnJpVjN2eHMtNUpxNWI4MDRuSHpldW5acG41RWhicExfSWY2S3VESlZJTEE4NVk5clg5MGltTGp6Z19tdHZ0bzJReUhqbGljWEJzN1lTbEdSdEY1dmp5LUZVSzl0X3F1LVZTQzU4WlZKMVNtaDl1VVpsUUVtRGFhZUxjVTN5cHpLXw?oc=5",
       "medio": "alerta.com.co",
@@ -6572,13 +5911,6 @@
       "publicado": "2026-08-13T00:50:55.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "titulo": "Terremoto en Colombia: el impacto del sismo en los hospitales tiene la atención \"desbordada\" - France 24",
-      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQT2Y1ZTN4Q1NrYWo5RlBISXlTaDJsX3lvSXZ4TW1WdGpmaE1lVzJqUDRVQnhJa01TSG5yTThtUHhkck9UTzhNTFZiOEgzQmVQNzc5cG9yZGp1YjUxZnZOcXZTeHRCZm5DQ2M1ZzJBb0M5Z0NRQnlTcWx0WVZkSVN1R2pVTUwwcEtJS3FoWk9iVi10VVBWUXpsaEdnc3FRRnN2TlhSWld3M3NZSzh1aXdSZVFCc1pYQk5Ld0FScDRkQkU0RlZWeHhaaGhnX1BmSFp4bzNmR3dySjFjQTRwQktMVkVlYUlWUQ?oc=5",
-      "medio": "France 24",
-      "tipo": "unverified",
-      "publicado": "2026-08-13T00:50:40.000Z"
     },
     {
       "titulo": "PEREIRA / Autoridades identifican a 88 víctimas mortales del terremoto en Pereira - Risaraldahoy.com",
@@ -6857,15 +6189,6 @@
       "municipio": "Cali"
     },
     {
-      "titulo": "En un solo día se triplicaron damnificados y número de casas afectadas por terremoto en Manizales - Blu Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVGNySjN2M3Rhd2JHXzFGTEJTZzJWU3pROXRhR2pDek03Zkk1R0pSMnFtX0Jna0FqV2tPVkhXVGVfT1FNZ3otVmRzOGhTTk9oSVBMUC1rYnVMWmxrZ25kSkdBRFUwOWdCRDNmTmdxdnV6TXQ0dERtQUVtUGQyNHdtWW1yVUI3Y3dzc3IxazRWVlVaUGpUcExvbmpocWZXUGpaNXVyS0lfLW82Tk9OYnZiV0ZEYTNlNXdVbFBvWWFQTU11RkNybDlmTWRHUURpa3dPMjdobUpyV3ZfZDJYS0040gHsAUFVX3lxTFB5SzNsaDdKTmM2bEJORFNOd2VJUFZBeDAzTEdZSUJiQ3pOT2x3VmJwNXJQYWxuRXVpSHgyTjR0am9USThSY0p3cEM0aXBsTFFQVHFFVjZOLWNlQnRWWk9zdFhkNHZJYlBuc1J4LUE1b1lSMS04aTFXNHJPb1ZPZ1luS2dqb0FiUXhTTEE3c1hTcmFhbXJMcVZsUHZTMG5YN0pjVEE3WVdnWGtHVGprMW5KOS03RFpaYWZiUE9YZ1h3bHhEdUpGZ2l6VGdzb3RndG9lWHIySnU1Ry1KODZqdU8yQjJPbnRWdzk2MGIt?oc=5",
-      "medio": "Blu Radio",
-      "tipo": "press",
-      "publicado": "2026-08-12T14:30:58.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
       "titulo": "La Gobernación del Valle y la Asamblea Departamental  suspenden atención presencial esta semana",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90184/la-gobernacion-del-valle-y-la-asamblea-departamental-suspenden-atencion-presencial-esta-semana/",
       "medio": "Gobernación del Valle del Cauca",
@@ -6908,6 +6231,15 @@
       "publicado": "2026-08-12T11:51:48.000Z"
     },
     {
+      "titulo": "Medellín amplía a 10 los puntos para donar ayudas a afectados por el terremoto - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTGVBbEk1bTgtZHJpcjI0Z1JXSVNLSjZNYzJRSERha01TUElib0E3bEFSaDBkOVJEN0xod3RjcmR0eHBkcXJ3U0RJVXQ2X1BjdDBzX3FSVE5KWEt4RHRXT0FnYTdYZVNpZWpnRHE5Y3phSVFXWGF0QTJoclFWTTBRQkU3M3dLREtVeTlQWlphaXRBbTlUZk5oaFB5eHZjYnRJSVZMS3QzNG12MGR1Z0dyM1RuQnRYbnFuTWpCMjVJNDnSAdsBQVVfeXFMUG9mdTZuelYxN2NsUzlIYWtzcEMwSkJraU5mc2xROXc3YXctcnNtcXlWNkdkcVdKZzhoTWRNd0pSVVY3NkcyVDJzVzUwR0ZvVVBHNXZiS1QtbWtWWUZybDNMLWJmVUVWZzExdDFIZVdCQUdoMURMTVJqWU1rRVJ0SUNTWnUyaWI2ekdoaENBb2U2UG40dHVQRS1WVDRvY2VTWURqZFVBUW1GZ3NyN1lfYjVWZmV1RjBhU1dRRlZqMlF0T2xkOVIxUFRHc1dwTVRqMW01THc4UlhxeF80?oc=5",
+      "medio": "Infobae",
+      "tipo": "press",
+      "publicado": "2026-08-12T11:00:00.000Z",
+      "pcode": "CO05001",
+      "municipio": "Medellín"
+    },
+    {
       "titulo": "El terremoto sacude el comercio de Villamaría - PressReader",
       "enlace": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTWt0RnJQQUdFY2R3eVhsWkpPaVItLUNBRzh5WllqeHdxRlV5Z0tSZzRsUzh1X3lxY3ZlR1Ftc0dYYlk3MlNmYWdfVXNJbGU1VEt3b2gwd2VmRDhqRmh1bXV3blJaLUJTU3lyQTdaYmhoSG1xNGU1clNrZjZTZmhwNWx2cDFHdWc?oc=5",
       "medio": "PressReader",
@@ -6924,13 +6256,6 @@
       "publicado": "2026-08-12T10:00:31.000Z",
       "pcode": "CO08001",
       "municipio": "Barranquilla"
-    },
-    {
-      "titulo": "Exteriores reduce a 75 los españoles desaparecidos en el terremoto de Colombia, sin constar fallecidos ni heridos - La Vanguardia",
-      "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQSEl2V2lGV1huX3h6eFdmTEk1UUk5NnU1VERWQzJDV2FHRllnQUNjRGgwTEVmM3BFREE4elAtemh2d242QlcycnBZVEZjRFNjYTVLbUExLXV1WVpzUzZxQUxoeDNMWWtoVGpsNHF1NF95R2hwVm9IcnBmbUkyMHJIUlNXdmhQMU1KR05lbXRtNHk5eEVNZVlMTVA1Y3JVNFJheWVMU2tlMlozNVpLWDUwdWk4OTZEbFFsa0NRZzRQNXRtb2syYjBra3ZwbVBPZGRHUmxVMlZraS1zUG9RQ0dRQjJGNjdpMWhLV2VGeNIB8gFBVV95cUxNSWZoLTliYWlXMXJMdHZYMWtWcjhaT3BuT1hYUjhvZEVUc29VMDdvajRab3k3NnpJOF9BQVhubFlXT0FneWF0RlI5UlJOV0QwYVktYVp2TWpFalRyRXloWTEzNDc4MTVfUlJELVp2aUJlcFJuQWd0NWlWc210QURzYXpSaVhydkxtYlNkanFkeEpHNkVjN1VlUXhpczhCUmsyakFDUTlHV2c2SmVucU1DVlBobmk0bThYWFktWGViTnJGbkxkXzRfTi0ySTJTbWI2TjBiSFhWUWsyNm5LSGN0dEEzeTIzbzRNSjY4QnNzY3dQQQ?oc=5",
-      "medio": "La Vanguardia",
-      "tipo": "unverified",
-      "publicado": "2026-08-12T08:54:26.000Z"
     },
     {
       "titulo": "Colombia cuenta con normas antisísmicas para la construcción, pero estos dos factores agravaron el impacto del terremoto - CNN en Español",
@@ -6960,6 +6285,13 @@
       "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQNjF0eVhuNW1MMGxmUktkaWhUZEN2YkVmZF8wR1dfVFJ5OUtfQldLOEFWUjJMY2RQakRYSFlkZGlON2dSU0RlTHFRbFd1NloyRVN6SDFqTWF0cGpmTUtReFVoVGFYWHBQVUhmUHNoQTVnWWkyNGlJamZBa213ZDdldF9mNk9tQTFGUlE2VnBVc290UDh6TDFBNUJQQU5RSms4TFg2djd6eFQ5bjFaZXJYNzg5M2h4TEk1TGRCUHZyMW0zRmtIOGpCTTVwYWw4RGVQQ09vel92eWFtNEpLejhXRlMwbEJDY21s0gGDAkFVX3lxTE5LekR6NU1DR0FBX3pxUk9ia1dzSE1GMWxaME45bXl3dHNnVEhHU3ZJYTJyRVpBOVBaY2otWW5QbEpkRmRZQU9pWTQyOUF0eVowVVlId1dacW9BdXV3bEVyTHhzcUNHcE5oOEVTUFY3M2JzaFZCcXlVWFRGejJoWjRzM29rN0k5RlVnOVA4YUl5dUE0b0JOeGxoTUNDSm44MEI2UzBRWkhJZGJ4b1J5NlA0SjB1amk5TzZqNTFkcF9QNnFFT3hTTTF5NUM0YTdDb3Q0RFcyRDB0Y1FiZUpSeTUteUJ2R3h4RFNWWmE2ZGh6TFFaVkFVVlpXTzY1Y3NZbHN0Nkk?oc=5",
       "medio": "Infobae",
       "tipo": "press",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
+      "titulo": "De la Espriella declara emergencia económica por terremoto, que deja 265 muertos en Colombia - teleSUR",
+      "enlace": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFR2FEeUtjaHkyNkcwSlNwU3ZXWU9zTC1YaGpUMzIyRHhNUEw1a3JlS2l2RnhYQWJaTmd6cXFSSF9RTnh0WnBmYTZsaHFGUE4zMnNKU2NyNEVvcFRaT1ZaUWZWc19pSHctbXhkbG8tZEdRRXg5?oc=5",
+      "medio": "teleSUR",
+      "tipo": "unverified",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
@@ -7001,6 +6333,13 @@
       "titulo": "Terremoto en Colombia: ya son 240 los fallecidos y más de 2600 los heridos - Yahoo",
       "enlace": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMktSRHdUZkY1eVUwa2xhdE12OGxTaEs3cWcxRUFZd2tFVDNJcUJtclc5b1VNTXRVMDhVZzZzNzFPWjBDQldDeUtHTjZPeXVaYXh4MDRQNUlVRTNpcW5EVXBtSWctQlYwYm0zQjBjdEpLcHVRU3htOURhQzJwODQzRHdwNGpWWXdLN0dHZFdsYw?oc=5",
       "medio": "Yahoo",
+      "tipo": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
+      "titulo": "Sube a 265 la cifra de muertos en el terremoto de Colombia y el presidente declara la emergencia económica - EFE - Agencia de noticias",
+      "enlace": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9lMkIyMXFtMGFWUUx4bUxNT2k0UTlyNFhMdWNkTW02OXVtbTNmLVVOaWlUeFNUbGJlZHpsY05kSWE3R3lSMUZvaGdCdEFUMmRJUHhldDdLNFFjdzlaTXNYVTRRNHB2bnRfdHpRX2NPWlB4dmhMbUJtcQ?oc=5",
+      "medio": "EFE - Agencia de noticias",
       "tipo": "unverified",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
@@ -7051,6 +6390,15 @@
       "municipio": "Manizales"
     },
     {
+      "titulo": "En un solo día se triplicaron damnificados y número de casas afectadas por terremoto en Manizales - Blu Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVGNySjN2M3Rhd2JHXzFGTEJTZzJWU3pROXRhR2pDek03Zkk1R0pSMnFtX0Jna0FqV2tPVkhXVGVfT1FNZ3otVmRzOGhTTk9oSVBMUC1rYnVMWmxrZ25kSkdBRFUwOWdCRDNmTmdxdnV6TXQ0dERtQUVtUGQyNHdtWW1yVUI3Y3dzc3IxazRWVlVaUGpUcExvbmpocWZXUGpaNXVyS0lfLW82Tk9OYnZiV0ZEYTNlNXdVbFBvWWFQTU11RkNybDlmTWRHUURpa3dPMjdobUpyV3ZfZDJYS0040gHsAUFVX3lxTFB5SzNsaDdKTmM2bEJORFNOd2VJUFZBeDAzTEdZSUJiQ3pOT2x3VmJwNXJQYWxuRXVpSHgyTjR0am9USThSY0p3cEM0aXBsTFFQVHFFVjZOLWNlQnRWWk9zdFhkNHZJYlBuc1J4LUE1b1lSMS04aTFXNHJPb1ZPZ1luS2dqb0FiUXhTTEE3c1hTcmFhbXJMcVZsUHZTMG5YN0pjVEE3WVdnWGtHVGprMW5KOS03RFpaYWZiUE9YZ1h3bHhEdUpGZ2l6VGdzb3RndG9lWHIySnU1Ry1KODZqdU8yQjJPbnRWdzk2MGIt?oc=5",
+      "medio": "Blu Radio",
+      "tipo": "press",
+      "publicado": "2026-08-12T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
       "titulo": "Decisión de De La Espriella cambia la realidad de miles de afectados por terremoto: tendrán gran ayuda por tiempo limitado - redmas.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNUm1rQjBBZFVobzVyb3JVV0R3NEZvUlpnQzZHWHY0NTRudER6cXdXaXFKNkpraTdFR1pkbVV0UU01U3JmeUNwN1lIQTRlZnJUalZOWmViVko2WE0xaFlwODZfUmxESjYyNndacFlLNmllX1JRT1pHWkdwWVotODRXeU4tMzJMN0Nwbmp4a0sxQzZqOVZOaUV6dGdheXZaWGFmXzhsMXF6OUhvNTIzbE5DR3M4WlJwMXhJanBscWlkS1JDNWFuSlgzWHNpOHRkYXh5U3JGOENoNkJQMXBGeFZZYkFib21ybzlQODkxUUhzcktrb2I1OUVuS3o3U00yaFZUX3c?oc=5",
       "medio": "redmas.com.co",
@@ -7062,13 +6410,6 @@
       "enlace": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNdUU5b2VOZFRtQ3dleWlXTHdHMk0zc2VqdTlBejh6dWdoTDQ5VDgzaTdQTDFzV3E2anQ3LTVoNmxxZDFMSEVqLVFZWmI5WkxiY2hDNHlTRnhyUzRZSk8tM3U1S2M3Qi1sNVpEVFljQmxWVGxLUkJ4d0E3THdEeFBxeVZKeTQyT2MzZGtETnZLSlNPWWxSZnFUUk1hYllYR29jREZHaEFyaG5Hb1RaVFJsZi1hU2pfaktsS0Z5X0tyNlQ4LVd3Q2ktZm52aVBkRW5CSnZOdThUOVhFazU0U3dCQ0tSWjdHOFUzQzh2d3AxZzJKa2tnUzUwQnVTMkN2YUJlQmp4Ulhn?oc=5",
       "medio": "redmas.com.co",
       "tipo": "unverified",
-      "publicado": "2026-08-12T07:00:00.000Z"
-    },
-    {
-      "titulo": "Los bancos dejarán de cobrarles a miles de deudores en Colombia debido al terremoto: a quiénes aplica - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNUUxVVEloUlJoTnRRR0tpR0Zfa2M0dTZaaXRZb29aVG1JbElXTGJLTUxndjJvSGNSM0t0aDNRLWJObFV5dk5kQmlGVGlmNGJFV0d4Z3hueEl4Skp2ZTVWM0k3bHNuZXJ2RmxmcG01Mkg5U2R5WGRnVWdId29samxlQ0FGQVZWNmRGOUNEcUFQdjZtT3hBLU1ZUGtoNllnM19DbG5kakU4LTZ0eFdmN3psaWVNN0s0Qlh4RzVUYkRMZ1VIeHpDWTA3SWFBRTlIV0tYVTZkWnVIVkRFRVJMMWIyNndUQldycy1CN0JzUjhmdFppMTVmZGtteF9HaldPVXJEY3lLatIBnwJBVV95cUxNY0lPVTlvLUY3dTJPc3VhbnlCdm9KZFNmS3dzVlliS0VNRkxqRUhDcmtpZmY2bkJsUEREa1JRNU1oSFJqT2d6bjdGUXFGZTlCWFhDZkFSSTBqcURubUNXbzFYS1BITFNINnB5ODZDTFBvMjFaMG9YeWlNd1NBcEotbXJKX2g3YWRxdjlteG83ekRIemE4VEdsQ3RuNHdrM0tHUXRUa1ltQjJ0Ui1PamNkNkpCQjF6Z0FIYzdVQkMwVDZnd2FHQkNoR2ZwVTVyV1BFcmRtTGk3T010Q1k4V0lkODZSTS1EVFE4V18zb2U0RjY2WGh0ZFRfNkVHVUE5WnZzZlZpT3UyemFqdU9RWDFCakdZVHpRMExqNkVILVNXYw?oc=5",
-      "medio": "Infobae",
-      "tipo": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
@@ -7569,6 +6910,13 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
+      "titulo": "EN VIVO | Último balance del terremoto: 190 fallecidos, siguen trabajos de búsqueda y rescate - Noticias Caracol",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQRm9TUDJPVGR5bElXWDgyVHo3SzJwVkFneFM4WVplVG5aaUQtbkRvVWlXSlZzaTZGQTE1c3B2YUZVSVpjYmowRVdDOEkwUF9OcjRldmhMSG5lR080SEtCVWV5OXNtVC0zUlZOV2NtMWVPSjVoTEFOeWxUb19SSGpBb1hwZ2p0dW05U0FBaURaSFJlX29nTm1zSGVSVk9QekhjNDhSanhGdXA5ejJYUGdPQnZoSTdaWHJuY1dqb3JUVEpCYWZOZ081cGdB0gHXAUFVX3lxTE82bDI0MFhCMWJaRWFSczVzME0zb2FOZHQ4RUZ6WG8xSXhsVGFBTlVHcnZDQmdLd1NLbUM3aHZMejkzaUxDSm5rclNwczNqU1NlZUZUd2w3dFJEWlMyS0ZlREdiVkJIM1ZvR01WY2Fmc25QbG50SGI3RzVYMHJJdldhUFBfWEJ1TFk0VEFFR2tyNXNBaDhZeHlrbHZMRkxJSTViblV4OW05SFN1cWFDQ3pjdmVLS3JpckFheENlVGpIdXlXNUNFTHpIaVg1R2F6MVVnTmQ2M0pJ?oc=5",
+      "medio": "Noticias Caracol",
+      "tipo": "press",
+      "publicado": "2026-08-11T07:00:00.000Z"
+    },
+    {
       "titulo": "Alcaldía habilita nuevos espacios para recibir ayudas y atender a afectados en Cali - elpais.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQWxEMTNFa1VEUEhfZW9YUU9CR1JWOS1ERm1RcGFnXzlyUUdQV0JfWXJiMVV3Yi1EZ0pmMTJqRldzMEFqUTVOSmhQV1YtdHo4VUxHME5xekdzNGFGUFNHYlZOSG1PWFZKTUNFLTVjb3JWSHRFT0dhSHI3bGJ3eHZ5OUxGRHdzMk1DTWQzUHM4RkwwSGlLSmZRcEFOVkdIYjNYQzA0M1p2UWRaTUFxWEFoQWFXa0tsRDNHWVo1Y1ZUb1ZvZ9IBxwFBVV95cUxNSkUwem1WZVJESFVpUEo2eEJUa3o3NUgzZnlrR2k4WWd0SzYxdWgwSjRxQ2VObGQ5b2x3UF95OG8zc1E1RGxQUTNrY3pIT09yVmJRdzZ1SnVIUWlIYk1VWTVjdWdIS0J6T3RDcTJSNGNFd2h5djloay1pclZWTzAxdHVzbjl6Y1lkUFZUR08tZWRrOWVYbDlIY2V6V1F5ZzRONVhUT0xLMlRoYUNWSkhaN21jWDlIdS1KQXF1WFNpMnMwRkg1cVdV?oc=5",
       "medio": "elpais.com.co",
@@ -7635,25 +6983,9 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
-      "titulo": "EN VIVO | Último balance del terremoto: 190 fallecidos, siguen trabajos de búsqueda y rescate - Noticias Caracol",
-      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQRm9TUDJPVGR5bElXWDgyVHo3SzJwVkFneFM4WVplVG5aaUQtbkRvVWlXSlZzaTZGQTE1c3B2YUZVSVpjYmowRVdDOEkwUF9OcjRldmhMSG5lR080SEtCVWV5OXNtVC0zUlZOV2NtMWVPSjVoTEFOeWxUb19SSGpBb1hwZ2p0dW05U0FBaURaSFJlX29nTm1zSGVSVk9QekhjNDhSanhGdXA5ejJYUGdPQnZoSTdaWHJuY1dqb3JUVEpCYWZOZ081cGdB0gHXAUFVX3lxTE82bDI0MFhCMWJaRWFSczVzME0zb2FOZHQ4RUZ6WG8xSXhsVGFBTlVHcnZDQmdLd1NLbUM3aHZMejkzaUxDSm5rclNwczNqU1NlZUZUd2w3dFJEWlMyS0ZlREdiVkJIM1ZvR01WY2Fmc25QbG50SGI3RzVYMHJJdldhUFBfWEJ1TFk0VEFFR2tyNXNBaDhZeHlrbHZMRkxJSTViblV4OW05SFN1cWFDQ3pjdmVLS3JpckFheENlVGpIdXlXNUNFTHpIaVg1R2F6MVVnTmQ2M0pJ?oc=5",
-      "medio": "Noticias Caracol",
-      "tipo": "press",
-      "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
       "titulo": "Ayudas para damnificados en Manizales por el terremoto: qué donar y dónde llevarlo - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVEt3U1BFUlk2dHRNRnRXbV9WLVoxTl9pWkkyLS1vU2ZrZkE0dVM4ZkRKYUk2WjQzTm9MWkUySUE1SEJaVVBKbzVyc2tKVGN3bElsTDJxVGRWblNBSmJjQVpCZHk3c1h6UExTMmp2MENBQkE3MUUwdHlJbkFqaGxkTjNMZG8wWTJiUU9SUjN0VUhnRC02Z0VZc1A0TTdSOUVMQklCSFpoWGNDXzV4djBuTjFaWXNUM28?oc=5",
       "medio": "La Patria",
-      "tipo": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
-      "titulo": "Recorrido por zonas afectadas de Manizales tras el terremoto de magnitud 7,4 que afectó a Colombia - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWnRGSklldTJTNG9kZzhTSmY2cVhEUlU4UlhQQm5DRVdyTElSazBqVk0zRzRtTV9BNGlQNjNrMFViekZQMmhKY1c2RUlydGhUaDhWdWRMdkJ1TE5ETWtjVXhSVHRUaWM2RGdKc1pYdFVhZU9UTktHbkNrTmphUEgtdWIyOFd1TVlvU2hqNlJRT29ITFk4Rnk3aTNkRzFNLVYwbFJsajRlU0ZyMVdETU1zeTB2aFdqSlRpdmlXZjF3Sm5wZnFyR2g2OVZ2UlZoNmhoemhfbGxCeFdaMEh1LXFVem9n?oc=5",
-      "medio": "facebook.com",
       "tipo": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO17001",
@@ -7919,13 +7251,6 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "titulo": "¿Cómo donar a los afectados por el terremoto en Colombia? Estos son los canales oficiales | El Colombiano - El Colombiano",
-      "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTXlRR1ViMGMtUl9QOUw1alRiMUZ4SVJzTGpaYkZiTms3TWh0SlJSNDJyVVFDa1FDVVJsOHpqcVpGa1VUWHcwUkFkdTdsWHJzU05ZSXhFUXl5dzJzM2I4Q0ZsYzJDYzl3cnJweXRIVTdkQWlIT0EzTHluTnl6SV9Sa3VQRnhZYml2QVd3NHc2TDR0a1U5ZHhQZW52YTE4d05idURRQWdVa20tZ9IBrwFBVV95cUxNRDk0SkNlamZoNjVKN2NwTTVod1E3b0dnM0R0MjlMQ2Flb19YTGNNdXJEd3BOcjlQVnc5Q213RWhjczMzdHJ0S3RKbDF6VDlsRThlOE85a3J3S0sydndlUzNQcDZBOWxscGoxWkg2TUFodlhMYXUwOFViZ2RVeDFpaWhZZnNDSnN1TnBZRFJHcmhaNGpLR3QwOGFYVlZhSkJMeXFWRm1vdXQ4UW1BQzNF?oc=5",
-      "medio": "El Colombiano",
-      "tipo": "press",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
       "titulo": "Terremoto en Colombia: Bogotá habilita seis puntos de donaciones para ayudar a los damnificados; ¿qué se puede donar? - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQU3l2SkQzY3JFTVgxMXU1bTRHZ3B2ZktSM0NNMzdlNmlqb1c0ZWRzVUdnd1FrcElqdjRXWjBWdnpHYnBFNTVXSXJmUldLSVhwNGJ2MkxiSGpJUzVGYXNVNzBRU09kVDlYelllZTRmb2w0M0N6VDdIanBFeHRLaTFlQUJsN3JBWVFaZ0Y1QWVZQzFJNDNoaGEzbTNKdXZWX3l5MFpQNG81eGNlWUhsYnhKX2ExSE50Z2ZILUJDNWlXRno3TTRBdUd1Xzg1TG8tbEhkNWRZSmFJSXZLTUxsV2RjXy12RkhqZGVT0gHuAUFVX3lxTE0wV040OWNaMkdVV0RKdnpFRkZuVlhCQy1UeFhIcGs3ZlRYZ0xYQmxXOHNzcHRWdk81LS1SZDUzUVBnTXVZZXhtWWw3bmFTbmozWUZ6ZU1JYWZJc0hnNXNyemFubGdXOWNEVmxGdUJqTlhDdnB5Y2NJbkE3a2RocDdPQ09RQTlqekczQlpvcER0UUstNzhqN3UyVEh2SDFyWXhEMU5HT2hYVVA5WGFLU0Z2cHNFVThEOHVhbmtReUI5ZTUtaG9JRFdCeXVOTF9QTVREN3JEbWtISFVlNTE2aUY0STVLTTQwQjhBdkEwRkE?oc=5",
       "medio": "El Tiempo",
@@ -7961,6 +7286,15 @@
       "titulo": "Desde Cristo Rey hasta El Cable: recorrido por los sectores más afectados de Manizales tras el terremoto - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbjV4Wk9zcDdPMEZKdmphaXVPY1dMN3lWbVlKUzZnYnMtWDN5dmZzOWw0Q1paQ0RqT1JvbkNSWmYwMktOY1BCdU5qME8zN2Nta0l6VU5zS0VEeXhyRS1LVFo2SWhqd3p2bE1rVkdMR2lfRVdxNzVoai1xNnVDcUNkTUhiUnl0a1BGVkp0VTdHOGxHOURvS1NfN0NxdGhUZ055SXNrNTdaejVrb2kzMjRFRUcxQWRoanFxN0hVTQ?oc=5",
       "medio": "La Patria",
+      "tipo": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
+      "titulo": "Esta es situación que se vive en la ciudad de Manizales tras el terremoto - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPVWRodXBSbG40a1NhN29zdFgzRVFpVlFqNWs4T25MQkp4MUo1TFdjcjE0b3RESks2clRPLUVuSHNoZG5kNlVFdVpvZndPUFNOSHg2NUphZk5iRFlIYzRURjU4TVo0OFktUzZ4V1JheUFERlZIZWRSekRJakRIVWc2a3Vmci04MUlYcHBIVVpYNU9iSUo3QUlXa1FaVEgtTllIbUhXVmRTa1RTT3czdi04QzJNb3luVHdMa1pjbUVWUEd6UTRYUXNxbGpuMFNuV2libnFHVWZGWmg?oc=5",
+      "medio": "City Tv",
       "tipo": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
@@ -8004,13 +7338,6 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "titulo": "Fuerte terremoto de 7,4° sacudió a Colombia: hay más de 100 muertos y miles de damnificados - Contexto Tucumán",
-      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYlBMMlY1MTloQ1RBQTJQWDNxdC0wRTB5RWt6T3duX0xLVHZJSDZRcEU3RWMydlBCaVNOS09jWlF5andmTTdGdGxtTFduOGVWYUVmU1Z4Vy1aYkYzSGdYRjF6b3ZkR2tUbEVaSVFiU1p1eW9MS0p6WTlpNWx6OWpSUVVObE5zX1hEMGczSHRPTkRMc3cxOXpQUjlfVktvUDlCUWEzaFJfeF82MjRTdjdCVTJDMnZuUkRsQjhiYlpUSVhHdTJRWWxlMTdqRVYxQ3NETTVxNA?oc=5",
-      "medio": "Contexto Tucumán",
-      "tipo": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
       "titulo": "Así fue como golpeó a Colombia el terremoto más fuerte de este siglo | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNV0VzenhETHFWMktTcDFBM2Z6aFcxZlV0NGh5RXNOT2hoT3VGb2hGd0xrSFk1R3FEeFJzX3lQU2w2Nl9xdm53bGtQYWhNdGpoVkx5ZXJDZmdEZVktVnZhOU5aZnBwcTJSelc0YkRVNmVUaXpkSmpnRF9nV1hEUHpqeVR5bHJkcHBvSTVwSjZrM3Q2bklCN0U40gGcAUFVX3lxTE8zTHpJMUl6NEZDV28yTFRMQVNpMjk0ck9SWE96RHJad25sSV9iSkdJMV9HVWxxeEJQUWFWSmJjbVpPXzBMaVI1MEwzZGhvWkZyX3NDdWQ1VVN4T2FqUFNESG01VzZIRFpUVDRhUGxTa1BnakJVU2U5aE11NU81WDFKR29BZU9ncmhpZUd0aGhsNVVneHhYTVVodENaXw?oc=5",
       "medio": "El Colombiano",
@@ -8018,9 +7345,9 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "titulo": "Aeropuertos afectados tras temblor en Colombia - Telemundo Orlando (31)",
-      "enlace": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNc2t1RzFielc3c3Y0WVRDMkY3XzY0ZEQ5a1dyTndHeEdzRW9BbEhnUnRkNGVYOWVOUGVTdWRYUVpDOGFMYlJmNVhvM0VOU1M5TTliR1JsYmdWX0NNczZDTzVxMVFvVXNodmROMy1BdVk2WnVTcjBuYWhmYzR5aDNnTFdEQU9tVkJpUUNZZmJyc3l2TzNyYllBWmk4d9IBowFBVV95cUxOalZ2TVZ4WjFRXzNnRUljaWlJLTFuTTc2aVI3aVZzdE5nM3daUUF0YnJBeS1PLWVBaEQwMTduT2M0MXk1SjY1V1NkU0t1RzRyc2R5ejR4MkVtZkFkUC1PQkJ2eExablNtX0l6dko1bnptSDNHQ3Z2LWR1ZXE0WEhQQ2RHMGt0dzhHeEJweXA5VWxNZ0RVRXN5elRVOHBiWlkxT0NJ?oc=5",
-      "medio": "Telemundo Orlando (31)",
+      "titulo": "Fuerte terremoto de 7,4° sacudió a Colombia: hay más de 100 muertos y miles de damnificados - Contexto Tucumán",
+      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYlBMMlY1MTloQ1RBQTJQWDNxdC0wRTB5RWt6T3duX0xLVHZJSDZRcEU3RWMydlBCaVNOS09jWlF5andmTTdGdGxtTFduOGVWYUVmU1Z4Vy1aYkYzSGdYRjF6b3ZkR2tUbEVaSVFiU1p1eW9MS0p6WTlpNWx6OWpSUVVObE5zX1hEMGczSHRPTkRMc3cxOXpQUjlfVktvUDlCUWEzaFJfeF82MjRTdjdCVTJDMnZuUkRsQjhiYlpUSVhHdTJRWWxlMTdqRVYxQ3NETTVxNA?oc=5",
+      "medio": "Contexto Tucumán",
       "tipo": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -8458,6 +7785,13 @@
       "municipio": "Alcalá"
     },
     {
+      "titulo": "Desarticulado el grupo delincuencial “La Vieja”, al servicio del GDO “Los Flacos”, en operativos en Valle y Risaralda - Telepacífico",
+      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNNzJrNG9FVlZ3SXk1Nmh1N2ZvWEt0WDhkTzhObm1Rdi1tUE9CeFJmWGpiV0F6XzRsSGVWSDAwT0VrM3pwVndGdjhDbmhrNGs4Y3FiVU9fczRzQ2d6eXRqeUNDSW8tc3FfbVRJV1huWHhpZ3lyWVRNUG5WNFdiaDVoTUZOOFVSV05zQk1Ec2dGaG1idFN6ejJONlRvS3BDaXRuRDVXelhQZXZybm1OUDY0UUFMODVUblp4azlPSDFPZnpGT1JGV2g1R0ozN3UtN2hVTUg2TzF4YzZpNHNVSE1PQlpxLURkMzdHWVdj?oc=5",
+      "medio": "Telepacífico",
+      "tipo": "unverified",
+      "publicado": "2025-11-27T08:00:00.000Z"
+    },
+    {
       "titulo": "Un terremoto de magnitud 5 sacude China, hay 5.988 damnificados - expreso.ec",
       "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORFJsN1Zqd3d1dzE4OGVhYmxSdjdrZ2lndzYtNUM2YVM4ZzhLdS1pa1QwRzZQN3VDenNPMk1YR21jNnl0N2REcURmMk5tQWtMU0wtVktycWNESmZIMm1JTHljbUtHLVNGREgweDlycF9SZV9jeEpXb0NlN2loaWFLSXZfbHJpUFo0enlyemZEcjBxa1VRbWNkSFdldndmdTBQa0RJdQ?oc=5",
       "medio": "expreso.ec",
@@ -8544,6 +7878,15 @@
       "medio": "Canal 1 En vivo",
       "tipo": "unverified",
       "publicado": "2024-01-19T08:00:00.000Z"
+    },
+    {
+      "titulo": "Momentos de tensión: Pasajeros evacúan avión en aeropuerto de Armenia por sismo - Colombia.com",
+      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcFVqN09ycUE2NTJuY290OXk5a2lual9waTB1MHJKUGRVNmMwYlpma0NxbzlGbThJMjk3RVhtWGZoc2w0ZXlKY0NNbkJTcEFSdUg4eURhV3hDUnA1VWx2R0d5MjVCTjF3WDU5VHYwVzBfVFBJODh5ZXduU05hMmJXOUMzRlFoeTl2akpnUk11Ul96MVVuT3FJcGVuNjNnRV9YZ09heXdWRmVkQUxLTC1LODVaUWxGenNXNG44aVZLcEtZZnAwdG8xLUJ2cnI?oc=5",
+      "medio": "Colombia.com",
+      "tipo": "unverified",
+      "publicado": "2024-01-19T08:00:00.000Z",
+      "pcode": "CO63001",
+      "municipio": "Armenia"
     },
     {
       "titulo": "Construyen viviendas provisionales para los sobrevivientes del sismo en China - El Informador",
@@ -8653,6 +7996,13 @@
       "municipio": "La Victoria"
     },
     {
+      "titulo": "Deportistas reconocidos se unen para ayudar a damnificados del terremoto - Unicef",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRDBGMjNIM3JYOW1ZNlJ5ZnpQd3MxYmlXOS1Ea29JSzV0dUhQMUVMcU1zZkxEZ2VHUWxDQnFYZXRLaENJZmJOakt6dFUxUGpfQXpUVTZxV2ZTcy15eVg0QmdjR0hRblRkWFlwRjI5dE93eDhEb2RlVUoxQl9KOU5wQmY1R3VuNWRLeS14Z01WU1hSNWY4N0dyc2xPTF9rVTltbjAyY1ZxdW1MWnJZNHFHNVRWMU1OWDByRWVxRw?oc=5",
+      "medio": "Unicef",
+      "tipo": "unverified",
+      "publicado": "2019-11-15T19:32:13.000Z"
+    },
+    {
       "titulo": "Funcionario de la Gobernación del Valle fue asesinado en Quindío - Noticiero 90 Minutos",
       "enlace": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcWo3cUNUcmxfM2gtVXlDUWJDREtmMU5WWERLZFAxQnlZS1Q3ZlRrR0NfMkxhWEg0VEhpYUNnRGVEM0ZvYmd6dHNlQ0otVkh2ZUxIbHFZbjVyX0JjN3BJWjRPaFhGRFdFNDdiM0xmbUFRV2UxbDhVdVhTMmMzeGo1aVk2V2ZjQmFBanJ2T0xkMDV0SW_SAZgBQVVfeXFMTkNjdDNobXFBYVp1UEtqRF9iNzdrSlVaVFUxZ3NGU1RrZTJoVGxmOHlaaE5NcE5fREY3VEZ3a1pORFZtR1NDNmhKV2dabkxFNkZaM0JlQ0ZzeVpnbC1wQXVQRDN3XzlDSlZodG5UblNUVlpFMV9zcGotV3pPYTgzWFNsQzc2Uk5Vbm9EMVl5ZlloUFRLdmR4Y2k?oc=5",
       "medio": "Noticiero 90 Minutos",
@@ -8755,6 +8105,13 @@
       "publicado": "2016-04-25T07:00:00.000Z"
     },
     {
+      "titulo": "Liga de Quito anuncia convenio para atender a damnificados de sismo - Ecuavisa",
+      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbU5LeDRmVk1FVDhJQk5sWkgzcmVwdlFkeUc4Y28xTVVzYk9RZEJNLVUyZEpxdEdDRTRMZjl2S0FfaEU3NVlHVWFOOE9CdVB1eDdmQUFZb1RBQzR3UEVRaGEtZWU1T3RpQzZCbkxKRUkxek8wY0t3Sk55cDVBcTY3WVd0bElqSUZzMXlLZDBOOUxaS29PdFIxdDNwdTBYUjJiWEN6NHhhQzZhUjM4Y1hRcEJEbXFWYjZIcEpj0gHAAUFVX3lxTE40RFA4RW5WaDhxM1kzSWtYYk45SEI4QmJzNkx0cTVZRWZrd1M2Ql9RaURMSHN0aXpiRFp1SFhwSG9aLU5QOXZvUjgtcEllMmRDeGhBVWZmMndlcXJxa20teXRueUJNWmhkRjUzYXlwY1hSMEdrcFpQUHVOY0JCYmZGLWw0ZEhtUFpNbmcwVEtZU3FwVjNHTTBMSER1WDB5bmoxaGl4RDk1eDgyRDFrb01XR09SU1QyTVdwem5GVFRzNA?oc=5",
+      "medio": "Ecuavisa",
+      "tipo": "unverified",
+      "publicado": "2016-04-20T07:00:00.000Z"
+    },
+    {
       "titulo": "Cruz Roja China dona 100.000 dólares a damnificados de terremoto - La República EC",
       "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQeTZZcER3YmlabklPSkpqRFNldzhYV3ZwdDlZZ2lESkppcTRERmFiMkFZTUU5eXdCRVNETVNzVTdCcFVWbmR4NmpmNDhBNGQ5bUMzMEhMempsYVd0dzJTS0gwaTlPc3pid2hmRlVNN2lGdmptVGdSQXJQaTJ2VXVTQ1cyRHJQQXJOMHBxMGh4QVJpSXpia0UxVGM0OUpjNDRoM2V0bERCRE1kWllM?oc=5",
       "medio": "La República EC",
@@ -8769,16 +8126,16 @@
       "publicado": "2016-04-18T07:00:00.000Z"
     },
     {
-      "titulo": "PNUD habilita cuenta para donaciones por terremoto en Ecuador - Ecuavisa",
-      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObjVPSUoyamszV1p3X0RXOGFvYjdDRGpUbU5QbXExc0dUdlgyaDYwWEIxZXhteWI3cmFFdWE2SzlKbzNuZmNxeWdBMVp2ck5PSjRRZjEzSUIxNVhOclpxMzlVYjhydmZoM0Nwblg3aWxOdFZ6ajZuQkZhV0JTZ2FpUy05bUFPQWFiM21sRW9VcV8ydmd4YlY5b09tQ2VxWkJDR2NvMmxjRTdnTE1jZTFoaUtNa9IBuAFBVV95cUxNTXRNVDhNM2hmRDhIakY1YW5KaE9PYThFY29tZGpHclBscklfT0ZzQjBMMmRLeHZNM1htaVJqUWRXN05Yay1MUmZmSGtwb1JkSXZudGMyU2Z1Ym1pVTFBdGlCMEJEQTFmQ1pfbV91UVVuVmhDeFR6a282U0VPTDhjSE1ldWZRem93bTYySXY0TTNPMDkzRXMzRVhMc2JRZUhTcGhCdFFvZUZJSW9zWHZJbUoxVVhXM29a?oc=5",
-      "medio": "Ecuavisa",
+      "titulo": "¿Quiere ayudar?, estas son las opciones para donaciones por terremoto de Ecuador - El Universo",
+      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbmNleUtfZGJoejVrTDN0MDhMNGtsek1QVzZPMVVsSlhpSVo1ekM4V0hPbXRVSVd5S0p2XzJNb3VuVzNvd290a0hEYWJUSVdFd21BMWVGMDFTUGRJcTlEdFRsNHRKckQwY0I4SW0xd29pZmpWNEo0cXM1YklTUG5BTE1JMmxZeWxuclFGMTdwSnR6MG1OdFBqYTdMZHQ5Qng4cGNBaGFTczZyYUFUZlRFZEYzU2J2bnJMeDNqQXk3b9IB0wFBVV95cUxQbTZ4MEZyd29xdnU5dGFrOFBHV3JFZlVtR3ZldWs1R0JRV21kY0dBRi1IbzFZaHFpZThuSXpCWjBzM2IwS3A5VzhleXJIWDBKa2toOTNiMmJqNnNnUk1kcXRWWjc1U0dTMjhGcE1XYkl6bWxpWFgtWVk3Ql9NNHZqZURMRmUtTGNMS2lUU0JvMTJPSkc5LThiVFFac3dhdlBUdHRSdFQ3UlpTN0pXWktRd2RDVUVPWm10LXlBWXVpcnZ2V3BRRkNqVThmZy1OREtGdHpV?oc=5",
+      "medio": "El Universo",
       "tipo": "unverified",
       "publicado": "2016-04-17T07:00:00.000Z"
     },
     {
-      "titulo": "¿Quiere ayudar?, estas son las opciones para donaciones por terremoto de Ecuador - El Universo",
-      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbmNleUtfZGJoejVrTDN0MDhMNGtsek1QVzZPMVVsSlhpSVo1ekM4V0hPbXRVSVd5S0p2XzJNb3VuVzNvd290a0hEYWJUSVdFd21BMWVGMDFTUGRJcTlEdFRsNHRKckQwY0I4SW0xd29pZmpWNEo0cXM1YklTUG5BTE1JMmxZeWxuclFGMTdwSnR6MG1OdFBqYTdMZHQ5Qng4cGNBaGFTczZyYUFUZlRFZEYzU2J2bnJMeDNqQXk3b9IB0wFBVV95cUxQbTZ4MEZyd29xdnU5dGFrOFBHV3JFZlVtR3ZldWs1R0JRV21kY0dBRi1IbzFZaHFpZThuSXpCWjBzM2IwS3A5VzhleXJIWDBKa2toOTNiMmJqNnNnUk1kcXRWWjc1U0dTMjhGcE1XYkl6bWxpWFgtWVk3Ql9NNHZqZURMRmUtTGNMS2lUU0JvMTJPSkc5LThiVFFac3dhdlBUdHRSdFQ3UlpTN0pXWktRd2RDVUVPWm10LXlBWXVpcnZ2V3BRRkNqVThmZy1OREtGdHpV?oc=5",
-      "medio": "El Universo",
+      "titulo": "PNUD habilita cuenta para donaciones por terremoto en Ecuador - Ecuavisa",
+      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObjVPSUoyamszV1p3X0RXOGFvYjdDRGpUbU5QbXExc0dUdlgyaDYwWEIxZXhteWI3cmFFdWE2SzlKbzNuZmNxeWdBMVp2ck5PSjRRZjEzSUIxNVhOclpxMzlVYjhydmZoM0Nwblg3aWxOdFZ6ajZuQkZhV0JTZ2FpUy05bUFPQWFiM21sRW9VcV8ydmd4YlY5b09tQ2VxWkJDR2NvMmxjRTdnTE1jZTFoaUtNa9IBuAFBVV95cUxNTXRNVDhNM2hmRDhIakY1YW5KaE9PYThFY29tZGpHclBscklfT0ZzQjBMMmRLeHZNM1htaVJqUWRXN05Yay1MUmZmSGtwb1JkSXZudGMyU2Z1Ym1pVTFBdGlCMEJEQTFmQ1pfbV91UVVuVmhDeFR6a282U0VPTDhjSE1ldWZRem93bTYySXY0TTNPMDkzRXMzRVhMc2JRZUhTcGhCdFFvZUZJSW9zWHZJbUoxVVhXM29a?oc=5",
+      "medio": "Ecuavisa",
       "tipo": "unverified",
       "publicado": "2016-04-17T07:00:00.000Z"
     },
