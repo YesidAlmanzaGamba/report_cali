@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-21T17:02:24.473Z",
+  "generado": "2026-08-21T17:54:47.864Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -28,6 +28,14 @@
       "medio": "elpais.com.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-21T16:16:34.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
+      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
+      "medio": "Bogota.gov.co",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-21T15:26:26.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -80,14 +88,6 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-21T02:00:09.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
-      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
-      "medio": "Bogota.gov.co",
-      "tipo_fuente": "official",
-      "publicado": "2026-08-21T01:29:16.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -150,6 +150,16 @@
       "medio": "El Comentario",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-20T02:45:22.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Cali investigará si hubo fallas o corrupción en edificios colapsados por terremoto de 7,4 - Visión 360",
+      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOV2hkc3h5OUJSTG9HWFFKd182UlpnQ0dxWjVkeGJFWjdxN3NGREpsYTVMS3lGZzctZGVOb1lidlh0MGxOdkxOdHpGeVV6TFhHem53WkVuRUlZd0hfYUVpWDRGcHd5Qk4yZnoyUUZtS21raWlrcFpwS0J5bE96d2ZCMVJ4Q1JDeERaaVpEMVhhLUxQZUtLZUJPWmlEWldmWGVvTmdNUTZ0MUc2ajZ2S1FOcU9kZFRsemdXMkRCZV9vTjMxbXdqeExzM05TaFAzTWJMYVNabGt4UFN2Y1d30gHcAUFVX3lxTE5XaGRzeHk5QlJMb0dYUUp3XzZSWmdDR3FaNWR4YkVaN3E3c0ZESmxhNUxLeUZnNy1kZU5vWWJ2WHQwbE52TE50ekZ5VXpMWEd6bndaRW5FSVl3SF9hRWlYNEZwd3lCTjJmejJRRm1LbWtpaWtwWnBLQnlsT3p3ZkIxUnhDUkN4RFppWkQxWGEtTFBlS0tlQk9aaURaV2ZYZW9OZ01RNnQxRzZqNnZLUU5xT2RkVGx6Z1cyREJlX29OMzFtd2p4THMzTlNoUDNNYkxhU1psa3hQU3ZjV3c?oc=5",
+      "medio": "Visión 360",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-20T01:51:30.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
@@ -478,6 +488,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Manizales habilita un segundo albergue y un nuevo centro de acopio para damnificados - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxObjVNbnZhTGdVZFR1RDVfdEJrTTlVZEFiWWVRYUlrRTF5Q0RWUzJpdFZ0WkNaWTFuQnVJRmhvNzFXaW1HLXE1Z1psa203R3FmTHdSaWxLSXRQN2ptWmFBN3VWZVpkSnR2bEkzbUZfV3RGTzNyQVVSeHdobzdZX2VQLXRTRkNrckRCZElfM3lVRFFlNlZZYjJqdUp5MGZfc0VFWk0zTmdLdTR2ZnpNYkZidlNielRpVnRyd1c1NHdMNWxNUmVyTjFPXzBBWVdSUURBX3k3cFZ2dXF1R2tsMVRCWGJfVnV4QkE?oc=5",
+      "medio": "City Tv",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-17T11:19:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQTJNVUlhaGlmbzJsTzg0NkJGZHJ3NzduUG9FUU5QV0xvS1p5UXMtN2dNZVM3ajZTQUVhTlVCNmtVMHdubVVkR1FfWDl3MzJtXzNOcC1KNVdIbEF3cFlMUTN6eXVMTmZMT1RkeFZiWGlvRFFkd2I1STlXVmhsNUxmSGpMcnJtX2pzTG1oUUd1b0xHNzBTb2JpSm9YcHQyb0VtU0lPZg?oc=5",
       "medio": "Pulzo",
@@ -565,16 +585,6 @@
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-15T15:39:32.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Huron Daily Tribune",
-      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZl85MEdxREkyZ0RYUHhySFhxUGxQVzBBWDdjejJOQUQxZ2ZvUWthQTJGdnZhdkdGNnNLbDlPbkRTNGlaRGtLOFk4VXY3M09ERHVVb0lTS2RJSHpBc0EzMVdFTEVzcEh6T29OWnUzTkdYV1pXM3NLV00zM3ZfRG4ydU9QQkUxTE1FUXppTmRxcHhBVEFOSUNUN2hmRFBnNlZ0akljUlI2UmkwbE0?oc=5",
-      "medio": "Huron Daily Tribune",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-15T10:39:06.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
     },
     {
       "tipo": "centro_acopio",
@@ -687,16 +697,6 @@
       "publicado": "2026-08-14T13:25:24.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "‘Ellos también son víctimas’, rescatan a animales de entre los escombros de edificios colapsados en Cali tras el terremoto - El Universo",
-      "enlace": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQWWcteHpXQVUyT3lKZjRCZ1MyOWlNdnFYckNSblZjdEZtTmtjdWV3N1hxSVVMRTcyaGJ4YnRscmRtNmlFb0kwVDA2WDNsTGd2SFhDZjRjRHBiWXNaR1FaUW0teVVhTXBxUk9jREY5TnltT0R6anR5U1VQQWVSemExUWEwcF9JTWt3V2NBb1diaXExNDNsR1BMMUpIdHJoRUVXWGVDemNleldxMUt1eDVXR1NGVGUzUTRTTUZ6clVfTXA4amJlZUg0MERmY1d2bUVILTJTUmx0aDNWcUJlS2NjUktzRVZPN1FCUUhtRTNfalUybGRQNTJyLUdQd0dpWHp5azNUVFZB0gGaAkFVX3lxTE9RZm5vRFJxYV9hSHdNZVJVNWRCTUhjQ3dOa1VEbjNMOHpKWWluYjFlRzJVSk1mVFQ2UU5veUNTbXpEem1JeEZtU19zU3lITzhSSkJEOHNSbF8talJmaVJiMm5GcWI3X0hRZmFEZFd3eW1wRDA5Sng3M3g4YTc1Vk1RX3F0SVlsenctYm1JUUZOZ1BfUlZmR1VYZkRRclVnSWJIZmE4NXowQ21Sa2xnZEZaLUJPSVZKMkJ4OE5nWldnQTRZQ19UcVBWLWZBbXdKM1JZV2JKZ2d4TWgzVFdLMkZtdDNvMTVwTXFRS3h5TllqNGt1b0FWX0pEWlZ0RXAybHNyVl82QlBYSXRxLVFMaGZjc3RtdENfbTQxZw?oc=5",
-      "medio": "El Universo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T12:23:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Impacto del terremoto: 84.360 viviendas con daños, 210 vías afectadas y 284 muertos - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1Z5NHdWTVRqUlZqTjVPeEZSRHB5dk1KeDdUelU2aEJ6YkFkOVl0QlJqWVZNVTVnM0dQQjRrVmJlZm9FRmpUbjVrMDdfREtJR2Ztem5JMi1Pa3BaTmZWZWplNmt4S2Z2ek9adHo5V09Ra0x3YXFPeEVwWndvNFczSVdRUVZYbi1hMnJkWVdxc3lOTUJQUFVSSVl1TF81dEdrNDJzMEFhTU9TUk5tN24tVzhpcXd4Vm4yUmlGYmRRUG12SDk2eHlWaTlFTjjSAdIBQVVfeXFMTURydGhPY1B0UFRjWWxPMDFfS2JYVmU2dGdrQnA1QkpwRDlDQkJSWkpNUnExWk5GaEJsZEt3N2x5cWZ4WE1KTzJHZEhoRUd2XzRIX1NXanFpMDhaOWZfb044RnZfVDR5UzdpTTkwbzViVTJlZVc2N2JUQndrclhlUEpXUDQzaFBjc3N2RzBKOHRHbkRveHZvUWFIbnlNSWJSRmJxZUtyM1Z5TERTMHlESzZYbEVnVVVwa25QRzQ1OEh0VzZuRnV5Mnp1S2U1UUdEOVRR?oc=5",
@@ -733,16 +733,6 @@
       "pcode": "CO66001",
       "municipio": "Pereira",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Pereira%2C%20Pereira%2C%20Colombia"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Los reportes locales de bomberos, centros de zoonosis y albergues en ciudades como Cali y Pereira advierten que se multiplicaron las solicitudes de búsqueda, recuperación y reubicación de mascotas tras la emergencia - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeFp4bE82Z1dfUVZaRHM4a19qTXpnYWNWTVNJOHkwUFI1TUJ6TEVDUV9FcnU0b0wxZGlnUnBheGh0dk40VUp2Mm5SWEVSLWhvTDAwNTNDREhiRTlIYjZua3ZicFNkSkRtZUhBMVlDeWRYOGl6Zjd4MVhhWkVaVEozaERJRVhmWDlOcm1qUXBpN3JvV3RPWE1OM3hteUxXOHoxdWlYcVc3bTBFZElJSS1CVGdqc3lDaGpJSHpMdURjZER5Qmtfa0RCaml4dFkwSFhRejV6TldqRWt0eWVlakE?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T01:31:48.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
@@ -797,16 +787,6 @@
       "publicado": "2026-08-13T13:00:50.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Manizales habilita un segundo albergue y un nuevo centro de acopio para damnificados - City Tv",
-      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxObjVNbnZhTGdVZFR1RDVfdEJrTTlVZEFiWWVRYUlrRTF5Q0RWUzJpdFZ0WkNaWTFuQnVJRmhvNzFXaW1HLXE1Z1psa203R3FmTHdSaWxLSXRQN2ptWmFBN3VWZVpkSnR2bEkzbUZfV3RGTzNyQVVSeHdobzdZX2VQLXRTRkNrckRCZElfM3lVRFFlNlZZYjJqdUp5MGZfc0VFWk0zTmdLdTR2ZnpNYkZidlNielRpVnRyd1c1NHdMNWxNUmVyTjFPXzBBWVdSUURBX3k3cFZ2dXF1R2tsMVRCWGJfVnV4QkE?oc=5",
-      "medio": "City Tv",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1141,14 +1121,6 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Integrantes de selecciones de boxeo afectados por los sismos están en refugios en Caracas y La Guaira - DiarioVea",
-      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQV1h3dFJBVk01MXRWLVlZMmJPSnpVV2Rhajdhc1FHUnZ1bHRmSDVIczNtWmd1Tm9NLTdiSGtzOWhJbC1Rbk5NMUNvSklUSURib0w2NG1rbmpZMi1iWlVZYXJ0b25kZUJzejdNbkt1aUZ1UGd3Wkc0THhSVUlHTGtYSU5SalR6UGVOQ1kzS1htQ2FSa0dNWXZqWXNRbkVRbGRrMjhfaXNnZVdkb3lOVWxFZzVkdkF3bDk2bFNBYUhNMG5rVEFoQ2JwUENWdzVmVlp6dGJwdVIzY0w?oc=5",
-      "medio": "DiarioVea",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-07-05T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "La Patria Manizales. . Manizales ha recaudado 7 toneladas de ayuda para los afectados del terremoto en Venezuela La iniciativa es liderada por un grupo de venezolanos radicados en Manizales. Una mujer prestó su casa para que fuera centro de acopio. O - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQVhFRE1tZm5yci16ODhrXy1Db2pNUWxaQUFIQjVfVjlKSmUyaUhTN2tpQlVLb3hmTVY1MzFoMG1CMkNMT1BSdVVVSWRWMWRiSjUwNzV5Q29wcHpTbEtGend5N3lTWU50MTBPMjMxNWZpTmNfNkNhZ1dIdkNMTDZjZXhvLUJEbnhKTjRjT3hXaV8ybk9MMjlXWDFmOXhJNEk3N0JBQnJ4aWNjeXhSenFiNkx1NEJzVEVNcmZINUpwY2RnUFBuNm45V05JVjZScUhPSTg1RlNXTkZHR1BPRnpsaVV6cw?oc=5",
@@ -1165,22 +1137,6 @@
       "medio": "El Diario Venezuela",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-25T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Conoce estos 4 albergues para migrantes en Puebla - Conexión Migrante",
-      "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRFhiSS1vWVRDYm41NUE2dGc1bHdUOGZ4Z2xMTW9idmNJczFDRFVicE8xLWdtY3l1SDJlOHdVaVpWOUNlTDk0Y181NzJYbWc5QzNDWnlYQk13OEh6aDItemxHQ2ZHbU4wSnhIYWl6bS0zaGNQQVZiTEhVUnlhSFo0dWczZVRmRjlFNTU2ak1XSnRZUG80cWxn?oc=5",
-      "medio": "Conexión Migrante",
-      "tipo_fuente": "unverified",
-      "publicado": "2023-10-16T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Asentamientos humanos de Villa María del Triunfo tienen refugios en caso de sismos - Agencia Andina",
-      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2dLdmRJZnB0bzctRnhqUVVqYWp4YXo0VFlOQmRhZ2UzZ3MtcW92SWFpTFpZbXhiQjVUVnVOX0NDY0dLYUctV0FLWG82LVNoNU5XclBqZkJseHp3cUp3d2dpMWJwMmw0S2ZLcWRVUVdyUlQ1bHgwbzNTLThnOVlCc1pfWTZZcnVaeXpDcGVfWW84THNyNkxTWU11cTJvcXhGM0xReFVGV0ZhLUQyRlA1WEZlLU5BZlNHTERj?oc=5",
-      "medio": "Agencia Andina",
-      "tipo_fuente": "unverified",
-      "publicado": "2012-07-15T07:00:00.000Z"
     }
   ]
 }
