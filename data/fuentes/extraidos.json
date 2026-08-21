@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-21T12:31:05.209Z",
+  "generado": "2026-08-21T13:39:12.828Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -10,6 +10,14 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-08-21T12:08:21.000Z"
+    },
+    {
+      "tipo": "centro_salud_afectado",
+      "titulo": "Terremoto dejó 347 centros de salud afectados en Colombia - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcmNxUzNsR29RVl8yZ2JldGVvZjRwMndmMXo0V2IyNWw5dFJZVllyTWF0RjdDTVlQMDZQTWtTSFcteVRlNkFxYVQ1bURLSEFJLWItOUl3LU5LR1k5WHlIUkhKeGQyWGd2T25ja2xJZEY0eTVkNVRiR3VuR0lvUzVtNXZWdmNpel9xWmR5eUtsX3VLSUJzRHJteGFjX0dYMmRLc05Ma2t0d2loOVdkamJoWU4weHhxQUYzTnA2Ym5UelNqaTQ?oc=5",
+      "medio": "City Tv",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-21T05:11:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -62,16 +70,6 @@
       "publicado": "2026-08-20T14:50:10.000Z",
       "pcode": "CO41615",
       "municipio": "Rivera"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Santa Marta mantiene abiertos sus centros de acopio para apoyar a los damnificados por el terremoto - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYmRDRkFIRHJ4MUthN1l2SDVEWmdWbWs5d1Foak9RMUc5ZTNTMGd0N2I1dVdrRDV3bFExWi1rTTFHRVlvUlhUdEFYVTdRSTVEN0MyTEV2TThDb0FUZldyaDRUcWZtRWFiUWZhbHBCTGpYclR6eXNDUHU3c0pDeE5xZENuUHZ5ZmVqcDZXQlNrRjFSVU9JQ0J5WEV1VExhcjRBOVpQUGVkbTJvMFpDa0JTZUtYUUx1cjlXNWdRd3UtSWJYRmNvdENpd3hvMkh4U03SAeMBQVVfeXFMT3haa3B1T0h0bW9ud013dTdSbWo0YjY4OWdzc1UtUVEzRERNRHVXNjNmQ0xtWUFQWGg0NXZLVnMwY2xheVFXUDdBeW9HZ2d0bmk2cGl1ZHJPSUhyUl9LbURPNEdqMm5ucDJkRFFCanhIaEg0UnE1Tll6WVVndkhuaTdkR1d6UTdzTXE1R19yUkdoekdDUUN2RTN1TUlETTFyQ1lSRmhiRjNYWktRSDVGVkVVOGpqYktINVI3X05lMGNta3d6M1lBdmRZaUV0VWlVR0pVMmViQkREVnFuOWw2TmxvTVU?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-20T12:50:06.000Z",
-      "pcode": "CO47001",
-      "municipio": "Santa Marta"
     },
     {
       "tipo": "albergue",
@@ -603,16 +601,6 @@
       "municipio": "La Esperanza"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
-      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
-      "medio": "Reading Eagle",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T15:24:20.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQm1ibWhiTjVWU1BBakg0amhFZkR4WTVtUU9hZnhRV1h0eTBxVzVOSGQ4TXp4WWdlNXAtaVZnRXFiQUEyQzhsSzByMEcwanpYelItRHVRMGs5WGZ0dVQyTTVkUkl4NkFhTWVNZUFycTNwM1NIZG1mcUtLOHR5RVdjMG5GZ3dYdVlKR0VPOU9McFk1Mjltb2pKRTBTSnNVcmJpdEI3XzdmcHlTRERZYnFTOVVtWVFHRnp3b2ZmRVMtLU9tTFU?oc=5",
@@ -648,9 +636,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Dosquebradas amplía su red de albergues para las familias afectadas por el terremoto - Dosquebradas",
+      "titulo": "Dosquebradas amplía su red de albergues para las familias afectadas por el terremoto - Alcaldía de Dosquebradas",
       "enlace": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNVWhBdU9pWE1XR2I5bGw2RnpZcW5BM3hEZy15cFM5cnowa0xZemxvejh4ZUpDQ1dPbU5lMlEzX2FCdEtBaGxYcjJJYzNPZ2tuN2hrb3JsVmQzZ19Fbnp3TmF5bzMzeUlnQ3NyNlBVZFZDRTlDek56VTJrUllrSW5hTENJdXJlbXNseE8wNUhPVlNORXBYekVMVzVyTUplUklPMzM5MEtVeTRwYmtxZzM5am5kdlhnQmtPY2VFeFhlR1FEa2VxejlxMkRsbzR2V1VXT0Rqek5pTm5ScjgwbUdtb0R6WGF1ejdIS3JqQlVaZkk2bnkxWW40M1F1WnpRQmE5NXdia3dUUXBYRFU2c09fZmh1ajFQZw?oc=5",
-      "medio": "Dosquebradas",
+      "medio": "Alcaldía de Dosquebradas",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T11:26:22.000Z",
       "pcode": "CO66170",
@@ -663,6 +651,18 @@
       "medio": "N+",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "sede": "Coliseo Mayor de Pereira",
+      "titulo": "Habilitan el Coliseo Mayor de Pereira como albergue para los damnificados por el terremoto - Telemundo",
+      "enlace": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQbThROTBvWE5JRS1qdlRtYVVFX0g4V0tObE5WLUhfZ3dCOHljNUdRenRUOHVaQmhhQ1E3aUs0TjhQaWpQTkU1elVsd3FoTXlWSEY4Uy1UNThYQ3o4ZDJ5TW9uMzhLTWVqdVhhS3JNeFZfZjdudHAtMFVvUUhUcDkyTThSWU05dy00UVRuVXB5ZXJxMDJhVmIzS083OXVWbFNGTTRSb21lVlg2V2czVlFVSlc3Q1lUdHF6NGNnRi05d210S3ppamdVY2NRcU1vTTlqQ2ZBZU5VX2F1TzBXekVYS2IwLWNPSG5RR3pES3R6TXYyYWJSMEtpM2pia2pWbkZXblpndUZOVVVSTWVEeUJWSA?oc=5",
+      "medio": "Telemundo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T05:37:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Pereira%2C%20Pereira%2C%20Colombia"
     },
     {
       "tipo": "albergue",
@@ -735,6 +735,16 @@
       "publicado": "2026-08-13T13:00:50.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Manizales habilita un segundo albergue y un nuevo centro de acopio para damnificados - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxObjVNbnZhTGdVZFR1RDVfdEJrTTlVZEFiWWVRYUlrRTF5Q0RWUzJpdFZ0WkNaWTFuQnVJRmhvNzFXaW1HLXE1Z1psa203R3FmTHdSaWxLSXRQN2ptWmFBN3VWZVpkSnR2bEkzbUZfV3RGTzNyQVVSeHdobzdZX2VQLXRTRkNrckRCZElfM3lVRFFlNlZZYjJqdUp5MGZfc0VFWk0zTmdLdTR2ZnpNYkZidlNielRpVnRyd1c1NHdMNWxNUmVyTjFPXzBBWVdSUURBX3k3cFZ2dXF1R2tsMVRCWGJfVnV4QkE?oc=5",
+      "medio": "City Tv",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -849,6 +859,16 @@
       "medio": "Radio Atacama",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T17:35:14.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Cali: estos son los centros de acopio y albergues habilitados tras el terremoto de 7,4 en Colombia; conoce qué ayudas se necesitan - Newsroom RCN Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOTHNkTWxEeEZNd25IenF5QnB6WDJzYXc4cDFFdTM4dHFjUGN6NUNzMURXNVIyYWdDQ2E4WVhGTkR6SWJ2blhqUHdIZjVoWjV4TkR0UWhOYllTYWRQVmxpcC15RkU2d2VZSnhYLWtYQ0ZNWVVIVkVEOExIR1NiODhINE5YYUo4dFQzSklEX2Q3cTdab2lHM2I2LUhKcTdzMUozQnc4bDlXQThOWkJpLVZvaHlvTHdsOGphbGl2UTNSZVVZbHpCU1J5M2xydkpaSFgxM1didGF1MXlieVJoaGlEUFYzWmc0bEVxM21FbGdJTDdvQi1pb0lzdGZKdw?oc=5",
+      "medio": "Newsroom RCN Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T16:41:35.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_danada",
@@ -1025,16 +1045,6 @@
       "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Cali: estos son los centros de acopio y albergues habilitados tras el terremoto de 7,4 en Colombia; conoce qué ayudas se necesitan - Newsroom RCN Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOTHNkTWxEeEZNd25IenF5QnB6WDJzYXc4cDFFdTM4dHFjUGN6NUNzMURXNVIyYWdDQ2E4WVhGTkR6SWJ2blhqUHdIZjVoWjV4TkR0UWhOYllTYWRQVmxpcC15RkU2d2VZSnhYLWtYQ0ZNWVVIVkVEOExIR1NiODhINE5YYUo4dFQzSklEX2Q3cTdab2lHM2I2LUhKcTdzMUozQnc4bDlXQThOWkJpLVZvaHlvTHdsOGphbGl2UTNSZVVZbHpCU1J5M2xydkpaSFgxM1didGF1MXlieVJoaGlEUFYzWmc0bEVxM21FbGdJTDdvQi1pb0lzdGZKdw?oc=5",
-      "medio": "Newsroom RCN Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
