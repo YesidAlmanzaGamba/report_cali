@@ -1,12 +1,12 @@
 {
-  "generado": "2026-08-21T21:46:55.913Z",
+  "generado": "2026-08-21T22:15:55.963Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 234,
-    "con_notas": 60,
-    "sin_notas": 174,
-    "poblacion_sin_notas": 6252917,
+    "con_notas": 57,
+    "sin_notas": 177,
+    "poblacion_sin_notas": 6285412,
     "medios_distintos": 127
   },
   "municipios": [
@@ -212,7 +212,7 @@
         {
           "nombre": "Revista Semana",
           "notas": 1,
-          "ultima": "2026-08-13T20:09:06.000Z"
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -232,7 +232,7 @@
       "departamento": "Risaralda",
       "mmi": 7.9,
       "poblacion": 500806,
-      "notas": 103,
+      "notas": 104,
       "ultima": "2026-08-21T21:28:53.000Z",
       "medios": [
         {
@@ -271,6 +271,11 @@
           "ultima": "2026-08-21T03:31:37.000Z"
         },
         {
+          "nombre": "Risaraldahoy.com",
+          "notas": 3,
+          "ultima": "2026-08-17T17:21:36.000Z"
+        },
+        {
           "nombre": "La FM",
           "notas": 3,
           "ultima": "2026-08-17T15:51:24.000Z"
@@ -304,11 +309,6 @@
           "nombre": "City Tv",
           "notas": 2,
           "ultima": "2026-08-19T02:19:07.000Z"
-        },
-        {
-          "nombre": "Risaraldahoy.com",
-          "notas": 2,
-          "ultima": "2026-08-17T17:21:36.000Z"
         },
         {
           "nombre": "Noticias Caracol",
@@ -650,7 +650,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 14774,
-      "notas": 7,
+      "notas": 6,
       "ultima": "2026-07-24T07:00:00.000Z",
       "medios": [
         {
@@ -677,11 +677,6 @@
           "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2025-12-09T08:00:00.000Z"
-        },
-        {
-          "nombre": "City Tv",
-          "notas": 1,
-          "ultima": "2023-12-20T08:00:00.000Z"
         }
       ]
     },
@@ -1735,12 +1730,12 @@
       "mmi": 6.7,
       "poblacion": 2337182,
       "notas": 56,
-      "ultima": "2026-08-21T21:26:02.000Z",
+      "ultima": "2026-08-21T21:59:13.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 18,
-          "ultima": "2026-08-21T21:26:02.000Z"
+          "notas": 17,
+          "ultima": "2026-08-21T21:59:13.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1796,6 +1791,11 @@
           "nombre": "El Comentario",
           "notas": 1,
           "ultima": "2026-08-20T02:45:22.000Z"
+        },
+        {
+          "nombre": "Visión 360",
+          "notas": 1,
+          "ultima": "2026-08-20T01:51:30.000Z"
         },
         {
           "nombre": "El Carabobeño",
@@ -2261,15 +2261,8 @@
       "departamento": "Tolima",
       "mmi": 6.3,
       "poblacion": 13542,
-      "notas": 1,
-      "ultima": "2026-08-21T12:13:05.000Z",
-      "medios": [
-        {
-          "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-08-21T12:13:05.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO05679",
@@ -2579,15 +2572,8 @@
       "departamento": "Tolima",
       "mmi": 6.1,
       "poblacion": 8365,
-      "notas": 1,
-      "ultima": "2026-08-21T13:05:33.000Z",
-      "medios": [
-        {
-          "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-08-21T13:05:33.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO19212",
@@ -2793,15 +2779,8 @@
       "departamento": "Tolima",
       "mmi": 6,
       "poblacion": 10588,
-      "notas": 2,
-      "ultima": "2026-08-21T13:27:40.000Z",
-      "medios": [
-        {
-          "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 2,
-          "ultima": "2026-08-21T13:27:40.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO25168",
@@ -3091,13 +3070,18 @@
       "departamento": "Cundinamarca",
       "mmi": 5.6,
       "poblacion": 149173,
-      "notas": 1,
+      "notas": 2,
       "ultima": "2026-06-29T07:00:00.000Z",
       "medios": [
         {
           "nombre": "El Diario de Madrid",
           "notas": 1,
           "ultima": "2026-06-29T07:00:00.000Z"
+        },
+        {
+          "nombre": "Telemadrid",
+          "notas": 1,
+          "ultima": "2026-06-27T07:00:00.000Z"
         }
       ]
     },
@@ -3123,9 +3107,14 @@
       "departamento": "Huila",
       "mmi": 5.4,
       "poblacion": 26152,
-      "notas": 4,
-      "ultima": "2026-08-21T21:27:07.000Z",
+      "notas": 5,
+      "ultima": "2026-08-21T22:06:39.000Z",
       "medios": [
+        {
+          "nombre": "Infobae",
+          "notas": 2,
+          "ultima": "2026-08-21T22:06:39.000Z"
+        },
         {
           "nombre": "El Colombiano",
           "notas": 1,
@@ -3135,11 +3124,6 @@
           "nombre": "El Frente",
           "notas": 1,
           "ultima": "2026-08-20T21:19:18.000Z"
-        },
-        {
-          "nombre": "Infobae",
-          "notas": 1,
-          "ultima": "2026-08-20T14:50:10.000Z"
         },
         {
           "nombre": "Canal 1 En vivo",
@@ -3286,7 +3270,7 @@
       "departamento": "Norte de Santander",
       "mmi": 4.4,
       "poblacion": 12776,
-      "notas": 5,
+      "notas": 4,
       "ultima": "2026-08-14T21:46:31.000Z",
       "medios": [
         {
@@ -3298,11 +3282,6 @@
           "nombre": "AP News",
           "notas": 1,
           "ultima": "2026-08-14T21:46:00.000Z"
-        },
-        {
-          "nombre": "News-Times",
-          "notas": 1,
-          "ultima": "2026-08-14T20:27:45.000Z"
         },
         {
           "nombre": "Chicago Tribune",
