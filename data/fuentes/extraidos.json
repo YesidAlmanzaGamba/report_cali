@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-22T04:58:06.542Z",
+  "generado": "2026-08-22T05:25:44.194Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -298,6 +298,16 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "centro_acopio",
@@ -805,6 +815,14 @@
       "publicado": "2026-08-14T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "281 muertos, 3.971 heridos, 379 desaparecidos y 87.457 viviendas afectadas: la UNGRD presenta el balance de afectaciones por terremoto en Colombia - impactamag.com",
+      "enlace": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBBREVRTFdBT0xKb0daMmpaZ3hYcjNyeTZ5UnlqNnJnMFVkaE94MjFNNTI4enZGRzlRTElXREgySkE3OWpkbzY3YWVmakR0ai1sdmlVSDBRTk81UjEzU1Q4WXlJU2FaWUU5al9QSGl1Y1NMQUpENVdR?oc=5",
+      "medio": "impactamag.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T01:23:00.000Z"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Corferias habilitó centro de acopio para ayudar a mascotas damnificadas por el sismo: así puede donar desde Bogotá - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxORTR5TF9vVWVBalJ5V2ZWVW5LMDlZSGZiUU50ZTA3N0UtRUkxSnlNM01fRVVtTEd4TVBoN3ZoUC1VeDlsV3FpRzY3S2RrN0plSHNLcWFuZjZWMFcwVFN0eHBYQW5ZSlVMeGxjbHIzV1VUbVd2MnZweDNwbzVEN2J4TXRTSm5CM29KeW9OTmFRY1d3VnJHNEdRd1VGUXNvZXowbFZRRzZhOTRxWENXZFpDeDRUR3lTZnNxcHQ0QlRfRnN0aU9nXzg2WXVVVEFhSkxIUzBGQTN1Rk5wbGJrTGZ6MElwbmFtRGx3R1JhcXdIc9IBigJBVV95cUxQc3JPRWNYeEkxVWFlNkJ2STlBbnVudVhWVk12WFhJTDFCV2ctb1NVdDNIWFBWdElnZWxrMTRpT3VaZ2hBd0tlR3JUZFdSNFpBZWtDV3FuQnhhclcwMFE4Z21DdU41WklmNG1QVEwxRGRFNzQ4T3hXam5QSVRseFYyMG1xODdOUVF3bnNBOHN3LUtPd2t6ald4NkNvSnhoNXB5VGtzYjNzQzZvS3VQLTFXZ0Z2ekktNk82c2NfaFNhMjM4bXltdnlsSFZqaEYzeFRhcVBucVQxUHpwX19kS0FYcVNBMFZFa0kxS2gzVGROaGdURmdHU25yUndpT0FFQm5pRVVVV2Rqc29xUQ?oc=5",
@@ -895,10 +913,10 @@
     {
       "tipo": "edificacion_colapsada",
       "titulo": "🇨🇴 Imágenes captadas con drones muestran la magnitud de la devastación en Pereira, Colombia, tras el potente terremoto de 7.4 que sacudió el occidente del país. Edificios colapsados, calles cubiertas de escombros y equipos de emergencia que continúa - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQTlRfbV9JRTdsM21uMW1XZklpZkRmVTFHcWc2YkRRZjkzMG5oMjdLZ0NGV0xaSl9oaUkxckwtdldGc0xiRjhTMUV0RDA2U1FyTEpKM3pXT0QzU2djODh4Q0tnb00ycXBxY0R4S3BEQWtWNXpZbjRhVnF6aHhXNEpYc1h2enZYMVc0VGM1N2psZm85MHk3S05pek9mcEVVcERjNHJXOVE4YkJWakhNRXFfeDFJX01EWTMzN1RKMXBCTFZTSWtGcnhfMnJHTWhubzZtYmJObzc4VEMzODVxRWlZX2hfaTBwamNUelE?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQN29FbUFqbkFhRE82Ulp6Q1lHc2pZZHV6VjV6bTdWRXVGQkNmazMzckZncERfTHZzajN6dGI0c2VFcWw2LVFGTHd1QWZkTGlCcUNpWlRkV0djMGh2YXN5M3U0NExyZ1VWTFNSWFJEeWZuRHJJaUtOT3RpRFpna21XYTBkT3lGUUNhR1YtU3V2SVVmNlNndW52SWlrZEZCdk1MVl91bjJfVDdjWkRqY2ZmaF9tODhCV3JHZjFFVXE2Zy0zY21LSi1TczVwQXU5TTBZREdDdElYbTNMaUtHaUlRQ2lobExCMnZ6?oc=5",
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T05:15:08.000Z",
+      "publicado": "2026-08-13T05:15:16.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
     },
@@ -1189,14 +1207,6 @@
       "medio": "Forbes Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T20:47:41.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "El momento del terremoto en Colombia: edificios colapsados y destrozos al oeste del país - EL PAÍS",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUEk0TFdLSjY4MGpXbWxBWHRUZnJGVjh0aU9MWDFCaUFVN3NUQnllUkE2WGhHaXUzSEVKNDRXRnJOaFRKNVFlVEdxaHlORERFRlgzcXhpZGtxdGZMblgzaGlUSGhvdEVsWnk0eFZfOEh0bHU2cWhFbnVra2VFOTNZNEVRTndPOHVtZlI0NjE0ckUxc1d4LTJoaVQtVG9XMGNlaGN6VDZPMkVZLXRMUm50U0ZjS3RtRWE4X3NNeWNaOU42T19qZHVpWNIB3AFBVV95cUxQYmF0Y28yVHhfcWVUbnhsdng3WHRJSWNKV0lfVGxPRXlxb0ZFQzhPMDUwVzg3MkIxc0wtak4tNkVsOWo0dHlJd0YxWFo5ZDkyMWV4VmFFRjUwbUIxRFhTQ2JudUpIb0hEY2VBZ3RsTmYtbXRpQWpFWVhldTJrSV8yWV9vby1JZFllZldFMjhHSTlCT3AyVkhEdWtTWkJQOENlSTlvLS1JR21EQTdVMlVaM2FSdkFkV1hwM21naW5hTV9rU3VIRDlHcGpQWjgzLXMwYXRRV2gzYnN2dG1K?oc=5",
-      "medio": "EL PAÍS",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
