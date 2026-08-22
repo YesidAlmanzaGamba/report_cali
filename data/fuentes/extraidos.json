@@ -1,8 +1,26 @@
 {
-  "generado": "2026-08-22T15:12:59.918Z",
+  "generado": "2026-08-22T15:44:03.857Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "centro_salud_afectado",
+      "titulo": "Hospitales del Valle afectados exigen millonaria recuperación - elnortehoy.com",
+      "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcGRlZU9pQ0FaWWdRMzBXTElKRWFGci1TTGx3Z2dzd0toUlRiLWtfc3M2VG1ORHByeHBiOW01OFM0ZzRIbG1OS3R1SjBfd3JIanpBbEpNeW9wTGkwQm03OEV5VUxBa0d0N2FaTFdnb0RNTW85MFJZUVdaZ3d3ZTVHSWlGX19zX05nOWNtMHNkS2MzcEpBakdN?oc=5",
+      "medio": "elnortehoy.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-22T15:29:44.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Adultos mayores damnificados por el terremoto en Cali son trasladados de albergues a hoteles - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWnk0ajJhSVEtNU1Mc3UwUUNMaDdRM1QweDhqZ01OT2F1NktnRFBSdnQtVG93UHl3TlJwbUtVU29hSHRKbXMwbnBOcm9FaldxS3hXRWNKNGFISUdMdUhfb0MwdmhLQUQ5QVJqalByaUtGX0psaXBjSW83aklZSEk2QllGTV9Ua2E3ZzdJTjdQdjgtdGxaWk5ackkwZjFQUkxhVDRhekJSN19odXJFbFhRVXBpQXRkTFJ4U1Y00gHPAUFVX3lxTE9uV0ZjeVhiQmlPWEQyNW9GOS1NYUZLUU42WEhjSlhtSlNlMFV3QUxHYXlmT1lhenEtWm9RdEo5QzVWMlpUQ2t2eEk4Z0xtcGlja3RxOGVfZV85T1kxeGdDMHE1XzIzZnB5LUdLMk1NOGl6aDVJYkl4VEw1R3JQQkIwVzRDOEw2MjR3V29RaGdFUngwc2ZnV2xHRmZtc0NmS0gwYXNZOHp0bDltQW9aQlBxemFYWEU1bmhBQ0dCdjkyR0gtdUQ2Y1prTDdqYlV6bw?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-22T15:12:28.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "albergue",
       "titulo": "Alcaldía de Cali traslada a hoteles a adultos mayores afectados por el terremoto que estaban refugiados en albergues",
@@ -90,14 +108,6 @@
       "publicado": "2026-08-21T17:58:39.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Asistente virtual gratuito para damnificados por el terremoto en Colombia ayudaría a encontrar albergues y realizar trámites - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQN0d2N2pNb3NfQTIwc2JFSmRkQ1FlcVpDS2tiZ292UURoa2huTUZQektzWmRtZVl2ZlZxU3RjSnAxUkUwRUpqMFN6d3U0VFFJbmJ5dVJxX3dXU096LXVrQnY0WUtRMEVYTFhrU29SRWxpLVhwcWxlb1N2dGlCY1lvR1JJWWhMYllfUzhUcFRHOHZldnRMVUcxMnlJT0YybzhwRzVxblBFODNkZndEUTlEVmRlejdvcVJBTFBXeWl4eVVOY1BBZ2ZkUV9ZUVNEQlFQWmsxRTNwbEZzNmtDdURnSXd5aXE5UzVUSzVZWnlGMllwVWx0c0hEdlhycVZYUXJKeXNvdzFTV2VERGfSAYsCQVVfeXFMUDdHdjdqTW9zX0EyMHNiRUpkZENRZXFaQ0trYmdvdlFEaGtobk1GUHpLc1pkbWVZdmZWcVN0Y0pwMVJFMEVKajBTend1NFRRSW5ieXVScV93V1NPei11a0J2NFlLUTBFWExYa1NvUkVsaS1YcHFsZW9TdnRpQmNZb0dSSVloTGJZX1M4VHBURzh2ZXZ0TFVHMTJ5SU9GMm84cEc1cW5QRTgzZGZ3RFE5RFZkZXo3b3FSQUxQV3lpeHlVTmNQQWdmZFFfWVFTREJRUFprMUUzcGxGczZrQ3VEZ0l3eWlxOVM1VEs1WVp5RjJZcFVsdHNIRHZYcnFWWFFySnlzb3cxU1dlRERn?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-21T16:43:51.000Z"
     },
     {
       "tipo": "albergue",
@@ -1233,6 +1243,24 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
+      "tipo": "via_bloqueada",
+      "titulo": "Más de 130 muertos, 570 heridos, viviendas y vías dañadas y aeropuertos cerrados, las dramáticas cifras que deja hasta ahora el terremoto en Colombia - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOUGR6Y1BuZ1A2Q0xfbmZXWWZUSDdiMzMwLW9rMXFtdVRCaktSMEtIN3VDVlpveUg3Y1RYdWVrQzVCRTJ6QUlwN0Rpanpsd2N1Y3NYS0JEQXU2Sm10cVlUaldScVB5Wnc2Y0FiS2xMYWlXZXpfeVAwMi1HbkFJR2tWdlNpUkh6SktIZ2hua0prUVdkTGw0YkVObm1RUnM1UVM3TTdCVnluaFBUSk9QSEVjQmJiRUpDRUpvZENaZmFlQUR0ajBsNXJCUHFfaEtURXREVkNTR2liNGI3T0EyRXk1MHNfYkZqZmF6RXR0M3ZCVkhXZldvMHI2clp3bjlhWjZrb0xXdWp2c1BzcERlcmZwOVNDR20tZmxDT2hR0gG2AkFVX3lxTE1OZm9zbU9fMmdwWjFZZHM2dFJjQjhnWHhjbHBrWnBGOHYyOUl5QVRWRlZpUjhPdF9TcEViREl2M1B5TGhIVU1IUkd5RHBvVklZTnZkZmtleWZHT2RRdGpkTU1Zd1BCcVpMNGhQclk1LUFtS0JzTk5wSmRoVUxuejA0SHk5c1c2UjQxeGZVXzNqU3owaTZXU2wxVUhtaXh3dU9FSEtwRkNtSENrRENGQUczTW5QTXdXQ0VMUWc2TmtmczJWb3lhZkhZenFxb3kwZ3c3d2JZREtxM3dra1lheDBOLVo3blVGQW1fYVczZjEtdFBmWDQyQl9MeG93VkxLb3BNMHdRbTI5VW5zcVY4WnZqV3RMb3ZTdWg4WUNvRUFJTFRnekh5ekFucjlaVHQ3WFJVdlZCQUE?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Un edificio de tres pisos colapsó en la ciudad de Pereira durante el fuerte terremoto de 7,4 que sacudió este lunes a Colombia. Decenas de personas presenciaron como se derrumbaba el inmueble. Las autoridades han informado de decenas de muertos y h - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOTnNDc00tNFl1VzJYQnNUZ2c3V05xb1UwVVE4SVdhR0kwR1loYUZGMElxWnVweGJOYXA1MGdEZTJwNjE2N2dsa1MwZE1CVzFnc1plU3Eta1BzRjVoT2ZhekNpVHJkWDI0VENaZXBTWUFPX2dZRXZIYnZXZmNkY2V2VWpNVlBOSWt1MkZndHZTRkdxMkV3WmR1aDNKb1pyb3JQVFdOQkVHalVPWW5sUGlSNHptR054YUxjcDBoVU9rWVhjOS1KTmJwRjVycGRYb0Z0TUFEaGpvdDVEQWhONzBIUQ?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPOXcxWUpRM2QzUUVCaHV0YkNPZjlWaUk5cE1vTXgtN3RNZkZBb013U3h4RDlWQkZNcFBUR096OG04VnhhVldiMDNnT3B1d3ZvbUFNblVTOVplcUZ5aTVVSElNVUZBUW9tcG5uR2JCU3VTTUR5OGFCclVKMm41SU1nYW9oTGs1Q1JhaFZ4bjN3Y1F6cnN6WGFUbHZRem1ORUlfQlp5TTgyNm1WTTk3NHhtdUFXRHBvcTJyU3lTSWU0N29mVWlfSHg4QkhSNUNhc2JoLXg5blVMWkl3Q29HTjA0aWxXNDNWY0c3R281RHJXT3dsalU4b2RzSVc2UzhJMG8wT0s0Uw?oc=5",
@@ -1305,14 +1333,6 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-06-30T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "SEDIF Querétaro abre centros de acopio para apoyar a damnificados por terremoto en Venezuela - Códice Informativo",
-      "enlace": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ1JVbzJ6d25YYXNWdmtUUU9MRnEyMzJpQVRIUWpCTTRTNmxjOUVNaGUwbjBzVVZpUTFsdzN4WldRdzBELU12bG5kQWZzUk0tb1NXSVZHeWgzNWNNRU53TUdTUWNwTVlQMnhFZkVDUlhkRFBaSmtxRmY0Uk1uc1VXYk5SNlNYZHZCeG1qcXFmMDQzU2JMQVNiZHk4YzloMDZ6MFVyZTM2VlBnWThpU3lHTDFXLVRDVXdyQlV0ajI5OXgyaXd3VkJkYWhVNA?oc=5",
-      "medio": "Códice Informativo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-06-29T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
