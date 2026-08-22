@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-22T10:47:34.306Z",
+  "generado": "2026-08-22T11:14:24.353Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 179,
-    "con_notas": 63,
-    "sin_notas": 116,
-    "poblacion_sin_notas": 3829366,
-    "medios_distintos": 117
+    "municipios_considerados": 180,
+    "con_notas": 62,
+    "sin_notas": 118,
+    "poblacion_sin_notas": 3874532,
+    "medios_distintos": 118
   },
   "municipios": [
     {
@@ -25,13 +25,13 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 235337,
-      "notas": 24,
-      "ultima": "2026-08-21T22:32:35.000Z",
+      "notas": 25,
+      "ultima": "2026-08-21T22:36:24.000Z",
       "medios": [
         {
-          "nombre": "El Diario (Pereira)",
+          "nombre": "CiudadRegion",
           "notas": 4,
-          "ultima": "2026-08-21T07:25:59.000Z"
+          "ultima": "2026-08-21T16:47:52.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -49,14 +49,9 @@
           "ultima": "2026-08-14T11:26:22.000Z"
         },
         {
-          "nombre": "CiudadRegion",
-          "notas": 2,
-          "ultima": "2026-08-21T16:47:52.000Z"
-        },
-        {
           "nombre": "alerta.com.co",
-          "notas": 1,
-          "ultima": "2026-08-21T22:32:35.000Z"
+          "notas": 2,
+          "ultima": "2026-08-21T22:36:24.000Z"
         },
         {
           "nombre": "MiOriente",
@@ -89,9 +84,19 @@
           "ultima": "2026-08-17T22:48:05.000Z"
         },
         {
+          "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
+          "notas": 1,
+          "ultima": "2026-08-14T14:30:14.000Z"
+        },
+        {
           "nombre": "Revista Semana",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
+          "nombre": "Noticias RCN",
+          "notas": 1,
+          "ultima": "2026-08-12T12:36:07.000Z"
         }
       ]
     },
@@ -101,28 +106,18 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 103,
-      "ultima": "2026-08-22T05:00:30.000Z",
+      "notas": 87,
+      "ultima": "2026-08-21T21:28:53.000Z",
       "medios": [
         {
-          "nombre": "El Diario (Pereira)",
-          "notas": 22,
-          "ultima": "2026-08-22T05:00:30.000Z"
-        },
-        {
           "nombre": "Pulzo",
-          "notas": 10,
+          "notas": 12,
           "ultima": "2026-08-21T15:05:23.000Z"
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
           "notas": 5,
           "ultima": "2026-08-21T14:30:30.000Z"
-        },
-        {
-          "nombre": "Infobae",
-          "notas": 5,
-          "ultima": "2026-08-21T04:27:00.000Z"
         },
         {
           "nombre": "Revista Semana",
@@ -140,6 +135,11 @@
           "ultima": "2026-08-21T17:58:39.000Z"
         },
         {
+          "nombre": "Infobae",
+          "notas": 4,
+          "ultima": "2026-08-21T04:27:00.000Z"
+        },
+        {
           "nombre": "Blu Radio",
           "notas": 3,
           "ultima": "2026-08-21T00:31:28.000Z"
@@ -155,24 +155,24 @@
           "ultima": "2026-08-19T02:19:07.000Z"
         },
         {
+          "nombre": "Risaraldahoy.com",
+          "notas": 3,
+          "ultima": "2026-08-17T17:21:36.000Z"
+        },
+        {
+          "nombre": "La FM",
+          "notas": 3,
+          "ultima": "2026-08-17T15:51:24.000Z"
+        },
+        {
           "nombre": "El Espectador",
           "notas": 2,
           "ultima": "2026-08-21T13:43:00.000Z"
         },
         {
-          "nombre": "Risaraldahoy.com",
-          "notas": 2,
-          "ultima": "2026-08-17T17:21:36.000Z"
-        },
-        {
           "nombre": "Noticias Caracol",
           "notas": 2,
           "ultima": "2026-08-17T17:00:34.000Z"
-        },
-        {
-          "nombre": "La FM",
-          "notas": 2,
-          "ultima": "2026-08-17T15:51:24.000Z"
         },
         {
           "nombre": "LaRepublica.co",
@@ -233,6 +233,11 @@
           "nombre": "Teleantioquia",
           "notas": 1,
           "ultima": "2026-08-18T16:09:56.000Z"
+        },
+        {
+          "nombre": "El Aragueño",
+          "notas": 1,
+          "ultima": "2026-08-18T10:11:25.000Z"
         },
         {
           "nombre": "Euronews",
@@ -313,6 +318,16 @@
           "nombre": "ESPN México",
           "notas": 1,
           "ultima": "2026-08-13T11:01:32.000Z"
+        },
+        {
+          "nombre": "CiudadRegion",
+          "notas": 1,
+          "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Vanguardia",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
         }
       ]
     },
@@ -1078,15 +1093,8 @@
       "departamento": "Risaralda",
       "mmi": 7.5,
       "poblacion": 29382,
-      "notas": 1,
-      "ultima": "2026-08-22T05:00:43.000Z",
-      "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-22T05:00:43.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63470",
@@ -1435,19 +1443,14 @@
           "ultima": "2026-08-18T22:15:00.000Z"
         },
         {
+          "nombre": "Pulzo",
+          "notas": 3,
+          "ultima": "2026-08-14T16:55:48.000Z"
+        },
+        {
           "nombre": "EL PAÍS",
           "notas": 2,
           "ultima": "2026-08-20T04:00:00.000Z"
-        },
-        {
-          "nombre": "Revista Semana",
-          "notas": 2,
-          "ultima": "2026-08-14T17:51:28.000Z"
-        },
-        {
-          "nombre": "Pulzo",
-          "notas": 2,
-          "ultima": "2026-08-11T12:56:03.000Z"
         },
         {
           "nombre": "Infobae",
@@ -1513,6 +1516,11 @@
           "nombre": "UN News",
           "notas": 1,
           "ultima": "2026-08-13T19:26:35.000Z"
+        },
+        {
+          "nombre": "Revista Semana",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Newsroom RCN Radio",
@@ -2056,15 +2064,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.3,
       "poblacion": 15784,
-      "notas": 1,
-      "ultima": "2026-08-21T13:42:34.000Z",
-      "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-21T13:42:34.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO73624",
@@ -2435,9 +2436,14 @@
       "departamento": "Antioquia",
       "mmi": 5.9,
       "poblacion": 2745464,
-      "notas": 1,
-      "ultima": "2019-10-27T07:00:00.000Z",
+      "notas": 2,
+      "ultima": "2026-08-16T17:55:35.000Z",
       "medios": [
+        {
+          "nombre": "Estrella Digital Colombia",
+          "notas": 1,
+          "ultima": "2026-08-16T17:55:35.000Z"
+        },
         {
           "nombre": "Canal 1 En vivo",
           "notas": 1,
@@ -2637,6 +2643,22 @@
           "nombre": "Univision",
           "notas": 1,
           "ultima": "2016-08-18T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO05690",
+      "nombre": "Santo Domingo",
+      "departamento": "Antioquia",
+      "mmi": 5.4,
+      "poblacion": 13055,
+      "notas": 1,
+      "ultima": "2026-08-14T21:23:17.000Z",
+      "medios": [
+        {
+          "nombre": "Pulzo",
+          "notas": 1,
+          "ultima": "2026-08-14T21:23:17.000Z"
         }
       ]
     },
@@ -2928,18 +2950,13 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 4,
+      "notas": 3,
       "ultima": "2026-08-21T15:03:27.000Z",
       "medios": [
         {
           "nombre": "EL INFORMADOR - Santa Marta, Colombia",
           "notas": 2,
           "ultima": "2026-08-21T15:03:27.000Z"
-        },
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-19T13:13:55.000Z"
         },
         {
           "nombre": "Agencia de Periodismo Investigativo",
