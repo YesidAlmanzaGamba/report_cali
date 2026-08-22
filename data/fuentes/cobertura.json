@@ -1,12 +1,12 @@
 {
-  "generado": "2026-08-22T14:45:25.960Z",
+  "generado": "2026-08-22T15:12:59.921Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 180,
-    "con_notas": 65,
-    "sin_notas": 115,
-    "poblacion_sin_notas": 3778049,
+    "con_notas": 66,
+    "sin_notas": 114,
+    "poblacion_sin_notas": 3755324,
     "medios_distintos": 120
   },
   "municipios": [
@@ -49,7 +49,7 @@
           "ultima": "2026-08-21T12:54:24.000Z"
         },
         {
-          "nombre": "Dosquebradas",
+          "nombre": "Alcaldía de Dosquebradas",
           "notas": 3,
           "ultima": "2026-08-14T11:26:22.000Z"
         },
@@ -116,7 +116,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 109,
+      "notas": 108,
       "ultima": "2026-08-22T14:19:46.000Z",
       "medios": [
         {
@@ -135,11 +135,6 @@
           "ultima": "2026-08-22T13:30:30.000Z"
         },
         {
-          "nombre": "Infobae",
-          "notas": 5,
-          "ultima": "2026-08-21T04:27:00.000Z"
-        },
-        {
           "nombre": "Revista Semana",
           "notas": 5,
           "ultima": "2026-08-20T22:35:49.000Z"
@@ -148,6 +143,11 @@
           "nombre": "El Tiempo",
           "notas": 4,
           "ultima": "2026-08-21T17:58:39.000Z"
+        },
+        {
+          "nombre": "Infobae",
+          "notas": 4,
+          "ultima": "2026-08-21T04:27:00.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -2254,13 +2254,13 @@
       "departamento": "Antioquia",
       "mmi": 6.1,
       "poblacion": 28245,
-      "notas": 10,
-      "ultima": "2026-06-15T07:00:00.000Z",
+      "notas": 6,
+      "ultima": "2026-05-25T07:00:00.000Z",
       "medios": [
         {
           "nombre": "City Tv",
-          "notas": 10,
-          "ultima": "2026-06-15T07:00:00.000Z"
+          "notas": 6,
+          "ultima": "2026-05-25T07:00:00.000Z"
         }
       ]
     },
@@ -2439,8 +2439,15 @@
       "departamento": "Tolima",
       "mmi": 6,
       "poblacion": 22725,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-22T14:18:36.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-08-22T14:18:36.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO05847",
@@ -2845,7 +2852,7 @@
       "departamento": "Atlántico",
       "mmi": 4.4,
       "poblacion": 1355306,
-      "notas": 4,
+      "notas": 5,
       "ultima": "2026-08-21T01:42:01.000Z",
       "medios": [
         {
@@ -2867,6 +2874,11 @@
           "nombre": "Gobernación del Valle del Cauca",
           "notas": 1,
           "ultima": "2026-08-18T00:09:18.000Z"
+        },
+        {
+          "nombre": "Diario La Libertad",
+          "notas": 1,
+          "ultima": "2026-08-11T20:15:10.000Z"
         }
       ]
     },
@@ -2976,18 +2988,18 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 3,
+      "notas": 4,
       "ultima": "2026-08-19T13:13:55.000Z",
       "medios": [
+        {
+          "nombre": "EL INFORMADOR - Santa Marta, Colombia",
+          "notas": 2,
+          "ultima": "2026-08-17T22:39:50.000Z"
+        },
         {
           "nombre": "El Diario (Pereira)",
           "notas": 1,
           "ultima": "2026-08-19T13:13:55.000Z"
-        },
-        {
-          "nombre": "EL INFORMADOR - Santa Marta, Colombia",
-          "notas": 1,
-          "ultima": "2026-08-17T22:39:50.000Z"
         },
         {
           "nombre": "Agencia de Periodismo Investigativo",
