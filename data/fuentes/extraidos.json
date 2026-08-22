@@ -1,8 +1,18 @@
 {
-  "generado": "2026-08-22T14:14:03.457Z",
+  "generado": "2026-08-22T14:45:25.956Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Alcaldía de Cali traslada a hoteles a adultos mayores afectados por el terremoto que estaban refugiados en albergues",
+      "enlace": "https://www.elpais.com.co/cali/alcaldia-de-cali-traslada-a-hoteles-a-adultos-mayores-afectados-por-el-terremoto-que-estaban-refugiados-en-albergues-2214.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-22T14:21:14.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "centro_salud_afectado",
       "titulo": "Esto es lo que costaría recuperar todos los hospitales del Valle del Cauca afectados por el terremoto",
@@ -592,16 +602,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQTJNVUlhaGlmbzJsTzg0NkJGZHJ3NzduUG9FUU5QV0xvS1p5UXMtN2dNZVM3ajZTQUVhTlVCNmtVMHdubVVkR1FfWDl3MzJtXzNOcC1KNVdIbEF3cFlMUTN6eXVMTmZMT1RkeFZiWGlvRFFkd2I1STlXVmhsNUxmSGpMcnJtX2pzTG1oUUd1b0xHNzBTb2JpSm9YcHQyb0VtU0lPZtIBqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUQ?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T04:32:43.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Terremoto en Manizales: 5.241 damnificados, 203 personas en albergues y 1.153 viviendas con afectación total - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTkUwem55MWxPdzVjaHdOS2dMTnZqWmwtNFpzWjJQMC1NaXBFNE1CN1ZPTHVVUk5VMjB0a1c3OVFMSEpWWm8yMlhoQXdlTzF1aGs1RWVBM292LUhJa1lDRHdtT040ZFRuZ3dQSjgxYkFrSEtCNy10enRrLUNkMEpnNFZPWGVfaUhhU19GN0hmZHpfYkg1Rlk5S0RONU8zOXpOSm15UkJsRVZnNDVEU3lORVBaZ05PaFZhVTRBbGx1MA?oc=5",
       "medio": "La Patria",
@@ -923,16 +923,6 @@
       "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Parque Olaya Herrera se convierte en refugio principal para damnificados en Pereira tras terremoto - NTN24",
-      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPalB5QV9NOURBSGVUVE5ldm9VLUtCejJSQi1oR05kelMwMFBFX09fc1pVODJKTFY1M1dYWGVYODJUdklkSXZiRHNIWTg2MVo5RTgyZXBMSE5NVUVQaG5mWUppX2NtNDJKT25rWmZHb0E3SDUyQXZQd29nd0FEOXhFcnVIMFVOMFctZ3BaTXJrTm45a2ZpbExLSzdZWHA4UVZnelpBNVJ0VnhicF8wbDBrSDRNTXpFY0ZOQkVnazRwNjVzZmVzYVUzWFRXWExzV09rX01GSG5nbGRrcmlUNjNCUNIB4AFBVV95cUxOMW5aeFp6ZHNFMFNXSDQycElSVDFNYk5ZQlN3ZFFiWVRuSUNSN0NUQmZqS0d1TG5WaDZoeHFuamg4Mzl5c3FXUG50c1loTHBmd3NzVVRyMk5LVWxsb0ZQcjRQckpXQVlOVTI1aGM0dGh5UnB1emRHZ1F0RHpPQWdoOVlCcnprWW91elNyTGNmWDJ0dzlyVmNUTTFZZ09uYUh0SjR3dUtmc3ljSnhDbEt1NFJ0bWgzYkVSNlVVTTVOZzRLZWlVUHE1dXVnVXB5SThILXJPM2gzS19HcnV2VVVCcA?oc=5",
-      "medio": "NTN24",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z",
-      "pcode": "CO52490",
-      "municipio": "Olaya Herrera"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
       "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
@@ -1111,6 +1101,14 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "República Dominicana habilita un centro de acopio para asistir a Colombia tras el sismo de magnitud 7.4 - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPMUc3N19BUW1aQzl3NFdPNkhKTzA0eUVwTEJvT3NJNWw1RDc2Y1hUdlRnOXBJOVZ2a1QwUFNobkhiNHJWc2tkVHNpMFZXaWQ0TU5MZk1GQVpaeU5BcUFQZ0JzNnhacHZHMnF5ZWFGcHV3LW0xMTBuLWJVOXJ1LWJDT0t6dWdtTG40S3NzMzh3SlRrNkVhMzZIWUlHbUh5emtWaGU2R3BUV0dTczB3Mlh6MlZOcmpLTFNhTENyakVhSTMyMzMyTWwtU1hrRkFXYlE0X01wbWJnYzVfdVU3T094dk0wYURiYVB5V2pWbFhuT1nSAYsCQVVfeXFMT1FqbDFVcjl1QUtIZHItaVFXWkd5VE9UUEhseWY4Qk9CR3k4TzZuNFJESFhHN2o3OHIxd0M0OVota0dzNVRlYnJiSVY0Z3FrdnJjOHNmM3JENUFTcFNKeUlkenYyWFo1S1F6SGZjLUo2bXhjWVZxTk9OVS1RX2F3WFlxdWkxejVfV0l6MzhjTTJzaHIwVXhQYUk2ZGJoRmJLVG9wWlllVEN6UDhkUUVFdmoxQnlja2hESzVWWE9NajAzZTFnb1gwbk1RM3BubG83MTBtbFZNMVQ2aFdOVnZqSzVuQ2J0c196U0V6UGNIelk4RlRvTVd0WUNUcVNWVmlDcXVJOEIxZkowLWhz?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
