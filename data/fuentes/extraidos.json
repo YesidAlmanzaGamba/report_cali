@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-22T08:55:34.541Z",
+  "generado": "2026-08-22T09:20:22.535Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -298,6 +298,16 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "centro_acopio",
@@ -602,9 +612,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - kienyke.com",
+      "titulo": "Familia sobrevivió al sismo en Cali y encontró refugio junto a sus mascotas - KienyKe",
       "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSnpfMHdLd3JPRDYtb3JIQ0FJUTNRcm5qVm43VkdzaVlsRklEaU5ONnMxSmpReUFXcVZuSzl0QVJtcEVpNGdSVVl3NTNWcTlMWkNPeUxyQV9vb0I5U3pITHZPZllKTW5MYWU0TGlTbEJfVnpmZEJsQk5zNjJYMkcwdi1yWEhVZWg1TkVCWEZwRHY?oc=5",
-      "medio": "kienyke.com",
+      "medio": "KienyKe",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T22:26:35.000Z",
       "pcode": "CO76001",
@@ -885,20 +895,12 @@
       "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Bogotá apoyará la evaluación de daños en Chocó con 30 especialistas del IDU y Camacol y habilitó puntos de acopio para donaciones - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQUmhUNzZzVTljV05wVzZ5bGI0UWFYYVBPMDdIVzE1akVObGlYQkptLWU5Y0d3WmRucmNLSGFTY0JUeWVSRHBkY3lVSDhlOGc1ZEp3c01Gd1E5andoa29pYTRWclpWcnRXYkdUVFZkbDlVeEZvdjVwMUVDeTdWU2NBaXBSdG5JRVRUR2pIbmR6RUY3bjZ4WHlkUzk4T1dMV1Rha2FaTW45QmpIb1laWXRUMkZHaHJMMGM3N2NtUmNKdk9la096dGU5S25vQVpvUUVWVkhLNGVQY2lHX053VVh0VDRTOUFqMTZlZUJSclRyTkZQb0FhNElCN0NMbzhZOU4tOUp0OdIBnwJBVV95cUxPUUdQd2s0ZHJWZzcyNm90aDFVM3k3dnIwTXlSdTJaQTNTZW5UN1U3cmFZY2dRSEZIQTQ5TmRsSmFMUXFwekZEUzQ4enlwU0VCUlpuT0pSQy1uTUJOeDd6NlEwQ3NOMFRDb0QySEkzTlQyMURnT05idnhRQkwwbVNnVnFMMVhtWHRrY3dWSXEtN29TQVpTS3FoVFljcllkZTU5WGVHdUxYYWFZbTNMeWxTcElSSktseEFUSUFScE4yQUQ3TkhGSUdoQTBTa3RVOTJDcUNaZlEyR1ZnTEhtRFRYaGE4WHQ2NW5HQXE2YXp5WTdJM094UnQzY211V3h1ci1XQVgzdWVoZS1fRXBaUU5KNy1EdHppT3hmNHR1R0hxYw?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-13T07:00:00.000Z"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "🇨🇴 Imágenes captadas con drones muestran la magnitud de la devastación en Pereira, Colombia, tras el potente terremoto de 7.4 que sacudió el occidente del país. Edificios colapsados, calles cubiertas de escombros y equipos de emergencia que continúa - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQN29FbUFqbkFhRE82Ulp6Q1lHc2pZZHV6VjV6bTdWRXVGQkNmazMzckZncERfTHZzajN6dGI0c2VFcWw2LVFGTHd1QWZkTGlCcUNpWlRkV0djMGh2YXN5M3U0NExyZ1VWTFNSWFJEeWZuRHJJaUtOT3RpRFpna21XYTBkT3lGUUNhR1YtU3V2SVVmNlNndW52SWlrZEZCdk1MVl91bjJfVDdjWkRqY2ZmaF9tODhCV3JHZjFFVXE2Zy0zY21LSi1TczVwQXU5TTBZREdDdElYbTNMaUtHaUlRQ2lobExCMnZ6?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQTlRfbV9JRTdsM21uMW1XZklpZkRmVTFHcWc2YkRRZjkzMG5oMjdLZ0NGV0xaSl9oaUkxckwtdldGc0xiRjhTMUV0RDA2U1FyTEpKM3pXT0QzU2djODh4Q0tnb00ycXBxY0R4S3BEQWtWNXpZbjRhVnF6aHhXNEpYc1h2enZYMVc0VGM1N2psZm85MHk3S05pek9mcEVVcERjNHJXOVE4YkJWakhNRXFfeDFJX01EWTMzN1RKMXBCTFZTSWtGcnhfMnJHTWhubzZtYmJObzc4VEMzODVxRWlZX2hfaTBwamNUelE?oc=5",
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T05:15:16.000Z",
+      "publicado": "2026-08-13T05:15:08.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
     },
@@ -975,18 +977,6 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "centro_acopio",
-      "sede": "Universidad de Caldas",
-      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaklOOG5iaE04el91aXlHNENHQ2prOFFRNWctLUM3SExjcmFKMVVlUmhCYU41amtRdjdFcHhRcjFpbFNLNUs0UGs2YnB3UDZocjdldUZCeUtCTnBGWnJfVW80Rkd2cmVwSjdLVFpqTTU0R2pYanZvWTRMZGlaZldJSUlnam5Gdkt3ZmU4cjJieHRQMjE3bDBEMzVDLV9XZEE3TDIxY0NDdUVHTGFrR0dUSFVRMWdLSDAyS0dlYVo2eDg?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T02:42:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20de%20Caldas%2C%20Manizales%2C%20Colombia"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1157,6 +1147,18 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Menor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
     },
     {
+      "tipo": "centro_acopio",
+      "sede": "Universidad de Caldas",
+      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaklOOG5iaE04el91aXlHNENHQ2prOFFRNWctLUM3SExjcmFKMVVlUmhCYU41amtRdjdFcHhRcjFpbFNLNUs0UGs2YnB3UDZocjdldUZCeUtCTnBGWnJfVW80Rkd2cmVwSjdLVFpqTTU0R2pYanZvWTRMZGlaZldJSUlnam5Gdkt3ZmU4cjJieHRQMjE3bDBEMzVDLV9XZEE3TDIxY0NDdUVHTGFrR0dUSFVRMWdLSDAyS0dlYVo2eDg?oc=5",
+      "medio": "La Patria",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20de%20Caldas%2C%20Manizales%2C%20Colombia"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Alcalde de Manizales pide 500 ingenieros para revisar más de 2.000 edificios afectados - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxONHd6QkgxMk1QTGN3LXJxT25SSkxoaGxvSlVCam42amdTYnpZMkhsczkxQXdjUnhLQndaMm5wbzJCV2JlTG1palVpNHg3aVAtTHJxUjdnSURVTVdBS2dON0NsMzVaS3pTLWxrNXNWQWtwbXlQNXFkRkxvdnlNYXNEUkw5UGxaU0l6ZmR0c1l0T0hJWElLV0hqblgtVWFNbXE0dG44aGw5RlZfWEtIRzlaQ3U1TEU2T29wa082TU9HOGRzc0FxcjhsNWdEM3dQNkZHV0pEanJCaG5hWWxMM19zelhUZUzSAeQBQVVfeXFMUHlicVlQV0tSTFlYMWhrR1lXektjNnhaRmZuc2pmTDltVkZ2QVgtbElva0dPUnR1TzIyVkc3dTVQdjFsNk5WTkszZl9kQ0hUNjBLTDV2TDJzVWpCYThTT3lMclVYR0hDNHpZdUxpSWJTUmxXMlo5ZDdUV1EtOWZBbXpXUkQyczNWbkFmRTZKTGJhZndKTU1BTGJla1A1OHA2cFlNVm5ZQkhzeDB5M0ZPV281RUFWazlBc2R5MkJ0X2FiLV96SXh0QXctY1lnSlI3aW9yUDZOR051ZC1SbVNEblBIbE8x?oc=5",
@@ -1165,14 +1167,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Tragedia en Colombia: por el terremoto hay al menos 132 muertos y 61 edificios colapsados - Revista Gerente - Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOR3JMVkdNN281VXFtdUZpNkM5TG52RGlHa284UElOb0VTLTBTNmtLYkpJWTFEUDNpcXhwQ1Y3TmZBMXVtbm5ock5SSHJMUTYxcVNPdGktVHdOTm0zV0h6d0pZcGJiMUQ5a294bTFHeHU0Zzh2ZnBMcjA5NU9BT182REFSMTVhTXR4Z2xJZndDdkZYTjg4YUJIWWVXVGFsYklZVDl4dU5PbnVwc0U0MGxRZUxMUXNrT09xTVZ2Zg?oc=5",
-      "medio": "Revista Gerente - Colombia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T05:22:34.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -1192,6 +1186,14 @@
     },
     {
       "tipo": "edificacion_colapsada",
+      "titulo": "El momento del terremoto en Colombia: edificios colapsados y destrozos al oeste del país - EL PAÍS",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUEk0TFdLSjY4MGpXbWxBWHRUZnJGVjh0aU9MWDFCaUFVN3NUQnllUkE2WGhHaXUzSEVKNDRXRnJOaFRKNVFlVEdxaHlORERFRlgzcXhpZGtxdGZMblgzaGlUSGhvdEVsWnk0eFZfOEh0bHU2cWhFbnVra2VFOTNZNEVRTndPOHVtZlI0NjE0ckUxc1d4LTJoaVQtVG9XMGNlaGN6VDZPMkVZLXRMUm50U0ZjS3RtRWE4X3NNeWNaOU42T19qZHVpWNIB3AFBVV95cUxQYmF0Y28yVHhfcWVUbnhsdng3WHRJSWNKV0lfVGxPRXlxb0ZFQzhPMDUwVzg3MkIxc0wtak4tNkVsOWo0dHlJd0YxWFo5ZDkyMWV4VmFFRjUwbUIxRFhTQ2JudUpIb0hEY2VBZ3RsTmYtbXRpQWpFWVhldTJrSV8yWV9vby1JZFllZldFMjhHSTlCT3AyVkhEdWtTWkJQOENlSTlvLS1JR21EQTdVMlVaM2FSdkFkV1hwM21naW5hTV9rU3VIRDlHcGpQWjgzLXMwYXRRV2gzYnN2dG1K?oc=5",
+      "medio": "EL PAÍS",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
       "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
       "medio": "facebook.com",
@@ -1204,6 +1206,14 @@
       "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQLUNNcGowZlBzdm9zZTItdzI3REZiS2lQNjJkM21aaE51c3VZaHVKUWxWaklsdmdKTy13U1k5b2J5bUQxb09LQWE4MXJKcjBPTUtCMzNuSmhpdmREeHVQa0lBb3FoNlFMZjdud0hLeWN5b1NzSXNwSHFObmVOcmpfaGtlb240cS1qOVpYQjJMM21WVktHOG04eXdRZENqNUhCUENvcnpTMzVDQnc3dUNoVUh4MDFYSWtVYlFYN044azM4Rk53bUJ3c1VMVzlwQ280WkViYVZMcG9mYU5WVzdYc19ZMTFfeDYtSnRQWdIBgAJBVV95cUxOVDVsMktNWDUzbmFJdWowRFhlWGVzUU5JZ0RWcWN4UHFGR0dlT2Z3NzlQRFVySUliQVdBYk5kd0dHR2lRUGRUNDA1SFhSZE1iREF6cW5ydUZJUXZINXFieWNBeXpjWC1yMUpvZGlvcFBlRUtKZFltNk85dkE1NEoxTndWaWc3UEkwOFJQbmtCMUhpWUJZQk9mX3Frd1BXLUpmQU9CREhwWDZ0ejUyLTZZLTJyOGJDX1liN3puX0h4T3BmVXdFcGJmQjZYaDZQUkJ1YXhEWnlDQ3lZVUVMTHdMZnUwaV9yUVdGM1NiWC1KVll1ZE04Uk1WaGQ2eE5QX19x?oc=5",
       "medio": "Cadena SER",
       "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "via_bloqueada",
+      "titulo": "Más de 130 muertos, 570 heridos, viviendas y vías dañadas y aeropuertos cerrados, las dramáticas cifras que deja hasta ahora el terremoto en Colombia - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOUGR6Y1BuZ1A2Q0xfbmZXWWZUSDdiMzMwLW9rMXFtdVRCaktSMEtIN3VDVlpveUg3Y1RYdWVrQzVCRTJ6QUlwN0Rpanpsd2N1Y3NYS0JEQXU2Sm10cVlUaldScVB5Wnc2Y0FiS2xMYWlXZXpfeVAwMi1HbkFJR2tWdlNpUkh6SktIZ2hua0prUVdkTGw0YkVObm1RUnM1UVM3TTdCVnluaFBUSk9QSEVjQmJiRUpDRUpvZENaZmFlQUR0ajBsNXJCUHFfaEtURXREVkNTR2liNGI3T0EyRXk1MHNfYkZqZmF6RXR0M3ZCVkhXZldvMHI2clp3bjlhWjZrb0xXdWp2c1BzcERlcmZwOVNDR20tZmxDT2hR0gG2AkFVX3lxTE1OZm9zbU9fMmdwWjFZZHM2dFJjQjhnWHhjbHBrWnBGOHYyOUl5QVRWRlZpUjhPdF9TcEViREl2M1B5TGhIVU1IUkd5RHBvVklZTnZkZmtleWZHT2RRdGpkTU1Zd1BCcVpMNGhQclk1LUFtS0JzTk5wSmRoVUxuejA0SHk5c1c2UjQxeGZVXzNqU3owaTZXU2wxVUhtaXh3dU9FSEtwRkNtSENrRENGQUczTW5QTXdXQ0VMUWc2TmtmczJWb3lhZkhZenFxb3kwZ3c3d2JZREtxM3dra1lheDBOLVo3blVGQW1fYVczZjEtdFBmWDQyQl9MeG93VkxLb3BNMHdRbTI5VW5zcVY4WnZqV3RMb3ZTdWg4WUNvRUFJTFRnekh5ekFucjlaVHQ3WFJVdlZCQUE?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
