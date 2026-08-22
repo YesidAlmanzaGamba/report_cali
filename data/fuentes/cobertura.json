@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-22T11:14:24.353Z",
+  "generado": "2026-08-22T11:43:26.168Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 180,
-    "con_notas": 62,
-    "sin_notas": 118,
-    "poblacion_sin_notas": 3874532,
-    "medios_distintos": 118
+    "municipios_considerados": 179,
+    "con_notas": 60,
+    "sin_notas": 119,
+    "poblacion_sin_notas": 3877872,
+    "medios_distintos": 116
   },
   "municipios": [
     {
@@ -758,7 +758,7 @@
       "departamento": "Chocó",
       "mmi": 7.7,
       "poblacion": 134417,
-      "notas": 38,
+      "notas": 37,
       "ultima": "2026-08-21T16:19:01.000Z",
       "medios": [
         {
@@ -795,11 +795,6 @@
           "nombre": "360 Radio",
           "notas": 1,
           "ultima": "2026-08-21T16:19:01.000Z"
-        },
-        {
-          "nombre": "Chocó 7 Días",
-          "notas": 1,
-          "ultima": "2026-08-21T13:26:12.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -1420,17 +1415,12 @@
       "mmi": 6.9,
       "poblacion": 2337182,
       "notas": 57,
-      "ultima": "2026-08-22T03:25:20.000Z",
+      "ultima": "2026-08-22T03:04:31.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
           "notas": 18,
           "ultima": "2026-08-22T03:04:31.000Z"
-        },
-        {
-          "nombre": "El Tiempo",
-          "notas": 5,
-          "ultima": "2026-08-22T03:25:20.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1443,6 +1433,11 @@
           "ultima": "2026-08-18T22:15:00.000Z"
         },
         {
+          "nombre": "El Tiempo",
+          "notas": 4,
+          "ultima": "2026-08-16T14:45:29.000Z"
+        },
+        {
           "nombre": "Pulzo",
           "notas": 3,
           "ultima": "2026-08-14T16:55:48.000Z"
@@ -1451,6 +1446,11 @@
           "nombre": "EL PAÍS",
           "notas": 2,
           "ultima": "2026-08-20T04:00:00.000Z"
+        },
+        {
+          "nombre": "Revista Semana",
+          "notas": 2,
+          "ultima": "2026-08-14T17:51:28.000Z"
         },
         {
           "nombre": "Infobae",
@@ -1518,11 +1518,6 @@
           "ultima": "2026-08-13T19:26:35.000Z"
         },
         {
-          "nombre": "Revista Semana",
-          "notas": 1,
-          "ultima": "2026-08-13T07:00:00.000Z"
-        },
-        {
           "nombre": "Newsroom RCN Radio",
           "notas": 1,
           "ultima": "2026-08-11T16:41:35.000Z"
@@ -1586,18 +1581,13 @@
       "departamento": "Chocó",
       "mmi": 6.9,
       "poblacion": 31989,
-      "notas": 2,
+      "notas": 1,
       "ultima": "2026-08-22T03:15:12.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2026-08-22T03:15:12.000Z"
-        },
-        {
-          "nombre": "Chocó 7 Días",
-          "notas": 1,
-          "ultima": "2026-08-21T14:04:19.000Z"
         }
       ]
     },
@@ -1652,15 +1642,8 @@
       "departamento": "Chocó",
       "mmi": 6.9,
       "poblacion": 3340,
-      "notas": 1,
-      "ultima": "2026-08-21T14:58:23.000Z",
-      "medios": [
-        {
-          "nombre": "Chocó 7 Días",
-          "notas": 1,
-          "ultima": "2026-08-21T14:58:23.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO27787",
@@ -2537,6 +2520,22 @@
       ]
     },
     {
+      "pcode": "CO73770",
+      "nombre": "Suárez",
+      "departamento": "Tolima",
+      "mmi": 5.7,
+      "poblacion": 3812,
+      "notas": 1,
+      "ultima": "2026-08-22T11:01:00.000Z",
+      "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-08-22T11:01:00.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO05313",
       "nombre": "Granada",
       "departamento": "Antioquia",
@@ -2591,22 +2590,6 @@
           "nombre": "elpais.com.co",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO19473",
-      "nombre": "Morales",
-      "departamento": "Cauca",
-      "mmi": 5.5,
-      "poblacion": 41887,
-      "notas": 1,
-      "ultima": "2026-08-20T20:22:04.000Z",
-      "medios": [
-        {
-          "nombre": "Proclama del Cauca",
-          "notas": 1,
-          "ultima": "2026-08-20T20:22:04.000Z"
         }
       ]
     },
@@ -2978,22 +2961,6 @@
           "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-18T21:36:35.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO52540",
-      "nombre": "Policarpa",
-      "departamento": "Nariño",
-      "mmi": 4.1,
-      "poblacion": 9826,
-      "notas": 1,
-      "ultima": "2026-08-21T14:51:42.000Z",
-      "medios": [
-        {
-          "nombre": "Proclama del Cauca",
-          "notas": 1,
-          "ultima": "2026-08-21T14:51:42.000Z"
         }
       ]
     },
