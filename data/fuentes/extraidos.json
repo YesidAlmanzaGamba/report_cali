@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-22T10:15:08.175Z",
+  "generado": "2026-08-22T10:47:34.302Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -108,6 +108,16 @@
       "publicado": "2026-08-21T15:26:25.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Sipí: 600 viviendas afectadas por el terremoto del 10 de agosto de 2026",
+      "enlace": "https://choco7dias.com/sipi-600-viviendas-afectadas-por-el-terremoto-del-10-de-agosto-de-2026/",
+      "medio": "Chocó 7 Días",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-21T14:58:23.000Z",
+      "pcode": "CO27745",
+      "municipio": "Sipí"
     },
     {
       "tipo": "edificacion_danada",
@@ -566,16 +576,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Urgente esta noche en Pereira: lluvia golpea albergues de familias afectadas por el terremoto - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQTJNVUlhaGlmbzJsTzg0NkJGZHJ3NzduUG9FUU5QV0xvS1p5UXMtN2dNZVM3ajZTQUVhTlVCNmtVMHdubVVkR1FfWDl3MzJtXzNOcC1KNVdIbEF3cFlMUTN6eXVMTmZMT1RkeFZiWGlvRFFkd2I1STlXVmhsNUxmSGpMcnJtX2pzTG1oUUd1b0xHNzBTb2JpSm9YcHQyb0VtU0lPZtIBqgFBVV95cUxOX0RaYXpnSVA5ejdtRXUta09uT3oxLXozQmN2Z3owcWI5dS1pQzM5bWVQQW92MzVDVHVickhoOVh4R0UwNWd0QWI3bzJwTG14bHdWRGtmTjFYcm4xdFZvczZwMkdFZWJsVmVkTWtrcUJ2elVFZTlqOTc2VDJaUlhkVDBCdlB3ck9RV0ZiNDFFVWpJeW5YRWNuUWZWWVEyUWJkejJFLVRLdnFZUQ?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T04:32:43.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Terremoto en Manizales: 5.241 damnificados, 203 personas en albergues y 1.153 viviendas con afectación total - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTkUwem55MWxPdzVjaHdOS2dMTnZqWmwtNFpzWjJQMC1NaXBFNE1CN1ZPTHVVUk5VMjB0a1c3OVFMSEpWWm8yMlhoQXdlTzF1aGs1RWVBM292LUhJa1lDRHdtT040ZFRuZ3dQSjgxYkFrSEtCNy10enRrLUNkMEpnNFZPWGVfaUhhU19GN0hmZHpfYkg1Rlk5S0RONU8zOXpOSm15UkJsRVZnNDVEU3lORVBaZ05PaFZhVTRBbGx1MA?oc=5",
       "medio": "La Patria",
@@ -862,13 +862,21 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Gobernador revela por qué tantas edificaciones colapsaron tras el terremoto en Pereira - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQ3ozMXctUjNBTkwxUzZ6Y0djck9lVTZCaTJjVEdLN2pTOXZ0amdxZVRWS1VjV3RtWGtEQXNOckZpQndHYVY2RUNHQmxTcS1QcS1MY3pJWEVxZTdoR05zbWcyY1lma3JZT204cU8xaEZTRnQ0M1dSXzlaSlRIZDk5NlI4WC1FNnpjWFVCN0Q0RnRnRndFVUhSSG00cTJuY3g3cXQ0MXBFNVB1TzlqSFdlU2E5WHhxaVlCUkxZZ2p30gG-AUFVX3lxTE53QWlvNi1Qck83eGR1OFFOa21XVDlzNTJKbXhVM0NHbDZOR2lnTFd0WkJPSWpKcnlmbzBKMkJtbC1UNHZSdzg4U3FDUkpoSzdteHFoSzluTndpTThMaXdnc3RieC1EeXNtUnVBY3RnZzBIY1FDRC12d3R2UGQ4Mng4N2tBWGdLb0JFai1tUFlMYXY3dXJVV3o1OTVBWHRHdjJmLVVWNU1fSW40dS1ER2kweEJSWl82c1NFMHZqd1E?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-13T13:00:50.000Z",
+      "titulo": "Cali y Pereira reportan casi 200 edificaciones colapsadas, luego del terremoto del lunes - LaRepublica.co",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbDdyaXJBSkhERmsyWDVfaEZwQVlSYzRBenFBVlBlNm14LTliSnBmc1JTLWpGMk9yeS1LWFNXNWlIV2ZSaVBKTjZRUmc4YWJxYWdUQkJ3d3JMYkVpUXpxX05DNWNTd2xhWTR5YmJWanhUeGdWOUdwazgyVV95Nml2cS1pRzBzTXk1Y2FYVGo1V1JxdDdLRGI5Z1Q0NEE2bkVNNTdOVFE2Qm11XzNNMDh0eVVoWW5ld2hCNkZER0ZLUmlOQ1hwX2lYZkFERTFnWlM3dHNGbEtMR1lYZ1hCeDJHeDBwT2VmZy1v0gHoAUFVX3lxTE9fOWkzcm9ocnJCM0VwaFpTbmRMNjE4OU12N3hQcGh3dkJGMEVlREVMNWVnMlpmWGZ1Rnc5T2tfY000V3ZWY2ZfV1UyTllqYlpHakVQblVLMmJ5TUxHckRLTnBMaVZuUkFZQnRhX04tM3Z1YWdUV2hlSV9lTl9pa2ZtODJJeTZJZEozQTBzTGEtUnBvZHEwdHRsdjF5djBEQncwWFV4aHBtTFliVkU1aGYtaTFVTnR0U3RzTVhhMU9XSFBUaGprYzJUTndUZ0RJX3hoRGF1enVBdkloWTBrd2VuS0txZ1FWUVM?oc=5",
+      "medio": "LaRepublica.co",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Conmovedor video de niña que llevó a centro de acopio su alcancía llena de monedas para ayudar a afectados por terremoto - ELHERALDO.CO",
+      "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOejlqT3pKOHU4WHVVWi16VHFGalBQbjA2UjRTR0RUZlJWQ1FPbldqTUhmWFoyeXk1ZXpMLTJ6ZXd5am9RVHNLTHlDbEI1cnZhWGZ4TU1aaC0zTGJwbkd1S0VqRzYtRU9hbV9KakVGZUtVVzBZcVhZeVFkWW5pdldzMWx4MTg5SGxjekVGTDg2d0hjeURmd3FDMDNQUzE5WjJCcUc2SFdYSkxhckdqaF9EMDMyQlNoUFNmdEFjUEpaaEs2dXZhSEZha194Z0l0bDQwM1NuQ0VjVkdOTVlxc2hMYVZaOHFVNTJzWXM5dEpFVlBOREJjeldzZlpB0gGUAkFVX3lxTFBvaVMyN3BDd1hkMXdjMGg0bGFZOGJmajRzZ09jdVFSWVktVmhpcFFzTDZrcEFiU2dUd0dLbzUydThuVnhfVERyYXFMLUZPODJ2QzVnR1dMLV9UV1FDeFUybU5TM3JobFpNQXQtNnRHY2hvSS11Q3ItWk9nWkpKNHQ4ekFYLTJoQlBDN3JRSVN0SzhBcVIwWnNSLXZXYWREeV9jWi1hRW1GLW5iWHJLYnFmZmN3YUlpVEpUTEpRMUJuTjN0V3hpem50em1lX2lwNnBJNVdUMjZVX2tMV0s1Nko5bFFMdVRHQzVfVWEwcVJqS3dSeWpFOGprclh3MVV3UWpoRVA2SXl6TXNuOXg2b1I3RVlpRw?oc=5",
+      "medio": "ELHERALDO.CO",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -901,16 +909,6 @@
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-13T05:15:08.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Cali y Pereira reportan casi 200 edificaciones colapsadas, luego del terremoto del lunes - LaRepublica.co",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbDdyaXJBSkhERmsyWDVfaEZwQVlSYzRBenFBVlBlNm14LTliSnBmc1JTLWpGMk9yeS1LWFNXNWlIV2ZSaVBKTjZRUmc4YWJxYWdUQkJ3d3JMYkVpUXpxX05DNWNTd2xhWTR5YmJWanhUeGdWOUdwazgyVV95Nml2cS1pRzBzTXk1Y2FYVGo1V1JxdDdLRGI5Z1Q0NEE2bkVNNTdOVFE2Qm11XzNNMDh0eVVoWW5ld2hCNkZER0ZLUmlOQ1hwX2lYZkFERTFnWlM3dHNGbEtMR1lYZ1hCeDJHeDBwT2VmZy1v0gHoAUFVX3lxTE9fOWkzcm9ocnJCM0VwaFpTbmRMNjE4OU12N3hQcGh3dkJGMEVlREVMNWVnMlpmWGZ1Rnc5T2tfY000V3ZWY2ZfV1UyTllqYlpHakVQblVLMmJ5TUxHckRLTnBMaVZuUkFZQnRhX04tM3Z1YWdUV2hlSV9lTl9pa2ZtODJJeTZJZEozQTBzTGEtUnBvZHEwdHRsdjF5djBEQncwWFV4aHBtTFliVkU1aGYtaTFVTnR0U3RzTVhhMU9XSFBUaGprYzJUTndUZ0RJX3hoRGF1enVBdkloWTBrd2VuS0txZ1FWUVM?oc=5",
-      "medio": "LaRepublica.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T05:01:08.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
     },
@@ -1075,16 +1073,6 @@
       "medio": "MILENIO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Ibagué activa jornada solidaria con múltiples puntos de acopio para apoyar a afectados por sismo en Pereira - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWh0QkhZWk5XUW5WbFJ2cmFmaDlrQ1BkQVVKUWFSS0t4OXNIdFNVOWZmQU1NX2IwcTlONXdZVUpJbkF1Q1Z6TjVmZE9KS0p1TURxalp1ZGdfNmd4cDFubnNSVEQ0a2VNZjJicXJ4RDVRdmM4emNKb0FMY244NkhTZGJMMS1IZTNrd1MwWU8zTlIxNGtEclNobEdkOWlJVlV3c0ttd2haSUxIQzUwZjh6UkktYzJrb2l0S2hYNWx6MG4xSFR6YVJiTGE5VUlGd0U?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "edificacion_danada",
