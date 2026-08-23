@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-23T10:48:27.323Z",
+  "generado": "2026-08-23T11:14:34.507Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -68,6 +68,16 @@
       "publicado": "2026-08-22T01:39:35.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Jhonny Rivera convierte su finca en albergue de abuelitos afectados por terremoto: \"No están solos\" - Noticias Caracol",
+      "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNUTZEUUU3UDBNWm9Ea05TbzlPUXFIRkd5YWpWMEN5QmxOM0hETDA2MnZnMXRRaWxTZG5tNUFpZVZpdmp6d3V1dEV6S0tSaFFJR3VMa2stSkNDd0htT0xLNmJwZUExdHczbkFYVEtsQjNVLUVKUmQ2MExkdHpKWnRXelNYNnlveXZxc1JvMTRnVXhSMjE2dVQtelV6LTVGR3Q1dHRjN00xUWZwWkJhei01ckdDWElfU2UwNnZPRVRwS2JTd3dTejlXbllWT0ZWSFBlTTdHZmpySGR0NUxscWVXOWU4QdIB8AFBVV95cUxPSUc3Mm9wcDJpeTlSMFBMS0ZDM3JHZXd5akJwWVl0d2VIRy1nMzFWaTR1R0VHWTU4Ym8xc1h2bnpCQ05IYmhySUhzd2hsSFpUWTBrSy1jNDd3SXpwNVY0U1pMaUVWNzlTMTY3TWN0SXVrQ0hxcDlPQmRaMGIwek1RdERpUXJpcmlNOURSWjhLOERJOWtCMzd4TWp0QW5kZzhiSm9xZFUzWUlJNllZeGFub2dzN0ZwZVFoZHFCeFJqNkxVSWJ6SFRJVExfWHNwcmJNWTcya254VGljWkpVQjB5VldUWmt5NUtFOFF6NUhib08?oc=5",
+      "medio": "Noticias Caracol",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-21T23:19:02.000Z",
+      "pcode": "CO41615",
+      "municipio": "Rivera"
     },
     {
       "tipo": "albergue",
@@ -441,16 +451,6 @@
       "municipio": "Pereira"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Manizales mantiene atención a damnificados por el sismo: 241 personas permanecen en albergue - 724 | noticias",
-      "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1NIbXdnREVhN3NhbVdtMmQyZUJNVnBza21CTXk1Q2RUR3BsaFFkZEhWSXlnc3V6bFRlOVBBcDFhcm5ORmNwWHV6TkFleHVCb0hNMXhKc2hvMGJYNFVFN1VYeHFHMTFUOHNvOE55LTQ0R2NFd3l1UUJ1SjFNbzB6RElTV09idUd2MjNXY09Vcm5sc1d1NG1nZjV3cnZUQ2tsV3BxcGFQd0JMQWc?oc=5",
-      "medio": "724 | noticias",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T18:26:25.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Una semana después del terremoto, Quindío reporta 35.000 damnificados, 12.000 viviendas y 170 colegios afectados - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWkxWZXJWQ2QtUk03Tk5admlxRDVHLWNHSlN4Y1dUY3NJQjNTT2ZuMDJMbGh3TVdEZU9ieldWVS04MkVTdkN3MGpJXzRNVkt6blh6Nkg1MmtBRjA5czRaWUZCNE9FeDhsbk94TWVwcXJUMWVwd0FEZi0zVTZPMTY3bW1B0gGCAUFVX3lxTFBUM0EwQkVZNTFCQ25ITUNCSGZTM2xGaThQUk5kbWdSaXhQenJKVDF3cm5UWnZLZGM5cThMVGt2MlNDNHJFRi1STC1ZeXZ2aWJzRlNUT1FMMG5DV1MyS1JpZl96Z1VPbEZjS2swUnhSN3M3UV9JdnRVOHlSb0lFYlJWdmc?oc=5",
@@ -601,14 +601,6 @@
       "municipio": "Versalles"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Bogotá mantiene cuatro puntos de acopio oficiales para damnificados por el terremoto - El Espectador",
-      "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQS1NRllGMEQ0X09rb3lxTW1uQ2NLYkdtSTIyYk9FM3VDeEQ0TEpFbk1xNksyaFhYS1RmZkJVbzBfSkgtZjNTdlQ5VVFWdXp5U3k3c25aM0pXWGItd0ZnWlV2c2I0cTlDZGhSN3V2RlBRWWVSdkx3SEJkV2NUMDFOZ0pmb1JNVzVOSTFLTzRwQV9VNlpCNXljbVgxZjA3Sl9KcWJfUmQ1VjB3aFZBSXU3R0NzVWlhSkcxY19OTWln0gHSAUFVX3lxTFBvOEZjWktaT21PNWNGd3dNV1dIS3g3VG9lOTRqaVEtdnhGRHRzQ1owRnlRVm1YZHR2c3hoSjNHTDVWRXB3UWF2b1lIMjBrN25LY0JzMHdadm9GZFhGV0RsT1BmenlXRGpOZzEtRExLM1ota1BUaGhQeVFkSk5GSDV0b3FmbWtHRjRfX2NBaHNuNGhfUnN5V0QyemtORXNlZU41bUdUVl91UG5WNnJ4UHF2WkZuYS1VbTFNWlpnRVJzRHVuS2wtcnJRWkltS0F4cnRjZw?oc=5",
-      "medio": "El Espectador",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-15T20:01:00.000Z"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "🚨LO ÚLTIMO | Tragedia en Indonesia: terremoto deja decenas de muertos y edificios colapsados 👇 - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNOWVCbGNnZDRXSFIyUXdJZGlMNjNHTExlREtlMzB5cnJSTWd5ajR3dE54OUVQZU51QzNfOWN4MjZ6TVBOVnI0VXdHeUZKcEpmQ2pFRE01WnRfOVBQOFkxaWhVcUVQN0F5WTVOcHUwZnFycDNoRDkza1BsdUlPbXFONjEzdWJsYko4WDByTXpSdnJGTzVfQjZPdWZtWk5FT1QwNl9EbVlteEZ2Q1pPalpHaE1xb1pLd19aWnptQjNHVW1mbnUzSGx0YVNCM0NOMWdPZWh5TGRjRmZlTXo4VXRjemJLaU90QQ?oc=5",
@@ -623,14 +615,6 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-15T14:45:34.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
-      "medio": "El Nuevo Día",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-15T01:17:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1059,30 +1043,6 @@
       "municipio": "Roldanillo"
     },
     {
-      "tipo": "centro_acopio",
-      "sede": "Coliseo Menor de Manizales",
-      "titulo": "EN VIVO: Así funciona el centro de acopio en el Coliseo Menor de Manizales, ayudas para afectados por sismo - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOG81cjNhLWdKSGM5YkhqUjdXV3NLelotNXN0QXJBamRnUVJIUi1KdllFSmlxNjhNTW83akVPajM1Rk9OR0UtS2dlZ05UanNUZzVWNmNjbnBMUzc4OFB5VGNRSEVFaVZybExkTmlaeUpWUS1VRnhPdmJtdVAtckZXYlpMVlFxLVVZeDJCNGE0VjEtaVphV1BjQXdkeVphWHRwMTdhYlBWMzh2bzNlWWk0QXpZSVRMbUNvcDJvXw?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Menor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
-    },
-    {
-      "tipo": "centro_acopio",
-      "sede": "Universidad de Caldas",
-      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaklOOG5iaE04el91aXlHNENHQ2prOFFRNWctLUM3SExjcmFKMVVlUmhCYU41amtRdjdFcHhRcjFpbFNLNUs0UGs2YnB3UDZocjdldUZCeUtCTnBGWnJfVW80Rkd2cmVwSjdLVFpqTTU0R2pYanZvWTRMZGlaZldJSUlnam5Gdkt3ZmU4cjJieHRQMjE3bDBEMzVDLV9XZEE3TDIxY0NDdUVHTGFrR0dUSFVRMWdLSDAyS0dlYVo2eDg?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20de%20Caldas%2C%20Manizales%2C%20Colombia"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Alcalde de Manizales pide 500 ingenieros para revisar más de 2.000 edificios afectados - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxONHd6QkgxMk1QTGN3LXJxT25SSkxoaGxvSlVCam42amdTYnpZMkhsczkxQXdjUnhLQndaMm5wbzJCV2JlTG1palVpNHg3aVAtTHJxUjdnSURVTVdBS2dON0NsMzVaS3pTLWxrNXNWQWtwbXlQNXFkRkxvdnlNYXNEUkw5UGxaU0l6ZmR0c1l0T0hJWElLV0hqblgtVWFNbXE0dG44aGw5RlZfWEtIRzlaQ3U1TEU2T29wa082TU9HOGRzc0FxcjhsNWdEM3dQNkZHV0pEanJCaG5hWWxMM19zelhUZUzSAeQBQVVfeXFMUHlicVlQV0tSTFlYMWhrR1lXektjNnhaRmZuc2pmTDltVkZ2QVgtbElva0dPUnR1TzIyVkc3dTVQdjFsNk5WTkszZl9kQ0hUNjBLTDV2TDJzVWpCYThTT3lMclVYR0hDNHpZdUxpSWJTUmxXMlo5ZDdUV1EtOWZBbXpXUkQyczNWbkFmRTZKTGJhZndKTU1BTGJla1A1OHA2cFlNVm5ZQkhzeDB5M0ZPV281RUFWazlBc2R5MkJ0X2FiLV96SXh0QXctY1lnSlI3aW9yUDZOR051ZC1SbVNEblBIbE8x?oc=5",
@@ -1185,18 +1145,6 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "centro_acopio",
-      "sede": "Coliseo Mayor de Manizales",
-      "titulo": "El Coliseo Mayor de Manizales recibe a los primeros damnificados tras el sismo: historias y centros de acopio - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOGNjSHB3ZlNnLXZkRm55dWJEblQ5OHc2TEF5bGQxZ2NtNGs3N2QyWmF4M1dUYzloYldNemNTV2FvNlFUalBlMk5jRDNpclJzcWdXM2xGMW03OHBEdnlfQ1Z6ZE53b2xXVGV0Q3JNX29rc0Q2VXQxX2NVSm03dkNQbEFnTW1VVVZvQW5EUzAxLWZ6UUZZMmJqNGlBV3MwOUk3bllmYmNqRklWV3RUeHhJTGkxTkJoRzhjcFB0cC02V2o?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
     },
     {
       "tipo": "centro_acopio",
