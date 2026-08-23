@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-23T14:16:02.804Z",
+  "generado": "2026-08-23T14:47:34.855Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 177,
-    "con_notas": 64,
-    "sin_notas": 113,
-    "poblacion_sin_notas": 3687469,
-    "medios_distintos": 121
+    "con_notas": 66,
+    "sin_notas": 111,
+    "poblacion_sin_notas": 3642303,
+    "medios_distintos": 122
   },
   "municipios": [
     {
@@ -25,7 +25,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 235337,
-      "notas": 25,
+      "notas": 27,
       "ultima": "2026-08-22T19:00:00.000Z",
       "medios": [
         {
@@ -37,6 +37,11 @@
           "nombre": "Pulzo",
           "notas": 4,
           "ultima": "2026-08-21T05:09:13.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 3,
+          "ultima": "2026-08-21T07:25:59.000Z"
         },
         {
           "nombre": "alerta.com.co",
@@ -99,11 +104,6 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "Noticias SIN",
-          "notas": 1,
-          "ultima": "2026-08-13T02:44:29.000Z"
-        },
-        {
           "nombre": "Noticias RCN",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
@@ -116,9 +116,14 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 83,
+      "notas": 105,
       "ultima": "2026-08-23T13:32:05.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 22,
+          "ultima": "2026-08-23T13:32:05.000Z"
+        },
         {
           "nombre": "Pulzo",
           "notas": 9,
@@ -275,7 +280,7 @@
           "ultima": "2026-08-17T17:07:30.000Z"
         },
         {
-          "nombre": "20Minutos",
+          "nombre": "20minutos.es",
           "notas": 1,
           "ultima": "2026-08-17T16:58:39.000Z"
         },
@@ -352,12 +357,12 @@
       "departamento": "Valle del Cauca",
       "mmi": 8,
       "poblacion": 38029,
-      "notas": 29,
+      "notas": 28,
       "ultima": "2026-08-22T01:35:57.000Z",
       "medios": [
         {
           "nombre": "Revista Semana",
-          "notas": 5,
+          "notas": 4,
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
@@ -484,7 +489,7 @@
       "departamento": "Quindio",
       "mmi": 7.8,
       "poblacion": 325056,
-      "notas": 24,
+      "notas": 23,
       "ultima": "2026-08-21T04:33:21.000Z",
       "medios": [
         {
@@ -506,11 +511,6 @@
           "nombre": "impactonews.co",
           "notas": 1,
           "ultima": "2026-08-19T02:11:59.000Z"
-        },
-        {
-          "nombre": "Infobae",
-          "notas": 1,
-          "ultima": "2026-08-18T19:36:00.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -1132,8 +1132,15 @@
       "departamento": "Risaralda",
       "mmi": 7.5,
       "poblacion": 29382,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-22T05:00:43.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-22T05:00:43.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO63470",
@@ -1458,7 +1465,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 2337182,
-      "notas": 59,
+      "notas": 60,
       "ultima": "2026-08-23T13:34:09.000Z",
       "medios": [
         {
@@ -1468,7 +1475,7 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 7,
+          "notas": 8,
           "ultima": "2026-08-23T13:34:09.000Z"
         },
         {
@@ -1478,8 +1485,8 @@
         },
         {
           "nombre": "elpais.com.co",
-          "notas": 5,
-          "ultima": "2026-08-18T22:15:00.000Z"
+          "notas": 4,
+          "ultima": "2026-08-18T10:47:00.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -1578,6 +1585,11 @@
         },
         {
           "nombre": "Newsroom RCN Radio",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
+        },
+        {
+          "nombre": "Canal 1 En vivo",
           "notas": 1,
           "ultima": "2026-08-10T07:00:00.000Z"
         }
@@ -2105,8 +2117,15 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.3,
       "poblacion": 15784,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-21T13:42:34.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-21T13:42:34.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO73624",
@@ -2249,12 +2268,12 @@
       "departamento": "Antioquia",
       "mmi": 6.1,
       "poblacion": 28245,
-      "notas": 11,
+      "notas": 13,
       "ultima": "2026-05-25T07:00:00.000Z",
       "medios": [
         {
           "nombre": "City Tv",
-          "notas": 11,
+          "notas": 13,
           "ultima": "2026-05-25T07:00:00.000Z"
         }
       ]
@@ -2958,9 +2977,14 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 2,
-      "ultima": "2026-08-17T22:39:50.000Z",
+      "notas": 3,
+      "ultima": "2026-08-19T13:13:55.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-19T13:13:55.000Z"
+        },
         {
           "nombre": "EL INFORMADOR - Santa Marta, Colombia",
           "notas": 1,
