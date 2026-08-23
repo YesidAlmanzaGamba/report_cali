@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-23T19:44:20.579Z",
+  "generado": "2026-08-23T20:13:40.105Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -40,6 +40,14 @@
       "publicado": "2026-08-23T14:04:14.000Z"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Gobernadora se reunió con víctimas del terremoto en Buga donde se reporta 36 viviendas afectadas",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90314/gobernadora-se-reunio-con-victimas-del-terremoto-en-buga-donde-se-reporta-36-viviendas-afectadas/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-23T14:02:43.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Del albergue al hotel: el nuevo comienzo de los adultos mayores damnificados por el terremoto en Cali",
       "enlace": "https://www.eltiempo.com/colombia/cali/del-albergue-al-hotel-el-nuevo-comienzo-de-los-adultos-mayores-damnificados-por-el-terremoto-en-cali-3580379",
@@ -68,14 +76,6 @@
       "publicado": "2026-08-22T19:41:25.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "centro_salud_afectado",
-      "titulo": "Hospitales del Valle afectados exigen millonaria recuperación - elnortehoy.com",
-      "enlace": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcGRlZU9pQ0FaWWdRMzBXTElKRWFGci1TTGx3Z2dzd0toUlRiLWtfc3M2VG1ORHByeHBiOW01OFM0ZzRIbG1OS3R1SjBfd3JIanpBbEpNeW9wTGkwQm03OEV5VUxBa0d0N2FaTFdnb0RNTW85MFJZUVdaZ3d3ZTVHSWlGX19zX05nOWNtMHNkS2MzcEpBakdN?oc=5",
-      "medio": "elnortehoy.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-22T15:29:44.000Z"
     },
     {
       "tipo": "albergue",
@@ -280,12 +280,32 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "En Caicedonia, la Gobernadora del Valle anunció acciones para la recuperación de viviendas y negocios afectados por el sismo",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90279/en-caicedonia-la-gobernadora-del-valle-anuncio-acciones-para-la-recuperacion-de-viviendas-y-negocios-afectados-por-el-sismo/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-19T22:12:24.000Z",
+      "pcode": "CO76122",
+      "municipio": "Caicedonia"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Cali investigará si hubo fallas o corrupción en edificios colapsados por terremoto de 7,4 - ABC",
       "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORDdzNEgyQVFEYzJjRTZfUlNhNVh2dTlCdklLUVpGeDUxX1JZVV9ua3F6aW5wVFJHVWlHOTFYMzktdkpCN2ZTU2dHQ2owbHRJb1Z6cC1vQndpVzFmVWFkTElhVGhCeXJCdTBxVUg0cWo0eGJNRUlwVko3OVl3aDk0Rm5FNzF1RzZXbUgtZG52YXRVZ1VaZW0ycmJQVThRcDFFaGxRSFdwcFdTX3JCRUpHc2RjZTc?oc=5",
       "medio": "ABC",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T22:09:35.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "‘El Valle lo Reconstruimos Juntos’: Colectivo de jóvenes llevan ayudas a comunidades indígenas, gracias al Centro de Acopio de la Antigua Licorera del Valle",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90275/el-valle-lo-reconstruimos-juntos-colectivo-de-jovenes-llevan-ayudas-a-comunidades-indigenas-gracias-al-centro-de-acopio-de-la-antigua-licorera-del-valle/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-19T21:55:01.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
@@ -310,6 +330,14 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "El Valle lo reconstruimos juntos: Irina, la vendedora ambulante que es voluntaria en el centro de acopio de la Gobernación del Valle",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90271/el-valle-lo-reconstruimos-juntos-irina-la-vendedora-ambulante-que-es-voluntaria-en-el-centro-de-acopio-de-la-gobernacion-del-valle/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-19T20:47:16.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "500 damnificados siguen en albergues tras terremoto en Pereira - Noticias RCN",
       "enlace": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMU9lYXZYMVlkQTNwMjV5UUNkamZLNUNNdVpmSENrZmIyY0FVTHNfMVYtTU9Id2R0WC13R01NTTFkb19JTDgtQnRUZWxVT2JYU191YlVBbG5rMENkd1NNcTFPOHd3a2owNFdEbVdJSEVaQTlKeWhRTDZpOE9fSzhJMW80WUdOQl9YUVh1dkRfME1EcER3MUI0RmR1UklnTW9kR2RrUkQzNVl5cknSAasBQVVfeXFMTmJycVo2UW5PR2xVXy01NEtDb2JzY3lyakV4U05TRm5TU2dHQ3pWU255Tzh0bXc5dnFxNkgtX2hQeERiY0VTTG9rYmdKSXkyTEQ5dk9UT3pjV3FON29LbWwwa0tjR3NyS3hfM2txbGprQnA2d1M3M21SbmlzdUE2ZTdDTlVHTEszeVFwQlNvTTNndE1yRXB6YUZocmw1VUVIa255R0o2MkoyZGk4?oc=5",
@@ -318,6 +346,19 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "centro_acopio",
+      "clase": "corregimiento",
+      "lugar": "San Francisco",
+      "titulo": "La ayuda humanitaria del centro de acopio de la Antigua Licorera del Valle llega al corregimiento de San Francisco, Toro",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90263/la-ayuda-humanitaria-del-centro-de-acopio-de-la-antigua-licorera-del-valle-llega-al-corregimiento-de-san-francisco-toro/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T23:53:13.000Z",
+      "pcode": "CO05652",
+      "municipio": "San Francisco",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=corregimiento%20San%20Francisco%2C%20San%20Francisco%2C%20Colombia"
     },
     {
       "tipo": "centro_acopio",
@@ -336,6 +377,14 @@
       "publicado": "2026-08-18T20:30:53.000Z"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Los voluntarios son el corazón que mueve las ayudas en el centro de acopio de la Antigua Licorera",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90259/los-voluntarios-son-el-corazon-que-mueve-las-ayudas-en-el-centro-de-acopio-de-la-antigua-licorera/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T20:27:22.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Nuevo reporte: Terremoto en Colombia deja más de 211.000 damnificados en ciudades capitales en donde 3.010 viviendas colapsaron - Publimetro Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNX1JaY3VVZUp0dUlPUWczOVNzNmw5MzBiMXNhUWp5UEJZb0dXdmJjTGFtRnpvZmRnQU15VFU0cDlvYXVSZGZZM1gxajJTZW5OUXg4ajdNdUd0SjhXc0trQTdRaUlXXzBEWlBlU3NqTF81WXJCNGoxOFc5VU9lc1VEdHBLTlVRQXpVT0lKQnZaSlg2ejNEUTZIYWxzMGJ2RXc0VXpjblR4aHI5S3h6M2xkcURlTFk5YlYxQm1SYXJHWkE3QTNYR1hzbnJlSmszUjRocDlvN3dDaGp1ZGstZi05MkQwOGNmY1JUU2ZhdVNZQjJ0ckJnZnpxVFpBWmZLajBR?oc=5",
@@ -344,12 +393,42 @@
       "publicado": "2026-08-18T20:18:23.000Z"
     },
     {
+      "tipo": "albergue",
+      "sede": "Biblioteca Departamental",
+      "titulo": "Biblioteca Departamental cierra temporalmente por daños no estructurales, pero trasladó sus servicios a albergues",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90258/biblioteca-departamental-cierra-temporalmente-por-danos-no-estructurales-pero-traslado-sus-servicios-a-albergues/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T19:40:05.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Biblioteca%20Departamental%2C%20Cali%2C%20Colombia"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Ciudades intermedias también están en crisis: hay 15.000 damnificados y miles de viviendas afectadas - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQTFfcUpGbTRTdmVNMEhpYzBGYlpaYmxPTlppMGVRSTFfejVrdVpva1JBSTlsLUM0WXdJcXRleklCTHdxSnBhc24zcHJwN3EtRTJsSTVhcm1rVFFpaTNDTFM4bzVIeGpPb0hFeWh4U0NxMkV2clpJT0J0cmY2LW5XS3JjYXVGQVRjY1BKeVdfZTNHdFlhQk8wNlVGM1dZdWJkSnVpUWthbjRvdUFyVGxCLXVhVmF3Z2wwN3VOZEh1OWJPR3B6cU9uYTQ1eTE5SzI4RnBoanloYWVsb2RBenNiXzN1UU9GZ3JXQ0JRYUlvb0RSTWFhVFh1X2Y4MkQ?oc=5",
       "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-18T18:03:31.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Esta semana llegan materiales para recuperar 600 casas afectadas por el terremoto en Bolívar: “No estamos derrotados”, Gobernadora",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90255/esta-semana-llegan-materiales-para-recuperar-600-casas-afectadas-por-el-terremoto-en-bolivar-no-estamos-derrotados-gobernadora/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T17:46:04.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "“Gracias por amar al Valle y las víctimas de este terremoto”: Gobernadora a voluntarios del centro de acopio",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90245/gracias-por-amar-al-valle-y-las-victimas-de-este-terremoto-gobernadora-a-voluntarios-del-centro-de-acopio/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-18T16:41:30.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
@@ -446,6 +525,16 @@
       "publicado": "2026-08-17T17:32:54.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Kits, alimentos y carpas, así funciona el corazón logístico del centro de acopio del Valle para atención humanitaria",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90249/kits-alimentos-y-carpas-asi-funciona-el-corazon-logistico-del-centro-de-acopio-del-valle-para-atencion-humanitaria/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-17T17:12:43.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
@@ -560,6 +649,16 @@
       "municipio": "Roldanillo"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "En Versalles, Gobernación trabajará por la reconstrucción de 700 viviendas afectadas y apoyará a emprendedores tras sismo",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90236/en-versalles-gobernacion-trabajara-por-la-reconstruccion-de-700-viviendas-afectadas-y-apoyara-a-emprendedores-tras-sismo/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-16T02:26:36.000Z",
+      "pcode": "CO76863",
+      "municipio": "Versalles"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Bogotá mantiene cuatro puntos de acopio oficiales para damnificados por el terremoto - El Espectador",
       "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQS1NRllGMEQ0X09rb3lxTW1uQ2NLYkdtSTIyYk9FM3VDeEQ0TEpFbk1xNksyaFhYS1RmZkJVbzBfSkgtZjNTdlQ5VVFWdXp5U3k3c25aM0pXWGItd0ZnWlV2c2I0cTlDZGhSN3V2RlBRWWVSdkx3SEJkV2NUMDFOZ0pmb1JNVzVOSTFLTzRwQV9VNlpCNXljbVgxZjA3Sl9KcWJfUmQ1VjB3aFZBSXU3R0NzVWlhSkcxY19OTWln0gHSAUFVX3lxTFBvOEZjWktaT21PNWNGd3dNV1dIS3g3VG9lOTRqaVEtdnhGRHRzQ1owRnlRVm1YZHR2c3hoSjNHTDVWRXB3UWF2b1lIMjBrN25LY0JzMHdadm9GZFhGV0RsT1BmenlXRGpOZzEtRExLM1ota1BUaGhQeVFkSk5GSDV0b3FmbWtHRjRfX2NBaHNuNGhfUnN5V0QyemtORXNlZU41bUdUVl91UG5WNnJ4UHF2WkZuYS1VbTFNWlpnRVJzRHVuS2wtcnJRWkltS0F4cnRjZw?oc=5",
@@ -600,6 +699,14 @@
       "publicado": "2026-08-14T21:46:31.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Gobernación del Valle convoca a ingenieros y arquitectos para apoyar evaluación de edificaciones afectadas por terremoto",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90224/gobernacion-del-valle-convoca-a-ingenieros-y-arquitectos-para-apoyar-evaluacion-de-edificaciones-afectadas-por-terremoto/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-14T20:10:55.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -820,6 +927,14 @@
       "municipio": "Quibdó"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Bogotá apoyará la evaluación de daños en Chocó con 30 especialistas del IDU y Camacol y habilitó puntos de acopio para donaciones - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQUmhUNzZzVTljV05wVzZ5bGI0UWFYYVBPMDdIVzE1akVObGlYQkptLWU5Y0d3WmRucmNLSGFTY0JUeWVSRHBkY3lVSDhlOGc1ZEp3c01Gd1E5andoa29pYTRWclpWcnRXYkdUVFZkbDlVeEZvdjVwMUVDeTdWU2NBaXBSdG5JRVRUR2pIbmR6RUY3bjZ4WHlkUzk4T1dMV1Rha2FaTW45QmpIb1laWXRUMkZHaHJMMGM3N2NtUmNKdk9la096dGU5S25vQVpvUUVWVkhLNGVQY2lHX053VVh0VDRTOUFqMTZlZUJSclRyTkZQb0FhNElCN0NMbzhZOU4tOUp0OdIBnwJBVV95cUxPUUdQd2s0ZHJWZzcyNm90aDFVM3k3dnIwTXlSdTJaQTNTZW5UN1U3cmFZY2dRSEZIQTQ5TmRsSmFMUXFwekZEUzQ4enlwU0VCUlpuT0pSQy1uTUJOeDd6NlEwQ3NOMFRDb0QySEkzTlQyMURnT05idnhRQkwwbVNnVnFMMVhtWHRrY3dWSXEtN29TQVpTS3FoVFljcllkZTU5WGVHdUxYYWFZbTNMeWxTcElSSktseEFUSUFScE4yQUQ3TkhGSUdoQTBTa3RVOTJDcUNaZlEyR1ZnTEhtRFRYaGE4WHQ2NW5HQXE2YXp5WTdJM094UnQzY211V3h1ci1XQVgzdWVoZS1fRXBaUU5KNy1EdHppT3hmNHR1R0hxYw?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-13T07:00:00.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
@@ -980,14 +1095,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO68001",
       "municipio": "Bucaramanga"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSWY1ZWVJektxOVM2MkxNQXNKdGRIQ0JDamhSVDItbG9QSlR0UXdXbGt3UXBMZzlwdzFETWxYNlNvVjFTVWFTVkYwUUZIRXduREt5MHlhMHc1OGxMMzNwWGNldTNuYW9QZ25nWTVHa1VpOGFwV2F0RzJ5MVhDMVJwc0hQWE1qQzJ6Tm05a3duNlFaX1psTFBjUUlyWWFTX0dGNzZkeHN1OEx3MXZsaHYwYnVlTVdmV3lsc0JqbTVobzFoTzJOV1hQQ9IByAFBVV95cUxORWlDdHctN1N0SFNrNXE4MzR6cGJEbWhUVGJ5SFdUbTJ0eVpPZmMxaTc4SG95ZUxNUkVTaTlEdzdJZ1Q5bE8xbzJYZGo0OEc4cDBlSGZkOE92czlCdVd3dHFTdm9OUGdvMVNCazRYMlowQjN0dXVkcmdFLVFyVTVmU1I1OWtIdkdFZkNTb2xlS28wWkhDM0w3X1lTZThQektfekZkUkx5c2lWVmxfdWtsb0FXZVVrYkVEMW5SZGhTWGNnZ1J2eF9hYw?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
