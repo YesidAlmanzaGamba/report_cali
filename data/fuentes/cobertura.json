@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-23T18:55:24.593Z",
+  "generado": "2026-08-23T19:18:02.245Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 178,
-    "con_notas": 66,
-    "sin_notas": 112,
-    "poblacion_sin_notas": 3635254,
-    "medios_distintos": 124
+    "municipios_considerados": 176,
+    "con_notas": 63,
+    "sin_notas": 113,
+    "poblacion_sin_notas": 3538165,
+    "medios_distintos": 121
   },
   "municipios": [
     {
@@ -16,8 +16,15 @@
       "departamento": "Valle del Cauca",
       "mmi": 8,
       "poblacion": 142255,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2012-12-27T08:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Colombia.com",
+          "notas": 1,
+          "ultima": "2012-12-27T08:00:00.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO66170",
@@ -25,7 +32,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 235337,
-      "notas": 28,
+      "notas": 25,
       "ultima": "2026-08-22T19:00:00.000Z",
       "medios": [
         {
@@ -37,11 +44,6 @@
           "nombre": "Pulzo",
           "notas": 4,
           "ultima": "2026-08-21T05:09:13.000Z"
-        },
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 3,
-          "ultima": "2026-08-21T07:25:59.000Z"
         },
         {
           "nombre": "alerta.com.co",
@@ -121,14 +123,9 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 103,
+      "notas": 82,
       "ultima": "2026-08-23T13:32:05.000Z",
       "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 21,
-          "ultima": "2026-08-23T13:32:05.000Z"
-        },
         {
           "nombre": "Pulzo",
           "notas": 10,
@@ -205,6 +202,11 @@
           "ultima": "2026-08-16T16:31:09.000Z"
         },
         {
+          "nombre": "Colombia.com",
+          "notas": 2,
+          "ultima": "2026-08-11T19:03:55.000Z"
+        },
+        {
           "nombre": "El País (Cali)",
           "notas": 1,
           "ultima": "2026-08-22T22:12:44.000Z"
@@ -238,11 +240,6 @@
           "nombre": "Publimetro Colombia",
           "notas": 1,
           "ultima": "2026-08-19T15:46:39.000Z"
-        },
-        {
-          "nombre": "El Pais Vallenato",
-          "notas": 1,
-          "ultima": "2026-08-18T17:48:44.000Z"
         },
         {
           "nombre": "Teleantioquia",
@@ -315,12 +312,7 @@
           "ultima": "2026-08-13T21:11:23.000Z"
         },
         {
-          "nombre": "ESPN Colombia",
-          "notas": 1,
-          "ultima": "2026-08-13T11:01:32.000Z"
-        },
-        {
-          "nombre": "ESPN Guatemala",
+          "nombre": "ESPN México",
           "notas": 1,
           "ultima": "2026-08-13T11:01:32.000Z"
         },
@@ -330,9 +322,9 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "Colombia.com",
+          "nombre": "ESPN Colombia",
           "notas": 1,
-          "ultima": "2026-08-11T19:03:55.000Z"
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "CiudadRegion",
@@ -352,19 +344,9 @@
       "departamento": "Valle del Cauca",
       "mmi": 8,
       "poblacion": 38029,
-      "notas": 28,
-      "ultima": "2026-08-22T01:35:57.000Z",
+      "notas": 19,
+      "ultima": "2026-08-21T22:52:27.000Z",
       "medios": [
-        {
-          "nombre": "Revista Semana",
-          "notas": 5,
-          "ultima": "2026-08-13T07:00:00.000Z"
-        },
-        {
-          "nombre": "Noticiero 90 Minutos",
-          "notas": 3,
-          "ultima": "2026-08-13T20:31:05.000Z"
-        },
         {
           "nombre": "facebook.com",
           "notas": 2,
@@ -376,14 +358,14 @@
           "ultima": "2026-08-13T15:23:00.000Z"
         },
         {
+          "nombre": "Revista Semana",
+          "notas": 2,
+          "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
           "nombre": "El Colombiano",
           "notas": 2,
           "ultima": "2026-08-12T07:00:00.000Z"
-        },
-        {
-          "nombre": "France 24",
-          "notas": 1,
-          "ultima": "2026-08-22T01:35:57.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -416,11 +398,6 @@
           "ultima": "2026-08-16T12:33:07.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-08-14T07:00:00.000Z"
-        },
-        {
           "nombre": "Agencia de Periodismo Investigativo",
           "notas": 1,
           "ultima": "2026-08-13T02:45:29.000Z"
@@ -432,11 +409,6 @@
         },
         {
           "nombre": "City Tv",
-          "notas": 1,
-          "ultima": "2026-08-12T07:00:00.000Z"
-        },
-        {
-          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
         },
@@ -590,12 +562,12 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 17838,
-      "notas": 5,
+      "notas": 4,
       "ultima": "2026-08-21T16:12:17.000Z",
       "medios": [
         {
           "nombre": "Q'hubo Cali",
-          "notas": 2,
+          "notas": 1,
           "ultima": "2026-08-21T16:12:17.000Z"
         },
         {
@@ -1120,15 +1092,8 @@
       "departamento": "Risaralda",
       "mmi": 7.5,
       "poblacion": 29382,
-      "notas": 1,
-      "ultima": "2026-08-22T05:00:43.000Z",
-      "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-22T05:00:43.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63470",
@@ -1453,17 +1418,17 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 2337182,
-      "notas": 64,
+      "notas": 62,
       "ultima": "2026-08-23T18:19:50.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 20,
+          "notas": 19,
           "ultima": "2026-08-23T18:14:00.000Z"
         },
         {
           "nombre": "El Tiempo",
-          "notas": 7,
+          "notas": 6,
           "ultima": "2026-08-23T16:57:59.000Z"
         },
         {
@@ -1549,7 +1514,7 @@
         {
           "nombre": "facebook.com",
           "notas": 1,
-          "ultima": "2026-08-14T15:30:52.000Z"
+          "ultima": "2026-08-14T07:00:00.000Z"
         },
         {
           "nombre": "Revista Semana",
@@ -2117,15 +2082,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.3,
       "poblacion": 15784,
-      "notas": 1,
-      "ultima": "2026-08-21T13:42:34.000Z",
-      "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-21T13:42:34.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO73624",
@@ -2268,12 +2226,12 @@
       "departamento": "Antioquia",
       "mmi": 6.1,
       "poblacion": 28245,
-      "notas": 11,
+      "notas": 12,
       "ultima": "2026-05-25T07:00:00.000Z",
       "medios": [
         {
           "nombre": "City Tv",
-          "notas": 11,
+          "notas": 12,
           "ultima": "2026-05-25T07:00:00.000Z"
         }
       ]
@@ -2651,12 +2609,12 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 19,
+      "notas": 18,
       "ultima": "2026-08-20T17:13:00.000Z",
       "medios": [
         {
           "nombre": "Colombia.com",
-          "notas": 14,
+          "notas": 13,
           "ultima": "2026-05-27T07:00:00.000Z"
         },
         {
@@ -2813,22 +2771,6 @@
       ]
     },
     {
-      "pcode": "CO19693",
-      "nombre": "San Sebastián",
-      "departamento": "Cauca",
-      "mmi": 4.7,
-      "poblacion": 11570,
-      "notas": 1,
-      "ultima": "2021-10-12T05:05:31.000Z",
-      "medios": [
-        {
-          "nombre": "Noticiero 90 Minutos",
-          "notas": 1,
-          "ultima": "2021-10-12T05:05:31.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO19701",
       "nombre": "Santa Rosa",
       "departamento": "Cauca",
@@ -2850,7 +2792,7 @@
       "departamento": "Atlántico",
       "mmi": 4.4,
       "poblacion": 1355306,
-      "notas": 7,
+      "notas": 6,
       "ultima": "2026-08-23T18:33:45.000Z",
       "medios": [
         {
@@ -2882,11 +2824,6 @@
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-06-26T07:00:00.000Z"
-        },
-        {
-          "nombre": "Colombia.com",
-          "notas": 1,
-          "ultima": "2021-02-11T08:00:00.000Z"
         }
       ]
     },
@@ -2986,49 +2923,18 @@
       ]
     },
     {
-      "pcode": "CO52001",
-      "nombre": "Pasto",
-      "departamento": "Nariño",
-      "mmi": 4.2,
-      "poblacion": 395097,
-      "notas": 2,
-      "ultima": "2026-08-18T15:42:09.000Z",
-      "medios": [
-        {
-          "nombre": "Pasto.gov.co",
-          "notas": 1,
-          "ultima": "2026-08-18T15:42:09.000Z"
-        },
-        {
-          "nombre": "Caracol Radio",
-          "notas": 1,
-          "ultima": "2026-08-18T12:56:01.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO47001",
       "nombre": "Santa Marta",
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 3,
-      "ultima": "2026-08-19T13:13:55.000Z",
+      "notas": 1,
+      "ultima": "2026-08-17T22:39:50.000Z",
       "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-08-19T13:13:55.000Z"
-        },
         {
           "nombre": "EL INFORMADOR - Santa Marta, Colombia",
           "notas": 1,
           "ultima": "2026-08-17T22:39:50.000Z"
-        },
-        {
-          "nombre": "Agencia de Periodismo Investigativo",
-          "notas": 1,
-          "ultima": "2026-08-17T20:24:38.000Z"
         }
       ]
     },
@@ -3086,13 +2992,18 @@
       "departamento": "Córdoba",
       "mmi": 4.1,
       "poblacion": 37615,
-      "notas": 1,
+      "notas": 2,
       "ultima": "2026-08-21T20:35:47.000Z",
       "medios": [
         {
           "nombre": "Ciudad Valencia",
           "notas": 1,
           "ultima": "2026-08-21T20:35:47.000Z"
+        },
+        {
+          "nombre": "Colombia.com",
+          "notas": 1,
+          "ultima": "2020-10-23T07:00:00.000Z"
         }
       ]
     },
