@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-23T16:49:32.434Z",
+  "generado": "2026-08-23T17:14:22.218Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 176,
+    "municipios_considerados": 177,
     "con_notas": 63,
-    "sin_notas": 113,
-    "poblacion_sin_notas": 3662963,
-    "medios_distintos": 120
+    "sin_notas": 114,
+    "poblacion_sin_notas": 3680420,
+    "medios_distintos": 123
   },
   "municipios": [
     {
@@ -116,7 +116,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 81,
+      "notas": 83,
       "ultima": "2026-08-23T13:32:05.000Z",
       "medios": [
         {
@@ -155,6 +155,11 @@
           "ultima": "2026-08-21T04:27:00.000Z"
         },
         {
+          "nombre": "City Tv",
+          "notas": 3,
+          "ultima": "2026-08-19T02:19:07.000Z"
+        },
+        {
           "nombre": "Risaraldahoy.com",
           "notas": 3,
           "ultima": "2026-08-17T17:21:36.000Z"
@@ -180,11 +185,6 @@
           "ultima": "2026-08-21T00:31:28.000Z"
         },
         {
-          "nombre": "City Tv",
-          "notas": 2,
-          "ultima": "2026-08-19T02:19:07.000Z"
-        },
-        {
           "nombre": "Noticias Caracol",
           "notas": 2,
           "ultima": "2026-08-17T17:00:34.000Z"
@@ -193,6 +193,11 @@
           "nombre": "LaRepublica.co",
           "notas": 2,
           "ultima": "2026-08-16T16:31:09.000Z"
+        },
+        {
+          "nombre": "Colombia.com",
+          "notas": 2,
+          "ultima": "2026-08-11T19:03:55.000Z"
         },
         {
           "nombre": "El País (Cali)",
@@ -318,11 +323,6 @@
           "nombre": "MILENIO",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
-        },
-        {
-          "nombre": "Colombia.com",
-          "notas": 1,
-          "ultima": "2026-08-11T19:03:55.000Z"
         },
         {
           "nombre": "CiudadRegion",
@@ -474,17 +474,17 @@
       "departamento": "Quindio",
       "mmi": 7.8,
       "poblacion": 325056,
-      "notas": 16,
+      "notas": 23,
       "ultima": "2026-08-21T04:33:21.000Z",
       "medios": [
         {
           "nombre": "Crónica del Quindio",
-          "notas": 6,
+          "notas": 8,
           "ultima": "2026-08-20T05:12:34.000Z"
         },
         {
           "nombre": "Caracol Radio",
-          "notas": 4,
+          "notas": 5,
           "ultima": "2026-08-20T11:06:44.000Z"
         },
         {
@@ -498,9 +498,29 @@
           "ultima": "2026-08-19T02:11:59.000Z"
         },
         {
+          "nombre": "Noticias RCN",
+          "notas": 1,
+          "ultima": "2026-08-11T21:00:57.000Z"
+        },
+        {
+          "nombre": "La FM",
+          "notas": 1,
+          "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Canal 1 En vivo",
+          "notas": 1,
+          "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
           "nombre": "Colombia.com",
           "notas": 1,
           "ultima": "2024-01-19T08:00:00.000Z"
+        },
+        {
+          "nombre": "Vida Nueva",
+          "notas": 1,
+          "ultima": "2017-10-31T07:00:00.000Z"
         },
         {
           "nombre": "Las2orillas",
@@ -560,7 +580,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 17838,
-      "notas": 5,
+      "notas": 6,
       "ultima": "2026-08-21T16:12:17.000Z",
       "medios": [
         {
@@ -582,6 +602,11 @@
           "nombre": "Noticiero 90 Minutos",
           "notas": 1,
           "ultima": "2021-10-05T06:47:40.000Z"
+        },
+        {
+          "nombre": "Minuto30",
+          "notas": 1,
+          "ultima": "2017-12-23T08:00:00.000Z"
         }
       ]
     },
@@ -1013,15 +1038,8 @@
       "departamento": "Risaralda",
       "mmi": 7.6,
       "poblacion": 17457,
-      "notas": 1,
-      "ultima": "2022-08-07T07:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "Colombia.com",
-          "notas": 1,
-          "ultima": "2022-08-07T07:00:00.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO76497",
@@ -1424,12 +1442,12 @@
       "mmi": 6.9,
       "poblacion": 2337182,
       "notas": 61,
-      "ultima": "2026-08-23T15:53:06.000Z",
+      "ultima": "2026-08-23T16:46:07.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
           "notas": 17,
-          "ultima": "2026-08-23T14:55:05.000Z"
+          "ultima": "2026-08-23T16:46:07.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -1443,8 +1461,8 @@
         },
         {
           "nombre": "elpais.com.co",
-          "notas": 4,
-          "ultima": "2026-08-18T10:47:00.000Z"
+          "notas": 5,
+          "ultima": "2026-08-18T22:15:00.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -1455,11 +1473,6 @@
           "nombre": "Noticias Caracol",
           "notas": 2,
           "ultima": "2026-08-22T23:41:56.000Z"
-        },
-        {
-          "nombre": "Colombia.com",
-          "notas": 2,
-          "ultima": "2026-08-22T01:51:33.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1475,6 +1488,11 @@
           "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-22T15:12:28.000Z"
+        },
+        {
+          "nombre": "Colombia.com",
+          "notas": 1,
+          "ultima": "2026-08-22T01:51:33.000Z"
         },
         {
           "nombre": "elnortehoy.com",
@@ -1524,7 +1542,7 @@
         {
           "nombre": "UN News",
           "notas": 1,
-          "ultima": "2026-08-13T19:26:35.000Z"
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Demócrata",
@@ -2609,12 +2627,12 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 18,
+      "notas": 20,
       "ultima": "2026-08-20T17:13:00.000Z",
       "medios": [
         {
           "nombre": "Colombia.com",
-          "notas": 13,
+          "notas": 15,
           "ultima": "2026-05-27T07:00:00.000Z"
         },
         {
@@ -2735,6 +2753,22 @@
           "nombre": "NTN24",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO18592",
+      "nombre": "Puerto Rico",
+      "departamento": "Caquetá",
+      "mmi": 4.7,
+      "poblacion": 27697,
+      "notas": 1,
+      "ultima": "2020-01-11T08:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Teletrece",
+          "notas": 1,
+          "ultima": "2020-01-11T08:00:00.000Z"
         }
       ]
     },
