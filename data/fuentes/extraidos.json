@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-23T21:43:48.736Z",
+  "generado": "2026-08-23T22:13:49.982Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -130,16 +130,6 @@
       "publicado": "2026-08-22T01:44:00.000Z",
       "pcode": "CO41615",
       "municipio": "Rivera"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Que los albergues en Cali no queden solos",
-      "enlace": "https://www.elpais.com.co/opinion/que-los-albergues-en-cali-no-queden-solos-2135.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-22T01:39:35.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
@@ -393,6 +383,14 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-18T22:45:12.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "#DOMINGA | Un potente sismo de magnitud 7.4 sacudió a Colombia y desnudó la falta de alertas sísmicas públicas y de cultura de prevención en el país. El desastre dejó más de 260 fallecidos, 140 edificios colapsados y daños cuya reconstrucción costará h - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOZFlLZjFVTUR0VVJfdlpkXzhpcEpDT2ZGOW5rY20zRXFOemxudFFOeVdJY3FBdk5EdlpyNC12dkpSZVlJa2Y5bi1jbndsUlUzcTBQcnpTVTJ4bjFpTVRKUjBMZ3I3M296RUp1dUdJUnNWNUN5MUZ2RW53TU1senNUTWl6QTZOSXJQQ2xSbGlYVnpPWlBSZldDbl9MNVE1akVpNUlucjg5THpFbHhUVlUwcmNaOXB2UUJjWE1USU11Y0R4RzNjaDZJZUpDNHJCaXNKMjJzZXlSV1phVzhQU19iLUdSY2M0QWpG?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-18T22:00:58.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -709,14 +707,6 @@
       "publicado": "2026-08-15T07:00:00.000Z"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
-      "medio": "El Nuevo Día",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-15T01:17:00.000Z"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Telemundo Delmarva",
       "enlace": "https://news.google.com/rss/articles/CBMipAJBVV95cUxQTmp5UHg5aHRYOEUwVElYNkpkTHZYcUhuMVRla3JNS29ob285cjNIUmxfcDlxbUplVDIxSmVZbml6MkVvYl96dlRReTlvaXN3UEJiNEpOYTdTbU0ta0tMejdMRzNqVHVIM1VpZ3lWUWxkbHNuMnBEZjE5MktNTHNyUl9uOW16WW94b09GRzNLNnZQQzBnd0tjNXg4a21MQmZ6WktpQW91cTgtekFUeDFMcEhZbXVUa29xTTU5RnRXaUc2TTZfMXNBdjVQUHBEQ2ZOTXYwWmp0cXFWUmMxekI3SlhqaGRTZHNweWc1TldHUzViNHdoZ0EwU2ZWX3dhdXVaWXFOeGxxaXh1TzdHaGxvb25WQUU0WjlnWk1TVDkzVFpoazVJ?oc=5",
@@ -831,6 +821,14 @@
       "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
       "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-14T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Centros de acopio para damnificados por terremoto en Colombia comenzarán a operar este viernes - El Nuevo Día",
+      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZjRQMFJrb19vUHF0QUc4enNPc2NEVnV1aTJ3aGhVVkdhY0FBdEttWUF3eWlFbEFZTVEtVk1abDNoUUM0VHlSaUF1dmplTEJpdGctZng0VFpvTGhNWnpkNEtVdG1xN3hLbXNnbURXWmo5RnpBeC01eEEzckxvdUxQaTNOQU9Ib2k3VjZlaDBZSVN4eGkyV3RJd2xTTTFYczZBdGcxbGhLX1A3dHFKdmNZTjNFVUowU3MtLWJsRTlYTi1lRmE3OHAwQ19Uejg3UGRRUU1RbDZob3lQbVVrWnpR?oc=5",
+      "medio": "El Nuevo Día",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z"
     },
@@ -1199,6 +1197,16 @@
       "medio": "Forbes Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T20:47:41.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "¿Cuántos edificios colapsaron en Cali?: Buscan sobrevivientes bajo los escombros - Noticias RCN",
+      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMkJUUEZnVXduVTZneFF1WHJhVzduaVVrNXRKT0xoRlA4QVo0V2hxUzFBTUJxWVZFM0s2Yy1FZmNzMlczYXR1VDNYcDM3Mk0wd3RFOEtrUUVtcl9BdHFSRXd6UFI2OWRWdk03b1ZlcmgtUW1YbUdaUDY5VUFUcUJOa3pPQWdzR1FUT1ZRVmRBRVhzVVhuN05SeWowRXNsaGNOZlRIZW1LX3oySTY5QVc2ZFRmWUh1cVZkUXNCdDhwSdIBvwFBVV95cUxQcTI0NWVGN2Z0emF0ZVN5am1Ubk1EM3Foek45eTJCbHYydC03UURGU0Vmb1NvbnFxR09Td0dRUHVjMWRnM3FpRWNOLTZZWHREX3Y1QksxYWd4enhqbzJuazNSMDVtRUdqNy1mT25jcU85RlRXTXU1WWN3TTc1NmJIQVRQc1Rfb05KaW9XTXRpWVF2WWd4X1pjRTNNdnc0MGhRVkVSVkZyM1ltYjdmQnQtcmJ2U1V2cWlzQ2pOTlRFMA?oc=5",
+      "medio": "Noticias RCN",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T20:25:44.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_colapsada",

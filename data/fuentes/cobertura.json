@@ -1,12 +1,12 @@
 {
-  "generado": "2026-08-23T21:43:48.740Z",
+  "generado": "2026-08-23T22:13:49.985Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 180,
-    "con_notas": 68,
-    "sin_notas": 112,
-    "poblacion_sin_notas": 3522381,
+    "municipios_considerados": 178,
+    "con_notas": 67,
+    "sin_notas": 111,
+    "poblacion_sin_notas": 3492999,
     "medios_distintos": 123
   },
   "municipios": [
@@ -32,7 +32,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 235337,
-      "notas": 25,
+      "notas": 28,
       "ultima": "2026-08-22T19:00:00.000Z",
       "medios": [
         {
@@ -44,6 +44,11 @@
           "nombre": "Pulzo",
           "notas": 4,
           "ultima": "2026-08-21T05:09:13.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 3,
+          "ultima": "2026-08-21T07:25:59.000Z"
         },
         {
           "nombre": "alerta.com.co",
@@ -123,9 +128,14 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 81,
-      "ultima": "2026-08-23T13:32:05.000Z",
+      "notas": 100,
+      "ultima": "2026-08-23T21:06:14.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 21,
+          "ultima": "2026-08-23T21:06:14.000Z"
+        },
         {
           "nombre": "Pulzo",
           "notas": 9,
@@ -227,11 +237,6 @@
           "ultima": "2026-08-21T01:37:32.000Z"
         },
         {
-          "nombre": "Eluniversal.com.co",
-          "notas": 1,
-          "ultima": "2026-08-20T20:47:00.000Z"
-        },
-        {
           "nombre": "laopinion.co",
           "notas": 1,
           "ultima": "2026-08-20T20:18:18.000Z"
@@ -265,11 +270,6 @@
           "nombre": "NTN24",
           "notas": 1,
           "ultima": "2026-08-17T22:22:15.000Z"
-        },
-        {
-          "nombre": "EFE - Agencia de noticias",
-          "notas": 1,
-          "ultima": "2026-08-17T17:22:40.000Z"
         },
         {
           "nombre": "RPP Noticias",
@@ -644,7 +644,7 @@
       "departamento": "Caldas",
       "mmi": 7.7,
       "poblacion": 469600,
-      "notas": 55,
+      "notas": 56,
       "ultima": "2026-08-21T12:28:19.000Z",
       "medios": [
         {
@@ -668,6 +668,11 @@
           "ultima": "2026-08-21T12:28:19.000Z"
         },
         {
+          "nombre": "Univision",
+          "notas": 3,
+          "ultima": "2026-08-17T19:53:00.000Z"
+        },
+        {
           "nombre": "City Tv",
           "notas": 3,
           "ultima": "2026-08-14T07:00:00.000Z"
@@ -686,11 +691,6 @@
           "nombre": "La FM",
           "notas": 2,
           "ultima": "2026-08-18T13:42:19.000Z"
-        },
-        {
-          "nombre": "Univision",
-          "notas": 2,
-          "ultima": "2026-08-14T04:24:00.000Z"
         },
         {
           "nombre": "Radio Fe y Alegría Noticias",
@@ -1117,8 +1117,15 @@
       "departamento": "Risaralda",
       "mmi": 7.5,
       "poblacion": 29382,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-22T05:00:43.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-22T05:00:43.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO63470",
@@ -1448,7 +1455,7 @@
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 20,
+          "notas": 19,
           "ultima": "2026-08-23T20:29:01.000Z"
         },
         {
@@ -1560,6 +1567,11 @@
           "nombre": "alerta.com.co",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Noticias RCN",
+          "notas": 1,
+          "ultima": "2026-08-10T20:25:44.000Z"
         },
         {
           "nombre": "Newsroom RCN Radio",
@@ -2102,13 +2114,18 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.3,
       "poblacion": 15784,
-      "notas": 1,
+      "notas": 2,
       "ultima": "2026-08-23T21:24:41.000Z",
       "medios": [
         {
           "nombre": "ELHERALDO.CO",
           "notas": 1,
           "ultima": "2026-08-23T21:24:41.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-08-21T13:42:34.000Z"
         }
       ]
     },
@@ -2253,12 +2270,12 @@
       "departamento": "Antioquia",
       "mmi": 6.1,
       "poblacion": 28245,
-      "notas": 11,
+      "notas": 12,
       "ultima": "2026-05-25T07:00:00.000Z",
       "medios": [
         {
           "nombre": "City Tv",
-          "notas": 11,
+          "notas": 12,
           "ultima": "2026-05-25T07:00:00.000Z"
         }
       ]
@@ -2636,12 +2653,12 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 20,
+      "notas": 22,
       "ultima": "2026-08-20T17:13:00.000Z",
       "medios": [
         {
           "nombre": "Colombia.com",
-          "notas": 15,
+          "notas": 17,
           "ultima": "2026-05-27T07:00:00.000Z"
         },
         {
@@ -2688,9 +2705,14 @@
       "departamento": "Huila",
       "mmi": 5,
       "poblacion": 26152,
-      "notas": 8,
+      "notas": 9,
       "ultima": "2026-08-22T01:44:00.000Z",
       "medios": [
+        {
+          "nombre": "La Kalle",
+          "notas": 2,
+          "ultima": "2026-08-21T19:09:35.000Z"
+        },
         {
           "nombre": "El Universo",
           "notas": 1,
@@ -2710,11 +2732,6 @@
           "nombre": "LaPatilla.com",
           "notas": 1,
           "ultima": "2026-08-21T22:00:08.000Z"
-        },
-        {
-          "nombre": "La Kalle",
-          "notas": 1,
-          "ultima": "2026-08-21T19:09:35.000Z"
         },
         {
           "nombre": "El Frente",
@@ -2876,22 +2893,6 @@
       ]
     },
     {
-      "pcode": "CO23182",
-      "nombre": "Chinú",
-      "departamento": "Córdoba",
-      "mmi": 4.4,
-      "poblacion": 50411,
-      "notas": 1,
-      "ultima": "2026-08-20T19:35:46.000Z",
-      "medios": [
-        {
-          "nombre": "Chica Noticias",
-          "notas": 1,
-          "ultima": "2026-08-20T19:35:46.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO54385",
       "nombre": "La Esperanza",
       "departamento": "Norte de Santander",
@@ -3041,22 +3042,6 @@
           "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2026-08-23T20:23:40.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO52540",
-      "nombre": "Policarpa",
-      "departamento": "Nariño",
-      "mmi": 4.1,
-      "poblacion": 9826,
-      "notas": 1,
-      "ultima": "2026-08-21T14:51:42.000Z",
-      "medios": [
-        {
-          "nombre": "Proclama del Cauca",
-          "notas": 1,
-          "ultima": "2026-08-21T14:51:42.000Z"
         }
       ]
     },
