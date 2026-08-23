@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-23T07:10:39.699Z",
+  "generado": "2026-08-23T07:55:28.473Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 178,
-    "con_notas": 62,
+    "municipios_considerados": 177,
+    "con_notas": 61,
     "sin_notas": 116,
     "poblacion_sin_notas": 3805715,
-    "medios_distintos": 120
+    "medios_distintos": 119
   },
   "municipios": [
     {
@@ -116,7 +116,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 85,
+      "notas": 86,
       "ultima": "2026-08-22T22:12:44.000Z",
       "medios": [
         {
@@ -280,7 +280,7 @@
           "ultima": "2026-08-17T17:07:30.000Z"
         },
         {
-          "nombre": "20Minutos",
+          "nombre": "20minutos.es",
           "notas": 1,
           "ultima": "2026-08-17T16:58:39.000Z"
         },
@@ -338,6 +338,11 @@
           "nombre": "CiudadRegion",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Vanguardia",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
         }
       ]
     },
@@ -347,13 +352,18 @@
       "departamento": "Valle del Cauca",
       "mmi": 8,
       "poblacion": 38029,
-      "notas": 28,
+      "notas": 29,
       "ultima": "2026-08-22T01:35:57.000Z",
       "medios": [
         {
           "nombre": "Revista Semana",
           "notas": 4,
           "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
+          "nombre": "Noticiero 90 Minutos",
+          "notas": 3,
+          "ultima": "2026-08-13T20:31:05.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -364,11 +374,6 @@
           "nombre": "facebook.com",
           "notas": 2,
           "ultima": "2026-08-21T20:00:08.000Z"
-        },
-        {
-          "nombre": "Blu Radio",
-          "notas": 2,
-          "ultima": "2026-08-16T12:33:07.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -411,9 +416,9 @@
           "ultima": "2026-08-16T15:11:08.000Z"
         },
         {
-          "nombre": "Noticiero 90 Minutos",
+          "nombre": "Blu Radio",
           "notas": 1,
-          "ultima": "2026-08-13T20:31:05.000Z"
+          "ultima": "2026-08-16T12:33:07.000Z"
         },
         {
           "nombre": "Agencia de Periodismo Investigativo",
@@ -453,12 +458,12 @@
       "departamento": "Valle del Cauca",
       "mmi": 8,
       "poblacion": 43787,
-      "notas": 7,
+      "notas": 8,
       "ultima": "2024-06-25T07:00:00.000Z",
       "medios": [
         {
           "nombre": "Noticiero 90 Minutos",
-          "notas": 5,
+          "notas": 6,
           "ultima": "2024-06-25T07:00:00.000Z"
         },
         {
@@ -652,12 +657,12 @@
       "departamento": "Caldas",
       "mmi": 7.7,
       "poblacion": 469600,
-      "notas": 56,
+      "notas": 48,
       "ultima": "2026-08-21T12:28:19.000Z",
       "medios": [
         {
           "nombre": "La Patria",
-          "notas": 18,
+          "notas": 15,
           "ultima": "2026-08-19T00:00:22.000Z"
         },
         {
@@ -666,29 +671,19 @@
           "ultima": "2026-08-19T22:39:00.000Z"
         },
         {
-          "nombre": "City Tv",
-          "notas": 4,
-          "ultima": "2026-08-19T04:51:19.000Z"
-        },
-        {
           "nombre": "Caracol Radio",
           "notas": 3,
           "ultima": "2026-08-21T12:28:19.000Z"
         },
         {
+          "nombre": "City Tv",
+          "notas": 3,
+          "ultima": "2026-08-19T04:51:19.000Z"
+        },
+        {
           "nombre": "facebook.com",
           "notas": 3,
           "ultima": "2026-08-18T16:32:45.000Z"
-        },
-        {
-          "nombre": "Univision",
-          "notas": 3,
-          "ultima": "2026-08-17T19:53:00.000Z"
-        },
-        {
-          "nombre": "Blu Radio",
-          "notas": 3,
-          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Centro de Información – Alcaldía de Manizales",
@@ -701,9 +696,14 @@
           "ultima": "2026-08-18T13:42:19.000Z"
         },
         {
-          "nombre": "Radio Fe y Alegría Noticias",
-          "notas": 1,
-          "ultima": "2026-08-18T19:53:41.000Z"
+          "nombre": "Univision",
+          "notas": 2,
+          "ultima": "2026-08-17T19:53:00.000Z"
+        },
+        {
+          "nombre": "Blu Radio",
+          "notas": 2,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Crónica del Quindio",
@@ -734,11 +734,6 @@
           "nombre": "El Frente",
           "notas": 1,
           "ultima": "2026-08-12T20:42:20.000Z"
-        },
-        {
-          "nombre": "Chica Noticias",
-          "notas": 1,
-          "ultima": "2026-08-11T21:59:56.000Z"
         },
         {
           "nombre": "emisoraatlantico.com.co",
@@ -1451,7 +1446,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 2337182,
-      "notas": 57,
+      "notas": 56,
       "ultima": "2026-08-23T00:50:24.000Z",
       "medios": [
         {
@@ -1465,14 +1460,14 @@
           "ultima": "2026-08-23T00:50:24.000Z"
         },
         {
-          "nombre": "elpais.com.co",
-          "notas": 5,
-          "ultima": "2026-08-22T12:21:00.000Z"
-        },
-        {
           "nombre": "Gobernación del Valle del Cauca",
           "notas": 5,
           "ultima": "2026-08-19T21:55:01.000Z"
+        },
+        {
+          "nombre": "elpais.com.co",
+          "notas": 4,
+          "ultima": "2026-08-22T12:21:00.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -2530,22 +2525,6 @@
           "nombre": "MiOriente",
           "notas": 1,
           "ultima": "2026-08-19T15:42:33.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO17541",
-      "nombre": "Pensilvania",
-      "departamento": "Caldas",
-      "mmi": 5.7,
-      "poblacion": 20456,
-      "notas": 1,
-      "ultima": "2026-08-11T07:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "facebook.com",
-          "notas": 1,
-          "ultima": "2026-08-11T07:00:00.000Z"
         }
       ]
     },
