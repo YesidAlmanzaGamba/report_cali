@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-23T09:50:30.619Z",
+  "generado": "2026-08-23T10:15:39.136Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -290,6 +290,16 @@
       "publicado": "2026-08-19T14:31:44.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Albergue de La Graciela en Dosquebradas, salvaguarda a 140 personas tras el terremoto",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/dosquebradas/albergue-de-la-graciela-en-dosquebradas-salvaguarda-a-140-personas-tras-el-terremoto/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-19T05:00:51.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "centro_acopio",
@@ -985,14 +995,6 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Alcaldía de Bogotá confirmó puntos de acopio de donaciones para los damnificados del terremoto en toda Colombia - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdS00MjdPT1RXVXhPdW9lNHhaaXFqNnRTdDJxRmVyUkdobzN5SF9ERi04andsYkhaTk5uei1yZjZ2cmdtMU9vTFY2RTFCMExkbEM1SDFfZFRjQkVPTnU1Qm5zc09RWUVZdklLZHlkeVdXbWFfQlBBWk9PWDd5eThvVUZiN2ZfZ3pWWmRJUW1OeWYyYjZCdjBsYTNyZEtPQ3Vxbm1Jcl9PYkQ3Nm94ank3UHhYWXppM2VhQkxCQklqd084RU9oQmNxNlZ3b3BKSkNsQmUxREJKZnhFR21yMkh3Q0pwRVVISjg2T1dSadIBhwJBVV95cUxNOXAwSWVFRWhhbFVUdXdNbHFyVmdVREVSNXNUZHVqOTlDOWtLajdyZ0JKbWRvLXJGTFJtR0NKQkpqSHdENzZMOWJlNHJXUjB0bExQM0hZWUpmMC14Y2pRMzRvS3lWTDZ4aWZiSlh2RV9MbVdfYUMzbVpKYTdZQnYtYkUyLVJyLWY1eWNmNXV6Rl9JV3lHZlExakRaT0N1OTZmMVpzbGNpVVAzQzVWc0N0Ul9pb1JDVDBMS1g1WUtqa2F6cGcwQVRkOTNwWldxeUpYd0hoUVpKVTJzUC14cExwOGtsWWpoaUhIdkREbW1oQTlVOUZ2QnY0TUVNblVSRmliREJGUGlWaw?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "Manizales, una ciudad entre edificios derrumbados y fachadas rotas por el potente terremoto en Colombia - laopinion.com",
       "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeG5IOEpWV0J2aVlySHJhdzJiSUxrSVRycG1JM2JRMXoxVHNud3BCU0cyVmlXdkd6TU1Sb1NyYXdWVnozZU84TlZBYkU3VXlaQVpIc0xlc2hmQVVTZU9ua3BNNHdGYmI1WEVqQXd2MURJOXFPVjNTaHVzRy1SaV9Ea1lUTkJ0MWgtbV9QdWo4eDN1NFFjV2Fna3poTllsRHhfNGxEQTU2NXlUSm14UmNQdE1FZElwRVN4bFRUTUQ0VWJFQzB1Rno3WEtQM2x1Z2pva3Zz?oc=5",
@@ -1001,6 +1003,14 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Alcaldía de Bogotá confirmó puntos de acopio de donaciones para los damnificados del terremoto en toda Colombia - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdS00MjdPT1RXVXhPdW9lNHhaaXFqNnRTdDJxRmVyUkdobzN5SF9ERi04andsYkhaTk5uei1yZjZ2cmdtMU9vTFY2RTFCMExkbEM1SDFfZFRjQkVPTnU1Qm5zc09RWUVZdklLZHlkeVdXbWFfQlBBWk9PWDd5eThvVUZiN2ZfZ3pWWmRJUW1OeWYyYjZCdjBsYTNyZEtPQ3Vxbm1Jcl9PYkQ3Nm94ank3UHhYWXppM2VhQkxCQklqd084RU9oQmNxNlZ3b3BKSkNsQmUxREJKZnhFR21yMkh3Q0pwRVVISjg2T1dSadIBhwJBVV95cUxNOXAwSWVFRWhhbFVUdXdNbHFyVmdVREVSNXNUZHVqOTlDOWtLajdyZ0JKbWRvLXJGTFJtR0NKQkpqSHdENzZMOWJlNHJXUjB0bExQM0hZWUpmMC14Y2pRMzRvS3lWTDZ4aWZiSlh2RV9MbVdfYUMzbVpKYTdZQnYtYkUyLVJyLWY1eWNmNXV6Rl9JV3lHZlExakRaT0N1OTZmMVpzbGNpVVAzQzVWc0N0Ul9pb1JDVDBMS1g1WUtqa2F6cGcwQVRkOTNwWldxeUpYd0hoUVpKVTJzUC14cExwOGtsWWpoaUhIdkREbW1oQTlVOUZ2QnY0TUVNblVSRmliREJGUGlWaw?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
