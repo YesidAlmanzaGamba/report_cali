@@ -1,8 +1,18 @@
 {
-  "generado": "2026-08-24T21:52:53.386Z",
+  "generado": "2026-08-24T22:18:02.863Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "albergue",
+      "titulo": "Albergues escolares, casas prefabricadas y materiales de construcción, entre las ayudas que gestiona la Gobernación del Valle para Calima -El Darién",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90323/albergues-escolares-casas-prefabricadas-y-materiales-de-construccion-entre-las-ayudas-que-gestiona-la-gobernacion-del-valle-para-calima-el-darien/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-24T22:16:26.000Z",
+      "pcode": "CO76126",
+      "municipio": "Calima"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Terremoto en Colombia: UNGRD anuncia la metodología para evaluar las edificaciones afectadas. Será tipo semáforo - Revista Semana",
@@ -811,6 +821,14 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
+      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
+      "medio": "Bogota.gov.co",
+      "tipo_fuente": "official",
+      "publicado": "2026-08-13T16:10:34.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Consulte mapa de edificios colapsados o dañados por sismo en Colombia - El Nuevo Siglo",
       "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPR081MmtEQ3R4RzhxdEl5VmFCUUhOOE1FSU1ZbDRQbHRvbGg1aTNRSmNVMFVTZUV5MTNJaUJ0aTI1LVhwcXdGX2h0Zjk0MjJXMGM3QWZuWW9rdm5RVFNzRm9BTWhYWXBjNTU2SkVrXzVOM1BzSUNkSzVfMXppMm42cE5heTRNX0xGc09fWGlCLVdZYnRsdlg5aWkxNFV3LWRmMUxPZXFPZFRVMVFK?oc=5",
@@ -1113,6 +1131,16 @@
       "municipio": "Roldanillo"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en La Victoria, Valle: 370 viviendas resultaron afectadas y 60 colapsaron; piden ayuda del Gobierno Nacional - elpais.com.co",
+      "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPWGU5SmUwbFZKQjhac3ZfZUh5SXNKWWtXdnEzVnZtNEYwRENZT1NPZkk1MzZPeURxeW13a3JLeS1sbHJZa0VJUFhYOFFIM1FrUC04UDZqWVBOVS1OdC1PT2JnTU9MaHFvZzJxY0tuUjR4NnF5VUEzbDRLcVJwcW80UTdzN2NWWUhSSkNJSmFQX1BWODZfWEFvU0FtLVBlam1QMG0tcjhyRDV5N1Blb0JOcEVrOWxkZlI1VTY4QksyTDcydXhjVXl2TnZ5RFNxYVg5TUZha1pjRDJwUTJRV3RMU3JhM0hHdnhRYUpHRGt30gHzAUFVX3lxTE8tM2E0SnRVRUFJVzI5TVBSUVljRnRjRG5yQzRyQmw2X3lsTW9OUWRPRFEwTkRza1ZLNHpPYmp3Yk9DQ3dWMF9sYXA2Y3U4R0F5Q0hvT3l5UF9kdlEwQWlGZ1Z0TkhTMXA5QmdodWRMeEh3Y3VCVlpnLVhESldUcU5vNWxoWFNfRGlYcU52TWNzaXYySVF6a182RTdzcGJDdGdIS2huMVc2MTNOY0w2RHVTOEQzRGxmMW9zRndKSE1XX050OXlad2toa2kydXJraVpWUGZ0MVR4WmNHajMyV3hyMnNSWmJ3T24wSnM5Q3IzcUxDcw?oc=5",
+      "medio": "elpais.com.co",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO76403",
+      "municipio": "La Victoria"
+    },
+    {
       "tipo": "centro_acopio",
       "sede": "Coliseo Menor de Manizales",
       "titulo": "EN VIVO: Así funciona el centro de acopio en el Coliseo Menor de Manizales, ayudas para afectados por sismo - La Patria",
@@ -1243,22 +1271,30 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Congreso instala centros de acopio en apoyo a damnificados del terremoto en Venezuela - El Sol de México",
-      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORk9ZNkZYYzBWZWZHdHNheHNCVm9ENTNBWlFETXVCcks1ZHRtNWtqTE5nUE9mZ2JrZlR4MnBJWmNCa09DTy01ZW56azE0NkI3bVEwYzM5OTNGV2VoMnYteDFxLThTcU9VbEtFUldJcTNycUdCU1JoM1dqRTVhLVhzSWU3dlg2UlZpS2NMM1lLVHBQMFNTTUY2OG1pOGFZTmxCR1F6cENUMkxqZXNPel9aRXdsUk1rUkRYdG1WZ1JzMGtMUkQ1VS1IWm9PaXF2Zw?oc=5",
-      "medio": "El Sol de México",
+      "tipo": "albergue",
+      "sede": "Universidad Simón Bolívar",
+      "titulo": "Diosdado Cabello inspecciona refugio en la Universidad Simón Bolívar para atender a damnificados - Yvke Mundial",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOFNqbTltWm5jZ05mbF9adGVZQThSaW5DMm9udnVWV2Z4NFhlNl9lNmVGYmJRclR1c2JTeW16U3FtalFfYTB1WGh4eHZWWkZJYjJaNy15TVBEX2tkdjhjRGh4SjRvQ1pQVmh3X2RFOGpMdTdIbnRrS203M0JTZU9CQ3dXb2U1V2x4aUpwNmZwZkpQaEdGUnpKOTdKV3ZtQV9sQjFQcjVEU280WlpiNTN0TkNab0k5VTZjSUpaWWVqaVI2b3c?oc=5",
+      "medio": "Yvke Mundial",
       "tipo_fuente": "unverified",
-      "publicado": "2026-07-09T07:00:00.000Z"
+      "publicado": "2026-07-06T07:00:00.000Z",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Universidad%20Sim%C3%B3n%20Bol%C3%ADvar%2C%20Colombia"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Habilitan Centro de Acopio en Ciudad Victoria en Apoyo a Damnificados por Sismos en Venezuela - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUnlESVZzVWhHRFBGQllXUDJTbmtETUM4anpNOFlYWkVpb3hvT1F5OHE0dFJqUHh2YWd4WHRNTnAzQi10ZmZjOUVjdFNWNWc2MzkzLTVGVjBENWc3YVhjTl9zYmlPc19vMVpYUWdpVnZVbGlvMGczbWVjWHlseDE4NFUwR1poRUwwX2wzaVVydzJWZU94a0x0bDNLS3d2YTBJUDFpTGJldWh5X1RIaEUyWFRVUkc5b2dlczNYVXgtNzB2M184M1hVbllMS1A3OTBKYXd4UG1HbkY2MU0?oc=5",
-      "medio": "N+",
+      "tipo": "albergue",
+      "titulo": "Sede de Ven 911 en San Félix será refugio para damnificados por sismos - ultimasnoticias.com.ve",
+      "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdV9xZHZ1WnBXcTFPYVd1R0hHSTVZV0pUbzBJSFA0M1cyNU9sUk9qNWVZRmRKMzZsT0l4VVJKRnFSVWNuZlVtWHc3cUowWF9Ld1RmTjktbk5kbi1FTWVxb3pLWXhnVG1fRGZ3WTlCYWREMVRDSHpud3Nmd3ZkWWdiN3dLWlhCdWRfRjJTQ2JkZFptUkNMNWRaaTRTRTc4Ty1kbndVSy01MUZCb1l0M1Vn?oc=5",
+      "medio": "ultimasnoticias.com.ve",
       "tipo_fuente": "unverified",
-      "publicado": "2026-07-05T07:00:00.000Z",
-      "pcode": "CO17867",
-      "municipio": "Victoria"
+      "publicado": "2026-07-06T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Bolívar activa primer albergue para familias afectadas por el terremoto - Diario Primicia",
+      "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMHJ2UXEwY0E5VDVGcXBvZTZGZVVseFNOREk2LVNscVNpaHFxOUlsdzBNOHBwanRZcXpSbDU2cXpXYmRSa3ZRVE94YVdMLUJsLVpCT1IwQU1wWG5GZjctMTNsTS1RNUNQa3Jhd0pWY1Z4bktrNlFTczU3aUppcXFwbU1Ea290SkRwZXBKaVNTamdfQV93T25kcF95RVNSOUZFUDZxTUtBTWRkWEsyMnotZQ?oc=5",
+      "medio": "Diario Primicia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-07-06T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -1287,12 +1323,48 @@
       "publicado": "2026-06-29T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "¿Cuántos edificios han colapsado en Venezuela? Los satélites ya han identificado 434 bloques destruidos - EL PAÍS",
+      "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWXZKYnVSbWl6VXZtRkFKLVB6RTFaV0NpSzFkeHl6YTdNNEhxOEFnN09pZjFWS2ZRMWIxeVBpenZ0VWRMVUROSEhWTzZuSEwyUWR1SmRIZmpTZE9oZkNZLUx4WWtNREtsUERwdl9QSWlKdndkSDZTNk1lZHVQSDZVTGltTmdRd3kwUkx1dHpITHRhYTY3OGpqTjhScHFlc0ZFWGJrZEtrRnZkUkRYMHFpTmxfRk12VGZJUXRvT2RZUEx5Zks1OXplbHNqMGpZd0JqcldV?oc=5",
+      "medio": "EL PAÍS",
+      "tipo_fuente": "press",
+      "publicado": "2026-06-29T07:00:00.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "La Alcaldía de Caracas habilitó cuatro refugios de emergencia tras los terremotos - El Diario Venezuela",
       "enlace": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aeHItM3lBZEY1YXlCOXhPTUF0Y0gybkNXdWgtX0JQUEJWbktFNFFsLXA4MHdPYlJPMmI5TVhwYWRiMHhRX0FGNjFaTTdRTExkcEJIVl82aG56N2ViVmlqeGtWVkNreXFsYk9UVQ?oc=5",
       "medio": "El Diario Venezuela",
       "tipo_fuente": "unverified",
       "publicado": "2026-06-25T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Bolívar se moviliza: Activan red de centros de acopio en apoyo a los afectados por sismos en el país - Correo del Caroní",
+      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOGhNcHMzMzBvS2F1OVViaE1QbGlVekVDcFZIMnd6eGQxWk5CUnB0eE8ydVdHS2tIdDl5ZXA5anJUTG1UNlE3NG1ZQ2dWdDFvOU5pdVhFM0VzQkVCQ2ZGeG9GaUVtUnp6WXFLS2xQT1hQRlpkck9ReDVQZlYybEJLc1VKNG1aWVhsclo5eUpSZndIeHdYc2pKak00NktfdllEMHIxNWpQX2lKUFBlR1c5Q1FUN29QRXNSbk92MzVKWm9lbTVabEYxbWhZaHFoNUlDSExCd1daSm44LWZDSlcxckUtQkg?oc=5",
+      "medio": "Correo del Caroní",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-06-25T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Derrumbe por lluvias dejó dos viviendas afectadas en Ciudad Bolívar - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMGFSWTlFNjM2aGdsZmpoVGhoRGZOajFfZ253eUNGMkxHN2RPRFVDdUlYalN4elUtODJVTF9LdVFsNGM0VWNobTNLR3NpeUJnek9Od1hycHVnYVhJVXc4a2NiU19rUlZhVnlKR2gtR29QZEZpamdoRll0RkJaWldqdldyaUtYX21ZVzFKbUR3SXBISktjbDYxQXB5NHpKQVlKQ3JxS2hQdDQ1X3J5TkRXek9QUXNWb2VnRl9jR0xkTdIBxwFBVV95cUxPLWZwYk1OLXREUE9kczNiVUZMN0FtUnFZazZOa2FGdU1aRGc1VG9LY2xIVHJSclEtSkcyZUlqdEEyWFhmMXRTc2xzYmxicHYxT2Zybm1lR0VUVjVBa25FRF9TRGhXLUFBSV9XTzhPdTFIaFEwV2c2RXBCR0R2UDExakNIQU5HdzhqZXRzc0V6WXFmZGVOSFdQS1dDaUI5TmZESzExRXFlQ2pjMG5peUYyNTZrNm9ULThXQ1hlYjB5OW52VXpIaWRz?oc=5",
+      "medio": "City Tv",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-01-06T08:00:00.000Z",
+      "pcode": "CO05101",
+      "municipio": "Ciudad Bolívar"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Grave incendio estructural en Ciudad Bolívar por lo menos 8 casas afectadas - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZzJLUlgxci1hZjVpMHc5UlgtRzRwYmIxbS1ZbGpQMndSR3gxVkN6RnZfeFNkb2pLMmU4SlZjckhlcGtfM0xjV19ZSFdOTXd3T0U5YXh2Q0hVbmFZRjdoR1VDZWlFRkdSNHphVHlWbHA1NnZ5YmJISnh0d2RLVUpDLXM4cW9oMk5KMy1RMl9xUm5iTzBIMG1SUU42MXlaX1A0bWs2NlBLNEpibE9nSEplSFNRbTY4NjkwZmJVTGZnN09Fbk8tMnBXNHloWVhpUVBwWC1taUt6Qng3TWM?oc=5",
+      "medio": "City Tv",
+      "tipo_fuente": "unverified",
+      "publicado": "2024-02-04T08:00:00.000Z",
+      "pcode": "CO05101",
+      "municipio": "Ciudad Bolívar"
     }
   ]
 }
