@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-23T23:43:46.227Z",
+  "generado": "2026-08-24T00:49:03.605Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 179,
+    "municipios_considerados": 180,
     "con_notas": 67,
-    "sin_notas": 112,
-    "poblacion_sin_notas": 3535482,
-    "medios_distintos": 124
+    "sin_notas": 113,
+    "poblacion_sin_notas": 3528328,
+    "medios_distintos": 123
   },
   "municipios": [
     {
@@ -234,7 +234,7 @@
         {
           "nombre": "areacucuta.com",
           "notas": 1,
-          "ultima": "2026-08-21T01:37:32.000Z"
+          "ultima": "2026-08-20T23:16:05.000Z"
         },
         {
           "nombre": "Eluniversal.com.co",
@@ -322,7 +322,7 @@
           "ultima": "2026-08-13T21:11:23.000Z"
         },
         {
-          "nombre": "ESPN México",
+          "nombre": "ESPN Guatemala",
           "notas": 1,
           "ultima": "2026-08-13T11:01:32.000Z"
         },
@@ -364,7 +364,7 @@
       "medios": [
         {
           "nombre": "Revista Semana",
-          "notas": 4,
+          "notas": 5,
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
@@ -378,14 +378,9 @@
           "ultima": "2026-08-21T20:00:08.000Z"
         },
         {
-          "nombre": "Blu Radio",
-          "notas": 2,
-          "ultima": "2026-08-16T12:33:07.000Z"
-        },
-        {
           "nombre": "Gobernación del valle",
           "notas": 2,
-          "ultima": "2026-08-13T15:23:00.000Z"
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "El Colombiano",
@@ -426,6 +421,11 @@
           "nombre": "elpais.com.co",
           "notas": 1,
           "ultima": "2026-08-16T14:44:58.000Z"
+        },
+        {
+          "nombre": "Blu Radio",
+          "notas": 1,
+          "ultima": "2026-08-16T12:33:07.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -1281,8 +1281,15 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
       "poblacion": 42483,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2021-10-07T05:21:14.000Z",
+      "medios": [
+        {
+          "nombre": "Noticiero 90 Minutos",
+          "notas": 1,
+          "ultima": "2021-10-07T05:21:14.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76828",
@@ -1453,17 +1460,17 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 2337182,
-      "notas": 67,
+      "notas": 63,
       "ultima": "2026-08-23T23:09:45.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 21,
+          "notas": 18,
           "ultima": "2026-08-23T23:09:45.000Z"
         },
         {
           "nombre": "El Tiempo",
-          "notas": 8,
+          "notas": 7,
           "ultima": "2026-08-23T23:02:52.000Z"
         },
         {
@@ -1635,15 +1642,8 @@
       "departamento": "Chocó",
       "mmi": 6.9,
       "poblacion": 31989,
-      "notas": 1,
-      "ultima": "2026-08-23T19:37:29.000Z",
-      "medios": [
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-08-23T19:37:29.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO27450",
@@ -1696,15 +1696,8 @@
       "departamento": "Chocó",
       "mmi": 6.9,
       "poblacion": 3340,
-      "notas": 1,
-      "ultima": "2026-08-21T14:58:23.000Z",
-      "medios": [
-        {
-          "nombre": "Chocó 7 Días",
-          "notas": 1,
-          "ultima": "2026-08-21T14:58:23.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO27787",
@@ -2508,14 +2501,9 @@
       "departamento": "Antioquia",
       "mmi": 5.9,
       "poblacion": 2745464,
-      "notas": 3,
-      "ultima": "2026-08-23T01:58:53.000Z",
+      "notas": 2,
+      "ultima": "2026-08-16T17:55:35.000Z",
       "medios": [
-        {
-          "nombre": "La FM",
-          "notas": 1,
-          "ultima": "2026-08-23T01:58:53.000Z"
-        },
         {
           "nombre": "Estrella Digital Colombia",
           "notas": 1,
@@ -2656,12 +2644,12 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 20,
+      "notas": 21,
       "ultima": "2026-08-20T17:13:00.000Z",
       "medios": [
         {
           "nombre": "Colombia.com",
-          "notas": 15,
+          "notas": 16,
           "ultima": "2026-05-27T07:00:00.000Z"
         },
         {
@@ -2770,13 +2758,18 @@
       "departamento": "Nariño",
       "mmi": 4.9,
       "poblacion": 25384,
-      "notas": 2,
+      "notas": 3,
       "ultima": "2026-08-20T20:33:00.000Z",
       "medios": [
         {
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-20T20:33:00.000Z"
+        },
+        {
+          "nombre": "El Colombiano",
+          "notas": 1,
+          "ultima": "2026-08-20T15:40:11.000Z"
         },
         {
           "nombre": "NTN24",
@@ -3104,6 +3097,22 @@
           "nombre": "Diario La Libertad",
           "notas": 1,
           "ultima": "2026-08-11T23:41:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO68895",
+      "nombre": "Zapatoca",
+      "departamento": "Santander",
+      "mmi": 4,
+      "poblacion": 9922,
+      "notas": 1,
+      "ultima": "2026-08-23T23:36:00.000Z",
+      "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-08-23T23:36:00.000Z"
         }
       ]
     },
