@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-24T09:38:48.714Z",
+  "generado": "2026-08-24T10:30:29.064Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -10,14 +10,6 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-08-24T01:25:20.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Su vivienda fue afectada por el terremoto?",
-      "enlace": "https://proclamadelpacifico.com/su-vivienda-fue-afectada-por-el-terremoto/",
-      "medio": "Proclama del Cauca",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-23T20:49:31.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -645,12 +637,20 @@
       "municipio": "Versalles"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "120.000 millones de pesos costaría reconstrucción del 60% de edificios afectados en la Uniquindío - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSUUzbk9oQkhtTURpajlkRWZiLTlEZXp6TDFQMDZIbWZYSVAwLXQyWTcteXRKc1ZJRGd3Nk1SeVR5QzV0UHpQSzhHeGJJNC1NV1F1bDhZajlubFV1TU02SXJQZTM0UTVTdy1fa09uYW9mc2hxNGlfcHJGc0c5ZkNPelZSa0I2dG1SOGdBTU1SLTRLbHJvOXpHTkVTRzhCTW1NeklpV2lzMFFWYlZvdlJiaHktNW4zeDVWYWN4ckRfdWhtclU0YVdZTnNR0gHeAUFVX3lxTE5RLTNGa3FSYTZYbFpsYl9wUC1VUmVmN2w0aEdOZXlJWkE0NmZNSXdtdUNfNE1jUEZKNm94NHNEaFdLaXktSXRGU2RBdHpXY2FaaTIyUlN6M1RmV1pkeV94ZU5GLTNJTnNUZHpmZzZRRDA3cjdWRkFuWDRFbTZNc3c3UERNOHVLRXlleWVmZmJXLU9sdTltZDd4cGxMTkRlQ3ZWR0Ixbm53VkJSVGtINWlIaFRKVHY1M3R2d2xyN3dlcUhfQlJpRUNNN0JlX2Q1cDBvZEhQdUUyc2w1ZFRCUQ?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-15T14:45:34.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "🚨LO ÚLTIMO | Tragedia en Indonesia: terremoto deja decenas de muertos y edificios colapsados 👇 - facebook.com",
       "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNOWVCbGNnZDRXSFIyUXdJZGlMNjNHTExlREtlMzB5cnJSTWd5ajR3dE54OUVQZU51QzNfOWN4MjZ6TVBOVnI0VXdHeUZKcEpmQ2pFRE01WnRfOVBQOFkxaWhVcUVQN0F5WTVOcHUwZnFycDNoRDkza1BsdUlPbXFONjEzdWJsYko4WDByTXpSdnJGTzVfQjZPdWZtWk5FT1QwNl9EbVlteEZ2Q1pPalpHaE1xb1pLd19aWnptQjNHVW1mbnUzSGx0YVNCM0NOMWdPZWh5TGRjRmZlTXo4VXRjemJLaU90QQ?oc=5",
       "medio": "facebook.com",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-15T15:39:32.000Z"
+      "publicado": "2026-08-15T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
@@ -731,6 +731,14 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T13:25:24.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Impacto del terremoto: 84.360 viviendas con daños, 210 vías afectadas y 284 muertos - Portafolio.co",
+      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1Z5NHdWTVRqUlZqTjVPeEZSRHB5dk1KeDdUelU2aEJ6YkFkOVl0QlJqWVZNVTVnM0dQQjRrVmJlZm9FRmpUbjVrMDdfREtJR2Ztem5JMi1Pa3BaTmZWZWplNmt4S2Z2ek9adHo5V09Ra0x3YXFPeEVwWndvNFczSVdRUVZYbi1hMnJkWVdxc3lOTUJQUFVSSVl1TF81dEdrNDJzMEFhTU9TUk5tN24tVzhpcXd4Vm4yUmlGYmRRUG12SDk2eHlWaTlFTjjSAdIBQVVfeXFMTURydGhPY1B0UFRjWWxPMDFfS2JYVmU2dGdrQnA1QkpwRDlDQkJSWkpNUnExWk5GaEJsZEt3N2x5cWZ4WE1KTzJHZEhoRUd2XzRIX1NXanFpMDhaOWZfb044RnZfVDR5UzdpTTkwbzViVTJlZVc2N2JUQndrclhlUEpXUDQzaFBjc3N2RzBKOHRHbkRveHZvUWFIbnlNSWJSRmJxZUtyM1Z5TERTMHlESzZYbEVnVVVwa25QRzQ1OEh0VzZuRnV5Mnp1S2U1UUdEOVRR?oc=5",
+      "medio": "Portafolio.co",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-14T12:02:42.000Z"
     },
     {
       "tipo": "albergue",
@@ -915,6 +923,16 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "🇨🇴 Imágenes captadas con drones muestran la magnitud de la devastación en Pereira, Colombia, tras el potente terremoto de 7.4 que sacudió el occidente del país. Edificios colapsados, calles cubiertas de escombros y equipos de emergencia que continúa - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQTlRfbV9JRTdsM21uMW1XZklpZkRmVTFHcWc2YkRRZjkzMG5oMjdLZ0NGV0xaSl9oaUkxckwtdldGc0xiRjhTMUV0RDA2U1FyTEpKM3pXT0QzU2djODh4Q0tnb00ycXBxY0R4S3BEQWtWNXpZbjRhVnF6aHhXNEpYc1h2enZYMVc0VGM1N2psZm85MHk3S05pek9mcEVVcERjNHJXOVE4YkJWakhNRXFfeDFJX01EWTMzN1RKMXBCTFZTSWtGcnhfMnJHTWhubzZtYmJObzc4VEMzODVxRWlZX2hfaTBwamNUelE?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
