@@ -1,8 +1,8 @@
 pcode,municipio,departamento,mmi,poblacion,notas,medios,ultima_nota,sin_cobertura
 #adm2+code,#adm2+name,#adm1+name,#severity+mmi+num,#population+total+num,#meta+count+num,#meta+source+list,#date+latest,#status+coverage
 CO76147,Cartago,Valle del Cauca,8,142255,0,,,sí
-CO66170,Dosquebradas,Risaralda,8,235337,0,,,sí
-CO66001,Pereira,Risaralda,8,500806,0,,,sí
+CO66170,Dosquebradas,Risaralda,8,235337,3,El Diario (Pereira) (3),2026-08-25T05:00:15.000Z,no
+CO66001,Pereira,Risaralda,8,500806,23,El Diario (Pereira) (23),2026-08-25T05:24:03.000Z,no
 CO76622,Roldanillo,Valle del Cauca,8,38029,1,Gobernación del Valle del Cauca (1),2026-08-21T22:52:27.000Z,no
 CO76895,Zarzal,Valle del Cauca,8,43787,0,,,sí
 CO63001,Armenia,Quindio,7.8,325056,0,,,sí
@@ -24,7 +24,7 @@ CO66075,Balboa,Risaralda,7.5,6522,0,,,sí
 CO76113,Bugalagrande,Valle del Cauca,7.5,25106,1,Gobernación del Valle del Cauca (1),2026-08-21T13:52:36.000Z,no
 CO63130,Calarcá,Quindio,7.5,80008,0,,,sí
 CO17174,Chinchiná,Caldas,7.5,54875,0,,,sí
-CO66400,La Virginia,Risaralda,7.5,29382,0,,,sí
+CO66400,La Virginia,Risaralda,7.5,29382,1,El Diario (Pereira) (1),2026-08-22T05:00:43.000Z,no
 CO63470,Montenegro,Quindio,7.5,40020,0,,,sí
 CO63594,Quimbaya,Quindio,7.5,33253,0,,,sí
 CO66687,Santuario,Risaralda,7.5,12972,0,,,sí
@@ -107,7 +107,7 @@ CO76248,El Cerrito,Valle del Cauca,6.3,58814,0,,,sí
 CO73001,Ibagué,Tolima,6.3,549432,0,,,sí
 CO76377,La Cumbre,Valle del Cauca,6.3,16877,0,,,sí
 CO66594,Quinchía,Risaralda,6.3,28368,0,,,sí
-CO76606,Restrepo,Valle del Cauca,6.3,15784,1,Gobernación del Valle del Cauca (1),2026-08-25T01:32:58.000Z,no
+CO76606,Restrepo,Valle del Cauca,6.3,15784,2,Gobernación del Valle del Cauca (1) · El Diario (Pereira) (1),2026-08-25T01:32:58.000Z,no
 CO73624,Rovira,Tolima,6.3,21712,0,,,sí
 CO73686,Santa Isabel,Tolima,6.3,5720,0,,,sí
 CO19698,Santander de Quilichao,Cauca,6.3,117542,1,El País (Cali) (1),2026-08-24T14:18:24.000Z,no
@@ -147,5 +147,6 @@ CO05847,Urrao,Antioquia,6,33053,0,,,sí
 CO05856,Valparaíso,Antioquia,6,6949,0,,,sí
 CO73148,Carmen de Apicalá,Tolima,5.7,10588,1,El Nuevo Día (Ibagué) (1),2026-08-24T20:32:29.000Z,no
 CO05652,San Francisco,Antioquia,5.6,6292,1,Gobernación del Valle del Cauca (1),2026-08-18T23:53:13.000Z,no
+CO50370,Uribe,Meta,5,9874,1,El Diario (Pereira) (1),2026-08-24T15:05:24.000Z,no
 CO50573,Puerto López,Meta,4.7,31491,1,Gobernación del Valle del Cauca (1),2026-08-23T18:35:49.000Z,no
 CO08001,Barranquilla,Atlántico,4.4,1355306,1,Gobernación del Valle del Cauca (1),2026-08-18T00:09:18.000Z,no
