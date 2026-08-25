@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-25T23:18:40.362Z",
+  "generado": "2026-08-25T23:46:58.167Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -42,20 +42,20 @@
       "municipio": "Calima"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Terremoto en Colombia: UNGRD anuncia la metodología para evaluar las edificaciones afectadas. Será tipo semáforo - Revista Semana",
+      "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQcEx4LVdYQnkxVUlXQndDUGd1M2NZUXI2cExPTGtpNVgwTTRxT3hBWlVRUFdlNENlYjRMZVJzVUJfUjc5eGRES0lhd2hvUHJmcThYSklBTEdabm5BbGtUZ3FET0dNRWhEazIxNk9YeWQtajY2bzdSbUZ5eEpnVlp1MlN6M050azF0NnZEd0MyVXNaYXZld1N3OW9EZEhkV2ROQlVRdHhMSHkxYmp3SzFLR3paQnNIS19fRXRjZVdadHlJeGJFRjNNYTgwb2p1WFdqLWNhamE2YTJpeDBnbjhGcnJKT2hDQVNNQ1o5bDhn0gHzAUFVX3lxTE11QjcxU19fb2FDLUNycFV4QmI4OGx0OWJYc3Utc2w1ZEZRTFFvQzBlUmtLOTJyWkdRb2RwZkQ5d0FpdXhHTTVfQWFQbVpiRjItRWxMMW5XM1FCSTA3bUtfVTJfbTVNdVFvTTRrYTdpOFlXTjBXTkp0c2hjbHJldUlzcE45bnUyQTNFOG05ODlzWjBYSkw5aEl4NU9HLTZIZTFJUEJWcUxKd3Y4aTd0d2hHZkxsZXFRaWszNEZIY3cxbFdYM3hUTk9iNnRvcnplV2U4TTcySURMYjBBM05DXzFRa0EzZjRtNUJiVjdGNmFTRjR6UQ?oc=5",
+      "medio": "Revista Semana",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-24T18:11:18.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Así funcionan los albergues educativos temporales que ya son una realidad en el Valle del Cauca",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90321/asi-funcionan-los-albergues-educativos-temporales-que-ya-son-una-realidad-en-el-valle-del-cauca/",
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-08-24T14:36:49.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia: UNGRD anuncia la metodología para evaluar las edificaciones afectadas. Será tipo semáforo - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNdUI3MVNfX29hQy1DcnBVeEJiODhsdDliWHN1LXNsNWRGUUxRb0MwZVJrSzkyclpHUW9kcGZEOXdBaXV4R001X0FhUG1aYkYyLUVsTDFuVzNRQkkwN21LX1UyX201TXVRb000a2E3aThZV04wV05KdHNoY2xyZXVJc3BOOW51MkEzRThtOTg5c1owWEpMOWhJeDVPRy02SGUxSVBCVnFMSnd2OGk3dHdoR2ZMbGVxUWlrMzRGSGN3MWxXWDN4VE5PYjZ0b3J6ZVdlOE03MklETGIwQTNOQ18xUWtBM2Y0bTVCYlY3RjZhU0Y0elHSAfMBQVVfeXFMTXVCNzFTX19vYUMtQ3JwVXhCYjg4bHQ5YlhzdS1zbDVkRlFMUW9DMGVSa0s5MnJaR1FvZHBmRDl3QWl1eEdNNV9BYVBtWmJGMi1FbEwxblczUUJJMDdtS19VMl9tNU11UW9NNGthN2k4WVdOMFdOSnRzaGNscmV1SXNwTjludTJBM0U4bTk4OXNaMFhKTDloSXg1T0ctNkhlMUlQQlZxTEp3djhpN3R3aEdmTGxlcVFpazM0RkhjdzFsV1gzeFROT2I2dG9yemVXZThNNzJJRExiMEEzTkNfMVFrQTNmNG01QmJWN0Y2YVNGNHpR?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-24T13:36:57.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -687,32 +687,12 @@
       "municipio": "La Esperanza"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Casi 700 viviendas dañadas y el drama de 1.497 afectados por el sismo en La Unión - CiudadRegion",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSG5rRGNDLWl2dWJOYlhINEpIQm1BbjI5M2lkR0tFTmFhRFJSWnVwbl9LR2g4VDE3ODAxdWo2VkZhSFFvOTFHUDBxNDJudVVFWW1uZlJjcFpGMS1YSnFCVHJpQnNnckduckplbHd1SDV2WFZJdjNqSUxPaDdZSUNweEVSVWdPWGZfclpmUEprTm5ZQmR1Y1FnQU1tMDBfZ0RXUE5ELXIzRHE0eTk3ZFpmSEJGdV9hMlNDV0drLTlVZEs?oc=5",
-      "medio": "CiudadRegion",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T16:38:00.000Z",
-      "pcode": "CO76400",
-      "municipio": "La Unión"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Seattle Post-Intelligencer",
       "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaDNFVjVDOXFtdWxQR1hYMTduWDVFWi1MTGE1MGdadkhMTWIxakJUZHhva25EZVE3TVMtU3lmM1gwSmtvaFJ6a0dqckZhQmh6cVoybWpEc01JUlk1Ni10blE1OWh6blR2bFFwZWdlY0pQNk9uWlExRTdmdlh1Z1pOS3Z4XzY2UC1iLUtrMTlQZDg5UTNTS3c?oc=5",
       "medio": "Seattle Post-Intelligencer",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T15:27:44.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
-      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
-      "medio": "Reading Eagle",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T15:24:20.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
     },
@@ -744,11 +724,13 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
-      "medio": "N+",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
+      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
+      "medio": "Reading Eagle",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T07:00:00.000Z"
+      "publicado": "2026-08-14T07:00:00.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -790,9 +772,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Dosquebradas amplía su red de albergues para las familias afectadas por el terremoto - Alcaldía de Dosquebradas",
+      "titulo": "Dosquebradas amplía su red de albergues para las familias afectadas por el terremoto - Dosquebradas",
       "enlace": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNVWhBdU9pWE1XR2I5bGw2RnpZcW5BM3hEZy15cFM5cnowa0xZemxvejh4ZUpDQ1dPbU5lMlEzX2FCdEtBaGxYcjJJYzNPZ2tuN2hrb3JsVmQzZ19Fbnp3TmF5bzMzeUlnQ3NyNlBVZFZDRTlDek56VTJrUllrSW5hTENJdXJlbXNseE8wNUhPVlNORXBYekVMVzVyTUplUklPMzM5MEtVeTRwYmtxZzM5am5kdlhnQmtPY2VFeFhlR1FEa2VxejlxMkRsbzR2V1VXT0Rqek5pTm5ScjgwbUdtb0R6WGF1ejdIS3JqQlVaZkk2bnkxWW40M1F1WnpRQmE5NXdia3dUUXBYRFU2c09fZmh1ajFQZw?oc=5",
-      "medio": "Alcaldía de Dosquebradas",
+      "medio": "Dosquebradas",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO66170",
@@ -949,7 +931,7 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
@@ -973,7 +955,7 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
@@ -1271,26 +1253,6 @@
       "medio": "Diario Primicia",
       "tipo_fuente": "unverified",
       "publicado": "2026-07-06T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Habilitan Centro de Acopio en Ciudad Victoria en Apoyo a Damnificados por Sismos en Venezuela - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUnlESVZzVWhHRFBGQllXUDJTbmtETUM4anpNOFlYWkVpb3hvT1F5OHE0dFJqUHh2YWd4WHRNTnAzQi10ZmZjOUVjdFNWNWc2MzkzLTVGVjBENWc3YVhjTl9zYmlPc19vMVpYUWdpVnZVbGlvMGczbWVjWHlseDE4NFUwR1poRUwwX2wzaVVydzJWZU94a0x0bDNLS3d2YTBJUDFpTGJldWh5X1RIaEUyWFRVUkc5b2dlczNYVXgtNzB2M184M1hVbllMS1A3OTBKYXd4UG1HbkY2MU0?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-07-05T07:00:00.000Z",
-      "pcode": "CO17867",
-      "municipio": "Victoria"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "La Patria Manizales. . Manizales ha recaudado 7 toneladas de ayuda para los afectados del terremoto en Venezuela La iniciativa es liderada por un grupo de venezolanos radicados en Manizales. Una mujer prestó su casa para que fuera centro de acopio. O - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQVhFRE1tZm5yci16ODhrXy1Db2pNUWxaQUFIQjVfVjlKSmUyaUhTN2tpQlVLb3hmTVY1MzFoMG1CMkNMT1BSdVVVSWRWMWRiSjUwNzV5Q29wcHpTbEtGend5N3lTWU50MTBPMjMxNWZpTmNfNkNhZ1dIdkNMTDZjZXhvLUJEbnhKTjRjT3hXaV8ybk9MMjlXWDFmOXhJNEk3N0JBQnJ4aWNjeXhSenFiNkx1NEJzVEVNcmZINUpwY2RnUFBuNm45V05JVjZScUhPSTg1RlNXTkZHR1BPRnpsaVV6cw?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-07-02T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
     },
     {
       "tipo": "centro_acopio",
