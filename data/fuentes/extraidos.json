@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-25T11:52:40.565Z",
+  "generado": "2026-08-25T12:32:29.655Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -22,14 +22,6 @@
       "municipio": "Calima"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia: UNGRD anuncia la metodología para evaluar las edificaciones afectadas. Será tipo semáforo - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQcEx4LVdYQnkxVUlXQndDUGd1M2NZUXI2cExPTGtpNVgwTTRxT3hBWlVRUFdlNENlYjRMZVJzVUJfUjc5eGRES0lhd2hvUHJmcThYSklBTEdabm5BbGtUZ3FET0dNRWhEazIxNk9YeWQtajY2bzdSbUZ5eEpnVlp1MlN6M050azF0NnZEd0MyVXNaYXZld1N3OW9EZEhkV2ROQlVRdHhMSHkxYmp3SzFLR3paQnNIS19fRXRjZVdadHlJeGJFRjNNYTgwb2p1WFdqLWNhamE2YTJpeDBnbjhGcnJKT2hDQVNNQ1o5bDhn0gHzAUFVX3lxTE11QjcxU19fb2FDLUNycFV4QmI4OGx0OWJYc3Utc2w1ZEZRTFFvQzBlUmtLOTJyWkdRb2RwZkQ5d0FpdXhHTTVfQWFQbVpiRjItRWxMMW5XM1FCSTA3bUtfVTJfbTVNdVFvTTRrYTdpOFlXTjBXTkp0c2hjbHJldUlzcE45bnUyQTNFOG05ODlzWjBYSkw5aEl4NU9HLTZIZTFJUEJWcUxKd3Y4aTd0d2hHZkxsZXFRaWszNEZIY3cxbFdYM3hUTk9iNnRvcnplV2U4TTcySURMYjBBM05DXzFRa0EzZjRtNUJiVjdGNmFTRjR6UQ?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-24T18:11:15.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Así funcionan los albergues educativos temporales que ya son una realidad en el Valle del Cauca",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90321/asi-funcionan-los-albergues-educativos-temporales-que-ya-son-una-realidad-en-el-valle-del-cauca/",
@@ -44,6 +36,14 @@
       "medio": "Revista Semana",
       "tipo_fuente": "press",
       "publicado": "2026-08-24T13:36:57.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "¿Su vivienda fue afectada por el terremoto?",
+      "enlace": "https://proclamadelpacifico.com/su-vivienda-fue-afectada-por-el-terremoto/",
+      "medio": "Proclama del Cauca",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-23T20:49:31.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -234,6 +234,16 @@
       "municipio": "Armenia"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Alcaldía de Cali investigará si hubo fallas o corrupción en construcción de edificios colapsados por terremoto - ELHERALDO.CO",
+      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQRExQZ05SWlVTLWtXeS1mSXdwVDVBSm1UNVJxWFVxT09CRGllR0ZEcFoyLXhqdjZVR2p6dGcwWXNXaG9mSE40ZXNmVklTUGdQZHBwREdsekxRaklrMG5jaHNKdDAtZDhmQ3FKYW9rM3dWM1BuNXlRNG9mRVFzSW05NEdyUmotdDJrVHNfX0c4RjZtWHlCU0N2WUx3MnhNM1IzZE5wbng0LWs5MkRxSlE5Q2JySGhaTm00SkdfSEZGTWdtaDg2NmEtemVPT3JPU0xoUGRFVHRTLWF1WHo5eFgyZU5FeFhwQVRaMFo40gGGAkFVX3lxTE5YRE5HZ1BoNHEzcVJDYWpRREtTTjA2a0ViVEFsZVd6azYzWVVaR2gxTldZSGlNN29oOC1ZNHFPd0lyenRiS0g3QUxsNThmMGlnUEt2amUySXp3WUZFbnAtRVN3WFQ2c25EMHQyT0hYLVZ3TlRtNWJtTHExTUZmTmFIdGhrbEozMlhMOTA4c05jT0RvUVhsdXR0VmYtaWtjNUYxa2hrYlJ1SUxtdS13amQ4YzA5Tnd6emlQczBjeWZnWlVKOW1pWW16WndtR3UwRnVUQ1EtSDJfSUt5MExtdEZfOU1vUzhiamNlRTNmRXhoajQ5R0d3YXY5UDM1SWFqZFFMQUxTa3c?oc=5",
+      "medio": "ELHERALDO.CO",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-19T23:28:33.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "En Caicedonia, la Gobernadora del Valle anunció acciones para la recuperación de viviendas y negocios afectados por el sismo",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90279/en-caicedonia-la-gobernadora-del-valle-anuncio-acciones-para-la-recuperacion-de-viviendas-y-negocios-afectados-por-el-sismo/",
@@ -250,16 +260,6 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-08-19T21:55:01.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "En Cali investigarán si hubo fallas o corrupción en edificios colapsados por el terremoto de 7,4 magnitud - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOHZtTFlDcW9YTG50OVdNUGtKVWo4bHNvblF6WFpmSzNUMTVlbVZCRmxfenViWDJWYy1EMEJOb1QzNGlRSDZ2a0dQQjVJMFkxaGNCN1JTS0hPekRDY1kyVUdVeDA1aVN4RFMyZzRnTHRHYkk1UjN4M3FUZXRMYXZnSk1weDFxdUpmVHg4dmtjeWl2QW00T2VrUDFIVUJFdHVDbEJtSTVHNUhGdmZRV1pwNUl4c2ZYX1V5MXRxLXROWjQ?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-19T21:29:30.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
@@ -531,16 +531,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Roldanillo, Valle: más de 3.000 viviendas afectadas tras el terremo... - Hoy Diario del Magdalena",
-      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOaDM2dFA2Zkp5eU1USGFndmxFM1VkZHFXWnZ1U1QzcnNGQlI5S3pjN0RkQlV5UnRkRlh0ZG5sWHM2Mm10Rm16TF9NNTYwSHMtREpHSVQxVkxxWGpUbm1aNzRXOFpaNW1idngtblhuNmRuMkRCeWpFWWU5RzJxVXlaN0FEU1ZReDVyN0IwUXNTZElHamxTY3R3VHBzTjNVQll6MG5RaXVnY05NQ2FvYWpwT19KTFJ2MnkxZUJaSGVXLURXXzFfaC0xOWV2ZWZWekRtNVB0UlFTRzY?oc=5",
-      "medio": "Hoy Diario del Magdalena",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-16T18:00:00.000Z",
-      "pcode": "CO76622",
-      "municipio": "Roldanillo"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "Terremoto deja 26.945 viviendas destruidas, 66 edificios colapsados y 289 muertos en Colombia - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUXY0Qmp1S0ltMkdKZk5CVzN6aUg3Mm5LVnNSdzdGTlo1ODVScUdqMm1XUlFnbjhpYUtxLWV4UHB1Vnd0V2wzYXBFMHVYU3VNSU10TE5iVEVPdHUxQ0tkenlpMXdsQU56U0NIV3VNRjdJcFZMMXMwaDUweGx6dkJPVDNlLS1VNEJVc3E1S3JKbkREM0s3Mm1xcG1QSVdyVi16SmY0NWgyRHEybkRiX3FuTGM1Vk8xcTAtcnAzM0hKTXFTTExYSks1cUxkZjlRMV9Db0FiUDBQTG1MclXSAeABQVVfeXFMTi1yeVg3VjloX2NRYi02U09aeTRpaE1YNjJHejZHNl82NC10U3JyNGxkYURKSjNUUkxPYkw5SF9TUUgta1VWeGVjRUhWbi1QOC1RTG5jaWhCWlVRcFhRSC11eEFHcGZqdjhuYlJtNjY1blgtZ1JWVmhTTndOaTAxZDdVdHk0Z3lYcU9tTmlVYnZNX3pFc0JzaTBROFVPN3lwUUdKemg4cXE2aVVkOVZoT0lHZXl0UHpuOUtod3VseHQ5dXpuUHNyMjNzbG1GRjQyM2JDRklBY0ZZOWR3a0lLdjk?oc=5",
@@ -609,6 +599,14 @@
       "publicado": "2026-08-16T02:26:36.000Z",
       "pcode": "CO76863",
       "municipio": "Versalles"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "120.000 millones de pesos costaría reconstrucción del 60% de edificios afectados en la Uniquindío - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSUUzbk9oQkhtTURpajlkRWZiLTlEZXp6TDFQMDZIbWZYSVAwLXQyWTcteXRKc1ZJRGd3Nk1SeVR5QzV0UHpQSzhHeGJJNC1NV1F1bDhZajlubFV1TU02SXJQZTM0UTVTdy1fa09uYW9mc2hxNGlfcHJGc0c5ZkNPelZSa0I2dG1SOGdBTU1SLTRLbHJvOXpHTkVTRzhCTW1NeklpV2lzMFFWYlZvdlJiaHktNW4zeDVWYWN4ckRfdWhtclU0YVdZTnNR0gHeAUFVX3lxTE5RLTNGa3FSYTZYbFpsYl9wUC1VUmVmN2w0aEdOZXlJWkE0NmZNSXdtdUNfNE1jUEZKNm94NHNEaFdLaXktSXRGU2RBdHpXY2FaaTIyUlN6M1RmV1pkeV94ZU5GLTNJTnNUZHpmZzZRRDA3cjdWRkFuWDRFbTZNc3c3UERNOHVLRXlleWVmZmJXLU9sdTltZDd4cGxMTkRlQ3ZWR0Ixbm53VkJSVGtINWlIaFRKVHY1M3R2d2xyN3dlcUhfQlJpRUNNN0JlX2Q1cDBvZEhQdUUyc2w1ZFRCUQ?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-15T14:45:34.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -757,16 +755,6 @@
       "publicado": "2026-08-14T07:00:00.000Z"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Los reportes locales de bomberos, centros de zoonosis y albergues en ciudades como Cali y Pereira advierten que se multiplicaron las solicitudes de búsqueda, recuperación y reubicación de mascotas tras la emergencia - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeFp4bE82Z1dfUVZaRHM4a19qTXpnYWNWTVNJOHkwUFI1TUJ6TEVDUV9FcnU0b0wxZGlnUnBheGh0dk40VUp2Mm5SWEVSLWhvTDAwNTNDREhiRTlIYjZua3ZicFNkSkRtZUhBMVlDeWRYOGl6Zjd4MVhhWkVaVEozaERJRVhmWDlOcm1qUXBpN3JvV3RPWE1OM3hteUxXOHoxdWlYcVc3bTBFZElJSS1CVGdqc3lDaGpJSHpMdURjZER5Qmtfa0RCaml4dFkwSFhRejV6TldqRWt0eWVlakE?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T01:31:48.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Ubica los centros de acopio en Bogotá para las donaciones que se entregarán a damnificados del terremoto - Bogota.gov.co",
       "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSVA0SDZaMHl0NG5Nb0tqYm5GLUI1LUY5bFF4S0EyZHFCLThzMl9ZWklma0dKRVpsWGZwTVd1bkVPOFJWM0xqUm9ZdjV0bTZzMW5HVXlMTmtQNTNhYURXLVJkLUMyal9JMjdiNENkdkhTWUJpb1NhUzduRTUtUlBuX05ObHRVUzZvQXJVQkRibF81cHlXZ1UtZU44c1Y5R2Z3RDlrN2R3?oc=5",
@@ -875,6 +863,14 @@
       "publicado": "2026-08-13T07:00:00.000Z",
       "pcode": "CO27001",
       "municipio": "Quibdó"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Bogotá apoyará la evaluación de daños en Chocó con 30 especialistas del IDU y Camacol y habilitó puntos de acopio para donaciones - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQUmhUNzZzVTljV05wVzZ5bGI0UWFYYVBPMDdIVzE1akVObGlYQkptLWU5Y0d3WmRucmNLSGFTY0JUeWVSRHBkY3lVSDhlOGc1ZEp3c01Gd1E5andoa29pYTRWclpWcnRXYkdUVFZkbDlVeEZvdjVwMUVDeTdWU2NBaXBSdG5JRVRUR2pIbmR6RUY3bjZ4WHlkUzk4T1dMV1Rha2FaTW45QmpIb1laWXRUMkZHaHJMMGM3N2NtUmNKdk9la096dGU5S25vQVpvUUVWVkhLNGVQY2lHX053VVh0VDRTOUFqMTZlZUJSclRyTkZQb0FhNElCN0NMbzhZOU4tOUp0OdIBnwJBVV95cUxPUUdQd2s0ZHJWZzcyNm90aDFVM3k3dnIwTXlSdTJaQTNTZW5UN1U3cmFZY2dRSEZIQTQ5TmRsSmFMUXFwekZEUzQ4enlwU0VCUlpuT0pSQy1uTUJOeDd6NlEwQ3NOMFRDb0QySEkzTlQyMURnT05idnhRQkwwbVNnVnFMMVhtWHRrY3dWSXEtN29TQVpTS3FoVFljcllkZTU5WGVHdUxYYWFZbTNMeWxTcElSSktseEFUSUFScE4yQUQ3TkhGSUdoQTBTa3RVOTJDcUNaZlEyR1ZnTEhtRFRYaGE4WHQ2NW5HQXE2YXp5WTdJM094UnQzY211V3h1ci1XQVgzdWVoZS1fRXBaUU5KNy1EdHppT3hmNHR1R0hxYw?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
       "tipo": "via_bloqueada",
@@ -1215,6 +1211,14 @@
       "pcode": "CO17001",
       "municipio": "Manizales",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "#EnVideo 📹| ¡Pareja sobreviviente! Conoce la historia de Deomaris Mata y Francisco Soto, quienes momentos antes de la tragedia sísmica del #24Jun se preparaban para ver el futbol; minutos después, su vivienda colapsa, y se encontraron bajo los escomb - instagram.com",
+      "enlace": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA0bzJ3NmZodHVhaUxnT05xUExSbzJBWGMxeWFqRm9VT3lGcXh2RmlldTFkOEVvOEo2M1F1a0d5Q2I1eS1scFY0cFlfYmxlOGYtTGllWl9B?oc=5",
+      "medio": "instagram.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-07-18T07:00:00.000Z"
     },
     {
       "tipo": "centro_acopio",
