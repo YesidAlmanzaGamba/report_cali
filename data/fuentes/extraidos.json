@@ -1,18 +1,8 @@
 {
-  "generado": "2026-08-25T21:51:28.247Z",
+  "generado": "2026-08-25T22:18:33.283Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
-    {
-      "tipo": "albergue",
-      "titulo": "Virgen de Guadalupe, último refugio entre escombros - Canal 44",
-      "enlace": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1HQXdpWVNHYldRc2NZSzFtcDYzLTZRZUdDbWVCRTRjekJhaWtTYXdRYU05OGluWE9YSmUzdVZsVDFTRDBFcWcwaXZCZ1lkT2pCaG5yT3B5M0Z5bHlTcnZERzhZNXVJLTJOa3lHeXVOX1BhMVRKblVSZEc5UQ?oc=5",
-      "medio": "Canal 44",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-25T21:22:07.000Z",
-      "pcode": "CO05315",
-      "municipio": "Guadalupe"
-    },
     {
       "tipo": "centro_acopio",
       "titulo": "En Montería habilitan otro punto de acopio para ayudar a familias damnificadas por el terremoto - Caracol Radio",
@@ -181,9 +171,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "A 319 llega el número de fallecidos por el terremoto de magnitud 7,4 en Colombia, hay 302 edificios colapsados - lapatria.com",
+      "titulo": "A 319 llega el número de fallecidos por el terremoto de magnitud 7,4 en Colombia, hay 302 edificios colapsados - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWGNxaTZldkRfc09FNS0xdDhpZlBYSDNNQ01URmVyWFM3allIamVRQXNiWUJxZVo2V19tMGVUUWtZQ0lnREFpcTBNdEIwR1pLbWNvbW11TjBycEJRZkw5OWxPYThhalI1d05kUnpLUDA5U2VZVnR5NEh4eHJXTFZnX090dDdRN04tajFaLTRRM0kzYmxVU1ViV3V1ZlppSFZnNlBOcnpieGpsQ1pKMnRsRnhWNHFEaDhfY0o0?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-21T02:00:09.000Z"
     },
@@ -307,9 +297,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "En Cali investigarán si hubo fallas o corrupción en edificios colapsados por el terremoto de 7,4 magnitud - lapatria.com",
+      "titulo": "En Cali investigarán si hubo fallas o corrupción en edificios colapsados por el terremoto de 7,4 magnitud - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOHZtTFlDcW9YTG50OVdNUGtKVWo4bHNvblF6WFpmSzNUMTVlbVZCRmxfenViWDJWYy1EMEJOb1QzNGlRSDZ2a0dQQjVJMFkxaGNCN1JTS0hPekRDY1kyVUdVeDA1aVN4RFMyZzRnTHRHYkk1UjN4M3FUZXRMYXZnSk1weDFxdUpmVHg4dmtjeWl2QW00T2VrUDFIVUJFdHVDbEJtSTVHNUhGdmZRV1pwNUl4c2ZYX1V5MXRxLXROWjQ?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T21:29:30.000Z",
       "pcode": "CO76001",
@@ -573,6 +563,16 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Roldanillo, Valle: más de 3.000 viviendas afectadas tras el terremo... - Hoy Diario del Magdalena",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOaDM2dFA2Zkp5eU1USGFndmxFM1VkZHFXWnZ1U1QzcnNGQlI5S3pjN0RkQlV5UnRkRlh0ZG5sWHM2Mm10Rm16TF9NNTYwSHMtREpHSVQxVkxxWGpUbm1aNzRXOFpaNW1idngtblhuNmRuMkRCeWpFWWU5RzJxVXlaN0FEU1ZReDVyN0IwUXNTZElHamxTY3R3VHBzTjNVQll6MG5RaXVnY05NQ2FvYWpwT19KTFJ2MnkxZUJaSGVXLURXXzFfaC0xOWV2ZWZWekRtNVB0UlFTRzY?oc=5",
+      "medio": "Hoy Diario del Magdalena",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-16T18:00:00.000Z",
+      "pcode": "CO76622",
+      "municipio": "Roldanillo"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Terremoto deja 26.945 viviendas destruidas, 66 edificios colapsados y 289 muertos en Colombia - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUXY0Qmp1S0ltMkdKZk5CVzN6aUg3Mm5LVnNSdzdGTlo1ODVScUdqMm1XUlFnbjhpYUtxLWV4UHB1Vnd0V2wzYXBFMHVYU3VNSU10TE5iVEVPdHUxQ0tkenlpMXdsQU56U0NIV3VNRjdJcFZMMXMwaDUweGx6dkJPVDNlLS1VNEJVc3E1S3JKbkREM0s3Mm1xcG1QSVdyVi16SmY0NWgyRHEybkRiX3FuTGM1Vk8xcTAtcnAzM0hKTXFTTExYSks1cUxkZjlRMV9Db0FiUDBQTG1MclXSAeABQVVfeXFMTi1yeVg3VjloX2NRYi02U09aeTRpaE1YNjJHejZHNl82NC10U3JyNGxkYURKSjNUUkxPYkw5SF9TUUgta1VWeGVjRUhWbi1QOC1RTG5jaWhCWlVRcFhRSC11eEFHcGZqdjhuYlJtNjY1blgtZ1JWVmhTTndOaTAxZDdVdHk0Z3lYcU9tTmlVYnZNX3pFc0JzaTBROFVPN3lwUUdKemg4cXE2aVVkOVZoT0lHZXl0UHpuOUtod3VseHQ5dXpuUHNyMjNzbG1GRjQyM2JDRklBY0ZZOWR3a0lLdjk?oc=5",
@@ -626,21 +626,13 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Terremoto en Manizales: 5.241 damnificados, 203 personas en albergues y 1.153 viviendas con afectación total - lapatria.com",
+      "titulo": "Terremoto en Manizales: 5.241 damnificados, 203 personas en albergues y 1.153 viviendas con afectación total - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTkUwem55MWxPdzVjaHdOS2dMTnZqWmwtNFpzWjJQMC1NaXBFNE1CN1ZPTHVVUk5VMjB0a1c3OVFMSEpWWm8yMlhoQXdlTzF1aGs1RWVBM292LUhJa1lDRHdtT040ZFRuZ3dQSjgxYkFrSEtCNy10enRrLUNkMEpnNFZPWGVfaUhhU19GN0hmZHpfYkg1Rlk5S0RONU8zOXpOSm15UkJsRVZnNDVEU3lORVBaZ05PaFZhVTRBbGx1MA?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-16T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "¿Cómo ayudar a animales afectados por terremoto? Centros de acopio y las donaciones que necesitan - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTlYwanFsUjNpWUxFVXJSUENVQ0stQlNpaUI0TWd1Vmc5akpLXy1aN2stR042NE9hMHJObk5KaWZLM3daeUxTWHVyTkpBeUFwdWNTb0dzQnRmb3VZUHoxWkNvVnBzWmsxZm1vSGt4SDJSOUEwT1hCMXFCVEF3QlJDWXVpM1ZJWFFKOG94LTA4RExLSHlwV3hSdTFlcw?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-16T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -687,6 +679,14 @@
       "municipio": "La Esperanza"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "¿Cómo ayudar a animales afectados por terremoto? Centros de acopio y las donaciones que necesitan - Noticias Caracol",
+      "enlace": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOdTE1MkQwVFdOR0pyTFg3eVAyMWNjOGFtVTNTNHFHc2dWSVQxM0NDa0gtenF6NzFrNGZ0VDJ2T3oxQTdxOE1Scm9YVjUtZHFDWFRsa3ZCYWhIOWx1Z1dZU0NnWVB0anZVdktETmhWSHljZFpPcllEQ1pfOUZTVmpydGE2UHZULXI0S3BadDJUTnBqMjNUNjdnNXpSdEJSNFRmNHlUV3dzR1F3Z0ZiaTlrTkpLbDNmS0xqZWN0bWdiRmlKQ0Uxc0JnT2JmZGlwSzlZTFhnYzhkSDNHSkhyUWphejln0gHvAUFVX3lxTE94VDh3aFdqYzRDTWdHeC1vLVJ6M1gwODJYYnY1SWNtUFctN0doWTU5V2Mwb1daVkxJVThBdkhybm8yc3dCc2xod3lxOFpGYzQ0T2JfMnZETnRZdnZjbVRJTjVuRTBqQ0VwZDBrc1JBLXFTZ1lxSTdjaFAzc2d4OEc2MW9NUE1peHhIcmI1MFZlWGhjclZfV3lMTkEwUFNYVWp0ZnYzUFYyWmU3bTdNR1kyYndrcVc0SnlSQ0hHOXdPcGhlVFJ0VkRrenU1ZlNlTzBjTFk1RXBxczBPSVBMU3Z6U1hFX3pLN2cyMFpmMlpr?oc=5",
+      "medio": "Noticias Caracol",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-14T17:34:44.000Z"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Casi 700 viviendas dañadas y el drama de 1.497 afectados por el sismo en La Unión - CiudadRegion",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSG5rRGNDLWl2dWJOYlhINEpIQm1BbjI5M2lkR0tFTmFhRFJSWnVwbl9LR2g4VDE3ODAxdWo2VkZhSFFvOTFHUDBxNDJudVVFWW1uZlJjcFpGMS1YSnFCVHJpQnNnckduckplbHd1SDV2WFZJdjNqSUxPaDdZSUNweEVSVWdPWGZfclpmUEprTm5ZQmR1Y1FnQU1tMDBfZ0RXUE5ELXIzRHE0eTk3ZFpmSEJGdV9hMlNDV0drLTlVZEs?oc=5",
@@ -707,20 +707,18 @@
       "municipio": "La Esperanza"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
-      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
-      "medio": "Reading Eagle",
+      "tipo": "edificacion_danada",
+      "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQm1ibWhiTjVWU1BBakg0amhFZkR4WTVtUU9hZnhRV1h0eTBxVzVOSGQ4TXp4WWdlNXAtaVZnRXFiQUEyQzhsSzByMEcwanpYelItRHVRMGs5WGZ0dVQyTTVkUkl4NkFhTWVNZUFycTNwM1NIZG1mcUtLOHR5RVdjMG5GZ3dYdVlKR0VPOU9McFk1Mjltb2pKRTBTSnNVcmJpdEI3XzdmcHlTRERZYnFTOVVtWVFHRnp3b2ZmRVMtLU9tTFU?oc=5",
+      "medio": "Pulzo",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T15:24:20.000Z",
-      "pcode": "CO54385",
-      "municipio": "La Esperanza"
+      "publicado": "2026-08-14T14:25:32.000Z"
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Habilitan cuenta de donaciones y puntos de acopio para apoyar a damnificados del terremoto en Risaralda - lapatria.com",
+      "titulo": "Habilitan cuenta de donaciones y puntos de acopio para apoyar a damnificados del terremoto en Risaralda - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeGNlVV9TSlgwYkc0Sjg2RW5BVGRLc2RmWDR0Z2RRSXU0N1NuUWlZbVRRelpBLUU5MVBDQzZTejhYaExZTE16eGRBVENOU3F4Sm95SE9BR28weklJZE5HOXozMGl4a1Y0NDA4MEpQWEhfMlk5MlFhbDRsQkJnMmRZLVkzYkhHeVRZbGdDTlRJR2l2Nlc0Sk5vMGp4UXFqa0FYOGlwSi1LQkVHZlF0cGJnWFhLalpXNFk?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T13:25:24.000Z"
     },
@@ -736,11 +734,13 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Buscan a Desaparecidos Tras Terremoto en Colombia que Dejó Edificios Colapsados - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZTdRb0xSSTZpVVBZS0swVjcyNmtuZjNWdXUzTldRemFoTl9NMWlwOGR0YjAzRXRSY2c1Nm9QUHliYVBxb3k2NDQ3bGFXV25GMl9Qc3puSHBHSnBudXpzVEhqeUVfSG8zMUhTeFBtVmdVT0RQU19CdE1CRTh2Zkxmdk9lMjFVZVFHdkxsRkVGU0NGRl93ZlZuNDlTM1ptMGt3MGhKYmNWU2pXTjZELWxkZnhJVVBLdUxxYkE?oc=5",
-      "medio": "N+",
+      "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Reading Eagle",
+      "enlace": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQY0doR2lUSG1oenY2VU1oVFlVZTNlcm94cktwSVdIazhpUndaYXNoM1JSSVFZdElIU3NWM2VTR09oMjV3aVlLSWN2eE5DUmtzWjZ2SWhHa0p6cjBFZGpzVHhSODNMZmdpZTBnSEI5M1hnQ1ROUjlZUkltZXlSWWJReWlWZ01Kb1liazR1eGlZOXA0MVROXzEwaURhSWtqdElIWi1HOFB3Nkk5MDRieXh1ZTc5MGU4MXlDZUprNnZxTUFlU0ZpU3pLTjhjTGNNWG93ZVpDd21Gbw?oc=5",
+      "medio": "Reading Eagle",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T07:00:00.000Z"
+      "publicado": "2026-08-14T07:00:00.000Z",
+      "pcode": "CO54385",
+      "municipio": "La Esperanza"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -771,6 +771,14 @@
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO54385",
       "municipio": "La Esperanza"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Impacto del terremoto: 84.360 viviendas con daños, 210 vías afectadas y 284 muertos - Portafolio.co",
+      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1Z5NHdWTVRqUlZqTjVPeEZSRHB5dk1KeDdUelU2aEJ6YkFkOVl0QlJqWVZNVTVnM0dQQjRrVmJlZm9FRmpUbjVrMDdfREtJR2Ztem5JMi1Pa3BaTmZWZWplNmt4S2Z2ek9adHo5V09Ra0x3YXFPeEVwWndvNFczSVdRUVZYbi1hMnJkWVdxc3lOTUJQUFVSSVl1TF81dEdrNDJzMEFhTU9TUk5tN24tVzhpcXd4Vm4yUmlGYmRRUG12SDk2eHlWaTlFTjg?oc=5",
+      "medio": "Portafolio.co",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-14T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -1063,14 +1071,6 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSWY1ZWVJektxOVM2MkxNQXNKdGRIQ0JDamhSVDItbG9QSlR0UXdXbGt3UXBMZzlwdzFETWxYNlNvVjFTVWFTVkYwUUZIRXduREt5MHlhMHc1OGxMMzNwWGNldTNuYW9QZ25nWTVHa1VpOGFwV2F0RzJ5MVhDMVJwc0hQWE1qQzJ6Tm05a3duNlFaX1psTFBjUUlyWWFTX0dGNzZkeHN1OEx3MXZsaHYwYnVlTVdmV3lsc0JqbTVobzFoTzJOV1hQQ9IByAFBVV95cUxORWlDdHctN1N0SFNrNXE4MzR6cGJEbWhUVGJ5SFdUbTJ0eVpPZmMxaTc4SG95ZUxNUkVTaTlEdzdJZ1Q5bE8xbzJYZGo0OEc4cDBlSGZkOE92czlCdVd3dHFTdm9OUGdvMVNCazRYMlowQjN0dXVkcmdFLVFyVTVmU1I1OWtIdkdFZkNTb2xlS28wWkhDM0w3X1lTZThQektfekZkUkx5c2lWVmxfdWtsb0FXZVVrYkVEMW5SZGhTWGNnZ1J2eF9hYw?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Banco de Alimentos de Bucaramanga habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQW13TEdNdzZCbVA5T29BR3RvMDdWMEVtdlRCSDhzV2lJVFBTQjl4azAtTTNLSXlfY0hHUTk4ZnllRF9iZ29IRnRTc3k3UEZENjZMVWFMSTVyYmdEV3dtUlcyLUpqaDB0Q0FtTWhwNElOeDZ4TGRMcUI3YjlwRnE1UjJnYWtOOEh5V29tTFZMcWpZOXYtNkRkM1JyM0VmNzVlTVRBbVFPd1J1OFFZT1hRNFVQWFFrYldmVkJFOFVzcDhoYUg2VDl2WNIB3AFBVV95cUxOMTdZYnF0NFNkcFZPT25yVm9aSkxuMFRBWUpqRWY2Y3I2QWF3QzRGaUQxdkcyYzNvTXBlRmpQMFF3b1AyTGVILTVwYllueTZVdWI3eVktLTQwcGw2MHJ6R0JycE9HbW42MTBmM20wWW50VHdiM3NEQXJEX3luUE02XzJzS3NQUzNIcWk4aTVlOG9uYk9iMzVHVUVKZVVkYjBTWFByVkd3ZktfRFBNMHNrYWRSaXQwSWlFWnFzRGdQeFV5ek8yT3FDd2EwVkFSY0syWE40cjZjU2FtV08t?oc=5",
@@ -1079,6 +1079,14 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO68001",
       "municipio": "Bucaramanga"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Así golpeó el terremoto a las ciudades intermedias: 8 muertos, 5.000 damnificados y 1.000 viviendas afectadas - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSWY1ZWVJektxOVM2MkxNQXNKdGRIQ0JDamhSVDItbG9QSlR0UXdXbGt3UXBMZzlwdzFETWxYNlNvVjFTVWFTVkYwUUZIRXduREt5MHlhMHc1OGxMMzNwWGNldTNuYW9QZ25nWTVHa1VpOGFwV2F0RzJ5MVhDMVJwc0hQWE1qQzJ6Tm05a3duNlFaX1psTFBjUUlyWWFTX0dGNzZkeHN1OEx3MXZsaHYwYnVlTVdmV3lsc0JqbTVobzFoTzJOV1hQQ9IByAFBVV95cUxORWlDdHctN1N0SFNrNXE4MzR6cGJEbWhUVGJ5SFdUbTJ0eVpPZmMxaTc4SG95ZUxNUkVTaTlEdzdJZ1Q5bE8xbzJYZGo0OEc4cDBlSGZkOE92czlCdVd3dHFTdm9OUGdvMVNCazRYMlowQjN0dXVkcmdFLVFyVTVmU1I1OWtIdkdFZkNTb2xlS28wWkhDM0w3X1lTZThQektfekZkUkx5c2lWVmxfdWtsb0FXZVVrYkVEMW5SZGhTWGNnZ1J2eF9hYw?oc=5",
+      "medio": "La FM",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -1103,9 +1111,9 @@
     {
       "tipo": "centro_acopio",
       "sede": "Coliseo Menor de Manizales",
-      "titulo": "EN VIVO: Así funciona el centro de acopio en el Coliseo Menor de Manizales, ayudas para afectados por sismo - lapatria.com",
+      "titulo": "EN VIVO: Así funciona el centro de acopio en el Coliseo Menor de Manizales, ayudas para afectados por sismo - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOG81cjNhLWdKSGM5YkhqUjdXV3NLelotNXN0QXJBamRnUVJIUi1KdllFSmlxNjhNTW83akVPajM1Rk9OR0UtS2dlZ05UanNUZzVWNmNjbnBMUzc4OFB5VGNRSEVFaVZybExkTmlaeUpWUS1VRnhPdmJtdVAtckZXYlpMVlFxLVVZeDJCNGE0VjEtaVphV1BjQXdkeVphWHRwMTdhYlBWMzh2bzNlWWk0QXpZSVRMbUNvcDJvXw?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO17001",
@@ -1115,9 +1123,9 @@
     {
       "tipo": "centro_acopio",
       "sede": "Universidad de Caldas",
-      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - lapatria.com",
+      "titulo": "Universidad de Caldas habilita centro de acopio en Manizales para damnificados del sismo - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaklOOG5iaE04el91aXlHNENHQ2prOFFRNWctLUM3SExjcmFKMVVlUmhCYU41amtRdjdFcHhRcjFpbFNLNUs0UGs2YnB3UDZocjdldUZCeUtCTnBGWnJfVW80Rkd2cmVwSjdLVFpqTTU0R2pYanZvWTRMZGlaZldJSUlnam5Gdkt3ZmU4cjJieHRQMjE3bDBEMzVDLV9XZEE3TDIxY0NDdUVHTGFrR0dUSFVRMWdLSDAyS0dlYVo2eDg?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO17001",
@@ -1194,9 +1202,9 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "En imágenes: así se viven las evacuaciones, albergues y rescates tras el terremoto en Manizales - lapatria.com",
+      "titulo": "En imágenes: así se viven las evacuaciones, albergues y rescates tras el terremoto en Manizales - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQV1J1SVVjanVXMy1vX2x0OUw5aDg3NThDSzEyLW9PV29vUlY2QjBFYzduRC1KUmZjajRjSzduS1Z1UXJaR21ZX1Jjd2pfcmlhWlcyaVN2RHh0bFhBTVFnUklRU3lrNUNyNGRNc0ZLSk96eUM0TVpuTUVQYnBTQkhtdUswWENlNUJKY09CakZVbkRBQjZ6OWN6eXBURHUzSFFJcHN4ZVdjUnlTejE3UXA0dkJ4ODdoQ0NCWWc?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
@@ -1205,9 +1213,9 @@
     {
       "tipo": "centro_acopio",
       "sede": "Coliseo Mayor de Manizales",
-      "titulo": "El Coliseo Mayor de Manizales recibe a los primeros damnificados tras el sismo: historias y centros de acopio - lapatria.com",
+      "titulo": "El Coliseo Mayor de Manizales recibe a los primeros damnificados tras el sismo: historias y centros de acopio - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOGNjSHB3ZlNnLXZkRm55dWJEblQ5OHc2TEF5bGQxZ2NtNGs3N2QyWmF4M1dUYzloYldNemNTV2FvNlFUalBlMk5jRDNpclJzcWdXM2xGMW03OHBEdnlfQ1Z6ZE53b2xXVGV0Q3JNX29rc0Q2VXQxX2NVSm03dkNQbEFnTW1VVVZvQW5EUzAxLWZ6UUZZMmJqNGlBV3MwOUk3bllmYmNqRklWV3RUeHhJTGkxTkJoRzhjcFB0cC02V2o?oc=5",
-      "medio": "lapatria.com",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
@@ -1258,13 +1266,13 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Habilitan Centro de Acopio en Ciudad Victoria en Apoyo a Damnificados por Sismos en Venezuela - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUnlESVZzVWhHRFBGQllXUDJTbmtETUM4anpNOFlYWkVpb3hvT1F5OHE0dFJqUHh2YWd4WHRNTnAzQi10ZmZjOUVjdFNWNWc2MzkzLTVGVjBENWc3YVhjTl9zYmlPc19vMVpYUWdpVnZVbGlvMGczbWVjWHlseDE4NFUwR1poRUwwX2wzaVVydzJWZU94a0x0bDNLS3d2YTBJUDFpTGJldWh5X1RIaEUyWFRVUkc5b2dlczNYVXgtNzB2M184M1hVbllMS1A3OTBKYXd4UG1HbkY2MU0?oc=5",
-      "medio": "N+",
+      "titulo": "La Patria Manizales. . Manizales ha recaudado 7 toneladas de ayuda para los afectados del terremoto en Venezuela La iniciativa es liderada por un grupo de venezolanos radicados en Manizales. Una mujer prestó su casa para que fuera centro de acopio. O - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQVhFRE1tZm5yci16ODhrXy1Db2pNUWxaQUFIQjVfVjlKSmUyaUhTN2tpQlVLb3hmTVY1MzFoMG1CMkNMT1BSdVVVSWRWMWRiSjUwNzV5Q29wcHpTbEtGend5N3lTWU50MTBPMjMxNWZpTmNfNkNhZ1dIdkNMTDZjZXhvLUJEbnhKTjRjT3hXaV8ybk9MMjlXWDFmOXhJNEk3N0JBQnJ4aWNjeXhSenFiNkx1NEJzVEVNcmZINUpwY2RnUFBuNm45V05JVjZScUhPSTg1RlNXTkZHR1BPRnpsaVV6cw?oc=5",
+      "medio": "facebook.com",
       "tipo_fuente": "unverified",
-      "publicado": "2026-07-05T07:00:00.000Z",
-      "pcode": "CO17867",
-      "municipio": "Victoria"
+      "publicado": "2026-07-02T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
     },
     {
       "tipo": "centro_acopio",
