@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-26T02:21:00.763Z",
+  "generado": "2026-08-26T03:31:38.267Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -152,14 +152,6 @@
       "publicado": "2026-08-21T17:58:39.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "¿Cómo ayudar a los damnificados después del terremoto? Experto explica qué deben tener los albergues y qué donar - elpais.com.co",
-      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQmNMLXdEQThGVjREeGc1UkNqeEV1NHBYdzJVMmtVeDdHMXIxU2k0NXlPR040em9Qd3VTQ1Y4eGtVRkYtRmRNdzZLMHFwVXBQWGlMSmJrTlBLU1RYdlRHUnRpZEZsMEF5STRVM0NnYTV0SVJnd2FKemhoaXo5amh6c0dxNC1yU0pTcC05Q1BISm9DVFhMLVQ1TDRqazhmNVpTay1QVktEaXNjbTdhY3FDa2FPcWdGZDA0c3dZdHlYN2FYSVNGUnBmM2RsQ2FKdlFKakp4VzlMekhQb2piQm1tWWMyMWRCQdIB6wFBVV95cUxQSWkxckZ6MkpWMTBFYUVMbERqOERyc2JVemVXem8wdlc3TkIxdUFCOUV2dFBWaWRJemhTaG5XbVVkMzNoazJjVU9XaFdWSVVlVDhoazVUXzNETGZpRXhtejBiaDZsbVU5WjNzY0VFNjduWEpOMHRnNTIyT0RUOUxkWEtyb2hFemxLYjN6elNJS25EVFNMUXJwSWxlZnhIOWxHQlp0QnZLbWxTNzduYXpuMmRUdjFoRHNRNVloNWtqLVhONVZqeFhpX2x6R0ZEWXVoOEQyVzM5MWJXU0gyNjRQMXNsNWRpbjZmaWVZ?oc=5",
-      "medio": "elpais.com.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-21T16:16:34.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -679,16 +671,6 @@
       "municipio": "La Esperanza"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Casi 700 viviendas dañadas y el drama de 1.497 afectados por el sismo en La Unión - CiudadRegion",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSG5rRGNDLWl2dWJOYlhINEpIQm1BbjI5M2lkR0tFTmFhRFJSWnVwbl9LR2g4VDE3ODAxdWo2VkZhSFFvOTFHUDBxNDJudVVFWW1uZlJjcFpGMS1YSnFCVHJpQnNnckduckplbHd1SDV2WFZJdjNqSUxPaDdZSUNweEVSVWdPWGZfclpmUEprTm5ZQmR1Y1FnQU1tMDBfZ0RXUE5ELXIzRHE0eTk3ZFpmSEJGdV9hMlNDV0drLTlVZEs?oc=5",
-      "medio": "CiudadRegion",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T16:38:00.000Z",
-      "pcode": "CO76400",
-      "municipio": "La Unión"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "La esperanza resurge en Colombia con aparentes señales de vida en edificios colapsados por terremoto - Seattle Post-Intelligencer",
       "enlace": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaDNFVjVDOXFtdWxQR1hYMTduWDVFWi1MTGE1MGdadkhMTWIxakJUZHhva25EZVE3TVMtU3lmM1gwSmtvaFJ6a0dqckZhQmh6cVoybWpEc01JUlk1Ni10blE1OWh6blR2bFFwZWdlY0pQNk9uWlExRTdmdlh1Z1pOS3Z4XzY2UC1iLUtrMTlQZDg5UTNTS3c?oc=5",
@@ -789,16 +771,6 @@
       "medio": "El Nuevo Día",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Los reportes locales de bomberos, centros de zoonosis y albergues en ciudades como Cali y Pereira advierten que se multiplicaron las solicitudes de búsqueda, recuperación y reubicación de mascotas tras la emergencia - facebook.com",
-      "enlace": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeFp4bE82Z1dfUVZaRHM4a19qTXpnYWNWTVNJOHkwUFI1TUJ6TEVDUV9FcnU0b0wxZGlnUnBheGh0dk40VUp2Mm5SWEVSLWhvTDAwNTNDREhiRTlIYjZua3ZicFNkSkRtZUhBMVlDeWRYOGl6Zjd4MVhhWkVaVEozaERJRVhmWDlOcm1qUXBpN3JvV3RPWE1OM3hteUxXOHoxdWlYcVc3bTBFZElJSS1CVGdqc3lDaGpJSHpMdURjZER5Qmtfa0RCaml4dFkwSFhRejV6TldqRWt0eWVlakE?oc=5",
-      "medio": "facebook.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T01:31:48.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
@@ -1257,6 +1229,16 @@
       "medio": "Diario Primicia",
       "tipo_fuente": "unverified",
       "publicado": "2026-07-06T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Habilitan Centro de Acopio en Ciudad Victoria en Apoyo a Damnificados por Sismos en Venezuela - N+",
+      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUnlESVZzVWhHRFBGQllXUDJTbmtETUM4anpNOFlYWkVpb3hvT1F5OHE0dFJqUHh2YWd4WHRNTnAzQi10ZmZjOUVjdFNWNWc2MzkzLTVGVjBENWc3YVhjTl9zYmlPc19vMVpYUWdpVnZVbGlvMGczbWVjWHlseDE4NFUwR1poRUwwX2wzaVVydzJWZU94a0x0bDNLS3d2YTBJUDFpTGJldWh5X1RIaEUyWFRVUkc5b2dlczNYVXgtNzB2M184M1hVbllMS1A3OTBKYXd4UG1HbkY2MU0?oc=5",
+      "medio": "N+",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-07-05T07:00:00.000Z",
+      "pcode": "CO17867",
+      "municipio": "Victoria"
     },
     {
       "tipo": "centro_acopio",
