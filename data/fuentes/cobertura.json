@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-26T05:58:48.655Z",
+  "generado": "2026-08-26T06:51:34.892Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 181,
-    "con_notas": 69,
-    "sin_notas": 112,
-    "poblacion_sin_notas": 3519111,
-    "medios_distintos": 126
+    "municipios_considerados": 180,
+    "con_notas": 67,
+    "sin_notas": 113,
+    "poblacion_sin_notas": 3526060,
+    "medios_distintos": 123
   },
   "municipios": [
     {
@@ -133,7 +133,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 106,
+      "notas": 107,
       "ultima": "2026-08-26T05:00:38.000Z",
       "medios": [
         {
@@ -210,6 +210,11 @@
           "nombre": "LaRepublica.co",
           "notas": 2,
           "ultima": "2026-08-16T07:00:00.000Z"
+        },
+        {
+          "nombre": "Colombia.com",
+          "notas": 2,
+          "ultima": "2026-08-11T19:03:55.000Z"
         },
         {
           "nombre": "Ecuavisa",
@@ -350,11 +355,6 @@
           "nombre": "facebook.com",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
-        },
-        {
-          "nombre": "Colombia.com",
-          "notas": 1,
-          "ultima": "2026-08-11T19:03:55.000Z"
         },
         {
           "nombre": "CiudadRegion",
@@ -2496,15 +2496,8 @@
       "departamento": "Antioquia",
       "mmi": 6,
       "poblacion": 6949,
-      "notas": 1,
-      "ultima": "2024-02-03T08:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "latribuna.cl",
-          "notas": 1,
-          "ultima": "2024-02-03T08:00:00.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO05001",
@@ -2891,14 +2884,9 @@
       "departamento": "Atlántico",
       "mmi": 4.4,
       "poblacion": 1355306,
-      "notas": 4,
-      "ultima": "2026-08-24T23:14:49.000Z",
+      "notas": 3,
+      "ultima": "2026-08-23T18:37:36.000Z",
       "medios": [
-        {
-          "nombre": "ELHERALDO.CO",
-          "notas": 1,
-          "ultima": "2026-08-24T23:14:49.000Z"
-        },
         {
           "nombre": "Revista Semana",
           "notas": 1,
@@ -2952,12 +2940,12 @@
           "ultima": "2026-08-14T15:27:44.000Z"
         },
         {
-          "nombre": "AP News",
+          "nombre": "Reading Eagle",
           "notas": 1,
-          "ultima": "2026-08-14T07:00:00.000Z"
+          "ultima": "2026-08-14T15:24:20.000Z"
         },
         {
-          "nombre": "Reading Eagle",
+          "nombre": "AP News",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
         },
@@ -3043,14 +3031,9 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 2,
-      "ultima": "2026-08-17T22:39:50.000Z",
+      "notas": 1,
+      "ultima": "2026-08-17T20:24:38.000Z",
       "medios": [
-        {
-          "nombre": "EL INFORMADOR - Santa Marta, Colombia",
-          "notas": 1,
-          "ultima": "2026-08-17T22:39:50.000Z"
-        },
         {
           "nombre": "Agencia de Periodismo Investigativo",
           "notas": 1,
@@ -3119,22 +3102,6 @@
           "nombre": "Colombia.com",
           "notas": 1,
           "ultima": "2020-10-23T07:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO20001",
-      "nombre": "Valledupar",
-      "departamento": "Cesar",
-      "mmi": 4.1,
-      "poblacion": 573013,
-      "notas": 1,
-      "ultima": "2026-08-11T23:41:00.000Z",
-      "medios": [
-        {
-          "nombre": "Diario La Libertad",
-          "notas": 1,
-          "ultima": "2026-08-11T23:41:00.000Z"
         }
       ]
     },
