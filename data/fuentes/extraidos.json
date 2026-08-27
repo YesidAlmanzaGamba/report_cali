@@ -1,8 +1,34 @@
 {
-  "generado": "2026-08-26T23:54:07.414Z",
+  "generado": "2026-08-27T06:22:20.464Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Pereira avanza en las demoliciones de estructuras afectadas",
+      "enlace": "https://www.eldiario.com.co/noticias/risaralda/pereira/pereira-avanza-en-las-demoliciones-de-estructuras-afectadas/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-27T05:00:59.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "centro_salud_afectado",
+      "titulo": "Vías, hospitales y colegios afectados por el terremoto podrán acceder a US$ 41 millones del CAF y BBVA - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxON0Z1OTk2SU5ULTJ3TU5mbG9EMHo3MTdKaTRkYlBIWlpJMFhVRjRpSHdscjdCTUE5TGtORzZDWmNuSEZaaWI1QTZIWkJFTkFaRjNiV2RyUGFpSndOV3dBWWQteFkxVmYtcjBTT2M0ZnA3WnJ1UFUyLXB6Nk9DWkpweF9rSXFXbnZsaVhJdlFsbEdJN1NJYmF1TUVuRDBGOTdCUE90VF8xYWM0dHU2Z0NZdTF4V0FONjdDZnhoWVRLSTBiWXFfTFAyeWlfMXNhSUdMbmtSZkhIZE5vcTZ0TFJqZDdRNDc2al8wcGU1RTJTSFVBUdIB9wFBVV95cUxPc2RfR0pGZ2p6Uk42M2ZQOWRRcGNaTDBzYTViYTJqN3RYMHRWNHdtbjlTNENhdDdKY0h5N3lJVG9tcngtZGhvUzRIc2NtSmhXOWFkbF9JLUlGUkNLUDJ2T1MxMjVtVmxfa0J5RGtsdm9DOHlaN3Y4MFJKc2tsbXN6SGQ4QWYzQUliTzM2eEZ5eHVsVmlxeTdHMFhqN2lkRGgwN2dYLW1ZUmUxNVc0c01MYjBldjNyTW5pN0tSMXlyU25xbDJuQ3poN0VWeHAtR0JKYTA4VzdUVmdIU0x3N2pFeTllclJEaWlQUFJ5VGVHU0JybHpLTDZR?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-27T00:03:41.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "UPB habilita cuenta bancaria y centro de acopio para ayudar a damnificados por el terremoto | El Colombiano - El Colombiano",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMTlDN0RfVTJIU05heGtSU2JGYm82dERQSTBKZG16RC1UYWlBejY4eEhpSHZONzYxeFd6WnFFOHdQVzgtWGtRcUhQZUpQOEFPYTBvZWc4Z2pBNS15TE1wVko5b0pxS0c3anZTMlhiOWF4eXk3LVB0d01MN2h3dUtFWmRfeFRvUUtNeUdaUnBISEVKR3U0UVpNZkZzNmRQdFlhaHhmTkVaZ3g2NWRIMElQR3hZeFdqTmJHWmF0MDExQjRvRGfSAcgBQVVfeXFMTzM0WTNQa1ZhaDJuMDJaWmJWazlFLUNfNi1ZVFhWcm9ZRDZYRlNiZUJSYzloTVZ6QjZMelZrbnpQSjB1OTh5TVNuWWNPS21sQXl2ei1BMlBaQ2NIelBxdlhBV0d0UDRSeWNFc3dTMkgtb2E5RmtjQmtMVFlPRG5lamRXUUIzak9QMUlLLWFnU1F4Mkk4NEtuNGVCQV95NXFGRlhWb1FlUV9MSGxDa1NyR1ZvdVEzd3JJTnZTY0tGekpPekRPRFNLMlM?oc=5",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-26T23:52:11.000Z"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Cali: A plena luz del día están robando en el edificio María Mercedes, afectado por el terremoto del 10 de agosto",
@@ -24,7 +50,7 @@
     {
       "tipo": "edificacion_danada",
       "titulo": "Terremoto en Colombia: UNGRD entregó nuevo balance de viviendas afectadas - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNSkJhTlJBSUlaZ2ZWVVZpR2U3amtic2lfWjl4NlV3LWk0TzN6Rlg0U2dPUUVqQ1VyWnc3eHIzTFVEM2t6em54aWJVNTg2eFI4MHJ3UUNsTVo4ODVwMHpOMG5HNWhWMUxsaFF6RmZhQ1AyQmgwZTZ3NjNkclZDbUR0S2lmRUtXclpab0N5cW1pT3dXOU1nWS1OMEhxUXYtdGEzSElINXZzRXJhblNaYnk4b3c1bnFHVlBvSXJkSHprcmFHc0N3RVE4dEU0RG5yWm1kVjZxSdIB1AFBVV95cUxNSkJhTlJBSUlaZ2ZWVVZpR2U3amtic2lfWjl4NlV3LWk0TzN6Rlg0U2dPUUVqQ1VyWnc3eHIzTFVEM2t6em54aWJVNTg2eFI4MHJ3UUNsTVo4ODVwMHpOMG5HNWhWMUxsaFF6RmZhQ1AyQmgwZTZ3NjNkclZDbUR0S2lmRUtXclpab0N5cW1pT3dXOU1nWS1OMEhxUXYtdGEzSElINXZzRXJhblNaYnk4b3c1bnFHVlBvSXJkSHprcmFHc0N3RVE4dEU0RG5yWm1kVjZxSQ?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNODNGS3Mzb3lCR0J3RmVXeG5QUTNXM2l1cjctR0FSQkkxNU1xSVp0NUk1Z25pOWQ2cFRReXZ1U1FWYVlrWGRuVVlHV2VKRngyR1BnZ0hudXVkaHA2QmRpbWZrTTJBdTFVOXI3dzlyR3B1djZEMGZkQkNUclhKUmxGT242MTNsTl80eXZHclJJdS03TUhNME56cG92OTVLTTRzM3ZXS3VSVUhiY3RaOFBnRl9KUDFQeTdZM3fSAdQBQVVfeXFMTUpCYU5SQUlJWmdmVlVWaUdlN2prYnNpX1o5eDZVdy1pNE8zekZYNFNnT1FFakNVclp3N3hyM0xVRDNrenpueGliVTU4NnhSODByd1FDbE1aODg1cDB6TjBuRzVoVjFMbGhRekZmYUNQMkJoMGU2dzYzZHJWQ21EdEtpZkVLV3JaWm9DeXFtaU93VzlNZ1ktTjBIcVF2LXRhM0hJSDV2c0VyYW5TWmJ5OG93NW5xR1ZQb0lyZEh6a3JhR3NDd0VROHRFNERuclptZFY2cUk?oc=5",
       "medio": "ELHERALDO.CO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-26T15:40:24.000Z"
@@ -67,6 +93,14 @@
     },
     {
       "tipo": "edificacion_danada",
+      "titulo": "Terremoto en Colombia: así revisará la UNGRD las viviendas afectadas - Canal 1 En vivo",
+      "enlace": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcHVaSXFXandwUlpldUxaUS01Z1R6aXVYcVllZXpVcWVUUXUxWVNvc1luUmVVMDBndUxlV2QxWHh1eDU2Ui01YThHS0I5S000c0xJTGVhYjZiTk14eS1sdHZlRXp2a1BJWlNTUW5PQTVPTjdYYVRLQ1ZKdl9XeVc3LVVqeHBkbmVMRFdiSTFNQ2VHLUczNXV2NGlvdHDSAaIBQVVfeXFMUGhQdkkxRVhQWmpQM2hvY1FPSTBrV1pxbndpclJOTnhkN0FEM3VrQUpnbGxpajh2Nlc1dFFkampDeWxVaGtVZEJJaXN1ZWloU2tIMkZ6aU03MXZNTnI5Umw0eUc5MjNmVU9acTlCQ0dIYTYwRjRNRk8wcElra2RTanhhLVFYMHNXR01NWXI1MDl3a2VNLXhPa2M3QXJNOHR1S09n?oc=5",
+      "medio": "Canal 1 En vivo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-24T13:57:58.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
       "titulo": "Terremoto en Colombia eleva a 329 los muertos y 173 mil viviendas averiadas - La Estrella de Panamá",
       "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNeFViYkdaVzRhSmdnRll1UzRWejl6Y2NvZFc2QVZEVERrN3g1VlRybEJJcUlVRHlVS2JSVWdWR3JHYnd0M3FIYWFWUnVzT255NDNuSDhQMDlaaHh1TV9BNEltbm1tWlBmbGZqNWg3bWhsbWItT3lIaWNQTE1MRmNod3B6WGVhdE9fV2x2djBSOXpzZUlOTks5aHRFaFI5Z3RDR2tlUkpNWERWN1RHbHBFS3pCZUluS3B4X0lIemgxNFdLdEk0MGEydGlB0gHPAUFVX3lxTE9xeWw1SmxFMWJQNjRUYXRLSGp6Wlp3Y3pnbVVvc1UzbDB2YjlUUVZkRmVyX2VTQnpqTFhtajFYX2dscnVqZGduOVhsZDNxaHNZOFlGQkNLRlMyN2hqTkpOYUM0cnhzWXBoUkxSbmJiZXViM2gybkc3NE00ZEdab0UxbzIyVXQ5S3ozQjllNFA5bEVXY3h3Q2pmTkZUVG1PVTNISnFDMTBiTTRiaEZJbUdzUy1oaXpXVk5pS3lMYUNGUnh1R01Dbl8tNWRjX0EzOA?oc=5",
       "medio": "La Estrella de Panamá",
@@ -90,6 +124,16 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-08-23T14:02:43.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Del albergue al hotel: el nuevo comienzo de los adultos mayores damnificados por el terremoto en Cali - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOY2dYeUVRbER2dmtMV3BsYzl2dm9BVENyTWN2bWhWUEk3WjJYX1hqaF9BZ08ybGhFWmpMbE5tU0JBbVR4WHJUU1JFajctVkNTcl9CbFlOUS1HTnNSVnlad3NtZ1dBQnMtR1hlVFdMQTlpNTFFSURrRmp6ZWI2bGFjazM0dmFCSUIzUk5jWmpoOHhhUGJ0ckJuSnoycTFENFpiVjFLSmNTbEhYY0pfNndTRERTRzVyVXJSUWVIaHVuZlBTUDMxTW9JSzVKMktTNE1sUDI3U1haSXpYUXZyNUgzetIB5gFBVV95cUxQdTQyX1FnTlNWOTlQZFZrTnhFY0RNeG1BOGJwZXB1RGtXaEs1ZjBad29ENEtjVUFRYzdVS1F6TmJTLTNuWkdhZ0lsWjlOZW1rMWl4a1p3emFlTGlmUkNiT21fN255Z3JLZTdKQjk5cnRXN1NjSU5ibnllWFZWWk9TUzNVZGpETk5ZMXNyTkhvNS02QWNzVU56Y0xwaW5CbDhMbW1fVjc0WFp2ZUpFMm5ESWFQdll2eU9reDlGWTN3WVNZbk1WdXRtckxxWW5UNHZxSmpmeDBZZ2pTUk02dGN4R18zcm1IQQ?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-23T13:32:48.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "albergue",
@@ -541,16 +585,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Roldanillo, Valle: más de 3.000 viviendas afectadas tras el terremo... - Hoy Diario del Magdalena",
-      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOaDM2dFA2Zkp5eU1USGFndmxFM1VkZHFXWnZ1U1QzcnNGQlI5S3pjN0RkQlV5UnRkRlh0ZG5sWHM2Mm10Rm16TF9NNTYwSHMtREpHSVQxVkxxWGpUbm1aNzRXOFpaNW1idngtblhuNmRuMkRCeWpFWWU5RzJxVXlaN0FEU1ZReDVyN0IwUXNTZElHamxTY3R3VHBzTjNVQll6MG5RaXVnY05NQ2FvYWpwT19KTFJ2MnkxZUJaSGVXLURXXzFfaC0xOWV2ZWZWekRtNVB0UlFTRzY?oc=5",
-      "medio": "Hoy Diario del Magdalena",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-16T18:00:00.000Z",
-      "pcode": "CO76622",
-      "municipio": "Roldanillo"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "Terremoto deja 26.945 viviendas destruidas, 66 edificios colapsados y 289 muertos en Colombia - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQUXY0Qmp1S0ltMkdKZk5CVzN6aUg3Mm5LVnNSdzdGTlo1ODVScUdqMm1XUlFnbjhpYUtxLWV4UHB1Vnd0V2wzYXBFMHVYU3VNSU10TE5iVEVPdHUxQ0tkenlpMXdsQU56U0NIV3VNRjdJcFZMMXMwaDUweGx6dkJPVDNlLS1VNEJVc3E1S3JKbkREM0s3Mm1xcG1QSVdyVi16SmY0NWgyRHEybkRiX3FuTGM1Vk8xcTAtcnAzM0hKTXFTTExYSks1cUxkZjlRMV9Db0FiUDBQTG1MclXSAeABQVVfeXFMTi1yeVg3VjloX2NRYi02U09aeTRpaE1YNjJHejZHNl82NC10U3JyNGxkYURKSjNUUkxPYkw5SF9TUUgta1VWeGVjRUhWbi1QOC1RTG5jaWhCWlVRcFhRSC11eEFHcGZqdjhuYlJtNjY1blgtZ1JWVmhTTndOaTAxZDdVdHk0Z3lYcU9tTmlVYnZNX3pFc0JzaTBROFVPN3lwUUdKemg4cXE2aVVkOVZoT0lHZXl0UHpuOUtod3VseHQ5dXpuUHNyMjNzbG1GRjQyM2JDRklBY0ZZOWR3a0lLdjk?oc=5",
@@ -600,6 +634,16 @@
       "enlace": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQNTZWNlhNb1c2WHg0OW9Sdm4wcEZFRVB1cWZfaWtzY3NmZkpBOF9HMXJLOGRTdmdQNkpqb05nZEo4ZDQ0N0x1VVMwYUl1QnBOdFVfb3NlbUQzSDdiMk5HQmZnUzdSSFRHNkQyRW1YbUhLOWtNTHBlaEJBaTlXMWg3ZmNiZUN5YkVTd2VvUlhVc0MtLXFsN2xYUzlVSnRLSW9TRHlWeTNoT2NBSlhMWENSOEVCVmh1bzNiTXNuc0NkMmEySWFqaW5JV3FMWUhMWkctUTNWNTJFTG10S2tCd21GNzNLN0NfQUVNM3ZxSkRDVlhSYWvSAY4CQVVfeXFMUGJIVDlhdklmekJ1WU1tMHRoSVE3S3RDN3J3WlluR21TVkJvYlJZWTFSZmVLUlhDVXgtX0tlYVJNanlvV3pfMFZtaHh5cndYOWJ4aHUwQ2VJVDJHeGtEc1FfUW1la1g5cEtrRzU4ZG5oSlh6MHEzTk11aXVhSWdManh5V1hMZGVYQlU0RENfVkZ2d2xZam1iQldKcWdQR2JZbGowUzFWUzJWQXdBb2x0eGJjSDdoRTJnLWMtVnZCWU9CQmVvY3hxU2oyR1hNUTU1aUJQcVFfMnliR2ZucVdlV3pJcDRKalgxM0hFZi1vektDNkNSRjBGMXgxd2Z0cE16U0RGS1l5OWs0cXIzNzR3?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
+      "publicado": "2026-08-16T07:00:00.000Z",
+      "pcode": "CO76622",
+      "municipio": "Roldanillo"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Roldanillo, Valle: más de 3.000 viviendas afectadas tras el terremo... - Hoy Diario del Magdalena",
+      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOaDM2dFA2Zkp5eU1USGFndmxFM1VkZHFXWnZ1U1QzcnNGQlI5S3pjN0RkQlV5UnRkRlh0ZG5sWHM2Mm10Rm16TF9NNTYwSHMtREpHSVQxVkxxWGpUbm1aNzRXOFpaNW1idngtblhuNmRuMkRCeWpFWWU5RzJxVXlaN0FEU1ZReDVyN0IwUXNTZElHamxTY3R3VHBzTjNVQll6MG5RaXVnY05NQ2FvYWpwT19KTFJ2MnkxZUJaSGVXLURXXzFfaC0xOWV2ZWZWekRtNVB0UlFTRzY?oc=5",
+      "medio": "Hoy Diario del Magdalena",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-16T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
@@ -839,6 +883,14 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - Radio Nacional de Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMmdTLTY3Xy1INzdpZmp6MHdPWEhOVEN0cUxyS3lRdW5PbEJ1SHNwejd3TlI5NXUwb043RTNjMGV1UjllSjl4d0FGbGl4clRzZlVmX2pOR3FETUQ1MFRUdVN0TTRvVFlENEpfNzZkcE5rUmRhRGZGS1RmZU1Ucmh4TkZUVm9UUl9kckZKU2JsaHgzeUNySzdlQXdvZ1JrUzJ0a21wMTYtVEZuME5meVpSZC0yUmhzRjM5bW5FSWIyS1ZDRHM?oc=5",
+      "medio": "Radio Nacional de Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Gobernador revela por qué tantas edificaciones colapsaron tras el terremoto en Pereira - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQ3ozMXctUjNBTkwxUzZ6Y0djck9lVTZCaTJjVEdLN2pTOXZ0amdxZVRWS1VjV3RtWGtEQXNOckZpQndHYVY2RUNHQmxTcS1QcS1MY3pJWEVxZTdoR05zbWcyY1lma3JZT204cU8xaEZTRnQ0M1dSXzlaSlRIZDk5NlI4WC1FNnpjWFVCN0Q0RnRnRndFVUhSSG00cTJuY3g3cXQ0MXBFNVB1TzlqSFdlU2E5WHhxaVlCUkxZZ2p30gG-AUFVX3lxTE53QWlvNi1Qck83eGR1OFFOa21XVDlzNTJKbXhVM0NHbDZOR2lnTFd0WkJPSWpKcnlmbzBKMkJtbC1UNHZSdzg4U3FDUkpoSzdteHFoSzluTndpTThMaXdnc3RieC1EeXNtUnVBY3RnZzBIY1FDRC12d3R2UGQ4Mng4N2tBWGdLb0JFai1tUFlMYXY3dXJVV3o1OTVBWHRHdjJmLVVWNU1fSW40dS1ER2kweEJSWl82c1NFMHZqd1E?oc=5",
@@ -847,14 +899,6 @@
       "publicado": "2026-08-13T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - Radio Nacional de Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMmdTLTY3Xy1INzdpZmp6MHdPWEhOVEN0cUxyS3lRdW5PbEJ1SHNwejd3TlI5NXUwb043RTNjMGV1UjllSjl4d0FGbGl4clRzZlVmX2pOR3FETUQ1MFRUdVN0TTRvVFlENEpfNzZkcE5rUmRhRGZGS1RmZU1Ucmh4TkZUVm9UUl9kckZKU2JsaHgzeUNySzdlQXdvZ1JrUzJ0a21wMTYtVEZuME5meVpSZC0yUmhzRjM5bW5FSWIyS1ZDRHM?oc=5",
-      "medio": "Radio Nacional de Colombia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -917,7 +961,7 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
@@ -947,14 +991,6 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO63594",
       "municipio": "Quimbaya"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -1053,6 +1089,16 @@
       "medio": "MILENIO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Al menos 7 personas han muerto en Dosquebradas: 250 casas afectadas - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2RtM0tDeGpmbkVGQl9aTnNfZGNLR2x1a0ozNjltbTZPZDdWc3J3Ql9JM19EOHVwLXJ3bFhRRkxRNDlpN3dFSVNVTlEzYTJiVWs0UUh5VkQ4bnRHcjhyc050QmpXUHRCbWk4SXVFMnk2SlR5dlJGM09xM0lNRjRQbFVOVE1fQ2hfSkZmeUljOW9Ba0Y4bW1YeEpzdGVzZ2lTVTkxTWtTNA?oc=5",
+      "medio": "La Patria",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO66170",
+      "municipio": "Dosquebradas"
     },
     {
       "tipo": "edificacion_danada",
@@ -1197,6 +1243,16 @@
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Coliseo%20Mayor%20de%20Manizales%2C%20Manizales%2C%20Colombia"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Temblor en Colombia deja graves afectaciones en Manizales y Pereira: catedral y varios edificios afectados, escombros y heridos - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQWENUZHRkUG50S1VKSGtnYnRFSEtianRleGM5Qi1KS0RTWmtONFRaazlxa3A2bUVTSDJQYURPcUFJWllON0wxeFhNSUUzMVFVZkV5anNjODNHd1pkdDBwaUpueWQ4Mmt3eXZBUkJwX3JVSHZVUnRkbWlXalhEVlpXZG1kZW52YVgtcHAwRVVqVzA1czB5RU43UUZpYUowc1dxdi12VU5qTVNOTlV4SXBGX252MHVDd2VmazZvd3hNSlJIbUFILXZIS3RmMDZEZzQzRnBiQVBnbGtiazlnck9FRm04c0ZyMWJKSF9fR2diZWVVWktMSXY2cnEtSW1TRjg0aUHSAYcCQVVfeXFMT2FuZ1d0NTBHM1pvVXJtd1ZobEdLZlZ4WTNEUGl3UjVISEUwcUlYZEJQMjFVVXRHSTNVRXVkVGcyOUphNmxmaHJyZ3BzOThGNzJyMTI4cVl6VEVqTjVYSWFZTGU5OGJ3eHhNc2FfVDNmcnROZk9SbkwyS0tMYVRoMEQ0NVR0Wmx0TXMzZGtFbHRvNmxhQ0dLUlZna0toS1BvbDQtdHI4VzMyYnR1M2hEeVUyb0Q4YURHYU8tLVpqSXZzYWxXVGlEb2g0aVMyNnlIUGI1RUYxYVBCblE0V2taRU0xNFBrWGdYU1lfZHZ0cGxXekRpTlFBdUstOERKa2ZXV0g2b3p4WXc?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z",
+      "pcode": "CO17001",
+      "municipio": "Manizales"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Congreso instala centros de acopio en apoyo a damnificados del terremoto en Venezuela - El Sol de México",
       "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORk9ZNkZYYzBWZWZHdHNheHNCVm9ENTNBWlFETXVCcks1ZHRtNWtqTE5nUE9mZ2JrZlR4MnBJWmNCa09DTy01ZW56azE0NkI3bVEwYzM5OTNGV2VoMnYteDFxLThTcU9VbEtFUldJcTNycUdCU1JoM1dqRTVhLVhzSWU3dlg2UlZpS2NMM1lLVHBQMFNTTUY2OG1pOGFZTmxCR1F6cENUMkxqZXNPel9aRXdsUk1rUkRYdG1WZ1JzMGtMUkQ1VS1IWm9PaXF2Zw?oc=5",
@@ -1258,14 +1314,6 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Comunidad venezolana en Perú instala centros de acopio en Lima para ayudar a los damnificados por los terremotos - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPcUVSV0pfQTU2RjFVS3VHWm9kR0tYWWlBSi1kQ1pNUFN1RkthN1dJZHZvemVlQWdzTGsxVkhMaUlLVXplM0ZmbGZuR1VyNWM4MTlWT1VxQUhhWjNUYk9LMVZua19RMHBMTlRtRVpsMlkxaTBqZTRfdkUtZEJQdGdDTkhULVZGTUlFdFRXWl95ZnJfekYwR2NwY1pSWkdZWE41dnl6YmZBTVFKWjFRRnhpTlRhdTJpVV9FS0V3VXVCeW5naTZRdUU0WXMycml1Q3VTRHk4OUdhNDBBRnlmZTZZRnNPTnYycUlm0gGDAkFVX3lxTFBCc01WbF9PUGNKbkplbFhKUWhOT0lsNmU2TnExZjR0bG9YemZEU2lzTkQyREdRVXNNTUxSUldxX3l1OVhFRXQ0OWRzcTdQZWp3QUE1VXNHTHhZazBnQUloa05Jd05UbnRaaVo4VGJmWHVOYWMxb093aXJUNGdwVW80Ujd1SlJSNHRXU0JmOW9jMGJHWDdUeEswOGEzalpsVE5FS3FJeGVCRnFqcXJLc3FPZzFiUXk4SzNZeU9FUmRBNUdvdUxkc2hFc05FMDlQSEpyUlBNeXQ5N1JoaFJ5UDdzVHJfeUpSTW9SRU92WncyM2lvamlkT0ZHOEtUNUpRMmtNTEk?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-06-26T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
       "titulo": "Bolívar se moviliza: Activan red de centros de acopio en apoyo a los afectados por sismos en el país - Correo del Caroní",
       "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOGhNcHMzMzBvS2F1OVViaE1QbGlVekVDcFZIMnd6eGQxWk5CUnB0eE8ydVdHS2tIdDl5ZXA5anJUTG1UNlE3NG1ZQ2dWdDFvOU5pdVhFM0VzQkVCQ2ZGeG9GaUVtUnp6WXFLS2xQT1hQRlpkck9ReDVQZlYybEJLc1VKNG1aWVhsclo5eUpSZndIeHdYc2pKak00NktfdllEMHIxNWpQX2lKUFBlR1c5Q1FUN29QRXNSbk92MzVKWm9lbTVabEYxbWhZaHFoNUlDSExCd1daSm44LWZDSlcxckUtQkg?oc=5",
       "medio": "Correo del Caroní",
@@ -1279,16 +1327,6 @@
       "medio": "City Tv",
       "tipo_fuente": "unverified",
       "publicado": "2026-01-06T08:00:00.000Z",
-      "pcode": "CO05101",
-      "municipio": "Ciudad Bolívar"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Grave incendio estructural en Ciudad Bolívar por lo menos 8 casas afectadas - City Tv",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZzJLUlgxci1hZjVpMHc5UlgtRzRwYmIxbS1ZbGpQMndSR3gxVkN6RnZfeFNkb2pLMmU4SlZjckhlcGtfM0xjV19ZSFdOTXd3T0U5YXh2Q0hVbmFZRjdoR1VDZWlFRkdSNHphVHlWbHA1NnZ5YmJISnh0d2RLVUpDLXM4cW9oMk5KMy1RMl9xUm5iTzBIMG1SUU42MXlaX1A0bWs2NlBLNEpibE9nSEplSFNRbTY4NjkwZmJVTGZnN09Fbk8tMnBXNHloWVhpUVBwWC1taUt6Qng3TWM?oc=5",
-      "medio": "City Tv",
-      "tipo_fuente": "unverified",
-      "publicado": "2024-02-04T08:00:00.000Z",
       "pcode": "CO05101",
       "municipio": "Ciudad Bolívar"
     }
