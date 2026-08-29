@@ -1,13 +1,13 @@
 {
-  "generado": "2026-08-28T23:20:50.894Z",
+  "generado": "2026-08-29T04:15:12.329Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 171,
-    "con_notas": 55,
-    "sin_notas": 116,
-    "poblacion_sin_notas": 3238439,
-    "medios_distintos": 102
+    "municipios_considerados": 174,
+    "con_notas": 59,
+    "sin_notas": 115,
+    "poblacion_sin_notas": 3216265,
+    "medios_distintos": 112
   },
   "municipios": [
     {
@@ -32,7 +32,7 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 235337,
-      "notas": 30,
+      "notas": 31,
       "ultima": "2026-08-28T00:33:31.000Z",
       "medios": [
         {
@@ -42,7 +42,7 @@
         },
         {
           "nombre": "Pulzo",
-          "notas": 5,
+          "notas": 6,
           "ultima": "2026-08-27T05:15:17.000Z"
         },
         {
@@ -118,8 +118,8 @@
       "departamento": "Risaralda",
       "mmi": 8,
       "poblacion": 500806,
-      "notas": 90,
-      "ultima": "2026-08-28T18:27:59.000Z",
+      "notas": 89,
+      "ultima": "2026-08-28T23:37:36.000Z",
       "medios": [
         {
           "nombre": "Pulzo",
@@ -128,8 +128,13 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 7,
+          "notas": 6,
           "ultima": "2026-08-27T15:40:25.000Z"
+        },
+        {
+          "nombre": "Caracol Radio",
+          "notas": 5,
+          "ultima": "2026-08-28T23:37:36.000Z"
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
@@ -137,9 +142,9 @@
           "ultima": "2026-08-27T21:32:39.000Z"
         },
         {
-          "nombre": "Infobae",
+          "nombre": "Revista Semana",
           "notas": 5,
-          "ultima": "2026-08-24T13:21:00.000Z"
+          "ultima": "2026-08-24T18:23:07.000Z"
         },
         {
           "nombre": "Blu Radio",
@@ -147,24 +152,19 @@
           "ultima": "2026-08-28T18:27:59.000Z"
         },
         {
-          "nombre": "Caracol Radio",
+          "nombre": "Infobae",
           "notas": 4,
-          "ultima": "2026-08-26T07:00:00.000Z"
-        },
-        {
-          "nombre": "Noticias RCN",
-          "notas": 4,
-          "ultima": "2026-08-25T21:21:40.000Z"
-        },
-        {
-          "nombre": "Revista Semana",
-          "notas": 4,
-          "ultima": "2026-08-24T18:23:07.000Z"
+          "ultima": "2026-08-24T13:21:00.000Z"
         },
         {
           "nombre": "La FM",
-          "notas": 4,
-          "ultima": "2026-08-17T07:00:00.000Z"
+          "notas": 3,
+          "ultima": "2026-08-27T22:08:38.000Z"
+        },
+        {
+          "nombre": "Noticias RCN",
+          "notas": 3,
+          "ultima": "2026-08-25T21:21:40.000Z"
         },
         {
           "nombre": "El Espectador",
@@ -247,11 +247,6 @@
           "ultima": "2026-08-22T19:41:25.000Z"
         },
         {
-          "nombre": "Eluniversal.com.co",
-          "notas": 1,
-          "ultima": "2026-08-20T20:47:00.000Z"
-        },
-        {
           "nombre": "laopinion.co",
           "notas": 1,
           "ultima": "2026-08-20T20:18:18.000Z"
@@ -317,9 +312,19 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
+          "nombre": "elnortehoy.com",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
           "nombre": "CAMBIO Colombia",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
+        },
+        {
+          "nombre": "Colombia.com",
+          "notas": 1,
+          "ultima": "2026-08-11T19:03:55.000Z"
         },
         {
           "nombre": "El Colombiano",
@@ -446,8 +451,8 @@
       "departamento": "Quindio",
       "mmi": 7.8,
       "poblacion": 325056,
-      "notas": 22,
-      "ultima": "2026-08-27T11:47:38.000Z",
+      "notas": 24,
+      "ultima": "2026-08-28T19:00:00.000Z",
       "medios": [
         {
           "nombre": "El Quindiano",
@@ -461,8 +466,13 @@
         },
         {
           "nombre": "Crónica del Quindio",
-          "notas": 4,
+          "notas": 5,
           "ultima": "2026-08-20T05:12:34.000Z"
+        },
+        {
+          "nombre": "elexpreso.co",
+          "notas": 1,
+          "ultima": "2026-08-28T19:00:00.000Z"
         },
         {
           "nombre": "impactonews.co",
@@ -506,18 +516,28 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 12251,
-      "notas": 2,
-      "ultima": "2026-08-28T03:40:18.000Z",
+      "notas": 4,
+      "ultima": "2026-08-15T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "Soy Nueva Prensa Digital",
-          "notas": 1,
-          "ultima": "2026-08-28T03:40:18.000Z"
-        },
         {
           "nombre": "ELHERALDO.CO",
           "notas": 1,
           "ultima": "2026-08-15T07:00:00.000Z"
+        },
+        {
+          "nombre": "PrimerTiempo.CO",
+          "notas": 1,
+          "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "deportesrcn.com",
+          "notas": 1,
+          "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "elpais.com.co",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
         }
       ]
     },
@@ -527,13 +547,23 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
       "poblacion": 17838,
-      "notas": 1,
+      "notas": 3,
       "ultima": "2026-08-21T16:11:52.000Z",
       "medios": [
         {
           "nombre": "Q'hubo Cali",
           "notas": 1,
           "ultima": "2026-08-21T16:11:52.000Z"
+        },
+        {
+          "nombre": "Infobae",
+          "notas": 1,
+          "ultima": "2024-01-19T08:00:00.000Z"
+        },
+        {
+          "nombre": "NotiPress",
+          "notas": 1,
+          "ultima": "2024-01-19T08:00:00.000Z"
         }
       ]
     },
@@ -559,17 +589,17 @@
       "departamento": "Caldas",
       "mmi": 7.7,
       "poblacion": 469600,
-      "notas": 57,
+      "notas": 58,
       "ultima": "2026-08-27T12:57:24.000Z",
       "medios": [
         {
           "nombre": "La Patria",
-          "notas": 25,
+          "notas": 24,
           "ultima": "2026-08-27T03:03:00.000Z"
         },
         {
           "nombre": "Infobae",
-          "notas": 5,
+          "notas": 6,
           "ultima": "2026-08-19T07:00:00.000Z"
         },
         {
@@ -600,7 +630,7 @@
         {
           "nombre": "Univision",
           "notas": 2,
-          "ultima": "2026-08-13T07:00:00.000Z"
+          "ultima": "2026-08-14T07:00:00.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -633,7 +663,7 @@
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "Chica Noticias",
+          "nombre": "chicanoticias.com",
           "notas": 1,
           "ultima": "2026-08-11T21:59:56.000Z"
         },
@@ -666,6 +696,11 @@
           "nombre": "El Nuevo Siglo",
           "notas": 1,
           "ultima": "2026-08-10T15:44:55.000Z"
+        },
+        {
+          "nombre": "La Silla Vacía",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
         }
       ]
     },
@@ -675,8 +710,8 @@
       "departamento": "Chocó",
       "mmi": 7.7,
       "poblacion": 134417,
-      "notas": 22,
-      "ultima": "2026-08-19T07:00:00.000Z",
+      "notas": 34,
+      "ultima": "2026-08-21T16:19:01.000Z",
       "medios": [
         {
           "nombre": "La FM",
@@ -704,9 +739,14 @@
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
-          "nombre": "Diario del Norte",
+          "nombre": "Revista Semana",
+          "notas": 2,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "360 Radio",
           "notas": 1,
-          "ultima": "2026-08-18T14:43:49.000Z"
+          "ultima": "2026-08-21T16:19:01.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -714,17 +754,42 @@
           "ultima": "2026-08-18T07:00:00.000Z"
         },
         {
+          "nombre": "El Comercio Perú",
+          "notas": 1,
+          "ultima": "2026-08-18T07:00:00.000Z"
+        },
+        {
+          "nombre": "CDN",
+          "notas": 1,
+          "ultima": "2026-08-18T02:54:25.000Z"
+        },
+        {
+          "nombre": "Análisis Urbano",
+          "notas": 1,
+          "ultima": "2026-08-18T01:00:43.000Z"
+        },
+        {
+          "nombre": "Q´hubo Bogotá",
+          "notas": 1,
+          "ultima": "2026-08-17T23:31:50.000Z"
+        },
+        {
           "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-17T23:25:37.000Z"
         },
         {
-          "nombre": "Blu Radio",
+          "nombre": "Aldia.co",
           "notas": 1,
-          "ultima": "2026-08-17T07:00:00.000Z"
+          "ultima": "2026-08-17T21:30:00.000Z"
         },
         {
-          "nombre": "Noticias Caracol",
+          "nombre": "Noticias SIN",
+          "notas": 1,
+          "ultima": "2026-08-17T20:56:14.000Z"
+        },
+        {
+          "nombre": "Blu Radio",
           "notas": 1,
           "ultima": "2026-08-17T07:00:00.000Z"
         },
@@ -734,7 +799,22 @@
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
-          "nombre": "Revista Semana",
+          "nombre": "Noticias Caracol",
+          "notas": 1,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "MARCA",
+          "notas": 1,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "KCH FM",
+          "notas": 1,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "Publimetro Colombia",
           "notas": 1,
           "ultima": "2026-08-17T07:00:00.000Z"
         },
@@ -749,6 +829,11 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
+          "nombre": "ABC",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
           "nombre": "teleSUR",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
@@ -757,6 +842,11 @@
           "nombre": "Valora Analitik",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Ecos del Combeima",
+          "notas": 1,
+          "ultima": "2026-08-10T19:11:18.000Z"
         }
       ]
     },
@@ -766,9 +856,14 @@
       "departamento": "Risaralda",
       "mmi": 7.7,
       "poblacion": 83317,
-      "notas": 4,
+      "notas": 5,
       "ultima": "2026-08-25T05:36:56.000Z",
       "medios": [
+        {
+          "nombre": "Colombia.com",
+          "notas": 2,
+          "ultima": "2022-05-25T07:00:00.000Z"
+        },
         {
           "nombre": "El Quindiano",
           "notas": 1,
@@ -783,11 +878,6 @@
           "nombre": "Blu Radio",
           "notas": 1,
           "ultima": "2026-08-03T07:00:00.000Z"
-        },
-        {
-          "nombre": "Colombia.com",
-          "notas": 1,
-          "ultima": "2022-05-25T07:00:00.000Z"
         }
       ]
     },
@@ -1230,18 +1320,23 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 2337182,
-      "notas": 63,
-      "ultima": "2026-08-28T23:07:05.000Z",
+      "notas": 67,
+      "ultima": "2026-08-29T02:59:52.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
           "notas": 8,
-          "ultima": "2026-08-28T23:07:05.000Z"
+          "ultima": "2026-08-29T00:32:29.000Z"
         },
         {
           "nombre": "El Tiempo",
-          "notas": 6,
-          "ultima": "2026-08-28T22:49:22.000Z"
+          "notas": 7,
+          "ultima": "2026-08-29T02:59:52.000Z"
+        },
+        {
+          "nombre": "elpais.com.co",
+          "notas": 7,
+          "ultima": "2026-08-27T15:14:16.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1249,19 +1344,14 @@
           "ultima": "2026-08-28T17:02:58.000Z"
         },
         {
-          "nombre": "elpais.com.co",
-          "notas": 5,
-          "ultima": "2026-08-19T07:00:00.000Z"
+          "nombre": "Infobae",
+          "notas": 6,
+          "ultima": "2026-08-25T18:25:00.000Z"
         },
         {
           "nombre": "Pulzo",
           "notas": 4,
           "ultima": "2026-08-27T09:36:53.000Z"
-        },
-        {
-          "nombre": "Infobae",
-          "notas": 4,
-          "ultima": "2026-08-20T07:00:00.000Z"
         },
         {
           "nombre": "facebook.com",
@@ -1270,13 +1360,18 @@
         },
         {
           "nombre": "EL PAÍS",
-          "notas": 3,
+          "notas": 2,
           "ultima": "2026-08-24T04:00:00.000Z"
         },
         {
           "nombre": "Revista Semana",
           "notas": 2,
           "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Nacional",
+          "notas": 1,
+          "ultima": "2026-08-29T00:37:51.000Z"
         },
         {
           "nombre": "HolaNews",
@@ -1360,11 +1455,6 @@
         },
         {
           "nombre": "BBC",
-          "notas": 1,
-          "ultima": "2026-08-12T07:00:00.000Z"
-        },
-        {
-          "nombre": "Vanguardia",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
         },
@@ -1709,8 +1799,15 @@
       "departamento": "Cauca",
       "mmi": 6.6,
       "poblacion": 22174,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-28T22:34:23.000Z",
+      "medios": [
+        {
+          "nombre": "Proclama del Cauca",
+          "notas": 1,
+          "ultima": "2026-08-28T22:34:23.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76892",
@@ -2065,14 +2162,9 @@
       "departamento": "Antioquia",
       "mmi": 6.1,
       "poblacion": 28245,
-      "notas": 3,
+      "notas": 1,
       "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "City Tv",
-          "notas": 2,
-          "ultima": "2025-02-05T08:00:00.000Z"
-        },
         {
           "nombre": "Gobernación de Antioquia",
           "notas": 1,
@@ -2238,12 +2330,12 @@
       "mmi": 6,
       "poblacion": 313667,
       "notas": 1,
-      "ultima": "2026-08-26T18:02:42.000Z",
+      "ultima": "2026-08-26T18:00:29.000Z",
       "medios": [
         {
           "nombre": "El Colombiano",
           "notas": 1,
-          "ultima": "2026-08-26T18:02:42.000Z"
+          "ultima": "2026-08-26T18:00:29.000Z"
         }
       ]
     },
@@ -2289,9 +2381,14 @@
       "departamento": "Antioquia",
       "mmi": 5.9,
       "poblacion": 2745464,
-      "notas": 1,
-      "ultima": "2026-08-27T22:20:19.000Z",
+      "notas": 2,
+      "ultima": "2026-08-29T01:33:55.000Z",
       "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-08-29T01:33:55.000Z"
+        },
         {
           "nombre": "IFM Noticias",
           "notas": 1,
@@ -2305,12 +2402,12 @@
       "departamento": "Antioquia",
       "mmi": 5.8,
       "poblacion": 81587,
-      "notas": 2,
+      "notas": 3,
       "ultima": "2026-08-23T17:36:00.000Z",
       "medios": [
         {
           "nombre": "La Estrella de Panamá",
-          "notas": 2,
+          "notas": 3,
           "ultima": "2026-08-23T17:36:00.000Z"
         }
       ]
@@ -2369,13 +2466,49 @@
       "departamento": "Antioquia",
       "mmi": 5.6,
       "poblacion": 6292,
-      "notas": 1,
+      "notas": 2,
       "ultima": "2026-08-18T23:53:13.000Z",
       "medios": [
         {
           "nombre": "Gobernación del Valle del Cauca",
           "notas": 1,
           "ultima": "2026-08-18T23:53:13.000Z"
+        },
+        {
+          "nombre": "elpais.com.co",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO17867",
+      "nombre": "Victoria",
+      "departamento": "Caldas",
+      "mmi": 5.5,
+      "poblacion": 10739,
+      "notas": 7,
+      "ultima": "2026-08-20T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Colombia.com",
+          "notas": 3,
+          "ultima": "2024-09-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "Infobae",
+          "notas": 2,
+          "ultima": "2026-08-20T07:00:00.000Z"
+        },
+        {
+          "nombre": "Las2orillas",
+          "notas": 1,
+          "ultima": "2026-08-19T07:00:00.000Z"
+        },
+        {
+          "nombre": "Blu Radio",
+          "notas": 1,
+          "ultima": "2026-03-19T07:00:00.000Z"
         }
       ]
     },
@@ -2401,11 +2534,16 @@
       "departamento": "Antioquia",
       "mmi": 5.4,
       "poblacion": 13055,
-      "notas": 1,
+      "notas": 2,
       "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
         {
           "nombre": "Pulzo",
+          "notas": 1,
+          "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
         }
@@ -2528,6 +2666,22 @@
       ]
     },
     {
+      "pcode": "CO25862",
+      "nombre": "Vergara",
+      "departamento": "Cundinamarca",
+      "mmi": 4.8,
+      "poblacion": 8085,
+      "notas": 1,
+      "ultima": "2026-08-29T01:58:13.000Z",
+      "medios": [
+        {
+          "nombre": "Noticias RCN",
+          "notas": 1,
+          "ultima": "2026-08-29T01:58:13.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO50573",
       "nombre": "Puerto López",
       "departamento": "Meta",
@@ -2576,22 +2730,6 @@
       ]
     },
     {
-      "pcode": "CO25372",
-      "nombre": "Junín",
-      "departamento": "Cundinamarca",
-      "mmi": 4.4,
-      "poblacion": 6843,
-      "notas": 1,
-      "ultima": "2026-08-26T19:34:00.000Z",
-      "medios": [
-        {
-          "nombre": "Infobae",
-          "notas": 1,
-          "ultima": "2026-08-26T19:34:00.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO54385",
       "nombre": "La Esperanza",
       "departamento": "Norte de Santander",
@@ -2629,12 +2767,12 @@
       "mmi": 4.3,
       "poblacion": 9322,
       "notas": 1,
-      "ultima": "2026-06-28T07:00:00.000Z",
+      "ultima": "2026-08-18T20:31:51.000Z",
       "medios": [
         {
           "nombre": "Diario de Los Andes",
           "notas": 1,
-          "ultima": "2026-06-28T07:00:00.000Z"
+          "ultima": "2026-08-18T20:31:51.000Z"
         }
       ]
     },
@@ -2655,18 +2793,18 @@
       ]
     },
     {
-      "pcode": "CO13244",
-      "nombre": "El Carmen de Bolívar",
-      "departamento": "Bolívar",
+      "pcode": "CO52001",
+      "nombre": "Pasto",
+      "departamento": "Nariño",
       "mmi": 4.2,
-      "poblacion": 76688,
+      "poblacion": 395097,
       "notas": 1,
-      "ultima": "2021-04-13T07:00:00.000Z",
+      "ultima": "2026-08-18T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "RTVC Noticias",
+          "nombre": "Caracol Radio",
           "notas": 1,
-          "ultima": "2021-04-13T07:00:00.000Z"
+          "ultima": "2026-08-18T07:00:00.000Z"
         }
       ]
     },
@@ -2676,13 +2814,18 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 566367,
-      "notas": 2,
+      "notas": 3,
       "ultima": "2026-08-28T03:01:58.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
           "notas": 1,
           "ultima": "2026-08-28T03:01:58.000Z"
+        },
+        {
+          "nombre": "EL INFORMADOR - Santa Marta, Colombia",
+          "notas": 1,
+          "ultima": "2026-08-17T22:39:50.000Z"
         },
         {
           "nombre": "Agencia de Periodismo Investigativo",
@@ -2708,6 +2851,22 @@
       ]
     },
     {
+      "pcode": "CO68418",
+      "nombre": "Los Santos",
+      "departamento": "Santander",
+      "mmi": 4.1,
+      "poblacion": 15160,
+      "notas": 1,
+      "ultima": "2026-07-19T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Infobae",
+          "notas": 1,
+          "ultima": "2026-07-19T07:00:00.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO15759",
       "nombre": "Sogamoso",
       "departamento": "Boyacá",
@@ -2720,6 +2879,22 @@
           "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO23855",
+      "nombre": "Valencia",
+      "departamento": "Córdoba",
+      "mmi": 4.1,
+      "poblacion": 37615,
+      "notas": 1,
+      "ultima": "2020-10-23T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Colombia.com",
+          "notas": 1,
+          "ultima": "2020-10-23T07:00:00.000Z"
         }
       ]
     },
