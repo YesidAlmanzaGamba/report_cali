@@ -1,12 +1,12 @@
 {
-  "generado": "2026-09-13T16:54:42.426Z",
+  "generado": "2026-09-13T19:09:35.742Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 156,
-    "con_notas": 49,
-    "sin_notas": 107,
-    "poblacion_sin_notas": 2817090,
+    "con_notas": 50,
+    "sin_notas": 106,
+    "poblacion_sin_notas": 2804357,
     "medios_distintos": 74
   },
   "municipios": [
@@ -17,7 +17,7 @@
       "mmi": 8.5,
       "poblacion": 500806,
       "notas": 81,
-      "ultima": "2026-09-12T05:00:05.000Z",
+      "ultima": "2026-09-13T18:59:26.000Z",
       "medios": [
         {
           "nombre": "Revista Semana",
@@ -26,8 +26,8 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 6,
-          "ultima": "2026-08-24T07:00:00.000Z"
+          "notas": 7,
+          "ultima": "2026-09-13T18:59:26.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -40,22 +40,17 @@
           "ultima": "2026-09-11T20:32:48.000Z"
         },
         {
+          "nombre": "La FM",
+          "notas": 5,
+          "ultima": "2026-08-29T07:00:00.000Z"
+        },
+        {
           "nombre": "El Diario (Pereira)",
           "notas": 4,
           "ultima": "2026-09-12T05:00:05.000Z"
         },
         {
-          "nombre": "La FM",
-          "notas": 4,
-          "ultima": "2026-08-29T07:00:00.000Z"
-        },
-        {
-          "nombre": "caracol.com.co",
-          "notas": 4,
-          "ultima": "2026-08-28T07:00:00.000Z"
-        },
-        {
-          "nombre": "Blu Radio",
+          "nombre": "Caracol Radio",
           "notas": 4,
           "ultima": "2026-08-28T07:00:00.000Z"
         },
@@ -65,14 +60,19 @@
           "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
-          "nombre": "Noticias RCN",
-          "notas": 4,
-          "ultima": "2026-08-19T14:33:30.000Z"
-        },
-        {
           "nombre": "France 24",
           "notas": 3,
           "ultima": "2026-09-10T14:17:11.000Z"
+        },
+        {
+          "nombre": "La Patria",
+          "notas": 3,
+          "ultima": "2026-08-30T07:00:00.000Z"
+        },
+        {
+          "nombre": "Blu Radio",
+          "notas": 3,
+          "ultima": "2026-08-28T07:00:00.000Z"
         },
         {
           "nombre": "Infobae",
@@ -80,9 +80,9 @@
           "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
-          "nombre": "La Patria",
-          "notas": 2,
-          "ultima": "2026-08-30T07:00:00.000Z"
+          "nombre": "Noticias RCN",
+          "notas": 3,
+          "ultima": "2026-08-19T14:33:30.000Z"
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
@@ -90,12 +90,7 @@
           "ultima": "2026-08-27T07:00:00.000Z"
         },
         {
-          "nombre": "Crónica del Quindio",
-          "notas": 2,
-          "ultima": "2026-08-26T07:00:00.000Z"
-        },
-        {
-          "nombre": "noticiascaracol.com",
+          "nombre": "Noticias Caracol",
           "notas": 2,
           "ultima": "2026-08-17T07:00:00.000Z"
         },
@@ -115,7 +110,7 @@
           "ultima": "2026-09-07T16:27:44.000Z"
         },
         {
-          "nombre": "consultaelectoral.onpe.gob.pe",
+          "nombre": "ReliefWeb",
           "notas": 1,
           "ultima": "2026-08-25T07:00:00.000Z"
         },
@@ -145,7 +140,7 @@
           "ultima": "2026-08-18T07:00:00.000Z"
         },
         {
-          "nombre": "eje21.com.co",
+          "nombre": "Eje21",
           "notas": 1,
           "ultima": "2026-08-18T07:00:00.000Z"
         },
@@ -155,7 +150,12 @@
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
-          "nombre": "LaRepublica.co",
+          "nombre": "Crónica del Quindio",
+          "notas": 1,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "larepublica.co",
           "notas": 1,
           "ultima": "2026-08-16T07:00:00.000Z"
         },
@@ -165,7 +165,7 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "colombiavisible.com",
+          "nombre": "Colombia Visible",
           "notas": 1,
           "ultima": "2026-08-12T22:35:32.000Z"
         },
@@ -206,7 +206,7 @@
           "ultima": "2026-09-11T06:25:16.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 2,
           "ultima": "2026-08-21T07:00:00.000Z"
         },
@@ -278,18 +278,18 @@
       "departamento": "Quindio",
       "mmi": 7.9,
       "poblacion": 325056,
-      "notas": 30,
+      "notas": 29,
       "ultima": "2026-09-10T11:51:28.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 12,
           "ultima": "2026-09-10T11:51:28.000Z"
         },
         {
-          "nombre": "elquindiano.com",
-          "notas": 7,
-          "ultima": "2026-09-07T04:33:55.000Z"
+          "nombre": "El Quindiano",
+          "notas": 6,
+          "ultima": "2026-09-06T01:55:08.000Z"
         },
         {
           "nombre": "Crónica del Quindio",
@@ -312,7 +312,7 @@
           "ultima": "2026-08-18T07:00:00.000Z"
         },
         {
-          "nombre": "noticiascaracol.com",
+          "nombre": "Noticias Caracol",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         },
@@ -385,13 +385,18 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.9,
       "poblacion": 38029,
-      "notas": 29,
-      "ultima": "2026-09-11T02:40:42.000Z",
+      "notas": 30,
+      "ultima": "2026-09-13T11:55:52.000Z",
       "medios": [
         {
           "nombre": "Revista Semana",
           "notas": 4,
           "ultima": "2026-09-10T16:34:06.000Z"
+        },
+        {
+          "nombre": "elpais.com.co",
+          "notas": 3,
+          "ultima": "2026-09-13T11:55:52.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -411,15 +416,10 @@
         {
           "nombre": "Pulzo",
           "notas": 2,
-          "ultima": "2026-09-02T21:01:12.000Z"
+          "ultima": "2026-09-02T07:00:00.000Z"
         },
         {
-          "nombre": "elpais.com.co",
-          "notas": 2,
-          "ultima": "2026-08-27T07:00:00.000Z"
-        },
-        {
-          "nombre": "estrelladigital.com.co",
+          "nombre": "Estrella Digital Colombia",
           "notas": 1,
           "ultima": "2026-09-11T02:40:42.000Z"
         },
@@ -474,7 +474,7 @@
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         },
@@ -647,7 +647,7 @@
       "ultima": "2026-08-11T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "noticiascaracol.com",
+          "nombre": "Noticias Caracol",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         }
@@ -707,7 +707,7 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
         },
@@ -784,7 +784,7 @@
       "ultima": "2026-08-26T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 3,
           "ultima": "2026-08-26T07:00:00.000Z"
         },
@@ -825,7 +825,7 @@
       "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "elolfato.com",
+          "nombre": "El Olfato",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
         },
@@ -904,7 +904,7 @@
           "ultima": "2026-09-10T18:59:42.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-09-02T07:00:00.000Z"
         },
@@ -927,7 +927,7 @@
       "mmi": 7.6,
       "poblacion": 2337182,
       "notas": 54,
-      "ultima": "2026-09-13T13:12:45.000Z",
+      "ultima": "2026-09-13T18:11:57.000Z",
       "medios": [
         {
           "nombre": "Infobae",
@@ -952,7 +952,7 @@
         {
           "nombre": "El País (Cali)",
           "notas": 3,
-          "ultima": "2026-09-13T13:12:45.000Z"
+          "ultima": "2026-09-13T18:11:57.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1040,7 +1040,7 @@
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "noticiascaracol.com",
+          "nombre": "Noticias Caracol",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         },
@@ -1076,14 +1076,9 @@
       "departamento": "Chocó",
       "mmi": 7.6,
       "poblacion": 134417,
-      "notas": 4,
-      "ultima": "2026-09-10T16:35:58.000Z",
+      "notas": 3,
+      "ultima": "2026-09-08T23:16:26.000Z",
       "medios": [
-        {
-          "nombre": "Pulzo",
-          "notas": 1,
-          "ultima": "2026-09-10T16:35:58.000Z"
-        },
         {
           "nombre": "Chocó 7 Días",
           "notas": 1,
@@ -1095,7 +1090,7 @@
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-17T07:00:00.000Z"
         }
@@ -1326,8 +1321,15 @@
       "departamento": "Chocó",
       "mmi": 7.1,
       "poblacion": 12733,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-09-13T18:20:36.000Z",
+      "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-09-13T18:20:36.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO63212",
@@ -1393,7 +1395,7 @@
       "ultima": "2026-09-09T12:24:28.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-09-09T12:24:28.000Z"
         }
@@ -1500,7 +1502,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
       "poblacion": 18832,
-      "notas": 4,
+      "notas": 5,
       "ultima": "2026-09-07T18:29:05.000Z",
       "medios": [
         {
@@ -1512,6 +1514,11 @@
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Revista Semana",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
         }
       ]
     },
@@ -1785,7 +1792,7 @@
       "ultima": "2026-08-26T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-26T07:00:00.000Z"
         },
@@ -2011,12 +2018,12 @@
       "ultima": "2026-08-18T22:02:53.000Z",
       "medios": [
         {
-          "nombre": "tolimaonline.com",
+          "nombre": "Tolima Online",
           "notas": 1,
           "ultima": "2026-08-18T22:02:53.000Z"
         },
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
         }
@@ -2224,7 +2231,7 @@
       "ultima": "2026-08-17T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "IFM Noticias",
+          "nombre": "ifmnoticias.com",
           "notas": 1,
           "ultima": "2026-08-17T07:00:00.000Z"
         }
@@ -2330,7 +2337,7 @@
       "ultima": "2026-08-11T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         }
@@ -2346,12 +2353,12 @@
       "ultima": "2026-08-19T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-19T07:00:00.000Z"
         },
         {
-          "nombre": "eluniversal.com.co",
+          "nombre": "Eluniversal.com.co",
           "notas": 1,
           "ultima": "2026-08-18T07:00:00.000Z"
         }
@@ -2367,7 +2374,7 @@
       "ultima": "2026-08-18T07:00:00.000Z",
       "medios": [
         {
-          "nombre": "caracol.com.co",
+          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-18T07:00:00.000Z"
         }
