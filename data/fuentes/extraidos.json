@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-16T15:14:18.366Z",
+  "generado": "2026-09-16T18:59:19.467Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -33,14 +33,6 @@
       "pcode": "CO76001",
       "municipio": "Cali",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=barrio%20Comuneros%2C%20Cali%2C%20Colombia"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto deja más de 20 mil damnificados y 12 mil viviendas afectadas en ciudades intermedias de Colombia - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-11T21:48:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -78,16 +70,6 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Cali inicia la demolición de edificios dañados tras el terremoto - elnacional.com.py",
-      "enlace": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQelNvc3ZBTWFlb1hLNkN1aGFUMzFnbnhGU25FTjJGaDNFUGtXVjVTanFkSXBiZldCVjVES2NHM2kxSUlHMUp6dXpHSnFVN1hiaVktODFKTDVRWFRRYzhnaVJNeGk1dThVRGpGM05aMmI3VjVPbFpIOUhOV01lRkVuYnJ5X1VuU3lUNTVsVnBDMm5tMUpaMVlGVWNyd9IBoAFBVV95cUxPZWliRFRvVmNBY1I0VFJUVHd0alN4THVQR2x4NTdxdVpEdGk2MTM1T0ZGamp1ZVp6UDlKbFZmb25FOHFwUHVxbWw3RHVaQThOd2ttMUw5VmR5WXhUWExjT2htWUZPX2JJZHltRVUtNHRXclh2bzRlQndDV0RNWUZuMlBKT2pNTllXUTNQbVNoNkYxOGdNd3dnejNZVXRib1Bp?oc=5",
-      "medio": "elnacional.com.py",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-08T20:30:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "Roldanillo inicia demolición de edificios afectados por el terremoto del 10 de agosto - elpais.com.co",
       "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZVVxMVI2RF9KWE9uSld1Q280amFSSHFuczhpX1BPbnN0Z2RJR3FiV1hqTHlYeEQ1LXNQREJLa0o1VEFma0lZNExJamxiX0F0RzR3bFFrSXZDNUE0eW1PUk5zWDc3MUlyS1NuV3VoVHMySkZUN3JHR09DT1dETVVzR0sxdWd6Ui1WR0ZGVm5VT0JJc19helJ0eEZtVWRRNmw0U3JHR0thTjBxeHhYdkxEelJqYU80eG5MODI0S3p3bFU1UnNEUGfSAcsBQVVfeXFMTmRKVFlNVTduamU5eWEzNlRsX1R2M19wR3E1cmxEY0F6TVowWHVSN01XZTZjMHR2bndHSUZZSXBHU3YyS2czaTF0c1JGZXVFVHZBSkp4ZEdnRVByZmt1Y1ptSGthWWU5WENOV2ZVdmhINjNKaVdVVmVLSDV4UXZBWmppYWlBM2x3VW9fX2tNTEltbTd1WXNzcDJuMTFWVDV1Z0hHSWlsaVU5bjFOY2Qyb2RxaUVEUlAycWs2STBRSjNJdUxjbFJIUkQwNnM?oc=5",
       "medio": "elpais.com.co",
@@ -95,6 +77,14 @@
       "publicado": "2026-09-07T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Colombia: ESMAD desaloja con violencia refugio de damnificados por terremoto - teleSUR",
+      "enlace": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBTNkNLRXJfV3pwblVjSWk1dDdEN1Vmd01JX1pLaHhnZ1hJbWJTc0lDOExYOTZCV0hULUc4NlR3VTdRN2gwSUJKOUk4Tjk3YkhHNjF0RXM0Yjg3amw5d3BYNExGVXBHZkxjTi1EdHFpWWpLSTZRMjJF?oc=5",
+      "medio": "teleSUR",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-03T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -669,6 +659,14 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Rescatistas buscan sobrevivientes bajo edificios derrumbados en Colombia mientras se agota la ventana de 72 horas tras el terremoto que ha dejado cerca de 250 muertos - El Imparcial",
+      "enlace": "https://news.google.com/rss/articles/CBMitwJBVV95cUxNdGFCc05CcjBtVzZVWlJyN1N1cm5fRk5pWVU3ZlFfUmFRY1oxN2NZaXp1M3BVeWY1M2dWZ2NoeDZMOWJaVngwSE5qYUEyak5UVU04ejBvaF9XVWpkTGVFak1UZGEzZEhwalhPRUhaTXBOTVpSTENaSnlSdGVYUVVRcDJvbHZ3Zk1IUDc0MHkwV1FGRTBEWkdhT05Cc3BscFAzUkxBSzQ3U3pvdHVycG1ISGt3QTRGMVlNRmppRDhTV245WXRTdWVnUFlZd1ZTSjV1aFhPcXhyUE94ektLVXRPNDlYSzd6b3p5VHRMSnJSdGdRV2taZ1QxX1dyRXZkYmpFVUlUMTZJelRBWlZqSXNheTVyc0hzanRPanJwT3c4dl9SZVB3YlpaS3hvSGJ1MGx4MnJwWEdzUdIB0gJBVV95cUxQVFRHUm8zb2czd0w2SEZhSU5rMklONjhOd0xVSVNPa2EySnV0cTZuQ3VHWTlhNXFuV25hSUc1R3dUeU5DQ2g3SmpkQjdsY2JxZnhSc3E1alM4VlFweDRwdHNyZGZtU0RrQWxIVkVsaE5OV1FTQ2pUY0ZneWpUVzR1Tk9EbzVLbDdlVjRicktZcDYyTG91VzZLeXNUN0NzSDZjcHR0Nk12ZEh1dG4weUlUdnBKa3R6V2t2Q2tzUGdyR2tvel85MDhERWdRNXhOaHpJSnplYmRIZzBHSURIZ0VqZ0YwZk8xdVhfTjdPNmZLbEN2d29vU0tfSUhfSkFlRmRIbkphWW53dFNqYWNfZEZHQk1oVzg3WHFFbThmbWlhUkZYcVA3OU9hQXJ5UXZZNWJ3a293MmdiZEtVYkVKOUY4U0htRVZGbW1ZUWxCVUhWb21Edw?oc=5",
+      "medio": "El Imparcial",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Este es el mapa completo de los centros de acopio habilitados en Colombia para ayudar a los damnificados del terremoto de magnitud 7,4 - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNbHJwcUtOajQ3VmRtaFFKcVk2WmplUDdzU2gxXzVaSU9jdjFsa2Rrel9Nczh0TzlOSWt3OTBuU1lfUTlMVHVtRHhGUVNSTmJkbEI5d2FBQm5iSlJUa2R3dUQ1bS11MmFnak9CbTBWU05pdlItbGFMZ3pkdEY3ZnhieTNnSFNrbEdTZ3BhSjZlRS1SNkdrZDJOTnFONi0zaUdCbTlaWERGeWNpUnM3ZDB6bGtCbmlhdXBHT0JhaEtGUmlhMU4xMnRQQzJKek9wbHdlRzUyeGxDVnJEcGEwaWhsRmlWLWg1NWdwcHdZYzdwaFZQU195R3dWNlpLVmJ6NVFk0gGGAkFVX3lxTE45eGNsZUNIenY3RDR1T1BBaHUzbnlsQkhLVGtpV19vUDZlMzVtajRqaGstSkNzSndBRnEycFJMcTZFdXdzS0VTd1pQWnlLRi1qUEFjNXdOVVA0QU1PUHUwNExySzNDdENGRjRfZ0dYajBtSktkdTc0WVlVWmJsMjNTTUhjRVZQVzk0R0kxSFozT0R2MmRGSkZqWjVYNTJHNmdkeGxDQjJhUDlQd1g1QS1XYkg5ajdMMHJIZzMzTWdfRlRiMVZuellhTzVZWTFuOElaOTh2QlRSbTVNMEpGTzF4U1hUNUtMbjZzcGstcllabDlNdllKYUhCa0NsaGNfRTdKVjZCdFE?oc=5",
@@ -691,16 +689,6 @@
       "medio": "vanguardia.com.mx",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-12T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Dosquebradas habilita formulario para identificar viviendas afectadas por el sismo - Dosquebradas",
-      "enlace": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPZGFDUHhraEl3bVZDa2puMU42dW1TMXpSTERxbWlSZm9CZm1WQTdpeG1xM1Y5dFdTWHV4REV3NjJYV0dqblVQdnRzQ2JDbXVVVm5JNlI3ZEJKUU5UVkNteWV6b1ItOE5FWmtOQ0RhUWtYU2pQaEJYRFRuQ2ZINFgybEJXTVpnSlRYYzk2cjEzSWpuOWxLUjAwX2J5OE1jS3FYVFdrR0poZTNfbzQ3TlRjQm9rbXoyUXpteGhLdkNheXo1M0oyMHpQVWpYcVJfb0tUaUVIcXZ3SWlvQ0I4R0o2NWJpWFdhU1R5YXQ3LW9tSXQzcWZHWFZNZFRSRGRxLVJ0Wm5DUzY1Q0RmdGN2YWRMVmE5Yw?oc=5",
-      "medio": "Dosquebradas",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T07:00:00.000Z",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
     },
     {
       "tipo": "edificacion_danada",
@@ -742,14 +730,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONXA3b20zek5LYVAwODBNNVR2V19vMFFVNnFqejZIbGRYVld6Z09LS3FQSVIzZ0lfZUx4bEd4ZnkzVGF5T3FYaE9aMnZNY3pMLVVKX0lPNDRqUVp2X0d4WWxwYVFCc195SUhzWFcyN1RZc19tZXo0UFU5RnVuM1EzR0lzazZmLWlMQ05ReTBhRGhfRVEwSl9pb3NKSUNIWjAybG5pSG9QNWtad1BJZEJ5YmpUN3FqT0dVMGM4TjFwVE0?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -801,9 +781,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Abren centro de acopio por sismo en Colombia - mvsnoticias.com",
+      "titulo": "Abren centro de acopio por sismo en Colombia - MVS Noticias",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYkc2U19EbFBhcXNLVEhQcThWbjU4UmkwOGdEUGdONDBMRURFQXRZcWhWV2I3d2FLWkNzY2FVQ255QkhFN1ctckxDX292d3V3enNzRWJXbW5fS0RWNUdvbU5IWHUtOHREUm1QY1l0SVljanE0QXQ4Wm5oemloWFFSZ2RwQTQzVWRZSmdCNmIxMEFZZkF6RkV2Z3FMdXM5bzBuZEYw?oc=5",
-      "medio": "mvsnoticias.com",
+      "medio": "MVS Noticias",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
     },
@@ -863,21 +843,13 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - valledelcauca.gov.co",
+      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - Gobernación del valle",
       "enlace": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQVFVvZ05vMUhhNnlJTDhudU5yRWI1YXAzT19VMmQwTUdIb1FFSWVSQW5ZZmw0ZGgwRVpFNkdwRDVxalVGcUVIQ0l4c2JRb2dZcXhCVnc0WDlLdUFKLTlRVmw2RzJUbnRUalVwelMwcWxYV0hUSXpqVC1yaURMU1JaOFg0TTh5NVBuWDRXcmFhT05YdDJpVFVVSG9uNHJ2a05qVzU3bGFnS3p6S3dqb21oRHZkYklJVGxvc19fWWJQY1FNUTVTZmx3SVVIeXZMaDJFZU5CMEVRNHJ5OS14aXVlSGpQSVVCRVJ6Y09HYWZGcDkyMjR1aEpReURON1VUSEx3em1uaURCVHVKUzF1?oc=5",
-      "medio": "valledelcauca.gov.co",
-      "tipo_fuente": "official",
+      "medio": "Gobernación del valle",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "El momento del terremoto en Colombia: edificios colapsados y destrozos al oeste del país - elpais.com",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUEk0TFdLSjY4MGpXbWxBWHRUZnJGVjh0aU9MWDFCaUFVN3NUQnllUkE2WGhHaXUzSEVKNDRXRnJOaFRKNVFlVEdxaHlORERFRlgzcXhpZGtxdGZMblgzaGlUSGhvdEVsWnk0eFZfOEh0bHU2cWhFbnVra2VFOTNZNEVRTndPOHVtZlI0NjE0ckUxc1d4LTJoaVQtVG9XMGNlaGN6VDZPMkVZLXRMUm50U0ZjS3RtRWE4X3NNeWNaOU42T19qZHVpWNIB3AFBVV95cUxQYmF0Y28yVHhfcWVUbnhsdng3WHRJSWNKV0lfVGxPRXlxb0ZFQzhPMDUwVzg3MkIxc0wtak4tNkVsOWo0dHlJd0YxWFo5ZDkyMWV4VmFFRjUwbUIxRFhTQ2JudUpIb0hEY2VBZ3RsTmYtbXRpQWpFWVhldTJrSV8yWV9vby1JZFllZldFMjhHSTlCT3AyVkhEdWtTWkJQOENlSTlvLS1JR21EQTdVMlVaM2FSdkFkV1hwM21naW5hTV9rU3VIRDlHcGpQWjgzLXMwYXRRV2gzYnN2dG1K?oc=5",
-      "medio": "elpais.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -936,16 +908,6 @@
       "medio": "Forbes Colombia",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "En imágenes: así se viven las evacuaciones, albergues y rescates tras el terremoto en Manizales - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQV1J1SVVjanVXMy1vX2x0OUw5aDg3NThDSzEyLW9PV29vUlY2QjBFYzduRC1KUmZjajRjSzduS1Z1UXJaR21ZX1Jjd2pfcmlhWlcyaVN2RHh0bFhBTVFnUklRU3lrNUNyNGRNc0ZLSk96eUM0TVpuTUVQYnBTQkhtdUswWENlNUJKY09CakZVbkRBQjZ6OWN6eXBURHUzSFFJcHN4ZVdjUnlTejE3UXA0dkJ4ODdoQ0NCWWc?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
     },
     {
       "tipo": "via_bloqueada",
