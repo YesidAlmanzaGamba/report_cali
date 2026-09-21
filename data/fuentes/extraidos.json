@@ -1,8 +1,18 @@
 {
-  "generado": "2026-09-21T15:14:12.435Z",
+  "generado": "2026-09-21T20:04:32.924Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "En imágenes: así avanzan las demoliciones de edificios afectados por el terremoto en el sur de Cali",
+      "enlace": "https://www.elpais.com.co/cali/en-imagenes-asi-avanzan-las-demoliciones-de-edificios-afectados-por-el-terremoto-en-el-sur-de-cali-2131.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-09-21T17:23:31.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Cada demolición de edificios afectados por el terremoto costaría hasta $2000 millones, según cifras de Gestión del Riesgo",
@@ -53,19 +63,24 @@
     },
     {
       "tipo": "edificacion_danada",
+      "clase": "barrio",
+      "lugar": "Comuneros",
+      "titulo": "En el oriente de Cali, en el barrio Comuneros 1 del Distrito de Aguablanca, el terremoto también dejó viviendas afectadas. Esta es la historia de algunos de los damnificados que aún enfrentan las consecuencias de la emergencia. 📌Conoce más en 90minuto - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQkNhV1dhc2ZpUlVaOWxNZDVxWHhjUDEzQnBtQm8xM2NNRXU5b2l3c1lLU2VfU3lYbEI3emtFOHZiVmsteTljbzdwNy1acXpkZnBFZ2JfNlhfbERmWDVuU1FXZE9UQTN3X3hmNWdLaVZrazZLb3lfUmFHcTBCaWl4eVU0WF8wNUZNWE81NDZ5d1BVYlpURnNlMkpOdnZIUGFNMjNRd19hNnlUYllhcFhGaWZzTDVJUFcxRkZyUnRmRDZzV1FVWG54bmhsT3gxdWRKMnpsRmVubUxwV05qLUdSM0FVOVg?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-14T22:09:03.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=barrio%20Comuneros%2C%20Cali%2C%20Colombia"
+    },
+    {
+      "tipo": "edificacion_danada",
       "titulo": "Terremoto deja más de 20 mil damnificados y 12 mil viviendas afectadas en ciudades intermedias de Colombia - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-09-11T21:48:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Procuraduría revisará licencias y obras de edificios afectados por terremoto en Colombia - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPN1pLNDFqYjFoazVkMkgzTk9FQ2tYeXdmczNWaDlGUFJEakNyUVJ5eU8za3F4ZDJ0NnJxVUV2WXk0LS1rOXBwcUxyZmNZTUI4dldLU1kzQ2VsMmtjZWhWX2ZNYVBfOHBFdjRCNlpWelNodlRXbTRuVzVUbzFXZUgtM3cxLWNYTXhEcldGT2NsLVZwR0VnVzRqbFVuajNCVXZrdEdyT2Zobm93eGxlaU9CNEF1ZnlFdnJGQzF1MzVDbGhzVVJaU3NWWDhKNG9BZ9IB6AFBVV95cUxPazA0Qk1WVlA4NFh1a2g5bmtfV2d1Q0RfQlhhVklBZHptWDFEU05hM1kzYlFWVzJOczJLRUdKT1F5OGlxeUtsZmd1MlZUUjczRGMyQUZrMW1rOXZfN0JTWkR3S3NRZlFPMWFtSjBGd3ZMYVFiWHo5ZUNVSmoydXpMa0ZESVVJUXZtM2I5enlFM3BOMWtVQUFLSDg0cUlHSXJWMzFUUTR2QmE4QjM0Mk8zZm55eGo1VVhuSkxYNm44dDBZc3dRaWJ2S25wNGk5U3MwbkNNWXQ1MUNNSnlzdEZMM19KYjItcnFD?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-09-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -84,11 +99,29 @@
       "publicado": "2026-09-10T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Cali comienza a demoler edificios afectados por el terremoto - dw.com",
+      "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdEVxcDdTZXRmREpMZEVGb0RHVkZWZFFJQV9LZF9mZzJCMW5tcmJQeS1sNDVLbDFPZHlRSV8xUlYtN09xanBwZjFScXgzLUFjQU1PYnQ1VXBmNWpWcDhsZHJoUVBvNUhhNmFQQ1NZS3JaTTVrZXpYdnZQbmFvXzNJSjMzSUtvaWduQnRad3E5QlZLc1BVVktYZtIBmAFBVV95cUxOZzFwWkw2SE1TNWZBdU51d0ZmUmlPOWJocU1NRTdOT1hWVnp1cUFfM0RGa1BJXzBZemRIRjNDRVBJR19rQUcwcFIzajNacjZtb0x5TUt6bGpzUEJnc29zcm1CMTIyY1JCamhPeDBwXzBJZnVpandvUkt6Um5OV3Z1d05URGZkX0c4WGxOdnl5bjRfaEdjcVRxZg?oc=5",
+      "medio": "dw.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-08T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Colombia: ESMAD desaloja con violencia refugio de damnificados por terremoto - teleSUR",
       "enlace": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBTNkNLRXJfV3pwblVjSWk1dDdEN1Vmd01JX1pLaHhnZ1hJbWJTc0lDOExYOTZCV0hULUc4NlR3VTdRN2gwSUJKOUk4Tjk3YkhHNjF0RXM0Yjg3amw5d3BYNExGVXBHZkxjTi1EdHFpWWpLSTZRMjJF?oc=5",
       "medio": "teleSUR",
       "tipo_fuente": "unverified",
+      "publicado": "2026-09-03T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Procuraduría vigilará ayudas, albergues y recursos públicos tras terremoto en Colombia - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOQU5JZ0ZKTThBRmZPaGU0eVNjSGJ1NDkzQXVqOFhkb0JLODk2ZWh3UXFLNkQtU3BPUnFsSFBkVXRtMk1fU1Uyb2NiSUpJam1ySW5fWjhxVm0tb0VSbzNON1hMZ2U1RnNxOC13YlYzNnRIWlpRSEpsa05tRzd3N1hoS1RZN3VxTjEyTms2MzFOVktBTXNoNE5Wc2tkYmV6R01tM2RaZGdqalJVc184YzVDeGFIVHFyYzFSRW1BcWJjY1pPd1RMYmZaYU5R0gHkAUFVX3lxTE10SVYycHFFaFlMcEVkdGkwb3p1eUdRX3JDSEpFT1ZncWd6emJ0NEJjX1JBQ2lYQkhlXzczVG8tSV9QQ1dwa1BUTkhHR05XYUJRa0VOdFdDOUliYk42dndpdkVMMHhBZXpBdFAxQVl2Tk9oS21GbzZnLXFvVHhybEJhQjlpQ0c4UVVHc0hWRmtFZFQ0dzRwX21PTmpHQm1kanR2X1l1RFhTbUdKSVdUYlR2NUk0d3dQQWRhZjQ1NlZtcGtsRW5pS1F2TmU3d0VDYTlCc2dGQTBFUzRRY1ZXMi1DVDZOeA?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
       "publicado": "2026-09-03T07:00:00.000Z"
     },
     {
@@ -271,6 +304,14 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Lluvias agravan emergencia tras terremoto de 7,4: albergues y viviendas resultan afectados - ELHERALDO.CO",
+      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUWw3RVgwRnBOTkRrbENpdE52QmtTRU9DemhrRlV1UGgwMFpEVDJ0ZnNOMFZiOGQxM2ZBQm1RbEw3dXFOSjJoY3hmSGExWmRMY0xDQ1NVLUJQRFREZGwtdDNYV3MwcGdpbEQ5bzZORi1ublFxNDZ6QTY5b05LNC0zSEk4Mmt1Z3lfb0ctTU5JeWlxWVhFdG5GMmZPWkVBbmVGdU1vSmtBNnBWYUpjUDlkcjEyblotWm9LTVVrXzBnU1pnU3FqSW9qTWt5WEw0ckU?oc=5",
+      "medio": "ELHERALDO.CO",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-17T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Lluvias inundan albergues de damnificados en Pereira: ciudadanos reclaman más ayudas tras terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWURBcGtYVVJab0FPQ0FJbWpaa0d4cG55dnZudWpTUHNpWTJZZ21VanI3YjFkMl83ZVdhSF8zaTdPcVlwZ20wN0t6NjlzOHliR3d0NXdQcGM4ejFodFBkYlcxeXNFMnJOZE1WZTRPN2JhQnVXTzZkcEg0VUpGSjJPYW5uRFZzNlBvNGxKU2hwN1Nxdk5xanMycm1NNkJ3ZUpNaDU1TWNtUFBpUQ?oc=5",
       "medio": "Pulzo",
@@ -278,14 +319,6 @@
       "publicado": "2026-08-17T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Lluvias agravan emergencia tras terremoto de 7,4: albergues y viviendas resultan afectados - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUWw3RVgwRnBOTkRrbENpdE52QmtTRU9DemhrRlV1UGgwMFpEVDJ0ZnNOMFZiOGQxM2ZBQm1RbEw3dXFOSjJoY3hmSGExWmRMY0xDQ1NVLUJQRFREZGwtdDNYV3MwcGdpbEQ5bzZORi1ublFxNDZ6QTY5b05LNC0zSEk4Mmt1Z3lfb0ctTU5JeWlxWVhFdG5GMmZPWkVBbmVGdU1vSmtBNnBWYUpjUDlkcjEyblotWm9LTVVrXzBnU1pnU3FqSW9qTWt5WEw0ckU?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-17T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -386,16 +419,6 @@
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Video | Jhonny Rivera convirtió su hotel en albergue tras el sismo - Canal 1 En vivo",
-      "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQa0h6ckFyVnVNVVdxTFd1TEdoOGg3N3FCMUJrZWRMZV9QYkZMZ1JLY0ZrTkRsZFd5Y0tRYXFRQnlYYzdJOVZGY3pEVy1QYWQyM3o0eUdWX2c1Ylp0ZzZyQVBEbmdpVnI3ZHd1MzRwYy1rYk1PSGJJbW5RR2ZkeDRQdUo2bGRoRWtHd2RHNzJ4UHdHMWVrVFNhSkpEMFMtczVGR3ZDelpPTzdURDdjTFZBctIBtgFBVV95cUxOVms5MGp1OVVNODFkdURBUXdvdmRQeEpka1ZtbVNjODNrWmYwTEtxT0p4R3A0ODUyOW8tSlozY1ZwdnZIUjVZSEpQQ00zdHRGQnFDdEZ6S2dfejZOZnI3TnpYa3lZQXlKbnNDcG5rY1BXYUJNYkNEUW8wU1o2eTEzOG10RlRxcmFjbkdxR2FhUnhFbVFjeTdNVENPRnpkQnB1UDVpamx3c0pRd19KaXZYcWw4TDhnQQ?oc=5",
-      "medio": "Canal 1 En vivo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T07:00:00.000Z",
-      "pcode": "CO41615",
-      "municipio": "Rivera"
     },
     {
       "tipo": "albergue",
@@ -736,9 +759,9 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Terremoto en Colombia | Puntos de acopio en varias ciudades, alimentos e insumos que se necesitan - minuto60.com",
+      "titulo": "Terremoto en Colombia | Puntos de acopio en varias ciudades, alimentos e insumos que se necesitan - Minuto60",
       "enlace": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQVI4UFIxUjNhaDY0LUszZUxrYnpObll3TzktQ0NMSWdVYUZqQ2pJMzZ5SGxTSTc4b3h6ci1pRm1abWVfaHZnY2lncmU3cF9ZWFV5X2FNQUVwblJySzBhLXMyZ1QzOE5Eb1lubGY1ZHZoU19RdDJwYm54Qk5Oc2pZbHhsRkRpSTZMbXh5UUIxRQ?oc=5",
-      "medio": "minuto60.com",
+      "medio": "Minuto60",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
