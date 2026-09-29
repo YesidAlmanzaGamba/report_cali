@@ -1,28 +1,8 @@
 {
-  "generado": "2026-09-29T12:02:46.062Z",
+  "generado": "2026-09-29T18:10:30.231Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Ciudadanos vallecaucanos trabajan junto a la Gobernación para reconstruir sus casas afectadas por el terremoto",
-      "enlace": "https://www.elpais.com.co/valle/ciudadanos-vallecaucanos-trabajan-junto-a-la-gobernacion-para-reconstruir-sus-casas-afectadas-por-el-terremoto-2821.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-09-28T16:59:21.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "sede": "Biblioteca Departamental",
-      "titulo": "Tras el terremoto, la Biblioteca Departamental se toma las calles y albergues del Valle con oferta cultural",
-      "enlace": "https://www.elpais.com.co/cali/tras-el-terremoto-la-biblioteca-departamental-se-toma-las-calles-y-albergues-del-valle-con-oferta-cultural-2847.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-09-28T16:12:47.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=Biblioteca%20Departamental%2C%20Cali%2C%20Colombia"
-    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Sismo en La Florida, Versalles: 90% de las edificaciones rurales afectadas en Valle del Cauca - Pulzo",
@@ -81,6 +61,19 @@
     },
     {
       "tipo": "edificacion_danada",
+      "clase": "barrio",
+      "lugar": "Comuneros",
+      "titulo": "En el oriente de Cali, en el barrio Comuneros 1 del Distrito de Aguablanca, el terremoto también dejó viviendas afectadas. Esta es la historia de algunos de los damnificados que aún enfrentan las consecuencias de la emergencia. 📌Conoce más en 90minuto - facebook.com",
+      "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQkNhV1dhc2ZpUlVaOWxNZDVxWHhjUDEzQnBtQm8xM2NNRXU5b2l3c1lLU2VfU3lYbEI3emtFOHZiVmsteTljbzdwNy1acXpkZnBFZ2JfNlhfbERmWDVuU1FXZE9UQTN3X3hmNWdLaVZrazZLb3lfUmFHcTBCaWl4eVU0WF8wNUZNWE81NDZ5d1BVYlpURnNlMkpOdnZIUGFNMjNRd19hNnlUYllhcFhGaWZzTDVJUFcxRkZyUnRmRDZzV1FVWG54bmhsT3gxdWRKMnpsRmVubUxwV05qLUdSM0FVOVg?oc=5",
+      "medio": "facebook.com",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-14T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=barrio%20Comuneros%2C%20Cali%2C%20Colombia"
+    },
+    {
+      "tipo": "edificacion_danada",
       "titulo": "Terremoto deja más de 20 mil damnificados y 12 mil viviendas afectadas en ciudades intermedias de Colombia - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
       "medio": "La Patria",
@@ -105,9 +98,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Cali comienza a demoler edificios afectados por el terremoto - DW.com",
+      "titulo": "Cali comienza a demoler edificios afectados por el terremoto - dw.com",
       "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdEVxcDdTZXRmREpMZEVGb0RHVkZWZFFJQV9LZF9mZzJCMW5tcmJQeS1sNDVLbDFPZHlRSV8xUlYtN09xanBwZjFScXgzLUFjQU1PYnQ1VXBmNWpWcDhsZHJoUVBvNUhhNmFQQ1NZS3JaTTVrZXpYdnZQbmFvXzNJSjMzSUtvaWduQnRad3E5QlZLc1BVVktYZtIBmAFBVV95cUxOZzFwWkw2SE1TNWZBdU51d0ZmUmlPOWJocU1NRTdOT1hWVnp1cUFfM0RGa1BJXzBZemRIRjNDRVBJR19rQUcwcFIzajNacjZtb0x5TUt6bGpzUEJnc29zcm1CMTIyY1JCamhPeDBwXzBJZnVpandvUkt6Um5OV3Z1d05URGZkX0c4WGxOdnl5bjRfaEdjcVRxZg?oc=5",
-      "medio": "DW.com",
+      "medio": "dw.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-09-08T07:00:00.000Z",
       "pcode": "CO76001",
@@ -279,9 +272,9 @@
     },
     {
       "tipo": "centro_salud_afectado",
-      "titulo": "La ciudad epicentro del terremoto en Colombia enfrenta la crisis sanitaria con hospitales colapsados - Univision",
+      "titulo": "La ciudad epicentro del terremoto en Colombia enfrenta la crisis sanitaria con hospitales colapsados - univision.com",
       "enlace": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTTI0djdrQTh2ZWRNaFRKSlRCamkwT245WGFiLVdIbzJxYjNEWVVTT0Y4OFJPWDlURXBSbGZ5QkxYU2pFbWZabkZSbkVMZ1k5WW5UdG92Mzl3RVpHM0NtekRIcTJvT1lDUDc2S3RPb0J5N3RkQzJBdWloVF9Fb3ExXzQ0Y3l5UmhwVUZnNkpreWJPbV8yc19RTm5VUk1Mc0duRmo4c05nRG55SDRibml1T2J3VUtURGtaOGNla21fc0hIN3p5UkM0a0lxMHlKTlpmcWZmTDNWLXlIb3k2cXhTcHpTa0g?oc=5",
-      "medio": "Univision",
+      "medio": "univision.com",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-17T07:00:00.000Z"
     },
@@ -650,9 +643,9 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - nmas.com.mx",
+      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - N+",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONXA3b20zek5LYVAwODBNNVR2V19vMFFVNnFqejZIbGRYVld6Z09LS3FQSVIzZ0lfZUx4bEd4ZnkzVGF5T3FYaE9aMnZNY3pMLVVKX0lPNDRqUVp2X0d4WWxwYVFCc195SUhzWFcyN1RZc19tZXo0UFU5RnVuM1EzR0lzazZmLWlMQ05ReTBhRGhfRVEwSl9pb3NKSUNIWjAybG5pSG9QNWtad1BJZEJ5YmpUN3FqT0dVMGM4TjFwVE0?oc=5",
-      "medio": "nmas.com.mx",
+      "medio": "N+",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
     },
@@ -677,7 +670,7 @@
     {
       "tipo": "albergue",
       "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
       "medio": "Pulzo",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
@@ -750,10 +743,10 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - valledelcauca.gov.co",
+      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - Gobernación del valle",
       "enlace": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQVFVvZ05vMUhhNnlJTDhudU5yRWI1YXAzT19VMmQwTUdIb1FFSWVSQW5ZZmw0ZGgwRVpFNkdwRDVxalVGcUVIQ0l4c2JRb2dZcXhCVnc0WDlLdUFKLTlRVmw2RzJUbnRUalVwelMwcWxYV0hUSXpqVC1yaURMU1JaOFg0TTh5NVBuWDRXcmFhT05YdDJpVFVVSG9uNHJ2a05qVzU3bGFnS3p6S3dqb21oRHZkYklJVGxvc19fWWJQY1FNUTVTZmx3SVVIeXZMaDJFZU5CMEVRNHJ5OS14aXVlSGpQSVVCRVJ6Y09HYWZGcDkyMjR1aEpReURON1VUSEx3em1uaURCVHVKUzF1?oc=5",
-      "medio": "valledelcauca.gov.co",
-      "tipo_fuente": "official",
+      "medio": "Gobernación del valle",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
@@ -862,9 +855,9 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
+      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - forbes.co",
       "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
-      "medio": "Forbes Colombia",
+      "medio": "forbes.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -917,14 +910,6 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-06-26T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Suman más de 6 mil viviendas dañadas en Chiapas por sismo - noroeste.com.mx",
-      "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOEhRc3JLbThlaWx3bmxRSF8wcUVlbHNzRXFDa0xJZkdvYThZUEp5SWRaaVZxRnkySHFoakVEX1l1Vmd0elZzNkphOHFPMldXT240bTE3TzhiQm4zcjlvdW5GWGZpZndaZ3VxZVQ0R2VLSkJKcVl1aml1ek50cnZFalozRWlnUXFHV0dYVWFUNmJnU1VJLUthUV9mN0NFOGtBcWRTcndvZzdfUdIBrwFBVV95cUxNWlBXUEx4Q3lpNVh6MF9tTjY1X2RvWHlfd056Q3VHckhTRDdSS09IVXpVd0VEOC1IN0RKSXR1OTRUaks4S1ktV1JnbkI0UXpIWUpBTFA0Rmt6NUx6UklWdFd5N0g2dElIVk9WUkcwYzIxNVZoa1c3VXVQXzAtQUZrMzhoZjJxOWZ0aGkxejFhanlJQkM5WXpvRjZuSzFiTmlBN0gzcmc4Y0VfeUlNa0Nv?oc=5",
-      "medio": "noroeste.com.mx",
-      "tipo_fuente": "unverified",
-      "publicado": "2021-03-06T22:04:19.000Z"
     },
     {
       "tipo": "albergue",
