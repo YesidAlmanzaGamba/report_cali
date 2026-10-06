@@ -1,13 +1,13 @@
 {
-  "generado": "2026-10-06T19:38:09.223Z",
+  "generado": "2026-10-06T23:29:21.512Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 157,
-    "con_notas": 55,
-    "sin_notas": 102,
-    "poblacion_sin_notas": 2934688,
-    "medios_distintos": 92
+    "con_notas": 46,
+    "sin_notas": 111,
+    "poblacion_sin_notas": 3361771,
+    "medios_distintos": 90
   },
   "municipios": [
     {
@@ -16,17 +16,17 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 235337,
-      "notas": 41,
+      "notas": 40,
       "ultima": "2026-10-06T19:01:00.000Z",
       "medios": [
         {
           "nombre": "Dosquebradas",
-          "notas": 17,
-          "ultima": "2026-09-17T19:22:52.000Z"
+          "notas": 16,
+          "ultima": "2026-09-17T07:00:00.000Z"
         },
         {
           "nombre": "Pulzo",
-          "notas": 8,
+          "notas": 9,
           "ultima": "2026-09-10T07:00:00.000Z"
         },
         {
@@ -36,7 +36,7 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 2,
+          "notas": 1,
           "ultima": "2026-10-06T19:01:00.000Z"
         },
         {
@@ -102,7 +102,7 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 78,
+      "notas": 79,
       "ultima": "2026-10-06T15:18:10.000Z",
       "medios": [
         {
@@ -121,14 +121,14 @@
           "ultima": "2026-10-01T21:10:46.000Z"
         },
         {
+          "nombre": "La FM",
+          "notas": 5,
+          "ultima": "2026-09-22T07:00:00.000Z"
+        },
+        {
           "nombre": "Pulzo",
           "notas": 5,
           "ultima": "2026-08-20T07:00:00.000Z"
-        },
-        {
-          "nombre": "La FM",
-          "notas": 4,
-          "ultima": "2026-09-22T07:00:00.000Z"
         },
         {
           "nombre": "El Diario (Pereira)",
@@ -169,11 +169,6 @@
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
           "notas": 2,
           "ultima": "2026-08-17T07:00:00.000Z"
-        },
-        {
-          "nombre": "El Colombiano",
-          "notas": 2,
-          "ultima": "2026-08-16T07:00:00.000Z"
         },
         {
           "nombre": "Facebook",
@@ -271,6 +266,16 @@
           "ultima": "2026-08-16T07:00:00.000Z"
         },
         {
+          "nombre": "El Colombiano",
+          "notas": 1,
+          "ultima": "2026-08-16T07:00:00.000Z"
+        },
+        {
+          "nombre": "El País",
+          "notas": 1,
+          "ultima": "2026-08-15T07:00:00.000Z"
+        },
+        {
           "nombre": "Colombia Visible",
           "notas": 1,
           "ultima": "2026-08-12T22:35:32.000Z"
@@ -288,7 +293,7 @@
       "departamento": "Chocó",
       "mmi": 7.9,
       "poblacion": 5167,
-      "notas": 17,
+      "notas": 18,
       "ultima": "2026-09-17T07:00:00.000Z",
       "medios": [
         {
@@ -348,6 +353,11 @@
         },
         {
           "nombre": "El Colombiano",
+          "notas": 1,
+          "ultima": "2026-08-12T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
         },
@@ -445,23 +455,18 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 12251,
-      "notas": 12,
+      "notas": 10,
       "ultima": "2026-10-05T23:36:29.000Z",
       "medios": [
-        {
-          "nombre": "El País (Cali)",
-          "notas": 2,
-          "ultima": "2026-10-05T23:36:29.000Z"
-        },
         {
           "nombre": "El País",
           "notas": 2,
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "Gobernación del Valle del Cauca",
+          "nombre": "El País (Cali)",
           "notas": 1,
-          "ultima": "2026-10-05T21:01:43.000Z"
+          "ultima": "2026-10-05T23:36:29.000Z"
         },
         {
           "nombre": "Gobernación Valle del Cauca",
@@ -507,17 +512,17 @@
       "mmi": 7.8,
       "poblacion": 38029,
       "notas": 25,
-      "ultima": "2026-09-23T22:30:31.000Z",
+      "ultima": "2026-10-05T20:42:00.000Z",
       "medios": [
+        {
+          "nombre": "El País",
+          "notas": 5,
+          "ultima": "2026-10-05T20:42:00.000Z"
+        },
         {
           "nombre": "Revista Semana",
           "notas": 4,
           "ultima": "2026-09-10T07:00:00.000Z"
-        },
-        {
-          "nombre": "El País",
-          "notas": 4,
-          "ultima": "2026-08-27T07:00:00.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -533,11 +538,6 @@
           "nombre": "Gobernación Valle del Cauca",
           "notas": 2,
           "ultima": "2026-08-13T07:00:00.000Z"
-        },
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-23T22:30:31.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -772,15 +772,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.6,
       "poblacion": 5299,
-      "notas": 1,
-      "ultima": "2026-09-24T14:35:49.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-24T14:35:49.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63001",
@@ -823,15 +816,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.6,
       "poblacion": 25106,
-      "notas": 1,
-      "ultima": "2026-09-28T20:52:21.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-28T20:52:21.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63470",
@@ -857,14 +843,9 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 322388,
-      "notas": 8,
-      "ultima": "2026-10-02T17:43:43.000Z",
+      "notas": 6,
+      "ultima": "2026-09-17T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 2,
-          "ultima": "2026-10-02T17:43:43.000Z"
-        },
         {
           "nombre": "El País",
           "notas": 2,
@@ -916,8 +897,15 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 8743,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-08-10T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Noticiero 90 Minutos",
+          "notas": 1,
+          "ultima": "2026-08-10T07:00:00.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76250",
@@ -925,15 +913,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 8878,
-      "notas": 4,
-      "ultima": "2026-09-30T17:56:41.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 4,
-          "ultima": "2026-09-30T17:56:41.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO66383",
@@ -984,15 +965,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 5511,
-      "notas": 2,
-      "ultima": "2026-09-30T20:26:27.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 2,
-          "ultima": "2026-09-30T20:26:27.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO76863",
@@ -1000,15 +974,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 7145,
-      "notas": 1,
-      "ultima": "2026-09-25T18:53:53.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-25T18:53:53.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO66045",
@@ -1084,15 +1051,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.4,
       "poblacion": 42483,
-      "notas": 4,
-      "ultima": "2026-09-29T19:08:15.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 4,
-          "ultima": "2026-09-29T19:08:15.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO27745",
@@ -1109,15 +1069,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
       "poblacion": 23369,
-      "notas": 1,
-      "ultima": "2026-10-06T16:27:23.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-10-06T16:27:23.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO17042",
@@ -1134,15 +1087,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
       "poblacion": 29512,
-      "notas": 1,
-      "ultima": "2026-09-29T23:03:15.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-29T23:03:15.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63130",
@@ -1159,14 +1105,9 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
       "poblacion": 18832,
-      "notas": 2,
-      "ultima": "2026-09-30T21:42:55.000Z",
+      "notas": 1,
+      "ultima": "2026-08-10T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-30T21:42:55.000Z"
-        },
         {
           "nombre": "Revista Semana",
           "notas": 1,
@@ -1302,18 +1243,23 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 45,
-      "ultima": "2026-10-06T18:11:24.000Z",
+      "notas": 46,
+      "ultima": "2026-10-06T22:08:31.000Z",
       "medios": [
         {
           "nombre": "Infobae",
-          "notas": 6,
+          "notas": 7,
           "ultima": "2026-10-03T00:32:00.000Z"
         },
         {
           "nombre": "El País",
           "notas": 6,
           "ultima": "2026-09-18T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Tiempo",
+          "notas": 4,
+          "ultima": "2026-10-06T22:08:31.000Z"
         },
         {
           "nombre": "El País (Cali)",
@@ -1331,11 +1277,6 @@
           "ultima": "2026-09-10T07:00:00.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 3,
-          "ultima": "2026-08-18T07:00:00.000Z"
-        },
-        {
           "nombre": "Noticias Caracol",
           "notas": 3,
           "ultima": "2026-08-11T07:00:00.000Z"
@@ -1349,11 +1290,6 @@
           "nombre": "CRprensa.com",
           "notas": 1,
           "ultima": "2026-10-03T00:24:03.000Z"
-        },
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-25T19:11:13.000Z"
         },
         {
           "nombre": "ELHERALDO.CO",
@@ -1522,15 +1458,8 @@
       "departamento": "Chocó",
       "mmi": 7,
       "poblacion": 7259,
-      "notas": 1,
-      "ultima": "2026-10-04T22:45:17.000Z",
-      "medios": [
-        {
-          "nombre": "Chocó 7 Días",
-          "notas": 1,
-          "ultima": "2026-10-04T22:45:17.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO63212",
@@ -1619,15 +1548,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
       "poblacion": 172821,
-      "notas": 1,
-      "ultima": "2026-10-02T14:23:58.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-10-02T14:23:58.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO76606",
@@ -1674,15 +1596,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
       "poblacion": 113967,
-      "notas": 1,
-      "ultima": "2026-09-29T22:01:01.000Z",
-      "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-29T22:01:01.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO27025",
@@ -1834,8 +1749,15 @@
       "departamento": "Tolima",
       "mmi": 6.5,
       "poblacion": 5524,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-10-06T19:57:05.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-10-06T19:57:05.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76130",
@@ -2170,18 +2092,18 @@
       "medios": []
     },
     {
-      "pcode": "CO73055",
-      "nombre": "Armero",
+      "pcode": "CO73770",
+      "nombre": "Suárez",
       "departamento": "Tolima",
       "mmi": 5.5,
-      "poblacion": 12197,
-      "notas": 1,
-      "ultima": "2026-10-06T17:27:39.000Z",
+      "poblacion": 3812,
+      "notas": 3,
+      "ultima": "2026-10-06T22:30:21.000Z",
       "medios": [
         {
           "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-10-06T17:27:39.000Z"
+          "notas": 3,
+          "ultima": "2026-10-06T22:30:21.000Z"
         }
       ]
     },
@@ -2461,14 +2383,9 @@
       "departamento": "Norte de Santander",
       "mmi": 4.1,
       "poblacion": 12776,
-      "notas": 2,
-      "ultima": "2026-09-29T20:38:21.000Z",
+      "notas": 1,
+      "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-09-29T20:38:21.000Z"
-        },
         {
           "nombre": "AP News",
           "notas": 1,
