@@ -1,8 +1,18 @@
 {
-  "generado": "2026-10-06T23:29:21.509Z",
+  "generado": "2026-10-07T02:37:29.021Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "A casi dos meses del terremoto en Colombia, Cali inicia la demolición de edificios afectados - Primicias",
+      "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYmNudXVJR2YtQTFNWHc5TTJEUWVBVkIybXFyVkN3VThyeDdHVlJpMHp2MDFYekZ4UTZfajJxQjNaOHZob0UxUVhLZEI2VWcyaTAybnBST0RuaVpEdzQzS00xTm9LeTZ1aHN1S3pVUzJ3azdnTDM0aEk1RmRHSXlmS19nTzhxLTVFWThIQ1poc2JrNXUwTW5OOW1yaUYwMTFLR1ZpRmpCUVc5NHppSzdF?oc=5",
+      "medio": "Primicias",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-10-06T18:17:43.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Constructora barranquillera ACF donará dos viviendas nuevas y dos mejoramientos a afectados por terremoto en Risaralda - ELHERALDO.CO",
@@ -21,11 +31,11 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Ministerio de Vivienda avanza en hoja de ruta para el financiamiento de las viviendas rurales afectadas por el terremoto",
-      "enlace": "https://www.elpais.com.co/economia/ministerio-de-vivienda-avanza-en-hoja-de-ruta-para-el-financiamiento-de-las-viviendas-rurales-afectadas-por-el-terremoto-0526.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-05T23:52:26.000Z"
+      "titulo": "Gobernación del Valle convoca mano de obra local para el mejoramiento y construcción de viviendas afectadas por el sismo",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90645/gobernacion-del-valle-convoca-mano-de-obra-local-para-el-mejoramiento-y-construccion-de-viviendas-afectadas-por-el-sismo/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-10-02T22:11:37.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -69,14 +79,6 @@
       "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
       "medio": "La Patria",
       "tipo_fuente": "unverified",
-      "publicado": "2026-09-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Procuraduría revisará licencias y obras de edificios afectados por terremoto en Colombia - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPN1pLNDFqYjFoazVkMkgzTk9FQ2tYeXdmczNWaDlGUFJEakNyUVJ5eU8za3F4ZDJ0NnJxVUV2WXk0LS1rOXBwcUxyZmNZTUI4dldLU1kzQ2VsMmtjZWhWX2ZNYVBfOHBFdjRCNlpWelNodlRXbTRuVzVUbzFXZUgtM3cxLWNYTXhEcldGT2NsLVZwR0VnVzRqbFVuajNCVXZrdEdyT2Zobm93eGxlaU9CNEF1ZnlFdnJGQzF1MzVDbGhzVVJaU3NWWDhKNG9BZ9IB6AFBVV95cUxPazA0Qk1WVlA4NFh1a2g5bmtfV2d1Q0RfQlhhVklBZHptWDFEU05hM1kzYlFWVzJOczJLRUdKT1F5OGlxeUtsZmd1MlZUUjczRGMyQUZrMW1rOXZfN0JTWkR3S3NRZlFPMWFtSjBGd3ZMYVFiWHo5ZUNVSmoydXpMa0ZESVVJUXZtM2I5enlFM3BOMWtVQUFLSDg0cUlHSXJWMzFUUTR2QmE4QjM0Mk8zZm55eGo1VVhuSkxYNm44dDBZc3dRaWJ2S25wNGk5U3MwbkNNWXQ1MUNNSnlzdEZMM19KYjItcnFD?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
       "publicado": "2026-09-11T07:00:00.000Z"
     },
     {
@@ -423,7 +425,7 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Pereira actualiza albergues tras terremoto: dos están al límite - Revista Semana",
+      "titulo": "Terremoto en Pereira: dos albergues ya están al límite y estos son los puntos disponibles - Revista Semana",
       "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNazI1OVlPU0YtcXhFTEh6TGtiTGt6ODR3MFA3eXlIQU5sNVg5Rl9oQk1NdWxvdS1xWlc3TWZ3TFBfV05iT0VRa2k3d3hVeW10bUZCWlY2Vng1MVNwUVFWYy16cHhqSHctTG9qSlI3bm9waEF6VE12aFBnQ2dfNzlKUEl3Z2hLd19TNmZTUm9mRkl5RkVBcHJ1MGU3ajQxeW9kTjFoNlZ4aXZiNXlBRzdlZUQtd2xUdnNfMDZwSDRYekRDQlVQc1d2a0xMZzNadHROWnE1SGFncHJpMW8?oc=5",
       "medio": "Revista Semana",
       "tipo_fuente": "press",
@@ -476,6 +478,14 @@
       "municipio": "La Unión"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - Radio Nacional de Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ0VmdWdqa2p4REVsRm9WUThSOXZES19KS0txNmQ2Y1E3b042YTRWdUJMQm1iTzVySDVSbXN1M1JiZ2djWE9CTHBrRWpUNnAyQmVuYjYycGZPVDZmRWlKQ3A3dVMyYUF1eldCVThtU3Z1a1huaHo0UGo0ZHRzYlg0ZzN3ZEduYUx0SXIteW9yNktFWXhCd0hid1ZuSkpXLTBPVkJrNHhQdG5pX3FGRXlZQ2Yxb0dFRnllNnRtMFp3V2lvMnQ0eXc?oc=5",
+      "medio": "Radio Nacional de Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "Consulte mapa de edificios colapsados o dañados por sismo en Colombia - El Nuevo Siglo",
       "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPR081MmtEQ3R4RzhxdEl5VmFCUUhOOE1FSU1ZbDRQbHRvbGg1aTNRSmNVMFVTZUV5MTNJaUJ0aTI1LVhwcXdGX2h0Zjk0MjJXMGM3QWZuWW9rdm5RVFNzRm9BTWhYWXBjNTU2SkVrXzVOM1BzSUNkSzVfMXppMm42cE5heTRNX0xGc09fWGlCLVdZYnRsdlg5aWkxNFV3LWRmMUxPZXFPZFRVMVFK?oc=5",
@@ -505,14 +515,6 @@
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRGtEaXJUMHd0QVJ5RzlOaXg0R0l5Zi1WdmVrX2FacnRlQkpmWnZsSkRqU2hKR2VBWEZhR2FDNkRqZlRYdnNLOG5zcGVLaUdxMGdCTlpnU1gxbGVFM1FVLXdvQzZ6RFhpTXp4ZXlZTEpvX1h0azJZQWp4a2VkZWtQVVVManhwY3YwWlp5S1lZNFY0dTdfdEhEMXR3cGh0VXRrZTZ5dWxaM3dCQzRwVjJMZlVaR2VwZzlzNkVHM2wtN0ROaHVydnJz0gHMAUFVX3lxTE5CTTIxQTFUeVdTbFhCdmt6a1VyWWluNXZfalFqV2NSYUF0dGllZjZkM2ttSVhxTEZzeUhTdTZ5cWxXWldnbHZyQzV1N2E5RTAtQlpzUHFLQk9sZ2RXUndPdHJrLVRxUy1KVTEtWTVjSWZBYThiblhWNjFzQmZOT2huXzNEb2JzRlptdG0wdDZyUVhNbG05Ty1EVkg0bnBjbGU1UmNrX0t6NDFPLTNnYVRBcmFualh3TkJCWnRhbm41MjNLejh5ZWVuWE9JSw?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
-      "publicado": "2026-08-13T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Tu vivienda resultó afectada por el terremoto? Esta es la ruta para acceder a las ayudas - Radio Nacional de Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ0VmdWdqa2p4REVsRm9WUThSOXZES19KS0txNmQ2Y1E3b042YTRWdUJMQm1iTzVySDVSbXN1M1JiZ2djWE9CTHBrRWpUNnAyQmVuYjYycGZPVDZmRWlKQ3A3dVMyYUF1eldCVThtU3Z1a1huaHo0UGo0ZHRzYlg0ZzN3ZEduYUx0SXIteW9yNktFWXhCd0hid1ZuSkpXLTBPVkJrNHhQdG5pX3FGRXlZQ2Yxb0dFRnllNnRtMFp3V2lvMnQ0eXc?oc=5",
-      "medio": "Radio Nacional de Colombia",
-      "tipo_fuente": "unverified",
       "publicado": "2026-08-13T07:00:00.000Z"
     },
     {
@@ -823,14 +825,6 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
