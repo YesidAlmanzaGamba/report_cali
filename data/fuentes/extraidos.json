@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-08T02:08:47.090Z",
+  "generado": "2026-10-08T09:14:42.570Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -106,6 +106,24 @@
       "publicado": "2026-09-08T07:00:00.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Roldanillo inicia demolición de edificios afectados por el terremoto del 10 de agosto - El País",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZVVxMVI2RF9KWE9uSld1Q280amFSSHFuczhpX1BPbnN0Z2RJR3FiV1hqTHlYeEQ1LXNQREJLa0o1VEFma0lZNExJamxiX0F0RzR3bFFrSXZDNUE0eW1PUk5zWDc3MUlyS1NuV3VoVHMySkZUN3JHR09DT1dETVVzR0sxdWd6Ui1WR0ZGVm5VT0JJc19helJ0eEZtVWRRNmw0U3JHR0thTjBxeHhYdkxEelJqYU80eG5MODI0S3p3bFU1UnNEUGfSAcsBQVVfeXFMTmRKVFlNVTduamU5eWEzNlRsX1R2M19wR3E1cmxEY0F6TVowWHVSN01XZTZjMHR2bndHSUZZSXBHU3YyS2czaTF0c1JGZXVFVHZBSkp4ZEdnRVByZmt1Y1ptSGthWWU5WENOV2ZVdmhINjNKaVdVVmVLSDV4UXZBWmppYWlBM2x3VW9fX2tNTEltbTd1WXNzcDJuMTFWVDV1Z0hHSWlsaVU5bjFOY2Qyb2RxaUVEUlAycWs2STBRSjNJdUxjbFJIUkQwNnM?oc=5",
+      "medio": "El País",
+      "tipo_fuente": "press",
+      "publicado": "2026-09-07T07:00:00.000Z",
+      "pcode": "CO76622",
+      "municipio": "Roldanillo"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Colombia: ESMAD desaloja con violencia refugio de damnificados por terremoto - teleSUR",
+      "enlace": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBTNkNLRXJfV3pwblVjSWk1dDdEN1Vmd01JX1pLaHhnZ1hJbWJTc0lDOExYOTZCV0hULUc4NlR3VTdRN2gwSUJKOUk4Tjk3YkhHNjF0RXM0Yjg3amw5d3BYNExGVXBHZkxjTi1EdHFpWWpLSTZRMjJF?oc=5",
+      "medio": "teleSUR",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-03T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -233,14 +251,6 @@
       "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQVUNrRzlDd2RPZFZlNC0waWN5VHdVNHpxMEl4TnhRd2prS3NCUUIzaUJReDQyZXhCMWY4eGJUb1lKQkFPV2VxQmEwUjdraHp3a2pLZjBabmVURUNyZV9Ha0stVzhTNWcwRTNlR21qeXh2ckNlVjVpTUhTUzZNMzhkbkxqaFlwdE5mRm5lQ2QxLUV6R2FPRXZNOFVjdk9UZndCd05wVEtVV3VxaFRXeXdIZUc4ZEZndnAwd2lVSVpndUFYSkRlRlFCejE3cnJlb2J2X1dGdDFESzc5THFIbkNaUklYREQ0bzFZNl90cGpLWkczQjh2SUktUUZxQTFHZ3ozT0RIcUtQTWVFQWtrLW1hNzJCZjJRLWJk0gGeAkFVX3lxTFBWVmJkTENJeWRWZnRQV2hHRVNoRjN5anpOZzNkVTZmaDBFX0dCSmVKa3Mwa0J2UnFlZ19zLTJRaUJjWXRIZmJQQTk0S1drV3ZLc2hLSkU0Qi1lczFpaUdBMmNnSEo5bkstY0lfYXd6VEZKZWt6aVlwMXRERG1OZTU4NFJjeGN3c196X1lOOWRyN3VGN2l3ZVFFYnRZWExieEI3aDRUWkZNZHlxZ2M3U2RxcDgzVzY0UnFSbUUyRDlpMEhWZ2VVanZTRDRWMFJEY3BycUhSZGJmaENYdzJYbXZmN0UyeW9HTkhldnE0NzVQeG1faXVtX0RZYlIzZHJ3Z0RvOHdJZWJZak9BWHllZGNkcy1kTFYzaU45NEtPb0E?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
-      "publicado": "2026-08-18T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "El sismo de magnitud 7.4 en Colombia dejó un saldo provisional de 265 muertos, 3 mil 494 heridos y 140 edificios colapsados, con un costo de reconstrucción de hasta 7% del PIB. Conoce la investigación sobre las fallas de prevención que desnudó este des - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQeXRHOGVvQW42UE1IYUJGdFlfaUNza2hBTnJ5UUlGVmNBeHJ5OHkwVWVoMmZYcjdwMllNUTdKMEVKT3FQdHFyb0FkWENOM09VeXYyNDJvS0NXcUJ4dlRDalg3TGJFeFBIQ3d4OEVmS0xxN2ZpRzNLNzA2R2ZPTTZ2T2FPOVBSY0hTMVhZVXhDQXpuWUlmRFFYMEtuelhvR0ZwbWRBWmQ5bDQ4UkxxbGx2TTZLZjdEVEZ3UVJQanRqa21iQURUWFJTc0w2aU1fQWxqbkkxSGZqTjVpRlVEZEp1aWJB?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
       "publicado": "2026-08-18T07:00:00.000Z"
     },
     {
@@ -826,16 +836,16 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
+      "titulo": "MILENIO. . 🇨🇴🔴 El desastre en Colombia: Un potente terremoto sacudió hoy al país con un conteo preliminar de 132 muertos, 570 heridos y miles de edificios colapsados. Las labores de rescate ya se realizan contrarreloj. 📺 #MILENIO21h con Elisa Alanís - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNG1FX3F4QkVqX3kzdUtSUDNJVmk1ZDRBZk1RWlZ2NUF1aUxfOU1VY19Wc0R6Y0VHY0lmTmN3cE9GTFhoYUNyRUFwTnUyZ2FfaExVX0NZUkY2ZjdyNDY4QkNqamZPZ2RXVzNNVFFIVWRPdkhQTmc2bG5FQ010bERLU2xMUFJ2TWVVZ1FhYmhCRGhzMmVvUTYyczBuZ1kzOHFRTkNDQWhQa19SdkhvYk5fdWxEUGtHOG1DQlkxeWJKSWhxSUhua3ZDZXNNNW02MFRKVWp2X28tZDNCZlRNWjJSMVdJWUlwdjBaeEE?oc=5",
       "medio": "Facebook",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 El desastre en Colombia: Un potente terremoto sacudió hoy al país con un conteo preliminar de 132 muertos, 570 heridos y miles de edificios colapsados. Las labores de rescate ya se realizan contrarreloj. 📺 #MILENIO21h con Elisa Alanís - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNG1FX3F4QkVqX3kzdUtSUDNJVmk1ZDRBZk1RWlZ2NUF1aUxfOU1VY19Wc0R6Y0VHY0lmTmN3cE9GTFhoYUNyRUFwTnUyZ2FfaExVX0NZUkY2ZjdyNDY4QkNqamZPZ2RXVzNNVFFIVWRPdkhQTmc2bG5FQ010bERLU2xMUFJ2TWVVZ1FhYmhCRGhzMmVvUTYyczBuZ1kzOHFRTkNDQWhQa19SdkhvYk5fdWxEUGtHOG1DQlkxeWJKSWhxSUhua3ZDZXNNNW02MFRKVWp2X28tZDNCZlRNWjJSMVdJWUlwdjBaeEE?oc=5",
+      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
       "medio": "Facebook",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
