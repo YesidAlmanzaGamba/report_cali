@@ -1,8 +1,26 @@
 {
-  "generado": "2026-10-09T15:25:42.447Z",
+  "generado": "2026-10-09T20:12:15.278Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Panamá, EN VIVO: suspenden operaciones en el aeropuerto de Tocumen y reportan estructuras colapsadas",
+      "enlace": "https://www.elpais.com.co/mundo/terremoto-en-panama-en-vivo-hay-estructuras-colapsadas-tras-sismo-se-espera-balance-oficial-0942.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-09T19:19:42.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "120 familias jamundeñas podrán mejorar sus viviendas afectadas tras el sismo con apoyo de la Gobernación",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90699/120-familias-jamundenas-podran-mejorar-sus-viviendas-afectadas-tras-el-sismo-con-apoyo-de-la-gobernacion/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-10-09T18:38:17.000Z",
+      "pcode": "CO76364",
+      "municipio": "Jamundí"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Las fuertes lluvias retrasan las demoliciones de tres edificios en riesgo de colapso en la calle 9 de Cali",
@@ -406,20 +424,20 @@
       "municipio": "La Esperanza"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "La gran amenaza que se cierne sobre Cali: el colapso de cientos de edificios dañados por el terremoto - ABC",
-      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbGh3ajk5aWR4NEFaenBQSXBSejVCRDM1VzlFWkprTEp0R3NWVGpEYm9vWkl5NXFJeHBWTXBRZnZkaURzM3Q2NmpQUTV1VFl2WC1CZUF0OEp3elBEOUVFalNwS0l1aW1mZ0VXZWpRandLbmJaYnpjeXE0WURxU29makgtR21VeGNXX0JtaVIxdTItaEk4UXRrYWZ2SU9BaUc2OTVzTktB0gGrAUFVX3lxTFB6d0Q0bWZ5eVhFaFJSTDJZTHA5N0UyUjJyWTNxMU1qVXFGZmctNVc3cmlJWFRXcnU2SGZhdVNxR0ttamNfc0RQSDlMWjZFS2JGaW9YcFFyTHNTdGF6MXExVnIyZTd6Qk1XUXRWVjQwRklXbDNrLV9ZTEt4dHVJOHJ2V1JrNWQ0M1k2R1VsMnQzUHNQN3lXSTBDbGstVUs3Wnk2YUxsM1pPR2N6OA?oc=5",
-      "medio": "ABC",
+      "tipo": "edificacion_colapsada",
+      "titulo": "🔴Así colapsó la Notaría 20 de Cali En video muestran el impresionante momento en que el edificio de cuatro pisos colapsó durante el terremoto del 10 de agosto. El derrumbe ocurrió segundos después de una evacuación. Una mujer murió y varias personas - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdGJqUDRLOVo1Tmd3SkdKTHVZaVRSSEUtaTFmbnBCMGFlYVBjNk5pbHJ3RmZVZWVramRDSEVFdTRYYy03eEFFTlZqUXlVOFFHU0Q2dzhXSTc0SWNoSW81UnJqVGxGcEFJLW9tem9aRlEyV1RaSzZaeDdYNVhBc2VnWnl3TzIyNWdNSm14Q3pjS1NCNHVpM250TkJ1Mm9TVS02ZFdNTnAzMnNFd2pPRkF2SWxHbnA3V2lYRW82OGtxMlJVTmYtUlBTQmttSTAwNHdTS1RmWWdjY01MQ20zZG9qSjlUejJPYXB6Z2pIQjJBRDFBZw?oc=5",
+      "medio": "Facebook",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "🔴Así colapsó la Notaría 20 de Cali En video muestran el impresionante momento en que el edificio de cuatro pisos colapsó durante el terremoto del 10 de agosto. El derrumbe ocurrió segundos después de una evacuación. Una mujer murió y varias personas - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdGJqUDRLOVo1Tmd3SkdKTHVZaVRSSEUtaTFmbnBCMGFlYVBjNk5pbHJ3RmZVZWVramRDSEVFdTRYYy03eEFFTlZqUXlVOFFHU0Q2dzhXSTc0SWNoSW81UnJqVGxGcEFJLW9tem9aRlEyV1RaSzZaeDdYNVhBc2VnWnl3TzIyNWdNSm14Q3pjS1NCNHVpM250TkJ1Mm9TVS02ZFdNTnAzMnNFd2pPRkF2SWxHbnA3V2lYRW82OGtxMlJVTmYtUlBTQmttSTAwNHdTS1RmWWdjY01MQ20zZG9qSjlUejJPYXB6Z2pIQjJBRDFBZw?oc=5",
-      "medio": "Facebook",
+      "tipo": "edificacion_danada",
+      "titulo": "La gran amenaza que se cierne sobre Cali: el colapso de cientos de edificios dañados por el terremoto - ABC",
+      "enlace": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbGh3ajk5aWR4NEFaenBQSXBSejVCRDM1VzlFWkprTEp0R3NWVGpEYm9vWkl5NXFJeHBWTXBRZnZkaURzM3Q2NmpQUTV1VFl2WC1CZUF0OEp3elBEOUVFalNwS0l1aW1mZ0VXZWpRandLbmJaYnpjeXE0WURxU29makgtR21VeGNXX0JtaVIxdTItaEk4UXRrYWZ2SU9BaUc2OTVzTktB0gGrAUFVX3lxTFB6d0Q0bWZ5eVhFaFJSTDJZTHA5N0UyUjJyWTNxMU1qVXFGZmctNVc3cmlJWFRXcnU2SGZhdVNxR0ttamNfc0RQSDlMWjZFS2JGaW9YcFFyTHNTdGF6MXExVnIyZTd6Qk1XUXRWVjQwRklXbDNrLV9ZTEt4dHVJOHJ2V1JrNWQ0M1k2R1VsMnQzUHNQN3lXSTBDbGstVUs3Wnk2YUxsM1pPR2N6OA?oc=5",
+      "medio": "ABC",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO76001",
@@ -551,14 +569,6 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Conmovedor video de niña que llevó a centro de acopio su alcancía llena de monedas para ayudar a afectados por terremoto - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOejlqT3pKOHU4WHVVWi16VHFGalBQbjA2UjRTR0RUZlJWQ1FPbldqTUhmWFoyeXk1ZXpMLTJ6ZXd5am9RVHNLTHlDbEI1cnZhWGZ4TU1aaC0zTGJwbkd1S0VqRzYtRU9hbV9KakVGZUtVVzBZcVhZeVFkWW5pdldzMWx4MTg5SGxjekVGTDg2d0hjeURmd3FDMDNQUzE5WjJCcUc2SFdYSkxhckdqaF9EMDMyQlNoUFNmdEFjUEpaaEs2dXZhSEZha194Z0l0bDQwM1NuQ0VjVkdOTVlxc2hMYVZaOHFVNTJzWXM5dEpFVlBOREJjeldzZlpB0gGUAkFVX3lxTFBvaVMyN3BDd1hkMXdjMGg0bGFZOGJmajRzZ09jdVFSWVktVmhpcFFzTDZrcEFiU2dUd0dLbzUydThuVnhfVERyYXFMLUZPODJ2QzVnR1dMLV9UV1FDeFUybU5TM3JobFpNQXQtNnRHY2hvSS11Q3ItWk9nWkpKNHQ4ekFYLTJoQlBDN3JRSVN0SzhBcVIwWnNSLXZXYWREeV9jWi1hRW1GLW5iWHJLYnFmZmN3YUlpVEpUTEpRMUJuTjN0V3hpem50em1lX2lwNnBJNVdUMjZVX2tMV0s1Nko5bFFMdVRHQzVfVWEwcVJqS3dSeWpFOGprclh3MVV3UWpoRVA2SXl6TXNuOXg2b1I3RVlpRw?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
       "titulo": "‘En comunidad podemos ayudar’: Cauca habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZy04Y0lHY3dnZmxPT3VTRHhXM3VDaFJOc0dQdjhPbVBkaklBZzZIazAtRTF2elhIRDJKMnpLOWRUcFl2Q2lNdE8zMHF2cV9ZSjZzZ1M5QUdNeUJmVW5PbnItMXJzMUthTkNLTzhSTHhTMUxvLVludHJ3Q0VMOWFGaHlBMDFJWmFtS1V5NGQzUDA0TU45djdoYlFKdGIwbjFaczFxelZsc3luNnBmRzhKcTlsc2d4akRhT05TN25TSXktWlVEVHZuQdIB3AFBVV95cUxNMGtoRXdJZS1FNXhWRjhLTzUxNFl3R0JNQS1qWkNVbEN4elI3Z21sbkdyZjdnc0lCX3JhTm8wR2hSNlRsVjVMSmV4eEtUS0w0N2VzWlY5UU1aU0pkRlY5NEVwWTRRVF9XSTNaSEl6QXh6enl6RUtvVDVkUEU1Tnh0c2tpLThHOEhSb0JGcWE5a3RncFBuZTZWZDF0Ty11R0VWTVl4c0s0QXBnZ0hYd1hya280TTJFVmxCeHJOdUNzQVhwYjBOQVo0VnF1QUljU1RqaGF5aWJaSjB4bG9p?oc=5",
       "medio": "Caracol Radio",
@@ -589,16 +599,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "'Ayuda para hallar a mis tíos y a su hijo': familia de venezolanos, entre 238 desaparecidos en Cali, tras el terremoto; van 107 edificios colapsados - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxONmRuUW9ROFRjOUtZOHZGVXc5OHotQTdveC1nZGp0c0NIUS04Slo3bEdrN25YQWo4TzgteF95cy10dE5MT3ZONXlGRUFYWWl3UVJTR3FHVWg4VHoyU0t2aHo5MU1jclRlMEpVaFBqVVJvS1lhMFlZWG1vZFpNaS1sT0dPWjRXYllOU0xSVmJhQXRDOUhpQUJLSDJUV2RlR284b210RXAzQjJRbktlVFdQajdFdHNuV182eDc5eEpyVFlySTM5cmxJSksxY2pWS2xNaG1GZzAxcHZTRE54Z3U0bU1mUWljVTdRZlJ3YnlxSzFzd3lBcTkycE91cndMSmNVWjB5a0RaYVBtV1ZrY2xIbDNOeURhOVRq0gGeAkFVX3lxTE5aV29jOWk1V0d3bEQwNnZlLXdveldCVFN5UGlfdnAzYy1qVUxCVmY4Nk1GOW5lYXFkcUN5NjhkMEc3S2tlcjNsbW5nZWRkRnpxanBRZHNuN09LeU5VMFBoRnVxTDM3djZxbnVNTEFjZVB0VlZMZUlEVC1VeHhRbXAzcUduUW9sbzlUVFo1M1dhajVWVk8ydDl0Q3lVWkppV0ZNc1llV2dscEpZWDB3bUxZSk83MjJCUlZ1eFR0SXFhTW0yTEJ0ZTRCYXc1cHIxTTVBYkNDSHJoV01LYzF2TFZpX1FiTTJ2RVNDaXNlSmdLZFV3S0NVVW0tOVBDaFZkeGNIUjlNUkQ5Uk9uUjhDTmotRFZ4YjM3T29HbUVScUE?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-12T07:00:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "¿Por qué algunas edificaciones colapsaron y otras resistieron el sismo del 10 de agosto en Cali? - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTG5XSi1kYnI5MW9iTThoczVaUjVNSEdQUm9oVlRKTnNOYTA0RWhmNzN4LVhDbG4zT0tHcDZkbXQ4bzlCYy1NXzZfWFlOdkpueDNMY0hlc0tvcTFKUHVWVnRSYzI4cDdwOXhvRG1LOGIzVUdpSDNDYVRpRVBxcjBBcDFzUGZVSmQ3eHRuYnhMQm5VSEtzdy1Tc29reDNjaXQ4Wm9GaGRza1FiZGxkS01kdUU2S0VuRWIxSHlKWUUzUnptVExpRnNUT9IBzgFBVV95cUxQZlVUakFqNERZSnZadktTNWloV3NKc2dRdjhfR3lzTDNZWUJDN3ljdnVkUHFMbjJGNHlfZEh5YXEweGFGaDdYM05ZMW1MeTFwSE4xeC1oWnVsUlBZTlRvTDhiN210c2RwR0J1SDAwOGRtRHByVmdOOGpfbjJUWm16NzExXzRUWVZHbWxVMmtSanB2WkRmbmU0VHloQnU2cUhmQWRHVEdzb0F5QTQxRXRDaFlaYk1fODRxRE9VWXRIZ0s5Ui1TZWFzRFVKNkNWZw?oc=5",
       "medio": "Pulzo",
@@ -609,9 +609,19 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Sale a la luz verdad detrás de video viral de supuesto edificio que colapsó por terremoto en Colombia: experto dio detalles - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdTE2WDRsbGlkVm5vT29peHFteC1JTnA3R2xOWlNzWWUtcUR4XzZNM3BCWEZkb1NKaUk4VHpTeGk3R3hhak9PclBKTzA2WFNxalNfUm12RVV6WVUyYmhJY29OQnVWTWYtaGdZU0JRUVV4dzloU25DMktfVEQ2NkM0andQQVZvdnRuNjAyYXBqb0FUVXpPZWF6SGNzUWt4V08xSXdSQjU3SVhhNncxWjQybXU0Wkhiek9VbnVOcDUyQUFzTndpN19vMVQwS0M3VlZhNmhYdThmVFg4QzR1STZha3N6cTYtbHkwa3YwVWRxcGJncURRTUZOS1dENEJBcjAxeVNv?oc=5",
-      "medio": "Revista Semana",
+      "titulo": "'Ayuda para hallar a mis tíos y a su hijo': familia de venezolanos, entre 238 desaparecidos en Cali, tras el terremoto; van 107 edificios colapsados - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxONmRuUW9ROFRjOUtZOHZGVXc5OHotQTdveC1nZGp0c0NIUS04Slo3bEdrN25YQWo4TzgteF95cy10dE5MT3ZONXlGRUFYWWl3UVJTR3FHVWg4VHoyU0t2aHo5MU1jclRlMEpVaFBqVVJvS1lhMFlZWG1vZFpNaS1sT0dPWjRXYllOU0xSVmJhQXRDOUhpQUJLSDJUV2RlR284b210RXAzQjJRbktlVFdQajdFdHNuV182eDc5eEpyVFlySTM5cmxJSksxY2pWS2xNaG1GZzAxcHZTRE54Z3U0bU1mUWljVTdRZlJ3YnlxSzFzd3lBcTkycE91cndMSmNVWjB5a0RaYVBtV1ZrY2xIbDNOeURhOVRq0gGeAkFVX3lxTE5aV29jOWk1V0d3bEQwNnZlLXdveldCVFN5UGlfdnAzYy1qVUxCVmY4Nk1GOW5lYXFkcUN5NjhkMEc3S2tlcjNsbW5nZWRkRnpxanBRZHNuN09LeU5VMFBoRnVxTDM3djZxbnVNTEFjZVB0VlZMZUlEVC1VeHhRbXAzcUduUW9sbzlUVFo1M1dhajVWVk8ydDl0Q3lVWkppV0ZNc1llV2dscEpZWDB3bUxZSk83MjJCUlZ1eFR0SXFhTW0yTEJ0ZTRCYXc1cHIxTTVBYkNDSHJoV01LYzF2TFZpX1FiTTJ2RVNDaXNlSmdLZFV3S0NVVW0tOVBDaFZkeGNIUjlNUkQ5Uk9uUjhDTmotRFZ4YjM3T29HbUVScUE?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-12T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "¿Qué significan las calcomanías verde, amarilla y roja en edificios afectados por el terremoto? - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc1NlYjBoMVJoQjZadXo1N212Si1Zalp4bGR4UndMSmxuaWZ5ZUxJRGpYRnRnc3dqc3NEZHd6c0NXUVdXVDU0SkZDXzlZaDlDUVFKRzVFWFNLX0JiU1Ruc0E0Z3lZOUxoQks1YjZDaktwcVBwTE05NGRJT1pySDdmWXZJT3YxMnRFaEJMN3JxWVZVZ25aRV9xZXkxQ2JCUThqbEUteW5UZmdDc0xfV2YxVG9ETWJUWmZWbkpKNtIBvAFBVV95cUxNUG9GTUlCZ0VydVBtTVhLdE5HMjN4RkVWYlF2UVFoaXJpemV0MWp3bWJJS0x3WUI4NDZ3eHUyZDdhY25Mb2ZpSGk4WFZTWUJ1d2ppeGR2eHM0MkJJZWNlS0U5enNwQjlqV0lScXM0VjdsRzBlY0E3Z1h2Vk9yLS0xVU5wLWhCOGQwTUplaGNLamRmbGY4NHJpWFBxVGJBcU13Mm5GLTNhbkg4X1A1SWkzQmp1S010RDUxQzg2OQ?oc=5",
+      "medio": "La FM",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
@@ -719,14 +729,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Edificios Colapsados por Sismo en Colombia: Esto Dice la Norma NSR-10 de Construcción - N+",
-      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONXA3b20zek5LYVAwODBNNVR2V19vMFFVNnFqejZIbGRYVld6Z09LS3FQSVIzZ0lfZUx4bEd4ZnkzVGF5T3FYaE9aMnZNY3pMLVVKX0lPNDRqUVp2X0d4WWxwYVFCc195SUhzWFcyN1RZc19tZXo0UFU5RnVuM1EzR0lzazZmLWlMQ05ReTBhRGhfRVEwSl9pb3NKSUNIWjAybG5pSG9QNWtad1BJZEJ5YmpUN3FqT0dVMGM4TjFwVE0?oc=5",
-      "medio": "N+",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
@@ -809,14 +811,6 @@
       "medio": "La Patria",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
