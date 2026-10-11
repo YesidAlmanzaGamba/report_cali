@@ -1,17 +1,23 @@
 {
-  "generado": "2026-10-10T20:57:47.159Z",
+  "generado": "2026-10-11T00:05:21.724Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "🇵🇦🏚️ Edificios colapsados y estructuras dañadas muestran los estragos del terremoto de magnitud 7.7 que sacudió Panamá el viernes 9 de octubre. El movimiento telúrico provocó afectaciones en inmuebles y distintas zonas del país, mientras equipos de e - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNdDl5YlozeFpsbWJFT1RMcTBXQVE1UGhKam9TSHFHTE1uMGVqemhuNWM5WFk3eWxSbkxRcnJORVp2eWtXTkRxQ3duX0RVOVlVblBYN2hEcTB0MW0zVmFSZnRaR3pZZUMzLThHR0J6RllBanV6X3dmM1JpTUZxal9CTnJvX21JNGs1WnBGMlFmR19hcmNTQWhoNnRFRUs2S29hTDJsY0h6NWl5dnFlb3hMNEE0amJvbkwzVWdZbWZsWF9vNmZqUGl0ZjZlU2F0RjNhbm1JQy01Ri1VSlY1U1FEWjlGdXJOdzBsSTFWWQ?oc=5",
+      "medio": "Facebook",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-10-10T22:42:57.000Z"
+    },
+    {
       "tipo": "edificacion_danada",
-      "titulo": "Las cifras del proceso de demolición de estructuras afectadas y gestión especializada de escombros que inició en Cali a dos meses del terremoto",
-      "enlace": "https://www.eltiempo.com/colombia/cali/las-cifras-del-proceso-de-demolicion-de-estructuras-afectadas-y-gestion-especializada-de-escombros-que-inicio-en-cali-a-dos-meses-del-terremoto-3592743",
-      "medio": "El Tiempo",
+      "titulo": "Víctimas del terremoto en Colombia: balance de la UNGRD confirma 335 fallecidos y 244 mil viviendas dañada, dos meses después - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
+      "medio": "La FM",
       "tipo_fuente": "press",
-      "publicado": "2026-10-10T17:21:01.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
+      "publicado": "2026-10-10T21:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -22,6 +28,14 @@
       "publicado": "2026-10-10T16:58:08.000Z",
       "pcode": "CO19809",
       "municipio": "Timbiquí"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Dos meses después del terremoto: 243.409 viviendas afectadas y 486.917 damnificados - Diario del Huila",
+      "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNa3BxNk5JTzZ6NWU3c3Q4dC1abjZ3MzhEcldFdlFHYjhPNHgxV2FjRXRhSUVqcWk4aUh5bFdzZFE3cmxoRnJaak1jSW90YW9OZU5SVWZ3aHRfcTdoN0d2RXB5RjBOU2xVWEV6a1VkZTVEUTJWeWFnVG9SclFPY2xZMXN2dFYxT3pyQmVPYUtMV0VNUV9KcWxIQlUzRV95dXJ2UzdadnVSUTdJbGRUVXRj?oc=5",
+      "medio": "Diario del Huila",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-10-10T16:51:39.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -82,6 +96,14 @@
       "publicado": "2026-10-09T21:08:30.000Z"
     },
     {
+      "tipo": "albergue",
+      "titulo": "Terremoto en Panamá, EN VIVO: Declaran estado de emergencia; 20 menores fueron evacuados preventivamente de un albergue",
+      "enlace": "https://www.elpais.com.co/mundo/terremoto-en-panama-en-vivo-hay-estructuras-colapsadas-tras-sismo-se-espera-balance-oficial-0942.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-09T19:19:42.000Z"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "120 familias jamundeñas podrán mejorar sus viviendas afectadas tras el sismo con apoyo de la Gobernación",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90699/120-familias-jamundenas-podran-mejorar-sus-viviendas-afectadas-tras-el-sismo-con-apoyo-de-la-gobernacion/",
@@ -108,14 +130,6 @@
       "publicado": "2026-10-06T18:17:43.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Ministerio de Vivienda avanza en hoja de ruta para el financiamiento de las viviendas rurales afectadas por el terremoto - El País",
-      "enlace": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQbUdJaERvUGlkcExSZ29LbXc2TmxnQy1UaU1ZNHlrbmREX0tiSURIZUtPTTRXQVBjU3FZdGItZEljUVBCXzZNRkcxdUlPaF8xSzJJZVFmQ0VCOENuMlZ0YWRxUDJSOXFGWWlDTVN0djZmWURRd3hOQzFkQVh2NGNxQWhyb2RNWW1QVWNhUlMyYkI3dnF5bTNVY2dvZVJuQmNXVmxCUnhVeUhFLXVCUzVlM1JTMTV1V3BaSndKREkxV0w1ZXhsMzREN0V4MklzZVlndXVXNmFSSUMzX2VseENGejFVMkZ3MlU2MVhCVlhfV1JPZVZwZko2UNIB_gFBVV95cUxQTm1USW1OY1RvM3cxOWlhOERqSDI5VjRUQmE1czZTNzAyV1JGUk53YW1KNW94Z0VtWnNrWDVvVTJkb1ZLZUZVVkhDemtGWVZGYkhHWWlZbms3NTBuR1NwWjZnNE95WW5lOU5ibzl0YXE2UlFEeFVuQkphVUVuYkswMHAyajVldUEyQlRMeUhUcEhlV2E3ZDhyaWgwMzl2NnVXeDBQck5kU2Z6YjdYREIxWThiZmlhWk1DQlFuWllxckppb0NnQlVrSUstZ1Z5MkpEVGtldGNGY2VxN2pmQjZWQXV6M3oxSHJaWEVUZ2Mxc2d4UTVYSnBMdXFlekFtQQ?oc=5",
-      "medio": "El País",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-05T23:52:26.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -150,14 +164,6 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-09-16T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto deja más de 20 mil damnificados y 12 mil viviendas afectadas en ciudades intermedias de Colombia - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-11T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -877,16 +883,6 @@
       "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en La Victoria, Valle: 370 viviendas resultaron afectadas y 60 colapsaron; piden ayuda del Gobierno Nacional - El País",
-      "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPWGU5SmUwbFZKQjhac3ZfZUh5SXNKWWtXdnEzVnZtNEYwRENZT1NPZkk1MzZPeURxeW13a3JLeS1sbHJZa0VJUFhYOFFIM1FrUC04UDZqWVBOVS1OdC1PT2JnTU9MaHFvZzJxY0tuUjR4NnF5VUEzbDRLcVJwcW80UTdzN2NWWUhSSkNJSmFQX1BWODZfWEFvU0FtLVBlam1QMG0tcjhyRDV5N1Blb0JOcEVrOWxkZlI1VTY4QksyTDcydXhjVXl2TnZ5RFNxYVg5TUZha1pjRDJwUTJRV3RMU3JhM0hHdnhRYUpHRGt30gHzAUFVX3lxTE8tM2E0SnRVRUFJVzI5TVBSUVljRnRjRG5yQzRyQmw2X3lsTW9OUWRPRFEwTkRza1ZLNHpPYmp3Yk9DQ3dWMF9sYXA2Y3U4R0F5Q0hvT3l5UF9kdlEwQWlGZ1Z0TkhTMXA5QmdodWRMeEh3Y3VCVlpnLVhESldUcU5vNWxoWFNfRGlYcU52TWNzaXYySVF6a182RTdzcGJDdGdIS2huMVc2MTNOY0w2RHVTOEQzRGxmMW9zRndKSE1XX050OXlad2toa2kydXJraVpWUGZ0MVR4WmNHajMyV3hyMnNSWmJ3T24wSnM5Q3IzcUxDcw?oc=5",
-      "medio": "El País",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO76403",
-      "municipio": "La Victoria"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "En Roldanillo dos muertos y mil edificaciones afectadas. - Caracol Radio",
       "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPS3R5NkhHVy1nNVo3MlhqdjdkN3gwNjctaTZmZWY2eG5SQ2pxZUVoQWZUck9VR1dhQU8weEtFMnFwYnRfTThGdk1hN1dmeWlrT2hxWTFBTWR1T2Y5bVZwd0VBN1IzQjhlMDd5blhoLV84LVZjZlB4R2ExUFktME9LY1Bia0xfbXFfdS1GZ1BvcUlCekFJ0gGoAUFVX3lxTE5ZM0c3eTBQazhBN080S0lJQWhEUjdJd3NnTDNYQUlzMVFFUW9kalRTZkwxdW9DbTZib3YtOWpTcE5nSWJZYU1OMnNzekFFQmM2LVVmZktjX2tDZnhRZjdPR1RVM0JSbmQ5LWpWWTRoWEFwSzlLUFJjZGtRelcxbkxUUTZlUFZVdWdrVklHakhsWXFVVzFyelZDRUNZMzM0cnpLVVVraEg0eA?oc=5",
@@ -916,16 +912,16 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 El desastre en Colombia: Un potente terremoto sacudió hoy al país con un conteo preliminar de 132 muertos, 570 heridos y miles de edificios colapsados. Las labores de rescate ya se realizan contrarreloj. 📺 #MILENIO21h con Elisa Alanís - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNG1FX3F4QkVqX3kzdUtSUDNJVmk1ZDRBZk1RWlZ2NUF1aUxfOU1VY19Wc0R6Y0VHY0lmTmN3cE9GTFhoYUNyRUFwTnUyZ2FfaExVX0NZUkY2ZjdyNDY4QkNqamZPZ2RXVzNNVFFIVWRPdkhQTmc2bG5FQ010bERLU2xMUFJ2TWVVZ1FhYmhCRGhzMmVvUTYyczBuZ1kzOHFRTkNDQWhQa19SdkhvYk5fdWxEUGtHOG1DQlkxeWJKSWhxSUhua3ZDZXNNNW02MFRKVWp2X28tZDNCZlRNWjJSMVdJWUlwdjBaeEE?oc=5",
+      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
       "medio": "Facebook",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 Las imágenes del desastre en Colombia. Un potente terremoto sacudió hoy al país con un conteo preliminar de 111 muertos, 87 heridos, 61 edificios colapsados ​​y 1,575 viviendas dañadas. México ya expresó solidaridad 📺 #MILENIO17h - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQVjNHdWxpcUlFMkh1NThnXy0xSHpkTEJEQTdIZHExVkVDQVR4MWQwQ3U1Z05tZkFQbWJLTEZIYnRnNWQxRUh3MTdBb3kyMlI1X1p2VW01SGFDV0NnY0dKR1BzZklhOS1LUmR0bHhIdVFjUmNzRWd3aVExaGFLRzM1MHFGMzNwWG9FclR3NHUzcUlTWkRkLVA4RUxUMHJRd0lSLUJQRWJ3WVpPOERtcy0xU3FBd2FoQVBMaXdTSk9CUFZ5OXYtR1J5VUhfdTYzMDNrbFMxX2lyQU14YkxhRmV4ejlnSGFxS05aTlBrTnR5aC0?oc=5",
+      "titulo": "MILENIO. . 🇨🇴🔴 El desastre en Colombia: Un potente terremoto sacudió hoy al país con un conteo preliminar de 132 muertos, 570 heridos y miles de edificios colapsados. Las labores de rescate ya se realizan contrarreloj. 📺 #MILENIO21h con Elisa Alanís - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNG1FX3F4QkVqX3kzdUtSUDNJVmk1ZDRBZk1RWlZ2NUF1aUxfOU1VY19Wc0R6Y0VHY0lmTmN3cE9GTFhoYUNyRUFwTnUyZ2FfaExVX0NZUkY2ZjdyNDY4QkNqamZPZ2RXVzNNVFFIVWRPdkhQTmc2bG5FQ010bERLU2xMUFJ2TWVVZ1FhYmhCRGhzMmVvUTYyczBuZ1kzOHFRTkNDQWhQa19SdkhvYk5fdWxEUGtHOG1DQlkxeWJKSWhxSUhua3ZDZXNNNW02MFRKVWp2X28tZDNCZlRNWjJSMVdJWUlwdjBaeEE?oc=5",
       "medio": "Facebook",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
