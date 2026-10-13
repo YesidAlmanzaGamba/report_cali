@@ -1,8 +1,16 @@
 {
-  "generado": "2026-10-13T19:25:41.736Z",
+  "generado": "2026-10-13T23:21:29.518Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Mujeres formadas por la Gobernación del Valle se sumarán a la reconstrucción de viviendas afectadas por el sismo",
+      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90724/mujeres-formadas-por-la-gobernacion-del-valle-se-sumaran-a-la-reconstruccion-de-viviendas-afectadas-por-el-sismo/",
+      "medio": "Gobernación del Valle del Cauca",
+      "tipo_fuente": "official",
+      "publicado": "2026-10-13T19:45:22.000Z"
+    },
     {
       "tipo": "centro_salud_afectado",
       "titulo": "Terremoto en Panamá: se anunció inversión de US$61 millones para renovar hospitales y viviendas en las zonas afectadas",
@@ -10,14 +18,6 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-10-13T11:28:38.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Venta de vivienda nueva cayó en Colombia: terremoto agravó la crisis del sector constructor en 2026",
-      "enlace": "https://www.eldiario.com.co/noticias/economia/venta-de-vivienda-nueva-cayo-en-colombia-terremoto-agravo-la-crisis-del-sector-constructor-en-2026/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-12T21:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -251,7 +251,7 @@
       "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWGNxaTZldkRfc09FNS0xdDhpZlBYSDNNQ01URmVyWFM3allIamVRQXNiWUJxZVo2V19tMGVUUWtZQ0lnREFpcTBNdEIwR1pLbWNvbW11TjBycEJRZkw5OWxPYThhalI1d05kUnpLUDA5U2VZVnR5NEh4eHJXTFZnX090dDdRN04tajFaLTRRM0kzYmxVU1ViV3V1ZlppSFZnNlBOcnpieGpsQ1pKMnRsRnhWNHFEaDhfY0o0?oc=5",
       "medio": "La Patria",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-20T07:00:00.000Z"
+      "publicado": "2026-08-21T02:00:09.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -326,6 +326,16 @@
       "publicado": "2026-08-18T07:00:00.000Z"
     },
     {
+      "tipo": "albergue",
+      "titulo": "En Pereira siguen buscando a 123 personas desaparecidas tras el terremoto; más de 1.300 damnificados reciben atención en albergues - Teleantioquia",
+      "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNbFZKa2lManZSN2Y3N3NtbWVrRDF6LXJBMmJPUm9DSnhpQXJOZ054OEx5ZVRyekxKbDc4NlNTbGdUY1FRWGpvWHpiQU1QYXBYM1poaUVya2dkUHBVZ2JMbU9YWEwtUlZRLVBvZXNrYzNlY21lREduV2wzd1NCVlJ3ZGN6aWN1cGc5RTh4elRTdnVFWThjSHJHODFodGRwS1MtVGpBVDVJeUhpalJZOVE0MHBkYmMyWHdOczVHb3hLUVFZTmlWc01oQU5YZ3gza25CZXVnOUtVNlRRN2k2TWttZmhSMWtKVUJ5b052XzRBclRaaHB1aHZBMjNST2tvMUFFUWhocNIBkAJBVV95cUxPVkZaSkpQdG90RldTb1c5LTY1Wjh1ejUxeVBldTQ0d19zRmI0NnYxSFpoVEF2MXdITjdrc2R3RGtUblBwXzBCa3JVTHZxdFZxTF9tUzZtSVFDaUdtMUNoMm5rYW4tblMzRzVnaHlXV0ZKSm4wVlhMN2N3RGJOeGtReG9ERWJTNjI2aGJ6Njc1MnRKYTdJMS1OaDdPbjZYcU9FeGY4Zkh4eUEzYUtxWnF4VXZRQ3JZU3QydDRmU1hjeGl1RkZHdGRUUFdEWDREMXNuR3Y5cHI3ZXUydmU5QjhXN2g1TGxIUERJbk1Zek1rVUdtVmV4UWJhblBIbnl3cjg1ay0xRktiSnprOENrZWNxTA?oc=5",
+      "medio": "Teleantioquia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-18T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Ciudades intermedias también están en crisis: hay 15.000 damnificados y miles de viviendas afectadas - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQTFfcUpGbTRTdmVNMEhpYzBGYlpaYmxPTlppMGVRSTFfejVrdVpva1JBSTlsLUM0WXdJcXRleklCTHdxSnBhc24zcHJwN3EtRTJsSTVhcm1rVFFpaTNDTFM4bzVIeGpPb0hFeWh4U0NxMkV2clpJT0J0cmY2LW5XS3JjYXVGQVRjY1BKeVdfZTNHdFlhQk8wNlVGM1dZdWJkSnVpUWthbjRvdUFyVGxCLXVhVmF3Z2wwN3VOZEh1OWJPR3B6cU9uYTQ1eTE5SzI4RnBoanloYWVsb2RBenNiXzN1UU9GZ3JXQ0JRYUlvb0RSTWFhVFh1X2Y4MkQ?oc=5",
@@ -373,14 +383,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Entre albergues y carpas, así esperan los damnificados pasar la fase crítica y empezar la reconstrucción en el Eje Cafetero - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNM08tWnU1TkxUYjVGRzlsNXVDM25oYXVFZ0pFRmRGcUMzdVVfZTlDbXFpYkF3el9tMHpQMDRnZHFJeEtXLVFlWGR3cFk1djR3ZHRiVWJxc04taU9IMFVpVENrREdFVDFyU0ZtdHA5d1U5RzVEVzVvd2h0NVhyUXJVeVN0Zk1jMUlJUEJ3R2FLckVxNnhial9obWRoOHhjd3ZSVFJhS2hHMzA2VmlweGJYYTRVOEU2NXBLaVAzZ1JOVXNfRjlQN0dCOUUyZHhSM2JPcHdka3Zjb2JxUm9udmQyc0ZLS1RUSUF4OEt5ZTh0dlFrdUIyQ0pSSDR5LVFzdEJMVld0aEFJX1NTdE3SAZACQVVfeXFMTl9UUV83dVZ5aktaNXB1VjRhXzZLSUs3Si1zRy1wYWNKSGtWX3VwaW44cWFSa3dIMDZWeWdtYmRoM0tvVkFaaEdzYXRMWkhNUkdwcEdMUlJiTllBQlNQbzZXUDRxdHdHNC1SU3BEN2VNU2cxVUhKeGZEYkxuZmhSWG1YV0E2ZUpTSmhyUlBtZVJFYmdLN3EyZzc4NS10RWhMd2I3MWN1dnR2cDJ0d1dFNlBrOHozVkM3TFpma1JUeDFEU1V4WXhIdHBOVVF2Q1VnRVBPeTMxNldKRUhBUjByV19Wczh4eDNSS2Z5Y21wRmxaekEteW9ZSTRubmxsMXRGZ0JzakdfUVhtSVBLTGg2WjQ?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-17T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "Lluvias inundan albergues de damnificados en Pereira: ciudadanos reclaman más ayudas tras terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWURBcGtYVVJab0FPQ0FJbWpaa0d4cG55dnZudWpTUHNpWTJZZ21VanI3YjFkMl83ZVdhSF8zaTdPcVlwZ20wN0t6NjlzOHliR3d0NXdQcGM4ejFodFBkYlcxeXNFMnJOZE1WZTRPN2JhQnVXTzZkcEg0VUpGSjJPYW5uRFZzNlBvNGxKU2hwN1Nxdk5xanMycm1NNkJ3ZUpNaDU1TWNtUFBpUdIBrwFBVV95cUxPMW9LWWlGTEJNM2tsZTR4T2lpOUY2RFFmcWUydzdha2dQRm9sa3FVWUkwb0tBNEF5Nm9IZnBkX2hIZk1PR1lLQ2hFOGt3cldiUG1OVVlhRGJtNGt1b3BzbUxZdUpMRW1DMVFTaU9YMEstSlg2eDdUVng0d2ZZTHljQVlvaHFlRTFXemptcnBSdU1kU3dldndOR3pBUFJkVnE0empaaDVVa25zMlpSdnln?oc=5",
       "medio": "Pulzo",
@@ -388,6 +390,14 @@
       "publicado": "2026-08-17T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Entre albergues y carpas, así esperan los damnificados pasar la fase crítica y empezar la reconstrucción en el Eje Cafetero - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNM08tWnU1TkxUYjVGRzlsNXVDM25oYXVFZ0pFRmRGcUMzdVVfZTlDbXFpYkF3el9tMHpQMDRnZHFJeEtXLVFlWGR3cFk1djR3ZHRiVWJxc04taU9IMFVpVENrREdFVDFyU0ZtdHA5d1U5RzVEVzVvd2h0NVhyUXJVeVN0Zk1jMUlJUEJ3R2FLckVxNnhial9obWRoOHhjd3ZSVFJhS2hHMzA2VmlweGJYYTRVOEU2NXBLaVAzZ1JOVXNfRjlQN0dCOUUyZHhSM2JPcHdka3Zjb2JxUm9udmQyc0ZLS1RUSUF4OEt5ZTh0dlFrdUIyQ0pSSDR5LVFzdEJMVld0aEFJX1NTdE3SAZACQVVfeXFMTl9UUV83dVZ5aktaNXB1VjRhXzZLSUs3Si1zRy1wYWNKSGtWX3VwaW44cWFSa3dIMDZWeWdtYmRoM0tvVkFaaEdzYXRMWkhNUkdwcEdMUlJiTllBQlNQbzZXUDRxdHdHNC1SU3BEN2VNU2cxVUhKeGZEYkxuZmhSWG1YV0E2ZUpTSmhyUlBtZVJFYmdLN3EyZzc4NS10RWhMd2I3MWN1dnR2cDJ0d1dFNlBrOHozVkM3TFpma1JUeDFEU1V4WXhIdHBOVVF2Q1VnRVBPeTMxNldKRUhBUjByV19Wczh4eDNSS2Z5Y21wRmxaekEteW9ZSTRubmxsMXRGZ0JzakdfUVhtSVBLTGg2WjQ?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-17T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -710,14 +720,6 @@
       "municipio": "Pereira"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Qué significan las calcomanías verde, amarilla y roja en edificios afectados por el terremoto? - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc1NlYjBoMVJoQjZadXo1N212Si1Zalp4bGR4UndMSmxuaWZ5ZUxJRGpYRnRnc3dqc3NEZHd6c0NXUVdXVDU0SkZDXzlZaDlDUVFKRzVFWFNLX0JiU1Ruc0E0Z3lZOUxoQks1YjZDaktwcVBwTE05NGRJT1pySDdmWXZJT3YxMnRFaEJMN3JxWVZVZ25aRV9xZXkxQ2JCUThqbEUteW5UZmdDc0xfV2YxVG9ETWJUWmZWbkpKNtIBvAFBVV95cUxNUG9GTUlCZ0VydVBtTVhLdE5HMjN4RkVWYlF2UVFoaXJpemV0MWp3bWJJS0x3WUI4NDZ3eHUyZDdhY25Mb2ZpSGk4WFZTWUJ1d2ppeGR2eHM0MkJJZWNlS0U5enNwQjlqV0lScXM0VjdsRzBlY0E3Z1h2Vk9yLS0xVU5wLWhCOGQwTUplaGNLamRmbGY4NHJpWFBxVGJBcU13Mm5GLTNhbkg4X1A1SWkzQmp1S010RDUxQzg2OQ?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-12T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Donaciones, centros de acopio y reconstrucción de viviendas: cantantes colombianos movilizan ayuda y solidaridad para los afectados por el terremoto - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOREpnYmlhQ3VRTGwzSThtUGZZZ2NhYWRpeTlnWjRfMklCdlZKTjFtbTVuallnMjQ5R0YyZU5vT0xmM3RMd3pLbVcydjF4OTVEa3pqTXJzQUFaOF9jUGlXbS1PV0VOZUw2eGI3M1NyN0VieUYzaDJyYUFHQkVZazBvdEx3ekFPTzVoWEd1b2RYcmVQa2pvTkl4cmpUN3dsNHAzV3VKNXlUV3RHbWNmSDRabUwxVDk1SDdNcFF3cThrTkxicXlqeGhDLU41R2ZBMlJJV3RROUZjYjJ4bHZ6WjhEc3M0OEUyRDVNZGxpcGNiX2dVZjd4QUdORXJpOHJZSkloUzBKb21GR3FwYU1vSmdfUWhWZmdudG9OcmlV0gG2AkFVX3lxTFBJUUpXM18tZGNNdkZMOFN5WE0xUC1hQUZOdkxoaUpTOVJSZjE3Q0ZjbFliTks0V2Zza3FkV2gtN2Q4WWFXcEtiN1VwYVBodnhqOTBIaDU4dG9uOVFuZnJsVFp0RTUyZUlqRWlzZGh0QjQyd19rVHRRendkdVhMWkRIcWNOTHpFWmsxYUdFbnNmWDczcDA5WUxMWVYzRV9wVXJPbm53ZXEyWngtTVdMVXVWOXlrS0tsMUt1eElvdGdncWp3b00xV1NKWl9hUzBicGJWX2JjeEF3R1I1U3JDOC1vTW9od2JRak0yLW1jVm1LNFUtaDdsRE5mdHh6Qi1FRVk4Nk14aDNPMl9HSVlKdzRSRDNnMkZfUk1YcG9GVDBxMk16Q09XU3NtU1hhaXpqVUNGSkRrS0E?oc=5",
@@ -910,14 +912,6 @@
       "municipio": "Roldanillo"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "MILENIO. . 🇨🇴🔴 El desastre en Colombia: Un potente terremoto sacudió hoy al país con un conteo preliminar de 132 muertos, 570 heridos y miles de edificios colapsados. Las labores de rescate ya se realizan contrarreloj. 📺 #MILENIO21h con Elisa Alanís - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNG1FX3F4QkVqX3kzdUtSUDNJVmk1ZDRBZk1RWlZ2NUF1aUxfOU1VY19Wc0R6Y0VHY0lmTmN3cE9GTFhoYUNyRUFwTnUyZ2FfaExVX0NZUkY2ZjdyNDY4QkNqamZPZ2RXVzNNVFFIVWRPdkhQTmc2bG5FQ010bERLU2xMUFJ2TWVVZ1FhYmhCRGhzMmVvUTYyczBuZ1kzOHFRTkNDQWhQa19SdkhvYk5fdWxEUGtHOG1DQlkxeWJKSWhxSUhua3ZDZXNNNW02MFRKVWp2X28tZDNCZlRNWjJSMVdJWUlwdjBaeEE?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Ciudades capitales activan centros de acopio para apoyar a las víctimas del terremoto de magnitud 7,4 en Colombia - Asocapitales",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONk1oTTBndk96eE5oSHBHbVpXaFNTcks3blE3Qmh6WHc3YnFSanROZ29DZmJaWW9IOF9USXhVUmNnTzNmQmowUkltbEk5ZVl1aWRyczVmVkpOcTlwS1VvYmdaOGtONEgyY003aS03d1pWX1J0LW1PX20wOHk4SEo5VVpsdkhuNzQzc0F4dm9Da1NKSU1wLWJGdGp6V1dSVmVvaVRKNVdKaWFzYWV1XzVZeDZfTTE1QUlEMkUwZ2tBSXVTNkE?oc=5",
@@ -1044,6 +1038,22 @@
       "medio": "El Sol de México",
       "tipo_fuente": "unverified",
       "publicado": "2026-07-09T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "¿Cuántos edificios han colapsado en Venezuela? Los satélites ya han identificado 434 bloques destruidos - EL PAÍS",
+      "enlace": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNWXZKYnVSbWl6VXZtRkFKLVB6RTFaV0NpSzFkeHl6YTdNNEhxOEFnN09pZjFWS2ZRMWIxeVBpenZ0VWRMVUROSEhWTzZuSEwyUWR1SmRIZmpTZE9oZkNZLUx4WWtNREtsUERwdl9QSWlKdndkSDZTNk1lZHVQSDZVTGltTmdRd3kwUkx1dHpITHRhYTY3OGpqTjhScHFlc0ZFWGJrZEtrRnZkUkRYMHFpTmxfRk12VGZJUXRvT2RZUEx5Zks1OXplbHNqMGpZd0JqcldV?oc=5",
+      "medio": "EL PAÍS",
+      "tipo_fuente": "press",
+      "publicado": "2026-06-29T07:00:00.000Z"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Comunidad venezolana en Perú instala centros de acopio en Lima para ayudar a los damnificados por los terremotos - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPcUVSV0pfQTU2RjFVS3VHWm9kR0tYWWlBSi1kQ1pNUFN1RkthN1dJZHZvemVlQWdzTGsxVkhMaUlLVXplM0ZmbGZuR1VyNWM4MTlWT1VxQUhhWjNUYk9LMVZua19RMHBMTlRtRVpsMlkxaTBqZTRfdkUtZEJQdGdDTkhULVZGTUlFdFRXWl95ZnJfekYwR2NwY1pSWkdZWE41dnl6YmZBTVFKWjFRRnhpTlRhdTJpVV9FS0V3VXVCeW5naTZRdUU0WXMycml1Q3VTRHk4OUdhNDBBRnlmZTZZRnNPTnYycUlm0gGDAkFVX3lxTFBCc01WbF9PUGNKbkplbFhKUWhOT0lsNmU2TnExZjR0bG9YemZEU2lzTkQyREdRVXNNTUxSUldxX3l1OVhFRXQ0OWRzcTdQZWp3QUE1VXNHTHhZazBnQUloa05Jd05UbnRaaVo4VGJmWHVOYWMxb093aXJUNGdwVW80Ujd1SlJSNHRXU0JmOW9jMGJHWDdUeEswOGEzalpsVE5FS3FJeGVCRnFqcXJLc3FPZzFiUXk4SzNZeU9FUmRBNUdvdUxkc2hFc05FMDlQSEpyUlBNeXQ5N1JoaFJ5UDdzVHJfeUpSTW9SRU92WncyM2lvamlkT0ZHOEtUNUpRMmtNTEk?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-06-26T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
