@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-13T23:21:29.518Z",
+  "generado": "2026-10-14T02:02:21.426Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -18,6 +18,14 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-10-13T11:28:38.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Venta de vivienda nueva cayó en Colombia: terremoto agravó la crisis del sector constructor en 2026",
+      "enlace": "https://www.eldiario.com.co/noticias/economia/venta-de-vivienda-nueva-cayo-en-colombia-terremoto-agravo-la-crisis-del-sector-constructor-en-2026/",
+      "medio": "El Diario (Pereira)",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-12T21:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -522,16 +530,6 @@
       "municipio": "Rivera"
     },
     {
-      "tipo": "albergue",
-      "titulo": "Terremoto en Pereira: dos albergues ya están al límite y estos son los puntos disponibles - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNazI1OVlPU0YtcXhFTEh6TGtiTGt6ODR3MFA3eXlIQU5sNVg5Rl9oQk1NdWxvdS1xWlc3TWZ3TFBfV05iT0VRa2k3d3hVeW10bUZCWlY2Vng1MVNwUVFWYy16cHhqSHctTG9qSlI3bm9waEF6VE12aFBnQ2dfNzlKUEl3Z2hLd19TNmZTUm9mRkl5RkVBcHJ1MGU3ajQxeW9kTjFoNlZ4aXZiNXlBRzdlZUQtd2xUdnNfMDZwSDRYekRDQlVQc1d2a0xMZzNadHROWnE1SGFncHJpMW8?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-14T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "tipo": "edificacion_danada",
       "titulo": "Impacto del terremoto: 84.360 viviendas con daños, 210 vías afectadas y 284 muertos - Portafolio.co",
       "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1Z5NHdWTVRqUlZqTjVPeEZSRHB5dk1KeDdUelU2aEJ6YkFkOVl0QlJqWVZNVTVnM0dQQjRrVmJlZm9FRmpUbjVrMDdfREtJR2Ztem5JMi1Pa3BaTmZWZWplNmt4S2Z2ek9adHo5V09Ra0x3YXFPeEVwWndvNFczSVdRUVZYbi1hMnJkWVdxc3lOTUJQUFVSSVl1TF81dEdrNDJzMEFhTU9TUk5tN24tVzhpcXd4Vm4yUmlGYmRRUG12SDk2eHlWaTlFTjjSAdIBQVVfeXFMTURydGhPY1B0UFRjWWxPMDFfS2JYVmU2dGdrQnA1QkpwRDlDQkJSWkpNUnExWk5GaEJsZEt3N2x5cWZ4WE1KTzJHZEhoRUd2XzRIX1NXanFpMDhaOWZfb044RnZfVDR5UzdpTTkwbzViVTJlZVc2N2JUQndrclhlUEpXUDQzaFBjc3N2RzBKOHRHbkRveHZvUWFIbnlNSWJSRmJxZUtyM1Z5TERTMHlESzZYbEVnVVVwa25QRzQ1OEh0VzZuRnV5Mnp1S2U1UUdEOVRR?oc=5",
@@ -720,10 +718,10 @@
       "municipio": "Pereira"
     },
     {
-      "tipo": "centro_acopio",
-      "titulo": "Donaciones, centros de acopio y reconstrucción de viviendas: cantantes colombianos movilizan ayuda y solidaridad para los afectados por el terremoto - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOREpnYmlhQ3VRTGwzSThtUGZZZ2NhYWRpeTlnWjRfMklCdlZKTjFtbTVuallnMjQ5R0YyZU5vT0xmM3RMd3pLbVcydjF4OTVEa3pqTXJzQUFaOF9jUGlXbS1PV0VOZUw2eGI3M1NyN0VieUYzaDJyYUFHQkVZazBvdEx3ekFPTzVoWEd1b2RYcmVQa2pvTkl4cmpUN3dsNHAzV3VKNXlUV3RHbWNmSDRabUwxVDk1SDdNcFF3cThrTkxicXlqeGhDLU41R2ZBMlJJV3RROUZjYjJ4bHZ6WjhEc3M0OEUyRDVNZGxpcGNiX2dVZjd4QUdORXJpOHJZSkloUzBKb21GR3FwYU1vSmdfUWhWZmdudG9OcmlV0gG2AkFVX3lxTFBJUUpXM18tZGNNdkZMOFN5WE0xUC1hQUZOdkxoaUpTOVJSZjE3Q0ZjbFliTks0V2Zza3FkV2gtN2Q4WWFXcEtiN1VwYVBodnhqOTBIaDU4dG9uOVFuZnJsVFp0RTUyZUlqRWlzZGh0QjQyd19rVHRRendkdVhMWkRIcWNOTHpFWmsxYUdFbnNmWDczcDA5WUxMWVYzRV9wVXJPbm53ZXEyWngtTVdMVXVWOXlrS0tsMUt1eElvdGdncWp3b00xV1NKWl9hUzBicGJWX2JjeEF3R1I1U3JDOC1vTW9od2JRak0yLW1jVm1LNFUtaDdsRE5mdHh6Qi1FRVk4Nk14aDNPMl9HSVlKdzRSRDNnMkZfUk1YcG9GVDBxMk16Q09XU3NtU1hhaXpqVUNGSkRrS0E?oc=5",
-      "medio": "Infobae",
+      "tipo": "edificacion_danada",
+      "titulo": "¿Qué significan las calcomanías verde, amarilla y roja en edificios afectados por el terremoto? - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc1NlYjBoMVJoQjZadXo1N212Si1Zalp4bGR4UndMSmxuaWZ5ZUxJRGpYRnRnc3dqc3NEZHd6c0NXUVdXVDU0SkZDXzlZaDlDUVFKRzVFWFNLX0JiU1Ruc0E0Z3lZOUxoQks1YjZDaktwcVBwTE05NGRJT1pySDdmWXZJT3YxMnRFaEJMN3JxWVZVZ25aRV9xZXkxQ2JCUThqbEUteW5UZmdDc0xfV2YxVG9ETWJUWmZWbkpKNtIBvAFBVV95cUxNUG9GTUlCZ0VydVBtTVhLdE5HMjN4RkVWYlF2UVFoaXJpemV0MWp3bWJJS0x3WUI4NDZ3eHUyZDdhY25Mb2ZpSGk4WFZTWUJ1d2ppeGR2eHM0MkJJZWNlS0U5enNwQjlqV0lScXM0VjdsRzBlY0E3Z1h2Vk9yLS0xVU5wLWhCOGQwTUplaGNLamRmbGY4NHJpWFBxVGJBcU13Mm5GLTNhbkg4X1A1SWkzQmp1S010RDUxQzg2OQ?oc=5",
+      "medio": "La FM",
       "tipo_fuente": "press",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
@@ -736,10 +734,26 @@
       "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
+      "tipo": "centro_acopio",
+      "titulo": "Donaciones, centros de acopio y reconstrucción de viviendas: cantantes colombianos movilizan ayuda y solidaridad para los afectados por el terremoto - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOREpnYmlhQ3VRTGwzSThtUGZZZ2NhYWRpeTlnWjRfMklCdlZKTjFtbTVuallnMjQ5R0YyZU5vT0xmM3RMd3pLbVcydjF4OTVEa3pqTXJzQUFaOF9jUGlXbS1PV0VOZUw2eGI3M1NyN0VieUYzaDJyYUFHQkVZazBvdEx3ekFPTzVoWEd1b2RYcmVQa2pvTkl4cmpUN3dsNHAzV3VKNXlUV3RHbWNmSDRabUwxVDk1SDdNcFF3cThrTkxicXlqeGhDLU41R2ZBMlJJV3RROUZjYjJ4bHZ6WjhEc3M0OEUyRDVNZGxpcGNiX2dVZjd4QUdORXJpOHJZSkloUzBKb21GR3FwYU1vSmdfUWhWZmdudG9OcmlV0gG2AkFVX3lxTFBJUUpXM18tZGNNdkZMOFN5WE0xUC1hQUZOdkxoaUpTOVJSZjE3Q0ZjbFliTks0V2Zza3FkV2gtN2Q4WWFXcEtiN1VwYVBodnhqOTBIaDU4dG9uOVFuZnJsVFp0RTUyZUlqRWlzZGh0QjQyd19rVHRRendkdVhMWkRIcWNOTHpFWmsxYUdFbnNmWDczcDA5WUxMWVYzRV9wVXJPbm53ZXEyWngtTVdMVXVWOXlrS0tsMUt1eElvdGdncWp3b00xV1NKWl9hUzBicGJWX2JjeEF3R1I1U3JDOC1vTW9od2JRak0yLW1jVm1LNFUtaDdsRE5mdHh6Qi1FRVk4Nk14aDNPMl9HSVlKdzRSRDNnMkZfUk1YcG9GVDBxMk16Q09XU3NtU1hhaXpqVUNGSkRrS0E?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
       "medio": "vanguardia.com.mx",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Colombia: Refugios improvisados reciben a damnificados por el terremoto - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX0lWeGZ2MVg0QVZabU1OSVFhU0NnaVpiUHRVQXNMQ3hmVU5maFNFNTJubFpEMTRqN0lCanZlT2pTVmFrWFVPMzF4R1NaTmJVaEM5M2xZX2x1bEZxc3VLNnJWOWN4ZmRBRWhlM0tnWW9QZ29IZHpPWEZLVTNuaU9UNzg3TllwWENYZUcyYzZHWlFXYU1FTFdma0l0bGZpX1daMUVUWVlKOGg0RUJucGFEcGVkdw?oc=5",
+      "medio": "France 24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
@@ -819,6 +833,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "La solidaridad se mueve en Cali: Unidad Panamericana se convierte en refugio de esperanza y punto de entrega de ayudas tras el terremoto - Alcaldía de Santiago de Cali",
+      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOOUVHZlhHeDJBR2ktVXRSQ2tEdHdrcmxKR0xFcmI3TGNjaE15eDJEa2VCQnBlZUhtSVRqMG1EMmt5bGJHZTdLaENTVGRwSl95dE9pMkpqcEswMGJtSGZ3TzZFYXJJVnJhdHpFR1pTNDd0TDVjeHBodUxYdENyOE5RTnh0eUJvaF9mcjFWaUdYdDljOTNWc2luVV90Um9HSWl2MWNoUmR6cGowZHJ3RTF1WC1mQUtNMHlqVjBCUVVIbS01amR0eC1OYkxmZGpZekZsVmdkM2lxVnVsNV9IQXoxTGJpamR6T3gwQjFOMW5uTmFSeHlfT3dJMEpSZXlBOWEwQWlKRHVWeVRObE5jUXZITzhKUkJ1amptdmp3?oc=5",
+      "medio": "Alcaldía de Santiago de Cali",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO86760",
+      "municipio": "Santiago"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
       "medio": "Pulzo",
@@ -844,16 +868,6 @@
       "medio": "MVS Noticias",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "La solidaridad se mueve en Cali: Unidad Panamericana se convierte en refugio de esperanza y punto de entrega de ayudas tras el terremoto - Alcaldía de Santiago de Cali",
-      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOOUVHZlhHeDJBR2ktVXRSQ2tEdHdrcmxKR0xFcmI3TGNjaE15eDJEa2VCQnBlZUhtSVRqMG1EMmt5bGJHZTdLaENTVGRwSl95dE9pMkpqcEswMGJtSGZ3TzZFYXJJVnJhdHpFR1pTNDd0TDVjeHBodUxYdENyOE5RTnh0eUJvaF9mcjFWaUdYdDljOTNWc2luVV90Um9HSWl2MWNoUmR6cGowZHJ3RTF1WC1mQUtNMHlqVjBCUVVIbS01amR0eC1OYkxmZGpZekZsVmdkM2lxVnVsNV9IQXoxTGJpamR6T3gwQjFOMW5uTmFSeHlfT3dJMEpSZXlBOWEwQWlKRHVWeVRObE5jUXZITzhKUkJ1amptdmp3?oc=5",
-      "medio": "Alcaldía de Santiago de Cali",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO86760",
-      "municipio": "Santiago"
     },
     {
       "tipo": "albergue",
@@ -936,19 +950,19 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
-      "medio": "Forbes Colombia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio en Colombia: dónde llevar ayudas para los afectados por el terremoto - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N30gGGAkFVX3lxTFBfVERFSGxKS0JYcHp6UkktN1ctYlZjYVdEM1BYTDREcmZRS3I4b2xsMkZzTURmV1AtM0o0RGh2RHVqNXRsemRjUkxFa0o1aVdIcEJiLVhFUHFyN0V5S041cEdfQkVmZVdIeE5NSUY2eTZhUXliVDNQV2YyZHRGSkVlZW5sTWprbTA0cDJHdkx5cDB5MWtjaXhMQnowNk9kc3N5NndZR2d4M2tlczE0UDBHWWFHRnhYYkdJMXdqZGJvSFZwSWlnN2xhYWtLb1BxcGdUUWhPUi1WM1FxZ2ZHeVE1Z2JocGMzTk95QWRWeUp6eDJwVE9iaVl4WVoyODY2UjRYUXRaTkE?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
+      "medio": "Forbes Colombia",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
@@ -978,14 +992,6 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Bancos de Alimentos activan corredor humanitario tras sismo de 7.4 en Colombia: Cómo donar y puntos de acopio - Diario del Cauca",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMFRUNEZ6ZENfZHdMbTVYRENSaXQxNTduWnNkUmFtaWg3NTlWeGhDa0RPSjBiR3RJc3B6ak9TeC1GbWZuMGlnOW5oN1E5ZjNBdG9sX19VelJWVTUxMUlMRXJVOE5rOGk2ckNVTkJWX1QtSzZBUEZleG1EcFVteUtDaElPU01VVWNsNzFrUnFUMklzNXhOOHNST1JjSGNNLS1GOV9sdHpEelZVR05qNUZtM2h0SzlzOW1MMy1BQWtMdjE3RTlwWDNGU3ZoZ1EzQjRCeE9vSlNn?oc=5",
-      "medio": "Diario del Cauca",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "via_bloqueada",
