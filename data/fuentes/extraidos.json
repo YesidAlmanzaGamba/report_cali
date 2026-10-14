@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-14T18:06:23.192Z",
+  "generado": "2026-10-14T21:51:00.409Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -636,6 +636,16 @@
       "municipio": "Pereira"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "France 24 visita edificio de apartamentos colapsado en Pereira - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPeWc4NUZNb0RNN2xMdTc1VE1VWC1ST3pELWVJaDhTckYwaVRHeGhkX2ZVQXRZWU0yUEtyMGt2SUtUZmhjSl9DUFd1cExvdzNrSEtTRXdTNzR4VERnQjhnV0hGQkJZVWtVdkxFV0pfVVd0RS1XdkwwSXFVcUg1NDN2Ty1OTUNCU3dGRG45N2NfS3pUaXltQmN5c3NmdzVKVjZuLTJ3UnllRl8?oc=5",
+      "medio": "France 24",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-13T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "centro_acopio",
       "titulo": "Conmovedor video de niña que llevó a centro de acopio su alcancía llena de monedas para ayudar a afectados por terremoto - ELHERALDO.CO",
       "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOejlqT3pKOHU4WHVVWi16VHFGalBQbjA2UjRTR0RUZlJWQ1FPbldqTUhmWFoyeXk1ZXpMLTJ6ZXd5am9RVHNLTHlDbEI1cnZhWGZ4TU1aaC0zTGJwbkd1S0VqRzYtRU9hbV9KakVGZUtVVzBZcVhZeVFkWW5pdldzMWx4MTg5SGxjekVGTDg2d0hjeURmd3FDMDNQUzE5WjJCcUc2SFdYSkxhckdqaF9EMDMyQlNoUFNmdEFjUEpaaEs2dXZhSEZha194Z0l0bDQwM1NuQ0VjVkdOTVlxc2hMYVZaOHFVNTJzWXM5dEpFVlBOREJjeldzZlpB?oc=5",
@@ -700,19 +710,6 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "clase": "corregimiento",
-      "lugar": "Arma",
-      "titulo": "El terremoto que sacudió este lunes (10 de agosto) a Colombia dejó cerca de 200 viviendas afectadas en Aguadas (Caldas), principalmente en el corregimiento de Arma, la zona rural y el casco urbano. Además, varias familias tuvieron que abandonar preve - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNR2dPY09VM0lkNlQ5Q3FUbUFCOWFKek93cWZDaGpjekhTZFBqbUtrNXQ3X3VuM0l0ak9JR3hGR3BpV3N4ODc4dzl1RzItVEhUWGN2aFB1YWl1Ty1VUVRkanRYU2l6Rm1vb2VHUG8yY1RiT2ZadkZlSjJHOGlSREVaY25YRGhnOUthZ3lfUWhNc1NXTDNtWVpMWFNwaHpveU8wbS1tT1ZKaVRrZDVqWUg5NjN6LVhpSVgxZmtYVFdEdWx2ODRSQk1DQTNKdUctUURncldLYXZmeTJlSkY2YVRGQmZjWFQwRXVsTEdILWdtYw?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T07:00:00.000Z",
-      "pcode": "CO17013",
-      "municipio": "Aguadas",
-      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=corregimiento%20Arma%2C%20Aguadas%2C%20Colombia"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -831,6 +828,14 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
+      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
+      "medio": "RPP Noticias",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z"
+    },
+    {
       "tipo": "albergue",
       "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
       "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
@@ -885,16 +890,6 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-11T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Banco de Alimentos de Bucaramanga habilita centro de acopio para damnificados por el terremoto - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQW13TEdNdzZCbVA5T29BR3RvMDdWMEVtdlRCSDhzV2lJVFBTQjl4azAtTTNLSXlfY0hHUTk4ZnllRF9iZ29IRnRTc3k3UEZENjZMVWFMSTVyYmdEV3dtUlcyLUpqaDB0Q0FtTWhwNElOeDZ4TGRMcUI3YjlwRnE1UjJnYWtOOEh5V29tTFZMcWpZOXYtNkRkM1JyM0VmNzVlTVRBbVFPd1J1OFFZT1hRNFVQWFFrYldmVkJFOFVzcDhoYUg2VDl2WNIB3AFBVV95cUxOMTdZYnF0NFNkcFZPT25yVm9aSkxuMFRBWUpqRWY2Y3I2QWF3QzRGaUQxdkcyYzNvTXBlRmpQMFF3b1AyTGVILTVwYllueTZVdWI3eVktLTQwcGw2MHJ6R0JycE9HbW42MTBmM20wWW50VHdiM3NEQXJEX3luUE02XzJzS3NQUzNIcWk4aTVlOG9uYk9iMzVHVUVKZVVkYjBTWFByVkd3ZktfRFBNMHNrYWRSaXQwSWlFWnFzRGdQeFV5ek8yT3FDd2EwVkFSY0syWE40cjZjU2FtV08t?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-11T07:00:00.000Z",
-      "pcode": "CO68001",
-      "municipio": "Bucaramanga"
     },
     {
       "tipo": "centro_acopio",
