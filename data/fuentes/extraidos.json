@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-15T18:47:57.939Z",
+  "generado": "2026-10-15T21:53:17.016Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -10,14 +10,6 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-10-13T19:45:22.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Venta de vivienda nueva cayó en Colombia: terremoto agravó la crisis del sector constructor en 2026",
-      "enlace": "https://www.eldiario.com.co/noticias/economia/venta-de-vivienda-nueva-cayo-en-colombia-terremoto-agravo-la-crisis-del-sector-constructor-en-2026/",
-      "medio": "El Diario (Pereira)",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-12T21:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -100,14 +92,6 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-10-07T15:44:11.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Gobernación del Valle convoca mano de obra local para el mejoramiento y construcción de viviendas afectadas por el sismo",
-      "enlace": "https://www.valledelcauca.gov.co/publicaciones/90645/gobernacion-del-valle-convoca-mano-de-obra-local-para-el-mejoramiento-y-construccion-de-viviendas-afectadas-por-el-sismo/",
-      "medio": "Gobernación del Valle del Cauca",
-      "tipo_fuente": "official",
-      "publicado": "2026-10-02T22:11:37.000Z"
     },
     {
       "tipo": "albergue",
@@ -311,6 +295,16 @@
     },
     {
       "tipo": "edificacion_colapsada",
+      "titulo": "Cali investigará si hubo fallas o corrupción en edificios colapsados por terremoto de magnitud 7,4 - El Comercio Perú",
+      "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPakR6cEJIT05xM0RlRjlPRFBwRk95THdNYkNyQ1YzZXdqQVZDZDJMcXdna0RPMXNkbnlPSlhVR1h4eTFJZVRoYkJYYzlCY1pWdWpNblFxSDc3dEgyUC14WjNkNklVb05PN3h4RzlNbUVCaU41RUxkQ0pwWXdzSGVOWnJoWmNiMzZYZHV0MFN0YkFpVU96a2xnZmlBVFg0dVVtUFpxVnE3blhIOWM3M3Y1b3FSTklkTW90dHhjbURjdF9JbmQtM1Bsb3R5TGpBUXBPS3ZMRi1MdW5nak15RDE5WUZudWhBOV9JcDRhc2FhR1ZpclJ2MkJJZmRsOGN2MjVCOUZLR1NUYzNMSThxN2pKY21DaURCZkpq0gGsAkFVX3lxTE00bHkzWTNydWtDRE9maVZZd1RyanJtODdJY3NrWHd1MFBPOE9FQl84ZTNvdkdpMzhTOG1ObXBGMUNqWDdqM3lpdTlRXzZoN3ZTTGo5azdNNnhxT1k1UGFoOVMwTXNaVzZrbnlEMVhHanBSeUxBcTh3d1QtVTF0bjJWN2V4WGRDMXE1UFJaYUo5RXUzVzNOU1prTjBvbkNlWm8tb2ZWUzJUY29XOHMyNlFjQ0NaMVFBeDU1WHl6RjBVdnhDdGVJLUU4cDJBN1I0Nkx6YXFwUlJyZy1yZjNYWjBoMU5adjhkQTJsTzJlM1lhV2NOQ1ZOQ1M5enZ2V0hLSEVnRlhjSHJUVkNyLU4zSVdNLXRQT2xNOGhjQTJ5MWNwcDJ5V0hjcnVMdjFTbQ?oc=5",
+      "medio": "El Comercio Perú",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-19T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
       "titulo": "¿Qué viene para el Valle, tras terremoto que deja 189 fallecidos y 488 edificios colapsados?: 'Reconstrucción tiene que empezar ya', dijo gobernadora - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQVUNrRzlDd2RPZFZlNC0waWN5VHdVNHpxMEl4TnhRd2prS3NCUUIzaUJReDQyZXhCMWY4eGJUb1lKQkFPV2VxQmEwUjdraHp3a2pLZjBabmVURUNyZV9Ha0stVzhTNWcwRTNlR21qeXh2ckNlVjVpTUhTUzZNMzhkbkxqaFlwdE5mRm5lQ2QxLUV6R2FPRXZNOFVjdk9UZndCd05wVEtVV3VxaFRXeXdIZUc4ZEZndnAwd2lVSVpndUFYSkRlRlFCejE3cnJlb2J2X1dGdDFESzc5THFIbkNaUklYREQ0bzFZNl90cGpLWkczQjh2SUktUUZxQTFHZ3ozT0RIcUtQTWVFQWtrLW1hNzJCZjJRLWJk0gGeAkFVX3lxTFBWVmJkTENJeWRWZnRQV2hHRVNoRjN5anpOZzNkVTZmaDBFX0dCSmVKa3Mwa0J2UnFlZ19zLTJRaUJjWXRIZmJQQTk0S1drV3ZLc2hLSkU0Qi1lczFpaUdBMmNnSEo5bkstY0lfYXd6VEZKZWt6aVlwMXRERG1OZTU4NFJjeGN3c196X1lOOWRyN3VGN2l3ZVFFYnRZWExieEI3aDRUWkZNZHlxZ2M3U2RxcDgzVzY0UnFSbUUyRDlpMEhWZ2VVanZTRDRWMFJEY3BycUhSZGJmaENYdzJYbXZmN0UyeW9HTkhldnE0NzVQeG1faXVtX0RZYlIzZHJ3Z0RvOHdJZWJZak9BWHllZGNkcy1kTFYzaU45NEtPb0E?oc=5",
       "medio": "El Tiempo",
@@ -390,14 +384,6 @@
       "publicado": "2026-08-17T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Entre albergues y carpas, así esperan los damnificados pasar la fase crítica y empezar la reconstrucción en el Eje Cafetero - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNM08tWnU1TkxUYjVGRzlsNXVDM25oYXVFZ0pFRmRGcUMzdVVfZTlDbXFpYkF3el9tMHpQMDRnZHFJeEtXLVFlWGR3cFk1djR3ZHRiVWJxc04taU9IMFVpVENrREdFVDFyU0ZtdHA5d1U5RzVEVzVvd2h0NVhyUXJVeVN0Zk1jMUlJUEJ3R2FLckVxNnhial9obWRoOHhjd3ZSVFJhS2hHMzA2VmlweGJYYTRVOEU2NXBLaVAzZ1JOVXNfRjlQN0dCOUUyZHhSM2JPcHdka3Zjb2JxUm9udmQyc0ZLS1RUSUF4OEt5ZTh0dlFrdUIyQ0pSSDR5LVFzdEJMVld0aEFJX1NTdE3SAZACQVVfeXFMTl9UUV83dVZ5aktaNXB1VjRhXzZLSUs3Si1zRy1wYWNKSGtWX3VwaW44cWFSa3dIMDZWeWdtYmRoM0tvVkFaaEdzYXRMWkhNUkdwcEdMUlJiTllBQlNQbzZXUDRxdHdHNC1SU3BEN2VNU2cxVUhKeGZEYkxuZmhSWG1YV0E2ZUpTSmhyUlBtZVJFYmdLN3EyZzc4NS10RWhMd2I3MWN1dnR2cDJ0d1dFNlBrOHozVkM3TFpma1JUeDFEU1V4WXhIdHBOVVF2Q1VnRVBPeTMxNldKRUhBUjByV19Wczh4eDNSS2Z5Y21wRmxaekEteW9ZSTRubmxsMXRGZ0JzakdfUVhtSVBLTGg2WjQ?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-17T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -849,14 +835,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
-      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
-      "medio": "RPP Noticias",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
