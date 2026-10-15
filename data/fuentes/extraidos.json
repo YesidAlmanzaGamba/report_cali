@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-14T21:51:00.409Z",
+  "generado": "2026-10-15T00:12:45.829Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -160,16 +160,6 @@
       "publicado": "2026-09-08T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Alcaldía de Dosquebradas reitera su compromiso con la protección integral de la niñez y el control estricto en los alojamientos temporales - Dosquebradas",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxOakRiNUlKWTZ6XzBoem94T2pjSXI2YnlSOXpuM0stbFBMLVF1SDRuSEdmUUpWZ0NlTzlHTnhuRTBVSjBZbDRPaFNXaVdwZ2p4T0c4ZlZ5akZULW1sNXMySVRXRzBrbHZrbUJLcHBCVG5iMW8yMS1yajZDNmNSWDRnSmtCQ1djeFFkOGk2WnJLbEJrZGo3aUZzcGtRTWNWV1RsSFE1ekF4VWhxa1RrZlBpZ2o1VjJnSWM5MUJ5Nko4UnBNS1paVlE4ZmlGa290Z3llcVZkQW9JUC1hRFU2bVB0QWFkLUY2ZDJSeHN2MVk3WTQ0WUwxNEpQX3k4SXF3Z2RSQlFUNE54S2tXWUhoQmJGUjg0S2loS24ydW13OFBrZi1MUFdwdTYtaHlPTzdJUU5kSmhmM19Kcmc5bnVEQm9QbjJld3JhTHVtTTRGUzZMRWdYdnc2Nlh5YUV1SnpRZW8?oc=5",
-      "medio": "Dosquebradas",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-08T07:00:00.000Z",
-      "pcode": "CO66170",
-      "municipio": "Dosquebradas"
     },
     {
       "tipo": "albergue",
@@ -712,6 +702,19 @@
       "municipio": "Cali"
     },
     {
+      "tipo": "edificacion_danada",
+      "clase": "corregimiento",
+      "lugar": "Arma",
+      "titulo": "El terremoto que sacudió este lunes (10 de agosto) a Colombia dejó cerca de 200 viviendas afectadas en Aguadas (Caldas), principalmente en el corregimiento de Arma, la zona rural y el casco urbano. Además, varias familias tuvieron que abandonar preve - Facebook",
+      "enlace": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNR2dPY09VM0lkNlQ5Q3FUbUFCOWFKek93cWZDaGpjekhTZFBqbUtrNXQ3X3VuM0l0ak9JR3hGR3BpV3N4ODc4dzl1RzItVEhUWGN2aFB1YWl1Ty1VUVRkanRYU2l6Rm1vb2VHUG8yY1RiT2ZadkZlSjJHOGlSREVaY25YRGhnOUthZ3lfUWhNc1NXTDNtWVpMWFNwaHpveU8wbS1tT1ZKaVRrZDVqWUg5NjN6LVhpSVgxZmtYVFdEdWx2ODRSQk1DQTNKdUctUURncldLYXZmeTJlSkY2YVRGQmZjWFQwRXVsTEdILWdtYw?oc=5",
+      "medio": "Facebook",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z",
+      "pcode": "CO17013",
+      "municipio": "Aguadas",
+      "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=corregimiento%20Arma%2C%20Aguadas%2C%20Colombia"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "🇨🇴 Imágenes captadas con drones muestran la magnitud de la devastación en Pereira, Colombia, tras el potente terremoto de 7.4 que sacudió el occidente del país. Edificios colapsados, calles cubiertas de escombros y equipos de emergencia que continúa - Facebook",
       "enlace": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQTlRfbV9JRTdsM21uMW1XZklpZkRmVTFHcWc2YkRRZjkzMG5oMjdLZ0NGV0xaSl9oaUkxckwtdldGc0xiRjhTMUV0RDA2U1FyTEpKM3pXT0QzU2djODh4Q0tnb00ycXBxY0R4S3BEQWtWNXpZbjRhVnF6aHhXNEpYc1h2enZYMVc0VGM1N2psZm85MHk3S05pek9mcEVVcERjNHJXOVE4YkJWakhNRXFfeDFJX01EWTMzN1RKMXBCTFZTSWtGcnhfMnJHTWhubzZtYmJObzc4VEMzODVxRWlZX2hfaTBwamNUelE?oc=5",
@@ -1060,14 +1063,6 @@
       "medio": "Gestión",
       "tipo_fuente": "unverified",
       "publicado": "2024-07-01T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Éstos son los albergues que ya ofrecen protección a damnificados en la CDMX - Forbes México",
-      "enlace": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV3BFcU9GWXhaNjQ3RXFUUkIwd1F4UjJqd0JsZmgzWEQ1M0pueVY3SVNXNzZRaXh6d0xWMEFsaVBpTXFjbXFRWXBfOFkzWWJyUWRrZzloWVZLb1hTQnpFVUxRYmtpQVA5dE1FMlJFNUtMQ0VXX2cwTkFrSDNsMUZ5OHhxbnhwTXBIUFB1bXRKTEY?oc=5",
-      "medio": "Forbes México",
-      "tipo_fuente": "unverified",
-      "publicado": "2017-09-20T07:00:00.000Z"
     }
   ]
 }
