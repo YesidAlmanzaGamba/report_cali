@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-15T09:35:01.553Z",
+  "generado": "2026-10-15T14:34:58.841Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -74,6 +74,14 @@
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-10-09T21:08:30.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "A dos meses del terremoto, persisten 103 desaparecidos y más de 206.000 viviendas averiadas - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnNvX05VVlhlZk9Zc09ocTRHOEtjbG1JRDlvSDYxXzhnN3dtbEtVdW1vMWRHZkxKR0Nhb3ozLWNpZWxhWl9mMDlQa1N1T2hpTzl0eFpXOGZwbEkwaGltak9ZQzV4Qnk2YWNTX3huMzAwNFNTMWNFNmxnNUd5SXAyNmFJNnJLcXpnZU9Wbi1zYXJlZDBIdmtEUGdjb3JrVUluZXAtQl9JYm1Pdlp6akoxR29UVGYtMkxlVjhYLVlSRkM0QdIB1gFBVV95cUxQdHVNT3NqLXFlUHpsZTBVRC1UeU1yc1Z2c3VxWXdueFk3Q1Y0SzRjOGp0TGNRWVdaZWJTWVkyNVZDZGt2bXFtRjgzN1VDTmp6VkxuYnhkelpma0YwN0QyZkNuLVRGWGJ6cjNuQWV3NWxBQVRSckhrYUpJWVg5WkV5ekhza3BKY3E1UXBieENFWjctUldPV3hkUG9PMWs1UkVSM1VJSm1vTVpwbmlINE51Y1Q0R0RiampEVlRoaHpFX0hJQ216RXdjdlBvb0xMTXdidk1BRU93?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-09T19:28:01.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -464,6 +472,16 @@
       "publicado": "2026-08-15T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_danada",
+      "titulo": "Terremoto en España: así se ven las calles afectadas y edificios dañados en Granada - El Tiempo",
+      "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWlR6V3hESGpHNWhUSzc1ZzRNUE1ySURqYlRXVDdySjdXNUE4WEVnd0hRZDMxWjJIdzVQVDZYZVNubGJUTWoyUlRoODdTTTFTbldqWVhJN3ozSG9tZXFQOXQxYzBMSVQwMXdHaTBHbkJER0pzc3FQeFNUai1HTW81NDhJSExsWDNDRkJlMkNVLWNFSGpPUjVoVlozN1pWZ3JDSGZ0eF9CaEpjUUsyeVdtcDdWYnhHTHZSY0YxZmVnR0hBNmZQYUE00gHMAUFVX3lxTE1UTGJGQVhFMTdzZ2NHYjdSTkNXNURTbnJzRm9sZDZLRHg3SHE5cExsM09IbWgzaFlGcERrc0E0TGVxa2JSSzU0Y2xPSWhYcllsWHBudDAyUjhlTnJiOHNVSU1jTDNfU1lpQ1c3b190VE80ZWtxYU9BeFU2MmlYQUl5Z3VjeUM3NnJmbmtscFFZRGhNX2g3aFJObENuMkRXcy12MFMxb2MtSFdsV004RHlQLTFqUURodlVHY2ZvaXo4SlE0cHlzenhaaGFvVA?oc=5",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-15T07:00:00.000Z",
+      "pcode": "CO05313",
+      "municipio": "Granada"
+    },
+    {
       "tipo": "edificacion_colapsada",
       "titulo": "\"Toda la casa se desplomó, pero alcanzamos a salir\": el relato de una familia que sobrevivió al temblor en La Unión, Valle - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNWJqc3lRdnRqS2JJY05Ya2t0SkpnaUNjQURBUE9qZ3RsM1VsSExNYjlvNjd4SEFjVTFkNWRTdTVXVE56WDNyTEcwbXBCRXVGVy1DYmNZeGY1ZnBlaXFMeGRYVjA5UnNRWmhOSEg2T1RZV1B2NnhvUXFYM0Z2bDFrY0dYOVZra0QyeHpLXy1iWjRHSmplQnpzY1lHMHN6MU93enVyWU96bVhHNnM2QklCatIBsAFBVV95cUxOREY3cHdzQ2xnSWFickJ1enlyMl93WFMtNF9mUWp5V0VCNnJ4TzllS2FSQ3E0dS05V2QweS1WTWtsZy1YVU11empvNWVXbDNJQTk5X2ViblFwWGdDYWdWZ3BIdkUzaTRJSVZDYzQtVmV2U2pNcXdzeGZNcVJyUElCazkycDFzUXh5OG9Ld3BzaVpjb3o4TWVoQy1qUHpQN1NCdkNCNF9wRVYxODNzbkEtNw?oc=5",
@@ -841,6 +859,14 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
+      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
+      "medio": "RPP Noticias",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
