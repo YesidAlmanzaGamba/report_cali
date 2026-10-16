@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-16T03:47:55.017Z",
+  "generado": "2026-10-16T08:38:45.427Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -34,14 +34,6 @@
       "medio": "La FM",
       "tipo_fuente": "press",
       "publicado": "2026-10-10T21:00:05.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Dos meses después del terremoto: 243.409 viviendas afectadas y 486.917 damnificados - Diario del Huila",
-      "enlace": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNa3BxNk5JTzZ6NWU3c3Q4dC1abjZ3MzhEcldFdlFHYjhPNHgxV2FjRXRhSUVqcWk4aUh5bFdzZFE3cmxoRnJaak1jSW90YW9OZU5SVWZ3aHRfcTdoN0d2RXB5RjBOU2xVWEV6a1VkZTVEUTJWeWFnVG9SclFPY2xZMXN2dFYxT3pyQmVPYUtMV0VNUV9KcWxIQlUzRV95dXJ2UzdadnVSUTdJbGRUVXRj?oc=5",
-      "medio": "Diario del Huila",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-10-10T16:51:39.000Z"
     },
     {
       "tipo": "centro_salud_afectado",
@@ -154,6 +146,16 @@
       "publicado": "2026-09-08T07:00:00.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Roldanillo inicia demolición de edificios afectados por el terremoto del 10 de agosto - El País",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZVVxMVI2RF9KWE9uSld1Q280amFSSHFuczhpX1BPbnN0Z2RJR3FiV1hqTHlYeEQ1LXNQREJLa0o1VEFma0lZNExJamxiX0F0RzR3bFFrSXZDNUE0eW1PUk5zWDc3MUlyS1NuV3VoVHMySkZUN3JHR09DT1dETVVzR0sxdWd6Ui1WR0ZGVm5VT0JJc19helJ0eEZtVWRRNmw0U3JHR0thTjBxeHhYdkxEelJqYU80eG5MODI0S3p3bFU1UnNEUGfSAcsBQVVfeXFMTmRKVFlNVTduamU5eWEzNlRsX1R2M19wR3E1cmxEY0F6TVowWHVSN01XZTZjMHR2bndHSUZZSXBHU3YyS2czaTF0c1JGZXVFVHZBSkp4ZEdnRVByZmt1Y1ptSGthWWU5WENOV2ZVdmhINjNKaVdVVmVLSDV4UXZBWmppYWlBM2x3VW9fX2tNTEltbTd1WXNzcDJuMTFWVDV1Z0hHSWlsaVU5bjFOY2Qyb2RxaUVEUlAycWs2STBRSjNJdUxjbFJIUkQwNnM?oc=5",
+      "medio": "El País",
+      "tipo_fuente": "press",
+      "publicado": "2026-09-07T07:00:00.000Z",
+      "pcode": "CO76622",
+      "municipio": "Roldanillo"
     },
     {
       "tipo": "albergue",
@@ -622,16 +624,6 @@
       "municipio": "Pereira"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "France 24 visita edificio de apartamentos colapsado en Pereira - France 24",
-      "enlace": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPeWc4NUZNb0RNN2xMdTc1VE1VWC1ST3pELWVJaDhTckYwaVRHeGhkX2ZVQXRZWU0yUEtyMGt2SUtUZmhjSl9DUFd1cExvdzNrSEtTRXdTNzR4VERnQjhnV0hGQkJZVWtVdkxFV0pfVVd0RS1XdkwwSXFVcUg1NDN2Ty1OTUNCU3dGRG45N2NfS3pUaXltQmN5c3NmdzVKVjZuLTJ3UnllRl8?oc=5",
-      "medio": "France 24",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Conmovedor video de niña que llevó a centro de acopio su alcancía llena de monedas para ayudar a afectados por terremoto - ELHERALDO.CO",
       "enlace": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOejlqT3pKOHU4WHVVWi16VHFGalBQbjA2UjRTR0RUZlJWQ1FPbldqTUhmWFoyeXk1ZXpMLTJ6ZXd5am9RVHNLTHlDbEI1cnZhWGZ4TU1aaC0zTGJwbkd1S0VqRzYtRU9hbV9KakVGZUtVVzBZcVhZeVFkWW5pdldzMWx4MTg5SGxjekVGTDg2d0hjeURmd3FDMDNQUzE5WjJCcUc2SFdYSkxhckdqaF9EMDMyQlNoUFNmdEFjUEpaaEs2dXZhSEZha194Z0l0bDQwM1NuQ0VjVkdOTVlxc2hMYVZaOHFVNTJzWXM5dEpFVlBOREJjeldzZlpB?oc=5",
@@ -729,14 +721,6 @@
       "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "¿Qué significan las calcomanías verde, amarilla y roja en edificios afectados por el terremoto? - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc1NlYjBoMVJoQjZadXo1N212Si1Zalp4bGR4UndMSmxuaWZ5ZUxJRGpYRnRnc3dqc3NEZHd6c0NXUVdXVDU0SkZDXzlZaDlDUVFKRzVFWFNLX0JiU1Ruc0E0Z3lZOUxoQks1YjZDaktwcVBwTE05NGRJT1pySDdmWXZJT3YxMnRFaEJMN3JxWVZVZ25aRV9xZXkxQ2JCUThqbEUteW5UZmdDc0xfV2YxVG9ETWJUWmZWbkpKNtIBvAFBVV95cUxNUG9GTUlCZ0VydVBtTVhLdE5HMjN4RkVWYlF2UVFoaXJpemV0MWp3bWJJS0x3WUI4NDZ3eHUyZDdhY25Mb2ZpSGk4WFZTWUJ1d2ppeGR2eHM0MkJJZWNlS0U5enNwQjlqV0lScXM0VjdsRzBlY0E3Z1h2Vk9yLS0xVU5wLWhCOGQwTUplaGNLamRmbGY4NHJpWFBxVGJBcU13Mm5GLTNhbkg4X1A1SWkzQmp1S010RDUxQzg2OQ?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-12T07:00:00.000Z"
-    },
-    {
       "tipo": "centro_acopio",
       "titulo": "Donaciones, centros de acopio y reconstrucción de viviendas: cantantes colombianos movilizan ayuda y solidaridad para los afectados por el terremoto - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOREpnYmlhQ3VRTGwzSThtUGZZZ2NhYWRpeTlnWjRfMklCdlZKTjFtbTVuallnMjQ5R0YyZU5vT0xmM3RMd3pLbVcydjF4OTVEa3pqTXJzQUFaOF9jUGlXbS1PV0VOZUw2eGI3M1NyN0VieUYzaDJyYUFHQkVZazBvdEx3ekFPTzVoWEd1b2RYcmVQa2pvTkl4cmpUN3dsNHAzV3VKNXlUV3RHbWNmSDRabUwxVDk1SDdNcFF3cThrTkxicXlqeGhDLU41R2ZBMlJJV3RROUZjYjJ4bHZ6WjhEc3M0OEUyRDVNZGxpcGNiX2dVZjd4QUdORXJpOHJZSkloUzBKb21GR3FwYU1vSmdfUWhWZmdudG9OcmlV0gG2AkFVX3lxTFBJUUpXM18tZGNNdkZMOFN5WE0xUC1hQUZOdkxoaUpTOVJSZjE3Q0ZjbFliTks0V2Zza3FkV2gtN2Q4WWFXcEtiN1VwYVBodnhqOTBIaDU4dG9uOVFuZnJsVFp0RTUyZUlqRWlzZGh0QjQyd19rVHRRendkdVhMWkRIcWNOTHpFWmsxYUdFbnNmWDczcDA5WUxMWVYzRV9wVXJPbm53ZXEyWngtTVdMVXVWOXlrS0tsMUt1eElvdGdncWp3b00xV1NKWl9hUzBicGJWX2JjeEF3R1I1U3JDOC1vTW9od2JRak0yLW1jVm1LNFUtaDdsRE5mdHh6Qi1FRVk4Nk14aDNPMl9HSVlKdzRSRDNnMkZfUk1YcG9GVDBxMk16Q09XU3NtU1hhaXpqVUNGSkRrS0E?oc=5",
@@ -757,6 +741,14 @@
       "titulo": "Fotogalería: Damnificados, albergues y donaciones; Colombia sobrevive entre el apoyo - vanguardia.com.mx",
       "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUg2NHh5bkw1OXdzc0VFTG9UX29OWWJFc3lrWEJpczZTdk5seFdSSFhMNURSWWJoZlJUT2p5VjNDV0d3UUdjanNIVFRGZGxwdThZY1AxbFp4NnhXY2puNGd1NVFXQm1hcEpMMkZBbUpmc2ctRDlHTWRhbVdUOUZ3YmFRNGl1eXdrcHNNWlA5bmZKMlFIQTNJZGtwbDkzUkg3UWNDazlBZG5BeXdELUhjV19tVkdoUTJPTnlVYXNvSUtUUlJCd2hhWDdiRXFYTDNja1hFY3JQeWY?oc=5",
       "medio": "vanguardia.com.mx",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Colombia: Refugios improvisados reciben a damnificados por el terremoto - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX0lWeGZ2MVg0QVZabU1OSVFhU0NnaVpiUHRVQXNMQ3hmVU5maFNFNTJubFpEMTRqN0lCanZlT2pTVmFrWFVPMzF4R1NaTmJVaEM5M2xZX2x1bEZxc3VLNnJWOWN4ZmRBRWhlM0tnWW9QZ29IZHpPWEZLVTNuaU9UNzg3TllwWENYZUcyYzZHWlFXYU1FTFdma0l0bGZpX1daMUVUWVlKOGg0RUJucGFEcGVkdw?oc=5",
+      "medio": "France 24",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-12T07:00:00.000Z"
     },
