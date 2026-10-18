@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-18T11:29:24.023Z",
+  "generado": "2026-10-18T14:45:20.658Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -28,14 +28,6 @@
       "publicado": "2026-10-10T22:42:57.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Víctimas del terremoto en Colombia: balance de la UNGRD confirma 335 fallecidos y 244 mil viviendas dañada - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-10T21:00:05.000Z"
-    },
-    {
       "tipo": "centro_salud_afectado",
       "titulo": "Terremoto de 7.7 en Panamá dejó cerca de 30 heridos, daños en 188 escuelas, viviendas, hospitales y edificios colapsados | El Colombiano - El Colombiano",
       "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQmVqYzFfWGVra0hxNEVaQTY1cS01SEsySm1Pdk15WHZGaTQ5MG1FTVBLTTFNYVU5bG10WUhranFzTXlJYnJrY1VveHZDeXJqZkVTUWpXdGl3RUtxVlZZYVprSEdHRkdUcFZWa2o1bVVHWTR6UDJlTGlxVmxrZnhxcG0tN1ljWXdYTC1YQWd6RzBUMXRTS2tyQk54anRMYk1wVUYweF9pNXU2QXRULVI2bHYxNmw4Y0lLS2fSAb8BQVVfeXFMTThFYXNabE52dzFBY2tZMlpOVDZsV3Y5VndyMmhTSDZHNi1CT1FRXzlKVzIyZUx0WHFNdXZHdTlRalIzdDdSZXZmS3Z6YXFSMDhNbEUzdGlGYk1KamhfandMU2xQeW9FbU1BX2w0bXo3OTJydDJDMVZfazY2dkU2Y0FxTlVtQjRGczQ1N1FQeXdIU2xWMF9pYzAxeVh2WDYzQ2JJZlg3cDBWb0N1SHpzVG1leHRKTkpoRk9Rc1lhazA?oc=5",
@@ -50,6 +42,14 @@
       "medio": "LaRepublica.co",
       "tipo_fuente": "unverified",
       "publicado": "2026-10-10T14:02:10.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Víctimas del terremoto en Colombia: balance de la UNGRD confirma 335 fallecidos y 244 mil viviendas dañada - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
+      "medio": "La FM",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -329,6 +329,14 @@
       "enlace": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQTFfcUpGbTRTdmVNMEhpYzBGYlpaYmxPTlppMGVRSTFfejVrdVpva1JBSTlsLUM0WXdJcXRleklCTHdxSnBhc24zcHJwN3EtRTJsSTVhcm1rVFFpaTNDTFM4bzVIeGpPb0hFeWh4U0NxMkV2clpJT0J0cmY2LW5XS3JjYXVGQVRjY1BKeVdfZTNHdFlhQk8wNlVGM1dZdWJkSnVpUWthbjRvdUFyVGxCLXVhVmF3Z2wwN3VOZEh1OWJPR3B6cU9uYTQ1eTE5SzI4RnBoanloYWVsb2RBenNiXzN1UU9GZ3JXQ0JRYUlvb0RSTWFhVFh1X2Y4MkQ?oc=5",
       "medio": "CAMBIO Colombia",
       "tipo_fuente": "unverified",
+      "publicado": "2026-08-18T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Terremoto Colombia | Nuevo balance en el Valle: 189 muertos y más de 45.000 viviendas afectadas - La FM",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQU3FXMl9vSWZtSjFac2pyUThrT0J5RWQ3ckxTNC02Yk5MUlFnaWg5SFlZdU4xN3FSNTlEWEpfWWVsenhNTHE2ME1iUERuLWFYek11Yl9OM0hXOWZLNlRsY1dxcnd1bUt4YzZ2czVkd1JSX1dYeGtBTXBFZWxLWjZlbDRYUGw4cW9mWVRjbzk5N1d6YkZXaXEyWHVlalpLWFgwZEdKU2N3Wk5vM2xrS1FoT09vY2x3ekJvWW1zT3prRjRjMzVSSGfSAcYBQVVfeXFMTUlIeFBtZ1ZIbDgwV3FjVENWbnNERjlVaDBIV1NlbUxBVzdsWTMtbnQ3QzhWenBqLUhmVDU4U0E2UFpIaWRwNUZSaGhUV09EcWdFOWNDWEpZVlVWX0VtWV9nQVpKdEQzcFFtb01sa0ZURXdBSGNjY29rRFBXVnYtR1hNblhxSGxzMmRwQ0lBbkVPaWpxdGZ2ZGxvaHIxaFJiZ3RvOWMtMlJrcWUydmd6cjRod0VvQzRXem9Mbmp4dGVjSVMxcEJn?oc=5",
+      "medio": "La FM",
+      "tipo_fuente": "press",
       "publicado": "2026-08-18T07:00:00.000Z"
     },
     {
@@ -963,6 +971,14 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto de 7.4 en Colombia deja al menos 21 muertos, edificios colapsados y aeropuertos afectados - Diario Libre",
+      "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYlJlYXVxLTZGM0NDV2tMTTd4ZGRISE1VTGhfWFhKSXY2Mm41azY3X0w2VG44VnRfWFl5QW1RSUdZVkV6MXRoZzQwUS1VM3QtNDY5ZWZNTi1UVC1vb284aUpUbllvbTlNQTBscU9pREpGU1dzWWw1TEF1UHJoNGd6TDJDV0R0bHlXWC1URTVDdzI3cF9XWjRLS2lXLUtQVEpnRENlNW9OTE1LeFZGS21FVi1UYzTSAboBQVVfeXFMTTNKcG1CRkFZMVp0bUppbkZlajlVdWJTQTN5Zm1YNktjdndjMHZBeFhYS1drV0F5alprMVFEQUpVLVhTeXhiaUl5bEZFaWhsVjhMZi1WdmJ3NXJwS2xVdU9UWU5BX21renRoWkpod0NsR255M0lUSFRaOHFKSTQzbUF6Z3dmU254U1Z5czVCdTQ1Y3NxcWpCUXg1NDJsaERyN1RxUHliYXNSWS1Lc1owQjlfRW1vODZ5czVB?oc=5",
+      "medio": "Diario Libre",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Temblor en Colombia deja graves afectaciones en Manizales y Pereira: catedral y varios edificios afectados, escombros y heridos - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQWENUZHRkUG50S1VKSGtnYnRFSEtianRleGM5Qi1KS0RTWmtONFRaazlxa3A2bUVTSDJQYURPcUFJWllON0wxeFhNSUUzMVFVZkV5anNjODNHd1pkdDBwaUpueWQ4Mmt3eXZBUkJwX3JVSHZVUnRkbWlXalhEVlpXZG1kZW52YVgtcHAwRVVqVzA1czB5RU43UUZpYUowc1dxdi12VU5qTVNOTlV4SXBGX252MHVDd2VmazZvd3hNSlJIbUFILXZIS3RmMDZEZzQzRnBiQVBnbGtiazlnck9FRm04c0ZyMWJKSF9fR2diZWVVWktMSXY2cnEtSW1TRjg0aUHSAYcCQVVfeXFMT2FuZ1d0NTBHM1pvVXJtd1ZobEdLZlZ4WTNEUGl3UjVISEUwcUlYZEJQMjFVVXRHSTNVRXVkVGcyOUphNmxmaHJyZ3BzOThGNzJyMTI4cVl6VEVqTjVYSWFZTGU5OGJ3eHhNc2FfVDNmcnROZk9SbkwyS0tMYVRoMEQ0NVR0Wmx0TXMzZGtFbHRvNmxhQ0dLUlZna0toS1BvbDQtdHI4VzMyYnR1M2hEeVUyb0Q4YURHYU8tLVpqSXZzYWxXVGlEb2g0aVMyNnlIUGI1RUYxYVBCblE0V2taRU0xNFBrWGdYU1lfZHZ0cGxXekRpTlFBdUstOERKa2ZXV0g2b3p4WXc?oc=5",
@@ -971,14 +987,6 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto de 7.4 en Colombia deja al menos 21 muertos, edificios colapsados y aeropuertos afectados - Diario Libre",
-      "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYlJlYXVxLTZGM0NDV2tMTTd4ZGRISE1VTGhfWFhKSXY2Mm41azY3X0w2VG44VnRfWFl5QW1RSUdZVkV6MXRoZzQwUS1VM3QtNDY5ZWZNTi1UVC1vb284aUpUbllvbTlNQTBscU9pREpGU1dzWWw1TEF1UHJoNGd6TDJDV0R0bHlXWC1URTVDdzI3cF9XWjRLS2lXLUtQVEpnRENlNW9OTE1LeFZGS21FVi1UYzTSAboBQVVfeXFMTTNKcG1CRkFZMVp0bUppbkZlajlVdWJTQTN5Zm1YNktjdndjMHZBeFhYS1drV0F5alprMVFEQUpVLVhTeXhiaUl5bEZFaWhsVjhMZi1WdmJ3NXJwS2xVdU9UWU5BX21renRoWkpod0NsR255M0lUSFRaOHFKSTQzbUF6Z3dmU254U1Z5czVCdTQ1Y3NxcWpCUXg1NDJsaERyN1RxUHliYXNSWS1Lc1owQjlfRW1vODZ5czVB?oc=5",
-      "medio": "Diario Libre",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "centro_salud_afectado",
