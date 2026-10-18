@@ -1,12 +1,12 @@
 {
-  "generado": "2026-10-17T23:16:08.780Z",
+  "generado": "2026-10-18T01:18:57.296Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 158,
-    "con_notas": 49,
-    "sin_notas": 109,
-    "poblacion_sin_notas": 3138268,
+    "con_notas": 50,
+    "sin_notas": 108,
+    "poblacion_sin_notas": 3086951,
     "medios_distintos": 95
   },
   "municipios": [
@@ -16,12 +16,12 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 235337,
-      "notas": 43,
+      "notas": 44,
       "ultima": "2026-10-10T15:56:18.000Z",
       "medios": [
         {
           "nombre": "Dosquebradas",
-          "notas": 18,
+          "notas": 19,
           "ultima": "2026-10-10T15:56:18.000Z"
         },
         {
@@ -423,12 +423,12 @@
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "NTN24",
+          "nombre": "El País",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "El País",
+          "nombre": "NTN24",
           "notas": 1,
           "ultima": "2026-08-12T07:00:00.000Z"
         }
@@ -501,18 +501,13 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 12251,
-      "notas": 9,
+      "notas": 8,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
         {
           "nombre": "Gobernación del valle",
           "notas": 2,
           "ultima": "2026-10-05T07:00:00.000Z"
-        },
-        {
-          "nombre": "El País",
-          "notas": 2,
-          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "ELHERALDO.CO",
@@ -528,6 +523,11 @@
           "nombre": "Deportes RCN",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "El País",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "racinguismo.com",
@@ -563,7 +563,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 38029,
-      "notas": 27,
+      "notas": 26,
       "ultima": "2026-10-06T21:51:08.000Z",
       "medios": [
         {
@@ -638,11 +638,6 @@
         },
         {
           "nombre": "elnortehoy.com",
-          "notas": 1,
-          "ultima": "2026-08-11T07:00:00.000Z"
-        },
-        {
-          "nombre": "Noticias RCN",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         }
@@ -1289,7 +1284,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 46,
+      "notas": 44,
       "ultima": "2026-10-17T21:03:09.000Z",
       "medios": [
         {
@@ -1303,14 +1298,14 @@
           "ultima": "2026-08-26T07:00:00.000Z"
         },
         {
-          "nombre": "El País (Cali)",
-          "notas": 4,
-          "ultima": "2026-10-17T21:03:09.000Z"
-        },
-        {
           "nombre": "El País",
           "notas": 4,
           "ultima": "2026-08-22T07:00:00.000Z"
+        },
+        {
+          "nombre": "El País (Cali)",
+          "notas": 3,
+          "ultima": "2026-10-17T21:03:09.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -1331,11 +1326,6 @@
           "nombre": "Pulzo",
           "notas": 2,
           "ultima": "2026-08-12T07:00:00.000Z"
-        },
-        {
-          "nombre": "Afición Central",
-          "notas": 1,
-          "ultima": "2026-09-14T07:00:00.000Z"
         },
         {
           "nombre": "DW.com",
@@ -1822,8 +1812,15 @@
       "departamento": "Tolima",
       "mmi": 6.5,
       "poblacion": 51317,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-10-17T20:17:50.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-10-17T20:17:50.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO66318",
@@ -1964,9 +1961,14 @@
       "departamento": "Tolima",
       "mmi": 6.3,
       "poblacion": 549432,
-      "notas": 2,
-      "ultima": "2026-08-18T19:24:56.000Z",
+      "notas": 3,
+      "ultima": "2026-10-17T14:49:43.000Z",
       "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-10-17T14:49:43.000Z"
+        },
         {
           "nombre": "El Cronista",
           "notas": 1,
