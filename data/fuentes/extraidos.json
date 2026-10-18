@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-18T06:13:02.423Z",
+  "generado": "2026-10-18T11:29:24.023Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -61,14 +61,6 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "A dos meses del terremoto, persisten 103 desaparecidos y más de 206.000 viviendas averiadas - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnNvX05VVlhlZk9Zc09ocTRHOEtjbG1JRDlvSDYxXzhnN3dtbEtVdW1vMWRHZkxKR0Nhb3ozLWNpZWxhWl9mMDlQa1N1T2hpTzl0eFpXOGZwbEkwaGltak9ZQzV4Qnk2YWNTX3huMzAwNFNTMWNFNmxnNUd5SXAyNmFJNnJLcXpnZU9Wbi1zYXJlZDBIdmtEUGdjb3JrVUluZXAtQl9JYm1Pdlp6akoxR29UVGYtMkxlVjhYLVlSRkM0QdIB1gFBVV95cUxQdHVNT3NqLXFlUHpsZTBVRC1UeU1yc1Z2c3VxWXdueFk3Q1Y0SzRjOGp0TGNRWVdaZWJTWVkyNVZDZGt2bXFtRjgzN1VDTmp6VkxuYnhkelpma0YwN0QyZkNuLVRGWGJ6cjNuQWV3NWxBQVRSckhrYUpJWVg5WkV5ekhza3BKY3E1UXBieENFWjctUldPV3hkUG9PMWs1UkVSM1VJSm1vTVpwbmlINE51Y1Q0R0RiampEVlRoaHpFX0hJQ216RXdjdlBvb0xMTXdidk1BRU93?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-09T19:28:01.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "120 familias jamundeñas podrán mejorar sus viviendas afectadas tras el sismo con apoyo de la Gobernación",
       "enlace": "https://www.valledelcauca.gov.co/publicaciones/90699/120-familias-jamundenas-podran-mejorar-sus-viviendas-afectadas-tras-el-sismo-con-apoyo-de-la-gobernacion/",
       "medio": "Gobernación del Valle del Cauca",
@@ -76,6 +68,14 @@
       "publicado": "2026-10-09T18:38:17.000Z",
       "pcode": "CO76364",
       "municipio": "Jamundí"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "A dos meses del terremoto, persisten 103 desaparecidos y más de 206.000 viviendas averiadas - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnNvX05VVlhlZk9Zc09ocTRHOEtjbG1JRDlvSDYxXzhnN3dtbEtVdW1vMWRHZkxKR0Nhb3ozLWNpZWxhWl9mMDlQa1N1T2hpTzl0eFpXOGZwbEkwaGltak9ZQzV4Qnk2YWNTX3huMzAwNFNTMWNFNmxnNUd5SXAyNmFJNnJLcXpnZU9Wbi1zYXJlZDBIdmtEUGdjb3JrVUluZXAtQl9JYm1Pdlp6akoxR29UVGYtMkxlVjhYLVlSRkM0QdIB1gFBVV95cUxQdHVNT3NqLXFlUHpsZTBVRC1UeU1yc1Z2c3VxWXdueFk3Q1Y0SzRjOGp0TGNRWVdaZWJTWVkyNVZDZGt2bXFtRjgzN1VDTmp6VkxuYnhkelpma0YwN0QyZkNuLVRGWGJ6cjNuQWV3NWxBQVRSckhrYUpJWVg5WkV5ekhza3BKY3E1UXBieENFWjctUldPV3hkUG9PMWs1UkVSM1VJSm1vTVpwbmlINE51Y1Q0R0RiampEVlRoaHpFX0hJQ216RXdjdlBvb0xMTXdidk1BRU93?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
+      "publicado": "2026-10-09T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -282,16 +282,6 @@
       "titulo": "En Cali investigarán si hubo fallas o corrupción en edificios colapsados por el terremoto de 7,4 magnitud - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOHZtTFlDcW9YTG50OVdNUGtKVWo4bHNvblF6WFpmSzNUMTVlbVZCRmxfenViWDJWYy1EMEJOb1QzNGlRSDZ2a0dQQjVJMFkxaGNCN1JTS0hPekRDY1kyVUdVeDA1aVN4RFMyZzRnTHRHYkk1UjN4M3FUZXRMYXZnSk1weDFxdUpmVHg4dmtjeWl2QW00T2VrUDFIVUJFdHVDbEJtSTVHNUhGdmZRV1pwNUl4c2ZYX1V5MXRxLXROWjQ?oc=5",
       "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-19T07:00:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Alcaldía de Cali investigará si hubo fallas o corrupción en construcción de edificios colapsados por terremoto - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQRExQZ05SWlVTLWtXeS1mSXdwVDVBSm1UNVJxWFVxT09CRGllR0ZEcFoyLXhqdjZVR2p6dGcwWXNXaG9mSE40ZXNmVklTUGdQZHBwREdsekxRaklrMG5jaHNKdDAtZDhmQ3FKYW9rM3dWM1BuNXlRNG9mRVFzSW05NEdyUmotdDJrVHNfX0c4RjZtWHlCU0N2WUx3MnhNM1IzZE5wbng0LWs5MkRxSlE5Q2JySGhaTm00SkdfSEZGTWdtaDg2NmEtemVPT3JPU0xoUGRFVHRTLWF1WHo5eFgyZU5FeFhwQVRaMFo4?oc=5",
-      "medio": "ELHERALDO.CO",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T07:00:00.000Z",
       "pcode": "CO76001",
