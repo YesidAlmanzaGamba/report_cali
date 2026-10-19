@@ -1,13 +1,13 @@
 {
-  "generado": "2026-10-19T05:00:59.471Z",
+  "generado": "2026-10-19T11:01:32.620Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 160,
-    "con_notas": 54,
-    "sin_notas": 106,
-    "poblacion_sin_notas": 3103997,
-    "medios_distintos": 95
+    "con_notas": 52,
+    "sin_notas": 108,
+    "poblacion_sin_notas": 3145859,
+    "medios_distintos": 96
   },
   "municipios": [
     {
@@ -112,8 +112,8 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 72,
-      "ultima": "2026-10-17T05:00:36.000Z",
+      "notas": 71,
+      "ultima": "2026-10-09T07:00:00.000Z",
       "medios": [
         {
           "nombre": "Caracol Radio",
@@ -121,19 +121,24 @@
           "ultima": "2026-10-01T07:00:00.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 7,
-          "ultima": "2026-09-28T07:00:00.000Z"
-        },
-        {
           "nombre": "Revista Semana",
-          "notas": 7,
+          "notas": 8,
           "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
-          "nombre": "El Diario (Pereira)",
-          "notas": 5,
-          "ultima": "2026-10-17T05:00:36.000Z"
+          "nombre": "El Tiempo",
+          "notas": 6,
+          "ultima": "2026-09-28T07:00:00.000Z"
+        },
+        {
+          "nombre": "Infobae",
+          "notas": 4,
+          "ultima": "2026-09-22T07:00:00.000Z"
+        },
+        {
+          "nombre": "Pulzo",
+          "notas": 4,
+          "ultima": "2026-08-20T07:00:00.000Z"
         },
         {
           "nombre": "La FM",
@@ -144,21 +149,6 @@
           "nombre": "El Espectador",
           "notas": 3,
           "ultima": "2026-08-24T07:00:00.000Z"
-        },
-        {
-          "nombre": "Pulzo",
-          "notas": 3,
-          "ultima": "2026-08-20T07:00:00.000Z"
-        },
-        {
-          "nombre": "Facebook",
-          "notas": 3,
-          "ultima": "2026-08-13T07:00:00.000Z"
-        },
-        {
-          "nombre": "Infobae",
-          "notas": 2,
-          "ultima": "2026-09-22T07:00:00.000Z"
         },
         {
           "nombre": "Alcaldía de Pereira",
@@ -179,6 +169,16 @@
           "nombre": "Blu Radio",
           "notas": 2,
           "ultima": "2026-08-26T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Colombiano",
+          "notas": 2,
+          "ultima": "2026-08-16T07:00:00.000Z"
+        },
+        {
+          "nombre": "Facebook",
+          "notas": 2,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Alerta",
@@ -271,14 +271,14 @@
           "ultima": "2026-08-16T07:00:00.000Z"
         },
         {
-          "nombre": "El Colombiano",
-          "notas": 1,
-          "ultima": "2026-08-16T07:00:00.000Z"
-        },
-        {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
           "notas": 1,
           "ultima": "2026-08-15T07:00:00.000Z"
+        },
+        {
+          "nombre": "ESPN Argentina",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Colombia Visible",
@@ -291,9 +291,9 @@
           "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
-          "nombre": "Noticias RCN",
+          "nombre": "Kienyke",
           "notas": 1,
-          "ultima": "2026-08-10T23:21:17.000Z"
+          "ultima": "2026-08-11T07:00:00.000Z"
         }
       ]
     },
@@ -349,8 +349,8 @@
       "departamento": "Chocó",
       "mmi": 7.9,
       "poblacion": 5167,
-      "notas": 14,
-      "ultima": "2026-09-10T07:00:00.000Z",
+      "notas": 15,
+      "ultima": "2026-09-17T07:00:00.000Z",
       "medios": [
         {
           "nombre": "Pulzo",
@@ -361,6 +361,11 @@
           "nombre": "El Tiempo",
           "notas": 2,
           "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
+          "nombre": "Caracol Radio",
+          "notas": 1,
+          "ultima": "2026-09-17T07:00:00.000Z"
         },
         {
           "nombre": "Defensoría del Pueblo de Colombia",
@@ -429,18 +434,13 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 142255,
-      "notas": 2,
+      "notas": 1,
       "ultima": "2026-09-22T07:00:00.000Z",
       "medios": [
         {
           "nombre": "El Norte Hoy",
           "notas": 1,
           "ultima": "2026-09-22T07:00:00.000Z"
-        },
-        {
-          "nombre": "elnortehoy.com",
-          "notas": 1,
-          "ultima": "2026-08-19T07:00:00.000Z"
         }
       ]
     },
@@ -527,15 +527,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 12480,
-      "notas": 1,
-      "ultima": "2026-09-05T07:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "Blu Radio",
-          "notas": 1,
-          "ultima": "2026-09-05T07:00:00.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO76622",
@@ -721,15 +714,8 @@
       "departamento": "Risaralda",
       "mmi": 7.7,
       "poblacion": 29382,
-      "notas": 1,
-      "ultima": "2026-10-17T05:14:33.000Z",
-      "medios": [
-        {
-          "nombre": "El Diario (Pereira)",
-          "notas": 1,
-          "ultima": "2026-10-17T05:14:33.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO66440",
@@ -1067,14 +1053,14 @@
           "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
-          "nombre": "BC Noticias Manizales",
+          "nombre": "Caracol Radio",
           "notas": 2,
-          "ultima": "2026-08-24T07:00:00.000Z"
+          "ultima": "2026-08-26T07:00:00.000Z"
         },
         {
-          "nombre": "Caracol Radio",
+          "nombre": "BC Noticias Manizales",
           "notas": 1,
-          "ultima": "2026-08-26T07:00:00.000Z"
+          "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
           "nombre": "Noticias RCN",
@@ -1274,7 +1260,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 44,
+      "notas": 43,
       "ultima": "2026-10-19T00:21:47.000Z",
       "medios": [
         {
@@ -1283,14 +1269,14 @@
           "ultima": "2026-10-02T07:00:00.000Z"
         },
         {
-          "nombre": "El País",
-          "notas": 6,
-          "ultima": "2026-08-22T07:00:00.000Z"
-        },
-        {
           "nombre": "Facebook",
           "notas": 5,
           "ultima": "2026-08-26T07:00:00.000Z"
+        },
+        {
+          "nombre": "El País",
+          "notas": 5,
+          "ultima": "2026-08-22T07:00:00.000Z"
         },
         {
           "nombre": "El País (Cali)",
@@ -1368,17 +1354,17 @@
           "ultima": "2026-08-11T07:00:00.000Z"
         },
         {
+          "nombre": "El Diario Venezuela",
+          "notas": 1,
+          "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
           "nombre": "Demócrata",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         },
         {
           "nombre": "Newsroom RCN Radio",
-          "notas": 1,
-          "ultima": "2026-08-10T07:00:00.000Z"
-        },
-        {
-          "nombre": "El Colombiano",
           "notas": 1,
           "ultima": "2026-08-10T07:00:00.000Z"
         }
@@ -2190,12 +2176,12 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 8,
+      "notas": 9,
       "ultima": "2026-10-17T03:59:01.000Z",
       "medios": [
         {
           "nombre": "Volcano Discovery",
-          "notas": 3,
+          "notas": 4,
           "ultima": "2026-10-17T03:59:01.000Z"
         },
         {
@@ -2517,12 +2503,12 @@
       "departamento": "Cesar",
       "mmi": 4,
       "poblacion": 22043,
-      "notas": 2,
+      "notas": 1,
       "ultima": "2018-09-08T07:00:00.000Z",
       "medios": [
         {
           "nombre": "San Diego Union-Tribune",
-          "notas": 2,
+          "notas": 1,
           "ultima": "2018-09-08T07:00:00.000Z"
         }
       ]
