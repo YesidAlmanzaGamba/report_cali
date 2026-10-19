@@ -1,13 +1,13 @@
 {
-  "generado": "2026-10-18T22:07:09.416Z",
+  "generado": "2026-10-19T00:19:28.543Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
     "municipios_considerados": 159,
-    "con_notas": 52,
-    "sin_notas": 107,
-    "poblacion_sin_notas": 3133379,
-    "medios_distintos": 94
+    "con_notas": 53,
+    "sin_notas": 106,
+    "poblacion_sin_notas": 3103997,
+    "medios_distintos": 95
   },
   "municipios": [
     {
@@ -117,8 +117,8 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 67,
-      "ultima": "2026-10-09T07:00:00.000Z",
+      "notas": 73,
+      "ultima": "2026-10-17T05:00:36.000Z",
       "medios": [
         {
           "nombre": "Caracol Radio",
@@ -136,6 +136,11 @@
           "ultima": "2026-09-28T07:00:00.000Z"
         },
         {
+          "nombre": "El Diario (Pereira)",
+          "notas": 5,
+          "ultima": "2026-10-17T05:00:36.000Z"
+        },
+        {
           "nombre": "Pulzo",
           "notas": 4,
           "ultima": "2026-08-20T07:00:00.000Z"
@@ -149,6 +154,11 @@
           "nombre": "El Espectador",
           "notas": 3,
           "ultima": "2026-08-24T07:00:00.000Z"
+        },
+        {
+          "nombre": "Facebook",
+          "notas": 3,
+          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Infobae",
@@ -174,11 +184,6 @@
           "nombre": "Blu Radio",
           "notas": 2,
           "ultima": "2026-08-26T07:00:00.000Z"
-        },
-        {
-          "nombre": "Facebook",
-          "notas": 2,
-          "ultima": "2026-08-13T07:00:00.000Z"
         },
         {
           "nombre": "Alerta",
@@ -716,8 +721,15 @@
       "departamento": "Risaralda",
       "mmi": 7.7,
       "poblacion": 29382,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-10-17T05:14:33.000Z",
+      "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-10-17T05:14:33.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO66440",
@@ -1262,7 +1274,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 46,
+      "notas": 44,
       "ultima": "2026-10-18T20:51:57.000Z",
       "medios": [
         {
@@ -1287,8 +1299,8 @@
         },
         {
           "nombre": "El Tiempo",
-          "notas": 4,
-          "ultima": "2026-10-18T14:56:27.000Z"
+          "notas": 3,
+          "ultima": "2026-08-18T07:00:00.000Z"
         },
         {
           "nombre": "Caracol Radio",
@@ -1317,11 +1329,6 @@
         },
         {
           "nombre": "La Patria",
-          "notas": 1,
-          "ultima": "2026-08-19T07:00:00.000Z"
-        },
-        {
-          "nombre": "ELHERALDO.CO",
           "notas": 1,
           "ultima": "2026-08-19T07:00:00.000Z"
         },
@@ -2415,7 +2422,7 @@
         {
           "nombre": "Real Racing Club",
           "notas": 1,
-          "ultima": "2026-09-03T16:03:48.000Z"
+          "ultima": "2026-09-03T07:00:00.000Z"
         },
         {
           "nombre": "ABC Economía",
@@ -2494,12 +2501,12 @@
       "departamento": "Cesar",
       "mmi": 4,
       "poblacion": 22043,
-      "notas": 2,
+      "notas": 1,
       "ultima": "2018-09-08T07:00:00.000Z",
       "medios": [
         {
           "nombre": "San Diego Union-Tribune",
-          "notas": 2,
+          "notas": 1,
           "ultima": "2018-09-08T07:00:00.000Z"
         }
       ]
