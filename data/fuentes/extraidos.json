@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-19T11:01:32.617Z",
+  "generado": "2026-10-19T17:37:44.111Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -138,16 +138,6 @@
       "publicado": "2026-09-08T07:00:00.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Roldanillo inicia demolición de edificios afectados por el terremoto del 10 de agosto - El País",
-      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZVVxMVI2RF9KWE9uSld1Q280amFSSHFuczhpX1BPbnN0Z2RJR3FiV1hqTHlYeEQ1LXNQREJLa0o1VEFma0lZNExJamxiX0F0RzR3bFFrSXZDNUE0eW1PUk5zWDc3MUlyS1NuV3VoVHMySkZUN3JHR09DT1dETVVzR0sxdWd6Ui1WR0ZGVm5VT0JJc19helJ0eEZtVWRRNmw0U3JHR0thTjBxeHhYdkxEelJqYU80eG5MODI0S3p3bFU1UnNEUGfSAcsBQVVfeXFMTmRKVFlNVTduamU5eWEzNlRsX1R2M19wR3E1cmxEY0F6TVowWHVSN01XZTZjMHR2bndHSUZZSXBHU3YyS2czaTF0c1JGZXVFVHZBSkp4ZEdnRVByZmt1Y1ptSGthWWU5WENOV2ZVdmhINjNKaVdVVmVLSDV4UXZBWmppYWlBM2x3VW9fX2tNTEltbTd1WXNzcDJuMTFWVDV1Z0hHSWlsaVU5bjFOY2Qyb2RxaUVEUlAycWs2STBRSjNJdUxjbFJIUkQwNnM?oc=5",
-      "medio": "El País",
-      "tipo_fuente": "press",
-      "publicado": "2026-09-07T07:00:00.000Z",
-      "pcode": "CO76622",
-      "municipio": "Roldanillo"
     },
     {
       "tipo": "albergue",
@@ -729,6 +719,14 @@
       "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
+      "tipo": "albergue",
+      "titulo": "Colombia: Refugios improvisados reciben a damnificados por el terremoto - France 24",
+      "enlace": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNX0lWeGZ2MVg0QVZabU1OSVFhU0NnaVpiUHRVQXNMQ3hmVU5maFNFNTJubFpEMTRqN0lCanZlT2pTVmFrWFVPMzF4R1NaTmJVaEM5M2xZX2x1bEZxc3VLNnJWOWN4ZmRBRWhlM0tnWW9QZ29IZHpPWEZLVTNuaU9UNzg3TllwWENYZUcyYzZHWlFXYU1FTFdma0l0bGZpX1daMUVUWVlKOGg0RUJucGFEcGVkdw?oc=5",
+      "medio": "France 24",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z"
+    },
+    {
       "tipo": "edificacion_danada",
       "titulo": "Dosquebradas habilita formulario para identificar viviendas afectadas por el sismo - Dosquebradas",
       "enlace": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPZGFDUHhraEl3bVZDa2puMU42dW1TMXpSTERxbWlSZm9CZm1WQTdpeG1xM1Y5dFdTWHV4REV3NjJYV0dqblVQdnRzQ2JDbXVVVm5JNlI3ZEJKUU5UVkNteWV6b1ItOE5FWmtOQ0RhUWtYU2pQaEJYRFRuQ2ZINFgybEJXTVpnSlRYYzk2cjEzSWpuOWxLUjAwX2J5OE1jS3FYVFdrR0poZTNfbzQ3TlRjQm9rbXoyUXpteGhLdkNheXo1M0oyMHpQVWpYcVJfb0tUaUVIcXZ3SWlvQ0I4R0o2NWJpWFdhU1R5YXQ3LW9tSXQzcWZHWFZNZFRSRGRxLVJ0Wm5DUzY1Q0RmdGN2YWRMVmE5Yw?oc=5",
@@ -793,14 +791,6 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia: reportan más de 150 edificios colapsados tras fuerte sismo que azotó el país - RPP Noticias",
-      "enlace": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZVNRRm9mVHBwQ25Fa3lfckpBdUV5TzI4MUdWN3k0bk5TSlZSOXQ5SzNwY2hGbll4MDhod2RFVHJpVExiNGhWakxMR1lWY2txZDM1dzJaMXN4eUpXQlZGaUpoOUEyZXIxM1pWTWwxUXM5VnhDN2NQVlZzU0hRdmdMOE8zR2dwUGlsaFN1WkdMMnU3WUtGenloU2RTZnlOR3dNbDdMR0F0aTVoTEJIemFTMm96ZldhbzFCaHFxbkhLU1N2SnMwbDhYUFFZWnBrMF82c29JQmJvMmdOd3py?oc=5",
-      "medio": "RPP Noticias",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-11T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
