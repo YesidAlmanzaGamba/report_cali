@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-21T23:50:35.084Z",
+  "generado": "2026-10-22T02:49:05.668Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -84,6 +84,16 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-10-09T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Así avanza la reconstrucción de viviendas afectadas por el terremoto en El Cairo, Valle del Cauca - El País",
+      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOck5MV1RhTC1fZldacDM2Rmpxb19OWlg3U3lBQ1FmNlVZWFo3NmttOXZBZU93TmJzN19FT2Q2eFZDMFBuODM1SHJ4MnVNRFRQWlZOWmZNTldnbHJmbnJLR3hGQ3VkdXlrWWRURmllQjN6Z1hrXzU1NVdya2hwcWJqZEFtYlNzNTZXdGxaYzA1M3RKZnU0WmVXVEFoSWFSTTFqWnJTS1c0TzQtNG84UUZmclBES2ZEZjUyczFBd0JMYi1LOWF4VTYwYmNkb1pYeTlIOEpWMNIB2gFBVV95cUxNYTJLZFNnTThCYlRZdjFxNmNGRTlBODY2YjZGSkJMTkRpRkdGNUE3SkdjNXE0Nm5MaEpiWUhMdzNrZ2U3YWxoemYyeE40SEtKcktYc1dkcktYYTNMZlpMQmNGREo5R1g0aVlKNTRFaFhCMmtoZFNsNGswZXpRUzVjUGYwY1NMa19sZTVfRGI1Sl92WklYdmR1WTZXT3ZNQk5DYWJ4M2lnN29IM21ZcC1telphZTY3NUs3SGFRSnNvZmZsVGtaeU5WNTBRSFFZNFJDSEs4ZWFVa0hPdw?oc=5",
+      "medio": "El País",
+      "tipo_fuente": "press",
+      "publicado": "2026-09-22T07:00:00.000Z",
+      "pcode": "CO76246",
+      "municipio": "El Cairo"
     },
     {
       "tipo": "albergue",
@@ -693,16 +703,6 @@
       "municipio": "Cali"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "¿Por qué algunas edificaciones colapsaron y otras resistieron el sismo del 10 de agosto en Cali? - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTG5XSi1kYnI5MW9iTThoczVaUjVNSEdQUm9oVlRKTnNOYTA0RWhmNzN4LVhDbG4zT0tHcDZkbXQ4bzlCYy1NXzZfWFlOdkpueDNMY0hlc0tvcTFKUHVWVnRSYzI4cDdwOXhvRG1LOGIzVUdpSDNDYVRpRVBxcjBBcDFzUGZVSmQ3eHRuYnhMQm5VSEtzdy1Tc29reDNjaXQ4Wm9GaGRza1FiZGxkS01kdUU2S0VuRWIxSHlKWUUzUnptVExpRnNUT9IBzgFBVV95cUxQZlVUakFqNERZSnZadktTNWloV3NKc2dRdjhfR3lzTDNZWUJDN3ljdnVkUHFMbjJGNHlfZEh5YXEweGFGaDdYM05ZMW1MeTFwSE4xeC1oWnVsUlBZTlRvTDhiN210c2RwR0J1SDAwOGRtRHByVmdOOGpfbjJUWm16NzExXzRUWVZHbWxVMmtSanB2WkRmbmU0VHloQnU2cUhmQWRHVEdzb0F5QTQxRXRDaFlaYk1fODRxRE9VWXRIZ0s5Ui1TZWFzRFVKNkNWZw?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T07:00:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
       "tipo": "edificacion_danada",
       "clase": "corregimiento",
       "lugar": "Arma",
@@ -714,6 +714,16 @@
       "pcode": "CO17013",
       "municipio": "Aguadas",
       "buscar_en_mapa": "https://www.google.com/maps/search/?api=1&query=corregimiento%20Arma%2C%20Aguadas%2C%20Colombia"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "¿Por qué algunas edificaciones colapsaron y otras resistieron el sismo del 10 de agosto en Cali? - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTG5XSi1kYnI5MW9iTThoczVaUjVNSEdQUm9oVlRKTnNOYTA0RWhmNzN4LVhDbG4zT0tHcDZkbXQ4bzlCYy1NXzZfWFlOdkpueDNMY0hlc0tvcTFKUHVWVnRSYzI4cDdwOXhvRG1LOGIzVUdpSDNDYVRpRVBxcjBBcDFzUGZVSmQ3eHRuYnhMQm5VSEtzdy1Tc29reDNjaXQ4Wm9GaGRza1FiZGxkS01kdUU2S0VuRWIxSHlKWUUzUnptVExpRnNUT9IBzgFBVV95cUxQZlVUakFqNERZSnZadktTNWloV3NKc2dRdjhfR3lzTDNZWUJDN3ljdnVkUHFMbjJGNHlfZEh5YXEweGFGaDdYM05ZMW1MeTFwSE4xeC1oWnVsUlBZTlRvTDhiN210c2RwR0J1SDAwOGRtRHByVmdOOGpfbjJUWm16NzExXzRUWVZHbWxVMmtSanB2WkRmbmU0VHloQnU2cUhmQWRHVEdzb0F5QTQxRXRDaFlaYk1fODRxRE9VWXRIZ0s5Ui1TZWFzRFVKNkNWZw?oc=5",
+      "medio": "Pulzo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-12T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -1002,22 +1012,6 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Congreso instala centros de acopio en apoyo a damnificados del terremoto en Venezuela - El Sol de México",
-      "enlace": "https://news.google.com/rss/articles/CBMizgFBVV95cUxORk9ZNkZYYzBWZWZHdHNheHNCVm9ENTNBWlFETXVCcks1ZHRtNWtqTE5nUE9mZ2JrZlR4MnBJWmNCa09DTy01ZW56azE0NkI3bVEwYzM5OTNGV2VoMnYteDFxLThTcU9VbEtFUldJcTNycUdCU1JoM1dqRTVhLVhzSWU3dlg2UlZpS2NMM1lLVHBQMFNTTUY2OG1pOGFZTmxCR1F6cENUMkxqZXNPel9aRXdsUk1rUkRYdG1WZ1JzMGtMUkQ1VS1IWm9PaXF2Zw?oc=5",
-      "medio": "El Sol de México",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-07-09T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
-      "titulo": "Comunidad venezolana en Perú instala centros de acopio en Lima para ayudar a los damnificados por los terremotos - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPcUVSV0pfQTU2RjFVS3VHWm9kR0tYWWlBSi1kQ1pNUFN1RkthN1dJZHZvemVlQWdzTGsxVkhMaUlLVXplM0ZmbGZuR1VyNWM4MTlWT1VxQUhhWjNUYk9LMVZua19RMHBMTlRtRVpsMlkxaTBqZTRfdkUtZEJQdGdDTkhULVZGTUlFdFRXWl95ZnJfekYwR2NwY1pSWkdZWE41dnl6YmZBTVFKWjFRRnhpTlRhdTJpVV9FS0V3VXVCeW5naTZRdUU0WXMycml1Q3VTRHk4OUdhNDBBRnlmZTZZRnNPTnYycUlm0gGDAkFVX3lxTFBCc01WbF9PUGNKbkplbFhKUWhOT0lsNmU2TnExZjR0bG9YemZEU2lzTkQyREdRVXNNTUxSUldxX3l1OVhFRXQ0OWRzcTdQZWp3QUE1VXNHTHhZazBnQUloa05Jd05UbnRaaVo4VGJmWHVOYWMxb093aXJUNGdwVW80Ujd1SlJSNHRXU0JmOW9jMGJHWDdUeEswOGEzalpsVE5FS3FJeGVCRnFqcXJLc3FPZzFiUXk4SzNZeU9FUmRBNUdvdUxkc2hFc05FMDlQSEpyUlBNeXQ5N1JoaFJ5UDdzVHJfeUpSTW9SRU92WncyM2lvamlkT0ZHOEtUNUpRMmtNTEk?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
-      "publicado": "2026-06-26T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
