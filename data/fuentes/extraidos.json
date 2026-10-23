@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-23T19:24:02.165Z",
+  "generado": "2026-10-23T22:27:17.743Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -18,14 +18,6 @@
       "medio": "Gobernación del Valle del Cauca",
       "tipo_fuente": "official",
       "publicado": "2026-10-13T19:45:22.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Tras dos meses del terremoto: 243.409 viviendas afectadas y más de 486.000 damnificados - LaRepublica.co",
-      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPckJJN0hDUkNpYmtaS0JmVUI2anlhdHpiWGJvY1FvY0liZW5VTWFxLUFFSHpkTnJqOUo0RGZjM1RSZDU4R0Iya01KcnNzcFNKSWVtbGw1Q1FyWExFTTlEd3l4cWZ0Q05ha2ZmNVJCWFJaaVFwcEcxVFdqX3IxeFA5dTY0ZDNBSS11WXl2eEMxak9rU0NRV3Z1SmdydHlZVWtDREtVdUVIZ1Z4M01hdGJLWGhCVkF0WkhOVXpWTkg2OGhNUktGMGNtUQ?oc=5",
-      "medio": "LaRepublica.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-10-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -57,6 +49,14 @@
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
       "medio": "La FM",
       "tipo_fuente": "press",
+      "publicado": "2026-10-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Tras dos meses del terremoto: 243.409 viviendas afectadas y más de 486.000 damnificados - LaRepublica.co",
+      "enlace": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPckJJN0hDUkNpYmtaS0JmVUI2anlhdHpiWGJvY1FvY0liZW5VTWFxLUFFSHpkTnJqOUo0RGZjM1RSZDU4R0Iya01KcnNzcFNKSWVtbGw1Q1FyWExFTTlEd3l4cWZ0Q05ha2ZmNVJCWFJaaVFwcEcxVFdqX3IxeFA5dTY0ZDNBSS11WXl2eEMxak9rU0NRV3Z1SmdydHlZVWtDREtVdUVIZ1Z4M01hdGJLWGhCVkF0WkhOVXpWTkg2OGhNUktGMGNtUQ?oc=5",
+      "medio": "LaRepublica.co",
+      "tipo_fuente": "unverified",
       "publicado": "2026-10-10T07:00:00.000Z"
     },
     {
@@ -94,30 +94,12 @@
       "publicado": "2026-09-16T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto deja más de 20 mil damnificados y 12 mil viviendas afectadas en ciudades intermedias de Colombia - La Patria",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbGc1ZGZrY1ZLMkRHYV9WVDVtcWRqZXVzdi1VVzJOUkdBd3l1UGNOYmpBRTBKTnptOUFlelM4RWQtU1dQU2JleHZ1LXM4cXNtN3YtODB2TFZ1RmZWRFFUVnF3ZjVOT2c3bDRsSUV0LXBieGc4RWZZVDREWEVoY09SclVuRl8zR2U2SmtlLXNBa2g5ckI5REhkVUxxZmkzNzh5V2RWYnUzUUk1X3dFNDBpb3hWdXBfejA?oc=5",
-      "medio": "La Patria",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-11T07:00:00.000Z"
-    },
-    {
       "tipo": "edificacion_colapsada",
       "titulo": "Un mes del terremoto en Colombia: el dilema del Quindío que no tuvo edificios colapsados, pero hay más de 74.000 damnificados - El Tiempo",
       "enlace": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNbTJHSW5HZDB5RG5Hb1lXMjc2MWRkTUlRRUsyWXFIX1pLeDZ0bWp3MGJNMzlaUFFBVURNM05xVG5acU1GQmc5TTNYbW1QMl8yS3hjc19XWlJnOFJUZFV4NTRlQ19lUzMxOVowVnFOVEc4UDlKbEZoTHlNTzh5QVFnM094djFrSFMxODVVOXB0YmNYSHE2ZVpqYUhkT3U4akxwVFU2Q090aEtyMFFLUEJuQmNzWGdzcWZaRGttdVZES0F3c1hCLWE2dkZpc0d2Vjh3dy1aM0lqNGxSQnZzV1NBSG1SY2hVSzFWZFZzSjRxbTBSTmNmQjlKLTEySUxGX0Q0Q2gwY0RBdmxtb0RW0gGSAkFVX3lxTE9FUjZrTDJCVWxNbk0yLUVFSXFyaGdDdkJ6SUlfR0ItRGtBYWJIUXg4SzdRdkpsOU80bEtVQkdvQzhlVE9EellUaEhVejZIZC1laE5vMFpGOTdPQmxBZDBJVGlPbFdNSkpjRGpldU03ZEhaTDZmcnEydGRRNUw5V1VLS1pGQ3hXMDRoN1daVTZJMHhoVW1vWkhTV01tTjRmYnU3eEJtM0lTSElBM25Jd282QW9kTmNvVnpUYWl4YVR4ai0xaThNVVVsTU5HRjR5b3lTZlNFTHpTbVBXamhNQTk5OXhqOTNLbTk5aG9ERTVhc20yZ1QwblBzZFhSTzIzMUs3TGszd2s5V1V5LU5tVWx6WGc?oc=5",
       "medio": "El Tiempo",
       "tipo_fuente": "press",
       "publicado": "2026-09-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Cali comienza a demoler edificios afectados por el terremoto - DW.com",
-      "enlace": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdEVxcDdTZXRmREpMZEVGb0RHVkZWZFFJQV9LZF9mZzJCMW5tcmJQeS1sNDVLbDFPZHlRSV8xUlYtN09xanBwZjFScXgzLUFjQU1PYnQ1VXBmNWpWcDhsZHJoUVBvNUhhNmFQQ1NZS3JaTTVrZXpYdnZQbmFvXzNJSjMzSUtvaWduQnRad3E5QlZLc1BVVktYZtIBmAFBVV95cUxOZzFwWkw2SE1TNWZBdU51d0ZmUmlPOWJocU1NRTdOT1hWVnp1cUFfM0RGa1BJXzBZemRIRjNDRVBJR19rQUcwcFIzajNacjZtb0x5TUt6bGpzUEJnc29zcm1CMTIyY1JCamhPeDBwXzBJZnVpandvUkt6Um5OV3Z1d05URGZkX0c4WGxOdnl5bjRfaEdjcVRxZg?oc=5",
-      "medio": "DW.com",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-09-08T07:00:00.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
     },
     {
       "tipo": "edificacion_danada",
@@ -159,14 +141,6 @@
       "publicado": "2026-08-31T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Abelardo De La Espriella entrega balance actualizado de afectaciones por terremoto en Colombia: cifras de casas, colegios e infraestructuras afectadas - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPOEhYLTR0S0NrS040a2RPNDR0T2E2TFdfelJCeEpFQmxqUkNYTkpfbGxRRUhsMFJxRkdKX05wT0NaY2J0dm1xeXBTS01FdUZwMXU2Qk11YTRLS2w0cVprUUh4UkZVN3A3U2ZkRDVramEtWjJTSEVPYXgyVmVaMTBCb0x6SGQ3T1VkTFlyVnVVbUxzRmkyZjZyX3pIQW1HenY4aHNtODcwazlja3d0aXBBbHBTdVR2MnJ3dEF2VHVrWTRUYlNYbVFnajMyY1htWUxiYTN5WWhRQnp1M095YWNRMG9hSkR4eHI2MmpYZDNxSml5VTNCa09xM2xXNGx6SG43V1BkVFpLaHgzU2V2YmhnclhOZFVxTDVtaWlfS3E3bDVqNy1NMVZGVTN5S2FiQdIBswJBVV95cUxQR0NKRTgwQ2JackgyMG9PR3hsZEZjZWdEamhoSU02MVNSby1mUzMwM0lxWjcxblZjbmR0MHFxWWNISlFVWGw1SmRSanlDaVNzZ0JCS3E1NVNvRUVONTJDX1FGOEUxM3dkai0wWFBEVUFFYm1kR1R2RGxZQkM0ZmJvLVhDM2xaa3VHdlNhYlZaWk9sdHV2SVduaU5KZXplTmZiVFlXNFpJblNZMjd1V08zcTNxQ2E2cXRiT09LdEpzMENuRWJqY3ltZVdQZXpSSkNBdmhINXg2TjV5QW0wZEZmOWU2Y1B1YXlsNFlNN1NBQkJUbDFTWExkNlJaVFhYSTFDQWZBdEFmblBaY1BvT3RfSnZMQmRrR0hxOEkzeGVYVzZlZXA4TDItd3M1RnU2bGhpWm1r?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-30T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -942,6 +916,16 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
+    },
+    {
+      "tipo": "centro_salud_afectado",
+      "titulo": "Emergencia en hospitales de Cali que colapsaron tras sismo de 7,4: piden ayuda para evacuar pacientes | El Colombiano - El Colombiano",
+      "enlace": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQR2IxYmhWajNaSFlPUUpiTXQ3bUVvNkpSajc4ZllITHF1Mm85R3F2Y005djQ5TXltYXhqT1hzQW5lVlMzYWVGcjlmdTVZNDZsLXExR0t1TF9Nd0pnTHpkVXBZRURhVUxOdjYtcXlHTE1adnJ6QzJ1eWpZb05iclB5czNIbFpyOGV0RUhXaEtxU3owYl9TdUtxYWRhLUhSSXc2eDRwaGJHc3B2T0pyVUxJSGVUOS3SAboBQVVfeXFMT2N3Y2QxQTlpNjJ0RTRXUFJtU19HQ2tRRlJfS1lqUDBpRkJGVW50OFFxUzRGQU1QOHhia1BFTXNfLV94cTlSekNPUnROWHdIRFNkQ2lqY3p4TWdTd2pETW5CdTI5SWlYcWFMc0pOVUpPN0NKcDNBVDdaRmQ0RndQbHlMQWlXNWMycXlhZWhiQTgwVDJmYl8yVWwwVUw4dGRwMGFFQmlIOS1Od0dBSHZxZHVlMVdfWXV2WHFn?oc=5",
+      "medio": "El Colombiano",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
     },
     {
       "tipo": "centro_acopio",
