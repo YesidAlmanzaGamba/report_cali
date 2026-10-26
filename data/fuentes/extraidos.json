@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-26T05:39:30.439Z",
+  "generado": "2026-10-26T11:59:23.118Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -164,14 +164,6 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Abelardo De La Espriella entrega balance actualizado de afectaciones por terremoto en Colombia: cifras de casas, colegios e infraestructuras afectadas - El Tiempo",
-      "enlace": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPOEhYLTR0S0NrS040a2RPNDR0T2E2TFdfelJCeEpFQmxqUkNYTkpfbGxRRUhsMFJxRkdKX05wT0NaY2J0dm1xeXBTS01FdUZwMXU2Qk11YTRLS2w0cVprUUh4UkZVN3A3U2ZkRDVramEtWjJTSEVPYXgyVmVaMTBCb0x6SGQ3T1VkTFlyVnVVbUxzRmkyZjZyX3pIQW1HenY4aHNtODcwazlja3d0aXBBbHBTdVR2MnJ3dEF2VHVrWTRUYlNYbVFnajMyY1htWUxiYTN5WWhRQnp1M095YWNRMG9hSkR4eHI2MmpYZDNxSml5VTNCa09xM2xXNGx6SG43V1BkVFpLaHgzU2V2YmhnclhOZFVxTDVtaWlfS3E3bDVqNy1NMVZGVTN5S2FiQdIBswJBVV95cUxQR0NKRTgwQ2JackgyMG9PR3hsZEZjZWdEamhoSU02MVNSby1mUzMwM0lxWjcxblZjbmR0MHFxWWNISlFVWGw1SmRSanlDaVNzZ0JCS3E1NVNvRUVONTJDX1FGOEUxM3dkai0wWFBEVUFFYm1kR1R2RGxZQkM0ZmJvLVhDM2xaa3VHdlNhYlZaWk9sdHV2SVduaU5KZXplTmZiVFlXNFpJblNZMjd1V08zcTNxQ2E2cXRiT09LdEpzMENuRWJqY3ltZVdQZXpSSkNBdmhINXg2TjV5QW0wZEZmOWU2Y1B1YXlsNFlNN1NBQkJUbDFTWExkNlJaVFhYSTFDQWZBdEFmblBaY1BvT3RfSnZMQmRrR0hxOEkzeGVYVzZlZXA4TDItd3M1RnU2bGhpWm1r?oc=5",
-      "medio": "El Tiempo",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-30T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "Terremoto de 7,4 en Colombia deja más de 450.000 damnificados y casi 200.000 viviendas averiadas - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOXB2b3FhT0JrTTZfM0Y2XzYxZC1oS0FXV3hqeVV6QUp4SXM1VDNZd3dqeHVacEUwU3dMM0pQMmI5WVJIa2phTDFVdndJdVlkSnlwNGh0UGk3UDBXYVBoeE1DS2hpOE1sOUx4T2NyeGlobEZiMElmQTJWSUZoX21pLVFibTN0OW5ObElvaGhPT09BUXZNN2VSNF91ZXVBMmlkb2dZ0gGjAUFVX3lxTE5faE5VZFVpN3c3aVo4SDNVZ2JoRnVCajlxR2JPSWpjcVpQc050SEtLNTRxWGV3czBnYlBJbjBQUXM3aTcyTWIzZTBMWElDQktIM3FORFNLZm1MaXhoODdDZExHR0duQ0hJUGhYZTgwSVJvZXpfU294V3A2cndMNUFUOUF4bFJ1N01wTUpneVYzNFJjTTM3QnpoeV9tVlNqbkpjcDg?oc=5",
       "medio": "La FM",
@@ -303,6 +295,16 @@
       "titulo": "En Cali investigarán si hubo fallas o corrupción en edificios colapsados por el terremoto de 7,4 magnitud - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOHZtTFlDcW9YTG50OVdNUGtKVWo4bHNvblF6WFpmSzNUMTVlbVZCRmxfenViWDJWYy1EMEJOb1QzNGlRSDZ2a0dQQjVJMFkxaGNCN1JTS0hPekRDY1kyVUdVeDA1aVN4RFMyZzRnTHRHYkk1UjN4M3FUZXRMYXZnSk1weDFxdUpmVHg4dmtjeWl2QW00T2VrUDFIVUJFdHVDbEJtSTVHNUhGdmZRV1pwNUl4c2ZYX1V5MXRxLXROWjQ?oc=5",
       "medio": "La Patria",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-19T07:00:00.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Cali realizará peritaje a edificios colapsados tras el terremoto - City Tv",
+      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMjN4RmFucjRPQm9kRVBCLVpsVTBmSjBHbk80VEdIemVFcjZtb1YtTzVMLUQwR0ZTRV9lNnEzam9BR2lfNlBiTThnYWhVRHhEd1ZlTDE3c2tkQUEyb0xsa1puTVp0aWQ0SV9sRURxeGZtTUZKMXlWbnRGN2JXWHNkVF9CTHdsdURnMlpHM25YVXdINkZES3JjNFBoNERwRDZEVTVlNTlySjUzZmMxdkhUZVdxU0lVbHNDdl81ZzhJUUQtUlJCaGc0SXVR?oc=5",
+      "medio": "City Tv",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-19T07:00:00.000Z",
       "pcode": "CO76001",
