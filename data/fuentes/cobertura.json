@@ -1,13 +1,13 @@
 {
-  "generado": "2026-11-06T08:09:11.678Z",
+  "generado": "2026-11-06T16:04:41.475Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 145,
-    "con_notas": 25,
+    "municipios_considerados": 149,
+    "con_notas": 29,
     "sin_notas": 120,
-    "poblacion_sin_notas": 0,
-    "medios_distintos": 58
+    "poblacion_sin_notas": 4039682,
+    "medios_distintos": 61
   },
   "municipios": [
     {
@@ -15,9 +15,9 @@
       "nombre": "Dosquebradas",
       "departamento": "Risaralda",
       "mmi": 8.2,
-      "poblacion": null,
-      "notas": 32,
-      "ultima": "2026-10-31T20:45:46.000Z",
+      "poblacion": 235337,
+      "notas": 33,
+      "ultima": "2026-11-04T05:00:53.000Z",
       "medios": [
         {
           "nombre": "Dosquebradas",
@@ -33,6 +33,11 @@
           "nombre": "Caracol Radio",
           "notas": 2,
           "ultima": "2026-08-21T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-11-04T05:00:53.000Z"
         },
         {
           "nombre": "Canal 1 En vivo",
@@ -71,8 +76,8 @@
       "nombre": "Pereira",
       "departamento": "Risaralda",
       "mmi": 8.2,
-      "poblacion": null,
-      "notas": 31,
+      "poblacion": 500806,
+      "notas": 34,
       "ultima": "2026-11-05T18:57:49.000Z",
       "medios": [
         {
@@ -86,6 +91,11 @@
           "ultima": "2026-11-05T18:57:49.000Z"
         },
         {
+          "nombre": "El Diario (Pereira)",
+          "notas": 2,
+          "ultima": "2026-11-05T13:07:56.000Z"
+        },
+        {
           "nombre": "Alcaldía de Pereira",
           "notas": 2,
           "ultima": "2026-09-18T07:00:00.000Z"
@@ -94,6 +104,11 @@
           "nombre": "Caracol Radio",
           "notas": 2,
           "ultima": "2026-08-26T07:00:00.000Z"
+        },
+        {
+          "nombre": "Revista Semana",
+          "notas": 2,
+          "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
           "nombre": "El Espectador",
@@ -119,11 +134,6 @@
           "nombre": "ReliefWeb",
           "notas": 1,
           "ultima": "2026-08-25T07:00:00.000Z"
-        },
-        {
-          "nombre": "Revista Semana",
-          "notas": 1,
-          "ultima": "2026-08-24T07:00:00.000Z"
         },
         {
           "nombre": "El Nuevo Siglo",
@@ -192,7 +202,7 @@
       "nombre": "El Cairo",
       "departamento": "Valle del Cauca",
       "mmi": 7.9,
-      "poblacion": null,
+      "poblacion": 6678,
       "notas": 3,
       "ultima": "2026-11-05T19:21:46.000Z",
       "medios": [
@@ -218,7 +228,7 @@
       "nombre": "San José del Palmar",
       "departamento": "Chocó",
       "mmi": 7.9,
-      "poblacion": null,
+      "poblacion": 5167,
       "notas": 17,
       "ultima": "2026-09-11T07:00:00.000Z",
       "medios": [
@@ -294,7 +304,7 @@
       "nombre": "Viterbo",
       "departamento": "Caldas",
       "mmi": 7.9,
-      "poblacion": null,
+      "poblacion": 13462,
       "notas": 0,
       "medios": []
     },
@@ -303,7 +313,7 @@
       "nombre": "Cartago",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 142255,
       "notas": 0,
       "medios": []
     },
@@ -312,7 +322,7 @@
       "nombre": "La Unión",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 35701,
       "notas": 4,
       "ultima": "2026-10-28T21:39:50.000Z",
       "medios": [
@@ -343,7 +353,7 @@
       "nombre": "La Victoria",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 12251,
       "notas": 5,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
@@ -379,7 +389,7 @@
       "nombre": "Obando",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 12480,
       "notas": 0,
       "medios": []
     },
@@ -388,7 +398,7 @@
       "nombre": "Roldanillo",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 38029,
       "notas": 14,
       "ultima": "2026-11-03T18:50:10.000Z",
       "medios": [
@@ -449,7 +459,7 @@
       "nombre": "San José",
       "departamento": "Caldas",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 5067,
       "notas": 1,
       "ultima": "2026-08-12T07:00:00.000Z",
       "medios": [
@@ -465,7 +475,7 @@
       "nombre": "Zarzal",
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
-      "poblacion": null,
+      "poblacion": 43787,
       "notas": 3,
       "ultima": "2026-08-13T07:00:00.000Z",
       "medios": [
@@ -491,7 +501,7 @@
       "nombre": "Ansermanuevo",
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 17838,
       "notas": 0,
       "medios": []
     },
@@ -500,7 +510,7 @@
       "nombre": "Balboa",
       "departamento": "Risaralda",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 6522,
       "notas": 0,
       "medios": []
     },
@@ -509,7 +519,7 @@
       "nombre": "Belalcázar",
       "departamento": "Caldas",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 11038,
       "notas": 0,
       "medios": []
     },
@@ -518,7 +528,7 @@
       "nombre": "Bolívar",
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 16104,
       "notas": 0,
       "medios": []
     },
@@ -527,7 +537,7 @@
       "nombre": "Bugalagrande",
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 25106,
       "notas": 0,
       "medios": []
     },
@@ -536,7 +546,7 @@
       "nombre": "La Virginia",
       "departamento": "Risaralda",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 29382,
       "notas": 0,
       "medios": []
     },
@@ -545,7 +555,7 @@
       "nombre": "Marsella",
       "departamento": "Risaralda",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 17457,
       "notas": 0,
       "medios": []
     },
@@ -554,7 +564,7 @@
       "nombre": "Santa Rosa de Cabal",
       "departamento": "Risaralda",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 83317,
       "notas": 0,
       "medios": []
     },
@@ -563,7 +573,7 @@
       "nombre": "Santuario",
       "departamento": "Risaralda",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 12972,
       "notas": 0,
       "medios": []
     },
@@ -572,7 +582,7 @@
       "nombre": "Toro",
       "departamento": "Valle del Cauca",
       "mmi": 7.7,
-      "poblacion": null,
+      "poblacion": 14834,
       "notas": 0,
       "medios": []
     },
@@ -581,7 +591,7 @@
       "nombre": "Argelia",
       "departamento": "Valle del Cauca",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 5299,
       "notas": 0,
       "medios": []
     },
@@ -590,7 +600,7 @@
       "nombre": "Armenia",
       "departamento": "Quindio",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 325056,
       "notas": 0,
       "medios": []
     },
@@ -599,7 +609,7 @@
       "nombre": "La Celia",
       "departamento": "Risaralda",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 7746,
       "notas": 0,
       "medios": []
     },
@@ -608,7 +618,7 @@
       "nombre": "La Tebaida",
       "departamento": "Quindio",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 37106,
       "notas": 0,
       "medios": []
     },
@@ -617,7 +627,7 @@
       "nombre": "Montenegro",
       "departamento": "Quindio",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 40020,
       "notas": 1,
       "ultima": "2026-08-20T07:00:00.000Z",
       "medios": [
@@ -633,7 +643,7 @@
       "nombre": "Versalles",
       "departamento": "Valle del Cauca",
       "mmi": 7.6,
-      "poblacion": null,
+      "poblacion": 7145,
       "notas": 0,
       "medios": []
     },
@@ -642,7 +652,7 @@
       "nombre": "Alcalá",
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 14774,
       "notas": 0,
       "medios": []
     },
@@ -651,8 +661,8 @@
       "nombre": "Buenaventura",
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
-      "poblacion": null,
-      "notas": 9,
+      "poblacion": 322388,
+      "notas": 10,
       "ultima": "2026-11-06T00:46:17.000Z",
       "medios": [
         {
@@ -664,6 +674,11 @@
           "nombre": "Gobernación del Valle del Cauca",
           "notas": 2,
           "ultima": "2026-10-31T21:25:22.000Z"
+        },
+        {
+          "nombre": "El País",
+          "notas": 2,
+          "ultima": "2026-08-31T07:00:00.000Z"
         },
         {
           "nombre": "El Tiempo",
@@ -684,11 +699,6 @@
           "nombre": "Gobernación del valle",
           "notas": 1,
           "ultima": "2026-09-01T07:00:00.000Z"
-        },
-        {
-          "nombre": "El País",
-          "notas": 1,
-          "ultima": "2026-08-12T07:00:00.000Z"
         }
       ]
     },
@@ -697,7 +707,7 @@
       "nombre": "Chinchiná",
       "departamento": "Caldas",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 54875,
       "notas": 0,
       "medios": []
     },
@@ -706,7 +716,7 @@
       "nombre": "Circasia",
       "departamento": "Quindio",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 31051,
       "notas": 0,
       "medios": []
     },
@@ -715,7 +725,7 @@
       "nombre": "El Águila",
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 8743,
       "notas": 0,
       "medios": []
     },
@@ -724,7 +734,7 @@
       "nombre": "El Dovio",
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 8878,
       "notas": 0,
       "medios": []
     },
@@ -733,7 +743,7 @@
       "nombre": "Palestina",
       "departamento": "Caldas",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 16208,
       "notas": 0,
       "medios": []
     },
@@ -742,7 +752,7 @@
       "nombre": "Quimbaya",
       "departamento": "Quindio",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 33253,
       "notas": 1,
       "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
@@ -758,7 +768,7 @@
       "nombre": "Risaralda",
       "departamento": "Caldas",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 10938,
       "notas": 0,
       "medios": []
     },
@@ -767,7 +777,7 @@
       "nombre": "Sipí",
       "departamento": "Chocó",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 3340,
       "notas": 0,
       "medios": []
     },
@@ -776,7 +786,7 @@
       "nombre": "Ulloa",
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
-      "poblacion": null,
+      "poblacion": 5511,
       "notas": 0,
       "medios": []
     },
@@ -785,7 +795,7 @@
       "nombre": "Apía",
       "departamento": "Risaralda",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 12754,
       "notas": 0,
       "medios": []
     },
@@ -794,7 +804,7 @@
       "nombre": "Belén de Umbría",
       "departamento": "Risaralda",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 25775,
       "notas": 0,
       "medios": []
     },
@@ -803,7 +813,7 @@
       "nombre": "Calima",
       "departamento": "Valle del Cauca",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 18832,
       "notas": 0,
       "medios": []
     },
@@ -812,7 +822,7 @@
       "nombre": "El Litoral del San Juan",
       "departamento": "Chocó",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 24012,
       "notas": 0,
       "medios": []
     },
@@ -821,7 +831,7 @@
       "nombre": "Istmina",
       "departamento": "Chocó",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 31989,
       "notas": 0,
       "medios": []
     },
@@ -830,8 +840,8 @@
       "nombre": "Manizales",
       "departamento": "Caldas",
       "mmi": 7.4,
-      "poblacion": null,
-      "notas": 3,
+      "poblacion": 469600,
+      "notas": 4,
       "ultima": "2026-08-24T07:00:00.000Z",
       "medios": [
         {
@@ -848,6 +858,11 @@
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
+        },
+        {
+          "nombre": "Caracol Radio",
+          "notas": 1,
+          "ultima": "2026-08-11T07:00:00.000Z"
         }
       ]
     },
@@ -856,7 +871,7 @@
       "nombre": "Medio San Juan",
       "departamento": "Chocó",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 11347,
       "notas": 0,
       "medios": []
     },
@@ -865,7 +880,7 @@
       "nombre": "Nóvita",
       "departamento": "Chocó",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 9477,
       "notas": 0,
       "medios": []
     },
@@ -874,7 +889,7 @@
       "nombre": "Sevilla",
       "departamento": "Valle del Cauca",
       "mmi": 7.4,
-      "poblacion": null,
+      "poblacion": 42483,
       "notas": 2,
       "ultima": "2026-11-05T21:23:22.000Z",
       "medios": [
@@ -890,7 +905,7 @@
       "nombre": "Andalucía",
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 23369,
       "notas": 0,
       "medios": []
     },
@@ -899,7 +914,7 @@
       "nombre": "Anserma",
       "departamento": "Caldas",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 38191,
       "notas": 0,
       "medios": []
     },
@@ -908,7 +923,7 @@
       "nombre": "Caicedonia",
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 29512,
       "notas": 0,
       "medios": []
     },
@@ -917,7 +932,7 @@
       "nombre": "Calarcá",
       "departamento": "Quindio",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 80008,
       "notas": 0,
       "medios": []
     },
@@ -926,7 +941,7 @@
       "nombre": "Filandia",
       "departamento": "Quindio",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 13126,
       "notas": 0,
       "medios": []
     },
@@ -935,7 +950,7 @@
       "nombre": "Quibdó",
       "departamento": "Chocó",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 134417,
       "notas": 0,
       "medios": []
     },
@@ -944,7 +959,7 @@
       "nombre": "Trujillo",
       "departamento": "Valle del Cauca",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 19525,
       "notas": 1,
       "ultima": "2026-10-30T21:00:54.000Z",
       "medios": [
@@ -960,7 +975,7 @@
       "nombre": "Villamaría",
       "departamento": "Caldas",
       "mmi": 7.3,
-      "poblacion": null,
+      "poblacion": 70896,
       "notas": 0,
       "medios": []
     },
@@ -969,7 +984,7 @@
       "nombre": "Bajo Baudó",
       "departamento": "Chocó",
       "mmi": 7.2,
-      "poblacion": null,
+      "poblacion": 31776,
       "notas": 0,
       "medios": []
     },
@@ -978,7 +993,7 @@
       "nombre": "Condoto",
       "departamento": "Chocó",
       "mmi": 7.2,
-      "poblacion": null,
+      "poblacion": 12733,
       "notas": 0,
       "medios": []
     },
@@ -987,7 +1002,7 @@
       "nombre": "Río Quito",
       "departamento": "Chocó",
       "mmi": 7.2,
-      "poblacion": null,
+      "poblacion": 8823,
       "notas": 0,
       "medios": []
     },
@@ -996,7 +1011,7 @@
       "nombre": "Atrato",
       "departamento": "Chocó",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 6430,
       "notas": 0,
       "medios": []
     },
@@ -1005,8 +1020,8 @@
       "nombre": "Cali",
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
-      "poblacion": null,
-      "notas": 22,
+      "poblacion": 2337182,
+      "notas": 21,
       "ultima": "2026-11-05T22:57:47.000Z",
       "medios": [
         {
@@ -1021,7 +1036,7 @@
         },
         {
           "nombre": "El País",
-          "notas": 3,
+          "notas": 2,
           "ultima": "2026-11-04T14:41:00.000Z"
         },
         {
@@ -1081,7 +1096,7 @@
       "nombre": "Cértegui",
       "departamento": "Chocó",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 5980,
       "notas": 0,
       "medios": []
     },
@@ -1090,7 +1105,7 @@
       "nombre": "Río Iró",
       "departamento": "Chocó",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 5834,
       "notas": 0,
       "medios": []
     },
@@ -1099,7 +1114,7 @@
       "nombre": "Riofrío",
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 15846,
       "notas": 0,
       "medios": []
     },
@@ -1108,7 +1123,7 @@
       "nombre": "Tadó",
       "departamento": "Chocó",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 18546,
       "notas": 0,
       "medios": []
     },
@@ -1117,7 +1132,7 @@
       "nombre": "Tuluá",
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 226478,
       "notas": 0,
       "medios": []
     },
@@ -1126,7 +1141,7 @@
       "nombre": "Unión Panamericana",
       "departamento": "Chocó",
       "mmi": 7.1,
-      "poblacion": null,
+      "poblacion": 7259,
       "notas": 0,
       "medios": []
     },
@@ -1135,7 +1150,7 @@
       "nombre": "Bagadó",
       "departamento": "Chocó",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 11712,
       "notas": 0,
       "medios": []
     },
@@ -1144,7 +1159,7 @@
       "nombre": "Buenavista",
       "departamento": "Quindio",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 3354,
       "notas": 0,
       "medios": []
     },
@@ -1153,7 +1168,7 @@
       "nombre": "El Cantón del San Pablo",
       "departamento": "Chocó",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 6545,
       "notas": 0,
       "medios": []
     },
@@ -1162,7 +1177,7 @@
       "nombre": "Guadalajara de Buga",
       "departamento": "Valle del Cauca",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 133615,
       "notas": 0,
       "medios": []
     },
@@ -1171,7 +1186,7 @@
       "nombre": "La Cumbre",
       "departamento": "Valle del Cauca",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 16877,
       "notas": 1,
       "ultima": "2026-10-26T23:45:53.000Z",
       "medios": [
@@ -1187,7 +1202,7 @@
       "nombre": "Lloró",
       "departamento": "Chocó",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 10343,
       "notas": 0,
       "medios": []
     },
@@ -1196,7 +1211,7 @@
       "nombre": "Medio Baudó",
       "departamento": "Chocó",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 16435,
       "notas": 0,
       "medios": []
     },
@@ -1205,7 +1220,7 @@
       "nombre": "Neira",
       "departamento": "Caldas",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 21987,
       "notas": 0,
       "medios": []
     },
@@ -1214,7 +1229,7 @@
       "nombre": "Pijao",
       "departamento": "Quindio",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 5482,
       "notas": 0,
       "medios": []
     },
@@ -1223,7 +1238,7 @@
       "nombre": "Pueblo Rico",
       "departamento": "Risaralda",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 17099,
       "notas": 0,
       "medios": []
     },
@@ -1232,7 +1247,7 @@
       "nombre": "Salamina",
       "departamento": "Caldas",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 20187,
       "notas": 0,
       "medios": []
     },
@@ -1241,7 +1256,7 @@
       "nombre": "San Pedro",
       "departamento": "Valle del Cauca",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 17862,
       "notas": 0,
       "medios": []
     },
@@ -1250,7 +1265,7 @@
       "nombre": "Yotoco",
       "departamento": "Valle del Cauca",
       "mmi": 7,
-      "poblacion": null,
+      "poblacion": 16647,
       "notas": 0,
       "medios": []
     },
@@ -1259,7 +1274,7 @@
       "nombre": "Córdoba",
       "departamento": "Quindio",
       "mmi": 6.9,
-      "poblacion": null,
+      "poblacion": 6150,
       "notas": 0,
       "medios": []
     },
@@ -1268,7 +1283,7 @@
       "nombre": "Dagua",
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
-      "poblacion": null,
+      "poblacion": 50152,
       "notas": 0,
       "medios": []
     },
@@ -1277,7 +1292,7 @@
       "nombre": "Restrepo",
       "departamento": "Valle del Cauca",
       "mmi": 6.9,
-      "poblacion": null,
+      "poblacion": 15784,
       "notas": 1,
       "ultima": "2026-08-26T07:00:00.000Z",
       "medios": [
@@ -1293,7 +1308,7 @@
       "nombre": "Salento",
       "departamento": "Quindio",
       "mmi": 6.9,
-      "poblacion": null,
+      "poblacion": 10240,
       "notas": 0,
       "medios": []
     },
@@ -1302,7 +1317,7 @@
       "nombre": "Alto Baudó",
       "departamento": "Chocó",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 29708,
       "notas": 0,
       "medios": []
     },
@@ -1311,7 +1326,7 @@
       "nombre": "El Cerrito",
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 58814,
       "notas": 0,
       "medios": []
     },
@@ -1320,7 +1335,7 @@
       "nombre": "Filadelfia",
       "departamento": "Caldas",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 11790,
       "notas": 0,
       "medios": []
     },
@@ -1329,7 +1344,7 @@
       "nombre": "Génova",
       "departamento": "Quindio",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 7975,
       "notas": 0,
       "medios": []
     },
@@ -1338,7 +1353,7 @@
       "nombre": "Guacarí",
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 34612,
       "notas": 0,
       "medios": []
     },
@@ -1347,7 +1362,7 @@
       "nombre": "Jamundí",
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 172821,
       "notas": 0,
       "medios": []
     },
@@ -1356,7 +1371,7 @@
       "nombre": "Vijes",
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 13330,
       "notas": 0,
       "medios": []
     },
@@ -1365,7 +1380,7 @@
       "nombre": "Yumbo",
       "departamento": "Valle del Cauca",
       "mmi": 6.8,
-      "poblacion": null,
+      "poblacion": 113967,
       "notas": 0,
       "medios": []
     },
@@ -1374,7 +1389,7 @@
       "nombre": "La Merced",
       "departamento": "Caldas",
       "mmi": 6.7,
-      "poblacion": null,
+      "poblacion": 6083,
       "notas": 0,
       "medios": []
     },
@@ -1383,7 +1398,7 @@
       "nombre": "Medio Atrato",
       "departamento": "Chocó",
       "mmi": 6.7,
-      "poblacion": null,
+      "poblacion": 11472,
       "notas": 0,
       "medios": []
     },
@@ -1392,7 +1407,7 @@
       "nombre": "Mistrató",
       "departamento": "Risaralda",
       "mmi": 6.7,
-      "poblacion": null,
+      "poblacion": 17924,
       "notas": 0,
       "medios": []
     },
@@ -1401,7 +1416,7 @@
       "nombre": "Palmira",
       "departamento": "Valle del Cauca",
       "mmi": 6.7,
-      "poblacion": null,
+      "poblacion": 366437,
       "notas": 0,
       "medios": []
     },
@@ -1410,7 +1425,7 @@
       "nombre": "Aranzazu",
       "departamento": "Caldas",
       "mmi": 6.6,
-      "poblacion": null,
+      "poblacion": 11009,
       "notas": 0,
       "medios": []
     },
@@ -1419,7 +1434,7 @@
       "nombre": "El Carmen de Atrato",
       "departamento": "Chocó",
       "mmi": 6.6,
-      "poblacion": null,
+      "poblacion": 8565,
       "notas": 0,
       "medios": []
     },
@@ -1428,7 +1443,7 @@
       "nombre": "Ginebra",
       "departamento": "Valle del Cauca",
       "mmi": 6.6,
-      "poblacion": null,
+      "poblacion": 23727,
       "notas": 0,
       "medios": []
     },
@@ -1437,7 +1452,7 @@
       "nombre": "Pácora",
       "departamento": "Caldas",
       "mmi": 6.6,
-      "poblacion": null,
+      "poblacion": 15925,
       "notas": 0,
       "medios": []
     },
@@ -1446,7 +1461,7 @@
       "nombre": "Roncesvalles",
       "departamento": "Tolima",
       "mmi": 6.6,
-      "poblacion": null,
+      "poblacion": 5524,
       "notas": 0,
       "medios": []
     },
@@ -1455,7 +1470,7 @@
       "nombre": "Cajamarca",
       "departamento": "Tolima",
       "mmi": 6.5,
-      "poblacion": null,
+      "poblacion": 18634,
       "notas": 0,
       "medios": []
     },
@@ -1464,14 +1479,19 @@
       "nombre": "Chaparral",
       "departamento": "Tolima",
       "mmi": 6.5,
-      "poblacion": null,
-      "notas": 1,
+      "poblacion": 51317,
+      "notas": 2,
       "ultima": "2026-11-03T17:59:23.000Z",
       "medios": [
         {
           "nombre": "Revista Semana",
           "notas": 1,
           "ultima": "2026-11-03T17:59:23.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-11-03T15:48:18.000Z"
         }
       ]
     },
@@ -1480,7 +1500,7 @@
       "nombre": "Guática",
       "departamento": "Risaralda",
       "mmi": 6.5,
-      "poblacion": null,
+      "poblacion": 12608,
       "notas": 0,
       "medios": []
     },
@@ -1489,7 +1509,7 @@
       "nombre": "Quinchía",
       "departamento": "Risaralda",
       "mmi": 6.5,
-      "poblacion": null,
+      "poblacion": 28368,
       "notas": 0,
       "medios": []
     },
@@ -1498,7 +1518,7 @@
       "nombre": "Riosucio",
       "departamento": "Caldas",
       "mmi": 6.5,
-      "poblacion": null,
+      "poblacion": 53788,
       "notas": 0,
       "medios": []
     },
@@ -1507,7 +1527,7 @@
       "nombre": "Buenos Aires",
       "departamento": "Cauca",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 33582,
       "notas": 0,
       "medios": []
     },
@@ -1516,7 +1536,7 @@
       "nombre": "Candelaria",
       "departamento": "Valle del Cauca",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 96521,
       "notas": 0,
       "medios": []
     },
@@ -1525,7 +1545,7 @@
       "nombre": "Jardín",
       "departamento": "Antioquia",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 15878,
       "notas": 0,
       "medios": []
     },
@@ -1534,7 +1554,7 @@
       "nombre": "Rovira",
       "departamento": "Tolima",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 21712,
       "notas": 0,
       "medios": []
     },
@@ -1543,7 +1563,7 @@
       "nombre": "Santander de Quilichao",
       "departamento": "Cauca",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 117542,
       "notas": 0,
       "medios": []
     },
@@ -1552,7 +1572,7 @@
       "nombre": "Supía",
       "departamento": "Caldas",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 30515,
       "notas": 0,
       "medios": []
     },
@@ -1561,7 +1581,7 @@
       "nombre": "Villa Rica",
       "departamento": "Cauca",
       "mmi": 6.4,
-      "poblacion": null,
+      "poblacion": 22174,
       "notas": 0,
       "medios": []
     },
@@ -1570,7 +1590,7 @@
       "nombre": "Aguadas",
       "departamento": "Caldas",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 23948,
       "notas": 0,
       "medios": []
     },
@@ -1579,7 +1599,7 @@
       "nombre": "Andes",
       "departamento": "Antioquia",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 47231,
       "notas": 0,
       "medios": []
     },
@@ -1588,7 +1608,7 @@
       "nombre": "Caloto",
       "departamento": "Cauca",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 31529,
       "notas": 0,
       "medios": []
     },
@@ -1597,7 +1617,7 @@
       "nombre": "Guachené",
       "departamento": "Cauca",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 20864,
       "notas": 0,
       "medios": []
     },
@@ -1606,7 +1626,7 @@
       "nombre": "Ibagué",
       "departamento": "Tolima",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 549432,
       "notas": 1,
       "ultima": "2026-08-14T07:00:00.000Z",
       "medios": [
@@ -1622,7 +1642,7 @@
       "nombre": "López de Micay",
       "departamento": "Cauca",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 19794,
       "notas": 0,
       "medios": []
     },
@@ -1631,7 +1651,7 @@
       "nombre": "Puerto Tejada",
       "departamento": "Cauca",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 43024,
       "notas": 0,
       "medios": []
     },
@@ -1640,7 +1660,7 @@
       "nombre": "Támesis",
       "departamento": "Antioquia",
       "mmi": 6.3,
-      "poblacion": null,
+      "poblacion": 17300,
       "notas": 0,
       "medios": []
     },
@@ -1649,7 +1669,7 @@
       "nombre": "Murillo",
       "departamento": "Tolima",
       "mmi": 6.2,
-      "poblacion": null,
+      "poblacion": 4165,
       "notas": 0,
       "medios": []
     },
@@ -1658,7 +1678,7 @@
       "nombre": "Padilla",
       "departamento": "Cauca",
       "mmi": 6.2,
-      "poblacion": null,
+      "poblacion": 10371,
       "notas": 0,
       "medios": []
     },
@@ -1667,7 +1687,7 @@
       "nombre": "Rioblanco",
       "departamento": "Tolima",
       "mmi": 6.2,
-      "poblacion": null,
+      "poblacion": 22725,
       "notas": 0,
       "medios": []
     },
@@ -1676,7 +1696,7 @@
       "nombre": "Santa Isabel",
       "departamento": "Tolima",
       "mmi": 6.2,
-      "poblacion": null,
+      "poblacion": 5720,
       "notas": 0,
       "medios": []
     },
@@ -1685,7 +1705,7 @@
       "nombre": "Vigía del Fuerte",
       "departamento": "Antioquia",
       "mmi": 6.2,
-      "poblacion": null,
+      "poblacion": 10028,
       "notas": 0,
       "medios": []
     },
@@ -1694,7 +1714,7 @@
       "nombre": "Corinto",
       "departamento": "Cauca",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 26401,
       "notas": 0,
       "medios": []
     },
@@ -1703,7 +1723,7 @@
       "nombre": "Herveo",
       "departamento": "Tolima",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 7250,
       "notas": 0,
       "medios": []
     },
@@ -1712,7 +1732,7 @@
       "nombre": "Jericó",
       "departamento": "Antioquia",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 14697,
       "notas": 0,
       "medios": []
     },
@@ -1721,7 +1741,7 @@
       "nombre": "Marulanda",
       "departamento": "Caldas",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 2609,
       "notas": 0,
       "medios": []
     },
@@ -1730,7 +1750,7 @@
       "nombre": "Miranda",
       "departamento": "Cauca",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 33352,
       "notas": 0,
       "medios": []
     },
@@ -1739,7 +1759,7 @@
       "nombre": "Nuquí",
       "departamento": "Chocó",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 17421,
       "notas": 0,
       "medios": []
     },
@@ -1748,7 +1768,7 @@
       "nombre": "San Antonio",
       "departamento": "Tolima",
       "mmi": 6.1,
-      "poblacion": null,
+      "poblacion": 12669,
       "notas": 0,
       "medios": []
     },
@@ -1757,7 +1777,7 @@
       "nombre": "Anzoátegui",
       "departamento": "Tolima",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 10043,
       "notas": 0,
       "medios": []
     },
@@ -1766,7 +1786,7 @@
       "nombre": "Betania",
       "departamento": "Antioquia",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 10960,
       "notas": 0,
       "medios": []
     },
@@ -1775,7 +1795,7 @@
       "nombre": "Marmato",
       "departamento": "Caldas",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 9415,
       "notas": 0,
       "medios": []
     },
@@ -1784,7 +1804,7 @@
       "nombre": "Pensilvania",
       "departamento": "Caldas",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 20456,
       "notas": 0,
       "medios": []
     },
@@ -1793,7 +1813,7 @@
       "nombre": "Sonsón",
       "departamento": "Antioquia",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 39149,
       "notas": 0,
       "medios": []
     },
@@ -1802,7 +1822,7 @@
       "nombre": "Suárez",
       "departamento": "Cauca",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 33846,
       "notas": 0,
       "medios": []
     },
@@ -1811,16 +1831,32 @@
       "nombre": "Urrao",
       "departamento": "Antioquia",
       "mmi": 6,
-      "poblacion": null,
+      "poblacion": 33053,
       "notas": 0,
       "medios": []
+    },
+    {
+      "pcode": "CO19130",
+      "nombre": "Cajibío",
+      "departamento": "Cauca",
+      "mmi": 5.7,
+      "poblacion": 44837,
+      "notas": 1,
+      "ultima": "2026-11-06T13:27:55.000Z",
+      "medios": [
+        {
+          "nombre": "Proclama del Cauca",
+          "notas": 1,
+          "ultima": "2026-11-06T13:27:55.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO17867",
       "nombre": "Victoria",
       "departamento": "Caldas",
       "mmi": 5.5,
-      "poblacion": null,
+      "poblacion": 10739,
       "notas": 1,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
@@ -1836,7 +1872,7 @@
       "nombre": "Olaya Herrera",
       "departamento": "Nariño",
       "mmi": 5.4,
-      "poblacion": null,
+      "poblacion": 25384,
       "notas": 1,
       "ultima": "2026-08-20T07:00:00.000Z",
       "medios": [
@@ -1848,11 +1884,59 @@
       ]
     },
     {
+      "pcode": "CO73411",
+      "nombre": "Líbano",
+      "departamento": "Tolima",
+      "mmi": 5.3,
+      "poblacion": 36674,
+      "notas": 1,
+      "ultima": "2026-11-06T14:15:58.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-06T14:15:58.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO73671",
+      "nombre": "Saldaña",
+      "departamento": "Tolima",
+      "mmi": 5.1,
+      "poblacion": 14648,
+      "notas": 1,
+      "ultima": "2026-11-06T11:18:16.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-06T11:18:16.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO08001",
+      "nombre": "Barranquilla",
+      "departamento": "Atlántico",
+      "mmi": 4.7,
+      "poblacion": 1355306,
+      "notas": 1,
+      "ultima": "2026-08-19T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Caracol Radio",
+          "notas": 1,
+          "ultima": "2026-08-19T07:00:00.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO47288",
       "nombre": "Fundación",
       "departamento": "Magdalena",
       "mmi": 4.2,
-      "poblacion": null,
+      "poblacion": 73744,
       "notas": 2,
       "ultima": "2026-11-06T03:25:23.000Z",
       "medios": [
@@ -1873,7 +1957,7 @@
       "nombre": "Santiago",
       "departamento": "Putumayo",
       "mmi": 4.2,
-      "poblacion": null,
+      "poblacion": 7804,
       "notas": 1,
       "ultima": "2026-09-11T07:00:00.000Z",
       "medios": [
@@ -1889,7 +1973,7 @@
       "nombre": "Providencia",
       "departamento": "Nariño",
       "mmi": 4.1,
-      "poblacion": null,
+      "poblacion": 5568,
       "notas": 1,
       "ultima": "2026-08-13T07:00:00.000Z",
       "medios": [
