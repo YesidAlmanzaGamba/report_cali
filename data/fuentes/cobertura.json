@@ -1,13 +1,13 @@
 {
-  "generado": "2026-11-05T20:25:27.128Z",
+  "generado": "2026-11-06T01:00:40.813Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 145,
-    "con_notas": 25,
+    "municipios_considerados": 146,
+    "con_notas": 26,
     "sin_notas": 120,
     "poblacion_sin_notas": 0,
-    "medios_distintos": 56
+    "medios_distintos": 57
   },
   "municipios": [
     {
@@ -52,7 +52,7 @@
         {
           "nombre": "La Patria",
           "notas": 1,
-          "ultima": "2026-10-29T01:10:00.000Z"
+          "ultima": "2026-10-28T07:00:00.000Z"
         },
         {
           "nombre": "El País",
@@ -78,7 +78,7 @@
       "mmi": 8.2,
       "poblacion": null,
       "notas": 35,
-      "ultima": "2026-11-05T18:56:15.000Z",
+      "ultima": "2026-11-05T18:57:49.000Z",
       "medios": [
         {
           "nombre": "El Diario (Pereira)",
@@ -93,7 +93,7 @@
         {
           "nombre": "La FM",
           "notas": 2,
-          "ultima": "2026-11-05T18:56:15.000Z"
+          "ultima": "2026-11-05T18:57:49.000Z"
         },
         {
           "nombre": "Alcaldía de Pereira",
@@ -653,11 +653,16 @@
       "mmi": 7.5,
       "poblacion": null,
       "notas": 9,
-      "ultima": "2026-10-31T21:25:22.000Z",
+      "ultima": "2026-11-06T00:46:17.000Z",
       "medios": [
         {
+          "nombre": "Noticias RCN",
+          "notas": 2,
+          "ultima": "2026-11-06T00:46:17.000Z"
+        },
+        {
           "nombre": "Gobernación del Valle del Cauca",
-          "notas": 3,
+          "notas": 2,
           "ultima": "2026-10-31T21:25:22.000Z"
         },
         {
@@ -669,11 +674,6 @@
           "nombre": "Canal 1 En vivo",
           "notas": 1,
           "ultima": "2026-09-17T07:00:00.000Z"
-        },
-        {
-          "nombre": "Noticias RCN",
-          "notas": 1,
-          "ultima": "2026-09-16T12:06:57.000Z"
         },
         {
           "nombre": "Diario del Norte",
@@ -875,13 +875,13 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.4,
       "poblacion": null,
-      "notas": 1,
-      "ultima": "2026-11-04T23:39:30.000Z",
+      "notas": 2,
+      "ultima": "2026-11-05T21:23:22.000Z",
       "medios": [
         {
           "nombre": "Gobernación del Valle del Cauca",
-          "notas": 1,
-          "ultima": "2026-11-04T23:39:30.000Z"
+          "notas": 2,
+          "ultima": "2026-11-05T21:23:22.000Z"
         }
       ]
     },
@@ -1006,8 +1006,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": null,
-      "notas": 21,
-      "ultima": "2026-11-04T14:41:00.000Z",
+      "notas": 22,
+      "ultima": "2026-11-05T22:57:47.000Z",
       "medios": [
         {
           "nombre": "EL PAÍS",
@@ -1025,14 +1025,19 @@
           "ultima": "2026-11-04T14:41:00.000Z"
         },
         {
+          "nombre": "El País (Cali)",
+          "notas": 1,
+          "ultima": "2026-11-05T22:57:47.000Z"
+        },
+        {
           "nombre": "Revista Semana",
           "notas": 1,
           "ultima": "2026-11-02T18:38:01.000Z"
         },
         {
-          "nombre": "Futbolred",
+          "nombre": "Las2orillas",
           "notas": 1,
-          "ultima": "2026-10-31T18:43:13.000Z"
+          "ultima": "2026-10-29T23:26:36.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1821,18 +1826,13 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": null,
-      "notas": 2,
+      "notas": 1,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2026-10-05T07:00:00.000Z"
-        },
-        {
-          "nombre": "Noticiero 90 Minutos",
-          "notas": 1,
-          "ultima": "2026-09-02T07:00:00.000Z"
         }
       ]
     },
@@ -1849,6 +1849,22 @@
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-20T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO52473",
+      "nombre": "Mosquera",
+      "departamento": "Nariño",
+      "mmi": 5.3,
+      "poblacion": null,
+      "notas": 1,
+      "ultima": "2026-11-05T20:47:21.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-05T20:47:21.000Z"
         }
       ]
     },
