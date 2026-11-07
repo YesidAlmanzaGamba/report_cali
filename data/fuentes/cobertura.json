@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-07T01:29:03.426Z",
+  "generado": "2026-11-07T07:38:07.533Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
@@ -7,7 +7,7 @@
     "con_notas": 29,
     "sin_notas": 121,
     "poblacion_sin_notas": 4056559,
-    "medios_distintos": 60
+    "medios_distintos": 61
   },
   "municipios": [
     {
@@ -1021,8 +1021,8 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 23,
-      "ultima": "2026-11-07T00:58:08.000Z",
+      "notas": 24,
+      "ultima": "2026-11-07T02:41:32.000Z",
       "medios": [
         {
           "nombre": "EL PAÍS",
@@ -1035,6 +1035,11 @@
           "ultima": "2026-08-26T07:00:00.000Z"
         },
         {
+          "nombre": "El Tiempo",
+          "notas": 2,
+          "ultima": "2026-11-07T02:41:32.000Z"
+        },
+        {
           "nombre": "El País",
           "notas": 2,
           "ultima": "2026-11-04T14:41:00.000Z"
@@ -1043,11 +1048,6 @@
           "nombre": "El País (Cali)",
           "notas": 1,
           "ultima": "2026-11-07T00:58:08.000Z"
-        },
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-11-06T23:52:29.000Z"
         },
         {
           "nombre": "Diario del Norte",
@@ -1850,22 +1850,6 @@
       ]
     },
     {
-      "pcode": "CO05001",
-      "nombre": "Medellín",
-      "departamento": "Antioquia",
-      "mmi": 5.6,
-      "poblacion": 2745464,
-      "notas": 1,
-      "ultima": "2026-11-06T21:42:36.000Z",
-      "medios": [
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-11-06T21:42:36.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO73483",
       "nombre": "Natagaima",
       "departamento": "Tolima",
@@ -1925,12 +1909,12 @@
       "mmi": 4.9,
       "poblacion": 149173,
       "notas": 1,
-      "ultima": "2026-11-06T16:51:00.000Z",
+      "ultima": "2026-11-06T23:43:04.000Z",
       "medios": [
         {
           "nombre": "Infobae",
           "notas": 1,
-          "ultima": "2026-11-06T16:51:00.000Z"
+          "ultima": "2026-11-06T23:43:04.000Z"
         }
       ]
     },
@@ -1940,13 +1924,13 @@
       "departamento": "Atlántico",
       "mmi": 4.7,
       "poblacion": 1355306,
-      "notas": 2,
-      "ultima": "2026-11-06T23:46:14.000Z",
+      "notas": 3,
+      "ultima": "2026-11-07T03:28:23.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-11-06T23:46:14.000Z"
+          "notas": 2,
+          "ultima": "2026-11-07T03:28:23.000Z"
         },
         {
           "nombre": "Caracol Radio",
@@ -2010,6 +1994,22 @@
           "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO13440",
+      "nombre": "Margarita",
+      "departamento": "Bolívar",
+      "mmi": 4,
+      "poblacion": 11814,
+      "notas": 1,
+      "ultima": "2026-08-14T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Gobernación del Magdalena",
+          "notas": 1,
+          "ultima": "2026-08-14T07:00:00.000Z"
         }
       ]
     }
