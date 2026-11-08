@@ -1,8 +1,18 @@
 {
-  "generado": "2026-11-08T20:04:06.151Z",
+  "generado": "2026-11-08T23:51:20.047Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Video | Reportan desprendimiento de escombros en la estructura colapsada del Hotel La Luna, en el sur de Cali; no hay heridos",
+      "enlace": "https://www.elpais.com.co/cali/video-reportan-desprendimiento-de-escombros-en-la-estructura-colapsada-del-hotel-la-luna-en-el-sur-de-cali-0812.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-11-08T23:00:54.000Z",
+      "pcode": "CO76001",
+      "municipio": "Cali"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Sismo de 5,6 en Chaparral, Tolima, deja viviendas afectadas y daños estructurales - Revista Semana",
@@ -12,6 +22,14 @@
       "publicado": "2026-11-03T17:59:23.000Z",
       "pcode": "CO73168",
       "municipio": "Chaparral"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Terremoto en Colombia: estas son las cifras de muertos, heridos y viviendas afectadas tras dos meses - Vanguardia",
+      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQM0oySmUyXzRTQkp2OHdydXlNaU0zaDBLUDZfUDFKd291V0h6dE44MW5lVmVEWjNHbmJ2dHZ5akFLd21lbE9aa1JKOEVDS3FidE9sUk5welFsd2tIUzNhTWExM2htaW5GVm13WUJxTERzUHZVcGdzeU53WV81RDdXMURtOHRVV3hBV19KejRwWV90elBxQ2hHTlpjdjAwWE1Fa3gyNFczaXFfR1RrYkRyMkVrcldxc3RRbGxWc2F6S1VDRkdtN1FXNFhvcnpWZ2VNdUl1Q1VXMWk1LVhuTU9z?oc=5",
+      "medio": "Vanguardia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-10-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -442,7 +460,7 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio en Colombia: dónde llevar ayudas para los afectados por el terremoto - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N30gGGAkFVX3lxTFBfVERFSGxKS0JYcHp6UkktN1ctYlZjYVdEM1BYTDREcmZRS3I4b2xsMkZzTURmV1AtM0o0RGh2RHVqNXRsemRjUkxFa0o1aVdIcEJiLVhFUHFyN0V5S041cEdfQkVmZVdIeE5NSUY2eTZhUXliVDNQV2YyZHRGSkVlZW5sTWprbTA0cDJHdkx5cDB5MWtjaXhMQnowNk9kc3N5NndZR2d4M2tlczE0UDBHWWFHRnhYYkdJMXdqZGJvSFZwSWlnN2xhYWtLb1BxcGdUUWhPUi1WM1FxZ2ZHeVE1Z2JocGMzTk95QWRWeUp6eDJwVE9iaVl4WVoyODY2UjRYUXRaTkE?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N3?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T07:00:00.000Z"
