@@ -1,12 +1,12 @@
 {
-  "generado": "2026-11-08T15:41:27.431Z",
+  "generado": "2026-11-08T20:04:06.153Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 151,
-    "con_notas": 31,
-    "sin_notas": 120,
-    "poblacion_sin_notas": 4044079,
+    "municipios_considerados": 149,
+    "con_notas": 30,
+    "sin_notas": 119,
+    "poblacion_sin_notas": 3901824,
     "medios_distintos": 61
   },
   "municipios": [
@@ -72,18 +72,18 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 37,
-      "ultima": "2026-11-08T15:19:25.000Z",
+      "notas": 35,
+      "ultima": "2026-11-07T14:36:21.000Z",
       "medios": [
-        {
-          "nombre": "El Tiempo",
-          "notas": 4,
-          "ultima": "2026-11-08T15:19:25.000Z"
-        },
         {
           "nombre": "Caracol Radio",
           "notas": 3,
           "ultima": "2026-10-16T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Tiempo",
+          "notas": 3,
+          "ultima": "2026-09-15T07:00:00.000Z"
         },
         {
           "nombre": "El Diario (Pereira)",
@@ -124,11 +124,6 @@
           "nombre": "Pulzo",
           "notas": 1,
           "ultima": "2026-11-07T12:40:57.000Z"
-        },
-        {
-          "nombre": "El Nuevo Dia (Colombia)",
-          "notas": 1,
-          "ultima": "2026-11-07T12:18:56.000Z"
         },
         {
           "nombre": "ReliefWeb",
@@ -314,8 +309,15 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 142255,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-09-22T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "El Norte Hoy",
+          "notas": 1,
+          "ultima": "2026-09-22T07:00:00.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76400",
@@ -406,7 +408,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 38029,
-      "notas": 14,
+      "notas": 13,
       "ultima": "2026-11-03T18:50:10.000Z",
       "medios": [
         {
@@ -433,11 +435,6 @@
           "nombre": "El País",
           "notas": 1,
           "ultima": "2026-09-07T07:00:00.000Z"
-        },
-        {
-          "nombre": "Facebook",
-          "notas": 1,
-          "ultima": "2026-08-21T07:00:00.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1023,13 +1020,13 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.1,
       "poblacion": 2337182,
-      "notas": 26,
-      "ultima": "2026-11-08T11:37:23.000Z",
+      "notas": 29,
+      "ultima": "2026-11-08T18:05:42.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 5,
-          "ultima": "2026-11-08T11:37:23.000Z"
+          "notas": 6,
+          "ultima": "2026-11-08T18:05:42.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1042,19 +1039,34 @@
           "ultima": "2026-08-26T07:00:00.000Z"
         },
         {
-          "nombre": "El Tiempo",
-          "notas": 2,
-          "ultima": "2026-11-08T05:15:00.000Z"
-        },
-        {
           "nombre": "El País",
           "notas": 2,
           "ultima": "2026-11-04T14:41:00.000Z"
         },
         {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-11-08T15:37:45.000Z"
+        },
+        {
+          "nombre": "La FM",
+          "notas": 1,
+          "ultima": "2026-11-07T12:54:46.000Z"
+        },
+        {
+          "nombre": "Diario del Norte",
+          "notas": 1,
+          "ultima": "2026-11-06T15:39:30.000Z"
+        },
+        {
           "nombre": "El Espectador",
           "notas": 1,
           "ultima": "2026-11-05T15:05:06.000Z"
+        },
+        {
+          "nombre": "Revista Semana",
+          "notas": 1,
+          "ultima": "2026-11-02T18:38:01.000Z"
         },
         {
           "nombre": "Gobernación del Valle del Cauca",
@@ -1617,13 +1629,13 @@
       "departamento": "Tolima",
       "mmi": 6.3,
       "poblacion": 549432,
-      "notas": 2,
-      "ultima": "2026-11-08T12:07:03.000Z",
+      "notas": 3,
+      "ultima": "2026-11-08T17:59:58.000Z",
       "medios": [
         {
           "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-11-08T12:07:03.000Z"
+          "notas": 2,
+          "ultima": "2026-11-08T17:59:58.000Z"
         },
         {
           "nombre": "Caracol Radio",
@@ -1847,22 +1859,6 @@
       ]
     },
     {
-      "pcode": "CO73678",
-      "nombre": "San Luis",
-      "departamento": "Tolima",
-      "mmi": 5.5,
-      "poblacion": 13542,
-      "notas": 1,
-      "ultima": "2026-11-07T20:58:35.000Z",
-      "medios": [
-        {
-          "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-11-07T20:58:35.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO17867",
       "nombre": "Victoria",
       "departamento": "Caldas",
@@ -1891,22 +1887,6 @@
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-08-20T07:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO73349",
-      "nombre": "Honda",
-      "departamento": "Tolima",
-      "mmi": 5.3,
-      "poblacion": 24905,
-      "notas": 1,
-      "ultima": "2026-11-08T11:36:32.000Z",
-      "medios": [
-        {
-          "nombre": "El Nuevo Día (Ibagué)",
-          "notas": 1,
-          "ultima": "2026-11-08T11:36:32.000Z"
         }
       ]
     },
