@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-08T23:51:20.049Z",
+  "generado": "2026-11-09T03:53:26.505Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
@@ -7,7 +7,7 @@
     "con_notas": 29,
     "sin_notas": 119,
     "poblacion_sin_notas": 3901824,
-    "medios_distintos": 61
+    "medios_distintos": 62
   },
   "municipios": [
     {
@@ -72,7 +72,7 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 35,
+      "notas": 36,
       "ultima": "2026-11-07T14:36:21.000Z",
       "medios": [
         {
@@ -167,6 +167,11 @@
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
+          "notas": 1,
+          "ultima": "2026-08-15T07:00:00.000Z"
+        },
+        {
+          "nombre": "El País",
           "notas": 1,
           "ultima": "2026-08-15T07:00:00.000Z"
         },
@@ -356,9 +361,14 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 12251,
-      "notas": 5,
+      "notas": 7,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
+        {
+          "nombre": "El País",
+          "notas": 2,
+          "ultima": "2026-10-05T07:00:00.000Z"
+        },
         {
           "nombre": "Gobernación del valle",
           "notas": 1,
@@ -408,7 +418,7 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 38029,
-      "notas": 14,
+      "notas": 13,
       "ultima": "2026-11-03T18:50:10.000Z",
       "medios": [
         {
@@ -435,11 +445,6 @@
           "nombre": "El País",
           "notas": 1,
           "ultima": "2026-09-07T07:00:00.000Z"
-        },
-        {
-          "nombre": "Facebook",
-          "notas": 1,
-          "ultima": "2026-08-21T07:00:00.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1026,12 +1031,12 @@
       "mmi": 7.1,
       "poblacion": 2337182,
       "notas": 29,
-      "ultima": "2026-11-08T23:00:54.000Z",
+      "ultima": "2026-11-09T01:36:13.000Z",
       "medios": [
         {
           "nombre": "El País (Cali)",
-          "notas": 6,
-          "ultima": "2026-11-08T23:00:54.000Z"
+          "notas": 7,
+          "ultima": "2026-11-09T01:36:13.000Z"
         },
         {
           "nombre": "EL PAÍS",
@@ -1047,11 +1052,6 @@
           "nombre": "El País",
           "notas": 2,
           "ultima": "2026-11-04T14:41:00.000Z"
-        },
-        {
-          "nombre": "El Tiempo",
-          "notas": 1,
-          "ultima": "2026-11-08T15:37:45.000Z"
         },
         {
           "nombre": "La FM",
@@ -1869,13 +1869,23 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 1,
+      "notas": 3,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
           "notas": 1,
           "ultima": "2026-10-05T07:00:00.000Z"
+        },
+        {
+          "nombre": "Noticiero 90 Minutos",
+          "notas": 1,
+          "ultima": "2026-09-02T07:00:00.000Z"
+        },
+        {
+          "nombre": "Facebook",
+          "notas": 1,
+          "ultima": "2026-08-31T07:00:00.000Z"
         }
       ]
     },

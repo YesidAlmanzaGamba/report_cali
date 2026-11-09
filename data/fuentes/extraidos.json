@@ -1,11 +1,11 @@
 {
-  "generado": "2026-11-08T23:51:20.047Z",
+  "generado": "2026-11-09T03:53:26.503Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Video | Reportan desprendimiento de escombros en la estructura colapsada del Hotel La Luna, en el sur de Cali; no hay heridos",
+      "titulo": "Video | Se registró desprendimiento de escombros en la estructura colapsada del Hotel La Luna, en el sur de Cali; no hubo heridos",
       "enlace": "https://www.elpais.com.co/cali/video-reportan-desprendimiento-de-escombros-en-la-estructura-colapsada-del-hotel-la-luna-en-el-sur-de-cali-0812.html",
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
@@ -25,19 +25,19 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia: estas son las cifras de muertos, heridos y viviendas afectadas tras dos meses - Vanguardia",
-      "enlace": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQM0oySmUyXzRTQkp2OHdydXlNaU0zaDBLUDZfUDFKd291V0h6dE44MW5lVmVEWjNHbmJ2dHZ5akFLd21lbE9aa1JKOEVDS3FidE9sUk5welFsd2tIUzNhTWExM2htaW5GVm13WUJxTERzUHZVcGdzeU53WV81RDdXMURtOHRVV3hBV19KejRwWV90elBxQ2hHTlpjdjAwWE1Fa3gyNFczaXFfR1RrYkRyMkVrcldxc3RRbGxWc2F6S1VDRkdtN1FXNFhvcnpWZ2VNdUl1Q1VXMWk1LVhuTU9z?oc=5",
-      "medio": "Vanguardia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-10-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "Víctimas del terremoto en Colombia: balance de la UNGRD confirma 335 fallecidos y 244 mil viviendas dañada - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
       "medio": "La FM",
       "tipo_fuente": "press",
       "publicado": "2026-10-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "Ayuda humanitaria llevó refugio temporal a damnificados del terremoto en zonas rurales - Fuerza Aeroespacial Colombiana",
+      "enlace": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOS1BiMjR5dkNDRjkzVnhhY2FjS2oxM1FYcXp6YS0xSlE3VGNhQ2F0Ync1NlZtZUJKX0JSQmJiZmxTODFwVzJVaVE0RDVjNkJ2aDBfVmVhQWtRM01qVloxekoyUUJGMkN4TGtneVEtQmJPOGNja2laT3hEWGRZbG5DVmlpS0IxOVlUc25MTTA0MmZwWW9RUzR6SDhtclRYRGdiYzBTTjk0WXBUeDJHU241VXlpTVZtRzdRcUVv?oc=5",
+      "medio": "Fuerza Aeroespacial Colombiana",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-09-17T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -304,6 +304,16 @@
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en La Victoria, Valle: 370 viviendas resultaron afectadas y 60 colapsaron; piden ayuda del Gobierno Nacional - El País",
+      "enlace": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPWGU5SmUwbFZKQjhac3ZfZUh5SXNKWWtXdnEzVnZtNEYwRENZT1NPZkk1MzZPeURxeW13a3JLeS1sbHJZa0VJUFhYOFFIM1FrUC04UDZqWVBOVS1OdC1PT2JnTU9MaHFvZzJxY0tuUjR4NnF5VUEzbDRLcVJwcW80UTdzN2NWWUhSSkNJSmFQX1BWODZfWEFvU0FtLVBlam1QMG0tcjhyRDV5N1Blb0JOcEVrOWxkZlI1VTY4QksyTDcydXhjVXl2TnZ5RFNxYVg5TUZha1pjRDJwUTJRV3RMU3JhM0hHdnhRYUpHRGt30gHzAUFVX3lxTE8tM2E0SnRVRUFJVzI5TVBSUVljRnRjRG5yQzRyQmw2X3lsTW9OUWRPRFEwTkRza1ZLNHpPYmp3Yk9DQ3dWMF9sYXA2Y3U4R0F5Q0hvT3l5UF9kdlEwQWlGZ1Z0TkhTMXA5QmdodWRMeEh3Y3VCVlpnLVhESldUcU5vNWxoWFNfRGlYcU52TWNzaXYySVF6a182RTdzcGJDdGdIS2huMVc2MTNOY0w2RHVTOEQzRGxmMW9zRndKSE1XX050OXlad2toa2kydXJraVpWUGZ0MVR4WmNHajMyV3hyMnNSWmJ3T24wSnM5Q3IzcUxDcw?oc=5",
+      "medio": "El País",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-11T07:00:00.000Z",
+      "pcode": "CO76403",
+      "municipio": "La Victoria"
     },
     {
       "tipo": "edificacion_danada",
