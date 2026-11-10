@@ -1,15 +1,25 @@
 {
-  "generado": "2026-11-10T12:51:59.348Z",
+  "generado": "2026-11-10T20:07:42.721Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
     {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Pereira se prepara para demolición del icónico edificio Invico en el que piso 12 colapsó tras terremoto del 10 de agosto: fecha y medidas de seguridad",
+      "enlace": "https://www.eltiempo.com/colombia/otras-ciudades/pereira-se-prepara-para-demolicion-del-iconico-edificio-invico-en-el-que-piso-12-colapso-tras-terremoto-del-10-de-agosto-fecha-y-medidas-de-seguridad-3599855",
+      "medio": "El Tiempo",
+      "tipo_fuente": "press",
+      "publicado": "2026-11-10T19:27:11.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
       "tipo": "edificacion_danada",
-      "titulo": "Culminó la demolición de los edificios afectados por el terremoto en la Calle 9 con Carrera 44; ¿cuándo se habilitará la vía?",
-      "enlace": "https://www.elpais.com.co/cali/culmino-la-demolicion-de-los-edificios-afectados-por-el-terremoto-en-la-calle-9-con-carrera-44-cuando-se-habilitara-la-via-0917.html",
+      "titulo": "A tres meses del terremoto en Cali: ¿cuántos edificios afectados ya fueron demolidos? Este es el balance",
+      "enlace": "https://www.elpais.com.co/cali/a-tres-meses-del-terremoto-en-cali-cuantos-edificios-afectados-ya-fueron-demolidos-este-es-el-balance-1024.html",
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
-      "publicado": "2026-11-09T17:39:17.000Z",
+      "publicado": "2026-11-10T15:53:24.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
@@ -299,20 +309,20 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Estos son los nuevos albergues y puntos de acopio habilitados en Cali - El País – Cali",
-      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQWxEMTNFa1VEUEhfZW9YUU9CR1JWOS1ERm1RcGFnXzlyUUdQV0JfWXJiMVV3Yi1EZ0pmMTJqRldzMEFqUTVOSmhQV1YtdHo4VUxHME5xekdzNGFGUFNHYlZOSG1PWFZKTUNFLTVjb3JWSHRFT0dhSHI3bGJ3eHZ5OUxGRHdzMk1DTWQzUHM4RkwwSGlLSmZRcEFOVkdIYjNYQzA0M1p2UWRaTUFxWEFoQWFXa0tsRDNHWVo1Y1ZUb1ZvZw?oc=5",
-      "medio": "El País – Cali",
-      "tipo_fuente": "press",
+      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
+      "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
+      "medio": "Pulzo",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
     {
       "tipo": "albergue",
-      "titulo": "Alcaldía de Cali habilita puntos de acopio y albergues temporales para afectados por el reciente terremoto - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUxyTGItNFRLbWJzRkFQdGNMX09Wek43bVRnaU9DZUtGVDc3MmxaakYzcmRaR2o5TTgzVzJENmw1ZmUwWHVHaXVYYnVHdDhaN3BSMkQ4QzBaalU4N1NDbzR2c3R6Y1gxTXNEYWlLcy1kQnotVlBlLUpoYUQxMWxsZnJ0R3pzZTVkVjhPWFpRMW9pb0J6NHpGX3dhNnhLNldpOGpYSl95RFF3RUJEdm9uVk5yYlE0c21YWS0zTTdpcGRSeGducDRn0gHMAUFVX3lxTE1jZW96TC1obDRjUmoxcEZMQXdWdjdGOWQ2akpGVEcwcnZtWXdvUXVpZTRDM3NBWTQ3VV83LWJhVW9WUnBXSjhDTjl3Z1RWUW5rM2FicW05VzFRSG5STzd1dlZTV1Yxb0p3cUhjVjhTb3lxT3lQUktvNWZmZXZuZkxJb3VfWmQtMzJvWUVoR2JYcGxXWS01aHhwRC16eUFSZDFrdjNXelluZGktdXlBZWlMWC1ncW5sS1pGNl9yTE92VElaalhUbDlGR0tIZg?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
+      "titulo": "Estos son los nuevos albergues y puntos de acopio habilitados en Cali - El País – Cali",
+      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQWxEMTNFa1VEUEhfZW9YUU9CR1JWOS1ERm1RcGFnXzlyUUdQV0JfWXJiMVV3Yi1EZ0pmMTJqRldzMEFqUTVOSmhQV1YtdHo4VUxHME5xekdzNGFGUFNHYlZOSG1PWFZKTUNFLTVjb3JWSHRFT0dhSHI3bGJ3eHZ5OUxGRHdzMk1DTWQzUHM4RkwwSGlLSmZRcEFOVkdIYjNYQzA0M1p2UWRaTUFxWEFoQWFXa0tsRDNHWVo1Y1ZUb1ZvZw?oc=5",
+      "medio": "El País – Cali",
+      "tipo_fuente": "press",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
@@ -435,14 +445,6 @@
     },
     {
       "tipo": "centro_acopio",
-      "titulo": "Ciudades capitales activan centros de acopio para apoyar a las víctimas del terremoto de magnitud 7,4 en Colombia - Asocapitales",
-      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONk1oTTBndk96eE5oSHBHbVpXaFNTcks3blE3Qmh6WHc3YnFSanROZ29DZmJaWW9IOF9USXhVUmNnTzNmQmowUkltbEk5ZVl1aWRyczVmVkpOcTlwS1VvYmdaOGtONEgyY003aS03d1pWX1J0LW1PX20wOHk4SEo5VVpsdkhuNzQzc0F4dm9Da1NKSU1wLWJGdGp6V1dSVmVvaVRKNVdKaWFzYWV1XzVZeDZfTTE1QUlEMkUwZ2tBSXVTNkE?oc=5",
-      "medio": "Asocapitales",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "centro_acopio",
       "titulo": "Dónde donar tras el terremoto en Colombia: puntos de acopio en las ciudades principales - CAMBIO Colombia",
       "enlace": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPOXcxWUpRM2QzUUVCaHV0YkNPZjlWaUk5cE1vTXgtN3RNZkZBb013U3h4RDlWQkZNcFBUR096OG04VnhhVldiMDNnT3B1d3ZvbUFNblVTOVplcUZ5aTVVSElNVUZBUW9tcG5uR2JCU3VTTUR5OGFCclVKMm41SU1nYW9oTGs1Q1JhaFZ4bjN3Y1F6cnN6WGFUbHZRem1ORUlfQlp5TTgyNm1WTTk3NHhtdUFXRHBvcTJyU3lTSWU0N29mVWlfSHg4QkhSNUNhc2JoLXg5blVMWkl3Q29HTjA0aWxXNDNWY0c3R281RHJXT3dsalU4b2RzSVc2UzhJMG8wT0s0Uw?oc=5",
       "medio": "CAMBIO Colombia",
@@ -458,6 +460,14 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Ciudades capitales activan centros de acopio para apoyar a las víctimas del terremoto de magnitud 7,4 en Colombia - Asocapitales",
+      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONk1oTTBndk96eE5oSHBHbVpXaFNTcks3blE3Qmh6WHc3YnFSanROZ29DZmJaWW9IOF9USXhVUmNnTzNmQmowUkltbEk5ZVl1aWRyczVmVkpOcTlwS1VvYmdaOGtONEgyY003aS03d1pWX1J0LW1PX20wOHk4SEo5VVpsdkhuNzQzc0F4dm9Da1NKSU1wLWJGdGp6V1dSVmVvaVRKNVdKaWFzYWV1XzVZeDZfTTE1QUlEMkUwZ2tBSXVTNkE?oc=5",
+      "medio": "Asocapitales",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
