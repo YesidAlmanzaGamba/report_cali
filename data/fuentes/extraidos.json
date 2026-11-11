@@ -1,8 +1,16 @@
 {
-  "generado": "2026-11-11T15:29:33.521Z",
+  "generado": "2026-11-11T22:08:52.371Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Gobierno aún no asigna ayudas de vivienda a familias afectadas por el terremoto de agosto - Vanguardia",
+      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMF9JQVlqMUpXYjFJVVVoZ183ZW5xdlRod1JCdnJySmVCZXNsVkVqZXVuRVJLX2JuZUJ1Q19iS0k5TlBWNEdiNkl3ODIwYnlRX1EwcnhPeXlYVF9SdDRFRjBXcjFZRVhqVXpYdGVuRUNoQW5IWDgyOTlPR1dnc3pCX2JaT1FKUzROTjBfVXZGZ2ZFTF9SWGU5WVVZRmFTQS1HdTFoRlJrRmRobHY3eGVoMXk0VmxEVVNsMXlnQ3pRSHd2TDM0UE5sSFd6bWRkNzBDZ3NIbV93?oc=5",
+      "medio": "Vanguardia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-11-11T20:22:00.000Z"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Tres meses después del terremoto, dos adultos mayores duermen con cascos por temor a que su vivienda se desplome en Cali",
@@ -10,16 +18,6 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-11-10T23:59:09.000Z",
-      "pcode": "CO76001",
-      "municipio": "Cali"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "A tres meses del terremoto en Cali: ¿cuántos edificios afectados ya fueron demolidos? Este es el balance",
-      "enlace": "https://www.elpais.com.co/cali/a-tres-meses-del-terremoto-en-cali-cuantos-edificios-afectados-ya-fueron-demolidos-este-es-el-balance-1024.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-11-10T15:53:24.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
     },
@@ -319,20 +317,20 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "En Roldanillo dos muertos y mil edificaciones afectadas. - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPS3R5NkhHVy1nNVo3MlhqdjdkN3gwNjctaTZmZWY2eG5SQ2pxZUVoQWZUck9VR1dhQU8weEtFMnFwYnRfTThGdk1hN1dmeWlrT2hxWTFBTWR1T2Y5bVZwd0VBN1IzQjhlMDd5blhoLV84LVZjZlB4R2ExUFktME9LY1Bia0xfbXFfdS1GZ1BvcUlCekFJ0gGoAUFVX3lxTE5ZM0c3eTBQazhBN080S0lJQWhEUjdJd3NnTDNYQUlzMVFFUW9kalRTZkwxdW9DbTZib3YtOWpTcE5nSWJZYU1OMnNzekFFQmM2LVVmZktjX2tDZnhRZjdPR1RVM0JSbmQ5LWpWWTRoWEFwSzlLUFJjZGtRelcxbkxUUTZlUFZVdWdrVklHakhsWXFVVzFyelZDRUNZMzM0cnpLVVVraEg0eA?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
+      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - Gobernación del valle",
+      "enlace": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQVFVvZ05vMUhhNnlJTDhudU5yRWI1YXAzT19VMmQwTUdIb1FFSWVSQW5ZZmw0ZGgwRVpFNkdwRDVxalVGcUVIQ0l4c2JRb2dZcXhCVnc0WDlLdUFKLTlRVmw2RzJUbnRUalVwelMwcWxYV0hUSXpqVC1yaURMU1JaOFg0TTh5NVBuWDRXcmFhT05YdDJpVFVVSG9uNHJ2a05qVzU3bGFnS3p6S3dqb21oRHZkYklJVGxvc19fWWJQY1FNUTVTZmx3SVVIeXZMaDJFZU5CMEVRNHJ5OS14aXVlSGpQSVVCRVJ6Y09HYWZGcDkyMjR1aEpReURON1VUSEx3em1uaURCVHVKUzF1?oc=5",
+      "medio": "Gobernación del valle",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "A Roldanillo lo reconstruiremos entre todos: Gobernadora del Valle tras balance de 2 muertos, 112 heridos y 1.300 casas afectadas - Gobernación del valle",
-      "enlace": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQVFVvZ05vMUhhNnlJTDhudU5yRWI1YXAzT19VMmQwTUdIb1FFSWVSQW5ZZmw0ZGgwRVpFNkdwRDVxalVGcUVIQ0l4c2JRb2dZcXhCVnc0WDlLdUFKLTlRVmw2RzJUbnRUalVwelMwcWxYV0hUSXpqVC1yaURMU1JaOFg0TTh5NVBuWDRXcmFhT05YdDJpVFVVSG9uNHJ2a05qVzU3bGFnS3p6S3dqb21oRHZkYklJVGxvc19fWWJQY1FNUTVTZmx3SVVIeXZMaDJFZU5CMEVRNHJ5OS14aXVlSGpQSVVCRVJ6Y09HYWZGcDkyMjR1aEpReURON1VUSEx3em1uaURCVHVKUzF1?oc=5",
-      "medio": "Gobernación del valle",
-      "tipo_fuente": "unverified",
+      "titulo": "En Roldanillo dos muertos y mil edificaciones afectadas. - Caracol Radio",
+      "enlace": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPS3R5NkhHVy1nNVo3MlhqdjdkN3gwNjctaTZmZWY2eG5SQ2pxZUVoQWZUck9VR1dhQU8weEtFMnFwYnRfTThGdk1hN1dmeWlrT2hxWTFBTWR1T2Y5bVZwd0VBN1IzQjhlMDd5blhoLV84LVZjZlB4R2ExUFktME9LY1Bia0xfbXFfdS1GZ1BvcUlCekFJ0gGoAUFVX3lxTE5ZM0c3eTBQazhBN080S0lJQWhEUjdJd3NnTDNYQUlzMVFFUW9kalRTZkwxdW9DbTZib3YtOWpTcE5nSWJZYU1OMnNzekFFQmM2LVVmZktjX2tDZnhRZjdPR1RVM0JSbmQ5LWpWWTRoWEFwSzlLUFJjZGtRelcxbkxUUTZlUFZVdWdrVklHakhsWXFVVzFyelZDRUNZMzM0cnpLVVVraEg0eA?oc=5",
+      "medio": "Caracol Radio",
+      "tipo_fuente": "press",
       "publicado": "2026-08-11T07:00:00.000Z",
       "pcode": "CO76622",
       "municipio": "Roldanillo"
@@ -355,22 +353,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "🚨#ÚLTIMAHORA | Terremoto en Colombia deja al menos 20 muertos y edificios colapsados con personas atrapadas ⬇ - Facebook",
-      "enlace": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQT2xtc2tGVWpTeUpJeHg3VmYzNkt0amNLQUNZbEVnYW15Z2VFM1lZREtOcFl3TlhpdnBBMGlKRWwxVENrUWh5WDMyRjlrZ2pqdzVPdGhHck9KMXNSWkZ0a1E1eGJBOHhPMERQQ3F6bUV3alZoU0lJOG83UmpneTlFOUsyM3czakhHYnE0V29yVGRxWUlMQTFPbnZVc3VNWndqcmpFd0o2TEN4dFJuc3RqdGFFckpLQ083V0lXSUltQkdMMC1KVHZSSk5YNlBzbGZmbHZLRHhjMnZCMHotMTE1Y0xjd0JTQQ?oc=5",
-      "medio": "Facebook",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia deja al menos 111 muertos y edificios colapsados con personas atrapadas - ABC7 Los Angeles",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUxqdGZWcS13bml0TzJVR28xRkQxLTk0eGFsVXJwNVhnajVack56YzR6Xzd1YUxsR19rVGwxcHUwQVhXOFFfaV9rYnRYbkZxTW5UbW9NazdyQlZhMGpwcHk3cXJJN2g4TXJUZVlRa3A3NER1ZGxnNmtWMmhVUjdXbXdJOFpQcWtkelcyVEZiTnZDbk5OY2N5NF9wdUx1UmlxeVdlV1psMkNDdlZ1TnBSOWE1SlZMRDTSAbwBQVVfeXFMUFdoLV9uazA5VFlxek9sdlljd0lDRzlSVi1kckdaOWE3cjVISjlIaWNFbW0zbGY4TlZNZHZOLVlELXlJd0ttdmdUMThGTWUxNXhJckFUX0t3SUZPcUZZUmJFUU9qRTZTbDA0SXJwMHE2d2paT3pvSGUyU1N3c0N1WDF3V3hQaFg5OU5OSHg0d01GTktCcFNxNGwySERxdVV4YjNiQW44WWhaaUR5c2VkMDQ2YW5GdUJPbU5xX2I?oc=5",
-      "medio": "ABC7 Los Angeles",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Más de 60 edificios colapsados y 18 vías afectadas por terremoto en Colombia: balance de daños - Noticias Caracol",
       "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOc2dZZGl2aDNyWnpNTGgyeVZ5Zk0tckZmaldmVG1ON0VZY0hVYmxzLS1mVlZVclNOVDY5d2RGbUgxbVZqQXlzQ09LdlV6XzNwZXVEelNCbVRGQVJWeG1UZkg1YzI1NVJUbEtZUm1NUU5sd0pmU29QcnZBRGZ3anhzMUJwSEdaemRCYVlTT1lMU3YwQUJ6MFNmclV6ZFlWemQtMHBYMlZpRkZvcGJ3T2RMQmdxWmJIbTl2cVFWb0x1eVl5T3ktd2pCNkV1cHRicEJZcDRQbFB30gHjAUFVX3lxTE5ZM3FPY3JhQTZHVnkxN0JOZDFYSklqTkFXNzZLcUp2b3BCYURJNlFXWjctUW43OXltcDZCTkNwTTRRQ2laajVNYUpaOUthRlNJMlJSZVhPcjVrU3VIWVBOR2hCdkZERVZycmhnRzdTckZxNU5McnZzRlFyX2lCdExPbXQxY19BdUF1dnFmY2xuQThHSUZnWDdJUVJXZDNxYmEzdkFMMjdrY2dqTU53cmFoTTFoT0JMcEJ6dEU2a2szejVvaWNpakkzMG1CdkFHMkQzUXY2YXhJdURGRl80VFdrd1pZ?oc=5",
       "medio": "Noticias Caracol",
@@ -387,9 +369,17 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Colombia: terremoto de 7.4, el mayor en una década, deja ya 132 fallecidos y más de mil edificios colapsados - La Jornada",
-      "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSDdpUVJxM09RZTZrUGMzQWUxeXpnYzRDaXBQbEh0MnZMSUY4eTZLQ0xUQ1JtUFJ2S1pRa0lzd05Cb1FmazFKU01Kc2QzWHZpbUJEOU4yWkxDdG81X1V4TDBFc1JWRzJXTWp2Z2l2am53SVdub1hfeHdNckhsMGo0WG9hT0JkMnFwZkpkMFFrd0kyVU13b0g3MGpnOXV4aVc1d1E?oc=5",
-      "medio": "La Jornada",
+      "titulo": "Terremoto en Colombia deja al menos 111 muertos y edificios colapsados con personas atrapadas - ABC7 Los Angeles",
+      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUxqdGZWcS13bml0TzJVR28xRkQxLTk0eGFsVXJwNVhnajVack56YzR6Xzd1YUxsR19rVGwxcHUwQVhXOFFfaV9rYnRYbkZxTW5UbW9NazdyQlZhMGpwcHk3cXJJN2g4TXJUZVlRa3A3NER1ZGxnNmtWMmhVUjdXbXdJOFpQcWtkelcyVEZiTnZDbk5OY2N5NF9wdUx1UmlxeVdlV1psMkNDdlZ1TnBSOWE1SlZMRDTSAbwBQVVfeXFMUFdoLV9uazA5VFlxek9sdlljd0lDRzlSVi1kckdaOWE3cjVISjlIaWNFbW0zbGY4TlZNZHZOLVlELXlJd0ttdmdUMThGTWUxNXhJckFUX0t3SUZPcUZZUmJFUU9qRTZTbDA0SXJwMHE2d2paT3pvSGUyU1N3c0N1WDF3V3hQaFg5OU5OSHg0d01GTktCcFNxNGwySERxdVV4YjNiQW44WWhaaUR5c2VkMDQ2YW5GdUJPbU5xX2I?oc=5",
+      "medio": "ABC7 Los Angeles",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto de magnitud 7.4 deja 47 muertos y edificios colapsados en Colombia - WFLA",
+      "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRmFKTVhUSjV1cjNjUzB3anNWeEVTODhVT0Ywc0FlUjB2SjhKV1EzVU1CdWxCUlRiSjV6bkZILS1OaHlaTW5Sa0dWX1A0UVpJTlM4dTBMcFBXbnpoZGxqcTB0MnpsTjN4N2FlVXFsMGw4UjlHYzdHUURNMDJVRjQ5TzNqTnFQajVrUERQUWdNZExZam83QkUyLXlfaFdxMEd2aGNSVXdQdGpBR1U4SU9lOFZ3RU5ISXRHWi03cy1faXnSAcYBQVVfeXFMTkVRWGlzU0ttOW04RFBYWExaa0VnTDhJb1d4cGkySHhXQVROc0t4QXlRMXFpWTRibDdDNXdPS0JQZG5sNDRaajdpbmN0ZmFGT3JmT1NUUXVHVGR4YWhiNEdzdFA3cWlIWFRCX3Z6RWo3OFdfeFozNWYxdTN3Tk42UHpoRjNYMjN5ejFyUzZHdjJ6bzI4emU5X25SQVI0akcxbHNraHg0cVVvM0dIWXltT0NHYy1qZjVQSXdRV1dHa3VuVG9UYXdn?oc=5",
+      "medio": "WFLA",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -398,6 +388,14 @@
       "titulo": "Terremoto en Colombia: Reportan 18 muertos, cierres de 6 aeropuertos y 20 edificios colapsados - El Economista",
       "enlace": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPd2xjXzhqRFJoVENsWFBxYmFqT1BGeGtFUlI2OU1wU0JMc2hqTUkyTUFqVXRSMHpTVTc5UzJoODlYamJ6bXZCMm92cjVvVlFnbk5RWXVIZl8wMUZZNU9BU3JfTFU3ZHNtMzB3Mll2WThEdHZGNkE4bFhOZFJIeG1YTHRHbUc0RlZrSWh4TEJXaG15Uk1tblFRa2tTckdWbU5PMFBGVFU0ME9LcnFpVG5PSmoxZEs5NTN3Yk1XWWI3OS1NQnBPdjZfWVIxTHlhN003Vkxia1R2eHZGMzM1U3NtSi1TckhLN0HSAewBQVVfeXFMUDdCUTh3NVM1Y2VmaEo5UmtPSV8tVWVRcDFwMWx6Zk1ZQ1djNTBGd2hrUnFyclFNUU03SDdUWXVITDRwQTE2dEFRcWMzRTRhaENhc2JUOFA4TkpnR1ZmTFZyRm9vRXZENmtVaVVXbG9maHFqdXFPYmkwWlluTmlsZElhSUsyZUZVMlNSZnF5UWFTaDBQek9pZ0Q3WnV3TGVZWTlTS3o1bzVrRTRHWFh2QUV3dmRnTU5XTFo2RmpmeHpPRDJmZHdBX2xIcWdOdmVNOVlfQXJVcTlFZFQyWFhGbUZBTEE2SzN2VTRvbWQ?oc=5",
       "medio": "El Economista",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Colombia: terremoto de 7.4, el mayor en una década, deja ya 132 fallecidos y más de mil edificios colapsados - La Jornada",
+      "enlace": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSDdpUVJxM09RZTZrUGMzQWUxeXpnYzRDaXBQbEh0MnZMSUY4eTZLQ0xUQ1JtUFJ2S1pRa0lzd05Cb1FmazFKU01Kc2QzWHZpbUJEOU4yWkxDdG81X1V4TDBFc1JWRzJXTWp2Z2l2am53SVdub1hfeHdNckhsMGo0WG9hT0JkMnFwZkpkMFFrd0kyVU13b0g3MGpnOXV4aVc1d1E?oc=5",
+      "medio": "La Jornada",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -436,11 +434,11 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "tipo": "via_bloqueada",
-      "titulo": "Más de 130 muertos, 570 heridos, viviendas y vías dañadas y aeropuertos cerrados, las dramáticas cifras que deja hasta ahora el terremoto en Colombia - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOUGR6Y1BuZ1A2Q0xfbmZXWWZUSDdiMzMwLW9rMXFtdVRCaktSMEtIN3VDVlpveUg3Y1RYdWVrQzVCRTJ6QUlwN0Rpanpsd2N1Y3NYS0JEQXU2Sm10cVlUaldScVB5Wnc2Y0FiS2xMYWlXZXpfeVAwMi1HbkFJR2tWdlNpUkh6SktIZ2hua0prUVdkTGw0YkVObm1RUnM1UVM3TTdCVnluaFBUSk9QSEVjQmJiRUpDRUpvZENaZmFlQUR0ajBsNXJCUHFfaEtURXREVkNTR2liNGI3T0EyRXk1MHNfYkZqZmF6RXR0M3ZCVkhXZldvMHI2clp3bjlhWjZrb0xXdWp2c1BzcERlcmZwOVNDR20tZmxDT2hR0gG2AkFVX3lxTE1OZm9zbU9fMmdwWjFZZHM2dFJjQjhnWHhjbHBrWnBGOHYyOUl5QVRWRlZpUjhPdF9TcEViREl2M1B5TGhIVU1IUkd5RHBvVklZTnZkZmtleWZHT2RRdGpkTU1Zd1BCcVpMNGhQclk1LUFtS0JzTk5wSmRoVUxuejA0SHk5c1c2UjQxeGZVXzNqU3owaTZXU2wxVUhtaXh3dU9FSEtwRkNtSENrRENGQUczTW5QTXdXQ0VMUWc2TmtmczJWb3lhZkhZenFxb3kwZ3c3d2JZREtxM3dra1lheDBOLVo3blVGQW1fYVczZjEtdFBmWDQyQl9MeG93VkxLb3BNMHdRbTI5VW5zcVY4WnZqV3RMb3ZTdWg4WUNvRUFJTFRnekh5ekFucjlaVHQ3WFJVdlZCQUE?oc=5",
-      "medio": "Infobae",
-      "tipo_fuente": "press",
+      "tipo": "edificacion_colapsada",
+      "titulo": "Nuevos videos del terremoto en Colombia: edificios colapsados, daños estructurales y personas atrapadas - UnoTV",
+      "enlace": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNSTFsOW92bnlyUTBJVURxbDFyMGYwQXV0TXhoOVgwMzJMTEdwNE5jWTc5ZU1lWTN6SkFQckZtR2pHLTFnWjBHbnA0VTZ3TE9CcDZzSGNrSmdtT1M1WnJPdGMwQWNKaFdlTjdUQTRlR25qdG1BaHF6d1Myel9uTFFQanliVEhrQ0NZRDZvWFotY3NoS3dCZVp0T1Z4TC1fQVZsUnctTWl1cmJSZUh1UEVadzNUV1h3ZHdPaE5QYVBCdEpUczJDM2NacDBILWx5eVRXTndKU05Dak1kS1JFUzFUUlY2NGJDRU9uQURyU29JMGtGd0QxMUE?oc=5",
+      "medio": "UnoTV",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
@@ -471,14 +469,6 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
-      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
-      "medio": "Forbes Colombia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "Terremoto de 7,4 sacude San José del Palmar y deja cientos de casas afectadas - Canal Trece",
       "enlace": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQb2JuMVlTck9UTEtrMVlSaUZuel9PRURlUXdvYVh2UURVcEZ1bTRJcWJfX3g5V08wRVUyUjFEX2lFNldOaFp0NVBaNVJTa2ZYTWp2bDlfS3U0dnN0YkE3LXZ1NEFrNGt1T2hwTmV2WlFnV0tDQk53TnNtdG96WXBhNU1LaWpxOTdVN1RfRml1eWt1NWRsckNoNDdaTVBrcmhvTVhjbjVFZXE2UWVyNWdQMGxR?oc=5",
       "medio": "Canal Trece",
@@ -490,26 +480,10 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio en Colombia: dónde llevar ayudas para los afectados por el terremoto - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N30gGGAkFVX3lxTFBfVERFSGxKS0JYcHp6UkktN1ctYlZjYVdEM1BYTDREcmZRS3I4b2xsMkZzTURmV1AtM0o0RGh2RHVqNXRsemRjUkxFa0o1aVdIcEJiLVhFUHFyN0V5S041cEdfQkVmZVdIeE5NSUY2eTZhUXliVDNQV2YyZHRGSkVlZW5sTWprbTA0cDJHdkx5cDB5MWtjaXhMQnowNk9kc3N5NndZR2d4M2tlczE0UDBHWWFHRnhYYkdJMXdqZGJvSFZwSWlnN2xhYWtLb1BxcGdUUWhPUi1WM1FxZ2ZHeVE1Z2JocGMzTk95QWRWeUp6eDJwVE9iaVl4WVoyODY2UjRYUXRaTkE?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N3?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Ya van casi 800 edificios colapsados, entre parcial y totalmente, por terremotos en Venezuela | El Colombiano - El Colombiano",
-      "enlace": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTFQ4S09DWTFhOGdsQ0REY2hDYzBoREpMb0stMVZvbG5zbGNQbXlfaHFTdjZsY19oYW1NLVNUN21vTVlCZkUtWDVZQTBsODQ3Mzc4LWRtY3hldGt4TXZUNGQ5UDlzQzR1dUVWRHVrT1A2bFBab3pJUDVZNVBLV1F1U01YVjFaLWswTDhKQUNvVmNpMWE4bjJnOEx6NGx4amVhWk5mNEZ3eWFvOXlCem5ON3FhOThjQdIBuwFBVV95cUxOWXEwckYtbHF0Z2NHVVlZVHpjZGYzVTVjQ2E0WjBmYU5BU1ZGSzNlenhLX1A0NmdIZ0dHdDB2RHc5a09VTGdXdXBSdVF5RlpwdTZLeHVJcDN2Q3NkeFFuTkp1YlVHV1JTTTUxVUdWcUs2bW4xZXlLUUhmYnMzUnZHbXJkVEpFY05yWWRCcEROVXE3bDVlZjdrTm9jUHpPTTBXeDdfalIwQi1lOEVKaFo0M0dsRVZKWDZiTFFF?oc=5",
-      "medio": "El Colombiano",
-      "tipo_fuente": "press",
-      "publicado": "2026-06-28T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "MIES ATIENDE A DAMNIFICADOS QUE SE ENCUENTRAN EN ALBERGUES Y REFUGIOS EN ESMERALDAS - Ministerio de Desarrollo Humano",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNjdFalBuQVlsRmk0a2IxRmFLd1ZMbS0yZnFqZmp5MmVVSVcyMGtXRm1iQkdBd1MyejBJVnhSRnJqUS1ZbzhDbnI0OHVySDJKaTgyd0hmdTl5QlJFUEc5OWxWX0tULUt2cFJyS2Q5bjNjX2Z0ZWxvbHdXblZHcmlBMW1ZeHVfOVg0NERnbTMzY3I3bjlNTHhoOVE3SmwwSlR0cXZ6VmZaUEZHbDkyd0ZwWTA1cE5YWWZkQUxnNA?oc=5",
-      "medio": "Ministerio de Desarrollo Humano",
-      "tipo_fuente": "unverified",
-      "publicado": "2025-10-26T04:40:00.000Z"
     }
   ]
 }
