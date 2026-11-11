@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-11T00:44:52.186Z",
+  "generado": "2026-11-11T07:24:07.357Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -171,6 +171,16 @@
     },
     {
       "tipo": "albergue",
+      "titulo": "Terremoto en Pereira: dos albergues ya están al límite y estos son los puntos disponibles - Revista Semana",
+      "enlace": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNazI1OVlPU0YtcXhFTEh6TGtiTGt6ODR3MFA3eXlIQU5sNVg5Rl9oQk1NdWxvdS1xWlc3TWZ3TFBfV05iT0VRa2k3d3hVeW10bUZCWlY2Vng1MVNwUVFWYy16cHhqSHctTG9qSlI3bm9waEF6VE12aFBnQ2dfNzlKUEl3Z2hLd19TNmZTUm9mRkl5RkVBcHJ1MGU3ajQxeW9kTjFoNlZ4aXZiNXlBRzdlZUQtd2xUdnNfMDZwSDRYekRDQlVQc1d2a0xMZzNadHROWnE1SGFncHJpMW8?oc=5",
+      "medio": "Revista Semana",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-14T07:00:00.000Z",
+      "pcode": "CO66001",
+      "municipio": "Pereira"
+    },
+    {
+      "tipo": "albergue",
       "titulo": "Video | Jhonny Rivera convirtió su hotel en albergue tras el sismo - Canal 1 En vivo",
       "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQa0h6ckFyVnVNVVdxTFd1TEdoOGg3N3FCMUJrZWRMZV9QYkZMZ1JLY0ZrTkRsZFd5Y0tRYXFRQnlYYzdJOVZGY3pEVy1QYWQyM3o0eUdWX2c1Ylp0ZzZyQVBEbmdpVnI3ZHd1MzRwYy1rYk1PSGJJbW5RR2ZkeDRQdUo2bGRoRWtHd2RHNzJ4UHdHMWVrVFNhSkpEMFMtczVGR3ZDelpPTzdURDdjTFZBctIBtgFBVV95cUxOVms5MGp1OVVNODFkdURBUXdvdmRQeEpka1ZtbVNjODNrWmYwTEtxT0p4R3A0ODUyOW8tSlozY1ZwdnZIUjVZSEpQQ00zdHRGQnFDdEZ6S2dfejZOZnI3TnpYa3lZQXlKbnNDcG5rY1BXYUJNYkNEUW8wU1o2eTEzOG10RlRxcmFjbkdxR2FhUnhFbVFjeTdNVENPRnpkQnB1UDVpamx3c0pRd19KaXZYcWw4TDhnQQ?oc=5",
       "medio": "Canal 1 En vivo",
@@ -244,16 +254,6 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO66170",
       "municipio": "Dosquebradas"
-    },
-    {
-      "tipo": "via_bloqueada",
-      "titulo": "El norte del Valle en vilo: La Victoria permanece con el puente cerrado y cientos de damnificados tras el sismo - CiudadRegion",
-      "enlace": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZ0gyS0tUYTBSbkhaLUhRSHhqMjlBaVBNRnBDQm1nd2RBZ1dhTHJDdXFHRTA1U3BkcG9TbDYyRWt0ZExVTk9VWm53NlpxUmQ5YVp3NVRjS0ZNUEg4V19oSmtPQTBPREJYQnlDT2JPV2FYaEQ1VjdxNks4YlZHd1dEWUNZMnVNSTduQml5X3gzTlZIc29fSkZvWC1fSXdDdUhrT1ZqTTI2NGl6TmZwU3RzcXRXYzNiaVVWMDNQenh4Z3VqMVVxSFZTZkdR?oc=5",
-      "medio": "CiudadRegion",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-12T07:00:00.000Z",
-      "pcode": "CO76403",
-      "municipio": "La Victoria"
     },
     {
       "tipo": "edificacion_colapsada",
@@ -387,16 +387,6 @@
     },
     {
       "tipo": "edificacion_colapsada",
-      "titulo": "Manizales reporta 4 muertos y más de 10 edificios colapsados tras el terremoto | El Colombiano - El Colombiano",
-      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQT2pxYkNRemdPR1oyXzhwTWVwNFhUaVRmVGJkd3VXNVBLYWVDd3YxNEdFNHBYYV9BNnY0Z1lJc1Z1anB3bzdXTXUzcWNjdzlnUWF3SjJhdVhiX3U3dlBsRWZMbUxuZEZ2dDNQVnQ4VHl2Q08zMklaTUotdmdja2R4cUhpcExya0RNVE1fWTJ6WGNrRERqbElYSmxRY25tNVViMmItbGxtOEJsV1hXazg5M2ctZFU5QXpyZ3gyZ2d2cFdwWVE0Q3fSAcsBQVVfeXFMTTdBQnVsT1NFM2czckwyUENmeXllTkxXSjA0dmQ5VmptYlNpV3JhM0lnN3JhbkthMlB6eUE4d09adWJBbldnWVJ2bGxFMDJKcGZYdDN4aHljZ3lmM2ZfVkI4LWhJZWdnQUJwWi1KcXZwSlJBRXB6T0o5LXpfNDg3aDFIV093aXZfMlJoWk4wSkcxLVlUSzBPV3lrYWYxb0ZHa1VtMUxreUxUU3BIWWUxSFpERk5qQTJfbXdWUHVNLXQ4REFrZTZXTTFNVjQ?oc=5",
-      "medio": "El Colombiano",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-10T07:00:00.000Z",
-      "pcode": "CO17001",
-      "municipio": "Manizales"
-    },
-    {
-      "tipo": "edificacion_colapsada",
       "titulo": "Terremoto de magnitud 7.4 deja 47 muertos y edificios colapsados en Colombia - WFLA",
       "enlace": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRmFKTVhUSjV1cjNjUzB3anNWeEVTODhVT0Ywc0FlUjB2SjhKV1EzVU1CdWxCUlRiSjV6bkZILS1OaHlaTW5Sa0dWX1A0UVpJTlM4dTBMcFBXbnpoZGxqcTB0MnpsTjN4N2FlVXFsMGw4UjlHYzdHUURNMDJVRjQ5TzNqTnFQajVrUERQUWdNZExZam83QkUyLXlfaFdxMEd2aGNSVXdQdGpBR1U4SU9lOFZ3RU5ISXRHWi03cy1faXnSAcYBQVVfeXFMTkVRWGlzU0ttOW04RFBYWExaa0VnTDhJb1d4cGkySHhXQVROc0t4QXlRMXFpWTRibDdDNXdPS0JQZG5sNDRaajdpbmN0ZmFGT3JmT1NUUXVHVGR4YWhiNEdzdFA3cWlIWFRCX3Z6RWo3OFdfeFozNWYxdTN3Tk42UHpoRjNYMjN5ejFyUzZHdjJ6bzI4emU5X25SQVI0akcxbHNraHg0cVVvM0dIWXltT0NHYy1qZjVQSXdRV1dHa3VuVG9UYXdn?oc=5",
       "medio": "WFLA",
@@ -434,6 +424,14 @@
       "titulo": "Videos del terremoto en Colombia: al menos 26 muertos, edificios colapsados y aeropuertos cerrados - Vistazo",
       "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNLUFpLUFHTjhHVzBDb1VsTVpIeDNFMkZ3Z3FxMGlvUmY1d19nWjUwUjZBWVVCNjF5amt6TGhMUjE0OTlhRnpwYWkzZTcxRGtEWUhnUExtcTYtVWIyWFdBaHZPZlNPdG9MNEhmUkNrZjdPYXdKa2l0X0dTU1VnMWd1V1R0WVIyT3JmdzVhVWJETHdkaGJNMmhGbXcyd1BGSHBFSHoxR3NEQjk1MFY2dm9RR2lPOUoyNHdiR1dqNVotMUcxWGdYaEHSAcsBQVVfeXFMUGd4TjRCOHlMcU1tQnlHbTBaRXU0Qzg0UmduMW5SUXI5X3ZWbnZ4aVRIWnBSNGwtc3I2YnlpLXpnd1NzSjlmaVdoZ2IxanBSMDhMRURoN19JMXl3N1F2OThXSDU0U1l2bWY2T0RLRUg5SXlHVUM1X2NjRmhfTmRQbU4xcHF0RjdWaFNXVUpaNFlHT0tiUGFmdDJfWTVCTDFQSk9sbGJybE0tN05xSnhpRVY2cEVpVllXUlVSMEV3MmU5Uy1BUWRyUmJ6ZEk?oc=5",
       "medio": "Vistazo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Vídeos | Así ha sido el terremoto de Colombia: edificios colapsados, aeropuertos cerrados y ciudades destruidas - La Región",
+      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQX2Y3cHpGZVB6RFpwbVZnbGFKVHZ3VU9TQXhYYXdsMmNvNk1pZXJXbEFVU0JpLU1NR18xWjR3VWZyblJSNjlFQ0dYTHJ6RHM0bXdzeVBYc1NCNUxyWDgtd2had3VtT21UUzBYNUVBVzZsNlVQbjZ4NC1xSHptMGl6YlpyemQwMTNKLVNKY19fSW5EM2lONFJVQXZya3A1ZDVwS05BdDBPVzM4UEU0M2V2NW43X0Q1ZC1JaW9fMFE5ZG9ublpLRGhtVnQ5Zmo?oc=5",
+      "medio": "La Región",
       "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
@@ -496,6 +494,14 @@
       "medio": "El Colombiano",
       "tipo_fuente": "press",
       "publicado": "2026-06-28T07:00:00.000Z"
+    },
+    {
+      "tipo": "albergue",
+      "titulo": "MIES ATIENDE A DAMNIFICADOS QUE SE ENCUENTRAN EN ALBERGUES Y REFUGIOS EN ESMERALDAS - Ministerio de Desarrollo Humano",
+      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNjdFalBuQVlsRmk0a2IxRmFLd1ZMbS0yZnFqZmp5MmVVSVcyMGtXRm1iQkdBd1MyejBJVnhSRnJqUS1ZbzhDbnI0OHVySDJKaTgyd0hmdTl5QlJFUEc5OWxWX0tULUt2cFJyS2Q5bjNjX2Z0ZWxvbHdXblZHcmlBMW1ZeHVfOVg0NERnbTMzY3I3bjlNTHhoOVE3SmwwSlR0cXZ6VmZaUEZHbDkyd0ZwWTA1cE5YWWZkQUxnNA?oc=5",
+      "medio": "Ministerio de Desarrollo Humano",
+      "tipo_fuente": "unverified",
+      "publicado": "2025-10-26T04:40:00.000Z"
     }
   ]
 }
