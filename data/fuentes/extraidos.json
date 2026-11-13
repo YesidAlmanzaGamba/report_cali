@@ -1,8 +1,16 @@
 {
-  "generado": "2026-11-13T07:30:30.087Z",
+  "generado": "2026-11-13T15:37:25.373Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Cancillería confirmó que tres colombianos murieron en edificio colapsado en Nueva York",
+      "enlace": "https://www.elpais.com.co/colombia/cancilleria-confirmo-que-tres-colombianos-murieron-en-edificio-colapsado-en-nueva-york-1351.html",
+      "medio": "El País (Cali)",
+      "tipo_fuente": "press",
+      "publicado": "2026-11-13T12:32:51.000Z"
+    },
     {
       "tipo": "edificacion_colapsada",
       "titulo": "Hay colombianos entre las víctimas del edificio que colapsó en Nueva York: según afirmó el alcalde Zohran Mamdani",
@@ -127,16 +135,6 @@
     },
     {
       "tipo": "albergue",
-      "titulo": "Fuertes lluvias dificulta situación de damnificados por terremoto que están en albergues en Pereira - Noticias Caracol",
-      "enlace": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQMGU2TFk4am0yWDhNUWNLMVpSOVk0TUNnOUtIbEhqblRjTFZabGN4bUhvc1NfLUVUWDVlWmdxYUJnNFhPS3dkTUNYN2F1UEFSSmRsVE54NzU0aWU2d3VNUUFqbTRNa29DU05ZWThPU2tMSVU1UXRISFdEaUVhcEYyNFdTM2hrUTFMRjA2RkQ3TTdFMFk3QVJ1cW9XdFJZUkM0UzU2U3BHdUdpUWZyWHB5dVZzcDN4VE5fWDNrOEFqZkw4OXhQeVp6ODA2elpwdDBMQUZwc0RZb3YwbWZ2YVHSAesBQVVfeXFMTlRjLUd2VUY0dlZGY2lVbWFva3cwa2NCNGwwQ2NWYXlXcTNlUmtTX25HNmNURHNhQ2Z1NVhpbG1LM0ZDY1BnNDhRUjh1MTB2bktkaUpFc2Z6dXJTLXMxLUUyZU90R2VDSUFTX2Fyc1VfRldQVjIzZG0wRkpRYUNwTE5JQmxBaFRQazYyZmVqWDBzUU9fS0FXWkNJWVF6d0JSdkVvdkdGTG9kSG5jakk5SE9vVjNEb1A4TUhBSTVSQkNZOE5jS183ejBUZFRwQnFTLXY3UW5aNWR1d2RtU3JDQ0EzYzRFQ2FxbUE2dw?oc=5",
-      "medio": "Noticias Caracol",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-17T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
       "titulo": "“No quedó nada”: familias damnificadas por el terremoto sobreviven en albergues de Pereira en medio de lluvia - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUjZEcklHc3JxZ214YUw1RXYtdk5JZVpJRndkcVZfOTZRTlJsQW1MNEVXQU9UYndsM3UzWnZaSXlGSGp5ZmJBWTI0bDhMUmMxVGZwREFOb0FZWDVoSG9TLWF1YTctcl9JbTBieVY2OE5ENTZFMXg5N3AzUUREenFpa09nS29jcU00Y2FJeGh1cFdYZHNxUzM1bkFBaE9ZeVBLcFFzTzMzOVdkWFlfWGVsTzItYzJublJUdEhVSlpXcC15dTTSAcMBQVVfeXFMT2drbGM2MFZiNkcxczVlS2FQTFg5TElYaERpVkY5d0tBRjIybXdrcERwdVBhOXlEdFVVRjJzcFRmdGtKSFc4ejlreXlWdUE0Y3hXM2luTVEzVDI3QWE1VE95c1ZSYWpBYlhZTzI4VDdnYTRkOFViQnhVU09kbjJsbm5mNXg2eHVIRUpSQm84NExPbmlpa2ZWU2cwenp0S3kya1h2OGVyM2pDOGRWQ1dWN2w5Z05LN2VxV21sVkxzVVoxQ2JB?oc=5",
       "medio": "La FM",
@@ -220,16 +218,6 @@
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-13T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Cali y Pereira reportan casi 200 edificaciones colapsadas, luego del terremoto del lunes - LaRepublica.co",
-      "enlace": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbDdyaXJBSkhERmsyWDVfaEZwQVlSYzRBenFBVlBlNm14LTliSnBmc1JTLWpGMk9yeS1LWFNXNWlIV2ZSaVBKTjZRUmc4YWJxYWdUQkJ3d3JMYkVpUXpxX05DNWNTd2xhWTR5YmJWanhUeGdWOUdwazgyVV95Nml2cS1pRzBzTXk1Y2FYVGo1V1JxdDdLRGI5Z1Q0NEE2bkVNNTdOVFE2Qm11XzNNMDh0eVVoWW5ld2hCNkZER0ZLUmlOQ1hwX2lYZkFERTFnWlM3dHNGbEtMR1lYZ1hCeDJHeDBwT2VmZy1v0gHoAUFVX3lxTE9fOWkzcm9ocnJCM0VwaFpTbmRMNjE4OU12N3hQcGh3dkJGMEVlREVMNWVnMlpmWGZ1Rnc5T2tfY000V3ZWY2ZfV1UyTllqYlpHakVQblVLMmJ5TUxHckRLTnBMaVZuUkFZQnRhX04tM3Z1YWdUV2hlSV9lTl9pa2ZtODJJeTZJZEozQTBzTGEtUnBvZHEwdHRsdjF5djBEQncwWFV4aHBtTFliVkU1aGYtaTFVTnR0U3RzTVhhMU9XSFBUaGprYzJUTndUZ0RJX3hoRGF1enVBdkloWTBrd2VuS0txZ1FWUVM?oc=5",
-      "medio": "LaRepublica.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-13T07:00:00.000Z",
-      "pcode": "CO66001",
-      "municipio": "Pereira"
     },
     {
       "tipo": "centro_acopio",
