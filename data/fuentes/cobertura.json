@@ -1,12 +1,12 @@
 {
-  "generado": "2026-11-13T15:37:25.375Z",
+  "generado": "2026-11-13T21:44:49.227Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 151,
-    "con_notas": 32,
-    "sin_notas": 119,
-    "poblacion_sin_notas": 3619762,
+    "municipios_considerados": 150,
+    "con_notas": 30,
+    "sin_notas": 120,
+    "poblacion_sin_notas": 3671079,
     "medios_distintos": 67
   },
   "municipios": [
@@ -16,7 +16,7 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 235337,
-      "notas": 37,
+      "notas": 34,
       "ultima": "2026-11-13T15:27:41.000Z",
       "medios": [
         {
@@ -26,7 +26,7 @@
         },
         {
           "nombre": "Pulzo",
-          "notas": 6,
+          "notas": 5,
           "ultima": "2026-11-13T15:27:41.000Z"
         },
         {
@@ -55,16 +55,6 @@
           "ultima": "2026-10-28T07:00:00.000Z"
         },
         {
-          "nombre": "El País",
-          "notas": 1,
-          "ultima": "2026-10-07T07:00:00.000Z"
-        },
-        {
-          "nombre": "Estrella Digital Colombia",
-          "notas": 1,
-          "ultima": "2026-10-06T07:00:00.000Z"
-        },
-        {
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-09-23T07:00:00.000Z"
@@ -87,7 +77,7 @@
       "medios": [
         {
           "nombre": "El Diario (Pereira)",
-          "notas": 9,
+          "notas": 8,
           "ultima": "2026-11-13T05:05:40.000Z"
         },
         {
@@ -104,6 +94,11 @@
           "nombre": "Infobae",
           "notas": 2,
           "ultima": "2026-11-11T21:38:00.000Z"
+        },
+        {
+          "nombre": "Pulzo",
+          "notas": 2,
+          "ultima": "2026-11-07T12:40:57.000Z"
         },
         {
           "nombre": "Alcaldía de Pereira",
@@ -162,11 +157,6 @@
         },
         {
           "nombre": "La Opinión Cúcuta",
-          "notas": 1,
-          "ultima": "2026-08-20T07:00:00.000Z"
-        },
-        {
-          "nombre": "Pulzo",
           "notas": 1,
           "ultima": "2026-08-20T07:00:00.000Z"
         },
@@ -254,7 +244,7 @@
       "departamento": "Chocó",
       "mmi": 7.9,
       "poblacion": 5167,
-      "notas": 16,
+      "notas": 17,
       "ultima": "2026-11-10T12:26:37.000Z",
       "medios": [
         {
@@ -296,6 +286,11 @@
           "nombre": "Toda la información de Nariño, Colombia y El Mundo",
           "notas": 1,
           "ultima": "2026-08-14T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Espectador",
+          "notas": 1,
+          "ultima": "2026-08-12T07:00:00.000Z"
         },
         {
           "nombre": "La Silla Vacía",
@@ -345,9 +340,14 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 35701,
-      "notas": 3,
-      "ultima": "2026-08-27T07:00:00.000Z",
+      "notas": 4,
+      "ultima": "2026-11-13T16:21:00.000Z",
       "medios": [
+        {
+          "nombre": "Gobernación del valle",
+          "notas": 1,
+          "ultima": "2026-11-13T16:21:00.000Z"
+        },
         {
           "nombre": "Portafolio.co",
           "notas": 1,
@@ -1029,7 +1029,7 @@
       "mmi": 7.1,
       "poblacion": 2337182,
       "notas": 27,
-      "ultima": "2026-11-13T15:18:39.000Z",
+      "ultima": "2026-11-13T16:21:24.000Z",
       "medios": [
         {
           "nombre": "EL PAÍS",
@@ -1040,11 +1040,6 @@
           "nombre": "Facebook",
           "notas": 4,
           "ultima": "2026-08-26T07:00:00.000Z"
-        },
-        {
-          "nombre": "El País (Cali)",
-          "notas": 2,
-          "ultima": "2026-11-13T15:18:39.000Z"
         },
         {
           "nombre": "Infobae",
@@ -1065,6 +1060,16 @@
           "nombre": "Caracol Radio",
           "notas": 2,
           "ultima": "2026-09-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Futbolero Colombia",
+          "notas": 1,
+          "ultima": "2026-11-13T16:21:24.000Z"
+        },
+        {
+          "nombre": "El País (Cali)",
+          "notas": 1,
+          "ultima": "2026-11-13T15:18:39.000Z"
         },
         {
           "nombre": "MiOriente",
@@ -1495,15 +1500,8 @@
       "departamento": "Tolima",
       "mmi": 6.5,
       "poblacion": 51317,
-      "notas": 1,
-      "ultima": "2026-11-03T17:59:23.000Z",
-      "medios": [
-        {
-          "nombre": "Revista Semana",
-          "notas": 1,
-          "ultima": "2026-11-03T17:59:23.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO66318",
@@ -1637,9 +1635,19 @@
       "departamento": "Tolima",
       "mmi": 6.3,
       "poblacion": 549432,
-      "notas": 1,
-      "ultima": "2026-08-14T07:00:00.000Z",
+      "notas": 3,
+      "ultima": "2026-11-13T20:46:27.000Z",
       "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-11-13T20:46:27.000Z"
+        },
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-13T18:23:14.000Z"
+        },
         {
           "nombre": "Caracol Radio",
           "notas": 1,
@@ -1859,12 +1867,12 @@
       "mmi": 5.6,
       "poblacion": 12197,
       "notas": 2,
-      "ultima": "2026-11-13T13:16:45.000Z",
+      "ultima": "2026-11-13T19:21:55.000Z",
       "medios": [
         {
           "nombre": "El Nuevo Día (Ibagué)",
           "notas": 2,
-          "ultima": "2026-11-13T13:16:45.000Z"
+          "ultima": "2026-11-13T19:21:55.000Z"
         }
       ]
     },
@@ -1874,7 +1882,7 @@
       "departamento": "Caldas",
       "mmi": 5.5,
       "poblacion": 10739,
-      "notas": 3,
+      "notas": 4,
       "ultima": "2026-10-05T07:00:00.000Z",
       "medios": [
         {
@@ -1886,6 +1894,11 @@
           "nombre": "Volcano Discovery",
           "notas": 1,
           "ultima": "2026-09-26T07:00:00.000Z"
+        },
+        {
+          "nombre": "Facebook",
+          "notas": 1,
+          "ultima": "2026-08-31T07:00:00.000Z"
         },
         {
           "nombre": "Infobae",
@@ -1932,9 +1945,14 @@
       "departamento": "Meta",
       "mmi": 4.9,
       "poblacion": 9874,
-      "notas": 1,
-      "ultima": "2026-11-11T15:47:00.000Z",
+      "notas": 2,
+      "ultima": "2026-11-13T19:24:41.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-11-13T19:24:41.000Z"
+        },
         {
           "nombre": "Vanguardia",
           "notas": 1,
@@ -1987,22 +2005,6 @@
           "nombre": "Alcaldía de Santiago de Cali",
           "notas": 1,
           "ultima": "2026-08-13T07:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "pcode": "CO52506",
-      "nombre": "Ospina",
-      "departamento": "Nariño",
-      "mmi": 4.1,
-      "poblacion": 7024,
-      "notas": 1,
-      "ultima": "2026-09-30T07:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "El País",
-          "notas": 1,
-          "ultima": "2026-09-30T07:00:00.000Z"
         }
       ]
     },
