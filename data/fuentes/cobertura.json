@@ -1,13 +1,13 @@
 {
-  "generado": "2026-11-14T19:59:46.310Z",
+  "generado": "2026-11-14T23:45:25.654Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 147,
-    "con_notas": 28,
-    "sin_notas": 119,
-    "poblacion_sin_notas": 3663820,
-    "medios_distintos": 67
+    "municipios_considerados": 148,
+    "con_notas": 30,
+    "sin_notas": 118,
+    "poblacion_sin_notas": 3652348,
+    "medios_distintos": 69
   },
   "municipios": [
     {
@@ -26,13 +26,13 @@
         },
         {
           "nombre": "Pulzo",
-          "notas": 5,
+          "notas": 4,
           "ultima": "2026-11-13T15:27:41.000Z"
         },
         {
           "nombre": "Caracol Radio",
-          "notas": 2,
-          "ultima": "2026-08-21T07:00:00.000Z"
+          "notas": 3,
+          "ultima": "2026-10-27T07:00:00.000Z"
         },
         {
           "nombre": "El Diario (Pereira)",
@@ -77,12 +77,12 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 44,
+      "notas": 43,
       "ultima": "2026-11-14T06:00:00.000Z",
       "medios": [
         {
           "nombre": "El Diario (Pereira)",
-          "notas": 6,
+          "notas": 5,
           "ultima": "2026-11-14T06:00:00.000Z"
         },
         {
@@ -335,14 +335,9 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 35701,
-      "notas": 4,
-      "ultima": "2026-11-13T16:21:00.000Z",
+      "notas": 3,
+      "ultima": "2026-08-27T07:00:00.000Z",
       "medios": [
-        {
-          "nombre": "Gobernación del valle",
-          "notas": 1,
-          "ultima": "2026-11-13T16:21:00.000Z"
-        },
         {
           "nombre": "Portafolio.co",
           "notas": 1,
@@ -1037,14 +1032,14 @@
           "ultima": "2026-11-13T01:55:00.000Z"
         },
         {
+          "nombre": "Revista Semana",
+          "notas": 2,
+          "ultima": "2026-11-12T23:47:47.000Z"
+        },
+        {
           "nombre": "Pulzo",
           "notas": 2,
           "ultima": "2026-11-10T14:21:49.000Z"
-        },
-        {
-          "nombre": "Caracol Radio",
-          "notas": 2,
-          "ultima": "2026-09-17T07:00:00.000Z"
         },
         {
           "nombre": "Eje21",
@@ -1062,11 +1057,6 @@
           "ultima": "2026-11-13T15:18:39.000Z"
         },
         {
-          "nombre": "Revista Semana",
-          "notas": 1,
-          "ultima": "2026-11-12T23:47:47.000Z"
-        },
-        {
           "nombre": "MiOriente",
           "notas": 1,
           "ultima": "2026-11-12T20:15:39.000Z"
@@ -1080,6 +1070,11 @@
           "nombre": "Blu Radio",
           "notas": 1,
           "ultima": "2026-11-10T12:31:36.000Z"
+        },
+        {
+          "nombre": "Caracol Radio",
+          "notas": 1,
+          "ultima": "2026-09-17T07:00:00.000Z"
         },
         {
           "nombre": "UN News",
@@ -1411,8 +1406,15 @@
       "departamento": "Chocó",
       "mmi": 6.7,
       "poblacion": 11472,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-11-14T04:34:08.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-11-14T04:34:08.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO66456",
@@ -1843,18 +1845,18 @@
       "medios": []
     },
     {
-      "pcode": "CO73055",
-      "nombre": "Armero",
+      "pcode": "CO73268",
+      "nombre": "Espinal",
       "departamento": "Tolima",
-      "mmi": 5.6,
-      "poblacion": 12197,
+      "mmi": 5.5,
+      "poblacion": 71930,
       "notas": 1,
-      "ultima": "2026-11-14T14:01:42.000Z",
+      "ultima": "2026-11-14T20:43:25.000Z",
       "medios": [
         {
           "nombre": "El Nuevo Día (Ibagué)",
           "notas": 1,
-          "ultima": "2026-11-14T14:01:42.000Z"
+          "ultima": "2026-11-14T20:43:25.000Z"
         }
       ]
     },
@@ -1911,9 +1913,14 @@
       "departamento": "Meta",
       "mmi": 4.9,
       "poblacion": 9874,
-      "notas": 3,
-      "ultima": "2026-11-14T01:49:16.000Z",
+      "notas": 5,
+      "ultima": "2026-11-14T22:06:41.000Z",
       "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 2,
+          "ultima": "2026-11-14T22:06:41.000Z"
+        },
         {
           "nombre": "El Diario (Pereira)",
           "notas": 2,
@@ -1948,13 +1955,34 @@
       "departamento": "Magdalena",
       "mmi": 4.2,
       "poblacion": 73744,
-      "notas": 1,
-      "ultima": "2026-10-12T07:00:00.000Z",
+      "notas": 2,
+      "ultima": "2026-11-14T02:23:35.000Z",
       "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-11-14T02:23:35.000Z"
+        },
         {
           "nombre": "Infobae",
           "notas": 1,
           "ultima": "2026-10-12T07:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "pcode": "CO86760",
+      "nombre": "Santiago",
+      "departamento": "Putumayo",
+      "mmi": 4.2,
+      "poblacion": 7804,
+      "notas": 1,
+      "ultima": "2026-08-13T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Alcaldía de Santiago de Cali",
+          "notas": 1,
+          "ultima": "2026-08-13T07:00:00.000Z"
         }
       ]
     },

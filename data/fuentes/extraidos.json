@@ -1,8 +1,18 @@
 {
-  "generado": "2026-11-14T19:59:46.309Z",
+  "generado": "2026-11-14T23:45:25.652Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Homecenter y otras empresas privadas entregaron 22 viviendas a familias afectadas por el terremoto en el Chocó",
+      "enlace": "https://choco7dias.com/homecenter-y-otras-empresas-privadas-entregaron-22-viviendas-a-familias-afectadas-por-el-terremoto-en-el-choco/",
+      "medio": "Chocó 7 Días",
+      "tipo_fuente": "press",
+      "publicado": "2026-11-14T04:34:08.000Z",
+      "pcode": "CO27425",
+      "municipio": "Medio Atrato"
+    },
     {
       "tipo": "edificacion_danada",
       "titulo": "Arranca construcción de 92 casas para familias afectadas por el terremoto en Unión Panamericana y Quibdó estrena Basura Cero - Minvivienda",
@@ -12,14 +22,6 @@
       "publicado": "2026-11-13T17:58:00.000Z",
       "pcode": "CO27810",
       "municipio": "Unión Panamericana"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Cancillería confirmó que tres colombianos murieron en edificio colapsado en Nueva York",
-      "enlace": "https://www.elpais.com.co/colombia/cancilleria-confirmo-que-tres-colombianos-murieron-en-edificio-colapsado-en-nueva-york-1351.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-11-13T12:32:51.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -410,6 +412,14 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "edificacion_danada",
+      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
+      "medio": "Forbes Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
