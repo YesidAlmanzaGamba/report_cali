@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-13T21:44:49.226Z",
+  "generado": "2026-11-14T01:55:40.118Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -10,14 +10,6 @@
       "medio": "El País (Cali)",
       "tipo_fuente": "press",
       "publicado": "2026-11-13T12:32:51.000Z"
-    },
-    {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Hay colombianos entre las víctimas del edificio que colapsó en Nueva York: según afirmó el alcalde Zohran Mamdani",
-      "enlace": "https://www.elpais.com.co/mundo/hay-colombianos-entre-las-victimas-del-edificio-que-colapso-en-nueva-york-segun-afirmo-el-alcalde-zohran-mamdani-1242.html",
-      "medio": "El País (Cali)",
-      "tipo_fuente": "press",
-      "publicado": "2026-11-12T20:52:42.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -162,16 +154,6 @@
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "Video | Jhonny Rivera convirtió su hotel en albergue tras el sismo - Canal 1 En vivo",
-      "enlace": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQa0h6ckFyVnVNVVdxTFd1TEdoOGg3N3FCMUJrZWRMZV9QYkZMZ1JLY0ZrTkRsZFd5Y0tRYXFRQnlYYzdJOVZGY3pEVy1QYWQyM3o0eUdWX2c1Ylp0ZzZyQVBEbmdpVnI3ZHd1MzRwYy1rYk1PSGJJbW5RR2ZkeDRQdUo2bGRoRWtHd2RHNzJ4UHdHMWVrVFNhSkpEMFMtczVGR3ZDelpPTzdURDdjTFZBctIBtgFBVV95cUxOVms5MGp1OVVNODFkdURBUXdvdmRQeEpka1ZtbVNjODNrWmYwTEtxT0p4R3A0ODUyOW8tSlozY1ZwdnZIUjVZSEpQQ00zdHRGQnFDdEZ6S2dfejZOZnI3TnpYa3lZQXlKbnNDcG5rY1BXYUJNYkNEUW8wU1o2eTEzOG10RlRxcmFjbkdxR2FhUnhFbVFjeTdNVENPRnpkQnB1UDVpamx3c0pRd19KaXZYcWw4TDhnQQ?oc=5",
-      "medio": "Canal 1 En vivo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T07:00:00.000Z",
-      "pcode": "CO41615",
-      "municipio": "Rivera"
     },
     {
       "tipo": "albergue",
@@ -344,19 +326,19 @@
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_colapsada",
-      "titulo": "Terremoto en Colombia deja al menos 111 muertos y edificios colapsados con personas atrapadas - ABC7 Los Angeles",
-      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUxqdGZWcS13bml0TzJVR28xRkQxLTk0eGFsVXJwNVhnajVack56YzR6Xzd1YUxsR19rVGwxcHUwQVhXOFFfaV9rYnRYbkZxTW5UbW9NazdyQlZhMGpwcHk3cXJJN2g4TXJUZVlRa3A3NER1ZGxnNmtWMmhVUjdXbXdJOFpQcWtkelcyVEZiTnZDbk5OY2N5NF9wdUx1UmlxeVdlV1psMkNDdlZ1TnBSOWE1SlZMRDTSAbwBQVVfeXFMUFdoLV9uazA5VFlxek9sdlljd0lDRzlSVi1kckdaOWE3cjVISjlIaWNFbW0zbGY4TlZNZHZOLVlELXlJd0ttdmdUMThGTWUxNXhJckFUX0t3SUZPcUZZUmJFUU9qRTZTbDA0SXJwMHE2d2paT3pvSGUyU1N3c0N1WDF3V3hQaFg5OU5OSHg0d01GTktCcFNxNGwySERxdVV4YjNiQW44WWhaaUR5c2VkMDQ2YW5GdUJPbU5xX2I?oc=5",
-      "medio": "ABC7 Los Angeles",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-10T07:00:00.000Z"
-    },
-    {
       "tipo": "via_bloqueada",
       "titulo": "Más de 130 muertos, 570 heridos, viviendas y vías dañadas y aeropuertos cerrados, las dramáticas cifras que deja hasta ahora el terremoto en Colombia - Infobae",
       "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOUGR6Y1BuZ1A2Q0xfbmZXWWZUSDdiMzMwLW9rMXFtdVRCaktSMEtIN3VDVlpveUg3Y1RYdWVrQzVCRTJ6QUlwN0Rpanpsd2N1Y3NYS0JEQXU2Sm10cVlUaldScVB5Wnc2Y0FiS2xMYWlXZXpfeVAwMi1HbkFJR2tWdlNpUkh6SktIZ2hua0prUVdkTGw0YkVObm1RUnM1UVM3TTdCVnluaFBUSk9QSEVjQmJiRUpDRUpvZENaZmFlQUR0ajBsNXJCUHFfaEtURXREVkNTR2liNGI3T0EyRXk1MHNfYkZqZmF6RXR0M3ZCVkhXZldvMHI2clp3bjlhWjZrb0xXdWp2c1BzcERlcmZwOVNDR20tZmxDT2hR0gG2AkFVX3lxTE1OZm9zbU9fMmdwWjFZZHM2dFJjQjhnWHhjbHBrWnBGOHYyOUl5QVRWRlZpUjhPdF9TcEViREl2M1B5TGhIVU1IUkd5RHBvVklZTnZkZmtleWZHT2RRdGpkTU1Zd1BCcVpMNGhQclk1LUFtS0JzTk5wSmRoVUxuejA0SHk5c1c2UjQxeGZVXzNqU3owaTZXU2wxVUhtaXh3dU9FSEtwRkNtSENrRENGQUczTW5QTXdXQ0VMUWc2TmtmczJWb3lhZkhZenFxb3kwZ3c3d2JZREtxM3dra1lheDBOLVo3blVGQW1fYVczZjEtdFBmWDQyQl9MeG93VkxLb3BNMHdRbTI5VW5zcVY4WnZqV3RMb3ZTdWg4WUNvRUFJTFRnekh5ekFucjlaVHQ3WFJVdlZCQUE?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Terremoto en Colombia deja al menos 111 muertos y edificios colapsados con personas atrapadas - ABC7 Los Angeles",
+      "enlace": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLUxqdGZWcS13bml0TzJVR28xRkQxLTk0eGFsVXJwNVhnajVack56YzR6Xzd1YUxsR19rVGwxcHUwQVhXOFFfaV9rYnRYbkZxTW5UbW9NazdyQlZhMGpwcHk3cXJJN2g4TXJUZVlRa3A3NER1ZGxnNmtWMmhVUjdXbXdJOFpQcWtkelcyVEZiTnZDbk5OY2N5NF9wdUx1UmlxeVdlV1psMkNDdlZ1TnBSOWE1SlZMRDTSAbwBQVVfeXFMUFdoLV9uazA5VFlxek9sdlljd0lDRzlSVi1kckdaOWE3cjVISjlIaWNFbW0zbGY4TlZNZHZOLVlELXlJd0ttdmdUMThGTWUxNXhJckFUX0t3SUZPcUZZUmJFUU9qRTZTbDA0SXJwMHE2d2paT3pvSGUyU1N3c0N1WDF3V3hQaFg5OU5OSHg0d01GTktCcFNxNGwySERxdVV4YjNiQW44WWhaaUR5c2VkMDQ2YW5GdUJPbU5xX2I?oc=5",
+      "medio": "ABC7 Los Angeles",
+      "tipo_fuente": "unverified",
       "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
@@ -429,6 +411,14 @@
     },
     {
       "tipo": "edificacion_danada",
+      "titulo": "Sismo deja 111 muertos y 1.575 viviendas afectadas: así puede ayudar - Forbes Colombia",
+      "enlace": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWx1OHoxbzFLZk05M3B5V3JUUkFseURaSkJ4a3h5bk9DTUswclF5VEh1U0ZPOGtYSVlESjFjVE5HcmF1dGsyanBVRDJnMElMNm4yRkJGajc1VmE2bDNINWVwMDlzS0w1ejJtODdKaGN6WTdhQmdiRzN1Qk9jY1R4TlM4amMzMGM5cmhEVmVJM1YzWkxUaFpVVmV1bnJPcVotYzNYa0NqNkY0QlhN?oc=5",
+      "medio": "Forbes Colombia",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
+    },
+    {
+      "tipo": "edificacion_danada",
       "titulo": "Terremoto de 7,4 sacude San José del Palmar y deja cientos de casas afectadas - Canal Trece",
       "enlace": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQb2JuMVlTck9UTEtrMVlSaUZuel9PRURlUXdvYVh2UURVcEZ1bTRJcWJfX3g5V08wRVUyUjFEX2lFNldOaFp0NVBaNVJTa2ZYTWp2bDlfS3U0dnN0YkE3LXZ1NEFrNGt1T2hwTmV2WlFnV0tDQk53TnNtdG96WXBhNU1LaWpxOTdVN1RfRml1eWt1NWRsckNoNDdaTVBrcmhvTVhjbjVFZXE2UWVyNWdQMGxR?oc=5",
       "medio": "Canal Trece",
@@ -440,7 +430,7 @@
     {
       "tipo": "centro_acopio",
       "titulo": "Centros de acopio en Colombia: dónde llevar ayudas para los afectados por el terremoto - Infobae",
-      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N3?oc=5",
+      "enlace": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOGtxQVZ5dU8yVVBKSU5sTDdHcnIxVThvLVphQ19pbHZ1eHRHcGlsWGVRZ01BLVl0aXhOTDgtODQ2X01SdGloZjh0U1hwWHVIZUptZkZKd3ZxbEFOY09mcnVJcFotSXRuUVluY05PYUtUMWdtWnowc2EwUGJUV2tGR2syeDkxNzFUUHlYUmYxZ3BHeElJaWEwWlJPeVdNblIyUTBQR0hydTdRX2pvaVpzSGpuM1E0c0ZTcnZIQ0k1UWEzeFdIenRXVVVBVUIyM3VXdjFwVTFxdW52cWROWnhMYlVGMDktNTlEb1N30gGGAkFVX3lxTFBfVERFSGxKS0JYcHp6UkktN1ctYlZjYVdEM1BYTDREcmZRS3I4b2xsMkZzTURmV1AtM0o0RGh2RHVqNXRsemRjUkxFa0o1aVdIcEJiLVhFUHFyN0V5S041cEdfQkVmZVdIeE5NSUY2eTZhUXliVDNQV2YyZHRGSkVlZW5sTWprbTA0cDJHdkx5cDB5MWtjaXhMQnowNk9kc3N5NndZR2d4M2tlczE0UDBHWWFHRnhYYkdJMXdqZGJvSFZwSWlnN2xhYWtLb1BxcGdUUWhPUi1WM1FxZ2ZHeVE1Z2JocGMzTk95QWRWeUp6eDJwVE9iaVl4WVoyODY2UjRYUXRaTkE?oc=5",
       "medio": "Infobae",
       "tipo_fuente": "press",
       "publicado": "2026-08-10T07:00:00.000Z"
