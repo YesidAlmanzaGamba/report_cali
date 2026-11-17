@@ -1,13 +1,13 @@
 {
-  "generado": "2026-11-17T12:12:51.038Z",
+  "generado": "2026-11-17T21:10:14.472Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
-    "municipios_considerados": 146,
-    "con_notas": 27,
-    "sin_notas": 119,
-    "poblacion_sin_notas": 3643082,
-    "medios_distintos": 67
+    "municipios_considerados": 148,
+    "con_notas": 31,
+    "sin_notas": 117,
+    "poblacion_sin_notas": 3496974,
+    "medios_distintos": 69
   },
   "municipios": [
     {
@@ -16,13 +16,18 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 235337,
-      "notas": 34,
-      "ultima": "2026-11-13T15:27:41.000Z",
+      "notas": 38,
+      "ultima": "2026-11-17T18:04:01.000Z",
       "medios": [
         {
           "nombre": "Dosquebradas",
-          "notas": 21,
-          "ultima": "2026-11-12T14:02:32.000Z"
+          "notas": 22,
+          "ultima": "2026-11-14T13:50:34.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 4,
+          "ultima": "2026-11-17T18:04:01.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -33,11 +38,6 @@
           "nombre": "Caracol Radio",
           "notas": 3,
           "ultima": "2026-10-27T07:00:00.000Z"
-        },
-        {
-          "nombre": "Risaraldahoy.com",
-          "notas": 1,
-          "ultima": "2026-11-10T12:43:23.000Z"
         },
         {
           "nombre": "Canal 1 En vivo",
@@ -72,9 +72,14 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 36,
-      "ultima": "2026-11-12T16:10:39.000Z",
+      "notas": 42,
+      "ultima": "2026-11-17T12:45:54.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 6,
+          "ultima": "2026-11-17T12:45:54.000Z"
+        },
         {
           "nombre": "El Tiempo",
           "notas": 4,
@@ -229,8 +234,8 @@
       "departamento": "Chocó",
       "mmi": 7.9,
       "poblacion": 5167,
-      "notas": 16,
-      "ultima": "2026-11-10T12:26:37.000Z",
+      "notas": 15,
+      "ultima": "2026-08-16T07:00:00.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
@@ -246,11 +251,6 @@
           "nombre": "Infobae",
           "notas": 2,
           "ultima": "2026-08-14T07:00:00.000Z"
-        },
-        {
-          "nombre": "Ecos del Combeima",
-          "notas": 1,
-          "ultima": "2026-11-10T12:26:37.000Z"
         },
         {
           "nombre": "Defensoría del Pueblo de Colombia",
@@ -391,13 +391,13 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.8,
       "poblacion": 38029,
-      "notas": 18,
-      "ultima": "2026-11-11T18:25:35.000Z",
+      "notas": 19,
+      "ultima": "2026-11-17T18:31:25.000Z",
       "medios": [
         {
           "nombre": "El País",
-          "notas": 5,
-          "ultima": "2026-11-11T14:49:00.000Z"
+          "notas": 4,
+          "ultima": "2026-11-11T02:04:13.000Z"
         },
         {
           "nombre": "Pulzo",
@@ -418,6 +418,16 @@
           "nombre": "Gobernación del valle",
           "notas": 2,
           "ultima": "2026-08-13T07:00:00.000Z"
+        },
+        {
+          "nombre": "Proclama del Cauca",
+          "notas": 1,
+          "ultima": "2026-11-17T18:31:25.000Z"
+        },
+        {
+          "nombre": "El País (Cali)",
+          "notas": 1,
+          "ultima": "2026-11-17T16:46:57.000Z"
         },
         {
           "nombre": "Canal 1 En vivo",
@@ -447,15 +457,8 @@
       "departamento": "Caldas",
       "mmi": 7.8,
       "poblacion": 5067,
-      "notas": 1,
-      "ultima": "2026-08-12T07:00:00.000Z",
-      "medios": [
-        {
-          "nombre": "La Patria",
-          "notas": 1,
-          "ultima": "2026-08-12T07:00:00.000Z"
-        }
-      ]
+      "notas": 0,
+      "medios": []
     },
     {
       "pcode": "CO76895",
@@ -502,8 +505,15 @@
       "departamento": "Caldas",
       "mmi": 7.7,
       "poblacion": 11038,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-11-11T11:29:31.000Z",
+      "medios": [
+        {
+          "nombre": "Caracol Radio",
+          "notas": 1,
+          "ultima": "2026-11-11T11:29:31.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76100",
@@ -651,9 +661,14 @@
       "departamento": "Valle del Cauca",
       "mmi": 7.5,
       "poblacion": 322388,
-      "notas": 6,
+      "notas": 7,
       "ultima": "2026-09-17T07:00:00.000Z",
       "medios": [
+        {
+          "nombre": "El País",
+          "notas": 2,
+          "ultima": "2026-08-31T07:00:00.000Z"
+        },
         {
           "nombre": "El Tiempo",
           "notas": 1,
@@ -678,11 +693,6 @@
           "nombre": "Gobernación del valle",
           "notas": 1,
           "ultima": "2026-09-01T07:00:00.000Z"
-        },
-        {
-          "nombre": "El País",
-          "notas": 1,
-          "ultima": "2026-08-12T07:00:00.000Z"
         }
       ]
     },
@@ -825,9 +835,14 @@
       "departamento": "Caldas",
       "mmi": 7.4,
       "poblacion": 469600,
-      "notas": 6,
-      "ultima": "2026-11-10T15:36:00.000Z",
+      "notas": 7,
+      "ultima": "2026-11-11T12:34:04.000Z",
       "medios": [
+        {
+          "nombre": "Caracol Radio",
+          "notas": 2,
+          "ultima": "2026-11-11T12:34:04.000Z"
+        },
         {
           "nombre": "Zona Cero",
           "notas": 1,
@@ -845,11 +860,6 @@
         },
         {
           "nombre": "BBC",
-          "notas": 1,
-          "ultima": "2026-08-11T07:00:00.000Z"
-        },
-        {
-          "nombre": "Caracol Radio",
           "notas": 1,
           "ultima": "2026-08-11T07:00:00.000Z"
         },
@@ -938,8 +948,15 @@
       "departamento": "Chocó",
       "mmi": 7.3,
       "poblacion": 134417,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-11-17T15:02:14.000Z",
+      "medios": [
+        {
+          "nombre": "Chocó 7 Días",
+          "notas": 1,
+          "ultima": "2026-11-17T15:02:14.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO76828",
@@ -1009,7 +1026,7 @@
       "mmi": 7.1,
       "poblacion": 2337182,
       "notas": 26,
-      "ultima": "2026-11-15T20:19:13.000Z",
+      "ultima": "2026-11-14T23:00:18.000Z",
       "medios": [
         {
           "nombre": "EL PAÍS",
@@ -1037,9 +1054,9 @@
           "ultima": "2026-11-12T23:47:47.000Z"
         },
         {
-          "nombre": "El País (Cali)",
+          "nombre": "ELHERALDO.CO",
           "notas": 1,
-          "ultima": "2026-11-15T20:19:13.000Z"
+          "ultima": "2026-11-13T16:44:55.000Z"
         },
         {
           "nombre": "El Futbolero Colombia",
@@ -1692,8 +1709,15 @@
       "departamento": "Tolima",
       "mmi": 6.2,
       "poblacion": 5720,
-      "notas": 0,
-      "medios": []
+      "notas": 1,
+      "ultima": "2026-11-17T19:39:14.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-17T19:39:14.000Z"
+        }
+      ]
     },
     {
       "pcode": "CO05873",
@@ -1838,6 +1862,22 @@
       "medios": []
     },
     {
+      "pcode": "CO73268",
+      "nombre": "Espinal",
+      "departamento": "Tolima",
+      "mmi": 5.5,
+      "poblacion": 71930,
+      "notas": 1,
+      "ultima": "2026-11-17T18:09:17.000Z",
+      "medios": [
+        {
+          "nombre": "El Nuevo Día (Ibagué)",
+          "notas": 1,
+          "ultima": "2026-11-17T18:09:17.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO17867",
       "nombre": "Victoria",
       "departamento": "Caldas",
@@ -1896,9 +1936,14 @@
       "departamento": "Atlántico",
       "mmi": 4.7,
       "poblacion": 1355306,
-      "notas": 1,
-      "ultima": "2026-08-19T07:00:00.000Z",
+      "notas": 2,
+      "ultima": "2026-11-17T18:50:00.000Z",
       "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-11-17T18:50:00.000Z"
+        },
         {
           "nombre": "Caracol Radio",
           "notas": 1,
@@ -1923,14 +1968,35 @@
       ]
     },
     {
+      "pcode": "CO86760",
+      "nombre": "Santiago",
+      "departamento": "Putumayo",
+      "mmi": 4.2,
+      "poblacion": 7804,
+      "notas": 1,
+      "ultima": "2026-09-11T07:00:00.000Z",
+      "medios": [
+        {
+          "nombre": "Alcaldía de Santiago de Cali",
+          "notas": 1,
+          "ultima": "2026-09-11T07:00:00.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO52565",
       "nombre": "Providencia",
       "departamento": "Nariño",
       "mmi": 4.1,
       "poblacion": 5568,
-      "notas": 1,
-      "ultima": "2026-08-13T07:00:00.000Z",
+      "notas": 2,
+      "ultima": "2026-11-14T06:17:22.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-11-14T06:17:22.000Z"
+        },
         {
           "nombre": "El Espectador",
           "notas": 1,
