@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-18T02:59:46.357Z",
+  "generado": "2026-11-18T11:20:51.597Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -12,14 +12,6 @@
       "publicado": "2026-11-13T17:58:00.000Z",
       "pcode": "CO27810",
       "municipio": "Unión Panamericana"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Gobierno aún no asigna ayudas de vivienda a familias afectadas por el terremoto de agosto - Vanguardia",
-      "enlace": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMF9JQVlqMUpXYjFJVVVoZ183ZW5xdlRod1JCdnJySmVCZXNsVkVqZXVuRVJLX2JuZUJ1Q19iS0k5TlBWNEdiNkl3ODIwYnlRX1EwcnhPeXlYVF9SdDRFRjBXcjFZRVhqVXpYdGVuRUNoQW5IWDgyOTlPR1dnc3pCX2JaT1FKUzROTjBfVXZGZ2ZFTF9SWGU5WVVZRmFTQS1HdTFoRlJrRmRobHY3eGVoMXk0VmxEVVNsMXlnQ3pRSHd2TDM0UE5sSFd6bWRkNzBDZ3NIbV93?oc=5",
-      "medio": "Vanguardia",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-11-11T20:22:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -66,12 +58,12 @@
       "publicado": "2026-09-03T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia: UNGRD entregó nuevo balance de viviendas afectadas - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNODNGS3Mzb3lCR0J3RmVXeG5QUTNXM2l1cjctR0FSQkkxNU1xSVp0NUk1Z25pOWQ2cFRReXZ1U1FWYVlrWGRuVVlHV2VKRngyR1BnZ0hudXVkaHA2QmRpbWZrTTJBdTFVOXI3dzlyR3B1djZEMGZkQkNUclhKUmxGT242MTNsTl80eXZHclJJdS03TUhNME56cG92OTVLTTRzM3ZXS3VSVUhiY3RaOFBnRl9KUDFQeTdZM3c?oc=5",
-      "medio": "ELHERALDO.CO",
+      "tipo": "albergue",
+      "titulo": "Este municipio de Caldas mantiene albergue para 30 damnificados por el terremoto - La Patria",
+      "enlace": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMXdhZmVKb0hYbGIwc1FRTHRMOXRRQWRFNlk4YUthV1lLbllkSjRMWmtqWF9QcXJaNjNVZ3pxQVpKWUFfMWtMU1VZV2M4SzlFS0gyWEp4Q0xreWFCeV9yVGdsbUtnaEJuOHNTNlc1QVlCcFgzX2Z6MW16YXMyT0pSaVhQNTZldm1OMjJKUXFHUk9vRDJ5bGRRSnBIYXc3VGQ1ODNJWERNYVZaaGRDclp2Y01B?oc=5",
+      "medio": "La Patria",
       "tipo_fuente": "unverified",
-      "publicado": "2026-08-26T07:00:00.000Z"
+      "publicado": "2026-08-24T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -222,6 +214,14 @@
       "publicado": "2026-08-12T07:00:00.000Z",
       "pcode": "CO76001",
       "municipio": "Cali"
+    },
+    {
+      "tipo": "centro_acopio",
+      "titulo": "Donaciones, centros de acopio y reconstrucción de viviendas: cantantes colombianos movilizan ayuda y solidaridad para los afectados por el terremoto - Infobae",
+      "enlace": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOREpnYmlhQ3VRTGwzSThtUGZZZ2NhYWRpeTlnWjRfMklCdlZKTjFtbTVuallnMjQ5R0YyZU5vT0xmM3RMd3pLbVcydjF4OTVEa3pqTXJzQUFaOF9jUGlXbS1PV0VOZUw2eGI3M1NyN0VieUYzaDJyYUFHQkVZazBvdEx3ekFPTzVoWEd1b2RYcmVQa2pvTkl4cmpUN3dsNHAzV3VKNXlUV3RHbWNmSDRabUwxVDk1SDdNcFF3cThrTkxicXlqeGhDLU41R2ZBMlJJV3RROUZjYjJ4bHZ6WjhEc3M0OEUyRDVNZGxpcGNiX2dVZjd4QUdORXJpOHJZSkloUzBKb21GR3FwYU1vSmdfUWhWZmdudG9OcmlV0gG2AkFVX3lxTFBJUUpXM18tZGNNdkZMOFN5WE0xUC1hQUZOdkxoaUpTOVJSZjE3Q0ZjbFliTks0V2Zza3FkV2gtN2Q4WWFXcEtiN1VwYVBodnhqOTBIaDU4dG9uOVFuZnJsVFp0RTUyZUlqRWlzZGh0QjQyd19rVHRRendkdVhMWkRIcWNOTHpFWmsxYUdFbnNmWDczcDA5WUxMWVYzRV9wVXJPbm53ZXEyWngtTVdMVXVWOXlrS0tsMUt1eElvdGdncWp3b00xV1NKWl9hUzBicGJWX2JjeEF3R1I1U3JDOC1vTW9od2JRak0yLW1jVm1LNFUtaDdsRE5mdHh6Qi1FRVk4Nk14aDNPMl9HSVlKdzRSRDNnMkZfUk1YcG9GVDBxMk16Q09XU3NtU1hhaXpqVUNGSkRrS0E?oc=5",
+      "medio": "Infobae",
+      "tipo_fuente": "press",
+      "publicado": "2026-08-12T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_danada",
@@ -390,6 +390,14 @@
       "publicado": "2026-08-10T07:00:00.000Z",
       "pcode": "CO17001",
       "municipio": "Manizales"
+    },
+    {
+      "tipo": "edificacion_colapsada",
+      "titulo": "Videos del terremoto en Colombia: al menos 26 muertos, edificios colapsados y aeropuertos cerrados - Vistazo",
+      "enlace": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNLUFpLUFHTjhHVzBDb1VsTVpIeDNFMkZ3Z3FxMGlvUmY1d19nWjUwUjZBWVVCNjF5amt6TGhMUjE0OTlhRnpwYWkzZTcxRGtEWUhnUExtcTYtVWIyWFdBaHZPZlNPdG9MNEhmUkNrZjdPYXdKa2l0X0dTU1VnMWd1V1R0WVIyT3JmdzVhVWJETHdkaGJNMmhGbXcyd1BGSHBFSHoxR3NEQjk1MFY2dm9RR2lPOUoyNHdiR1dqNVotMUcxWGdYaEHSAcsBQVVfeXFMUGd4TjRCOHlMcU1tQnlHbTBaRXU0Qzg0UmduMW5SUXI5X3ZWbnZ4aVRIWnBSNGwtc3I2YnlpLXpnd1NzSjlmaVdoZ2IxanBSMDhMRURoN19JMXl3N1F2OThXSDU0U1l2bWY2T0RLRUg5SXlHVUM1X2NjRmhfTmRQbU4xcHF0RjdWaFNXVUpaNFlHT0tiUGFmdDJfWTVCTDFQSk9sbGJybE0tN05xSnhpRVY2cEVpVllXUlVSMEV3MmU5Uy1BUWRyUmJ6ZEk?oc=5",
+      "medio": "Vistazo",
+      "tipo_fuente": "unverified",
+      "publicado": "2026-08-10T07:00:00.000Z"
     },
     {
       "tipo": "edificacion_colapsada",
