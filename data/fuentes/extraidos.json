@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-21T18:34:50.207Z",
+  "generado": "2026-11-21T23:39:13.343Z",
   "nota": "Sugerencias extraídas de titulares para revisión humana. NO son datos publicados: hay que confirmarlas y pasarlas a curated/incidentes.json.",
   "reglas": "packages/ingest/src/extraccion/reglas.ts",
   "sugerencias": [
@@ -23,29 +23,11 @@
     },
     {
       "tipo": "edificacion_danada",
-      "titulo": "Sismo de 5,6 en Chaparral, Tolima, deja viviendas afectadas y daños estructurales - Revista Semana",
-      "enlace": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNNTdSdENndU16UGZYNzJkdFZULUFfNV9pempjYUhjczE1NmxZM1FrTFJHRVFuQmp0TEFvQll5SHFORkZBVUVYaGtjdWJKeUxzcXZGZ01ZZVQ0NGNLMy1xU2pwajlQamx4S21FVHVWWlhEUEg5dnhQcnY2dzZub25xQlJ3YmNkandqUTlIV0t5aWFwLW1SMUNvN1BYUFByQUhwZ2E2Q3EzSDZRdDJjcUNpUHVoOUJ4QlNvOERDZjJqbExFUkFUYS11X3I4MDlvLUl1X3lWMFNwTXU?oc=5",
-      "medio": "Revista Semana",
-      "tipo_fuente": "press",
-      "publicado": "2026-11-03T08:00:00.000Z",
-      "pcode": "CO73168",
-      "municipio": "Chaparral"
-    },
-    {
-      "tipo": "edificacion_danada",
       "titulo": "Víctimas del terremoto en Colombia: balance de la UNGRD confirma 335 fallecidos y 244 mil viviendas dañada - La FM",
       "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemJ2R09kUmNwcnl6enNoUGxfV2kzbm54R3NaNEdFRE1wV0MtZ18wVVhZdk04V0Z2VXYtNnVnbU9HV0ZnTDNvU2VQOXItcW1TRnVTR0R3X2ZtU1ViR0ZYdTBfenJuN0RlRU14dDNuMlVoLWJ6ZnhhVHFPLXpxb2R0SklCLWZGeU5Qc2JCMzZHSW80MHdTaE1XTlJocjg1RlpNaEZZ0gGjAUFVX3lxTFBtVU5kTWZhaV9nR1dPWTZDcnNQbngwSXRKdHh5VnFFQ3dSVzlTX21TOGNWZFNmTlVzTVRrMWtXMXNLU1VScnVYZUVFbnhKOXUxTnp5SjJJWldocWY1TzRGVmhOUUtFcUJWR1o4ekN0ZUZmdDM2MzZrTmw4ZFNIbmlmZ1dDZ3hsa211SFNSaFV5NXplNkx3TVJpdnNmeHRzLWdnTUE?oc=5",
       "medio": "La FM",
       "tipo_fuente": "press",
       "publicado": "2026-10-10T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "A dos meses del terremoto, persisten 103 desaparecidos y más de 206.000 viviendas averiadas - Caracol Radio",
-      "enlace": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnNvX05VVlhlZk9Zc09ocTRHOEtjbG1JRDlvSDYxXzhnN3dtbEtVdW1vMWRHZkxKR0Nhb3ozLWNpZWxhWl9mMDlQa1N1T2hpTzl0eFpXOGZwbEkwaGltak9ZQzV4Qnk2YWNTX3huMzAwNFNTMWNFNmxnNUd5SXAyNmFJNnJLcXpnZU9Wbi1zYXJlZDBIdmtEUGdjb3JrVUluZXAtQl9JYm1Pdlp6akoxR29UVGYtMkxlVjhYLVlSRkM0QdIB1gFBVV95cUxQdHVNT3NqLXFlUHpsZTBVRC1UeU1yc1Z2c3VxWXdueFk3Q1Y0SzRjOGp0TGNRWVdaZWJTWVkyNVZDZGt2bXFtRjgzN1VDTmp6VkxuYnhkelpma0YwN0QyZkNuLVRGWGJ6cjNuQWV3NWxBQVRSckhrYUpJWVg5WkV5ekhza3BKY3E1UXBieENFWjctUldPV3hkUG9PMWs1UkVSM1VJSm1vTVpwbmlINE51Y1Q0R0RiampEVlRoaHpFX0hJQ216RXdjdlBvb0xMTXdidk1BRU93?oc=5",
-      "medio": "Caracol Radio",
-      "tipo_fuente": "press",
-      "publicado": "2026-10-09T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -74,22 +56,6 @@
       "publicado": "2026-09-03T07:00:00.000Z"
     },
     {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto de 7,4 en Colombia deja más de 450.000 damnificados y casi 200.000 viviendas averiadas - La FM",
-      "enlace": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOXB2b3FhT0JrTTZfM0Y2XzYxZC1oS0FXV3hqeVV6QUp4SXM1VDNZd3dqeHVacEUwU3dMM0pQMmI5WVJIa2phTDFVdndJdVlkSnlwNGh0UGk3UDBXYVBoeE1DS2hpOE1sOUx4T2NyeGlobEZiMElmQTJWSUZoX21pLVFibTN0OW5ObElvaGhPT09BUXZNN2VSNF91ZXVBMmlkb2dZ0gGjAUFVX3lxTE5faE5VZFVpN3c3aVo4SDNVZ2JoRnVCajlxR2JPSWpjcVpQc050SEtLNTRxWGV3czBnYlBJbjBQUXM3aTcyTWIzZTBMWElDQktIM3FORFNLZm1MaXhoODdDZExHR0duQ0hJUGhYZTgwSVJvZXpfU294V3A2cndMNUFUOUF4bFJ1N01wTUpneVYzNFJjTTM3QnpoeV9tVlNqbkpjcDg?oc=5",
-      "medio": "La FM",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-29T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Terremoto en Colombia: UNGRD entregó nuevo balance de viviendas afectadas - ELHERALDO.CO",
-      "enlace": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNODNGS3Mzb3lCR0J3RmVXeG5QUTNXM2l1cjctR0FSQkkxNU1xSVp0NUk1Z25pOWQ2cFRReXZ1U1FWYVlrWGRuVVlHV2VKRngyR1BnZ0hudXVkaHA2QmRpbWZrTTJBdTFVOXI3dzlyR3B1djZEMGZkQkNUclhKUmxGT242MTNsTl80eXZHclJJdS03TUhNME56cG92OTVLTTRzM3ZXS3VSVUhiY3RaOFBnRl9KUDFQeTdZM3c?oc=5",
-      "medio": "ELHERALDO.CO",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-26T07:00:00.000Z"
-    },
-    {
       "tipo": "albergue",
       "titulo": "Este municipio de Caldas mantiene albergue para 30 damnificados por el terremoto - La Patria",
       "enlace": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMXdhZmVKb0hYbGIwc1FRTHRMOXRRQWRFNlk4YUthV1lLbllkSjRMWmtqWF9QcXJaNjNVZ3pxQVpKWUFfMWtMU1VZV2M4SzlFS0gyWEp4Q0xreWFCeV9yVGdsbUtnaEJuOHNTNlc1QVlCcFgzX2Z6MW16YXMyT0pSaVhQNTZldm1OMjJKUXFHUk9vRDJ5bGRRSnBIYXc3VGQ1ODNJWERNYVZaaGRDclp2Y01B?oc=5",
@@ -112,14 +78,6 @@
       "medio": "Caracol Radio",
       "tipo_fuente": "press",
       "publicado": "2026-08-22T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Balance tras terremoto deja 319 muertos, 4.506 heridos y 31.416 viviendas dañadas - LaRepublica.co",
-      "enlace": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTU56YkJtWUdWQm5iM2I2YjRUNlROczhRSXpVYTRjeEZIdUFjZzdhczhIZ3IwQWEwMVVOWUJ2eU93elRUQ0xSRkJEZE9SbjM0M3VMbjhnY0JfeUxWd1JYSjluNTRlUlNXRzJSSEVqcmh6Q3J0blBmM2RGdHVFSTh1U1BXWEhQWkNGQjN4czlWLUJURlFGaHY5S0hZZ3lsNVNhbWU5NE9LTDBPUnRCemJQZEtYT3EtSVU5elV3cFA5VnB1ZDRfS2htby15c3FDWUZuaGprTNIB1AFBVV95cUxNZW1Bak9uWHhYRmx1a2QtcUZ0bFZmaERqYlRmWkpNZlNKQzlieUlGbXN4LW9rNDVaR19Lc0MzSklIdjVXakd4ZENzZEJ0am9TeFNFRjhhVnRpLW5DRl9QS3UtMlN0bGp3RThsZ0RpRTlMNlozOHF2a29NdnNLTXFFLW1KZGk4ZUZMa292RFgtUkp4bGkwcUhnLV9tNUVWSjVOWnlhc1JsLWJoOGdCNXhOM1ZYQWR6MHoxTWtrUHctMlgxNERISEtNaGttb3FTT2FXWDd3cg?oc=5",
-      "medio": "LaRepublica.co",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-20T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -200,22 +158,6 @@
       "publicado": "2026-08-14T07:00:00.000Z",
       "pcode": "CO66001",
       "municipio": "Pereira"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "Impacto del terremoto: 84.360 viviendas con daños, 210 vías afectadas y 284 muertos - Portafolio.co",
-      "enlace": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1Z5NHdWTVRqUlZqTjVPeEZSRHB5dk1KeDdUelU2aEJ6YkFkOVl0QlJqWVZNVTVnM0dQQjRrVmJlZm9FRmpUbjVrMDdfREtJR2Ztem5JMi1Pa3BaTmZWZWplNmt4S2Z2ek9adHo5V09Ra0x3YXFPeEVwWndvNFczSVdRUVZYbi1hMnJkWVdxc3lOTUJQUFVSSVl1TF81dEdrNDJzMEFhTU9TUk5tN24tVzhpcXd4Vm4yUmlGYmRRUG12SDk2eHlWaTlFTjjSAdIBQVVfeXFMTURydGhPY1B0UFRjWWxPMDFfS2JYVmU2dGdrQnA1QkpwRDlDQkJSWkpNUnExWk5GaEJsZEt3N2x5cWZ4WE1KTzJHZEhoRUd2XzRIX1NXanFpMDhaOWZfb044RnZfVDR5UzdpTTkwbzViVTJlZVc2N2JUQndrclhlUEpXUDQzaFBjc3N2RzBKOHRHbkRveHZvUWFIbnlNSWJSRmJxZUtyM1Z5TERTMHlESzZYbEVnVVVwa25QRzQ1OEh0VzZuRnV5Mnp1S2U1UUdEOVRR?oc=5",
-      "medio": "Portafolio.co",
-      "tipo_fuente": "press",
-      "publicado": "2026-08-14T07:00:00.000Z"
-    },
-    {
-      "tipo": "edificacion_danada",
-      "titulo": "UNGRD reporta cientos de fallecidos y miles de viviendas afectadas tras el terremoto del 10 de agosto en Colombia - Pulzo",
-      "enlace": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQm1ibWhiTjVWU1BBakg0amhFZkR4WTVtUU9hZnhRV1h0eTBxVzVOSGQ4TXp4WWdlNXAtaVZnRXFiQUEyQzhsSzByMEcwanpYelItRHVRMGs5WGZ0dVQyTTVkUkl4NkFhTWVNZUFycTNwM1NIZG1mcUtLOHR5RVdjMG5GZ3dYdVlKR0VPOU9McFk1Mjltb2pKRTBTSnNVcmJpdEI3XzdmcHlTRERZYnFTOVVtWVFHRnp3b2ZmRVMtLU9tTFXSAcgBQVVfeXFMTlg3UVlaSXlGUHpJN21tUDRacWVpT3Z4RTZMemtLWGJCSHZISjQ4aWMwYnhEWi1TMW0xNHVDaHJxblBXOFJXZmJiTHU4ODhVMkduaExpek1MWmtrTm9PUFBmenR1ZmdxclE3blhoR2Z3QzlyWllfbENUdVZYX2tueVhCNmR2c2pXSDZWZ1VWNkpCbVktaDN2MGplTG1XNzVfU2sxRUlfYkJWQ2t0VXFkOFc3ZkVnQk9LWkVHN3NLZFRoeVplZ1FtZUU?oc=5",
-      "medio": "Pulzo",
-      "tipo_fuente": "unverified",
-      "publicado": "2026-08-14T07:00:00.000Z"
     },
     {
       "tipo": "albergue",
@@ -506,14 +448,6 @@
       "medio": "El Colombiano",
       "tipo_fuente": "press",
       "publicado": "2026-06-28T07:00:00.000Z"
-    },
-    {
-      "tipo": "albergue",
-      "titulo": "MIES ATIENDE A DAMNIFICADOS QUE SE ENCUENTRAN EN ALBERGUES Y REFUGIOS EN ESMERALDAS - Ministerio de Desarrollo Humano",
-      "enlace": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNjdFalBuQVlsRmk0a2IxRmFLd1ZMbS0yZnFqZmp5MmVVSVcyMGtXRm1iQkdBd1MyejBJVnhSRnJqUS1ZbzhDbnI0OHVySDJKaTgyd0hmdTl5QlJFUEc5OWxWX0tULUt2cFJyS2Q5bjNjX2Z0ZWxvbHdXblZHcmlBMW1ZeHVfOVg0NERnbTMzY3I3bjlNTHhoOVE3SmwwSlR0cXZ6VmZaUEZHbDkyd0ZwWTA1cE5YWWZkQUxnNA?oc=5",
-      "medio": "Ministerio de Desarrollo Humano",
-      "tipo_fuente": "unverified",
-      "publicado": "2025-10-26T04:40:00.000Z"
     }
   ]
 }
