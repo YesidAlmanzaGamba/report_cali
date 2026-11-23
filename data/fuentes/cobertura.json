@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T00:59:53.098Z",
+  "generado": "2026-11-23T08:43:53.172Z",
   "umbral_mmi": 6,
   "nota": "Qué medios han publicado sobre cada municipio golpeado, contado a partir de las notas recogidas. Un municipio con cero notas NO es un municipio sin daños: es uno del que no tenemos información. No es una medida de daño ni un orden de prioridad.",
   "resumen": {
@@ -7,7 +7,7 @@
     "con_notas": 27,
     "sin_notas": 121,
     "poblacion_sin_notas": 3679925,
-    "medios_distintos": 58
+    "medios_distintos": 59
   },
   "municipios": [
     {
@@ -16,8 +16,8 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 235337,
-      "notas": 32,
-      "ultima": "2026-11-20T16:08:39.000Z",
+      "notas": 33,
+      "ultima": "2026-11-22T16:47:44.000Z",
       "medios": [
         {
           "nombre": "Dosquebradas",
@@ -33,6 +33,11 @@
           "nombre": "Caracol Radio",
           "notas": 2,
           "ultima": "2026-08-21T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 1,
+          "ultima": "2026-11-22T16:47:44.000Z"
         },
         {
           "nombre": "Canal 1 En vivo",
@@ -67,13 +72,18 @@
       "departamento": "Risaralda",
       "mmi": 8.2,
       "poblacion": 500806,
-      "notas": 31,
-      "ultima": "2026-11-22T23:42:08.000Z",
+      "notas": 35,
+      "ultima": "2026-11-23T05:00:53.000Z",
       "medios": [
         {
           "nombre": "El Tiempo",
           "notas": 4,
           "ultima": "2026-11-22T23:42:08.000Z"
+        },
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 2,
+          "ultima": "2026-11-23T05:00:53.000Z"
         },
         {
           "nombre": "El Diario - Noticias Pereira, Colombia y el Mundo",
@@ -111,6 +121,11 @@
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
+          "nombre": "LaRepublica.co",
+          "notas": 2,
+          "ultima": "2026-08-16T07:00:00.000Z"
+        },
+        {
           "nombre": "Minvivienda",
           "notas": 1,
           "ultima": "2026-08-28T07:00:00.000Z"
@@ -146,17 +161,17 @@
           "ultima": "2026-08-18T07:00:00.000Z"
         },
         {
-          "nombre": "EFE - Agencia de noticias",
-          "notas": 1,
-          "ultima": "2026-08-17T07:00:00.000Z"
-        },
-        {
           "nombre": "La FM",
           "notas": 1,
           "ultima": "2026-08-17T07:00:00.000Z"
         },
         {
-          "nombre": "LaRepublica.co",
+          "nombre": "HolaNews",
+          "notas": 1,
+          "ultima": "2026-08-17T07:00:00.000Z"
+        },
+        {
+          "nombre": "El Colombiano",
           "notas": 1,
           "ultima": "2026-08-16T07:00:00.000Z"
         },
@@ -1764,6 +1779,22 @@
       "medios": []
     },
     {
+      "pcode": "CO05001",
+      "nombre": "Medellín",
+      "departamento": "Antioquia",
+      "mmi": 5.6,
+      "poblacion": 2745464,
+      "notas": 1,
+      "ultima": "2026-11-23T03:35:13.000Z",
+      "medios": [
+        {
+          "nombre": "El Tiempo",
+          "notas": 1,
+          "ultima": "2026-11-23T03:35:13.000Z"
+        }
+      ]
+    },
+    {
       "pcode": "CO17867",
       "nombre": "Victoria",
       "departamento": "Caldas",
@@ -1828,22 +1859,6 @@
       ]
     },
     {
-      "pcode": "CO25372",
-      "nombre": "Junín",
-      "departamento": "Cundinamarca",
-      "mmi": 4.4,
-      "poblacion": 6843,
-      "notas": 1,
-      "ultima": "2026-11-21T13:18:59.000Z",
-      "medios": [
-        {
-          "nombre": "El País (Cali)",
-          "notas": 1,
-          "ultima": "2026-11-21T13:18:59.000Z"
-        }
-      ]
-    },
-    {
       "pcode": "CO47288",
       "nombre": "Fundación",
       "departamento": "Magdalena",
@@ -1865,9 +1880,14 @@
       "departamento": "Putumayo",
       "mmi": 4.2,
       "poblacion": 7804,
-      "notas": 1,
-      "ultima": "2026-09-11T07:00:00.000Z",
+      "notas": 3,
+      "ultima": "2026-11-23T05:00:57.000Z",
       "medios": [
+        {
+          "nombre": "El Diario (Pereira)",
+          "notas": 2,
+          "ultima": "2026-11-23T05:00:57.000Z"
+        },
         {
           "nombre": "Alcaldía de Santiago de Cali",
           "notas": 1,
